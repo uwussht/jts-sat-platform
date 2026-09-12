@@ -993,7 +993,7 @@
       return this._index.list;
     },
     reindex: function () {
-      var raw = (JTS.data.questions || []).concat(JTS.data.questionsExtra || []);
+      var raw = JTS.data.questions || [];
       var overrides = Store.overrides();
       var byId = {};
       var list = raw.map(function (q) {
