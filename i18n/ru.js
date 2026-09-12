@@ -57,6 +57,8 @@ JTS.dict.ru = {
   'onb.s1.deadline': 'Дедлайн регистрации',
   'onb.s1.lateDeadline': 'Поздняя регистрация',
   'onb.s1.region': 'Регион',
+  'onb.s1.provisional': 'Даты и дедлайны предварительные ({source}). Сверьте каждую с collegeboard.org до регистрации.',
+  'onb.s1.regClosed': 'Регистрация закрыта',
   'onb.s1.countdown': 'До экзамена: {weeks} недель ({days} дней)',
   'onb.s2.title': 'Текущий результат',
   'onb.s2.have': 'У меня есть измеренный результат',

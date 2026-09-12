@@ -57,6 +57,8 @@ JTS.dict.en = {
   'onb.s1.deadline': 'Registration deadline',
   'onb.s1.lateDeadline': 'Late registration',
   'onb.s1.region': 'Region',
+  'onb.s1.provisional': 'Dates and deadlines are provisional ({source}). Confirm each one on collegeboard.org before you register.',
+  'onb.s1.regClosed': 'Registration closed',
   'onb.s1.countdown': 'To the exam: {weeks} weeks ({days} days)',
   'onb.s2.title': 'Your current result',
   'onb.s2.have': 'I have a measured result',

@@ -57,6 +57,8 @@ JTS.dict.kk = {
   'onb.s1.deadline': 'Тіркелу мерзімі',
   'onb.s1.lateDeadline': 'Кеш тіркелу',
   'onb.s1.region': 'Аймақ',
+  'onb.s1.provisional': 'Күндер мен мерзімдер алдын ала ({source}). Тіркелмес бұрын әрқайсысын collegeboard.org-тан тексеріңіз.',
+  'onb.s1.regClosed': 'Тіркелу жабық',
   'onb.s1.countdown': 'Емтиханға дейін: {weeks} апта ({days} күн)',
   'onb.s2.title': 'Ағымдағы нәтиже',
   'onb.s2.have': 'Өлшенген нәтижем бар',
