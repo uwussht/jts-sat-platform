@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>JTS SAT</title>
+  <meta name="description" content="JTS Digital SAT preparation platform">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='9' fill='%236D5AE6'/><text x='16' y='21' font-family='sans-serif' font-size='12' font-weight='bold' fill='white' text-anchor='middle'>JTS</text></svg>">
+  <link rel="stylesheet" href="css/core.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header" id="app-header" hidden></header>
+    <main id="app-root" role="main"></main>
+    <nav class="tabbar" id="tabbar" aria-label="Sections" hidden></nav>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toast-root" aria-live="polite" aria-atomic="false"></div>
+  <aside id="desmos-panel" aria-hidden="true" aria-label="Desmos Graphing Calculator"></aside>
+
+  <!-- Core first: it owns the JTS namespace, store, router and UI kit. -->
+  <script src="js/core.js"></script>
+
+  <!-- Content data -->
+  <script src="js/data/skills.js"></script>
+  <script src="js/data/exam-dates.js"></script>
+  <script src="js/data/colleges.js"></script>
+  <script src="js/data/questions.js"></script>
+  <script src="js/data/questions-extra.js"></script>
+  <script src="js/data/vocab.js"></script>
+  <script src="js/data/desmos-guide.js"></script>
+
+  <!-- Translations -->
+  <script src="i18n/en.js"></script>
+  <script src="i18n/ru.js"></script>
+  <script src="i18n/kk.js"></script>
+
+  <!-- Screens: each registers itself on JTS.router -->
+  <script src="js/modules/auth.js"></script>
+  <script src="js/modules/onboarding.js"></script>
+  <script src="js/modules/question.js"></script>
+  <script src="js/modules/diagnostic.js"></script>
+  <script src="js/modules/today.js"></script>
+  <script src="js/modules/plan.js"></script>
+  <script src="js/modules/practice.js"></script>
+  <script src="js/modules/vocab.js"></script>
+  <script src="js/modules/desmos-guide.js"></script>
+  <script src="js/modules/mock.js"></script>
+  <script src="js/modules/progress.js"></script>
+  <script src="js/modules/settings.js"></script>
+
+  <script>JTS.boot();</script>
+</body>
+</html>
