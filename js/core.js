@@ -776,11 +776,13 @@
       this.build();
       var p = U.$('#desmos-panel');
       if (p) { p.classList.add('open'); p.setAttribute('aria-hidden', 'false'); }
+      document.body.classList.add('desmos-open');
       return true;
     },
     hide: function () {
       var p = U.$('#desmos-panel');
       if (p) { p.classList.remove('open'); p.setAttribute('aria-hidden', 'true'); }
+      document.body.classList.remove('desmos-open');
       return false;
     },
     /** Inline embed used by the Desmos Guide sections. */
