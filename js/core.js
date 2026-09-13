@@ -15,7 +15,7 @@
   /* ---------------------------------------------------------------- config */
   JTS.config = {
     storageKey: 'jts_sat_v1',
-    schemaVersion: 1,
+    schemaVersion: 2,
     languages: ['en', 'ru', 'kk'],
     defaultLanguage: 'en',
     desmosUrl: 'https://www.desmos.com/calculator',
@@ -238,7 +238,10 @@
         settings: {
           uiLang: 'en', explainLang: 'en', theme: 'light',
           aiDailyLimit: JTS.config.defaultAiDailyLimit,
-          endpoint: '', apiKey: '', timerHidden: false
+          /* AI provider. 'mock' costs nothing and answers from the reviewed
+             bank; the others call a real endpoint with the key below. */
+          aiProvider: 'mock', endpoint: '', model: '', apiKey: '',
+          timerHidden: false
         }
       };
     }
@@ -264,7 +267,18 @@
         data.overrideHistory = data.overrideHistory || [];
         data.schemaVersion = 1;
       }
-      /* if (data.schemaVersion < 2) { ...; data.schemaVersion = 2; } */
+      if (data.schemaVersion < 2) {
+        /* AI provider selection was added; existing profiles had only a bare
+           endpoint + apiKey pair. An endpoint already on file means the profile
+           was talking to a custom server, so keep it on the raw-payload style. */
+        Object.keys(data.profiles || {}).forEach(function (email) {
+          var st = data.profiles[email] && data.profiles[email].settings;
+          if (!st) return;
+          if (st.aiProvider === undefined) st.aiProvider = st.endpoint ? 'raw' : 'mock';
+          if (st.model === undefined) st.model = '';
+        });
+        data.schemaVersion = 2;
+      }
       return data;
     }
 
@@ -835,11 +849,63 @@
 
   /* -------------------------------------------------------------- AI adapter */
   /**
-   * Single entry point. Mock mode answers from the question bank's own
-   * reviewed content (AI-07: never invent when unsure). A real endpoint can be
-   * configured in Settings → Developer; the payload shape is identical.
+   * One entry point for every kind of AI help. Three provider styles:
+   *
+   *   mock    no network, no cost. Answers come from the reviewed JTS bank.
+   *           This is the default and it is what a pilot should ship with.
+   *   openai  any OpenAI-compatible /chat/completions endpoint. Groq is the
+   *           preset; the same style covers OpenRouter, Together, a local
+   *           llama.cpp server, and so on.
+   *   raw     POSTs the JTS payload (AI-01) unchanged to your own server,
+   *           which decides what model to call. This is the shape to use once
+   *           you put a proxy in front of the key.
+   *
+   * SECURITY: with 'openai' or 'raw' the key is read from localStorage and
+   * sent from the browser, so anyone using the app can read it out of
+   * devtools. That is acceptable for development with a throwaway key and is
+   * NOT acceptable once real students use the app — put a proxy in front of it
+   * and point `endpoint` at the proxy. See README, "AI provider".
    */
   JTS.AI = {
+    providers: {
+      mock: { label: 'Mock (question bank)', style: 'mock', endpoint: '', model: '' },
+      groq: {
+        label: 'Groq', style: 'openai',
+        endpoint: 'https://api.groq.com/openai/v1/chat/completions',
+        model: 'llama-3.3-70b-versatile',
+        keysUrl: 'https://console.groq.com/keys',
+        modelsUrl: 'https://console.groq.com/docs/models'
+      },
+      openai: { label: 'OpenAI-compatible endpoint', style: 'openai', endpoint: '', model: '' },
+      raw: { label: 'Own server (JTS payload)', style: 'raw', endpoint: '', model: '' }
+    },
+
+    /** Effective configuration: provider defaults with the profile's overrides. */
+    config: function () {
+      var st = Store.settings();
+      var name = st.aiProvider || 'mock';
+      var preset = this.providers[name] || this.providers.mock;
+      return {
+        name: name,
+        style: preset.style,
+        label: preset.label,
+        endpoint: (st.endpoint || preset.endpoint || '').trim(),
+        model: (st.model || preset.model || '').trim(),
+        apiKey: (st.apiKey || '').trim(),
+        keysUrl: preset.keysUrl || null,
+        modelsUrl: preset.modelsUrl || null
+      };
+    },
+
+    /** True when a live call is configured and possible. */
+    isLive: function () {
+      var c = this.config();
+      if (c.style === 'mock') return false;
+      if (!c.endpoint) return false;
+      if (c.style === 'openai' && !c.model) return false;
+      return true;
+    },
+
     quotaLeft: function () {
       var s = Store.state(); if (!s) return 0;
       var today = U.iso(new Date());
@@ -853,42 +919,124 @@
         s.aiUsage.count += 1;
       });
     },
+
     /**
-     * payload (AI-01): {question:{stem,passage,options}, selectedAnswer,
-     *   correctAnswer, skillId, skillName, language, hintHistory[], errorType?,
-     *   studentLevelSummary, intent}
+     * Turn the JTS payload into chat messages. The rules that matter
+     * pedagogically live here, not in the UI:
+     *  - a hint never names or implies the answer (AI-02)
+     *  - an explanation covers every wrong option for R&W (AI-03)
+     *  - the model is told to admit uncertainty rather than invent (AI-07)
+     */
+    buildMessages: function (payload) {
+      var langName = { en: 'English', ru: 'Russian', kk: 'Kazakh' }[payload.language] || 'English';
+      var q = payload.questionRecord || {};
+      var rules = {
+        hint: 'Give exactly ONE nudge that moves the student one step forward. ' +
+              'Never state, name or imply which option is correct, and never give the final value. ' +
+              'Two sentences at most.',
+        explanation: 'Explain why the correct answer is correct. ' +
+              (q.section === 'rw'
+                ? 'Then give one short sentence on why each of the other three options fails.'
+                : 'Then show the solution steps compactly. Mention a second method only if it is genuinely different.'),
+        'why-wrong': 'Explain specifically why the option the student chose is wrong. Do not restate the whole solution.',
+        chat: 'Answer the student’s question about this item. Stay on this question.'
+      };
+      var system = [
+        'You are a Digital SAT tutor for JTS, an online school in Kazakhstan.',
+        'Write your reply in ' + langName + '. Keep any quoted question text, answer choices and mathematical notation in English.',
+        'Be concrete and brief. No preamble, no encouragement filler.',
+        'If you are not confident the answer is right, say so plainly in one sentence instead of guessing.',
+        rules[payload.intent] || rules.chat
+      ].join(' ');
+
+      var parts = [];
+      if (q.passage) parts.push('PASSAGE:\n' + String(q.passage).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim());
+      parts.push('QUESTION:\n' + String(q.stem || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim());
+      if (q.options) {
+        parts.push('OPTIONS:\n' + q.options.map(function (o, i) {
+          return 'ABCD'[i] + ') ' + String(o).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+        }).join('\n'));
+      }
+      parts.push('SKILL: ' + (payload.skillName || payload.skillId || ''));
+      if (payload.intent !== 'hint') {
+        parts.push('CORRECT ANSWER: ' + (Array.isArray(payload.correctAnswer) ? payload.correctAnswer.join(' or ') : payload.correctAnswer));
+      } else {
+        parts.push('(The correct answer is withheld from you on purpose. Do not guess it aloud.)');
+      }
+      if (payload.selectedAnswer) parts.push('STUDENT ANSWERED: ' + payload.selectedAnswer);
+      if (payload.errorType) parts.push('STUDENT SELF-DIAGNOSED ERROR: ' + payload.errorType);
+      if (payload.studentLevelSummary) parts.push('STUDENT LEVEL: ' + payload.studentLevelSummary);
+      if ((payload.hintHistory || []).length) parts.push('HINTS ALREADY GIVEN:\n- ' + payload.hintHistory.join('\n- '));
+      if (payload.userMessage) parts.push('STUDENT ASKS: ' + payload.userMessage);
+
+      return { system: system, user: parts.join('\n\n') };
+    },
+
+    /**
+     * payload (AI-01): {questionRecord, question, selectedAnswer, correctAnswer,
+     *   skillId, skillName, language, hintHistory[], errorType?,
+     *   studentLevelSummary, intent, userMessage?}
      */
     ask: function (payload) {
-      var s = Store.state();
+      var self = this;
       if (this.quotaLeft() <= 0) {
         return Promise.resolve({ ok: false, reason: 'quota', text: t('ai.quotaOver') });
       }
+      var cfg = this.config();
+      if (cfg.style === 'mock' || !this.isLive()) return this._mock(payload, false);
+
       this._consume();
-      var endpoint = s && s.settings.endpoint;
-      if (endpoint) {
-        var headers = { 'Content-Type': 'application/json' };
-        if (s.settings.apiKey) headers['Authorization'] = 'Bearer ' + s.settings.apiKey;
-        return fetch(endpoint, { method: 'POST', headers: headers, body: JSON.stringify(payload) })
-          .then(function (r) { return r.json(); })
-          .then(function (j) { return { ok: true, text: j.text || j.answer || '', source: 'endpoint', raw: j }; })
-          .catch(function (e) {
-            console.warn('[AI] endpoint failed, falling back to bank content', e);
-            return JTS.AI._mock(payload, true);
-          });
-      }
-      return this._mock(payload, false);
+      return this._live(cfg, payload)
+        .catch(function (e) {
+          console.warn('[AI] live call failed, falling back to the bank', e);
+          return self._mock(payload, true, String(e && e.message || e));
+        });
     },
-    _mock: function (payload, fellBack) {
+
+    _live: function (cfg, payload) {
+      var headers = { 'Content-Type': 'application/json' };
+      if (cfg.apiKey) headers['Authorization'] = 'Bearer ' + cfg.apiKey;
+      var body;
+      if (cfg.style === 'openai') {
+        var m = this.buildMessages(payload);
+        body = {
+          model: cfg.model,
+          messages: [{ role: 'system', content: m.system }, { role: 'user', content: m.user }],
+          temperature: 0.3,
+          max_tokens: 700
+        };
+      } else {
+        body = payload;                      /* raw: your server gets AI-01 as-is */
+      }
+      return fetch(cfg.endpoint, { method: 'POST', headers: headers, body: JSON.stringify(body) })
+        .then(function (r) {
+          return r.text().then(function (txt) {
+            if (!r.ok) throw new Error('HTTP ' + r.status + ' ' + txt.slice(0, 300));
+            var j;
+            try { j = JSON.parse(txt); } catch (e) { throw new Error('Response was not JSON: ' + txt.slice(0, 200)); }
+            var text = (j.choices && j.choices[0] && j.choices[0].message && j.choices[0].message.content)
+              || j.text || j.answer || '';
+            if (!text) throw new Error('Response contained no text');
+            return {
+              ok: true, text: String(text).trim(), source: cfg.name,
+              intent: payload.intent, raw: j,
+              usage: j.usage || null
+            };
+          });
+        });
+    },
+
+    /** No network. Serves the reviewed content already attached to the item. */
+    _mock: function (payload, fellBack, errorText) {
       return new Promise(function (resolve) {
         setTimeout(function () {
           var q = payload.questionRecord;
           var lang = payload.language || Store.settings().explainLang;
           var out = { ok: true, source: fellBack ? 'bank-fallback' : 'bank', intent: payload.intent };
-          if (!q) {
-            out.text = t('ai.unsure'); out.unsure = true; resolve(out); return;
-          }
+          if (fellBack) out.warning = errorText || '';
+          if (!q) { out.text = t('ai.unsure'); out.unsure = true; resolve(out); return; }
+
           if (payload.intent === 'hint') {
-            /* AI-02: first help never contains the final answer. */
             var n = (payload.hintHistory || []).length;
             var hints = q.hints && q.hints.length ? q.hints : null;
             if (hints) out.text = JTS.i18n.pick(hints[Math.min(n, hints.length - 1)], lang);
@@ -911,6 +1059,34 @@
         }, 400);
       });
     },
+
+    /** One tiny live call, so a misconfiguration is found in Settings and not
+        in front of a student. Does not count against the daily quota. */
+    test: function () {
+      var cfg = this.config();
+      if (cfg.style === 'mock') {
+        return Promise.resolve({ ok: true, text: 'Mock mode: no network call is made.' });
+      }
+      if (!cfg.endpoint) return Promise.resolve({ ok: false, text: 'Endpoint is empty.' });
+      if (cfg.style === 'openai' && !cfg.model) return Promise.resolve({ ok: false, text: 'Model is empty.' });
+      return this._live(cfg, {
+        intent: 'chat',
+        language: Store.settings().explainLang,
+        questionRecord: { stem: 'Reply with the single word OK.', section: 'math' },
+        userMessage: 'Reply with the single word OK.'
+      }).then(function (r) {
+        return { ok: true, text: r.text.slice(0, 200), usage: r.usage };
+      }).catch(function (e) {
+        var msg = String(e && e.message || e);
+        /* A browser CORS rejection surfaces as an opaque "Failed to fetch". */
+        if (/failed to fetch|networkerror|load failed/i.test(msg)) {
+          msg += '  — this is usually CORS or no network. Opening index.html from file:// sends Origin: null, ' +
+                 'which many APIs reject. Serve the folder over http://localhost, or point the endpoint at your own proxy.';
+        }
+        return { ok: false, text: msg };
+      });
+    },
+
     feedback: function (record) {
       Store.update(function (s) {
         s.aiFeedback.push(Object.assign({ id: U.uid('fb'), ts: Date.now() }, record));
