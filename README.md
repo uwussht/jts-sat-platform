@@ -135,6 +135,61 @@ clicking too much, not against a stolen key.
 
 ---
 
+## Mock tests
+
+Two separate things share the `#/mocks` screen.
+
+**Imported results** are scores the student got somewhere else — a real SAT, a
+Bluebook practice test, anything. You type the two section scores; the total is
+derived, never typed, so a total that disagrees with its parts cannot be
+entered. A section score must be a multiple of 10 between 200 and 800. The
+history table shows the change against the previous result, and the trajectory
+chart draws imported results against the goal line from onboarding.
+
+**The internal simulation** is four modules with the Digital SAT's shape:
+
+| | questions | minutes |
+|---|---|---|
+| R&W module 1 | 27 | 32 |
+| R&W module 2 | 27 | 32 |
+| break | — | 10 |
+| Math module 1 | 22 | 35 |
+| Math module 2 | 22 | 35 |
+
+Module 2 of each section is chosen after module 1 is graded: 60% or better
+routes to a harder set, anything less to an easier one, the way the real
+adaptive form works. The routing is shown to the student rather than hidden.
+
+Modules run in exam mode — hints, explanations and the AI tutor are **absent
+from the DOM**, not merely hidden — and a finished module cannot be reopened. A
+timed run uses the wall clock, so closing the laptop for ten minutes costs ten
+minutes; an untimed run keeps a clock on screen that never closes a module, and
+its result carries an `untimed` tag. The simulation needs a screen of at least
+1024px; a phone gets a note and can still import results and read history.
+
+### What the score estimate is, and is not
+
+The result screen shows a raw count per section and a **range**, labelled as a
+JTS internal estimate. There is no predicted SAT score anywhere in the product
+(acceptance criterion 12), and the range must never be narrowed into a single
+number.
+
+The model, in full, is `JTS.mock.estimate`:
+
+- The module-2 route sets the band. Reaching the harder second module is what
+  puts the upper half of the scale in play at all; staying on the easier one
+  caps what the form can return. JTS uses **400–800** and **200–600** for those
+  two bands. These are our working figures. College Board does not publish the
+  per-form conversion tables, so nobody outside it can do better than a model.
+- Inside the band, the raw share is linear. Real equating is not.
+- The reported range is the midpoint ±40, rounded to 10. That width stands for
+  everything the model does not know: equating, item difficulty beyond our own
+  three labels, and the fact that our bank is not a real form.
+
+Treat the number as a direction of travel between runs, not as a score. If you
+want a figure a student can rely on, the honest answer is still an official
+College Board practice test.
+
 ## Deliberate limitations
 
 - **The full mock test needs a screen of at least 1024px.** On a phone it shows
@@ -153,7 +208,12 @@ clicking too much, not against a stolen key.
   copied from College Board, Bluebook, Khan Academy or any other publisher.
 - **No predicted SAT score anywhere.** The diagnostic returns a mastery map; the
   internal mock returns a raw count and a range explicitly labelled as a JTS
-  estimate.
+  estimate. The bands behind that range are JTS's own model, not College
+  Board's — see **Mock tests** above.
+- **The simulation is not a real form.** It draws on the same 300-item bank the
+  rest of the platform uses, so a student who has practised a lot will meet
+  questions they have seen. Each run avoids repeating a question within itself,
+  but not across runs.
 
 ---
 

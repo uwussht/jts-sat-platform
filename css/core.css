@@ -310,6 +310,9 @@ sup, sub { line-height: 0; font-size: .75em; }
 }
 .check-card:hover { border-color: var(--brand-500); }
 .check-card:has(input:checked) { border-color: var(--brand-600); background: var(--brand-050); }
+/* A check-card driven by a button rather than a checkbox says so with
+   aria-pressed; selection should not need an inline style at every call site. */
+.check-card[aria-pressed="true"] { border-color: var(--brand-600); background: var(--brand-050); }
 
 /* ----- 10. Progress ------------------------------------------------------- */
 .bar { height: 8px; border-radius: 999px; background: var(--border); overflow: hidden; }
@@ -604,6 +607,14 @@ svg.chart { display: block; max-width: 100%; height: auto; }
 .countdown .cd-lab { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; opacity: .75; }
 
 .desktop-only-note { display: none; }
+
+/* The break clock is one big number, not the onboarding countdown's row of
+   day/hour/minute tiles — different widget, different class. */
+.break-clock {
+  font-size: 54px; font-weight: 750; line-height: 1; letter-spacing: -.02em;
+  font-variant-numeric: tabular-nums; color: var(--ink);
+}
+@media (max-width: 760px) { .break-clock { font-size: 40px; } }
 
 /* ----- 22. Responsive ----------------------------------------------------- */
 @media (max-width: 1023px) {

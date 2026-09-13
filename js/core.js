@@ -15,7 +15,7 @@
   /* ---------------------------------------------------------------- config */
   JTS.config = {
     storageKey: 'jts_sat_v1',
-    schemaVersion: 2,
+    schemaVersion: 3,
     languages: ['en', 'ru', 'kk'],
     defaultLanguage: 'en',
     desmosUrl: 'https://www.desmos.com/calculator',
@@ -228,7 +228,8 @@
         activeSession: null,  /* in-flight session, restored on reload */
         errors: [],
         reviews: [],
-        scoreReports: [],
+        scoreReports: [],   /* imported results: official SAT, Bluebook, other */
+        mocks: [],          /* internal simulations, one record per run */
         vocab: { cards: {}, dailyGoal: 10, custom: [], log: {} },
         desmosGuideProgress: {},
         aiFeedback: [],
@@ -278,6 +279,15 @@
           if (st.model === undefined) st.model = '';
         });
         data.schemaVersion = 2;
+      }
+      if (data.schemaVersion < 3) {
+        /* Internal mock runs got their own list. Imported score reports were
+           already stored separately and are left exactly as they are. */
+        Object.keys(data.profiles || {}).forEach(function (email) {
+          var p = data.profiles[email];
+          if (p && !Array.isArray(p.mocks)) p.mocks = [];
+        });
+        data.schemaVersion = 3;
       }
       return data;
     }

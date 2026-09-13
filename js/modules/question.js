@@ -166,6 +166,10 @@
         elapsedMs: 0,
         durationMs: opts.durationMs || 0,
         softTimer: !!opts.softTimer,
+        /* Exam-mode mock modules run on the wall clock: closing the tab for ten
+           minutes costs ten minutes, exactly as walking out of the room would.
+           Every other session accumulates only the time the screen was open. */
+        wallClock: !!opts.wallClock,
         paused: false,
         finishedAt: null,
         returnHash: opts.returnHash || '#/today',
@@ -265,6 +269,11 @@
       var isStudy = ses.mode === 'study';
       var hardTimer = ses.durationMs > 0 && !ses.softTimer;
       var shownAt = Date.now();
+      /* On a wall-clock session the stored elapsedMs is only a crash record;
+         the truth is how long ago the module opened. */
+      var startElapsed = ses.wallClock
+        ? Math.max(ses.elapsedMs || 0, Date.now() - ses.startedAt)
+        : (ses.elapsedMs || 0);
       var timer, announceInt;
 
       function save() { S.saveSoon(); }
@@ -323,7 +332,7 @@
 
       timer = new JTS.Timer({
         durationMs: ses.durationMs || 0,
-        elapsedMs: ses.elapsedMs || 0,
+        elapsedMs: startElapsed,
         onTick: function (elapsed) {
           ses.elapsedMs = elapsed;
           paintTimer(elapsed);
@@ -337,7 +346,7 @@
         }
       });
       if (!ses.paused) timer.start();
-      paintTimer(ses.elapsedMs || 0);
+      paintTimer(startElapsed);
       /* Persist the clock periodically so a crash costs seconds, not minutes. */
       announceInt = setInterval(function () { saveNow(); }, 5000);
 
