@@ -656,7 +656,16 @@
         raw = raw.slice(0, qIdx);
       }
       var segs = raw.split('/').filter(Boolean);
-      return { path: '#/' + (segs[0] || 'today'), segments: segs.slice(1), query: query, raw: raw };
+      /* `path` keeps every segment so sub-routes such as #/practice/weak can be
+         registered; `base` is the first segment, which is what the guards and
+         the navigation highlight care about. */
+      return {
+        path: '#/' + (segs.join('/') || 'today'),
+        base: '#/' + (segs[0] || 'today'),
+        segments: segs.slice(1),
+        query: query,
+        raw: raw
+      };
     },
     go: function (hash) {
       if (global.location.hash === hash) this.render();
@@ -668,14 +677,24 @@
 
       /* Guards: no session -> auth; incomplete onboarding -> onboarding. */
       var openRoutes = ['#/auth'];
-      if (!state && openRoutes.indexOf(route.path) < 0) { this.go('#/auth'); return; }
+      if (!state && openRoutes.indexOf(route.base) < 0) { this.go('#/auth'); return; }
       if (state && !state.profile.onboardingComplete &&
-          ['#/onboarding', '#/diagnostic', '#/settings'].indexOf(route.path) < 0) {
+          ['#/onboarding', '#/diagnostic', '#/settings'].indexOf(route.base) < 0) {
         this.go('#/onboarding'); return;
       }
-      if (state && state.profile.onboardingComplete && route.path === '#/auth') { this.go('#/today'); return; }
+      if (state && state.profile.onboardingComplete && route.base === '#/auth') { this.go('#/today'); return; }
 
-      var def = this.routes[route.path] || this.routes['#/today'];
+      /* Longest registered prefix wins, so #/practice/weak resolves to its own
+         screen while #/practice/anything-else still falls back to Practice. */
+      var def = null, probe = route.path;
+      while (!def && probe.indexOf('/') > 0) {
+        def = this.routes[probe];
+        if (!def) {
+          if (probe.indexOf('/', 2) < 0) break;
+          probe = probe.replace(/\/[^/]+$/, '');
+        }
+      }
+      def = def || this.routes['#/today'];
       if (this._teardown) { try { this._teardown(); } catch (e) { console.error(e); } this._teardown = null; }
       var root = U.$('#app-root');
       U.clear(root);
@@ -689,7 +708,7 @@
         console.error('[JTS] render failed', e);
         root.appendChild(JTS.ui.empty('Something went wrong', String(e && e.message || e)));
       }
-      JTS.shell.syncNav(route.path);
+      JTS.shell.syncNav(route.base);
       global.scrollTo(0, 0);
     },
     start: function () {
