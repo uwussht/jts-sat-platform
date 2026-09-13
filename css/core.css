@@ -323,7 +323,9 @@ sup, sub { line-height: 0; font-size: .75em; }
 .steps > li.done { background: var(--brand-600); }
 .steps > li.current { background: var(--brand-500); }
 
-.phase-track { display: flex; gap: 4px; }
+/* Six readable stage labels cannot fit 390px, so the track scrolls inside its
+   own container rather than pushing the whole page sideways. */
+.phase-track { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: thin; }
 .phase-track > div {
   flex: 1; padding: 9px 6px; text-align: center; font-size: 11px; font-weight: 650;
   background: var(--bg); color: var(--muted); border: 1px solid var(--border);
@@ -530,13 +532,17 @@ html[data-theme="dark"] mark.hl { background: #8C7415; color: #FFF7DA; }
 .ref-table td:first-child { color: var(--muted); width: 45%; }
 
 /* ----- 18. Desmos panel --------------------------------------------------- */
+/* The closed panel is display:none rather than parked off-screen: a
+   transformed fixed element still extends the document's scrollable width,
+   which put a horizontal scrollbar on every page at phone width. Toggling
+   display does not reload the iframe — only removing or reparenting it does. */
 #desmos-panel {
   position: fixed; top: var(--header-h); right: 0; bottom: 0; width: min(560px, 92vw);
   z-index: 60; background: var(--surface); border-left: 1px solid var(--border);
-  box-shadow: var(--shadow-3); display: flex; flex-direction: column;
-  transform: translateX(100%); transition: transform .22s ease; visibility: hidden;
+  box-shadow: var(--shadow-3); display: none; flex-direction: column;
 }
-#desmos-panel.open { transform: translateX(0); visibility: visible; }
+#desmos-panel.open { display: flex; animation: dp-in .22s ease; }
+@keyframes dp-in { from { transform: translateX(100%); } to { transform: translateX(0); } }
 /* The panel is fixed, so without this the question footer sits underneath it
    and Next becomes unclickable while the calculator is open. */
 @media (min-width: 1024px) {
@@ -611,6 +617,7 @@ svg.chart { display: block; max-width: 100%; height: auto; }
 
 @media (max-width: 760px) {
   body { font-size: 15px; padding-bottom: var(--tabbar-h); }
+  .phase-track > div { flex: 0 0 auto; padding-inline: 12px; }
   .main-nav { display: none; }
   .brand-text span { display: none; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: minmax(0,1fr); }

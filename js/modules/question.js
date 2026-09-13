@@ -226,6 +226,8 @@
         st.sessions.push(summary);
         st.activeSession = null;
       });
+      /* A lesson counts as done when its session ends, however it ended. */
+      if (ses.meta && ses.meta.lessonId) JTS.planner.setStatus(ses.meta.lessonId, 'done');
       JTS.router.go(ses.finishHash + (ses.finishHash.indexOf('?') >= 0 ? '&' : '?') + 'session=' + ses.id);
       return summary;
     },

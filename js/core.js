@@ -1506,6 +1506,7 @@
       s.attempts.push(attempt);
       if (s.seenQuestionIds.indexOf(attempt.questionId) < 0) s.seenQuestionIds.push(attempt.questionId);
       Store.save();
+      JTS.attempts.resolveIfDemonstrated(attempt);
       JTS.analytics.touchStreak();
       JTS.badges.evaluate();
       return attempt;
@@ -1529,12 +1530,24 @@
         s.errors.forEach(function (e) { if (e.attemptId === attemptId) e.errorType = errorType; });
       });
     },
-    resolveErrorsFor: function (skillId) {
+    /**
+     * An error leaves the review queue only when the student gets that same
+     * question right, on their own, at least the review delay later. Getting it
+     * right ten minutes after reading the explanation proves nothing.
+     */
+    resolveIfDemonstrated: function (attempt) {
+      if (!attempt.correct || attempt.helpType !== 'none') return 0;
+      var resolved = 0;
       Store.update(function (s) {
         s.errors.forEach(function (e) {
-          if (e.skillId === skillId && !e.resolvedAt) e.resolvedAt = Date.now();
+          if (e.resolvedAt) return;
+          if (e.questionId !== attempt.questionId) return;
+          if (attempt.ts < e.reviewDueAt) return;
+          e.resolvedAt = attempt.ts;
+          resolved++;
         });
       });
+      return resolved;
     }
   };
 
@@ -1593,6 +1606,7 @@
       var pendingErrors = JTS.analytics.pendingReviews().length > 0 || s.errors.length > 0;
       var weeks = [];
       var startMonday = U.weekStart(U.today());
+      var todayISO = U.iso(U.today());
 
       for (var w = 0; w < horizon; w++) {
         var phaseId = this.phaseForWeek(w, horizon);
@@ -1600,6 +1614,9 @@
         var lessons = [];
         avail.days.slice().sort(function (a, b) { return a - b; }).forEach(function (dow) {
           var date = U.addDays(monday, dow - 1);
+          /* Never schedule into the past. The first week starts today, not on
+             the Monday the student happened to miss. */
+          if (U.iso(date) < todayISO) return;
           var picks = [];
           var per = avail.minutesPerSession >= 90 ? 2 : 1;
           for (var k = 0; k < per; k++) {
@@ -1633,6 +1650,78 @@
       Store.save();
       return plan;
     },
+    /** Target length: roughly three minutes per question with explanations. */
+    targetQuestionCount: function (lesson) {
+      return U.clamp(Math.round((lesson.expectedMinutes || 60) / 3), 5, 30);
+    },
+
+    /**
+     * The questions this lesson would actually serve. 'review-errors' pulls
+     * what is genuinely due; the rest come from the lesson's own skills,
+     * preferring items the student has not seen.
+     *
+     * The card shows this length rather than the target, because the bank may
+     * hold fewer questions for a skill than the target asks for and promising
+     * thirty then serving twenty is a small lie the student will notice.
+     */
+    lessonQuestionIds: function (lesson) {
+      if (!lesson) return [];
+      var want = this.targetQuestionCount(lesson);
+      var ids = [];
+
+      if (lesson.actions.indexOf('review-errors') >= 0) {
+        JTS.analytics.pendingReviews().forEach(function (e) {
+          if (ids.indexOf(e.questionId) < 0 && JTS.bank.get(e.questionId)) ids.push(e.questionId);
+        });
+        ids = ids.slice(0, Math.ceil(want / 2));
+      }
+
+      var perSkill = Math.max(1, Math.ceil((want - ids.length) / Math.max(1, lesson.skillIds.length)));
+      lesson.skillIds.forEach(function (skillId) {
+        JTS.bank.pickForSkill(skillId, perSkill, { exclude: ids, seed: lesson.id.length }).forEach(function (q) {
+          if (ids.length < want && ids.indexOf(q.id) < 0) ids.push(q.id);
+        });
+      });
+      return ids;
+    },
+
+    /** Turn a lesson into a real session. */
+    startLesson: function (lessonId) {
+      var lesson = this.lesson(lessonId);
+      if (!lesson) return null;
+      var ids = this.lessonQuestionIds(lesson);
+      if (!ids.length) return null;
+      var timed = lesson.actions.indexOf('mini-test') >= 0;
+      return JTS.session.start({
+        kind: timed ? 'mini-test' : 'lesson',
+        mode: 'study',
+        title: lesson.skillIds.map(function (id) { return JTS.skills.name(id); }).join(' · '),
+        questionIds: ids,
+        durationMs: timed ? ids.length * 90000 : 0,
+        softTimer: !timed,
+        returnHash: '#/today',
+        finishHash: '#/today',
+        meta: { lessonId: lesson.id, phaseId: lesson.phaseId }
+      });
+    },
+
+    /** The next thing that measures progress rather than building it. */
+    nextCheckpoint: function () {
+      var today = U.iso(U.today());
+      var lessons = this.allLessons().filter(function (l) {
+        return l.date >= today && l.status === 'planned' && l.actions.indexOf('mini-test') >= 0;
+      });
+      lessons.sort(function (a, b) { return a.date < b.date ? -1 : 1; });
+      if (lessons[0]) return { type: 'mini-test', date: lessons[0].date, lesson: lessons[0] };
+
+      var s = Store.state();
+      if (!s || !s.plan) return null;
+      var current = s.profile.currentPhase || 1;
+      var week = s.plan.weeks.filter(function (w) { return w.phaseId > current; })[0];
+      if (week) return { type: 'phase', date: week.monday, phaseId: week.phaseId };
+      return null;
+    },
+
     allLessons: function () {
       var s = Store.state();
       if (!s || !s.plan) return [];
