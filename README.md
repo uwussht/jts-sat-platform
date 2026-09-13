@@ -31,11 +31,18 @@ js/core.js              store, router, i18n, UI kit, timer, Desmos, AI adapter,
 js/data/                content: skills, exam dates, colleges, 300 questions,
                         vocabulary, Desmos guide
 js/modules/             one file per screen
-i18n/en.js ru.js kk.js  interface strings, key sets verified at parity
+i18n/en.js ru.js kk.js  interface strings, 539 keys each, verified at parity
 ```
 
-All progress lives in `localStorage` under the key `jts_sat_v1`, with a
-`schemaVersion` and a forward-only migration in `js/core.js`.
+The screens, in the order a student meets them: `#/auth` → `#/onboarding` →
+`#/diagnostic` → `#/today` → `#/plan` → `#/practice` (and `#/practice/weak`) →
+`#/question` → `#/mocks` (`/run`, `/result`, `/review`) → `#/progress` →
+`#/vocab` → `#/desmos-guide` → `#/settings`.
+
+All progress lives in `localStorage` under the key `jts_sat_v1`, currently at
+`schemaVersion: 3`, with a forward-only migration in `js/core.js`. Each bump
+adds a case and never rewrites old data in place, so an older profile opens
+without losing anything.
 
 ---
 
@@ -190,6 +197,83 @@ Treat the number as a direction of travel between runs, not as a score. If you
 want a figure a student can rely on, the honest answer is still an official
 College Board practice test.
 
+## Progress
+
+Everything on `#/progress` is a measurement of work already done. There is no
+score predictor and nothing that says "you will get X".
+
+- **Skill map** — all 30 skills as a heatmap, grouped by domain, coloured by
+  mastery. A skill without six independent attempts shows what is missing
+  ("4 more independent attempts needed") rather than a percentage nobody
+  should trust. Clicking a cell builds a ten-question session on that skill.
+- **Accuracy by domain** — independent attempts only. Work done with a hint or
+  after reading the explanation is counted, and shown, separately.
+- **Mock trend** — imported results and internal simulations as two series
+  against the goal line.
+- **Study time** — minutes this week and this month, plus median seconds per
+  question against the pace benchmark (71s R&W, 95s Math), shown only once
+  there are at least six independent timed attempts in that section.
+- **90-day calendar**, streak with its best, and the three badges: a 7-day
+  streak, a first mastered skill, and 100 independent questions. All three are
+  always on screen; an unearned one is greyed rather than hidden.
+
+## Vocabulary
+
+514 cards from the JTS word list plus anything the student adds, scheduled with
+SM-2. A card graded **Again** comes back in ten minutes and its ease factor
+takes a permanent dent (floor 1.3); **Good** goes 1 day → 6 days → previous
+interval × ease. Past 21 days a card counts as mastered.
+
+Reviews come before new cards in the daily queue, because a word being
+forgotten costs more than a word never seen. The daily goal is 5, 10 or 20 and
+lives on the vocabulary screen itself as well as in Settings.
+
+**My words** lists the whole deck with search and filters, and the ✚ button
+adds a word of the student's own — word and definition required, example and
+Russian gloss optional. Only the student's own words can be deleted.
+
+The word list currently ships as `licenseStatus: 'licensed'` and with every
+entry in the `academic` category except two transitions, because the source
+sheet has no category column. Both are open questions for JTS — see **Content
+and licensing** below.
+
+## Desmos guide
+
+Seven sections — basics, graphing, solving, tables and regression, SAT
+techniques, shortcuts, and the practice tasks — each with its own calculator,
+its own expressions to type, a "mark as learned" checkbox, and a slot for a JTS
+screencast (put the URL in `video:` in `js/data/desmos-guide.js`).
+
+The calculator is mounted when a section is first opened, not seven at once,
+and is never removed or reparented afterwards, so it keeps whatever the student
+typed into it.
+
+Six timed practice tasks carry two figures each: how long the task takes by
+hand and how long it takes in Desmos. **Two of the six are faster by hand**, and
+the screen says so. A student who learns to reach for the calculator on every
+question has learned the wrong lesson, and 25 seconds spent graphing
+`3x + 12 = 5x − 8` is 25 seconds off the end of the module.
+
+## Acceptance criteria (§14)
+
+| # | Criterion | Where it lives |
+|---|---|---|
+| 1 | A student with no result takes the diagnostic and gets a plan **with no invented SAT score** | `js/modules/diagnostic.js` returns a mastery map; `profile.level` stays `undetermined` until a result is measured |
+| 2 | Every lesson has a goal, a set of actions, an expected time and a completion state | `JTS.planner.generate`, rendered on `#/today` and `#/plan` |
+| 3 | A reload restores answers, marks, time and session progress | `state.activeSession`, written on every change; timed mock modules additionally run on the wall clock |
+| 4 | The bank supports `mcq` and `spr` with equivalent answer forms | `JTS.spr.check` — fraction/decimal equivalence at 1e-6, Digital SAT entry rules |
+| 5 | Errors are classified, return for review, and helped work is counted separately | `JTS.attempts.logError`, `resolveIfDemonstrated`, `JTS.mastery.isIndependent` |
+| 6 | Exam mode has no AI, hint or explanation until the end; 27/32 + 27/32 + break 10 + 22/35 + 22/35 with the second module routed | `js/modules/question.js` omits the help controls from the DOM; `JTS.mock` |
+| 7 | Desmos on the whole Math section, absent in R&W | `question.js` gates the tool on `section === 'math'`, not per question |
+| 8 | Every question carries source, licenseStatus, answer, explanation (en/ru/kk), reviewStatus | `JTS.bank.validateAll` fails the bank otherwise; run it from `admin.html` |
+| 9 | Laptop and phone for practice; the mock restriction is documented | Responsive 360–1320px; the simulation needs ≥1024px and says so on a phone |
+| 10 | A question can be edited through `admin.html`, with history, without a developer | localStorage overlay + `overrideHistory` + JSON export |
+| 11 | Stems and options always in English; explanations in EN / RU / KZ | Question schema keeps `stem`/`options` as plain strings; `explanation` is `{en,ru,kk}` |
+| 12 | No screen shows a predicted SAT score | The mock shows a raw count and a labelled range; nothing else shows a score at all |
+
+Criteria 3, 5, 6, 7, 9, 10 and 12 have direct tests in the e2e suites; the rest
+are structural and are checked by `JTS.bank.validateAll` or by inspection.
+
 ## Deliberate limitations
 
 - **The full mock test needs a screen of at least 1024px.** On a phone it shows
@@ -206,6 +290,16 @@ College Board practice test.
 - **Question content is draft.** All 300 items are JTS original with
   `reviewStatus: "draft"`, awaiting a methodologist's sign-off. Nothing is
   copied from College Board, Bluebook, Khan Academy or any other publisher.
+- **The vocabulary list's provenance is unconfirmed.** The 514 cards ship as
+  `licenseStatus: 'licensed'`, which is the conservative reading of a list JTS
+  supplied without a source. If the definitions and examples were written at
+  JTS, change it to `original` in `js/data/vocab.js`; if they came from someone
+  else's published list, that is a rights question to settle before launch.
+- **Vocabulary categories are not real yet.** The source sheet has no category
+  column, so 512 of 514 cards are tagged `academic` and two `transition`. The
+  screen already renders all four categories plus the student's own words —
+  add a column to the sheet and regenerate to split out `literary` and
+  `connotation`.
 - **No predicted SAT score anywhere.** The diagnostic returns a mastery map; the
   internal mock returns a raw count and a range explicitly labelled as a JTS
   estimate. The bands behind that range are JTS's own model, not College

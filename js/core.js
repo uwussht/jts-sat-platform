@@ -160,6 +160,19 @@
       try { return x.toLocaleDateString(loc, { day: 'numeric', month: 'short', year: 'numeric' }); }
       catch (e) { return U.iso(x); }
     },
+    /**
+     * Short weekday name for dow 1..7 (1 = Monday). Built from a known Monday
+     * so the locale does the naming rather than a hand-maintained table in
+     * three languages.
+     */
+    dayLabel: function (dow, lang) {
+      var monday = U.weekStart(U.today());
+      var d = U.addDays(monday, dow - 1);
+      var loc = { en: 'en-US', ru: 'ru-RU', kk: 'kk-KZ' }[lang || JTS.i18n.lang] || 'en-US';
+      try { return d.toLocaleDateString(loc, { weekday: 'short' }); }
+      catch (e) { return ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'][dow - 1]; }
+    },
+
     fmtClock: function (ms) {
       var total = Math.max(0, Math.round(ms / 1000));
       var m = Math.floor(total / 60), s = total % 60;

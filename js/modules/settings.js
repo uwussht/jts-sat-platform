@@ -1,9 +1,13 @@
 /* ==========================================================================
    Screen: Settings (#/settings)
 
-   Covers the profile, language and theme, the AI provider (including where the
-   development key goes), and data export/import/reset. Exam date, goals and
-   availability are edited here too once the plan screens land in step 8.
+   Covers the profile, exam date, goals, available time, language and theme,
+   the AI provider (including where the development key goes), the vocabulary
+   goal, and data export/import/reset.
+
+   Changing anything the plan is built from offers to rebuild the plan rather
+   than rebuilding it silently: a student halfway through a week should decide
+   whether to lose it.
    ========================================================================== */
 (function () {
   'use strict';
@@ -156,6 +160,30 @@
       root.appendChild(screen);
       function rerender() { JTS.router.render(); }
 
+      /* Availability changes arrive one click at a time — a confirmation per
+         click would be unusable — so they are collected and the offer to
+         rebuild is made once, when the student stops. */
+      var dirty = false, dirtyTimer = null;
+      function doRebuild() {
+        dirty = false;
+        if (!S.state().plan) { JTS.planner.generate(); }
+        else { JTS.planner.rebuild(); }
+        ui.toast(t('settings.replanned'), 'ok');
+      }
+      function offerRebuild() {
+        if (!S.state().plan) { rerender(); return; }
+        ui.confirm({ title: t('settings.rebuildPlan'), message: t('settings.replanConfirm'),
+          okText: t('settings.rebuildPlan') }).then(function (yes) {
+          if (yes) doRebuild();
+          rerender();
+        });
+      }
+      function markDirty() {
+        dirty = true;
+        clearTimeout(dirtyTimer);
+        dirtyTimer = setTimeout(function () { if (dirty) offerRebuild(); }, 1200);
+      }
+
       screen.appendChild(U.el('h1.h1', { text: t('settings.title') }));
 
       /* --- profile --- */
@@ -180,6 +208,185 @@
           })
         ])
       ]));
+
+      /* --- exam date --- */
+      var examWrap = U.el('div.stack');
+      (function () {
+        var ed = state.examDate || {};
+        var current = ed.mode === 'date' && ed.testDate ? ed.testDate : null;
+        var days = JTS.analytics.daysToExam();
+
+        var select = U.el('select.select', { id: 'set-exam-date' });
+        select.appendChild(U.el('option', { value: '', text: t('settings.undecided') }));
+        (JTS.data.examDates || []).forEach(function (d) {
+          var o = U.el('option', {
+            value: d.id,
+            text: d.testDate + ' · ' + t('onb.s1.deadline') + ' ' + d.registrationDeadline
+          });
+          if (ed.examDateId === d.id) o.selected = true;
+          select.appendChild(o);
+        });
+        select.addEventListener('change', function () {
+          var d = (JTS.data.examDates || []).filter(function (x) { return x.id === select.value; })[0];
+          S.update(function (st) {
+            st.examDate = d
+              ? { mode: 'date', examDateId: d.id, testDate: d.testDate,
+                  registrationDeadline: d.registrationDeadline }
+              : { mode: 'undecided', examDateId: null, testDate: null, registrationDeadline: null };
+          });
+          offerRebuild();
+        });
+
+        examWrap.appendChild(ui.field(t('settings.exam'), select, t('settings.examChange')));
+        examWrap.appendChild(U.el('div.small.muted', {
+          text: current
+            ? t('onb.s1.countdown', { weeks: Math.max(0, Math.ceil(days / 7)), days: Math.max(0, days) })
+            : t('settings.noExamDate')
+        }));
+        /* The dates file ships unverified, and a wrong deadline costs a
+           registration — so the warning travels with the control. */
+        examWrap.appendChild(U.el('div.notice.notice-warn.xsmall', null, [
+          U.el('span', {
+            text: t('onb.s1.provisional', {
+              source: (JTS.data.examDatesMeta || {}).source || '—'
+            })
+          })
+        ]));
+      })();
+      screen.appendChild(card(t('settings.exam'), [examWrap]));
+
+      /* --- goals --- */
+      var goalWrap = U.el('div.stack');
+      (function () {
+        var g = state.goals || { rw: null, math: null, total: null, collegeIds: [] };
+        var totalLine = U.el('div.stat-value');
+
+        function paintTotal() {
+          var total = (Number(g.rw) || 0) + (Number(g.math) || 0);
+          g.total = total || null;
+          totalLine.textContent = total ? t('settings.goalTotal', { n: total }) : '—';
+        }
+
+        function scoreInput(id, value, key) {
+          var input = U.el('input.input', {
+            id: id, type: 'number', min: '200', max: '800', step: '10',
+            value: value === null || value === undefined ? '' : String(value)
+          });
+          input.addEventListener('change', function () {
+            var v = Number(input.value);
+            /* Same rule as the mock importer: a section score is a multiple of
+               10 between 200 and 800, or it is not a section score. */
+            if (!JTS.mock.validScore(v)) {
+              input.value = g[key] === null || g[key] === undefined ? '' : String(g[key]);
+              ui.toast(t('mock.invalidScore'), 'err');
+              return;
+            }
+            g[key] = v;
+            paintTotal();
+            S.update(function (st) {
+              st.goals = st.goals || { collegeIds: [] };
+              st.goals[key] = v;
+              st.goals.total = (Number(st.goals.rw) || 0) + (Number(st.goals.math) || 0) || null;
+            });
+            ui.toast(t('common.saved'), 'ok');
+          });
+          return input;
+        }
+
+        goalWrap.appendChild(U.el('div.grid.grid-2', null, [
+          ui.field(t('onb.s3.targetRw'), scoreInput('set-goal-rw', g.rw, 'rw')),
+          ui.field(t('onb.s3.targetMath'), scoreInput('set-goal-math', g.math, 'math'))
+        ]));
+        goalWrap.appendChild(totalLine);
+        paintTotal();
+        goalWrap.appendChild(U.el('p.small.muted', { text: t('settings.goalNote') }));
+      })();
+      screen.appendChild(card(t('settings.goals'), [goalWrap]));
+
+      /* --- available time --- */
+      var availWrap = U.el('div.stack');
+      (function () {
+        var av = state.availability || { days: [], minutesPerSession: 45, intensity: 'standard' };
+        var dayNames = [1, 2, 3, 4, 5, 6, 7].map(function (d) { return U.dayLabel(d); });
+
+        var dayRow = U.el('div.row.row-wrap', { role: 'group', 'aria-label': t('settings.availDays') });
+        dayNames.forEach(function (name, i) {
+          var dow = i + 1;
+          var on = av.days.indexOf(dow) >= 0;
+          var chip = U.el('button.chip', {
+            type: 'button', text: name, 'aria-pressed': String(on),
+            dataset: { day: String(dow) },
+            onclick: function () {
+              var idx = av.days.indexOf(dow);
+              if (idx >= 0) av.days.splice(idx, 1); else av.days.push(dow);
+              av.days.sort();
+              chip.setAttribute('aria-pressed', String(av.days.indexOf(dow) >= 0));
+              S.update(function (st) { st.availability = av; });
+              markDirty();
+            }
+          });
+          dayRow.appendChild(chip);
+        });
+
+        var minutes = U.el('select.select', { id: 'set-minutes' });
+        [30, 45, 60, 90, 120].forEach(function (m) {
+          var o = U.el('option', { value: String(m), text: m + ' ' + t('common.minutes') });
+          if (av.minutesPerSession === m) o.selected = true;
+          minutes.appendChild(o);
+        });
+        minutes.addEventListener('change', function () {
+          av.minutesPerSession = Number(minutes.value);
+          S.update(function (st) { st.availability = av; });
+          markDirty();
+        });
+
+        var intensity = U.el('select.select', { id: 'set-intensity' });
+        ['light', 'standard', 'intensive'].forEach(function (k) {
+          var o = U.el('option', { value: k, text: t('onb.intensity.' + k) });
+          if (av.intensity === k) o.selected = true;
+          intensity.appendChild(o);
+        });
+        intensity.addEventListener('change', function () {
+          av.intensity = intensity.value;
+          S.update(function (st) { st.availability = av; });
+          markDirty();
+        });
+
+        availWrap.appendChild(ui.field(t('settings.availDays'), dayRow));
+        availWrap.appendChild(U.el('div.grid.grid-2', null, [
+          ui.field(t('settings.availMinutes'), minutes),
+          ui.field(t('settings.availIntensity'), intensity)
+        ]));
+        availWrap.appendChild(U.el('button.btn', {
+          type: 'button', text: t('settings.rebuildPlan'),
+          onclick: function () { doRebuild(); }
+        }));
+      })();
+      screen.appendChild(card(t('settings.availability'), [availWrap]));
+
+      /* --- vocabulary --- */
+      (function () {
+        var goalRow = U.el('div.row.row-wrap', { role: 'group', 'aria-label': t('settings.vocabGoal') });
+        JTS.vocab.GOALS.forEach(function (n) {
+          var chip = U.el('button.chip', {
+            type: 'button', text: String(n),
+            'aria-pressed': String(JTS.vocab.state().dailyGoal === n),
+            'aria-label': t('settings.vocabGoal') + ' ' + n,
+            dataset: { vocabGoal: String(n) },
+            onclick: function () {
+              JTS.vocab.setGoal(n);
+              U.$$('button', goalRow).forEach(function (b) {
+                b.setAttribute('aria-pressed', String(Number(b.dataset.vocabGoal) === n));
+              });
+            }
+          });
+          goalRow.appendChild(chip);
+        });
+        screen.appendChild(card(t('vocab.title'), [
+          ui.field(t('settings.vocabGoal'), goalRow),
+          U.el('a.btn', { href: '#/vocab', text: t('vocab.title') })
+        ]));
+      })();
 
       /* --- language and theme --- */
       var uiLang = U.el('select.select', { id: 'set-ui-lang' });
@@ -264,7 +471,7 @@
           })
         ]),
         U.el('p.hint', { text: t('settings.bankInfo', { n: JTS.bank.all().length }) })
-      ]));
+      ], t('settings.dataNote')));
     }
   });
 })();

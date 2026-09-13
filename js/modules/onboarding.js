@@ -11,19 +11,12 @@
   var U = JTS.util, t = JTS.t, ui = JTS.ui, S = JTS.store;
 
   var TOTAL_STEPS = 5;
-  var DAY_KEYS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
   /* ---------------------------------------------------------------- helpers */
 
-  function dayLabel(dow, lang) {
-    /* dow is 1..7 with 1 = Monday. Built from a known Monday so the locale
-       does the naming rather than a hand-maintained table in three languages. */
-    var monday = U.weekStart(U.today());
-    var d = U.addDays(monday, dow - 1);
-    var loc = { en: 'en-US', ru: 'ru-RU', kk: 'kk-KZ' }[lang || JTS.i18n.lang] || 'en-US';
-    try { return d.toLocaleDateString(loc, { weekday: 'short' }); }
-    catch (e) { return DAY_KEYS[dow - 1]; }
-  }
+  /* Settings edits the same availability, so the weekday naming lives in
+     JTS.util rather than here. */
+  var dayLabel = U.dayLabel;
 
   function scoreInput(id, value, onInput) {
     var el = U.el('input.input', {

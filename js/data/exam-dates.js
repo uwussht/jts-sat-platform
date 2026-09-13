@@ -13,7 +13,7 @@ window.JTS = window.JTS || {}; JTS.data = JTS.data || {};
 JTS.data.examDatesMeta = {
   cycle: '2026-2027',
   verified: false,
-  source: 'JTS placeholder — confirm on collegeboard.org before release',
+  source: 'JTS placeholder, unverified',
   checkedAt: null
 };
 

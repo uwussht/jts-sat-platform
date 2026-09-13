@@ -398,6 +398,9 @@
 
         /* Calculator exists only in Math. In Reading and Writing there is no
            button at all, matching the real test. */
+        if (q().section !== 'math') {
+          tools.appendChild(U.el('span.xsmall.muted', { text: t('q.noDesmosInRw') }));
+        }
         if (q().section === 'math') {
           tools.appendChild(U.el('button.q-tool', {
             type: 'button', text: t('q.calculator'),

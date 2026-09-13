@@ -428,7 +428,13 @@ table.table td.num, table.table th.num { text-align: right; font-variant-numeric
 .heat-cell.m-bg-developing { background: color-mix(in srgb, var(--m-developing) 26%, var(--surface)); }
 .heat-cell.m-bg-mastered   { background: color-mix(in srgb, var(--m-mastered) 26%, var(--surface)); }
 
-.cal-heat { display: grid; grid-template-rows: repeat(7, 12px); grid-auto-flow: column; gap: 3px; overflow-x: auto; padding-bottom: 4px; }
+/* Columns are weeks. Without an explicit auto-column width the grid stretches
+   the 13 columns across the card and the calendar stops reading as a calendar. */
+.cal-heat {
+  display: grid; grid-template-rows: repeat(7, 12px); grid-auto-flow: column;
+  grid-auto-columns: 12px; justify-content: start;
+  gap: 3px; overflow-x: auto; padding-bottom: 4px;
+}
 .cal-heat i { width: 12px; height: 12px; border-radius: 3px; background: var(--border); display: block; }
 .cal-heat i[data-lv="1"] { background: color-mix(in srgb, var(--brand-600) 30%, var(--border)); }
 .cal-heat i[data-lv="2"] { background: color-mix(in srgb, var(--brand-600) 58%, var(--border)); }
@@ -573,7 +579,11 @@ html[data-theme="dark"] mark.hl { background: #8C7415; color: #FFF7DA; }
 .lesson-chip b { display: block; font-size: 12.5px; font-weight: 700; }
 
 /* ----- 20. Flashcards ----------------------------------------------------- */
+/* The card is a <button> so it is reachable by keyboard, which means undoing
+   the UA button chrome: otherwise its grey background shows through the 3D
+   perspective box and `margin: 0 auto` cannot centre an inline-block. */
 .flash {
+  display: block; border: 0; background: none; padding: 0; font: inherit; color: inherit;
   perspective: 1200px; width: 100%; max-width: 520px; height: 260px; margin: 0 auto; cursor: pointer;
 }
 .flash-inner { position: relative; width: 100%; height: 100%; transition: transform .5s; transform-style: preserve-3d; }

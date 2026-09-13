@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JTS SAT — Question editor</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='9' fill='%236D5AE6'/><text x='16' y='21' font-family='sans-serif' font-size='12' font-weight='bold' fill='white' text-anchor='middle'>JTS</text></svg>">
+  <link rel="stylesheet" href="css/core.css">
+  <style>
+    .adm { display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: var(--sp-4); align-items: start; }
+    @media (max-width: 900px) { .adm { grid-template-columns: minmax(0, 1fr); } }
+    .adm-list { max-height: 74vh; overflow: auto; }
+    .adm-item { display: block; width: 100%; text-align: left; padding: 8px 10px; border: 0;
+      background: none; border-bottom: 1px solid var(--border); cursor: pointer; font: inherit; color: var(--ink); }
+    .adm-item:hover { background: var(--brand-050); }
+    .adm-item[aria-current="true"] { background: var(--brand-050); border-inline-start: 3px solid var(--brand-600); }
+    .adm-item .id { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+    .adm-field textarea { min-height: 74px; font-family: var(--mono); font-size: 12.5px; }
+    .adm-dirty { border-color: var(--warn) !important; }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <main id="app-root" role="main"></main>
+  </div>
+  <div id="modal-root"></div>
+  <div id="toast-root" aria-live="polite" aria-atomic="false"></div>
+
+  <script src="js/core.js"></script>
+
+  <script src="js/data/skills.js"></script>
+  <script src="js/data/questions.js"></script>
+  <script src="js/data/questions-rw-ii.js"></script>
+  <script src="js/data/questions-rw-cs.js"></script>
+  <script src="js/data/questions-rw-ei.js"></script>
+  <script src="js/data/questions-rw-sec.js"></script>
+  <script src="js/data/questions-m-alg.js"></script>
+  <script src="js/data/questions-m-adv.js"></script>
+  <script src="js/data/questions-m-psda.js"></script>
+  <script src="js/data/questions-m-geo.js"></script>
+
+  <script src="i18n/en.js"></script>
+  <script src="i18n/ru.js"></script>
+  <script src="i18n/kk.js"></script>
+
+  <script>
+  /* ==========================================================================
+     admin.html — question editor for a methodologist with no developer.
+
+     Edits never touch js/data/questions-*.js. They are written to the
+     questionOverrides map in localStorage, which JTS.bank merges over the
+     source records at read time, and every write is appended to a change
+     history. Export the overlay as JSON and hand it to whoever merges it back
+     into the source files.
+
+     The overlay is shared by every profile on this browser, because it is
+     content rather than progress.
+     ========================================================================== */
+  (function () {
+    'use strict';
+    var U = JTS.util, t = JTS.t, ui = JTS.ui, S = JTS.store;
+
+    /* Fields the editor exposes. Anything not listed here — id, skillId,
+       section, meta — is structural, and changing it from a text box would
+       break the bank quietly rather than loudly. */
+    var FIELDS = [
+      { key: 'stem', kind: 'html', label: 'Stem (HTML, English)' },
+      { key: 'passage', kind: 'html', label: 'Passage (HTML, English, R&W only)' },
+      { key: 'options', kind: 'json', label: 'Options — JSON array of 4 strings (mcq)' },
+      { key: 'answer', kind: 'json', label: 'Answer — "B" for mcq, ["7/2","3.5"] for spr' },
+      { key: 'difficulty', kind: 'number', label: 'Difficulty 1–3' },
+      { key: 'explanation', kind: 'json', label: 'Explanation — {en, ru, kk}' },
+      { key: 'distractors', kind: 'json', label: 'Distractors — {A:{en,ru,kk}, …}' },
+      { key: 'hints', kind: 'json', label: 'Hints — [{en,ru,kk}, …]' },
+      { key: 'methods', kind: 'json', label: 'Methods — [{title, steps:{en,ru,kk}}, …]' }
+    ];
+
+    var selectedId = null;
+    var root = U.$('#app-root');
+
+    function esc(v) { return v === undefined || v === null ? '' : String(v); }
+
+    function serialise(field, value) {
+      if (field.kind === 'json') return value === undefined ? '' : JSON.stringify(value, null, 2);
+      return esc(value);
+    }
+
+    /** Returns {ok, value} or {ok:false, error}. */
+    function parse(field, raw) {
+      var text = raw.trim();
+      if (field.kind === 'number') {
+        var n = Number(text);
+        if (!isFinite(n)) return { ok: false, error: 'not a number' };
+        return { ok: true, value: n };
+      }
+      if (field.kind === 'json') {
+        if (!text) return { ok: true, value: null };
+        try { return { ok: true, value: JSON.parse(text) }; }
+        catch (e) { return { ok: false, error: String(e.message || e) }; }
+      }
+      return { ok: true, value: raw };
+    }
+
+    /* ------------------------------------------------------------ the list */
+
+    function questionList(filterText, onPick) {
+      var wrap = U.el('div.card.card-sm.adm-list');
+      var q = (filterText || '').toLowerCase();
+      var rows = JTS.bank.all().filter(function (item) {
+        if (!q) return true;
+        return (item.id + ' ' + item.skillId + ' ' + String(item.stem)).toLowerCase().indexOf(q) >= 0;
+      });
+      rows.slice(0, 400).forEach(function (item) {
+        var overridden = !!S.overrides()[item.id];
+        wrap.appendChild(U.el('button.adm-item', {
+          type: 'button', 'aria-current': String(item.id === selectedId),
+          onclick: function () { onPick(item.id); }
+        }, [
+          U.el('div.id', { text: item.id + (overridden ? '  ●' : '') }),
+          U.el('div.small', {
+            text: String(item.stem).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 80)
+          })
+        ]));
+      });
+      if (!rows.length) wrap.appendChild(ui.empty('—'));
+      if (rows.length > 400) {
+        wrap.appendChild(U.el('div.xsmall.muted', { style: 'padding:8px',
+          text: 'Showing 400 of ' + rows.length }));
+      }
+      return wrap;
+    }
+
+    /* ---------------------------------------------------------- the editor */
+
+    function editor(id, rerender) {
+      var merged = JTS.bank.get(id);
+      var source = JTS.bank.raw(id);
+      if (!merged) return ui.empty('—');
+
+      var wrap = U.el('div.card.stack');
+      wrap.appendChild(U.el('div.row-between.row-wrap', null, [
+        U.el('div.stack-sm', null, [
+          U.el('h2.h2', { text: merged.id }),
+          U.el('div.small.muted', {
+            text: merged.section + ' · ' + merged.skillId + ' · ' + merged.type +
+              ' · ' + merged.meta.licenseStatus + ' · ' + merged.meta.reviewStatus
+          })
+        ]),
+        U.el('button.btn.btn-sm.btn-danger', {
+          type: 'button', text: t('admin.clearOverride'),
+          disabled: S.overrides()[id] ? null : true,
+          onclick: function () {
+            ui.confirm({ title: t('admin.clearOverride'), message: id }).then(function (yes) {
+              if (!yes) return;
+              S.clearOverride(id);
+              JTS.bank.reindex();
+              rerender();
+            });
+          }
+        })
+      ]));
+
+      FIELDS.forEach(function (field) {
+        var current = merged[field.key];
+        var original = source ? source[field.key] : undefined;
+        var changed = JSON.stringify(current) !== JSON.stringify(original);
+
+        var box = U.el('textarea.textarea', {
+          id: 'adm-' + field.key,
+          spellcheck: 'false',
+          value: serialise(field, current)
+        });
+        box.value = serialise(field, current);
+        var err = U.el('div.error-text', { role: 'alert', hidden: true });
+
+        var save = U.el('button.btn.btn-sm', {
+          type: 'button', text: t('common.save'),
+          onclick: function () {
+            var res = parse(field, box.value);
+            if (!res.ok) {
+              err.hidden = false;
+              err.textContent = res.error;
+              box.classList.add('adm-dirty');
+              return;
+            }
+            err.hidden = true;
+            box.classList.remove('adm-dirty');
+            S.setOverride(id, field.key, res.value);
+            JTS.bank.reindex();
+            /* Validation runs against the whole bank after every save, so a
+               broken edit is caught here rather than in front of a student. */
+            var problems = JTS.bank.validateAll().filter(function (p) { return p.id === id; });
+            if (problems.length) {
+              ui.toast(problems[0].message, 'err', 4500);
+            } else {
+              ui.toast(t('admin.saved'), 'ok');
+            }
+            rerender();
+          }
+        });
+
+        var revert = U.el('button.btn.btn-sm.btn-ghost', {
+          type: 'button', text: t('common.reset'),
+          disabled: changed ? null : true,
+          onclick: function () { box.value = serialise(field, original); }
+        });
+
+        wrap.appendChild(U.el('div.field.adm-field', null, [
+          U.el('label.label', { for: 'adm-' + field.key }, [
+            U.el('span', { text: field.label }),
+            changed ? U.el('span.badge.badge-warn', { text: 'overridden', style: 'margin-inline-start:8px' }) : null
+          ]),
+          box, err,
+          U.el('div.row.row-wrap', null, [save, revert])
+        ]));
+      });
+
+      /* --- history --- */
+      var history = S.overrideHistory(id).slice().reverse();
+      var hist = U.el('div.stack-sm');
+      if (!history.length) hist.appendChild(U.el('p.small.muted', { text: t('admin.noHistory') }));
+      history.slice(0, 40).forEach(function (h) {
+        hist.appendChild(U.el('div.card.card-sm.card-flat.stack-sm', null, [
+          U.el('div.xsmall.muted', {
+            text: new Date(h.ts).toISOString().replace('T', ' ').slice(0, 19) + ' · ' + h.field
+          }),
+          U.el('div.xsmall.mono', { text: '− ' + String(JSON.stringify(h.old)).slice(0, 200) }),
+          U.el('div.xsmall.mono', { text: '+ ' + String(JSON.stringify(h.new)).slice(0, 200) })
+        ]));
+      });
+      wrap.appendChild(U.el('div.stack-sm', null, [U.el('h3.h3', { text: t('admin.history') }), hist]));
+
+      return wrap;
+    }
+
+    /* ----------------------------------------------------------- the screen */
+
+    var filterText = '';
+
+    function render() {
+      U.clear(root);
+      var screen = U.el('div.container-wide.screen.stack');
+      root.appendChild(screen);
+
+      screen.appendChild(U.el('div.stack-sm', null, [
+        U.el('div.row-between.row-wrap', null, [
+          U.el('h1.h1', { text: t('admin.title') }),
+          U.el('a.btn.btn-sm', { href: 'index.html', text: 'JTS SAT' })
+        ]),
+        U.el('p.muted', { text: t('admin.lead') })
+      ]));
+
+      var overrideCount = Object.keys(S.overrides()).length;
+      screen.appendChild(U.el('div.row.row-wrap', null, [
+        U.el('button.btn', {
+          type: 'button', text: t('admin.validate'),
+          onclick: function () {
+            var problems = JTS.bank.validateAll();
+            if (!problems.length) return ui.toast(t('admin.valid'), 'ok');
+            ui.modal({
+              title: t('admin.invalid', { n: problems.length }),
+              wide: true,
+              content: U.el('div.stack-sm', null, problems.slice(0, 200).map(function (p) {
+                return U.el('div.small.mono', { text: p.id + ' — ' + p.message });
+              }))
+            });
+          }
+        }),
+        U.el('button.btn', {
+          type: 'button', text: t('admin.exportOverrides'),
+          disabled: overrideCount ? null : true,
+          onclick: function () {
+            U.download('jts-question-overrides-' + U.iso(new Date()) + '.json', JSON.stringify({
+              exportedAt: new Date().toISOString(),
+              schemaVersion: JTS.config.schemaVersion,
+              questionOverrides: S.overrides(),
+              overrideHistory: S.overrideHistory()
+            }, null, 2));
+          }
+        }),
+        U.el('span.badge.badge-muted', {
+          text: t('settings.bankInfo', { n: JTS.bank.all().length }) +
+            ' · ' + overrideCount + ' overridden'
+        })
+      ]));
+
+      var search = U.el('input.input', {
+        id: 'adm-search', type: 'search', value: filterText,
+        placeholder: t('admin.pick') + ' / ' + t('common.search')
+      });
+      search.addEventListener('input', function () {
+        filterText = search.value;
+        /* Repaint only the list: re-rendering the page would take the focus
+           out of the box the methodologist is typing in. */
+        var old = U.$('.adm-list');
+        if (!old) return;
+        var fresh = questionList(filterText, pick);
+        old.parentNode.replaceChild(fresh, old);
+      });
+
+      var grid = U.el('div.adm');
+      grid.appendChild(U.el('div.stack-sm', null, [search, questionList(filterText, pick)]));
+      grid.appendChild(selectedId ? editor(selectedId, render)
+        : ui.empty(t('admin.pick'), t('admin.lead')));
+      screen.appendChild(grid);
+    }
+
+    function pick(id) { selectedId = id; render(); }
+
+    /* This page has no shell, so it applies the stored language and theme
+       itself. With no profile signed in, the defaults stand. */
+    var st = S.settings();
+    if (st.uiLang) JTS.i18n.setLang(st.uiLang);
+    document.documentElement.setAttribute('data-theme', st.theme || 'light');
+
+    JTS.bank.reindex();
+    render();
+  })();
+  </script>
+</body>
+</html>

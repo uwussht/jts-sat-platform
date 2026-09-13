@@ -570,6 +570,7 @@
       card.appendChild(U.el('div.notice.notice-warn', null, [
         U.el('div.stack-sm', null, [
           U.el('div', null, [U.el('b', { text: t('mock.unfinished') })]),
+          U.el('div.small', { text: t('mock.oneAtATime') }),
           U.el('div.small', {
             text: t('mock.inProgressLine', {
               n: active.index + 1, total: active.modules.length,
@@ -696,7 +697,7 @@
 
         var importCard = U.el('div.card.stack', null, [
           U.el('div.row-between', null, [
-            U.el('h2.h2', { text: t('mock.imported') }),
+            U.el('h2.h2', { text: t('mock.imported') + ' · ' + t('mock.history') }),
             U.el('button.btn.btn-sm.btn-primary', {
               type: 'button', text: t('mock.addResult'),
               onclick: function () { importModal(rerender); }
@@ -951,7 +952,9 @@
         U.el('h1.h1', { text: t('mock.resultTitle') }),
         U.el('div.row.row-wrap', null, [
           U.el('span.small.muted', {
-            text: t('mock.finishedAt') + ': ' +
+            text: t('mock.startedAt') + ': ' +
+              U.fmtDate(new Date(run.startedAt), S.settings().uiLang) + ' · ' +
+              t('mock.finishedAt') + ': ' +
               U.fmtDate(new Date(run.finishedAt), S.settings().uiLang)
           }),
           run.timed ? null : U.el('span.badge.badge-warn', { text: t('mock.untimedTag') })
