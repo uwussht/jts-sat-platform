@@ -147,14 +147,35 @@
     var done = JTS.vocab.doneToday();
     var goal = JTS.vocab.state().dailyGoal;
 
-    host.appendChild(U.el('div.row-between', null, [
+    /* Everything on this tab is as wide as the card, so it all lives in one
+       centred column; a full-width progress row above a 520px card reads as
+       two unrelated things. */
+    var stage = U.el('div.vocab-stage');
+    host.appendChild(stage);
+
+    /* The daily goal is the deck's only setting and belongs where the deck is
+       being used, not in a card of its own above it. */
+    var goalRow = U.el('div.row.row-wrap', { role: 'group', 'aria-label': t('vocab.dailyGoal') });
+    GOALS.forEach(function (n) {
+      goalRow.appendChild(U.el('button.chip', {
+        type: 'button', 'aria-pressed': String(goal === n), text: String(n),
+        'aria-label': t('vocab.dailyGoal') + ' ' + n,
+        dataset: { goal: String(n) },
+        onclick: function () { JTS.vocab.setGoal(n); rerender(); }
+      }));
+    });
+    stage.appendChild(U.el('div.row-between.row-wrap', null, [
+      U.el('span.eyebrow', { text: t('vocab.dailyGoal') }), goalRow
+    ]));
+
+    stage.appendChild(U.el('div.row-between', null, [
       U.el('span.small.muted', { text: t('vocab.todayDone', { n: done, goal: goal }) }),
       U.el('span.badge.badge-info', { text: t('vocab.due', { n: JTS.vocab.counts().due }) })
     ]));
-    host.appendChild(ui.bar(Math.min(done, goal), goal));
+    stage.appendChild(ui.bar(Math.min(done, goal), goal));
 
     if (!queue.length) {
-      host.appendChild(ui.empty(t('vocab.noCards')));
+      stage.appendChild(ui.empty(t('vocab.noCards')));
       return;
     }
 
@@ -177,7 +198,7 @@
       type: 'button', 'aria-label': word.word, 'aria-pressed': 'false'
     }, [U.el('div.flash-inner', null, [front, back])]);
 
-    var grades = U.el('div.row.row-wrap', { hidden: true });
+    var grades = U.el('div.vocab-grades', { hidden: true });
     GRADES.forEach(function (g) {
       grades.appendChild(U.el('button.btn' + (g.id === 'good' ? '.btn-primary' : ''), {
         type: 'button', text: t('vocab.' + g.id),
@@ -199,9 +220,9 @@
     }
     card.addEventListener('click', flip);
 
-    host.appendChild(card);
-    host.appendChild(grades);
-    host.appendChild(U.el('div.xsmall.muted', {
+    stage.appendChild(card);
+    stage.appendChild(grades);
+    stage.appendChild(U.el('div.xsmall.muted.center', {
       text: t('vocab.remaining', { n: queue.length })
     }));
 
@@ -358,30 +379,11 @@
 
       function paint() {
         var counts = JTS.vocab.counts();
-        screen.appendChild(U.el('div.row-between.row-wrap', null, [
-          U.el('h1.h1', { text: t('vocab.title') }),
-          U.el('div.row.row-wrap', null, [
-            U.el('span.badge.badge-muted', { text: t('vocab.new') + ': ' + counts.new }),
-            U.el('span.badge.badge-warn', { text: t('vocab.learning') + ': ' + counts.learning }),
-            U.el('span.badge.badge-ok', { text: t('vocab.mastered') + ': ' + counts.mastered })
-          ])
-        ]));
-
-        /* The daily goal is the only setting the deck has, so it sits on the
-           screen rather than hiding in Settings. */
-        var goalRow = U.el('div.row.row-wrap');
-        GOALS.forEach(function (n) {
-          var on = JTS.vocab.state().dailyGoal === n;
-          goalRow.appendChild(U.el('button.chip', {
-            type: 'button', 'aria-pressed': String(on), text: String(n),
-            'aria-label': t('vocab.dailyGoal') + ' ' + n,
-            dataset: { goal: String(n) },
-            onclick: function () { JTS.vocab.setGoal(n); rerender(); }
-          }));
-        });
-        screen.appendChild(U.el('div.card.stack-sm', null, [
-          U.el('div.eyebrow', { text: t('vocab.dailyGoal') }), goalRow
-        ]));
+        JTS.shell.topbarActions([
+          U.el('span.badge.badge-muted', { text: t('vocab.new') + ': ' + counts.new }),
+          U.el('span.badge.badge-warn', { text: t('vocab.learning') + ': ' + counts.learning }),
+          U.el('span.badge.badge-ok', { text: t('vocab.mastered') + ': ' + counts.mastered })
+        ]);
 
         function dropListeners() {
           if (teardown) { teardown(); teardown = null; }

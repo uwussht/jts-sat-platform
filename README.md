@@ -70,7 +70,22 @@ soft shadow now comes from a crisp 1px border on a flat surface: `--shadow-1` is
 `none`, `--shadow-2` is a 2px hard edge, and only genuine overlays — modals,
 toasts, the sign-in card — get a real shadow.
 
-The sign-in screen is the one place the brand speaks at full volume: the header
+**The chrome is a fixed sidebar plus a slim top bar.** The sidebar carries the
+brand, the target score and exam date, the seven destinations, the language and
+theme controls and the signed-in profile; it is `position: fixed` rather than
+sticky, because sticky gives it the height of one screenful and any page taller
+than the window then shows the page ground beside the content. Below 1024px it
+becomes a drawer opened from the top bar and closed by any route change, and on
+a phone the five primary destinations also mirror into the bottom tab bar.
+
+The top bar owns the name of the screen — `JTS.shell.renderTopbar` takes it from
+the route's own `title` key — so no screen repeats its own title, and
+`JTS.shell.topbarActions()` gives each one a slot on the right for its
+screen-level controls (rebuild the plan, the vocabulary counts, back out of weak
+skills). The content column is measured from the left edge of the body rather
+than centred in the window, so it does not drift away from the sidebar.
+
+The sign-in screen is the one place the brand speaks at full volume: the chrome
 is hidden while signed out, so `#/auth` fills the window with the purple ramp
 and centres a single square card.
 

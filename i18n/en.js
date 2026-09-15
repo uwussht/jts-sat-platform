@@ -10,6 +10,7 @@ JTS.dict.en = {
   'nav.mocks': 'Mock tests',
   'nav.progress': 'Progress',
   'nav.settings': 'Settings',
+  'nav.goal': 'Target score',
 
   'common.close': 'Close', 'common.cancel': 'Cancel', 'common.confirm': 'Confirm',
   'common.save': 'Save', 'common.saved': 'Saved', 'common.back': 'Back', 'common.next': 'Next',

@@ -293,13 +293,10 @@
       root.appendChild(screen);
       function rerender() { JTS.router.render(); }
 
-      screen.appendChild(U.el('div.row-between.row-wrap', null, [
-        U.el('h1.h1', { text: t('practice.title') }),
-        U.el('div.row.row-wrap', null, [
-          U.el('a.btn', { href: '#/vocab', text: t('practice.vocab') }),
-          U.el('a.btn', { href: '#/desmos-guide', text: t('practice.desmosGuide') })
-        ])
-      ]));
+      JTS.shell.topbarActions([
+        U.el('a.btn.btn-sm', { href: '#/vocab', text: t('practice.vocab') }),
+        U.el('a.btn.btn-sm', { href: '#/desmos-guide', text: t('practice.desmosGuide') })
+      ]);
       screen.appendChild(U.el('div.notice', { text: t('practice.studyModeNote') }));
 
       var card = U.el('div.card.stack');
@@ -364,10 +361,8 @@
       var screen = U.el('div.container.screen.stack');
       root.appendChild(screen);
 
-      screen.appendChild(U.el('div.row-between.row-wrap', null, [
-        U.el('h1.h1', { text: t('practice.weakTitle') }),
-        U.el('a.btn', { href: '#/practice', text: t('common.back') })
-      ]));
+      JTS.shell.topbarActions(
+        U.el('a.btn.btn-sm', { href: '#/practice', text: t('common.back') }));
       screen.appendChild(U.el('div.notice', { text: t('practice.weakLead') }));
 
       var ranked = JTS.mastery.ranked({ daysToExam: JTS.analytics.daysToExam() });

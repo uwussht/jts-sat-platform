@@ -10,6 +10,7 @@ JTS.dict.ru = {
   'nav.mocks': 'Пробники',
   'nav.progress': 'Прогресс',
   'nav.settings': 'Настройки',
+  'nav.goal': 'Целевой балл',
 
   'common.close': 'Закрыть', 'common.cancel': 'Отмена', 'common.confirm': 'Подтвердить',
   'common.save': 'Сохранить', 'common.saved': 'Сохранено', 'common.back': 'Назад', 'common.next': 'Далее',

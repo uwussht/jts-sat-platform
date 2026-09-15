@@ -49,8 +49,7 @@
       /* Not just how much help, but which kind: a hint and a read explanation
          are different admissions. */
       stat(t('progress.withHelp'), String(tot.helped), tot.helped ? byHelpLevel() : '—'),
-      stat(t('progress.streak'), String(streak.count),
-        t('progress.best', { n: streak.best || 0 }) + ' · ' + t('progress.milestones')),
+      stat(t('progress.streak'), String(streak.count), t('progress.best', { n: streak.best || 0 })),
       stat(t('mastery.mastered'), mastered + ' / ' + JTS.skills.all().length)
     ]);
   }
@@ -259,7 +258,6 @@
       var screen = U.el('div.container.screen.stack-lg');
       root.appendChild(screen);
 
-      screen.appendChild(U.el('h1.h1', { text: t('progress.title') }));
 
       if (!s.attempts.length) {
         screen.appendChild(ui.empty(t('common.notEnoughData'), t('progress.clickSkill'),
@@ -296,7 +294,9 @@
       ]));
 
       screen.appendChild(U.el('div.card.stack-sm', null, [
-        U.el('h2.h2', { text: t('progress.badges') }), badges()
+        U.el('h2.h2', { text: t('progress.badges') }),
+        badges(),
+        U.el('p.xsmall.muted', { text: t('progress.milestones') })
       ]));
     }
   });

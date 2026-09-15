@@ -163,7 +163,6 @@
       var screen = U.el('div.container.screen.stack');
       root.appendChild(screen);
 
-      screen.appendChild(U.el('h1.h1', { text: t('today.greeting') }));
 
       /* An unfinished session outranks everything else on the page. */
       var active = JTS.session.current();
@@ -191,12 +190,8 @@
       var cp = checkpointCard();
       if (cp) grid.appendChild(cp);
       screen.appendChild(grid);
-
-      screen.appendChild(U.el('div.row.row-wrap', null, [
-        U.el('a.btn', { href: '#/plan', text: t('nav.plan') }),
-        U.el('a.btn', { href: '#/practice', text: t('nav.practice') }),
-        U.el('a.btn', { href: '#/progress', text: t('nav.progress') })
-      ]));
+      /* The three shortcut buttons that used to sit here repeated the sidebar
+         exactly, which is one navigation too many. */
     }
   });
 })();

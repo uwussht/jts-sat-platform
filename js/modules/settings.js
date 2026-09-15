@@ -184,7 +184,6 @@
         dirtyTimer = setTimeout(function () { if (dirty) offerRebuild(); }, 1200);
       }
 
-      screen.appendChild(U.el('h1.h1', { text: t('settings.title') }));
 
       /* --- profile --- */
       screen.appendChild(card(t('settings.account'), [

@@ -10,6 +10,7 @@ JTS.dict.kk = {
   'nav.mocks': 'Сынама тесттер',
   'nav.progress': 'Прогресс',
   'nav.settings': 'Баптаулар',
+  'nav.goal': 'Мақсатты балл',
 
   'common.close': 'Жабу', 'common.cancel': 'Бас тарту', 'common.confirm': 'Растау',
   'common.save': 'Сақтау', 'common.saved': 'Сақталды', 'common.back': 'Артқа', 'common.next': 'Әрі қарай',

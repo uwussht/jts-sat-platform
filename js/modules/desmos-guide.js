@@ -219,7 +219,6 @@
         var done = ids.filter(isLearned).length;
 
         screen.appendChild(U.el('div.stack-sm', null, [
-          U.el('h1.h1', { text: t('desmos.title') }),
           U.el('p.muted', { text: t('desmos.lead') }),
           U.el('div.row-between.row-wrap', null, [
             U.el('span.small.muted', { text: t('desmos.progress', { done: done, total: ids.length }) }),

@@ -724,6 +724,7 @@
       JTS.desmos.hide();
       this.current = route;
       document.title = (def.title ? t(def.title) + ' · ' : '') + 'JTS SAT';
+      JTS.shell.renderTopbar(def.title || '');
       try {
         var res = def.render(root, route);
         if (typeof res === 'function') this._teardown = res;
@@ -1843,30 +1844,69 @@
       { path: '#/mocks',    key: 'nav.mocks',    icon: '⏱' },
       { path: '#/progress', key: 'nav.progress', icon: '↗' }
     ],
+    /* Destinations that belong in the sidebar but not in the phone tab bar,
+       where five is already the most that fits. */
+    subNavItems: [
+      { path: '#/vocab',        key: 'vocab.title',  icon: '⌸' },
+      { path: '#/desmos-guide', key: 'desmos.title', icon: 'ƒ' }
+    ],
     applyProfileSettings: function () {
       var st = Store.settings();
       document.documentElement.setAttribute('data-theme', st.theme || 'light');
       if (st.uiLang) JTS.i18n.lang = st.uiLang;
       document.documentElement.lang = JTS.i18n.lang;
     },
+    /**
+     * The chrome is one sidebar plus one slim top bar. `renderHeader` keeps its
+     * name because every screen and every test already calls it; what it draws
+     * is now the sidebar, the tab bar and the top bar together.
+     */
     renderHeader: function () {
-      var header = U.$('#app-header');
-      U.clear(header);
-      var wrap = U.el('div.container.container-wide');
-      wrap.appendChild(U.el('a.brand', { href: '#/today' }, [
+      this.renderSidebar();
+      this.renderTabbar();
+      this.renderTopbar();
+    },
+
+    renderSidebar: function () {
+      var bar = U.$('#app-sidebar');
+      if (!bar) return;
+      U.clear(bar);
+      bar.setAttribute('aria-label', t('nav.main'));
+      var state = Store.state();
+
+      bar.appendChild(U.el('a.sb-brand', { href: '#/today' }, [
         U.el('span.brand-mark', { text: 'JTS', 'aria-hidden': 'true' }),
         U.el('span.brand-text', null, [
           U.el('b', { text: 'JTS SAT' }),
           U.el('span', { text: t('brand.eyebrow') })
         ])
       ]));
-      var nav = U.el('nav.main-nav', { id: 'main-nav', 'aria-label': t('nav.main') });
-      this.navItems.forEach(function (it) {
-        nav.appendChild(U.el('a', { href: it.path, text: t(it.key), dataset: { path: it.path } }));
-      });
-      wrap.appendChild(nav);
 
-      var tools = U.el('div.header-tools');
+      /* The goal and the exam are what the student is steering by, so they sit
+         above the navigation rather than two clicks away in Settings. */
+      if (state && state.goals && state.goals.total) {
+        var exam = state.examDate && state.examDate.testDate;
+        bar.appendChild(U.el('a.sb-goal', { href: '#/settings' }, [
+          U.el('span.sb-goal-label', { text: t('nav.goal') }),
+          U.el('b.sb-goal-value', { text: String(state.goals.total) }),
+          U.el('span.sb-goal-meta', {
+            text: exam ? U.fmtDate(U.parseISO(exam), Store.settings().uiLang) : t('settings.undecided')
+          })
+        ]));
+      }
+
+      var nav = U.el('nav.sb-nav', { id: 'main-nav' });
+      this.navItems.concat(this.subNavItems).forEach(function (it) {
+        nav.appendChild(U.el('a', { href: it.path, dataset: { path: it.path } }, [
+          U.el('em', { text: it.icon, 'aria-hidden': 'true' }),
+          U.el('span', { text: t(it.key) })
+        ]));
+      });
+      bar.appendChild(nav);
+
+      bar.appendChild(U.el('div.spacer'));
+
+      var tools = U.el('div.sb-tools');
       var langs = U.el('div.lang-switch', { role: 'group', 'aria-label': t('settings.uiLang') });
       JTS.config.languages.forEach(function (l) {
         langs.appendChild(U.el('button', {
@@ -1885,13 +1925,40 @@
           document.documentElement.setAttribute('data-theme', next);
         }
       }));
-      tools.appendChild(U.el('a.icon-btn', { href: '#/settings', 'aria-label': t('nav.settings'), html: '&#9881;' }));
-      wrap.appendChild(tools);
-      header.appendChild(wrap);
-      header.hidden = !Store.state();
+      tools.appendChild(U.el('a.icon-btn', {
+        href: '#/settings', 'aria-label': t('nav.settings'), html: '&#9881;'
+      }));
+      bar.appendChild(tools);
 
-      /* Mobile tab bar mirrors the same destinations. */
+      if (state) {
+        var name = state.profile.name || state.profile.email || '';
+        var initials = name.replace(/[^\p{L}\p{N} ]/gu, ' ').trim().split(/\s+/)
+          .slice(0, 2).map(function (w) { return w[0]; }).join('').toUpperCase() || '?';
+        bar.appendChild(U.el('div.sb-user', null, [
+          U.el('span.sb-avatar', { text: initials, 'aria-hidden': 'true' }),
+          U.el('span.sb-user-text', null, [
+            U.el('b', { text: state.profile.name || state.profile.email }),
+            U.el('span', { text: state.profile.name ? state.profile.email : t('brand.eyebrow') })
+          ]),
+          U.el('button.icon-btn.sb-out', {
+            type: 'button', 'aria-label': t('auth.logout'), title: t('auth.logout'), text: '⇥',
+            onclick: function () {
+              JTS.Auth.logout().then(function () {
+                JTS.shell.renderHeader();
+                JTS.router.go('#/auth');
+              });
+            }
+          })
+        ]));
+      }
+
+      bar.hidden = !state;
+    },
+
+    /** Phone only: the five primary destinations, mirroring the sidebar. */
+    renderTabbar: function () {
       var tabbar = U.$('#tabbar');
+      if (!tabbar) return;
       U.clear(tabbar);
       this.navItems.forEach(function (it) {
         tabbar.appendChild(U.el('a', { href: it.path, dataset: { path: it.path } }, [
@@ -1901,14 +1968,51 @@
       });
       tabbar.hidden = !Store.state();
     },
+
+    /**
+     * The top bar carries the name of the screen, so the screens themselves no
+     * longer repeat it, and gives them one slot on the right for their own
+     * actions via JTS.shell.topbarActions().
+     */
+    renderTopbar: function (titleKey) {
+      var bar = U.$('#app-topbar');
+      if (!bar) return;
+      if (titleKey !== undefined) bar.dataset.titleKey = titleKey || '';
+      var key = bar.dataset.titleKey || '';
+      U.clear(bar);
+      bar.appendChild(U.el('div.tb-left', null, [
+        U.el('button.tb-menu', {
+          type: 'button', 'aria-label': t('nav.main'), text: '≡',
+          onclick: function () { document.body.classList.toggle('sb-open'); }
+        }),
+        U.el('h1.tb-title', { text: key ? t(key) : '' }),
+        U.el('span.tb-date', { text: U.fmtDate(U.today(), Store.settings().uiLang) })
+      ]));
+      bar.appendChild(U.el('div.tb-actions', { id: 'topbar-actions' }));
+      bar.hidden = !Store.state();
+    },
+
+    /** Screens call this to hang their own controls in the top bar. */
+    topbarActions: function (nodes) {
+      var host = U.$('#topbar-actions');
+      if (!host) return null;
+      U.clear(host);
+      U.append(host, nodes);
+      return host;
+    },
+
     syncNav: function (path) {
       U.$$('#main-nav a, #tabbar a').forEach(function (a) {
         if (a.dataset.path === path) a.setAttribute('aria-current', 'page');
         else a.removeAttribute('aria-current');
       });
       var hasUser = !!Store.state();
-      U.$('#app-header').hidden = !hasUser;
+      var bar = U.$('#app-sidebar'); if (bar) bar.hidden = !hasUser;
+      var top = U.$('#app-topbar'); if (top) top.hidden = !hasUser;
       U.$('#tabbar').hidden = !hasUser;
+      /* A route change closes the phone drawer; leaving it open over the new
+         screen is how you end up tapping through it by accident. */
+      document.body.classList.remove('sb-open');
     }
   };
 

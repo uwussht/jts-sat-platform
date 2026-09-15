@@ -687,7 +687,6 @@
       function rerender() { U.clear(screen); paint(); }
 
       function paint() {
-        screen.appendChild(U.el('h1.h1', { text: t('mock.title') }));
         screen.appendChild(runCard(rerender));
 
         var runs = finishedRuns();
@@ -799,7 +798,6 @@
       var prev = run.modules[run.index - 1];
       var next = run.modules[run.index];
 
-      screen.appendChild(U.el('h1.h1', { text: t('mock.title') }));
 
       if (prev && prev.sessionId) {
         screen.appendChild(U.el('div.notice.notice-ok', null, [
@@ -949,7 +947,6 @@
       root.appendChild(screen);
 
       screen.appendChild(U.el('div.stack-sm', null, [
-        U.el('h1.h1', { text: t('mock.resultTitle') }),
         U.el('div.row.row-wrap', null, [
           U.el('span.small.muted', {
             text: t('mock.startedAt') + ': ' +
@@ -1089,7 +1086,6 @@
       var screen = U.el('div.container.screen.stack-lg');
       root.appendChild(screen);
       screen.appendChild(U.el('div.stack-sm', null, [
-        U.el('h1.h1', { text: t('mock.reviewTitle') }),
         U.el('p.muted', { text: t('mock.reviewLead') })
       ]));
 

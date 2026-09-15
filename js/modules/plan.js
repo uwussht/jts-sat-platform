@@ -131,7 +131,6 @@
       function rerender() { JTS.router.render(); }
 
       if (!state.plan) {
-        screen.appendChild(U.el('h1.h1', { text: t('plan.title') }));
         screen.appendChild(ui.empty(t('plan.noPlan'), null, U.el('button.btn.btn-primary.btn-lg', {
           type: 'button', text: t('plan.generate'),
           onclick: function () { JTS.planner.generate(); rerender(); }
@@ -159,21 +158,18 @@
       }
       var week = weeks[idx];
 
-      screen.appendChild(U.el('div.row-between.row-wrap', null, [
-        U.el('h1.h1', { text: t('plan.title') }),
-        U.el('button.btn', {
-          type: 'button', text: t('plan.rebuild'),
-          onclick: function () {
-            ui.confirm({ title: t('plan.rebuild'), message: t('plan.rebuildNote'), okText: t('plan.rebuild') })
-              .then(function (yes) {
-                if (!yes) return;
-                var fresh = JTS.planner.rebuild();
-                ui.toast(t('plan.rebuilt', { n: fresh.skippedCount || 0 }), 'ok');
-                JTS.router.go('#/plan');
-              });
-          }
-        })
-      ]));
+      JTS.shell.topbarActions(U.el('button.btn.btn-sm', {
+        type: 'button', text: t('plan.rebuild'),
+        onclick: function () {
+          ui.confirm({ title: t('plan.rebuild'), message: t('plan.rebuildNote'), okText: t('plan.rebuild') })
+            .then(function (yes) {
+              if (!yes) return;
+              var fresh = JTS.planner.rebuild();
+              ui.toast(t('plan.rebuilt', { n: fresh.skippedCount || 0 }), 'ok');
+              JTS.router.go('#/plan');
+            });
+        }
+      }));
 
       if (state.plan.provisional) {
         screen.appendChild(U.el('div.notice.notice-warn', { text: t('plan.provisional') }));

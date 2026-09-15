@@ -68,7 +68,9 @@
   --shadow-3: 0 18px 48px rgba(18,14,48,.34);
   --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
-  --header-h: 60px;
+  --sidebar-w: 248px;
+  --topbar-h: 60px;
+  --header-h: var(--topbar-h);   /* what the question screen sticks itself under */
   --tabbar-h: 56px;
 }
 
@@ -163,10 +165,18 @@ a:hover { text-decoration: underline; }
 sup, sub { line-height: 0; font-size: .75em; }
 
 /* ----- 4. Layout ---------------------------------------------------------- */
-.app-shell { min-height: 100%; display: flex; flex-direction: column; }
-.container { width: 100%; max-width: 1080px; margin: 0 auto; padding-inline: 16px; }
+.app-shell { min-height: 100%; }
+/* The sidebar is fixed rather than sticky: sticky gives it the height of one
+   screenful, so on any page taller than the window the column beside the
+   content runs out of sidebar and shows the page ground underneath. */
+.app-body { min-width: 0; display: flex; flex-direction: column; margin-left: var(--sidebar-w); }
+.app-sidebar[hidden] + .app-body { margin-left: 0; }
+/* Screens are measured from the left edge of the content column, not from the
+   middle of the window: with a fixed sidebar a centred container drifts right
+   and leaves a gutter that belongs to nothing. */
+.container { width: 100%; max-width: 1120px; margin: 0; padding-inline: 28px; }
 .container-wide { max-width: 1320px; }
-.screen { padding-block: 20px 40px; }
+.screen { padding-block: 24px 48px; }
 .stack > * + * { margin-top: var(--sp-4); }
 .stack-sm > * + * { margin-top: var(--sp-2); }
 .stack-lg > * + * { margin-top: var(--sp-5); }
@@ -181,55 +191,100 @@ sup, sub { line-height: 0; font-size: .75em; }
 .grid-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
 .grid-auto { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
 
-/* ----- 5. Header & navigation -------------------------------------------- */
-.app-header {
-  position: sticky; top: 0; z-index: 40;
-  background: var(--brand-900);
-  color: #fff;
-  /* With no shadow and no radius, the header needs an edge of its own; a solid
-     brand rule does the separating a blur used to do. */
-  border-bottom: 3px solid var(--brand-600);
+/* ----- 5. Sidebar, top bar & navigation ----------------------------------- */
+.app-sidebar {
+  position: fixed; top: 0; left: 0; bottom: 0; z-index: 40;
+  width: var(--sidebar-w); overflow-y: auto;
+  display: flex; flex-direction: column; gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-3);
+  background: var(--brand-900); color: #fff;
+  border-right: 3px solid var(--brand-600);
 }
-.app-header .container { display: flex; align-items: center; gap: var(--sp-4); height: var(--header-h); }
-.brand { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; }
-.brand:hover { text-decoration: none; }
+
+.sb-brand { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; padding: 4px; }
+.sb-brand:hover { text-decoration: none; }
 .brand-mark {
   width: 34px; height: 34px; flex: 0 0 34px;
   background: var(--brand-600);
   display: grid; place-items: center;
   font-weight: 800; font-size: 13px; letter-spacing: .02em; color: #fff;
 }
-.brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.15; min-width: 0; }
 .brand-text b { font-size: 15px; font-weight: 700; }
-.brand-text span { font-size: 10px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--eyebrow-on-dark); }
-
-.main-nav { display: flex; gap: 2px; margin-left: auto; }
-.main-nav a {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 8px 14px; font-size: 14px; font-weight: 600;
-  color: rgba(255,255,255,.76); text-decoration: none; white-space: nowrap;
+.brand-text span {
+  font-size: 10px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase;
+  color: var(--eyebrow-on-dark);
 }
-.main-nav a:hover { background: var(--brand-800); color: #fff; text-decoration: none; }
-.main-nav a[aria-current="page"] { background: var(--brand-600); color: #fff; }
-.header-tools { display: flex; align-items: center; gap: var(--sp-2); }
+
+.sb-goal {
+  display: flex; flex-direction: column; gap: 1px;
+  padding: 10px 12px; text-decoration: none; color: #fff;
+  background: var(--brand-800); border-left: 3px solid var(--brand-500);
+}
+.sb-goal:hover { background: var(--brand-700); text-decoration: none; }
+.sb-goal-label { font-size: 10px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--eyebrow-on-dark); }
+.sb-goal-value { font-size: 22px; font-weight: 750; letter-spacing: -.02em; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.sb-goal-meta { font-size: 11px; color: rgba(255,255,255,.66); }
+
+.sb-nav { display: flex; flex-direction: column; gap: 1px; }
+.sb-nav a {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 12px; font-size: 14px; font-weight: 600;
+  color: rgba(255,255,255,.76); text-decoration: none;
+  border-left: 3px solid transparent;
+}
+.sb-nav a em { font-style: normal; font-size: 15px; width: 18px; text-align: center; flex: 0 0 18px; opacity: .85; }
+.sb-nav a:hover { background: var(--brand-800); color: #fff; text-decoration: none; }
+.sb-nav a[aria-current="page"] {
+  background: var(--brand-600); color: #fff; border-left-color: var(--brand-300);
+}
+.sb-nav a[aria-current="page"] em { opacity: 1; }
+
+.sb-tools { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.sb-user {
+  display: flex; align-items: center; gap: 9px;
+  padding: 9px 10px; background: var(--brand-800); min-width: 0;
+}
+.sb-avatar {
+  width: 32px; height: 32px; flex: 0 0 32px; display: grid; place-items: center;
+  background: var(--brand-600); color: #fff; font-size: 12px; font-weight: 750; letter-spacing: .02em;
+}
+.sb-user-text { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; flex: 1; }
+.sb-user-text b { font-size: 13px; font-weight: 650; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sb-user-text span { font-size: 11px; color: rgba(255,255,255,.6); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sb-out { flex: 0 0 30px; width: 30px; height: 30px; font-size: 14px; }
 
 .icon-btn {
   display: inline-grid; place-items: center; width: 34px; height: 34px;
   border: 1px solid var(--brand-700); background: var(--brand-800);
-  color: #fff; cursor: pointer; font-size: 15px;
+  color: #fff; cursor: pointer; font-size: 15px; text-decoration: none;
 }
-.icon-btn:hover { background: var(--brand-600); border-color: var(--brand-600); }
+.icon-btn:hover { background: var(--brand-600); border-color: var(--brand-600); text-decoration: none; }
 
 .lang-switch { display: inline-flex; border: 1px solid var(--brand-700); }
 .lang-switch button {
   border: 0; background: transparent; color: rgba(255,255,255,.72);
   font-size: 11px; font-weight: 700; letter-spacing: .04em;
-  padding: 6px 10px; cursor: pointer;
+  padding: 6px 9px; cursor: pointer;
 }
 .lang-switch button:hover { background: var(--brand-800); color: #fff; }
 .lang-switch button[aria-pressed="true"] { background: var(--brand-600); color: #fff; }
 
-/* Mobile bottom tab bar */
+/* ----- 5b. Top bar -------------------------------------------------------- */
+.app-topbar {
+  position: sticky; top: 0; z-index: 30;
+  display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4);
+  min-height: var(--topbar-h); padding: 10px 28px;
+  background: var(--surface); border-bottom: 1px solid var(--border);
+}
+.tb-left { display: flex; align-items: baseline; gap: var(--sp-3); min-width: 0; }
+.tb-title { font-size: 22px; line-height: 1.2; font-weight: 700; letter-spacing: -.01em; margin: 0; }
+.tb-date { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.tb-actions { display: flex; align-items: center; gap: var(--sp-2); flex-wrap: wrap; justify-content: flex-end; }
+.tb-actions:empty { display: none; }
+.tb-menu { display: none; }
+
+/* The tab bar is a phone-only mirror of the sidebar. */
 .tabbar { display: none; }
 
 /* ----- 6. Buttons --------------------------------------------------------- */
@@ -615,7 +670,10 @@ html[data-theme="dark"] mark.hl { background: #8C7415; color: #FFF7DA; }
 .lesson-chip.done { background: var(--ok-bg); border-color: transparent; }
 .lesson-chip.skipped { background: var(--bg); color: var(--muted); text-decoration: line-through; }
 .lesson-chip.moved { background: var(--warn-bg); }
-.lesson-chip b { display: block; font-size: 12.5px; font-weight: 700; }
+/* A day column is a seventh of the week, so the chip title is set small and
+   tight rather than left to break one word per line. */
+.lesson-chip b { display: block; font-size: 12px; font-weight: 700; line-height: 1.25; hyphens: auto; }
+.lesson-chip span { display: block; margin-top: 2px; color: var(--muted); }
 
 /* ----- 20. Flashcards ----------------------------------------------------- */
 /* The card is a <button> so it is reachable by keyboard, which means undoing
@@ -636,6 +694,9 @@ html[data-theme="dark"] mark.hl { background: #8C7415; color: #FFF7DA; }
   align-items: center; justify-content: center; gap: 10px; text-align: center; overflow-y: auto;
 }
 .flash-back { transform: rotateY(180deg); background: var(--brand-050); }
+.vocab-stage { max-width: 560px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--sp-4); }
+.vocab-stage .row, .vocab-stage .row-between { width: 100%; }
+.vocab-grades { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 6px; }
 
 /* ----- 21. Misc ----------------------------------------------------------- */
 .video-slot {
@@ -669,6 +730,29 @@ svg.chart { display: block; max-width: 100%; height: auto; }
 
 /* ----- 22. Responsive ----------------------------------------------------- */
 @media (max-width: 1023px) {
+  /* Below a laptop the sidebar is a drawer. It parks to the LEFT, which cannot
+     widen the document the way a right-hand transform can, so this does not
+     reintroduce the horizontal scrollbar the Desmos panel once caused. */
+  .app-sidebar {
+    z-index: 60;
+    transform: translateX(-100%); transition: transform .2s ease;
+    box-shadow: var(--shadow-3);
+  }
+  .app-body, .app-sidebar[hidden] + .app-body { margin-left: 0; }
+  body.sb-open .app-sidebar { transform: translateX(0); }
+  body.sb-open::after {
+    content: ""; position: fixed; inset: 0; z-index: 55;
+    background: rgba(18,14,48,.55);
+  }
+  .tb-menu {
+    display: inline-grid; place-items: center; width: 34px; height: 34px;
+    border: 1px solid var(--border-strong); background: var(--surface);
+    color: var(--ink); font-size: 18px; cursor: pointer; align-self: center;
+  }
+  .tb-menu:hover { border-color: var(--brand-600); color: var(--brand-700); }
+  .app-topbar { padding-inline: 16px; }
+  .container { padding-inline: 16px; }
+
   .q-main.with-side { grid-template-columns: minmax(0,1fr); }
   .q-side { position: fixed; inset: var(--header-h) 0 0 auto; width: min(420px,100%); z-index: 55; border-left: 1px solid var(--border); max-height: none; }
   .q-split { grid-template-columns: minmax(0,1fr); }
@@ -680,8 +764,8 @@ svg.chart { display: block; max-width: 100%; height: auto; }
 @media (max-width: 760px) {
   body { font-size: 15px; padding-bottom: var(--tabbar-h); }
   .phase-track > div { flex: 0 0 auto; padding-inline: 12px; }
-  .main-nav { display: none; }
-  .brand-text span { display: none; }
+  .tb-title { font-size: 19px; }
+  .tb-date { display: none; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: minmax(0,1fr); }
   .card { padding: var(--sp-4); border-radius: var(--r-md); }
   .h1 { font-size: 22px; }
@@ -731,4 +815,7 @@ svg.chart { display: block; max-width: 100%; height: auto; }
   .auth-head .auth-title { font-size: 25px; }
 }
 
-@media print { .app-header, .tabbar, .q-footer, #desmos-panel { display: none !important; } }
+@media print {
+  .app-sidebar, .app-topbar, .tabbar, .q-footer, #desmos-panel { display: none !important; }
+  .container { max-width: none; padding-inline: 0; }
+}
