@@ -46,6 +46,34 @@ without losing anything.
 
 ---
 
+## Design system
+
+One purple ramp, and no rounded corners anywhere.
+
+**Purple is the product's colour, not an accent.** `--brand-050` through
+`--brand-950` in `css/core.css` drive the header, the hero, the page ground, the
+eyebrows, every interactive state and both themes. The neutrals are tinted
+towards it, so nothing on screen reads as plain grey. The dark theme is the same
+ramp pushed to the bottom rather than a neutral dark with a purple button.
+
+**Semantic colour is deliberately not purple.** Correct is green, wrong is red,
+and the mastery scale runs grey → red → amber → green. Those carry meaning a
+student reads at a glance, and recolouring them to match the brand would delete
+it. The neutral `.notice` is brand-tinted; `.notice-ok`, `.notice-warn` and
+`.notice-danger` keep their own colours, and so do the option states, the
+accuracy bars and the skill heatmap.
+
+**Every container is square.** The radius tokens (`--r-sm` … `--r-xl`) are all
+`0` rather than deleted, so one edit restores rounding everywhere without
+rewriting a single rule. Separation that used to come from a soft corner and a
+soft shadow now comes from a crisp 1px border on a flat surface: `--shadow-1` is
+`none`, `--shadow-2` is a 2px hard edge, and only genuine overlays — modals,
+toasts, the sign-in card — get a real shadow.
+
+The sign-in screen is the one place the brand speaks at full volume: the header
+is hidden while signed out, so `#/auth` fills the window with the purple ramp
+and centres a single square card.
+
 ## AI provider
 
 The AI tutor goes through a single adapter, `JTS.AI.ask()`. It has four modes,

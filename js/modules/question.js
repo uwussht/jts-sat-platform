@@ -397,9 +397,12 @@
         tools.appendChild(hlBtn);
 
         /* Calculator exists only in Math. In Reading and Writing there is no
-           button at all, matching the real test. */
+           button at all, matching the real test; the note says so next to the
+           clock rather than between the last tool and the close button. */
         if (q().section !== 'math') {
-          tools.appendChild(U.el('span.xsmall.muted', { text: t('q.noDesmosInRw') }));
+          /* tools is not in the topbar yet — it is appended last — so a plain
+             append here already puts the note ahead of it. */
+          topbar.appendChild(U.el('span.q-note', { text: t('q.noDesmosInRw') }));
         }
         if (q().section === 'math') {
           tools.appendChild(U.el('button.q-tool', {

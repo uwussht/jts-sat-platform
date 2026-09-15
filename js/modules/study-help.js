@@ -95,7 +95,7 @@
         if (!d) return;
         list.appendChild(U.el('div.card.card-sm.card-flat', null, [
           U.el('div.row', { style: 'align-items:flex-start' }, [
-            U.el('span.key', { text: k, style: 'flex:0 0 26px;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--border-strong);font-size:13px;font-weight:700' }),
+            U.el('span.key', { text: k, style: 'flex:0 0 26px;width:26px;height:26px;display:grid;place-items:center;border:1.5px solid var(--border-strong);font-size:13px;font-weight:700' }),
             U.el('span.small', { html: JTS.i18n.pick(d, lang) })
           ])
         ]));

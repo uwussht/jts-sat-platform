@@ -29,14 +29,20 @@
     render: function (root) {
       var mode = 'login';           /* 'login' | 'register' */
 
-      var screen = U.el('div.container.screen', { style: 'max-width:460px' });
+      /* Signed out, the header is hidden and this screen owns the window, so
+         it is laid out as a landing rather than as a card on the app ground. */
+      var page = U.el('div.auth-page');
+      var panel = U.el('div.auth-panel');
       var card = U.el('div.card.stack');
-      screen.appendChild(U.el('div', { style: 'text-align:center;margin-bottom:20px' }, [
-        U.el('div.brand-mark', { text: 'JTS', style: 'margin:0 auto 12px' }),
+      panel.appendChild(U.el('div.auth-head', null, [
+        U.el('div.brand-mark', { text: 'JTS', 'aria-hidden': 'true' }),
+        U.el('div.auth-title', { text: 'JTS SAT' }),
         U.el('div.eyebrow', { text: t('brand.eyebrow') })
       ]));
-      screen.appendChild(card);
-      root.appendChild(screen);
+      panel.appendChild(card);
+      panel.appendChild(U.el('div.auth-foot', { text: t('auth.localNote') }));
+      page.appendChild(panel);
+      root.appendChild(page);
 
       function render() {
         U.clear(card);
@@ -105,7 +111,8 @@
           text: mode === 'login' ? t('auth.toRegister') : t('auth.toLogin'),
           onclick: function () { mode = mode === 'login' ? 'register' : 'login'; render(); }
         }));
-        form.appendChild(U.el('p.hint', { text: t('auth.localNote') }));
+        /* The local-storage caveat lives under the panel now, so it is not
+           repeated inside the form as well. */
 
         card.appendChild(form);
         emailInput.focus();
