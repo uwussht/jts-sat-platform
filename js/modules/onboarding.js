@@ -1,16 +1,36 @@
 /* ==========================================================================
-   Screen: Onboarding (#/onboarding) — five steps, progress bar, and a save
+   Screen: Onboarding (#/onboarding) — six steps, progress bar, and a save
    after every step so a reload never costs the student their answers.
 
-   The rule that shapes this screen: a score is never invented. A student
-   without a measured result keeps level 'undetermined' and is routed to the
-   diagnostic at step 5 instead of being assigned a number.
+   The first thing this screen does is teach. Four of the six steps are about
+   the exam itself — what it is, how it is built, how you sit it in Kazakhstan,
+   and what each section actually asks — because a student who does not know
+   the exam cannot judge a target or read a diagnostic. The two interactive
+   steps (the goal, the exam date) are folded into the section they belong to.
+
+   The rule that shapes this screen: a score is never invented. Onboarding ends
+   at the diagnostic, which returns a mastery map; a real SAT or Bluebook
+   result comes in through Mock tests, not through a text box here.
+
+   Content lives in js/data/sat-info.js. Section weights are not copied into
+   it — they are read from the live skill taxonomy so the numbers a student is
+   taught cannot drift from the numbers the planner uses.
    ========================================================================== */
 (function () {
   'use strict';
   var U = JTS.util, t = JTS.t, ui = JTS.ui, S = JTS.store;
 
-  var TOTAL_STEPS = 5;
+  var TOTAL_STEPS = 6;
+  /* Which sat-info section each step shows, and which interactive block, if
+     any, is folded in underneath it. */
+  var STEPS = [
+    { info: 'about' },
+    { info: 'structure' },
+    { info: 'goal',      block: 'goal' },
+    { info: 'examday',   block: 'examDate' },
+    { info: 'verbal' },
+    { info: 'math' }
+  ];
 
   /* ---------------------------------------------------------------- helpers */
 
@@ -53,10 +73,144 @@
     return label;
   }
 
+  /* ------------------------------------------------------------- info blocks */
+
+  function infoSection(id) {
+    return (JTS.data.satInfo || []).filter(function (x) { return x.id === id; })[0] || null;
+  }
+
+  function pick(obj) { return JTS.i18n.pick(obj, S.settings().uiLang); }
+
+  function bullets(list) {
+    var ul = U.el('ul.stack-sm.list-dot');
+    (list || []).forEach(function (line) {
+      ul.appendChild(U.el('li.small', { html: pick(line) }));
+    });
+    return ul;
+  }
+
+  /**
+   * The share of a section each domain carries, straight from the taxonomy.
+   * Percentages are within the section, which is how College Board publishes
+   * them and how a student thinks about one module.
+   */
+  function domainTable(section) {
+    var domains = JTS.skills.domains(section);
+    var weights = {}, total = 0;
+    domains.forEach(function (d) {
+      weights[d.id] = U.sum(JTS.skills.all()
+        .filter(function (sk) { return sk.domain === d.id; })
+        .map(function (sk) { return sk.examWeight; }));
+      total += weights[d.id];
+    });
+    var wrap = U.el('div.stack-sm');
+    domains.forEach(function (d) {
+      var share = total ? weights[d.id] / total : 0;
+      var skills = JTS.skills.all().filter(function (sk) { return sk.domain === d.id; });
+      wrap.appendChild(U.el('div.stack-sm', null, [
+        U.el('div.row-between', null, [
+          U.el('span.small', null, [U.el('b', { text: JTS.i18n.pickName(d) })]),
+          U.el('span.small.muted.num', { text: Math.round(share * 100) + '%' })
+        ]),
+        ui.bar(Math.round(share * 100), 100),
+        U.el('div.xsmall.muted', {
+          text: skills.map(function (sk) { return JTS.i18n.pickName(sk); }).join(' · ')
+        })
+      ]));
+    });
+    return wrap;
+  }
+
+  /** The four modules and the break, as a row of blocks with their timings. */
+  function timeline(rows) {
+    var wrap = U.el('div.stack-sm');
+    (rows || []).forEach(function (r) {
+      wrap.appendChild(U.el('div.row-between.row-wrap', {
+        style: 'padding:9px 12px;border:1px solid var(--border);' +
+               (r.key === 'break' ? 'background:var(--surface-2)' : 'background:var(--brand-050)')
+      }, [
+        U.el('span.small', null, [
+          U.el('b', { text: r.label }),
+          r.adaptive ? U.el('span.badge', { text: t('onb.info.adaptive'), style: 'margin-inline-start:8px' }) : null
+        ]),
+        U.el('span.small.muted.nowrap', {
+          text: (r.q ? r.q + ' ' + t('common.questions') + ' · ' : '') + r.min + ' ' + t('common.minutes')
+        })
+      ]));
+    });
+    return wrap;
+  }
+
+  function checklist(items, kind) {
+    var wrap = U.el('div.stack-sm');
+    (items || []).forEach(function (it) {
+      wrap.appendChild(U.el('div.row.row-top', null, [
+        U.el('span', { text: kind === 'avoid' ? '✕' : '✓', 'aria-hidden': 'true',
+                       style: 'flex:0 0 16px;font-weight:800;color:var(--' + (kind === 'avoid' ? 'danger' : 'ok') + ')' }),
+        U.el('span.small', { html: pick(it) })
+      ]));
+    });
+    return wrap;
+  }
+
+  /** Render one sat-info section. Blocks it does not declare are skipped. */
+  function infoStep(body, id) {
+    var sec = infoSection(id);
+    if (!sec) return;
+
+    body.appendChild(U.el('h2.h2', { text: t('onb.info.' + id) }));
+    body.appendChild(U.el('p.muted', { text: pick(sec.lead) }));
+
+    if (sec.stats) {
+      body.appendChild(U.el('div.grid.grid-3', null, sec.stats.map(function (st) {
+        return U.el('div.card.card-sm.card-flat', null, [U.el('div.stat', null, [
+          U.el('div.stat-label', { text: pick(st.label) }),
+          /* A stat value is a plain string when it is language-neutral (400-1600,
+             98) and a {en,ru,kk} object when it carries a unit that is not. */
+          U.el('div.stat-value', { text: pick(st.value) })
+        ])]);
+      })));
+    }
+    if (sec.timeline) body.appendChild(timeline(sec.timeline));
+    if (sec.section) {
+      body.appendChild(U.el('h3.h3', { text: t('onb.info.domains') }));
+      body.appendChild(domainTable(sec.section));
+    }
+    if (sec.points) body.appendChild(bullets(sec.points));
+
+    if (sec.steps) {
+      body.appendChild(U.el('h3.h3', { text: t('onb.info.howToRegister') }));
+      var ol = U.el('ol.stack-sm.list-num');
+      sec.steps.forEach(function (line) { ol.appendChild(U.el('li.small', { html: pick(line) })); });
+      body.appendChild(ol);
+    }
+    if (sec.bring || sec.avoid) {
+      body.appendChild(U.el('div.grid.grid-2', null, [
+        U.el('div.card.card-sm.card-flat.stack-sm', null, [
+          U.el('div.eyebrow', { text: t('onb.info.bring') }), checklist(sec.bring, 'bring')
+        ]),
+        U.el('div.card.card-sm.card-flat.stack-sm', null, [
+          U.el('div.eyebrow', { text: t('onb.info.avoid') }), checklist(sec.avoid, 'avoid')
+        ])
+      ]));
+    }
+    if (sec.links) {
+      body.appendChild(U.el('div.row.row-wrap', null, sec.links.map(function (l) {
+        return U.el('a.btn.btn-sm', { href: l.url, target: '_blank', rel: 'noopener',
+                                      text: pick(l.label) + ' ↗' });
+      })));
+    }
+    /* The same discipline as the exam-dates file: this text is JTS's reading
+       of the official rules, and the student is sent to check it. */
+    if ((JTS.data.satInfoMeta || {}).verified === false) {
+      body.appendChild(U.el('p.xsmall.muted', { text: t('onb.info.unverified') }));
+    }
+  }
+
   /* ------------------------------------------------------------------ steps */
 
-  /* Step 1 — exam date, from the reference file rather than hard-coded in UI. */
-  function step1(body, state, refresh) {
+  /* Exam date, from the reference file rather than hard-coded in UI. */
+  function examDateBlock(body, state, refresh) {
     var chosen = state.examDate || null;
     var todayISO = U.iso(U.today());
     var dates = (JTS.data.examDates || []).filter(function (d) { return d.testDate >= todayISO; });
@@ -124,103 +278,7 @@
     return function valid() { return !!S.state().examDate; };
   }
 
-  /* Step 2 — a measured result, or an honest 'undetermined'. */
-  function step2(body, state, refresh) {
-    var hasResult = !!state.baseline;
-    body.appendChild(U.el('h2.h2', { text: t('onb.s2.title') }));
-
-    var choice = U.el('div.stack-sm');
-    choice.appendChild(radioCard('baseline', hasResult, t('onb.s2.have'), null, function () {
-      S.update(function (s) {
-        s.baseline = s.baseline || { rw: null, math: null, total: null, date: U.iso(U.today()), source: '' };
-      });
-      refresh();
-    }));
-    choice.appendChild(radioCard('baseline', !hasResult, t('onb.s2.none'), t('onb.s2.noneNote'), function () {
-      S.update(function (s) { s.baseline = null; s.profile.level = 'undetermined'; });
-      refresh();
-    }));
-    body.appendChild(choice);
-
-    if (!hasResult) {
-      body.appendChild(U.el('div.notice', null, [
-        U.el('span', null, [U.el('b', { text: t('mastery.no-data') + '. ' }), t('onb.s2.noneNote')])
-      ]));
-      return function valid() { return true; };
-    }
-
-    var b = state.baseline;
-    var totalOut = U.el('div.stat-value', { text: b.total ? String(b.total) : '—' });
-    var err = U.el('div.error-text', { role: 'alert', hidden: true });
-
-    function recalc() {
-      var rw = rwIn.value, ma = maIn.value;
-      if (validScore(rw) && validScore(ma)) {
-        var total = Number(rw) + Number(ma);
-        totalOut.textContent = String(total);
-        S.update(function (s) { s.baseline.rw = Number(rw); s.baseline.math = Number(ma); s.baseline.total = total; });
-      } else {
-        totalOut.textContent = '—';
-        S.update(function (s) { s.baseline.rw = validScore(rw) ? Number(rw) : null;
-                                s.baseline.math = validScore(ma) ? Number(ma) : null;
-                                s.baseline.total = null; });
-      }
-    }
-
-    var rwIn = scoreInput('b-rw', b.rw, recalc);
-    var maIn = scoreInput('b-math', b.math, recalc);
-
-    var dateIn = U.el('input.input', { type: 'date', id: 'b-date', value: b.date || '', max: U.iso(U.today()) });
-    dateIn.addEventListener('change', function () {
-      S.update(function (s) { s.baseline.date = dateIn.value; });
-    });
-
-    var srcSel = U.el('select.select', { id: 'b-src' });
-    [['', '—'], ['Official SAT', t('onb.s2.srcOfficial')],
-     ['Bluebook Practice Test', t('onb.s2.srcBluebook')], ['Other', t('onb.s2.srcOther')]
-    ].forEach(function (o) {
-      var opt = U.el('option', { value: o[0], text: o[1] });
-      if ((b.source || '').indexOf(o[0]) === 0 && o[0]) opt.selected = true;
-      srcSel.appendChild(opt);
-    });
-    var srcDetail = U.el('input.input', {
-      type: 'text', placeholder: 'e.g. Bluebook Practice Test 6',
-      value: b.source && b.source.indexOf(srcSel.value) === 0 ? b.source.slice(srcSel.value.length).trim() : ''
-    });
-    function saveSource() {
-      var v = (srcSel.value + ' ' + srcDetail.value).trim();
-      S.update(function (s) { s.baseline.source = srcSel.value ? v : ''; });
-    }
-    srcSel.addEventListener('change', saveSource);
-    srcDetail.addEventListener('input', saveSource);
-
-    var grid = U.el('div.grid.grid-2');
-    grid.appendChild(ui.field(t('onb.s2.rw'), rwIn));
-    grid.appendChild(ui.field(t('onb.s2.math'), maIn));
-    body.appendChild(grid);
-    body.appendChild(U.el('div.card.card-sm.card-flat', null, [
-      U.el('div.stat', null, [U.el('div.stat-label', { text: t('onb.s2.total') }), totalOut])
-    ]));
-    var grid2 = U.el('div.grid.grid-2');
-    grid2.appendChild(ui.field(t('onb.s2.date'), dateIn));
-    grid2.appendChild(ui.field(t('onb.s2.source'), srcSel));
-    body.appendChild(grid2);
-    body.appendChild(srcDetail);
-    body.appendChild(err);
-
-    return function valid() {
-      var s = S.state().baseline;
-      if (!validScore(s.rw) || !validScore(s.math)) { err.textContent = t('onb.s2.errRange'); err.hidden = false; return false; }
-      if (!s.date) { err.textContent = t('onb.s2.errDate'); err.hidden = false; return false; }
-      if (!s.source) { err.textContent = t('onb.s2.errSource'); err.hidden = false; return false; }
-      err.hidden = true;
-      S.update(function (st) { st.profile.level = 'measured'; });
-      return true;
-    };
-  }
-
-  /* Step 3 — target scores, with universities as reference only. */
-  function step3(body, state, refresh) {
+  function goalBlock(body, state, refresh) {
     var g = state.goals || { rw: 650, math: 700, total: 1350, collegeIds: [] };
     body.appendChild(U.el('h2.h2', { text: t('onb.s3.title') }));
 
@@ -330,8 +388,12 @@
     };
   }
 
-  /* Step 4 — real available time; intensity is computed from it, not guessed. */
-  function step4(body, state, refresh) {
+  /**
+   * Real available time; intensity is computed from it, not guessed.
+   * Exported, because it is asked for on the diagnostic result screen — the
+   * moment the plan is actually built — rather than during onboarding.
+   */
+  function availabilityBlock(body, state, refresh) {
     var a = state.availability || { days: [], minutesPerSession: 60, intensity: 'standard' };
     body.appendChild(U.el('h2.h2', { text: t('onb.s4.title') }));
 
@@ -394,55 +456,6 @@
     };
   }
 
-  /* Step 5 — diagnostic for an undetermined level, otherwise a plan preview. */
-  function step5(body, state) {
-    body.appendChild(U.el('h2.h2', { text: t('onb.s5.title') }));
-    var undetermined = state.profile.level === 'undetermined';
-
-    if (undetermined) {
-      body.appendChild(U.el('div.notice.notice-warn', { text: t('onb.s5.diagLead') }));
-      body.appendChild(U.el('div.card.card-sm.card-flat.stack-sm', null, [
-        U.el('div.row', null, [
-          U.el('span.badge', { text: '12 R&W' }),
-          U.el('span.badge', { text: '12 Math' }),
-          U.el('span.badge.badge-muted', { text: t('diag.preliminary') })
-        ]),
-        U.el('p.small.muted', { text: t('diag.lead') })
-      ]));
-      return { valid: function () { return true; }, finishLabel: t('onb.s5.startDiag') };
-    }
-
-    /* A measured result is on file, so a plan can be previewed straight away. */
-    var plan = JTS.planner.generate();
-    var week = plan.weeks[0];
-    body.appendChild(U.el('div.notice.notice-ok', { text: t('onb.s5.planLead') }));
-    body.appendChild(U.el('h3.h3', { text: t('onb.s5.preview') }));
-
-    var phases = U.el('div.phase-track');
-    JTS.planner.phases.forEach(function (p) {
-      phases.appendChild(U.el('div' + (p.id === week.phaseId ? '.current' : ''),
-        { text: t('plan.phase.' + p.key) }));
-    });
-    body.appendChild(phases);
-
-    var lessons = U.el('div.stack-sm');
-    week.lessons.forEach(function (l) {
-      lessons.appendChild(U.el('div.card.card-sm.card-flat', null, [
-        U.el('div.row-between', null, [
-          U.el('b', { text: U.fmtDate(l.date) }),
-          U.el('span.badge.badge-muted', { text: t('today.expected', { n: l.expectedMinutes }) })
-        ]),
-        U.el('div.small', { text: l.skillIds.map(function (id) { return JTS.skills.name(id); }).join(' · ') }),
-        U.el('div.row.row-wrap', { style: 'margin-top:6px' },
-          l.actions.map(function (a) { return U.el('span.badge', { text: t('plan.action.' + a) }); }))
-      ]));
-    });
-    body.appendChild(lessons);
-    body.appendChild(U.el('p.hint', { text: t('plan.lessonsThisWeek', { n: week.lessons.length }) }));
-
-    return { valid: function () { return true; }, finishLabel: t('onb.s5.go') };
-  }
-
   /* ------------------------------------------------------------------ shell */
 
   JTS.router.register('#/onboarding', {
@@ -461,14 +474,14 @@
         U.clear(screen);
         state = S.state();
 
-        var steps = U.el('ol.steps', { 'aria-label': t('onb.step', { n: step }) });
+        var steps = U.el('ol.steps', { 'aria-label': t('onb.step', { n: step, total: TOTAL_STEPS }) });
         for (var i = 1; i <= TOTAL_STEPS; i++) {
           steps.appendChild(U.el('li' + (i < step ? '.done' : i === step ? '.current' : '')));
         }
         screen.appendChild(U.el('div.stack-sm', { style: 'margin-bottom:18px' }, [
           U.el('div.row-between', null, [
             U.el('div.eyebrow', { text: t('onb.title') }),
-            U.el('div.small.muted', { text: t('onb.step', { n: step }) })
+            U.el('div.small.muted', { text: t('onb.step', { n: step, total: TOTAL_STEPS }) })
           ]),
           steps
         ]));
@@ -478,12 +491,17 @@
         card.appendChild(body);
         screen.appendChild(card);
 
-        var result;
-        if (step === 1) result = { valid: step1(body, state, refresh) };
-        else if (step === 2) result = { valid: step2(body, state, refresh) };
-        else if (step === 3) result = { valid: step3(body, state, refresh) };
-        else if (step === 4) result = { valid: step4(body, state, refresh) };
-        else result = step5(body, state);
+        var def = STEPS[step - 1];
+        infoStep(body, def.info);
+
+        var result = { valid: function () { return true; } };
+        if (def.block === 'goal') {
+          body.appendChild(U.el('hr.divider'));
+          result = { valid: goalBlock(body, state, refresh) };
+        } else if (def.block === 'examDate') {
+          body.appendChild(U.el('hr.divider'));
+          result = { valid: examDateBlock(body, state, refresh) };
+        }
 
         var back = U.el('button.btn', {
           type: 'button', text: t('common.back'), disabled: step === 1 || null,
@@ -495,7 +513,7 @@
         });
         var next = U.el('button.btn.btn-primary', {
           type: 'button',
-          text: step === TOTAL_STEPS ? (result.finishLabel || t('common.finish')) : t('common.next'),
+          text: step === TOTAL_STEPS ? t('onb.toDiagnostic') : t('common.next'),
           onclick: function () {
             if (!result.valid()) return;
             if (step < TOTAL_STEPS) {
@@ -504,17 +522,11 @@
               draw();
               return;
             }
-            /* Finish: the plan exists either way, so the app is usable. A
-               student with no measured result goes to the diagnostic first;
-               the diagnostic rebuilds the plan from what it measures. */
-            var undetermined = S.state().profile.level === 'undetermined';
-            if (!S.state().plan) JTS.planner.generate();
-            S.update(function (s) {
-              s.profile.onboardingComplete = true;
-              s.profile.onboardingStep = TOTAL_STEPS;
-            });
-            JTS.shell.renderHeader();
-            JTS.router.go(undetermined ? '#/diagnostic' : '#/today');
+            /* Onboarding ends at the diagnostic for everyone. Nothing here
+               assigns a level, so the diagnostic is the only thing that has
+               measured anything by the time the plan is built. */
+            S.update(function (s) { s.profile.onboardingStep = TOTAL_STEPS; });
+            JTS.router.go('#/diagnostic');
           }
         });
 
@@ -524,4 +536,10 @@
       draw();
     }
   });
+
+  JTS.onboarding = {
+    availabilityBlock: availabilityBlock,
+    infoStep: infoStep,
+    domainTable: domainTable
+  };
 })();

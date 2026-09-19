@@ -120,7 +120,7 @@
 
     function fill() {
       body.appendChild(U.el('p.small.muted', { text: JTS.i18n.pick(sec.lead, lang) }));
-      var steps = U.el('ol.stack-sm', { style: 'padding-inline-start:20px' });
+      var steps = U.el('ol.stack-sm.list-num');
       JTS.i18n.pick(sec.steps, lang).forEach(function (line) {
         steps.appendChild(U.el('li.small', { html: line }));
       });

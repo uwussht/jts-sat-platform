@@ -701,8 +701,11 @@
       /* Guards: no session -> auth; incomplete onboarding -> onboarding. */
       var openRoutes = ['#/auth'];
       if (!state && openRoutes.indexOf(route.base) < 0) { this.go('#/auth'); return; }
+      /* #/question is on this list because the diagnostic runs on it, and the
+         diagnostic is now what finishes onboarding — without it the student
+         presses Start and is bounced straight back to step 6. */
       if (state && !state.profile.onboardingComplete &&
-          ['#/onboarding', '#/diagnostic', '#/settings'].indexOf(route.base) < 0) {
+          ['#/onboarding', '#/diagnostic', '#/question', '#/settings'].indexOf(route.base) < 0) {
         this.go('#/onboarding'); return;
       }
       if (state && state.profile.onboardingComplete && route.base === '#/auth') { this.go('#/today'); return; }
@@ -1847,6 +1850,10 @@
     /* Destinations that belong in the sidebar but not in the phone tab bar,
        where five is already the most that fits. */
     subNavItems: [
+      /* The diagnostic lives here rather than only at the end of onboarding:
+         it is the same measurement whether or not a student already has a
+         score, and it is worth retaking every few weeks. */
+      { path: '#/diagnostic',   key: 'diag.title',   icon: '◎' },
       { path: '#/vocab',        key: 'vocab.title',  icon: '⌸' },
       { path: '#/desmos-guide', key: 'desmos.title', icon: 'ƒ' }
     ],

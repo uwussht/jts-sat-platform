@@ -121,6 +121,11 @@ body {
 }
 h1,h2,h3,h4,p,figure,ul,ol { margin: 0; }
 ul,ol { padding: 0; list-style: none; }
+/* The reset kills markers everywhere, which is right for nav and card lists
+   and wrong for prose. Numbered and bulleted content opts back in. */
+ol.list-num { list-style: decimal; padding-inline-start: 22px; }
+ul.list-dot { list-style: disc; padding-inline-start: 22px; }
+ol.list-num li, ul.list-dot li { margin-block: 2px; }
 img { max-width: 100%; display: block; }
 button, input, select, textarea { font: inherit; color: inherit; }
 a { color: var(--brand-600); text-decoration: none; }

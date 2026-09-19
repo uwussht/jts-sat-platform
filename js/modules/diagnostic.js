@@ -108,12 +108,56 @@
     return 4;                       /* Timed practice */
   }
 
+  /**
+   * Advice is chosen from the share correct in that domain, and it says what
+   * to do rather than how it went. Three bands, because a diagnostic gives
+   * three questions per domain and pretending to more resolution than that
+   * would be dishonest.
+   */
+  function adviceFor(share) {
+    if (share >= 0.7) return { key: 'strong', cls: 'ok' };
+    if (share >= 0.34) return { key: 'shaky', cls: 'warn' };
+    return { key: 'weak', cls: 'danger' };
+  }
+
+  function sectionShare(summary, section) {
+    var correct = 0, total = 0;
+    summary.questionIds.forEach(function (qid) {
+      var q = JTS.bank.get(qid);
+      if (!q || q.section !== section) return;
+      total++;
+      if (summary.answers[qid] && summary.answers[qid].correct) correct++;
+    });
+    return { correct: correct, total: total, share: total ? correct / total : 0 };
+  }
+
+  function pctRow(label, correct, total, extra) {
+    var share = total ? correct / total : 0;
+    var pct = Math.round(share * 100);
+    var a = adviceFor(share);
+    return U.el('div.stack-sm', null, [
+      U.el('div.row-between.row-wrap', null, [
+        U.el('span.small', null, [U.el('b', { text: label })]),
+        U.el('span.small.num', null, [
+          U.el('b', { text: pct + '%' }),
+          U.el('span.muted', { text: '  ' + correct + '/' + total })
+        ])
+      ]),
+      ui.bar(correct, total, a.cls === 'ok' ? 'bar-ok' : a.cls === 'warn' ? 'bar-warn' : ''),
+      extra || null
+    ]);
+  }
+
   function renderResult(root, summary) {
-    var screen = U.el('div.container.screen.stack');
+    var screen = U.el('div.container.screen.stack-lg', { style: 'max-width:820px' });
     root.appendChild(screen);
 
     var phase = recommendPhase(summary);
     var phaseKey = JTS.planner.phases.filter(function (p) { return p.id === phase; })[0].key;
+    var totalQ = summary.questionIds.length;
+    var overall = totalQ ? summary.correct / totalQ : 0;
+    var rw = sectionShare(summary, 'rw');
+    var math = sectionShare(summary, 'math');
 
     screen.appendChild(U.el('div.stack-sm', null, [
       U.el('div.eyebrow', { text: t('diag.title') }),
@@ -125,63 +169,124 @@
       U.el('span', null, [U.el('b', { text: t('diag.noScore') })])
     ]));
 
-    screen.appendChild(U.el('div.grid.grid-3', null, [
-      U.el('div.card.card-sm', null, [U.el('div.stat', null, [
-        U.el('div.stat-label', { text: t('common.correct') }),
-        U.el('div.stat-value', { text: summary.correct + ' / ' + summary.questionIds.length })
-      ])]),
-      U.el('div.card.card-sm', null, [U.el('div.stat', null, [
-        U.el('div.stat-label', { text: t('common.time') }),
-        U.el('div.stat-value', { text: U.fmtLongTime(summary.elapsedMs) })
-      ])]),
-      U.el('div.card.card-sm', null, [U.el('div.stat', null, [
-        U.el('div.stat-label', { text: t('diag.recommendedPhase', { phase: '' }).replace(/:.*$/, '') }),
-        U.el('div.stat-value', { text: t('plan.phase.' + phaseKey) })
-      ])])
+    /* The headline is a percentage, which is the only honest summary of 24
+       questions: it says how much of what was asked came back right, and
+       nothing about where that lands on a 400-1600 scale. */
+    screen.appendChild(U.el('div.card.card-hero.stack-sm', null, [
+      U.el('div.eyebrow', { text: t('diag.overall') }),
+      U.el('div', { style: 'font-size:46px;font-weight:750;line-height:1;letter-spacing:-.02em',
+                    text: Math.round(overall * 100) + '%' }),
+      U.el('div.small.muted', {
+        text: t('diag.correctOf', { correct: summary.correct, total: totalQ }) +
+              ' · ' + U.fmtLongTime(summary.elapsedMs)
+      })
     ]));
 
+    screen.appendChild(U.el('div.grid.grid-2', null, [
+      U.el('div.card.stack-sm', null, [pctRow(t('common.rw'), rw.correct, rw.total)]),
+      U.el('div.card.stack-sm', null, [pctRow(t('common.math'), math.correct, math.total)])
+    ]));
+
+    /* ---------------------------------------------------- domain breakdown */
     var breakdown = domainBreakdown(summary);
     var card = U.el('div.card.stack');
-    card.appendChild(U.el('div.row-between', null, [
-      U.el('h2.h2', { text: t('progress.byDomain') }),
+    card.appendChild(U.el('div.row-between.row-wrap', null, [
+      U.el('h2.h2', { text: t('diag.byDomain') }),
       U.el('span.badge.badge-muted', { text: t('diag.preliminary') })
     ]));
+    card.appendChild(U.el('p.small.muted', { text: t('diag.adviceLead') }));
+
+    var ranked = [];
     JTS.skills.domains().forEach(function (d) {
       var b = breakdown[d.id];
-      if (!b) return;
-      card.appendChild(U.el('div.stack-sm', null, [
-        U.el('div.row-between', null, [
-          U.el('span.small', { text: JTS.i18n.pickName(d) }),
-          U.el('span.small.muted.num', { text: b.correct + '/' + b.total })
-        ]),
-        ui.bar(b.correct, b.total, b.correct / b.total >= 0.7 ? 'bar-ok' : b.correct / b.total >= 0.4 ? 'bar-warn' : '')
-      ]));
+      if (!b || !b.total) return;
+      var share = b.correct / b.total;
+      ranked.push({ domain: d, share: share, b: b });
+      var a = adviceFor(share);
+      card.appendChild(pctRow(
+        JTS.i18n.pickName(d), b.correct, b.total,
+        U.el('div.small', null, [
+          U.el('span.badge.badge-' + a.cls, { text: t('diag.band.' + a.key) }),
+          U.el('span.muted', { text: '  ' + t('diag.advice.' + a.key) })
+        ])
+      ));
     });
     screen.appendChild(card);
 
-    screen.appendChild(U.el('div.row.row-wrap', null, [
-      U.el('button.btn.btn-primary.btn-lg', {
-        type: 'button', text: t('diag.toPlan'),
-        onclick: function () {
-          S.update(function (s) { s.profile.currentPhase = phase; });
-          JTS.planner.generate();
-          S.update(function (s) { s.profile.onboardingComplete = true; });
-          JTS.shell.renderHeader();
-          JTS.router.go('#/today');
-        }
-      }),
-      U.el('a.btn', { href: '#/progress', text: t('progress.title') })
-    ]));
+    /* The two weakest domains, weighted by how much of the exam they carry,
+       are the ones the plan will open with. Naming them here is the whole
+       point of having run the diagnostic. */
+    ranked.sort(function (x, y) {
+      var wx = U.sum(JTS.skills.all().filter(function (sk) { return sk.domain === x.domain.id; })
+                 .map(function (sk) { return sk.examWeight; }));
+      var wy = U.sum(JTS.skills.all().filter(function (sk) { return sk.domain === y.domain.id; })
+                 .map(function (sk) { return sk.examWeight; }));
+      return ((1 - x.share) * wx) < ((1 - y.share) * wy) ? 1 : -1;
+    });
+    var focus = ranked.slice(0, 2);
+    if (focus.length) {
+      screen.appendChild(U.el('div.card.card-accent.stack-sm', null, [
+        U.el('div.eyebrow', { text: t('diag.startWith') }),
+        U.el('div.h2', { text: focus.map(function (f) { return JTS.i18n.pickName(f.domain); }).join(' · ') }),
+        U.el('p.small.muted', { text: t('diag.startWithNote', { phase: t('plan.phase.' + phaseKey) }) })
+      ]));
+    }
 
-    screen.appendChild(U.el('p.hint', { text: t('diag.lead') }));
+    /* -------------------------------------------------- availability → plan */
+    var first = S.state().profile.onboardingComplete !== true;
+    var planCard = U.el('div.card.stack');
+    planCard.appendChild(U.el('h2.h2', { text: first ? t('diag.buildPlan') : t('settings.rebuildPlan') }));
+    planCard.appendChild(U.el('p.small.muted', {
+      text: first ? t('diag.buildPlanLead') : t('diag.replanLead')
+    }));
+    var availValid = JTS.onboarding.availabilityBlock(planCard, S.state(), function () {});
+    planCard.appendChild(U.el('button.btn.btn-primary.btn-lg.btn-block', {
+      type: 'button', text: first ? t('diag.toPlan') : t('settings.rebuildPlan'),
+      onclick: function () {
+        if (!availValid()) return;
+        S.update(function (s) { s.profile.currentPhase = phase; });
+        /* A first run generates the plan; a retake rebuilds the weeks that are
+           still ahead and leaves the ones already spent alone. */
+        if (first || !S.state().plan) JTS.planner.generate();
+        else JTS.planner.rebuild();
+        S.update(function (s) { s.profile.onboardingComplete = true; });
+        JTS.shell.renderHeader();
+        JTS.router.go('#/today');
+      }
+    }));
+    screen.appendChild(planCard);
+
+    if (!first) {
+      screen.appendChild(U.el('div.row.row-wrap', null, [
+        U.el('a.btn', { href: '#/diagnostic?show=intro', text: t('diag.retake') }),
+        U.el('a.btn', { href: '#/progress', text: t('progress.title') })
+      ]));
+    }
   }
 
   function renderIntro(root) {
+    var state = S.state();
+    var last = (state.sessions || []).filter(function (x) { return x.kind === 'diagnostic'; }).pop();
+
     var screen = U.el('div.container.screen', { style: 'max-width:640px' });
     root.appendChild(screen);
     var card = U.el('div.card.stack');
     card.appendChild(U.el('h1.h1', { text: t('diag.title') }));
     card.appendChild(U.el('p.muted', { text: t('diag.lead') }));
+
+    /* Taking it again is a normal thing to do, and the previous result is not
+       thrown away by doing so — every attempt stays in the history. */
+    if (last) {
+      card.appendChild(U.el('div.notice.stack-sm', null, [
+        U.el('div.stack-sm', null, [
+          U.el('div', null, [U.el('b', { text: t('diag.alreadyTaken', {
+            date: U.fmtDate(new Date(last.finishedAt), S.settings().uiLang)
+          }) })]),
+          U.el('div.small', { text: t('diag.retakeNote') }),
+          U.el('a.btn.btn-sm', { href: '#/diagnostic', text: t('diag.viewLast') })
+        ])
+      ]));
+    }
     card.appendChild(U.el('div.row.row-wrap', null, [
       U.el('span.badge', { text: '12 R&W' }),
       U.el('span.badge', { text: '12 Math' }),
@@ -189,7 +294,7 @@
     ]));
     card.appendChild(U.el('div.notice', { text: t('diag.noScore') }));
     card.appendChild(U.el('button.btn.btn-primary.btn-lg.btn-block', {
-      type: 'button', text: t('diag.start'), onclick: startDiagnostic
+      type: 'button', text: last ? t('diag.retake') : t('diag.start'), onclick: startDiagnostic
     }));
     screen.appendChild(card);
   }

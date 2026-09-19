@@ -240,6 +240,58 @@ Treat the number as a direction of travel between runs, not as a score. If you
 want a figure a student can rely on, the honest answer is still an official
 College Board practice test.
 
+## Onboarding and the diagnostic
+
+Onboarding teaches before it asks. Six steps, four of them about the exam
+itself, because a student who does not know how the SAT is built cannot judge a
+target score or read a diagnostic.
+
+| # | Step | What it is |
+|---|---|---|
+| 1 | What the SAT is | Scored 400–1600, adaptive, no penalty for guessing, retakeable |
+| 2 | How the exam is built | The four modules and the break, with the pace each implies |
+| 3 | Your target score | The only number the student sets; prefilled from a university's middle-50% |
+| 4 | Exam day in Kazakhstan | How to register, what to bring, what not to — and the exam date picker |
+| 5 | Reading and Writing | The four domains and their share of the section |
+| 6 | Math | The four domains, Desmos, and the grid-in rules |
+
+Content lives in `js/data/sat-info.js`. **Domain weights are not in it** — the
+Reading and Writing and Math steps read them from the live skill taxonomy, so
+the percentages a student is taught cannot drift away from the ones the planner
+and the mock actually use.
+
+`satInfoMeta.verified` is `false`, like the exam dates. The College Board rules
+quoted (passport, Bluebook setup, the device, what is not allowed) are the
+standing international rules and change rarely; **fees, deadlines and the list
+of test centres in Kazakhstan are deliberately not stated** — the screen links
+to collegeboard.org rather than printing a number that will be wrong next
+cycle. Confirm the text against the official site before students see it.
+
+### The diagnostic report
+
+Onboarding ends at the diagnostic for everyone, and the diagnostic finishes
+onboarding. Nothing in the six steps assigns a level; a real SAT or Bluebook
+result comes in through **Mock tests → Add a result**, not through a text box.
+
+**A student who already has a score takes it too.** The old "do you have a
+result?" branch is gone: a reported score says where you landed, and the
+diagnostic says which of the eight domains it came from, which is what a plan
+needs. The diagnostic also has a permanent place in the sidebar so it can be
+retaken — a retake adds a run rather than replacing one, every attempt stays in
+the history, and the plan is rebuilt from the newest (keeping the weeks already
+spent, redoing the ones ahead).
+
+The report gives a percentage overall, a percentage per section and a
+percentage per domain, and attaches advice to each domain in three bands —
+start here / keep practising / leave alone for now. Three bands, because three
+questions per domain supports three bands and nothing finer; the screen says so
+rather than implying a precision it does not have. It then names the two
+domains the plan will open with, chosen from what was missed **weighted by how
+much of the exam each domain carries**, not simply from the lowest percentage.
+
+Availability is asked for at the bottom of that report rather than during
+onboarding, because that is the moment the plan is actually built.
+
 ## Progress
 
 Everything on `#/progress` is a measurement of work already done. There is no
