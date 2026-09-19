@@ -245,7 +245,13 @@ sup, sub { line-height: 0; font-size: .75em; }
 }
 .sb-nav a[aria-current="page"] em { opacity: 1; }
 
-.sb-tools { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+/* Four controls have to share 248px minus padding, so this row does not wrap:
+   the language switch gives up the slack instead of the gear falling to a
+   second line. */
+.sb-tools { display: flex; align-items: center; gap: 5px; }
+.sb-tools .lang-switch { flex: 1 1 auto; min-width: 0; }
+.sb-tools .lang-switch button { flex: 1 1 auto; padding-inline: 6px; }
+.sb-tools .icon-btn { flex: 0 0 32px; width: 32px; height: 32px; font-size: 14px; }
 .sb-user {
   display: flex; align-items: center; gap: 9px;
   padding: 9px 10px; background: var(--brand-800); min-width: 0;
@@ -331,6 +337,9 @@ sup, sub { line-height: 0; font-size: .75em; }
 }
 .card-hero .muted, .card-hero .small.muted { color: rgba(255,255,255,.76); }
 .card-hero .eyebrow { color: var(--eyebrow-on-dark); }
+/* .stat-label carries its own muted colour, so the generic .card-hero .muted
+   rule never reached it and the labels sat near-invisible on the gradient. */
+.card-hero .stat-label { color: rgba(255,255,255,.76); }
 .card-hero .badge { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.28); color: #fff; }
 .divider { height: 1px; background: var(--border); border: 0; margin-block: var(--sp-4); }
 
@@ -818,6 +827,95 @@ svg.chart { display: block; max-width: 100%; height: auto; }
 .auth-foot { text-align: center; color: rgba(255,255,255,.66); font-size: 12px; margin-top: var(--sp-4); }
 @media (max-width: 760px) {
   .auth-head .auth-title { font-size: 25px; }
+}
+
+/* ----- 24. Roadmap -------------------------------------------------------- */
+/* A vertical road: each step hangs off one continuous rule drawn through the
+   markers, so the phases read as one journey and not as six cards. */
+.rm { position: relative; padding-inline-start: 34px; }
+.rm::before {
+  content: ""; position: absolute; left: 15px; top: 8px; bottom: 8px; width: 2px;
+  background: var(--brand-200);
+}
+.rm-step { position: relative; padding: 0 0 var(--sp-4) 0; }
+.rm-head { display: flex; align-items: center; gap: 10px; }
+.rm-dot {
+  position: absolute; left: -34px; top: 0;
+  width: 30px; height: 30px; display: grid; place-items: center;
+  background: var(--surface); border: 2px solid var(--brand-200);
+  color: var(--muted); font-size: 13px; font-weight: 750;
+}
+.rm-title { display: flex; flex-direction: column; line-height: 1.25; min-width: 0; }
+.rm-body { padding-block: 8px 0; }
+.rm-done .rm-dot { background: var(--ok); border-color: var(--ok); color: #fff; }
+.rm-current .rm-dot { background: var(--brand-600); border-color: var(--brand-600); color: #fff; }
+.rm-current .rm-body { border-left: 3px solid var(--brand-600); padding-inline-start: 12px; }
+.rm-ahead .rm-body { opacity: .78; }
+.rm-compact .rm-body .badge, .rm-compact .rm-body .bar { display: none; }
+.rm-finish { position: relative; padding-inline-start: 34px; }
+.rm-finish .rm-dot { left: 0; background: var(--brand-900); border-color: var(--brand-900); color: #fff; }
+
+/* ----- 25. Month calendar ------------------------------------------------- */
+.cal-month { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+.cal-dow {
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
+  color: var(--muted); padding-bottom: 2px;
+}
+.cal-cell {
+  min-height: 84px; border: 1px solid var(--border); background: var(--surface);
+  padding: 5px; display: flex; flex-direction: column; gap: 3px;
+}
+.cal-out { background: var(--bg); opacity: .55; }
+.cal-today { border-color: var(--brand-600); box-shadow: inset 0 0 0 1px var(--brand-600); }
+.cal-exam { background: var(--brand-050); border-color: var(--brand-500); }
+.cal-num { font-size: 12px; font-weight: 700; color: var(--ink-2); }
+.cal-tag {
+  display: block; width: 100%; text-align: left; border: 0; cursor: pointer;
+  font: inherit; font-size: 10.5px; line-height: 1.25; font-weight: 600;
+  padding: 3px 5px; background: var(--brand-100); color: var(--brand-700);
+}
+.cal-tag:hover { background: var(--brand-200); }
+.cal-tag.done { background: var(--ok-bg); color: var(--ok); }
+.cal-tag.skipped { background: var(--bg); color: var(--muted); text-decoration: line-through; }
+.cal-tag.moved { background: var(--warn-bg); color: var(--warn); }
+.cal-tag-exam { background: var(--brand-600); color: #fff; cursor: default; }
+.cal-swatch { width: 11px; height: 11px; display: inline-block; background: var(--brand-100); }
+.cal-swatch.done { background: var(--ok-bg); }
+.cal-swatch.skipped { background: var(--bg); border: 1px solid var(--border); }
+.cal-swatch.moved { background: var(--warn-bg); }
+@media (max-width: 760px) {
+  /* Seven columns of readable chips do not fit a phone, so the month becomes a
+     scrolling strip rather than seven unreadable slivers. */
+  .cal-month { min-width: 620px; }
+  .cal-month-wrap { overflow-x: auto; }
+}
+
+/* ----- 26. Guide ---------------------------------------------------------- */
+.guide-row {
+  display: flex; align-items: center; gap: 12px; padding: 11px 12px;
+  border: 1px solid var(--border); background: var(--surface);
+  color: var(--ink); text-decoration: none;
+}
+.guide-row:hover { border-color: var(--brand-500); background: var(--brand-050); text-decoration: none; }
+.guide-icon {
+  flex: 0 0 32px; width: 32px; height: 32px; display: grid; place-items: center;
+  background: var(--brand-100); color: var(--brand-700); font-size: 15px;
+}
+.guide-text { display: flex; flex-direction: column; line-height: 1.3; flex: 1; min-width: 0; }
+.guide-go { color: var(--muted); }
+.guide-row:hover .guide-go { color: var(--brand-600); }
+
+/* ----- 27. Landing roadmap ------------------------------------------------ */
+.auth-wide { max-width: 940px; }
+.auth-split { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: var(--sp-6); align-items: start; }
+.auth-split .rm::before { background: rgba(255,255,255,.25); }
+.auth-split .rm-dot { background: var(--brand-800); border-color: rgba(255,255,255,.35); color: #fff; }
+.auth-split .rm-title b { color: #fff; }
+.auth-split .rm-title span, .auth-split .rm-body p { color: rgba(255,255,255,.82); }
+.auth-split .rm-body .badge { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.22); color: #fff; }
+@media (max-width: 900px) {
+  .auth-split { grid-template-columns: minmax(0, 1fr); }
+  .auth-split .auth-story { display: none; }
 }
 
 @media print {

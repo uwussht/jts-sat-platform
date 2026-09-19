@@ -35,9 +35,9 @@ i18n/en.js ru.js kk.js  interface strings, 539 keys each, verified at parity
 ```
 
 The screens, in the order a student meets them: `#/auth` → `#/onboarding` →
-`#/diagnostic` → `#/today` → `#/plan` → `#/practice` (and `#/practice/weak`) →
-`#/question` → `#/mocks` (`/run`, `/result`, `/review`) → `#/progress` →
-`#/vocab` → `#/desmos-guide` → `#/settings`.
+`#/diagnostic` → `#/today` → `#/roadmap` → `#/plan` → `#/practice` (and
+`#/practice/weak`) → `#/question` → `#/mocks` (`/run`, `/result`, `/review`) →
+`#/progress` → `#/vocab` → `#/desmos-guide` → `#/guide` → `#/settings`.
 
 All progress lives in `localStorage` under the key `jts_sat_v1`, currently at
 `schemaVersion: 3`, with a forward-only migration in `js/core.js`. Each bump
@@ -291,6 +291,34 @@ much of the exam each domain carries**, not simply from the lowest percentage.
 
 Availability is asked for at the bottom of that report rather than during
 onboarding, because that is the moment the plan is actually built.
+
+## Roadmap, guide, and the plan as a calendar
+
+**`#/roadmap`** draws the six phases as one journey from the diagnostic to
+exam day. Which weeks each phase covers is not restated here — it comes from
+`JTS.planner.phaseForWeek`, so the roadmap and the plan can never disagree about
+which week belongs to which phase. Each phase shows what happens in it, how many
+of its sessions are done, and the one thing you can do about it right now.
+
+The same six phases render on the sign-in screen with no personal data
+(`JTS.roadmap.overview()`), because a visitor otherwise has nothing to look at
+but a password box. On a phone that column is dropped rather than squashed: the
+form is the only thing worth the screen at 390px.
+
+**`#/guide`** is what every part of the platform is for, built from
+`JTS.shell.navItems` rather than written out again — a destination added to the
+sidebar cannot go missing from the guide, and the only thing a new screen has to
+supply is one `guide.for.<path>` string. Under the section list are the four
+rules that explain why the platform sometimes says something unwelcome: help is
+counted separately, errors come back, exam mode has no help in it, and no screen
+predicts your SAT score.
+
+**The plan has two views of the same lessons.** The week grid answers "what am I
+doing on Wednesday"; the month calendar answers "when does this actually end",
+which is the question a student asks when they open a plan at all. Both read
+`JTS.planner.allLessons()` and match by date, so a moved lesson shows on the day
+it moved to in both. The month marks today and exam day, and a chip opens the
+same lesson dialog the week grid opens.
 
 ## Progress
 

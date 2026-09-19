@@ -1,8 +1,10 @@
 /* ==========================================================================
    Screen: My plan (#/plan)
 
-   Two things live here: the phase track (what stage of preparation this is)
-   and the week grid (what actually happens on which day).
+   Three things live here: the phase track (what stage of preparation this is),
+   the week grid (what happens on which day) and the month calendar (where the
+   whole thing is going). The week and the month are two views of one plan, not
+   two plans — both read JTS.planner.allLessons().
 
    The rule that shapes this screen is that missed sessions are NOT carried
    forward. A plan that accumulates overdue work stops being a plan and becomes
@@ -28,6 +30,89 @@
       U.el('div.eyebrow', { text: t('plan.phases') }),
       track
     ]);
+  }
+
+  /**
+   * One month of the plan. Lessons are matched by date, exactly as the week
+   * grid does it, so a moved lesson appears on the day it moved to.
+   */
+  function monthView(state, rerender) {
+    var wrap = U.el('div.stack-sm');
+    var cursor = U.today();
+    cursor.setDate(1);
+
+    var examISO = state.examDate && state.examDate.testDate;
+    var todayISO = U.iso(U.today());
+
+    var head = U.el('div.row-between.row-wrap');
+    var grid = U.el('div.cal-month');
+    wrap.appendChild(head);
+    /* Seven readable columns do not fit a phone, so the month scrolls inside
+       its own box rather than widening the page. */
+    wrap.appendChild(U.el('div.cal-month-wrap', null, [grid]));
+
+    function paint() {
+      U.clear(head); U.clear(grid);
+
+      var label = cursor.toLocaleDateString(
+        { en: 'en-US', ru: 'ru-RU', kk: 'kk-KZ' }[JTS.i18n.lang] || 'en-US',
+        { month: 'long', year: 'numeric' });
+      head.appendChild(U.el('div.h3', { text: label }));
+      head.appendChild(U.el('div.row.row-wrap', null, [
+        U.el('button.btn.btn-sm', {
+          type: 'button', text: '←', 'aria-label': t('plan.prevMonth'),
+          onclick: function () { cursor.setMonth(cursor.getMonth() - 1); paint(); }
+        }),
+        U.el('button.btn.btn-sm', {
+          type: 'button', text: t('plan.thisMonth'),
+          onclick: function () { cursor = U.today(); cursor.setDate(1); paint(); }
+        }),
+        U.el('button.btn.btn-sm', {
+          type: 'button', text: '→', 'aria-label': t('plan.nextMonth'),
+          onclick: function () { cursor.setMonth(cursor.getMonth() + 1); paint(); }
+        })
+      ]));
+
+      for (var d = 1; d <= 7; d++) {
+        grid.appendChild(U.el('div.cal-dow', { text: U.dayLabel(d) }));
+      }
+
+      /* The grid starts on the Monday on or before the 1st, so the columns
+         stay weekdays rather than drifting a day each month. */
+      var first = new Date(cursor);
+      var shift = (first.getDay() + 6) % 7;
+      var start = U.addDays(first, -shift);
+      var month = cursor.getMonth();
+      var lessons = JTS.planner.allLessons();
+
+      for (var i = 0; i < 42; i++) {
+        var day = U.addDays(start, i);
+        var iso = U.iso(day);
+        var outside = day.getMonth() !== month;
+        var cell = U.el('div.cal-cell' +
+          (outside ? '.cal-out' : '') +
+          (iso === todayISO ? '.cal-today' : '') +
+          (iso === examISO ? '.cal-exam' : ''));
+        cell.appendChild(U.el('div.cal-num', { text: String(day.getDate()) }));
+
+        if (iso === examISO) {
+          cell.appendChild(U.el('div.cal-tag.cal-tag-exam', { text: t('roadmap.examDay') }));
+        }
+        lessons.filter(function (l) { return l.date === iso; }).forEach(function (lesson) {
+          var cls = STATUS_CLASS[lesson.status];
+          cell.appendChild(U.el('button.cal-tag' + (cls ? '.' + cls : ''), {
+            type: 'button',
+            title: lesson.skillIds.map(function (id) { return JTS.skills.name(id); }).join(' · '),
+            text: lesson.actions.map(function (a) { return t('plan.action.' + a); }).join(' · '),
+            onclick: function () { lessonModal(lesson, rerender); }
+          }));
+        });
+        grid.appendChild(cell);
+      }
+    }
+
+    paint();
+    return wrap;
   }
 
   function lessonModal(lesson, rerender) {
@@ -180,41 +265,56 @@
       var done = JTS.planner.allLessons().filter(function (l) { return l.status === 'done'; }).length;
       var total = JTS.planner.allLessons().length;
 
-      screen.appendChild(U.el('div.card.stack', null, [
-        U.el('div.row-between.row-wrap', null, [
-          U.el('div.stack-sm', null, [
-            U.el('div.h2', { text: t('plan.week', { n: idx + 1 }) }),
-            U.el('div.small.muted', { text: t('plan.lessonsThisWeek', { n: week.lessons.length }) })
-          ]),
-          U.el('div.row', null, [
-            U.el('a.btn.btn-sm' + (idx === 0 ? '' : ''), {
-              href: '#/plan?week=' + Math.max(0, idx - 1),
-              text: '← ' + t('plan.prevWeek'),
-              'aria-disabled': idx === 0 ? 'true' : null
-            }),
-            U.el('a.btn.btn-sm', { href: '#/plan', text: t('plan.thisWeek') }),
-            U.el('a.btn.btn-sm', {
-              href: '#/plan?week=' + Math.min(weeks.length - 1, idx + 1),
-              text: t('plan.nextWeek') + ' →',
-              'aria-disabled': idx === weeks.length - 1 ? 'true' : null
-            })
-          ])
-        ]),
-        U.el('div.stack-sm', null, [
-          ui.bar(done, total || 1, 'bar-ok'),
-          U.el('div.small.muted', {
-            text: done + ' / ' + total + ' · ' + t('plan.status.done')
-          })
-        ]),
-        weekGrid(week, rerender)
+      screen.appendChild(U.el('div.card.stack-sm', null, [
+        ui.bar(done, total || 1, 'bar-ok'),
+        U.el('div.small.muted', {
+          text: done + ' / ' + total + ' · ' + t('plan.status.done')
+        })
       ]));
 
-      screen.appendChild(U.el('div.legend', null, [
-        U.el('span', { text: t('plan.status.planned') }),
-        U.el('span', { text: t('plan.status.done') }),
-        U.el('span', { text: t('plan.status.skipped') }),
-        U.el('span', { text: t('plan.status.moved') })
-      ]));
+      /* The week and the month are two views of the same lessons. The week is
+         first because it is the one a student acts on; the month is there for
+         the question the week cannot answer, which is when this ends. */
+      screen.appendChild(U.el('div.card', null, [ui.tabs([
+        {
+          id: 'week', label: t('plan.viewWeek'),
+          render: function (host) {
+            host.appendChild(U.el('div.row-between.row-wrap', { style: 'margin-bottom:12px' }, [
+              U.el('div.stack-sm', null, [
+                U.el('div.h3', { text: t('plan.week', { n: idx + 1 }) }),
+                U.el('div.small.muted', { text: t('plan.lessonsThisWeek', { n: week.lessons.length }) })
+              ]),
+              U.el('div.row.row-wrap', null, [
+                U.el('a.btn.btn-sm', {
+                  href: '#/plan?week=' + Math.max(0, idx - 1),
+                  text: '← ' + t('plan.prevWeek'),
+                  'aria-disabled': idx === 0 ? 'true' : null
+                }),
+                U.el('a.btn.btn-sm', { href: '#/plan', text: t('plan.thisWeek') }),
+                U.el('a.btn.btn-sm', {
+                  href: '#/plan?week=' + Math.min(weeks.length - 1, idx + 1),
+                  text: t('plan.nextWeek') + ' →',
+                  'aria-disabled': idx === weeks.length - 1 ? 'true' : null
+                })
+              ])
+            ]));
+            host.appendChild(weekGrid(week, rerender));
+          }
+        },
+        {
+          id: 'month', label: t('plan.viewMonth'),
+          render: function (host) { host.appendChild(monthView(state, rerender)); }
+        }
+      ])]));
+
+      screen.appendChild(U.el('div.legend', null,
+        [['', 'planned'], ['done', 'done'], ['skipped', 'skipped'], ['moved', 'moved']]
+          .map(function (pair) {
+            return U.el('span', null, [
+              U.el('span.cal-swatch' + (pair[0] ? '.' + pair[0] : '')),
+              ' ' + t('plan.status.' + pair[1])
+            ]);
+          })));
       screen.appendChild(U.el('p.hint', { text: t('plan.rebuildNote') }));
     }
   });

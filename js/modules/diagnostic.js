@@ -228,7 +228,8 @@
       screen.appendChild(U.el('div.card.card-accent.stack-sm', null, [
         U.el('div.eyebrow', { text: t('diag.startWith') }),
         U.el('div.h2', { text: focus.map(function (f) { return JTS.i18n.pickName(f.domain); }).join(' · ') }),
-        U.el('p.small.muted', { text: t('diag.startWithNote', { phase: t('plan.phase.' + phaseKey) }) })
+        U.el('p.small.muted', { text: t('diag.startWithNote', { phase: t('plan.phase.' + phaseKey) }) }),
+        U.el('a.btn.btn-sm', { href: '#/roadmap', text: t('diag.seeRoadmap') })
       ]));
     }
 

@@ -1850,6 +1850,7 @@
     /* Destinations that belong in the sidebar but not in the phone tab bar,
        where five is already the most that fits. */
     subNavItems: [
+      { path: '#/roadmap',      key: 'roadmap.title', icon: '⟋' },
       /* The diagnostic lives here rather than only at the end of onboarding:
          it is the same measurement whether or not a student already has a
          score, and it is worth retaking every few weeks. */
@@ -1931,6 +1932,9 @@
           Store.update(function (s) { s.settings.theme = next; });
           document.documentElement.setAttribute('data-theme', next);
         }
+      }));
+      tools.appendChild(U.el('a.icon-btn', {
+        href: '#/guide', 'aria-label': t('guide.title'), title: t('guide.title'), text: '?'
       }));
       tools.appendChild(U.el('a.icon-btn', {
         href: '#/settings', 'aria-label': t('nav.settings'), html: '&#9881;'
