@@ -18,7 +18,7 @@
   var STATUS_CLASS = { planned: '', done: 'done', skipped: 'skipped', moved: 'moved' };
 
   function phaseTrack(state) {
-    var current = state.profile.currentPhase || 1;
+    var current = JTS.planner.currentPhase();
     var track = U.el('div.phase-track', { role: 'list' });
     JTS.planner.phases.forEach(function (p) {
       track.appendChild(U.el('div' + (p.id < current ? '.done' : p.id === current ? '.current' : ''), {

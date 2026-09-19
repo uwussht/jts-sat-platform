@@ -255,7 +255,10 @@
           /* AI provider. 'mock' costs nothing and answers from the reviewed
              bank; the others call a real endpoint with the key below. */
           aiProvider: 'mock', endpoint: '', model: '', apiKey: '',
-          timerHidden: false
+          timerHidden: false,
+          /* Where the student last dragged the calculator, or null while it is
+             still docked to the side of the question. */
+          calcPanel: null
         }
       };
     }
@@ -665,6 +668,7 @@
     routes: {},
     current: null,
     _teardown: null,
+    _renderedHash: null,
     register: function (path, def) { this.routes[path] = def; },
     parse: function (hash) {
       var raw = (hash || global.location.hash || '#/today').replace(/^#/, '');
@@ -695,7 +699,8 @@
       else global.location.hash = hash;
     },
     render: function () {
-      var route = this.parse(global.location.hash);
+      var hash = global.location.hash || '#/today';
+      var route = this.parse(hash);
       var state = Store.state();
 
       /* Guards: no session -> auth; incomplete onboarding -> onboarding. */
@@ -722,6 +727,9 @@
       }
       def = def || this.routes['#/today'];
       if (this._teardown) { try { this._teardown(); } catch (e) { console.error(e); } this._teardown = null; }
+      /* Read before the screen is torn down: clearing the root collapses the
+         page height, and with it the scroll offset we may want back. */
+      var wasAt = global.pageYOffset || 0;
       var root = U.$('#app-root');
       U.clear(root);
       JTS.desmos.hide();
@@ -736,7 +744,16 @@
         root.appendChild(JTS.ui.empty('Something went wrong', String(e && e.message || e)));
       }
       JTS.shell.syncNav(route.base);
-      global.scrollTo(0, 0);
+      /* Redrawing the screen you are already on is not navigation. The practice
+         builder, the plan and the vocabulary screen all answer a click by
+         calling render() again, and sending the student back to the top of the
+         page every time they tick a skill box makes those screens unusable.
+         So: a change of address jumps to the top, a redraw stays put. Screens
+         that do want the top after a redraw — the question screen, moving from
+         one question to the next — scroll for themselves. */
+      if (this._renderedHash === hash) global.scrollTo(0, wasAt);
+      else global.scrollTo(0, 0);
+      this._renderedHash = hash;
     },
     start: function () {
       var self = this;
@@ -796,24 +813,143 @@
   /**
    * One iframe for the whole app. Hidden with CSS (never removed) so moving
    * between questions does not reload the calculator.
+   *
+   * The Digital SAT gives Math a calculator that behaves like a window: you
+   * open it once and it stays open for the rest of the module, you drag it out
+   * of the way of the question, and you can make it bigger. This panel does the
+   * same. It starts docked to the right, where a question and a graph can be
+   * read side by side; dragging its title bar turns it into a floating window
+   * the student places wherever the figure is not, and the position is
+   * remembered so it is not re-placed on every question.
    */
   JTS.desmos = {
     _built: false,
     _loaded: false,
+
+    /** Stored geometry, or null while the panel is still docked. */
+    _geom: function () {
+      var st = Store.settings();
+      var g = st && st.calcPanel;
+      if (!g || typeof g.left !== 'number') return null;
+      return g;
+    },
+    _saveGeom: function (g) {
+      Store.update(function (s) { s.settings.calcPanel = g; });
+    },
+
+    /** Turn the docked panel into a floating window at its current place. */
+    _float: function (panel) {
+      if (panel.classList.contains('floating')) return;
+      var r = panel.getBoundingClientRect();
+      panel.classList.add('floating');
+      panel.style.left = r.left + 'px';
+      panel.style.top = r.top + 'px';
+      panel.style.width = r.width + 'px';
+      /* Docked it is as tall as the window; floating at that height would put
+         its resize grip below the bottom edge, where it cannot be grabbed. */
+      panel.style.height = Math.min(r.height, global.innerHeight - 48) + 'px';
+      /* A floating window is over the page, not beside it, so the question
+         must take its full width back. */
+      document.body.classList.remove('desmos-open');
+    },
+
+    _dock: function (panel) {
+      panel.classList.remove('floating');
+      panel.style.left = panel.style.top = panel.style.width = panel.style.height = '';
+      document.body.classList.add('desmos-open');
+      Store.update(function (s) { s.settings.calcPanel = null; });
+    },
+
+    /** Apply stored geometry, clamped to a window that may have changed size. */
+    _apply: function (panel) {
+      var g = this._geom();
+      if (!g) return;
+      var w = U.clamp(g.width, 280, global.innerWidth);
+      var h = U.clamp(g.height, 220, global.innerHeight);
+      panel.classList.add('floating');
+      panel.style.width = w + 'px';
+      panel.style.height = h + 'px';
+      panel.style.left = U.clamp(g.left, 0, Math.max(0, global.innerWidth - w)) + 'px';
+      panel.style.top = U.clamp(g.top, 0, Math.max(0, global.innerHeight - 44)) + 'px';
+      document.body.classList.remove('desmos-open');
+    },
+
+    _startDrag: function (ev, panel) {
+      if (ev.button) return;
+      var self = this;
+      this._float(panel);
+      var r = panel.getBoundingClientRect();
+      var dx = ev.clientX - r.left, dy = ev.clientY - r.top;
+      /* The iframe would swallow the pointer the moment it crossed it. */
+      panel.classList.add('dragging');
+      ev.preventDefault();
+
+      /* The window stays wholly inside the viewport: a calculator with its
+         corner off the screen cannot be resized back. */
+      function move(e) {
+        panel.style.left = U.clamp(e.clientX - dx, 0,
+          Math.max(0, global.innerWidth - panel.offsetWidth)) + 'px';
+        panel.style.top = U.clamp(e.clientY - dy, 0,
+          Math.max(0, global.innerHeight - panel.offsetHeight)) + 'px';
+      }
+      function up() {
+        document.removeEventListener('pointermove', move);
+        document.removeEventListener('pointerup', up);
+        panel.classList.remove('dragging');
+        self._remember(panel);
+      }
+      document.addEventListener('pointermove', move);
+      document.addEventListener('pointerup', up);
+    },
+
+    _remember: function (panel) {
+      if (!panel.classList.contains('floating')) return;
+      var r = panel.getBoundingClientRect();
+      this._saveGeom({ left: Math.round(r.left), top: Math.round(r.top),
+                       width: Math.round(r.width), height: Math.round(r.height) });
+    },
+
     build: function () {
       if (this._built) return;
       var panel = U.$('#desmos-panel');
       if (!panel) return;
       var self = this;
       var head = U.el('div.dp-head', null, [
+        U.el('span.dp-grip', { 'aria-hidden': 'true', text: '⠿' }),
         U.el('strong', { text: 'Desmos' }),
         U.el('span.badge.badge-muted.xsmall', { text: t('desmos.embedded') }),
         U.el('span.spacer'),
+        U.el('button.btn.btn-sm', {
+          type: 'button', text: '⤢', title: t('desmos.dock'), 'aria-label': t('desmos.dock'),
+          onclick: function () {
+            if (panel.classList.contains('floating')) self._dock(panel);
+            else {
+              /* Not docked and not placed yet: put it in the middle, large,
+                 which is where a student who wants a big calculator wants it. */
+              self._float(panel);
+              var w = Math.min(760, global.innerWidth - 32);
+              var h = Math.min(620, global.innerHeight - 32);
+              panel.style.width = w + 'px';
+              panel.style.height = h + 'px';
+              panel.style.left = Math.round((global.innerWidth - w) / 2) + 'px';
+              panel.style.top = Math.round((global.innerHeight - h) / 2) + 'px';
+              self._remember(panel);
+            }
+          }
+        }),
         U.el('a.btn.btn-sm', { href: JTS.config.desmosUrl, target: '_blank', rel: 'noopener',
           text: t('desmos.openTab') }),
         U.el('button.btn.btn-sm', { type: 'button', text: t('common.close'),
           onclick: function () { self.hide(); } })
       ]);
+      head.addEventListener('pointerdown', function (ev) {
+        /* The buttons in the bar are controls, not a handle. */
+        if (ev.target.closest('button, a')) return;
+        self._startDrag(ev, panel);
+      });
+      /* The native resize grip only reports its result when the pointer is
+         released over the panel. */
+      panel.addEventListener('pointerup', function () { self._remember(panel); });
       var frame = U.el('iframe', {
         src: JTS.config.desmosUrl, title: 'Desmos Graphing Calculator',
         allow: 'fullscreen', loading: 'lazy'
@@ -831,12 +967,20 @@
       }, 6000);
       this._built = true;
     },
-    toggle: function () { return U.$('#desmos-panel').classList.contains('open') ? this.hide() : this.show(); },
+    isOpen: function () {
+      var p = U.$('#desmos-panel');
+      return !!p && p.classList.contains('open');
+    },
+    toggle: function () { return this.isOpen() ? this.hide() : this.show(); },
     show: function () {
+      if (this.isOpen()) return true;
       this.build();
       var p = U.$('#desmos-panel');
-      if (p) { p.classList.add('open'); p.setAttribute('aria-hidden', 'false'); }
+      if (!p) return false;
+      p.classList.add('open');
+      p.setAttribute('aria-hidden', 'false');
       document.body.classList.add('desmos-open');
+      this._apply(p);
       return true;
     },
     hide: function () {
@@ -1762,10 +1906,38 @@
 
       var s = Store.state();
       if (!s || !s.plan) return null;
-      var current = s.profile.currentPhase || 1;
+      var current = this.currentPhase();
       var week = s.plan.weeks.filter(function (w) { return w.phaseId > current; })[0];
       if (week) return { type: 'phase', date: week.monday, phaseId: week.phaseId };
       return null;
+    },
+
+    /**
+     * The index of the plan week that contains today. The plan always starts
+     * on the Monday of the week it was generated in, so this is a lookup and
+     * not a calculation.
+     */
+    todayWeekIndex: function () {
+      var s = Store.state();
+      if (!s || !s.plan || !s.plan.weeks.length) return 0;
+      var monday = U.iso(U.weekStart(U.today()));
+      var weeks = s.plan.weeks;
+      for (var i = 0; i < weeks.length; i++) if (weeks[i].monday >= monday) return i;
+      return weeks.length - 1;
+    },
+
+    /**
+     * Which phase the student is in *today*, read off the plan's own weeks.
+     * profile.currentPhase only records where the plan started — nothing moves
+     * it as time passes — so anything that says "you are here" has to ask the
+     * calendar instead, or it will still be pointing at the diagnostic in
+     * November.
+     */
+    currentPhase: function () {
+      var s = Store.state();
+      if (!s) return 1;
+      if (!s.plan || !s.plan.weeks.length) return s.profile.currentPhase || 1;
+      return s.plan.weeks[this.todayWeekIndex()].phaseId;
     },
 
     allLessons: function () {

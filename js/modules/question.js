@@ -405,10 +405,20 @@
           topbar.appendChild(U.el('span.q-note', { text: t('q.noDesmosInRw') }));
         }
         if (q().section === 'math') {
-          tools.appendChild(U.el('button.q-tool', {
+          /* The real test keeps the calculator open for the whole Math module:
+             it does not close itself between questions, and it is still there
+             after a reload. The flag lives on the session, so that is exactly
+             what happens here. */
+          var calcBtn = U.el('button.q-tool', {
             type: 'button', text: t('q.calculator'),
-            onclick: function () { JTS.desmos.toggle(); }
-          }));
+            'aria-pressed': String(!!ses.meta.calcOpen),
+            onclick: function () {
+              ses.meta.calcOpen = JTS.desmos.toggle();
+              calcBtn.setAttribute('aria-pressed', String(!!ses.meta.calcOpen));
+              saveNow();
+            }
+          });
+          tools.appendChild(calcBtn);
           tools.appendChild(U.el('button.q-tool', {
             type: 'button', text: t('q.reference'),
             onclick: function () {
@@ -420,6 +430,8 @@
             onclick: openScratchpad
           }));
         }
+
+        syncCalc();
 
         tools.appendChild(U.el('button.q-tool', {
           type: 'button', text: '✕',
@@ -434,6 +446,16 @@
           }
         }));
         topbar.appendChild(tools);
+      }
+
+      /**
+       * The calculator follows the section, not the screen: open on Math for as
+       * long as the student leaves it open, absent in Reading and Writing
+       * because there is no calculator there in the real test either.
+       */
+      function syncCalc() {
+        if (q().section === 'math' && ses.meta.calcOpen) JTS.desmos.show();
+        else JTS.desmos.hide();
       }
 
       function openScratchpad() {
@@ -652,6 +674,11 @@
         commitTime();
         ses.index = next;
         saveNow();
+        /* The top bar is section-dependent — calculator, reference sheet and
+           scratchpad are Math-only — and the diagnostic mixes both sections in
+           one session, so it is rebuilt with the question and not only when
+           the session starts. */
+        buildTopbar();
         renderQuestion();
         window.scrollTo(0, 0);
       }
@@ -717,7 +744,8 @@
             type: 'button', text: String(i + 1),
             'aria-label': (i + 1) + ' ' + (answered ? t('common.correct') : t('common.unanswered')),
             onclick: function () {
-              commitTime(); ses.index = i; saveNow(); m.close(); renderQuestion(); window.scrollTo(0, 0);
+              commitTime(); ses.index = i; saveNow(); m.close();
+              buildTopbar(); renderQuestion(); window.scrollTo(0, 0);
             }
           }));
         });

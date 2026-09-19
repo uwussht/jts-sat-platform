@@ -297,8 +297,27 @@ onboarding, because that is the moment the plan is actually built.
 **`#/roadmap`** draws the six phases as one journey from the diagnostic to
 exam day. Which weeks each phase covers is not restated here — it comes from
 `JTS.planner.phaseForWeek`, so the roadmap and the plan can never disagree about
-which week belongs to which phase. Each phase shows what happens in it, how many
-of its sessions are done, and the one thing you can do about it right now.
+which week belongs to which phase.
+
+It is written for someone who has never sat an SAT and does not yet know what
+"phase 3" is meant to mean, so every phase answers three beginner questions in
+plain words — **what you do** all week, **what you will be able to do by the
+end**, and what to press right now — over its real calendar dates and its own
+progress. Only the phase the student is actually in is unfolded; the other five
+are a line each until `Details` is pressed, because six open cards is a wall of
+text and a wall of text is what a beginner cannot read. Above them, `How this
+works, in three moves` says the whole method in three sentences: measure,
+practise, simulate.
+
+"You are here" is read off the calendar (`JTS.planner.currentPhase()`), not off
+`profile.currentPhase` — that field records only where the plan *started* and
+nothing moves it, so a roadmap that trusted it would still be pointing at the
+diagnostic in November.
+
+**The road is also on the dashboard.** `JTS.roadmap.reminder()` puts the six
+squares, the current step and one line about it on `#/today`, because a road you
+have to remember to open is not a reminder. It links to the full map rather than
+repeating it.
 
 The same six phases render on the sign-in screen with no personal data
 (`JTS.roadmap.overview()`), because a visitor otherwise has nothing to look at
@@ -360,6 +379,24 @@ entry in the `academic` category except two transitions, because the source
 sheet has no category column. Both are open questions for JTS — see **Content
 and licensing** below.
 
+## The calculator behaves like the one in the test
+
+The Digital SAT's calculator is a window: you open it once and it stays open for
+the rest of the module, you drag it clear of the question, and you can make it
+bigger. This one does the same.
+
+- It is **one iframe for the whole app**, toggled with `display`, so moving
+  between questions never reloads it and never loses what is on the graph.
+- **Open stays open.** The flag lives on the session (`meta.calcOpen`), so the
+  calculator is still there on the next question and still there after a reload
+  mid-module. It closes when the section is not Math and when the session ends.
+- It starts **docked** to the side, where a question and a graph can be read at
+  once; dragging its title bar turns it into a floating window, and where the
+  student put it is remembered in `settings.calcPanel`. The window is clamped
+  inside the viewport — a calculator with its corner off the screen cannot be
+  resized back — and on a phone it always fills the screen instead.
+- The button carries `aria-pressed`, so its state is not only a colour.
+
 ## Desmos guide
 
 Seven sections — basics, graphing, solving, tables and regression, SAT
@@ -387,7 +424,7 @@ question has learned the wrong lesson, and 25 seconds spent graphing
 | 4 | The bank supports `mcq` and `spr` with equivalent answer forms | `JTS.spr.check` — fraction/decimal equivalence at 1e-6, Digital SAT entry rules |
 | 5 | Errors are classified, return for review, and helped work is counted separately | `JTS.attempts.logError`, `resolveIfDemonstrated`, `JTS.mastery.isIndependent` |
 | 6 | Exam mode has no AI, hint or explanation until the end; 27/32 + 27/32 + break 10 + 22/35 + 22/35 with the second module routed | `js/modules/question.js` omits the help controls from the DOM; `JTS.mock` |
-| 7 | Desmos on the whole Math section, absent in R&W | `question.js` gates the tool on `section === 'math'`, not per question |
+| 7 | Desmos on the whole Math section, absent in R&W | `question.js` gates the tool on `section === 'math'` and rebuilds the tools when the question changes, so a mixed session (the diagnostic) gains and loses the calculator with the section |
 | 8 | Every question carries source, licenseStatus, answer, explanation (en/ru/kk), reviewStatus | `JTS.bank.validateAll` fails the bank otherwise; run it from `admin.html` |
 | 9 | Laptop and phone for practice; the mock restriction is documented | Responsive 360–1320px; the simulation needs ≥1024px and says so on a phone |
 | 10 | A question can be edited through `admin.html`, with history, without a developer | localStorage overlay + `overrideHistory` + JSON export |
@@ -396,6 +433,21 @@ question has learned the wrong lesson, and 25 seconds spent graphing
 
 Criteria 3, 5, 6, 7, 9, 10 and 12 have direct tests in the e2e suites; the rest
 are structural and are checked by `JTS.bank.validateAll` or by inspection.
+
+## A redraw is not a navigation
+
+`JTS.router.render()` used to end with `scrollTo(0, 0)` unconditionally. Several
+screens answer a click by re-rendering themselves — the practice builder does it
+on every skill box, filter chip and section tab — so ticking a checkbox halfway
+down the page threw the student back to the top of it, which made the builder
+effectively unusable on a laptop screen.
+
+The router now compares the address it is rendering with the one it rendered
+last: a change of address starts at the top, a redraw of the same screen restores
+the offset it read before tearing the old one down. Screens that *do* want the
+top after a redraw — the question screen, moving from one question to the next —
+scroll for themselves, as they always did. The e2e suites measure this on the
+builder, inside a session, and after a real navigation.
 
 ## Deliberate limitations
 

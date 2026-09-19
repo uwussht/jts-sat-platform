@@ -1,9 +1,9 @@
 /* ==========================================================================
    Screen: Today (#/today)
 
-   The one screen a student opens every day. It answers four questions without
-   scrolling: how long is left, what am I doing now, what is coming back to
-   bite me, and what is the next thing that measures me.
+   The one screen a student opens every day. It answers five questions without
+   much scrolling: how long is left, what am I doing now, where on the roadmap
+   this sits, what is coming back to bite me, and what measures me next.
    ========================================================================== */
 (function () {
   'use strict';
@@ -186,6 +186,10 @@
       screen.appendChild(lessonCard(state));
 
       var grid = U.el('div.grid.grid-2');
+      /* The roadmap is a separate screen, but a road you have to remember to
+         open is not a reminder. The compact version rides along on the screen
+         the student opens every day. */
+      if (JTS.roadmap) grid.appendChild(JTS.roadmap.reminder());
       grid.appendChild(reviewCard());
       var cp = checkpointCard();
       if (cp) grid.appendChild(cp);
