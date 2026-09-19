@@ -173,6 +173,12 @@
       catch (e) { return ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'][dow - 1]; }
     },
 
+    /** Up to two initials from a name or an email, for the small avatars. */
+    initials: function (name) {
+      return String(name || '').replace(/[^\p{L}\p{N} ]/gu, ' ').trim().split(/\s+/)
+        .slice(0, 2).map(function (w) { return w[0]; }).join('').toUpperCase() || '?';
+    },
+
     fmtClock: function (ms) {
       var total = Math.max(0, Math.round(ms / 1000));
       var m = Math.floor(total / 60), s = total % 60;
@@ -2114,9 +2120,7 @@
       bar.appendChild(tools);
 
       if (state) {
-        var name = state.profile.name || state.profile.email || '';
-        var initials = name.replace(/[^\p{L}\p{N} ]/gu, ' ').trim().split(/\s+/)
-          .slice(0, 2).map(function (w) { return w[0]; }).join('').toUpperCase() || '?';
+        var initials = U.initials(state.profile.name || state.profile.email);
         bar.appendChild(U.el('div.sb-user', null, [
           U.el('span.sb-avatar', { text: initials, 'aria-hidden': 'true' }),
           U.el('span.sb-user-text', null, [

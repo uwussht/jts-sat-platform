@@ -853,29 +853,115 @@ svg.chart { display: block; max-width: 100%; height: auto; }
 }
 
 /* ----- 24. Roadmap -------------------------------------------------------- */
-/* A vertical road: each step hangs off one continuous rule drawn through the
-   markers, so the phases read as one journey and not as six cards. */
-.rm { position: relative; padding-inline-start: 34px; }
-.rm::before {
-  content: ""; position: absolute; left: 15px; top: 8px; bottom: 8px; width: 2px;
-  background: var(--brand-200);
+/* A level map: one road from the diagnostic at the bottom to exam day at the
+   top, a numbered stop per phase, stars for how much of each is done. The whole
+   screen is sized to the window — the road is meant to be seen at once, so
+   nothing here is allowed to grow the page. */
+.rm-screen { display: flex; flex-direction: column; gap: var(--sp-4); max-width: 900px; }
+.rm-top { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--sp-4); flex-wrap: wrap; }
+.rm-top .h2 { margin: 0; }
+.rm-map { display: flex; justify-content: center; }
+
+.rm-stage {
+  /* Height first, width from it. The stage has to keep the drawing space's own
+     shape — the road is placed by percentage, so a letterboxed SVG would put
+     every stop beside the tarmac instead of on it. */
+  /* The road gives up height first, so the detail panel under it stays on the
+     same screen: what is left after the header, the arrows and the panel. */
+  --rm-h: min(clamp(220px, calc(100vh - 540px), 420px), calc(100vw - 40px));
+  position: relative;
+  height: var(--rm-h);
+  width: var(--rm-h);
+  flex: none;
+  background: linear-gradient(180deg, var(--brand-050), var(--brand-100) 55%, var(--brand-200));
+  border: 1px solid var(--border);
 }
-.rm-step { position: relative; padding: 0 0 var(--sp-4) 0; }
-.rm-head { display: flex; align-items: center; gap: 10px; }
-.rm-dot {
-  position: absolute; left: -34px; top: 0;
-  width: 30px; height: 30px; display: grid; place-items: center;
-  background: var(--surface); border: 2px solid var(--brand-200);
-  color: var(--muted); font-size: 13px; font-weight: 750;
+.rm-road { position: absolute; inset: 0; }
+.rm-road svg { width: 100%; height: 100%; display: block; }
+.rm-road-line, .rm-road-done {
+  fill: none; stroke-width: 26; stroke-linecap: round; stroke-linejoin: round;
 }
-/* The title takes the slack so the state badge and the disclosure sit at the
-   right edge of the step, not glued to the phase name. */
-.rm-title { display: flex; flex-direction: column; line-height: 1.25; min-width: 0; flex: 1 1 auto; }
-/* Named -stepno, not -step: .rm-step is already the card this sits inside. */
+.rm-road-line { stroke: #fff; }
+.rm-road-done { stroke: var(--brand-400); }
+.rm-nodes { position: absolute; inset: 0; }
+
+/* Each stop is a point, not a box: everything hangs off its centre, so the pin
+   always sits exactly on the road however long the phase's name is. */
+.rm-stop { position: absolute; width: 0; height: 0; }
+.rm-pin {
+  position: absolute; left: 0; top: 0; transform: translate(-50%, -50%);
+  width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
+  font: inherit; font-size: 15px; font-weight: 800;
+  border: 3px solid #fff; background: var(--brand-200); color: var(--brand-800);
+  box-shadow: 0 2px 0 rgba(28, 22, 72, .14); padding: 0;
+}
+button.rm-pin { cursor: pointer; }
+.rm-done .rm-pin { background: var(--brand-600); color: #fff; }
+.rm-current .rm-pin { background: var(--brand-800); color: #fff; }
+.rm-sel .rm-pin { box-shadow: 0 0 0 3px var(--brand-700), 0 2px 0 rgba(28, 22, 72, .14); }
+button.rm-pin:hover { transform: translate(-50%, -50%) scale(1.06); }
+
+/* Stars over the stop, name under it: the road runs across the map, so the
+   room is vertical and a label beside a pin would fall off the edge. */
+.rm-stars {
+  position: absolute; left: 0; top: 0; transform: translate(-50%, -34px);
+  display: flex; gap: 1px; font-size: 12px; line-height: 1; color: rgba(60, 50, 110, .26);
+}
+.rm-stars .on { color: #f0a92b; }
+
+/* The road folds back over itself, so two stops can end up one above the other
+   with barely a pin's height between them. Names therefore appear only where
+   they are being read — the stop you have selected, the stop you are on, and
+   the end of the road; every other stop is a number, and the panel under the
+   map says what that number is. */
+.rm-stop .rm-name { display: none; }
+.rm-current .rm-name, .rm-sel .rm-name, .rm-goal .rm-name { display: block; }
+.rm-name {
+  position: absolute; left: 0; top: 26px; transform: translateX(-50%);
+  width: 104px; text-align: center;
+  font-size: 11px; line-height: 1.2; font-weight: 750; color: var(--ink-2);
+}
+.rm-sub {
+  position: absolute; left: 0; top: 52px; transform: translateX(-50%);
+  width: 96px; text-align: center; font-size: 10px; line-height: 1.2; color: var(--muted);
+}
+.rm-ahead .rm-name { color: var(--muted); }
+.rm-sel .rm-name { color: var(--brand-800); }
+
+/* The prize at the end of the road, square where the stops are round. */
+.rm-gift {
+  position: absolute; left: 0; top: 0; transform: translate(-50%, -50%);
+  width: 46px; height: 46px; display: grid; place-items: center; font-size: 20px;
+  background: linear-gradient(160deg, #ffd86b, #f0a92b); color: #7a4a00;
+  border: 3px solid #fff; box-shadow: 0 2px 0 rgba(28, 22, 72, .14);
+}
+.rm-goal .rm-name { top: 30px; }
+
+/* You, standing on the stop you are on. Inner side, so it never covers a name. */
+.rm-here {
+  position: absolute; left: 0; top: 0;
+  width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center;
+  font-size: 10px; font-weight: 800; color: #fff;
+  background: var(--brand-600); border: 2px solid #fff;
+}
+.rm-here { transform: translate(10px, -30px); }
+
+/* Walking the road, instead of scrolling it. */
+.rm-arrows { display: flex; align-items: center; justify-content: center; gap: 14px; }
+.rm-arrow {
+  width: 44px; height: 44px; border: 1px solid var(--border); background: var(--surface);
+  color: var(--brand-700); font: inherit; font-size: 22px; line-height: 1; cursor: pointer;
+}
+.rm-arrow:hover:not(:disabled) { border-color: var(--brand-500); background: var(--brand-050); }
+.rm-arrow:disabled { opacity: .38; cursor: default; }
+.rm-arrow-label {
+  min-width: 130px; text-align: center; font-size: 12px; font-weight: 750;
+  text-transform: uppercase; letter-spacing: .05em; color: var(--muted);
+}
+
 .rm-stepno {
   text-transform: uppercase; letter-spacing: .06em; font-weight: 750; color: var(--brand-600);
 }
-.rm-body { padding-block: 8px 0; }
 /* "What you do" / "By the end": a label and a sentence, on one line where
    there is room and stacked where there is not. */
 .rm-fact { display: flex; gap: 8px; font-size: 13px; line-height: 1.45; }
@@ -883,15 +969,10 @@ svg.chart { display: block; max-width: 100%; height: auto; }
   flex: 0 0 96px; font-size: 11px; font-weight: 750; text-transform: uppercase;
   letter-spacing: .05em; color: var(--muted); padding-top: 2px;
 }
-.rm-more {
-  flex: 0 0 auto; border: 1px solid var(--border); background: var(--surface);
-  color: var(--muted); font: inherit; font-size: 12px; font-weight: 650;
-  padding: 3px 9px; cursor: pointer;
-}
-.rm-more:hover { border-color: var(--brand-500); color: var(--brand-700); }
 @media (max-width: 560px) {
   .rm-fact { flex-direction: column; gap: 1px; }
   .rm-fact-lab { flex: none; }
+  .rm-stage { --rm-h: min(44vh, 400px, 100vw - 32px); }
 }
 
 /* The three moves, for someone reading about the SAT for the first time. */
@@ -915,15 +996,6 @@ svg.chart { display: block; max-width: 100%; height: auto; }
 .rm-mini-i:last-child { border-right: 1px solid var(--border); }
 .rm-mini-i.done { background: var(--ok-bg); color: var(--ok); border-color: var(--ok-bg); }
 .rm-mini-i.now { background: var(--brand-600); color: #fff; border-color: var(--brand-600); }
-.rm-done .rm-dot { background: var(--ok); border-color: var(--ok); color: #fff; }
-.rm-current .rm-dot { background: var(--brand-600); border-color: var(--brand-600); color: #fff; }
-.rm-current .rm-body { border-left: 3px solid var(--brand-600); padding-inline-start: 12px; }
-.rm-ahead .rm-body { opacity: .78; }
-/* The landing shows the shape of the road, not its paperwork. */
-.rm-compact .rm-body .badge, .rm-compact .rm-body .bar,
-.rm-compact .rm-body .rm-fact, .rm-compact .rm-body .btn { display: none; }
-.rm-finish { position: relative; padding-inline-start: 34px; }
-.rm-finish .rm-dot { left: 0; background: var(--brand-900); border-color: var(--brand-900); color: #fff; }
 
 /* ----- 25. Month calendar ------------------------------------------------- */
 .cal-month { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
@@ -978,11 +1050,15 @@ svg.chart { display: block; max-width: 100%; height: auto; }
 /* ----- 27. Landing roadmap ------------------------------------------------ */
 .auth-wide { max-width: 940px; }
 .auth-split { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: var(--sp-6); align-items: start; }
-.auth-split .rm::before { background: rgba(255,255,255,.25); }
-.auth-split .rm-dot { background: var(--brand-800); border-color: rgba(255,255,255,.35); color: #fff; }
-.auth-split .rm-title b { color: #fff; }
-.auth-split .rm-title span, .auth-split .rm-body p { color: rgba(255,255,255,.82); }
-.auth-split .rm-body .badge { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.22); color: #fff; }
+.auth-split .rm-stage {
+  --rm-h: min(46vh, 380px, 100vw - 40px);
+  margin-inline: auto; background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.18);
+}
+.auth-split .rm-road-line { stroke: rgba(255,255,255,.30); }
+.auth-split .rm-road-done { stroke: transparent; }
+.auth-split .rm-pin { background: var(--brand-800); border-color: rgba(255,255,255,.45); color: #fff; }
+.auth-split .rm-name { color: rgba(255,255,255,.88); }
+.auth-split .rm-sub { color: rgba(255,255,255,.62); }
 @media (max-width: 900px) {
   .auth-split { grid-template-columns: minmax(0, 1fr); }
   .auth-split .auth-story { display: none; }

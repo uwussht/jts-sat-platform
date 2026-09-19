@@ -294,20 +294,35 @@ onboarding, because that is the moment the plan is actually built.
 
 ## Roadmap, guide, and the plan as a calendar
 
-**`#/roadmap`** draws the six phases as one journey from the diagnostic to
-exam day. Which weeks each phase covers is not restated here — it comes from
+**`#/roadmap`** is a level map: one road that folds back and forth from the
+diagnostic at the bottom to exam day at the top, a numbered stop for each phase,
+three stars over each stop, and a marker on the stop the student is standing on
+today. Which weeks each phase covers is not restated here — it comes from
 `JTS.planner.phaseForWeek`, so the roadmap and the plan can never disagree about
 which week belongs to which phase.
 
-It is written for someone who has never sat an SAT and does not yet know what
-"phase 3" is meant to mean, so every phase answers three beginner questions in
-plain words — **what you do** all week, **what you will be able to do by the
-end**, and what to press right now — over its real calendar dates and its own
-progress. Only the phase the student is actually in is unfolded; the other five
-are a line each until `Details` is pressed, because six open cards is a wall of
-text and a wall of text is what a beginner cannot read. Above them, `How this
-works, in three moves` says the whole method in three sentences: measure,
-practise, simulate.
+**The road does not scroll.** The stage is sized from the window
+(`clamp(220px, 100vh - 540px, 420px)`), so the whole road and the detail panel
+under it are on screen together at every laptop size we test; you move along it
+with the ‹ › arrows, the arrow keys, or by tapping a stop, and only the panel
+changes. Being able to see the whole road at once is the point of drawing a
+road, and a road you have to scroll is a list.
+
+The stops are not positioned by hand. The road is one SVG path; after it mounts,
+each stop is placed at its own fraction of `getTotalLength()`, so a pin can
+never drift off the tarmac however the road is redrawn, and the travelled part
+is coloured with the same measurement. Stars are the phase's own sessions — some,
+most, all — and never a score of any kind. Names appear only on the stop you have
+selected, the stop you are on and the end of the road: the road folds over
+itself, so two stops can sit a pin's height apart, and the panel under the map
+says what every number means anyway.
+
+The panel is written for someone who has never sat an SAT and does not yet know
+what "phase 3" is meant to mean: **what you do** all week, **what you will be
+able to do by the end**, the phase's real calendar dates, its progress, and the
+one thing to press now. `How this works, in three moves` opens the whole method
+in three sentences — measure, practise, simulate — from the header, where it
+costs no height.
 
 "You are here" is read off the calendar (`JTS.planner.currentPhase()`), not off
 `profile.currentPhase` — that field records only where the plan *started* and
@@ -315,11 +330,11 @@ nothing moves it, so a roadmap that trusted it would still be pointing at the
 diagnostic in November.
 
 **The road is also on the dashboard.** `JTS.roadmap.reminder()` puts the six
-squares, the current step and one line about it on `#/today`, because a road you
-have to remember to open is not a reminder. It links to the full map rather than
-repeating it.
+squares, the current step, its stars and one line about it on `#/today`, because
+a road you have to remember to open is not a reminder. It links to the full map
+rather than repeating it.
 
-The same six phases render on the sign-in screen with no personal data
+The same map renders on the sign-in screen with no progress and nothing to press
 (`JTS.roadmap.overview()`), because a visitor otherwise has nothing to look at
 but a password box. On a phone that column is dropped rather than squashed: the
 form is the only thing worth the screen at 390px.

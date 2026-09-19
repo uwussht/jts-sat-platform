@@ -41,15 +41,15 @@
       ]));
 
       /* A visitor has nothing to look at but a password box, so the landing
-         shows the road they are being asked to start: the same six phases the
-         roadmap screen draws, with no personal data in them. It is the first
+         shows the road they are being asked to start: the same level map the
+         roadmap screen draws, with no progress and nothing to press on it. It is the first
          column on a laptop and is dropped entirely on a phone, where the form
          is the only thing worth the screen. */
       var split = U.el('div.auth-split', null, [
         U.el('div.auth-story.stack', null, [
           U.el('div.eyebrow', { text: t('roadmap.title') }),
           U.el('h2.h2', { text: t('roadmap.landing'), style: 'color:#fff' }),
-          JTS.roadmap.overview(true),
+          JTS.roadmap.overview(),
           U.el('a.btn.btn-sm', { href: '#/guide', text: t('guide.title') + ' →' })
         ]),
         U.el('div.stack', null, [
