@@ -4,7 +4,7 @@ JTS.dict.kk = {
   'brand.eyebrow': 'Just To Study',
 
   'nav.main': 'Негізгі навигация',
-  'nav.today': 'Бүгін',
+  'nav.today': 'Дэшборд',
   'nav.plan': 'Менің жоспарым',
   'nav.practice': 'Практика',
   'nav.mocks': 'Сынама тесттер',
@@ -12,7 +12,7 @@ JTS.dict.kk = {
   'nav.settings': 'Баптаулар',
   'nav.goal': 'Мақсатты балл',
 
-  'roadmap.title': 'Жол картасы',
+  'roadmap.title': 'Роудмап',
   'roadmap.youAreHere': 'Сіз осындасыз',
   'roadmap.share': 'Уақыттың {n}%-ы',
   'roadmap.weeks': '{from}–{to} апталар',
@@ -30,7 +30,7 @@ JTS.dict.kk = {
   'roadmap.next': 'Келесі қадам',
   'roadmap.whereYouAre': 'Қазір қайдасыз',
   'roadmap.weekOf': '{total} аптаның {n}-сі',
-  'roadmap.openRoadmap': 'Жол картасын ашу',
+  'roadmap.openRoadmap': 'Роудмапты ашу',
   'roadmap.whatYouDo': 'Не істейсіз',
   'roadmap.byTheEnd': 'Соңына қарай',
   'roadmap.dates': '{from} → {to}',
@@ -65,7 +65,7 @@ JTS.dict.kk = {
   'plan.nextMonth': 'Келесі ай',
   'plan.thisMonth': 'Ағымдағы ай',
 
-  'diag.seeRoadmap': 'Жол картасын қарау',
+  'diag.seeRoadmap': 'Роудмапты қарау',
 
   'common.close': 'Жабу', 'common.cancel': 'Бас тарту', 'common.confirm': 'Растау',
   'common.save': 'Сақтау', 'common.saved': 'Сақталды', 'common.back': 'Артқа', 'common.next': 'Әрі қарай',

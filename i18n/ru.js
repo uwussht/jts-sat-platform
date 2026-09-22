@@ -4,7 +4,7 @@ JTS.dict.ru = {
   'brand.eyebrow': 'Just To Study',
 
   'nav.main': 'Основная навигация',
-  'nav.today': 'Сегодня',
+  'nav.today': 'Дэшборд',
   'nav.plan': 'Мой план',
   'nav.practice': 'Практика',
   'nav.mocks': 'Пробники',
@@ -12,7 +12,7 @@ JTS.dict.ru = {
   'nav.settings': 'Настройки',
   'nav.goal': 'Целевой балл',
 
-  'roadmap.title': 'Дорожная карта',
+  'roadmap.title': 'Роудмап',
   'roadmap.youAreHere': 'Вы здесь',
   'roadmap.share': '{n}% времени',
   'roadmap.weeks': 'Недели {from}–{to}',
@@ -30,7 +30,7 @@ JTS.dict.ru = {
   'roadmap.next': 'Следующий шаг',
   'roadmap.whereYouAre': 'Где вы сейчас',
   'roadmap.weekOf': 'Неделя {n} из {total}',
-  'roadmap.openRoadmap': 'Открыть дорожную карту',
+  'roadmap.openRoadmap': 'Открыть роудмап',
   'roadmap.whatYouDo': 'Что делаете',
   'roadmap.byTheEnd': 'К концу',
   'roadmap.dates': '{from} → {to}',
@@ -65,7 +65,7 @@ JTS.dict.ru = {
   'plan.nextMonth': 'Следующий месяц',
   'plan.thisMonth': 'Текущий месяц',
 
-  'diag.seeRoadmap': 'Посмотреть дорожную карту',
+  'diag.seeRoadmap': 'Посмотреть роудмап',
 
   'common.close': 'Закрыть', 'common.cancel': 'Отмена', 'common.confirm': 'Подтвердить',
   'common.save': 'Сохранить', 'common.saved': 'Сохранено', 'common.back': 'Назад', 'common.next': 'Далее',
