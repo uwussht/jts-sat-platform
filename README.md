@@ -463,6 +463,27 @@ top after a redraw — the question screen, moving from one question to the next
 scroll for themselves, as they always did. The e2e suites measure this on the
 builder, inside a session, and after a real navigation.
 
+## Picking the exam date
+
+Step 4 draws each administration as a tear-off from a calendar — month on the
+band, day under it — and then says, in one line, what the student has to do
+about it: how many weeks away the sitting is, and how many days are left to
+register. The band changes colour when the regular deadline has passed (late
+registration only) and again when even that has closed; a closed date is still
+listed, because a student may already be registered for it, and labelled so
+nobody picks it expecting to sign up.
+
+The old list gave the same four facts as one sentence per row. Four dates in a
+sentence is how a beginner misses a registration.
+
+The section heading no longer says "in Kazakhstan" — the body already does the
+local part (test centres, the passport, international registration costing more)
+and a country in the heading made a section about exam day read as if it were
+about a country.
+
+Nothing here is authoritative: `js/data/exam-dates.js` ships `verified: false`
+and the screen says so above the list.
+
 ## The target score, and where it lands
 
 Step 3 of onboarding is two columns that answer each other. On the left, the

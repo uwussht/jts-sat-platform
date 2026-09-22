@@ -210,6 +210,63 @@
   /* ------------------------------------------------------------------ steps */
 
   /* Exam date, from the reference file rather than hard-coded in UI. */
+  /**
+   * One administration, drawn as a tear-off from a calendar: the month on the
+   * band, the day under it, and what a student has to do about it in plain
+   * words. A row of dates and deadlines in one sentence is how a beginner
+   * misses a registration.
+   */
+  function dateCard(d, chosen, onPick) {
+    var lang = S.settings().uiLang;
+    var loc = { en: 'en-US', ru: 'ru-RU', kk: 'kk-KZ' }[lang] || 'en-US';
+    var day = U.parseISO(d.testDate);
+    var todayISO = U.iso(U.today());
+    var days = U.daysBetween(U.today(), day);
+
+    var closed = d.lateDeadline < todayISO;
+    var lateOnly = !closed && d.registrationDeadline < todayISO;
+    var state = closed ? 'closed' : lateOnly ? 'late' : 'open';
+
+    function fmt(iso, opts) {
+      try { return U.parseISO(iso).toLocaleDateString(loc, opts); }
+      catch (e) { return iso; }
+    }
+
+    var input = U.el('input.sr-only', {
+      type: 'radio', name: 'examdate', checked: chosen || null, dataset: { date: d.testDate }
+    });
+    input.addEventListener('change', function () { if (input.checked) onPick(); });
+
+    /* What to do about this date, in one line that changes with the deadline. */
+    var action;
+    if (closed) {
+      action = U.el('span.badge.badge-muted', { text: t('onb.s1.regClosed') });
+    } else if (lateOnly) {
+      action = U.el('span.badge.badge-warn', { text: t('onb.s1.lateOnly') });
+    } else {
+      action = U.el('span.date-left', {
+        text: t('onb.s1.daysLeft', { n: U.daysBetween(U.today(), U.parseISO(d.registrationDeadline)) })
+      });
+    }
+
+    return U.el('label.date-card.is-' + state, null, [
+      input,
+      U.el('span.date-tear', { 'aria-hidden': 'true' }, [
+        U.el('b', { text: fmt(d.testDate, { month: 'short' }).replace('.', '') }),
+        U.el('span', { text: String(day.getDate()) }),
+        U.el('i', { text: String(day.getFullYear()) })
+      ]),
+      U.el('span.date-main', null, [
+        U.el('span.date-when', { text: fmt(d.testDate, { weekday: 'long' }) }),
+        U.el('span.date-away', { text: t('onb.s1.inWeeks', { n: Math.ceil(days / 7) }) }),
+        action,
+        U.el('span.date-line', { text: t('onb.s1.deadline') + ': ' + U.fmtDate(d.registrationDeadline, lang) }),
+        U.el('span.date-line', { text: t('onb.s1.lateDeadline') + ': ' + U.fmtDate(d.lateDeadline, lang) }),
+        U.el('span.date-line', { text: t('onb.s1.region') + ': ' + d.region.join(', ') })
+      ])
+    ]);
+  }
+
   function examDateBlock(body, state, refresh) {
     var chosen = state.examDate || null;
     var todayISO = U.iso(U.today());
@@ -217,6 +274,7 @@
     var meta = JTS.data.examDatesMeta || {};
 
     body.appendChild(U.el('h2.h2', { text: t('onb.s1.title') }));
+    body.appendChild(U.el('p.muted.prose', { text: t('onb.s1.pickHint') }));
 
     if (meta.verified === false) {
       body.appendChild(U.el('div.notice.notice-warn', {
@@ -238,31 +296,21 @@
       }
     }
 
-    var list = U.el('div.stack-sm');
+    var grid = U.el('div.date-grid');
     dates.forEach(function (d) {
-      var days = U.daysBetween(U.today(), U.parseISO(d.testDate));
-      /* A date whose late-registration window has already closed is still shown
-         (a student may already be registered) but is labelled, so nobody picks
-         it expecting to sign up. */
-      var closed = d.lateDeadline < todayISO;
-      var sub = (closed ? t('onb.s1.regClosed') + ' · ' : '') +
-                t('onb.s1.deadline') + ': ' + U.fmtDate(d.registrationDeadline) +
-                ' · ' + t('onb.s1.lateDeadline') + ': ' + U.fmtDate(d.lateDeadline) +
-                ' · ' + t('onb.s1.region') + ': ' + d.region.join(', ');
-      list.appendChild(radioCard('examdate',
-        chosen && chosen.examDateId === d.id,
-        U.fmtDate(d.testDate) + '  ·  ' + Math.ceil(days / 7) + ' ' + t('common.weeks'),
-        sub,
-        function () {
-          S.patch({ examDate: {
-            mode: 'date', examDateId: d.id, testDate: d.testDate,
-            registrationDeadline: d.registrationDeadline, lateDeadline: d.lateDeadline
-          } });
-          updateCountdown();
-        }));
+      grid.appendChild(dateCard(d, chosen && chosen.examDateId === d.id, function () {
+        S.patch({ examDate: {
+          mode: 'date', examDateId: d.id, testDate: d.testDate,
+          registrationDeadline: d.registrationDeadline, lateDeadline: d.lateDeadline
+        } });
+        updateCountdown();
+      }));
     });
+    body.appendChild(grid);
 
-    list.appendChild(radioCard('examdate',
+    /* Not deciding is a decision the plan can work with, so it is an option
+       here rather than something a student has to skip the step to express. */
+    body.appendChild(radioCard('examdate',
       chosen && chosen.mode === 'undecided',
       t('onb.s1.undecided'), t('onb.s1.undecidedNote'),
       function () {
@@ -271,7 +319,6 @@
         updateCountdown();
       }));
 
-    body.appendChild(list);
     body.appendChild(countdown);
     updateCountdown();
 
