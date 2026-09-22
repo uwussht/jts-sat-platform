@@ -2254,6 +2254,10 @@
          of them bounces back here — so it stays away until there is somewhere
          to go. renderTabbar builds nothing in that state either. */
       U.$('#tabbar').hidden = !ready;
+      /* Screens that size themselves against the window — the question screen
+         most of all — have to know whether the app header and the tab bar are
+         really there, or they leave a band of nothing where each would be. */
+      document.body.classList.toggle('no-frame', !ready);
       /* A route change closes the phone drawer; leaving it open over the new
          screen is how you end up tapping through it by accident. */
       document.body.classList.remove('sb-open');

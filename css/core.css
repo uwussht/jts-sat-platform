@@ -560,11 +560,21 @@ table.table td.num, table.table th.num { text-align: right; font-variant-numeric
 .cal-heat i[data-lv="3"] { background: var(--brand-600); }
 
 /* ----- 17. Question screen ------------------------------------------------ */
-.q-shell { display: flex; flex-direction: column; min-height: calc(100vh - var(--header-h)); background: var(--surface); }
+/* The question screen fills what is left of the window, so it has to measure
+   the chrome that is actually on screen. During onboarding and the diagnostic
+   there is no app header and no tab bar, and assuming them left a 60px band of
+   nothing above the toolbar, the first lines of the passage underneath it, and
+   the footer floating clear of the bottom of the window. */
+.q-shell {
+  --q-top: var(--header-h); --q-bottom: 0px;
+  display: flex; flex-direction: column; background: var(--surface);
+  min-height: calc(100vh - var(--q-top) - var(--q-bottom));
+}
+body.no-frame .q-shell { --q-top: 0px; }
 .q-topbar {
   display: flex; align-items: center; gap: var(--sp-3); flex-wrap: wrap;
   padding: 10px 16px; border-bottom: 1px solid var(--border); background: var(--surface-2);
-  position: sticky; top: var(--header-h); z-index: 20;
+  position: sticky; top: var(--q-top); z-index: 20;
 }
 .q-timer { font-variant-numeric: tabular-nums; font-size: 18px; font-weight: 700; letter-spacing: .02em; }
 .q-timer.low { color: var(--danger); }
@@ -580,7 +590,9 @@ table.table td.num, table.table th.num { text-align: right; font-variant-numeric
 
 .q-main { flex: 1; display: grid; grid-template-columns: minmax(0,1fr); gap: 0; }
 .q-main.with-side { grid-template-columns: minmax(0,1fr) 380px; }
-.q-content { padding: 18px 16px 100px; max-width: 980px; margin: 0 auto; width: 100%; }
+/* The 100px that used to sit under the content was there to clear a fixed
+   footer. The footer is sticky and in flow, so it was 100px of nothing. */
+.q-content { padding: 18px 16px 28px; max-width: 980px; margin: 0 auto; width: 100%; }
 /* Only the passage and the stem can be highlighted, so only they can be
    selected. Dragging across the toolbar used to leave the browser's blue
    selection lying over half the screen with nothing to clear it. */
@@ -630,7 +642,7 @@ mark.hl { background: #FFE27A; color: var(--brand-950); padding: 0 1px; }
 html[data-theme="dark"] mark.hl { background: #8C7415; color: #FFF7DA; }
 
 .q-footer {
-  position: sticky; bottom: 0; z-index: 25;
+  position: sticky; bottom: var(--q-bottom); z-index: 25;
   display: flex; align-items: center; gap: var(--sp-3); flex-wrap: wrap;
   padding: 10px 16px; border-top: 1px solid var(--border); background: var(--surface);
   box-shadow: 0 -2px 0 var(--border);
@@ -772,6 +784,11 @@ svg.chart { display: block; max-width: 100%; height: auto; }
   font-size: 54px; font-weight: 750; line-height: 1; letter-spacing: -.02em;
   font-variant-numeric: tabular-nums; color: var(--ink);
 }
+@media (max-width: 560px) {
+  /* "1 of 24" already says where the student is, so the long form goes and the
+     footer stays one row instead of wrapping Next onto a line of its own. */
+  .q-footer > .small { display: none; }
+}
 @media (max-width: 760px) { .break-clock { font-size: 40px; } }
 
 /* ----- 22. Responsive ----------------------------------------------------- */
@@ -833,8 +850,8 @@ svg.chart { display: block; max-width: 100%; height: auto; }
     left: 0 !important; top: 0 !important; right: 0; bottom: 0;
     width: 100% !important; height: auto !important; resize: none;
   }
-  .q-shell { min-height: calc(100vh - var(--header-h) - var(--tabbar-h)); }
-  .q-footer { bottom: var(--tabbar-h); }
+  .q-shell { --q-bottom: var(--tabbar-h); }
+  body.no-frame .q-shell { --q-bottom: 0px; }
   .countdown { gap: var(--sp-4); }
   .countdown .cd-num { font-size: 30px; }
 }
