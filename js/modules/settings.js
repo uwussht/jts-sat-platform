@@ -156,7 +156,7 @@
       var state = S.state();
       if (!state) { JTS.router.go('#/auth'); return; }
 
-      var screen = U.el('div.container.screen.stack', { style: 'max-width:760px' });
+      var screen = U.el('div.container.screen.stack', { style: 'max-width:1100px' });
       root.appendChild(screen);
       function rerender() { JTS.router.render(); }
 

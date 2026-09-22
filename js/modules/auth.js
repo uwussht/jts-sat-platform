@@ -32,7 +32,7 @@
       /* Signed out, the header is hidden and this screen owns the window, so
          it is laid out as a landing rather than as a card on the app ground. */
       var page = U.el('div.auth-page');
-      var panel = U.el('div.auth-panel.auth-wide');
+      var panel = U.el('div.auth-panel');
       var card = U.el('div.card.stack');
       panel.appendChild(U.el('div.auth-head', null, [
         U.el('div.brand-mark', { text: 'JTS', 'aria-hidden': 'true' }),
@@ -40,24 +40,12 @@
         U.el('div.eyebrow', { text: t('brand.eyebrow') })
       ]));
 
-      /* A visitor has nothing to look at but a password box, so the landing
-         shows the road they are being asked to start: the same level map the
-         roadmap screen draws, with no progress and nothing to press on it. It is the first
-         column on a laptop and is dropped entirely on a phone, where the form
-         is the only thing worth the screen. */
-      var split = U.el('div.auth-split', null, [
-        U.el('div.auth-story.stack', null, [
-          U.el('div.eyebrow', { text: t('roadmap.title') }),
-          U.el('h2.h2', { text: t('roadmap.landing'), style: 'color:#fff' }),
-          JTS.roadmap.overview(),
-          U.el('a.btn.btn-sm', { href: '#/guide', text: t('guide.title') + ' →' })
-        ]),
-        U.el('div.stack', null, [
-          card,
-          U.el('div.auth-foot', { text: t('auth.localNote') })
-        ])
-      ]);
-      panel.appendChild(split);
+      /* Signing up is one job, and the screen does one thing: the form, and
+         the note that says where a profile actually lives. The roadmap that
+         used to fill the other half of this page belongs behind the sign-in,
+         where it is the student's own road rather than a picture of one. */
+      panel.appendChild(card);
+      panel.appendChild(U.el('div.auth-foot', { text: t('auth.localNote') }));
       page.appendChild(panel);
       root.appendChild(page);
 
@@ -116,7 +104,9 @@
           }
         });
 
-        form.appendChild(U.el('h1.h1', { text: t('auth.title') }));
+        form.appendChild(U.el('h1.h1', {
+          text: mode === 'login' ? t('auth.title') : t('auth.register')
+        }));
         form.appendChild(U.el('p.small.muted', { text: t('auth.subtitle') }));
         form.appendChild(ui.field(t('auth.email'), emailInput));
         form.appendChild(ui.field(t('auth.password'), pw.wrap));

@@ -334,10 +334,9 @@ squares, the current step, its stars and one line about it on `#/today`, because
 a road you have to remember to open is not a reminder. It links to the full map
 rather than repeating it.
 
-The same map renders on the sign-in screen with no progress and nothing to press
-(`JTS.roadmap.overview()`), because a visitor otherwise has nothing to look at
-but a password box. On a phone that column is dropped rather than squashed: the
-form is the only thing worth the screen at 390px.
+The sign-in screen does not draw it. A visitor has no plan, so a roadmap there
+is a picture of somebody else's; the screen is the form and the note saying
+where a profile actually lives, and nothing else.
 
 **`#/guide`** is what every part of the platform is for, built from
 `JTS.shell.navItems` rather than written out again — a destination added to the
@@ -463,6 +462,34 @@ the offset it read before tearing the old one down. Screens that *do* want the
 top after a redraw — the question screen, moving from one question to the next —
 scroll for themselves, as they always did. The e2e suites measure this on the
 builder, inside a session, and after a real navigation.
+
+## The target score, and where it lands
+
+Step 3 of onboarding is two columns that answer each other. On the left, the
+target: Reading and Writing, Math, and the total derived from them — a section
+score is a multiple of 10 in 200..800 and nothing else is accepted. On the
+right, every university in `js/data/colleges.js` sorted by where that target
+falls against its published middle-50% band, recomputed on each keystroke:
+
+| Band | Meaning |
+|---|---|
+| In their range | the target is inside the published middle 50% |
+| Above their range | the target is above it |
+| Just below | within 70 points under the bottom of it |
+| Below their range | further under; hidden behind one press |
+
+The ones the target reaches come first and the rest are one press away, never
+deleted — a student is allowed to look at a school they are not ready for.
+Pressing a university copies its band into the target, which is the fastest
+honest way to set one.
+
+**This is not a chance of admission and the screen says so.** A middle-50% band
+is a fact about last year's admitted students; grades, essays, recommendations
+and everything else about an applicant are not in that number. The figures in
+`colleges.js` are placeholders carrying `verified: false` until JTS confirms
+them against each institution's Common Data Set, and every row prints its
+source and year. Test-blind institutions are absent rather than listed with an
+SAT target they do not read.
 
 ## Deliberate limitations
 

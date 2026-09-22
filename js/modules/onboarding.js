@@ -82,7 +82,7 @@
   function pick(obj) { return JTS.i18n.pick(obj, S.settings().uiLang); }
 
   function bullets(list) {
-    var ul = U.el('ul.stack-sm.list-dot');
+    var ul = U.el('ul.stack-sm.list-dot.prose');
     (list || []).forEach(function (line) {
       ul.appendChild(U.el('li.small', { html: pick(line) }));
     });
@@ -159,7 +159,7 @@
     if (!sec) return;
 
     body.appendChild(U.el('h2.h2', { text: t('onb.info.' + id) }));
-    body.appendChild(U.el('p.muted', { text: pick(sec.lead) }));
+    body.appendChild(U.el('p.muted.prose', { text: pick(sec.lead) }));
 
     if (sec.stats) {
       body.appendChild(U.el('div.grid.grid-3', null, sec.stats.map(function (st) {
@@ -180,7 +180,7 @@
 
     if (sec.steps) {
       body.appendChild(U.el('h3.h3', { text: t('onb.info.howToRegister') }));
-      var ol = U.el('ol.stack-sm.list-num');
+      var ol = U.el('ol.stack-sm.list-num.prose');
       sec.steps.forEach(function (line) { ol.appendChild(U.el('li.small', { html: pick(line) })); });
       body.appendChild(ol);
     }
@@ -278,6 +278,21 @@
     return function valid() { return !!S.state().examDate; };
   }
 
+  /**
+   * Where a total score sits against one university's published middle-50%
+   * band. Four bands, because a band is all the data supports: a range is a
+   * fact about last year's admitted students, not a decision about this one.
+   */
+  var NEAR = 70;
+  function fitFor(total, c) {
+    var band = c.midSAT.total;
+    if (total > band[1]) return 'above';
+    if (total >= band[0]) return 'inside';
+    if (total >= band[0] - NEAR) return 'near';
+    return 'below';
+  }
+  var FIT_ORDER = { inside: 0, above: 1, near: 2, below: 3 };
+
   function goalBlock(body, state, refresh) {
     var g = state.goals || { rw: 650, math: 700, total: 1350, collegeIds: [] };
     body.appendChild(U.el('h2.h2', { text: t('onb.s3.title') }));
@@ -286,98 +301,149 @@
     var needOut = U.el('div.small.muted');
     var err = U.el('div.error-text', { role: 'alert', hidden: true });
 
+    /* Only SAT-relevant policies appear; test-blind institutions are absent. */
+    var colleges = (JTS.data.colleges || []).filter(function (c) {
+      return c.testPolicy === 'required' || c.testPolicy === 'optional';
+    });
+    var cmeta = JTS.data.collegesMeta || {};
+
+    var rwIn = scoreInput('g-rw', g.rw, recalc);
+    var maIn = scoreInput('g-math', g.math, recalc);
+
+    function currentTotal() {
+      if (!validScore(rwIn.value) || !validScore(maIn.value)) return null;
+      return Number(rwIn.value) + Number(maIn.value);
+    }
+
     function recalc() {
-      var rw = rwIn.value, ma = maIn.value;
-      if (!validScore(rw) || !validScore(ma)) { totalOut.textContent = '—'; needOut.textContent = ''; return; }
-      var total = Number(rw) + Number(ma);
+      var total = currentTotal();
+      if (total === null) { totalOut.textContent = '—'; needOut.textContent = ''; paintFit(); return; }
       totalOut.textContent = String(total);
       S.update(function (s) {
         s.goals = s.goals || { collegeIds: [] };
-        s.goals.rw = Number(rw); s.goals.math = Number(ma); s.goals.total = total;
+        s.goals.rw = Number(rwIn.value); s.goals.math = Number(maIn.value); s.goals.total = total;
         s.goals.collegeIds = s.goals.collegeIds || [];
       });
       var base = S.state().baseline;
       needOut.textContent = base && base.total
         ? t('onb.s3.needed', { n: Math.max(0, total - base.total) })
         : t('onb.s3.neededUnknown');
+      paintFit();
     }
 
-    var rwIn = scoreInput('g-rw', g.rw, recalc);
-    var maIn = scoreInput('g-math', g.math, recalc);
-
+    /* ------------------------------------------------------------- left -- */
+    var setter = U.el('div.stack');
     var grid = U.el('div.grid.grid-2');
     grid.appendChild(ui.field(t('onb.s3.targetRw'), rwIn));
     grid.appendChild(ui.field(t('onb.s3.targetMath'), maIn));
-    body.appendChild(grid);
-    body.appendChild(U.el('div.card.card-sm.card-flat', null, [
+    setter.appendChild(grid);
+    setter.appendChild(U.el('div.card.card-sm.card-flat', null, [
       U.el('div.stat', null, [U.el('div.stat-label', { text: t('onb.s2.total') }), totalOut, needOut])
     ]));
+    setter.appendChild(U.el('p.hint', { text: t('onb.s3.fit.pick') }));
+    setter.appendChild(err);
 
-    /* Reference list. Only SAT-relevant policies appear; test-blind is absent. */
-    var colleges = (JTS.data.colleges || []).filter(function (c) {
-      return c.testPolicy === 'required' || c.testPolicy === 'optional';
-    });
-    var cmeta = JTS.data.collegesMeta || {};
-    body.appendChild(U.el('h3.h3', { text: t('onb.s3.colleges'), style: 'margin-top:8px' }));
-    var cList = U.el('div.stack-sm');
-    function paint(row, on) {
-      row.style.borderColor = on ? 'var(--brand-600)' : '';
-      row.style.background = on ? 'var(--brand-050)' : '';
-      row.setAttribute('aria-pressed', String(on));
-    }
-    colleges.forEach(function (c) {
+    /* ------------------------------------------------------------ right -- */
+    var uniHead = U.el('div.row-between.row-wrap');
+    var uniList = U.el('div.uni-list');
+    var moreBtn = U.el('button.btn.btn-sm', { type: 'button', hidden: true });
+    var showAll = false;
+    moreBtn.addEventListener('click', function () { showAll = !showAll; paintFit(); });
+
+    var unis = U.el('div.goal-unis.stack-sm', null, [
+      uniHead, uniList, moreBtn,
+      U.el('p.hint', {
+        text: t('onb.s3.fit.caveat') + ' ' +
+          t('onb.s3.collegeNote', {
+            year: colleges[0] ? colleges[0].year : '—',
+            source: cmeta.defaultSource || '—'
+          }) + (cmeta.verified === false ? ' ' + (cmeta.note || '') : '')
+      })
+    ]);
+
+    function uniRow(c, fit, total) {
       var selected = (S.state().goals && S.state().goals.collegeIds || []).indexOf(c.id) >= 0;
-      var row = U.el('button.check-card', {
+      var band = c.midSAT.total;
+      var row = U.el('button.check-card.uni-row.fit-' + fit, {
         type: 'button', 'aria-pressed': String(selected),
-        style: 'width:100%;text-align:left;cursor:pointer',
         onclick: function () {
-          var nowOn;
           S.update(function (s) {
             s.goals = s.goals || { collegeIds: [] };
             s.goals.collegeIds = s.goals.collegeIds || [];
             var i = s.goals.collegeIds.indexOf(c.id);
-            if (i >= 0) { s.goals.collegeIds.splice(i, 1); nowOn = false; }
-            else {
-              s.goals.collegeIds.push(c.id);
-              nowOn = true;
-              /* Prefill targets from the middle of the published band, rounded
-                 to a reportable 10-point score. */
-              var mid = function (r) { return Math.round(((r[0] + r[1]) / 2) / 10) * 10; };
-              s.goals.rw = mid(c.midSAT.rw);
-              s.goals.math = mid(c.midSAT.math);
-              s.goals.total = s.goals.rw + s.goals.math;
-            }
+            if (i >= 0) { s.goals.collegeIds.splice(i, 1); return; }
+            s.goals.collegeIds.push(c.id);
+            /* Prefill the target from the middle of the published band,
+               rounded to a reportable 10-point score. */
+            var mid = function (r) { return Math.round(((r[0] + r[1]) / 2) / 10) * 10; };
+            s.goals.rw = mid(c.midSAT.rw);
+            s.goals.math = mid(c.midSAT.math);
+            s.goals.total = s.goals.rw + s.goals.math;
           });
-          paint(row, nowOn);
-          if (nowOn) {
-            var g2 = S.state().goals;
-            rwIn.value = String(g2.rw);
-            maIn.value = String(g2.math);
-          }
+          var g2 = S.state().goals;
+          rwIn.value = String(g2.rw);
+          maIn.value = String(g2.math);
           recalc();
         }
       }, [
-        U.el('div.row-between', null, [
+        U.el('div.row-between.row-wrap', null, [
           U.el('b', { text: c.name }),
-          U.el('span.badge' + (c.testPolicy === 'required' ? '.badge-warn' : '.badge-muted'),
-               { text: t('onb.s3.policy.' + c.testPolicy) })
+          U.el('span.uni-fit', { text: t('onb.s3.fit.' + fit) })
         ]),
         U.el('div.small.muted', {
-          text: t('onb.s3.midSat') + ': ' + c.midSAT.total[0] + '–' + c.midSAT.total[1] +
+          text: t('onb.s3.midSat') + ': ' + band[0] + '–' + band[1] +
                 ' (R&W ' + c.midSAT.rw[0] + '–' + c.midSAT.rw[1] +
                 ', Math ' + c.midSAT.math[0] + '–' + c.midSAT.math[1] + ')'
-        })
+        }),
+        U.el('div.row.row-wrap', null, [
+          U.el('span.badge' + (c.testPolicy === 'required' ? '.badge-warn' : '.badge-muted'),
+               { text: t('onb.s3.policy.' + c.testPolicy) }),
+          total === null ? null : U.el('span.xsmall.muted', {
+            text: (total >= band[0] ? '+' : '') + (total - band[0]) + ' ' + t('onb.s3.fit.vsRange')
+          })
+        ])
       ]);
-      paint(row, selected);
-      cList.appendChild(row);
-    });
-    body.appendChild(cList);
-    body.appendChild(U.el('p.hint', {
-      text: t('onb.s3.collegeNote', { year: colleges[0] ? colleges[0].year : '—', source: cmeta.defaultSource || '—' }) +
-            (cmeta.verified === false ? ' ' + (cmeta.note || '') : '')
-    }));
-    body.appendChild(err);
+      return row;
+    }
 
+    /**
+     * The list is the answer to "where does this score get me": the ones the
+     * target reaches come first, the ones it does not are one press away.
+     */
+    function paintFit() {
+      var total = currentTotal();
+      U.clear(uniHead); U.clear(uniList);
+
+      var ranked = colleges.map(function (c) {
+        return { c: c, fit: total === null ? 'inside' : fitFor(total, c) };
+      }).sort(function (a, b) {
+        if (total === null) return b.c.midSAT.total[1] - a.c.midSAT.total[1];
+        var d = FIT_ORDER[a.fit] - FIT_ORDER[b.fit];
+        return d || b.c.midSAT.total[1] - a.c.midSAT.total[1];
+      });
+
+      var reached = ranked.filter(function (r) { return r.fit === 'inside' || r.fit === 'above'; }).length;
+      uniHead.appendChild(U.el('h3.h3', { text: t('onb.s3.fit.title'), style: 'margin:0' }));
+      if (total !== null) {
+        uniHead.appendChild(U.el('span.badge' + (reached ? '.badge-ok' : '.badge-muted'), {
+          text: t('onb.s3.fit.reached', { n: reached, total: ranked.length })
+        }));
+      }
+
+      var shown = showAll ? ranked : ranked.filter(function (r) { return r.fit !== 'below'; });
+      if (!shown.length) {
+        uniList.appendChild(U.el('p.small.muted', { text: t('onb.s3.fit.none') }));
+      }
+      shown.forEach(function (r) { uniList.appendChild(uniRow(r.c, r.fit, total)); });
+
+      var hidden = ranked.length - shown.length;
+      moreBtn.hidden = !(hidden || showAll);
+      moreBtn.textContent = showAll
+        ? t('onb.s3.fit.showFewer')
+        : t('onb.s3.fit.showAll', { n: hidden });
+    }
+
+    body.appendChild(U.el('div.goal-split', null, [setter, unis]));
     recalc();
 
     return function valid() {
@@ -388,11 +454,6 @@
     };
   }
 
-  /**
-   * Real available time; intensity is computed from it, not guessed.
-   * Exported, because it is asked for on the diagnostic result screen — the
-   * moment the plan is actually built — rather than during onboarding.
-   */
   function availabilityBlock(body, state, refresh) {
     var a = state.availability || { days: [], minutesPerSession: 60, intensity: 'standard' };
     body.appendChild(U.el('h2.h2', { text: t('onb.s4.title') }));
@@ -465,7 +526,7 @@
       if (!state) { JTS.router.go('#/auth'); return; }
 
       var step = U.clamp(state.profile.onboardingStep || 1, 1, TOTAL_STEPS);
-      var screen = U.el('div.container.screen', { style: 'max-width:720px' });
+      var screen = U.el('div.container.screen', { style: 'max-width:1100px' });
       root.appendChild(screen);
 
       function refresh() { draw(); }

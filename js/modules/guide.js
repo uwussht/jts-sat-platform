@@ -35,7 +35,7 @@
     title: 'guide.title',
     render: function (root) {
       var state = S.state();
-      var screen = U.el('div.container.screen.stack-lg', { style: 'max-width:820px' });
+      var screen = U.el('div.container.screen.stack-lg', { style: 'max-width:1100px' });
       root.appendChild(screen);
 
       screen.appendChild(U.el('p.muted', { text: t('guide.lead') }));

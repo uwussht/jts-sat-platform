@@ -11,13 +11,11 @@
    and only the detail panel under the map changes. Being able to see the whole
    road at once is the entire point of drawing a road.
 
-   Three jobs, one module:
+   Two jobs, one module:
 
    - #/roadmap is the map of THIS student's plan;
    - JTS.roadmap.reminder() is the compact version the dashboard shows every
-     day, so the road is a reminder and not a page you have to remember to open;
-   - JTS.roadmap.overview() is the same road with no personal data on it, which
-     is what a visitor sees on the sign-in screen.
+     day, so the road is a reminder and not a page you have to remember to open.
 
    Nothing here invents structure. Phase boundaries come from
    JTS.planner.phaseForWeek and the current phase from JTS.planner.currentPhase,
@@ -131,9 +129,9 @@
    * The level map.
    *
    * opts.statusOf(phase)  'done' | 'current' | 'ahead'
-   * opts.starsOf(phase)   0..3, or null for a map with no progress on it
-   * opts.onSelect(id)     omitted for the read-only version on the landing
-   * opts.here             initials for the "you are here" marker, or null
+   * opts.starsOf(phase)   0..3 — how much of that phase is done
+   * opts.onSelect(id)     called with the phase a student pressed
+   * opts.here             initials for the "you are here" marker
    */
   function levelMap(opts) {
     var phases = JTS.planner.phases;
@@ -156,26 +154,22 @@
 
     phases.forEach(function (phase) {
       var status = opts.statusOf(phase);
-      var stars = opts.starsOf ? opts.starsOf(phase) : null;
+      var stars = opts.starsOf(phase);
       var wrap = U.el('div.rm-stop.rm-' + status);
-      if (stars !== null) wrap.appendChild(starRow(stars));
+      wrap.appendChild(starRow(stars));
 
-      var label = t('roadmap.step', { n: phase.id, total: phases.length }) + ' · ' +
-        t('plan.phase.' + phase.key) +
-        (stars === null ? '' : ' · ' + t('roadmap.stars', { n: stars }));
-
-      wrap.appendChild(U.el(opts.onSelect ? 'button.rm-pin' : 'div.rm-pin', {
-        type: opts.onSelect ? 'button' : null,
+      wrap.appendChild(U.el('button.rm-pin', {
+        type: 'button',
         text: status === 'done' ? '✓' : String(phase.id),
-        'aria-label': opts.onSelect ? label : null,
-        'aria-hidden': opts.onSelect ? null : 'true',
+        'aria-label': t('roadmap.step', { n: phase.id, total: phases.length }) + ' · ' +
+          t('plan.phase.' + phase.key) + ' · ' + t('roadmap.stars', { n: stars }),
         'aria-current': status === 'current' ? 'step' : null,
         dataset: { phase: String(phase.id) },
-        onclick: opts.onSelect ? function () { opts.onSelect(phase.id); } : null
+        onclick: function () { opts.onSelect(phase.id); }
       }));
       wrap.appendChild(U.el('span.rm-name', { text: t('plan.phase.' + phase.key) }));
 
-      if (status === 'current' && opts.here) {
+      if (status === 'current') {
         wrap.appendChild(U.el('span.rm-here', {
           text: opts.here, title: t('roadmap.youAreHere'), 'aria-hidden': 'true'
         }));
@@ -336,23 +330,7 @@
     ]);
   }
 
-  /**
-   * The road with no personal data on it: no stars, no marker, nothing to
-   * click. Used by the sign-in screen, where there is no profile to read.
-   */
-  function overview() {
-    return levelMap({
-      statusOf: function () { return 'ahead'; },
-      starsOf: null,
-      here: null,
-      examDate: null
-    });
-  }
-
-  JTS.roadmap = {
-    overview: overview, reminder: reminder,
-    phaseSpans: phaseSpans, starsFor: starsFor
-  };
+  JTS.roadmap = { reminder: reminder, phaseSpans: phaseSpans, starsFor: starsFor };
 
   /* --------------------------------------------------------------- screen */
 

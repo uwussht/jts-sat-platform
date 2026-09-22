@@ -149,7 +149,7 @@
   }
 
   function renderResult(root, summary) {
-    var screen = U.el('div.container.screen.stack-lg', { style: 'max-width:820px' });
+    var screen = U.el('div.container.screen.stack-lg', { style: 'max-width:1100px' });
     root.appendChild(screen);
 
     var phase = recommendPhase(summary);
@@ -269,7 +269,7 @@
     var state = S.state();
     var last = (state.sessions || []).filter(function (x) { return x.kind === 'diagnostic'; }).pop();
 
-    var screen = U.el('div.container.screen', { style: 'max-width:640px' });
+    var screen = U.el('div.container.screen', { style: 'max-width:820px' });
     root.appendChild(screen);
     var card = U.el('div.card.stack');
     card.appendChild(U.el('h1.h1', { text: t('diag.title') }));
