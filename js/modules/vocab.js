@@ -21,6 +21,8 @@
 
   JTS.vocab = {
     GOALS: GOALS,
+    /** Opened from the shell's + button, from anywhere in the app. */
+    addModal: function (onDone) { addModal(onDone); },
     MASTERED_DAYS: MASTERED_DAYS,
 
     /** The JTS list plus the student's own words, in one array. */
@@ -142,18 +144,6 @@
 
   /* ------------------------------------------------------------- flashcards */
 
-  /**
-   * Adding a word was a bare "+" floating in the bottom-right corner of the
-   * window, which is a long way from the deck and says nothing about itself.
-   * Each tab carries the same action, named, where the tab's own controls are.
-   */
-  function addButton(rerender) {
-    return U.el('button.btn.btn-sm.btn-primary', {
-      type: 'button', text: '+ ' + t('vocab.addWord'),
-      onclick: function () { addModal(rerender); }
-    });
-  }
-
   function flashcard(host, rerender) {
     var queue = JTS.vocab.queue();
     var done = JTS.vocab.doneToday();
@@ -179,10 +169,6 @@
     stage.appendChild(U.el('div.row-between.row-wrap', null, [
       U.el('span.eyebrow', { text: t('vocab.dailyGoal') }), goalRow
     ]));
-    /* Top right on both tabs, so it is in the same place whichever one the
-       student is looking at. */
-    stage.appendChild(U.el('div.row.row-wrap', { style: 'justify-content:flex-end' },
-      [addButton(rerender)]));
 
     stage.appendChild(U.el('div.row-between', null, [
       U.el('span.small.muted', { text: t('vocab.todayDone', { n: done, goal: goal }) }),
@@ -262,7 +248,17 @@
 
   /* --------------------------------------------------------------- my words */
 
+  /**
+   * The add-a-word dialog. It is exported because the "+" button lives in the
+   * shell now rather than on this screen: a word worth learning turns up while
+   * a student is somewhere else entirely, and walking to the vocabulary screen
+   * to write it down is how it gets forgotten.
+   */
   function addModal(onDone) {
+    onDone = onDone || function () {
+      /* Only the screen that shows the deck needs redrawing. */
+      if (JTS.router.current && JTS.router.current.base === '#/vocab') JTS.router.render();
+    };
     var m;
     var word = U.el('input.input', { id: 'vw-word', 'data-autofocus': '' });
     var def = U.el('textarea.textarea', { id: 'vw-def', style: 'min-height:70px' });
@@ -369,9 +365,6 @@
     status.addEventListener('change', function () { filter.status = status.value; paint(); });
     category.addEventListener('change', function () { filter.category = category.value; paint(); });
 
-    host.appendChild(U.el('div.row-between.row-wrap', { style: 'margin-bottom:10px' }, [
-      U.el('span.eyebrow', { text: t('vocab.myWords') }), addButton(rerender)
-    ]));
     host.appendChild(U.el('div.grid.grid-3', null, [
       ui.field(t('common.search'), search),
       ui.field(t('common.status'), status),

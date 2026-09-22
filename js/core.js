@@ -2054,6 +2054,7 @@
     renderHeader: function () {
       this.renderSidebar();
       this.renderTabbar();
+      this.renderFab();
       this.renderTopbar();
     },
 
@@ -2190,6 +2191,26 @@
       bar.hidden = !state || onboarding;
     },
 
+    /**
+     * One "+" for the whole app. A word worth learning turns up while a
+     * student is reading a passage or looking at their plan, and walking to
+     * the vocabulary screen to write it down is how it gets forgotten. It is
+     * built once and lives on the body, so no screen has to remember it.
+     */
+    renderFab: function () {
+      var fab = U.$('#add-word');
+      if (!fab) {
+        fab = U.el('button.fab', { type: 'button', id: 'add-word', text: '+' });
+        fab.addEventListener('click', function () {
+          if (JTS.vocab && JTS.vocab.addModal) JTS.vocab.addModal();
+        });
+        document.body.appendChild(fab);
+      }
+      fab.setAttribute('aria-label', t('vocab.addWord'));
+      fab.setAttribute('title', t('vocab.addWord'));
+      return fab;
+    },
+
     /** Phone only: the five primary destinations, mirroring the sidebar. */
     renderTabbar: function () {
       var tabbar = U.$('#tabbar');
@@ -2253,6 +2274,11 @@
          of them bounces back here — so it stays away until there is somewhere
          to go. renderTabbar builds nothing in that state either. */
       U.$('#tabbar').hidden = !ready;
+      /* The + follows the same rule, and stands down inside a session: a
+         floating button over a timed module is one more thing to hit by
+         accident, and in exam mode nothing extra belongs on the screen. */
+      var fab = U.$('#add-word');
+      if (fab) fab.hidden = !ready || path === '#/question';
       /* Screens that size themselves against the window — the question screen
          most of all — have to know whether the app header and the tab bar are
          really there, or they leave a band of nothing where each would be. */

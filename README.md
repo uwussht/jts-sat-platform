@@ -385,6 +385,19 @@ score predictor and nothing that says "you will get X".
   streak, a first mastered skill, and 100 independent questions. All three are
   always on screen; an unearned one is greyed rather than hidden.
 
+## Adding a word, from anywhere
+
+The "+" in the bottom-right corner belongs to the app shell, not to the
+vocabulary screen: a word worth learning turns up while a student is reading a
+passage or looking at their plan, and having to walk to the vocabulary screen
+to write it down is how it gets forgotten. It opens the same dialog from every
+screen, saves into the same deck, and leaves the student where they were.
+
+It stands down in two places. Until the plan exists there is nothing to add to
+yet, so onboarding and the diagnostic do not show it; and inside a running
+session it would be one more thing to hit by accident, which in exam mode is
+not a small thing.
+
 ## Vocabulary
 
 514 cards from the JTS word list plus anything the student adds, scheduled with
