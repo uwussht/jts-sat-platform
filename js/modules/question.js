@@ -48,6 +48,29 @@
       if (start < 0 || end < 0 || start === end) return null;
       return { start: Math.min(start, end), end: Math.max(start, end) };
     },
+    /** Everything root says, as one string, in the order it is read. */
+    textOf: function (root) {
+      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+      var out = '', n;
+      while ((n = walker.nextNode())) out += n.nodeValue;
+      return out;
+    },
+    /**
+     * Grow a range out to whole words and drop the whitespace at its edges.
+     * A drag that stops in the middle of "straightforward" means the word, and
+     * a highlight that cuts one in half looks like a rendering fault rather
+     * than something the student did on purpose.
+     */
+    snap: function (root, r) {
+      var text = HL.textOf(root);
+      var word = function (i) { return i >= 0 && i < text.length && !/\s/.test(text[i]); };
+      var start = r.start, end = Math.min(r.end, text.length);
+      while (start > 0 && word(start - 1) && word(start)) start--;
+      while (end < text.length && word(end - 1) && word(end)) end++;
+      while (start < end && /\s/.test(text[start])) start++;
+      while (end > start && /\s/.test(text[end - 1])) end--;
+      return end > start ? { start: start, end: end } : null;
+    },
     /** Merge overlapping or touching ranges so repeated passes stay tidy. */
     merge: function (ranges) {
       var sorted = ranges.slice().sort(function (a, b) { return a.start - b.start; });
@@ -473,6 +496,7 @@
         var question = q();
         var a = ans();
         U.clear(content);
+        hlTargets.length = 0;
 
         if (ses.paused) {
           content.appendChild(ui.empty(t('q.paused'), null,
@@ -532,16 +556,11 @@
         buildFooter();
       }
 
+      /* Which containers a highlight may land in, rebuilt with the question. */
+      var hlTargets = [];
+
       function wireHighlighting(rootEl, a, bucket) {
-        rootEl.addEventListener('mouseup', function () {
-          if (!ses.meta.highlightMode) return;
-          var r = HL.fromSelection(rootEl);
-          if (!r) return;
-          a.highlights[bucket] = HL.merge(a.highlights[bucket].concat([r]));
-          window.getSelection().removeAllRanges();
-          saveNow();
-          renderQuestion();
-        });
+        hlTargets.push({ el: rootEl, a: a, bucket: bucket });
         rootEl.addEventListener('click', function (e) {
           if (e.target.tagName !== 'MARK') return;
           a.highlights[bucket] = HL.remove(a.highlights[bucket], Number(e.target.dataset.at));
@@ -549,6 +568,40 @@
           renderQuestion();
         });
       }
+
+      /**
+       * Highlighting listens on the document, not on the passage: a drag that
+       * starts in the passage and finishes over the toolbar never fires mouseup
+       * on the passage, and the browser's own blue selection was left lying
+       * across half the screen with nothing to clear it.
+       */
+      function onMouseUp(e) {
+        if (!ses.meta.highlightMode) return;
+        /* A dialog has its own text in it — the scratchpad most obviously —
+           and clearing the selection there would make it unusable. */
+        if (e && e.target && e.target.closest &&
+            e.target.closest('.modal, input, textarea, select')) return;
+        var applied = false;
+        hlTargets.forEach(function (target) {
+          if (applied) return;
+          var r = HL.fromSelection(target.el);
+          if (!r) return;
+          r = HL.snap(target.el, r);
+          if (!r) return;
+          target.a.highlights[target.bucket] =
+            HL.merge(target.a.highlights[target.bucket].concat([r]));
+          applied = true;
+        });
+        /* Whether or not it landed somewhere useful, the selection goes. */
+        var sel = window.getSelection();
+        if (sel && sel.removeAllRanges) sel.removeAllRanges();
+        if (!applied) return;
+        saveNow();
+        renderQuestion();
+      }
+      document.addEventListener('mouseup', onMouseUp);
+      /* Same gesture with a finger. */
+      document.addEventListener('touchend', onMouseUp);
 
       function renderOptions(question, a) {
         var list = U.el('div.opt-list', { role: 'group', 'aria-label': t('common.correct') });
@@ -798,6 +851,8 @@
 
       return function teardown() {
         document.removeEventListener('keydown', onKey);
+        document.removeEventListener('mouseup', onMouseUp);
+        document.removeEventListener('touchend', onMouseUp);
         clearInterval(announceInt);
         if (timer) { commitTime(); timer.pause(); ses.elapsedMs = timer.value(); }
         if (JTS.session.current()) saveNow();

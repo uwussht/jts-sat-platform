@@ -581,6 +581,11 @@ table.table td.num, table.table th.num { text-align: right; font-variant-numeric
 .q-main { flex: 1; display: grid; grid-template-columns: minmax(0,1fr); gap: 0; }
 .q-main.with-side { grid-template-columns: minmax(0,1fr) 380px; }
 .q-content { padding: 18px 16px 100px; max-width: 980px; margin: 0 auto; width: 100%; }
+/* Only the passage and the stem can be highlighted, so only they can be
+   selected. Dragging across the toolbar used to leave the browser's blue
+   selection lying over half the screen with nothing to clear it. */
+.q-shell { user-select: none; -webkit-user-select: none; }
+.q-passage, .q-stem { user-select: text; -webkit-user-select: text; }
 .q-split { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: var(--sp-5); align-items: start; }
 .q-passage {
   font-size: 15px; line-height: 1.65; padding-right: var(--sp-4);

@@ -393,6 +393,30 @@ entry in the `academic` category except two transitions, because the source
 sheet has no category column. Both are open questions for JTS — see **Content
 and licensing** below.
 
+## Highlighting
+
+Selecting text in a passage or a stem highlights it, and clicking a highlight
+removes it. Three rules make that behave the way a student expects:
+
+- **Whole words.** A drag that stops in the middle of a word means the word.
+  `HL.snap` grows the range out to the nearest whitespace on both sides and
+  trims the edges, so a highlight never cuts "straightforward" in half.
+- **Nothing outside the text is selectable.** `.q-shell` is `user-select:
+  none` and only `.q-passage` and `.q-stem` opt back in. Dragging across the
+  toolbar used to paint the browser's blue selection over the clock, the
+  buttons and the note beside them.
+- **One listener, on the document.** A drag that starts in the passage and
+  ends over the toolbar never fires `mouseup` on the passage, so the old
+  per-container listener never ran and never cleared the selection — it was
+  left lying across half the screen. The document-level handler applies the
+  range if it landed in a highlightable container and clears the selection
+  either way. It steps aside inside dialogs and form fields, so the scratchpad
+  still works, and it listens for `touchend` as well.
+
+Offsets are stored per question against the passage and the stem separately
+(`highlights: { p: [], s: [] }`), so answer choices and feedback appearing
+below can never shift a saved offset.
+
 ## The calculator behaves like the one in the test
 
 The Digital SAT's calculator is a window: you open it once and it stays open for
