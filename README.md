@@ -485,10 +485,13 @@ Six steps, four of which teach. The rules that shape the screen:
   registration steps and the packing lists sit behind one press. They are built
   into the page either way, so a browser find and a screen reader still reach
   them.
-- **The chrome stops offering what it cannot give.** During onboarding every
-  destination in the sidebar and the tab bar is blocked by the router guard, so
-  neither is built: what remains is the language switch, the theme, Settings and
-  the way out.
+- **There is no app frame until there is somewhere to go.** The sidebar, the
+  top bar and the tab bar are not shown at all until the plan exists — every
+  destination in them is blocked by the router guard until then, so they were
+  nine ways to be bounced straight back. Onboarding and the diagnostic carry
+  `JTS.shell.setupBar()` instead: the brand, the language switch, the theme and
+  the way out. The frame arrives with the plan, at the end of the diagnostic,
+  and the student lands on Today with it.
 - **There is no way to skip the teaching, deliberately.** A shortcut for
   students who already know the exam was built and then removed at JTS's
   request: someone who has sat the SAT before still has to be told how this

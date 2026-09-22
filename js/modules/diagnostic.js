@@ -148,9 +148,16 @@
     ]);
   }
 
+  /** Before the plan exists there is no app frame, so these screens carry one. */
+  function setupHeader(screen) {
+    if (S.state().profile.onboardingComplete) return;
+    screen.appendChild(JTS.shell.setupBar());
+  }
+
   function renderResult(root, summary) {
     var screen = U.el('div.container.screen.stack-lg', { style: 'max-width:1100px' });
     root.appendChild(screen);
+    setupHeader(screen);
 
     var phase = recommendPhase(summary);
     var phaseKey = JTS.planner.phases.filter(function (p) { return p.id === phase; })[0].key;
@@ -271,6 +278,7 @@
 
     var screen = U.el('div.container.screen', { style: 'max-width:820px' });
     root.appendChild(screen);
+    setupHeader(screen);
     var card = U.el('div.card.stack');
     card.appendChild(U.el('h1.h1', { text: t('diag.title') }));
     card.appendChild(U.el('p.muted', { text: t('diag.lead') }));

@@ -176,6 +176,9 @@ sup, sub { line-height: 0; font-size: .75em; }
    content runs out of sidebar and shows the page ground underneath. */
 .app-body { min-width: 0; display: flex; flex-direction: column; margin-left: var(--sidebar-w); }
 .app-sidebar[hidden] + .app-body { margin-left: 0; }
+/* With no sidebar there is nothing for the column to sit beside, so it centres
+   itself instead of hugging the left edge of the window. */
+.app-sidebar[hidden] + .app-body .container { margin-inline: auto; }
 /* Screens are measured from the left edge of the content column, not from the
    middle of the window: with a fixed sidebar a centred container drifts right
    and leaves a gutter that belongs to nothing. */
@@ -897,6 +900,35 @@ svg.chart { display: block; max-width: 100%; height: auto; }
   .goal-split { grid-template-columns: minmax(0, 1fr); }
   .uni-list { max-height: none; }
 }
+
+/* ----- 23a. Setup header --------------------------------------------------
+   Onboarding and the diagnostic run before there is anywhere to navigate to,
+   so the sidebar, the top bar and the tab bar are not built at all. These two
+   screens carry the brand and the controls that still mean something. */
+.setup-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--sp-4); flex-wrap: wrap; margin-bottom: var(--sp-5);
+}
+.setup-brand { display: flex; align-items: center; gap: 10px; }
+.setup-brand .brand-mark { width: 36px; height: 36px; font-size: 12px; }
+.setup-brand .brand-text b { display: block; font-size: 15px; line-height: 1.1; }
+.setup-brand .brand-text span {
+  display: block; font-size: 10px; font-weight: 700; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--muted);
+}
+.setup-bar .sb-tools { display: flex; align-items: center; gap: 6px; }
+/* Both controls were drawn for the dark sidebar; on a light page their own
+   colours have to be restated or the inactive languages are white on white. */
+.setup-bar .lang-switch { border-color: var(--border-strong); }
+.setup-bar .lang-switch button { color: var(--muted); }
+.setup-bar .lang-switch button:hover { background: var(--brand-050); color: var(--brand-700); }
+.setup-bar .lang-switch button[aria-pressed="true"] { background: var(--brand-600); color: #fff; }
+.setup-bar .icon-btn {
+  width: 32px; height: 32px; font-size: 14px;
+  border-color: var(--border-strong); background: var(--surface); color: var(--ink-2);
+}
+.setup-bar .icon-btn:hover { background: var(--brand-050); border-color: var(--brand-500); color: var(--brand-700); }
+.setup-brand .brand-mark { background: var(--brand-600); color: #fff; }
 
 /* ----- 23b2. Onboarding ---------------------------------------------------
    The way forward never leaves the screen, and a score is never typed when it

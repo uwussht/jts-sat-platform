@@ -705,13 +705,17 @@
       function draw() {
         U.clear(screen);
         state = S.state();
+        /* There is no app frame yet, so this screen carries the brand and the
+           controls that still work: language, theme, and the way out. */
+        screen.appendChild(JTS.shell.setupBar());
+
         var steps = U.el('ol.steps', { 'aria-label': t('onb.step', { n: step, total: TOTAL_STEPS }) });
         for (var i = 1; i <= TOTAL_STEPS; i++) {
           steps.appendChild(U.el('li' + (i < step ? '.done' : i === step ? '.current' : '')));
         }
         screen.appendChild(U.el('div.stack-sm', { style: 'margin-bottom:18px' }, [
           U.el('div.row-between', null, [
-            U.el('div.eyebrow', { text: t('onb.title') }),
+            U.el('h1.eyebrow', { text: t('onb.title') }),
             U.el('div.small.muted', { text: t('onb.step', { n: step, total: TOTAL_STEPS }) })
           ]),
           steps

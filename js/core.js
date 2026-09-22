@@ -2053,6 +2053,64 @@
       this.renderTopbar();
     },
 
+    /** The language switch, wherever it is needed. */
+    langSwitch: function () {
+      var langs = U.el('div.lang-switch', { role: 'group', 'aria-label': t('settings.uiLang') });
+      JTS.config.languages.forEach(function (l) {
+        langs.appendChild(U.el('button', {
+          type: 'button', text: l.toUpperCase(),
+          'aria-pressed': String(JTS.i18n.lang === l),
+          onclick: function () { JTS.i18n.setLang(l); JTS.shell.renderHeader(); JTS.router.render(); }
+        }));
+      });
+      return langs;
+    },
+
+    themeButton: function () {
+      return U.el('button.icon-btn', {
+        type: 'button', 'aria-label': t('settings.theme'), html: '&#9681;',
+        onclick: function () {
+          var st = Store.settings();
+          var next = st.theme === 'dark' ? 'light' : 'dark';
+          Store.update(function (s) { s.settings.theme = next; });
+          document.documentElement.setAttribute('data-theme', next);
+        }
+      });
+    },
+
+    signOutButton: function () {
+      return U.el('button.icon-btn', {
+        type: 'button', 'aria-label': t('auth.logout'), title: t('auth.logout'), text: '⇥',
+        onclick: function () {
+          JTS.Auth.logout().then(function () {
+            JTS.shell.renderHeader();
+            JTS.router.go('#/auth');
+          });
+        }
+      });
+    },
+
+    /**
+     * The header for the screens a student sees before there is anywhere to
+     * navigate to: onboarding and the diagnostic. The app chrome is not built
+     * until the plan exists, so these screens carry the brand and the three
+     * controls that still make sense — language, theme, and the way out.
+     */
+    setupBar: function () {
+      return U.el('div.setup-bar', null, [
+        U.el('div.setup-brand', null, [
+          U.el('span.brand-mark', { text: 'JTS', 'aria-hidden': 'true' }),
+          U.el('span.brand-text', null, [
+            U.el('b', { text: 'JTS SAT' }),
+            U.el('span', { text: t('brand.eyebrow') })
+          ])
+        ]),
+        U.el('div.sb-tools', null, [
+          this.langSwitch(), this.themeButton(), this.signOutButton()
+        ])
+      ]);
+    },
+
     renderSidebar: function () {
       var bar = U.$('#app-sidebar');
       if (!bar) return;
@@ -2101,24 +2159,8 @@
       bar.appendChild(U.el('div.spacer'));
 
       var tools = U.el('div.sb-tools');
-      var langs = U.el('div.lang-switch', { role: 'group', 'aria-label': t('settings.uiLang') });
-      JTS.config.languages.forEach(function (l) {
-        langs.appendChild(U.el('button', {
-          type: 'button', text: l.toUpperCase(),
-          'aria-pressed': String(JTS.i18n.lang === l),
-          onclick: function () { JTS.i18n.setLang(l); JTS.shell.renderHeader(); JTS.router.render(); }
-        }));
-      });
-      tools.appendChild(langs);
-      tools.appendChild(U.el('button.icon-btn', {
-        type: 'button', 'aria-label': t('settings.theme'), html: '&#9681;',
-        onclick: function () {
-          var st = Store.settings();
-          var next = st.theme === 'dark' ? 'light' : 'dark';
-          Store.update(function (s) { s.settings.theme = next; });
-          document.documentElement.setAttribute('data-theme', next);
-        }
-      }));
+      tools.appendChild(this.langSwitch());
+      tools.appendChild(this.themeButton());
       if (!onboarding) {
         tools.appendChild(U.el('a.icon-btn', {
           href: '#/guide', 'aria-label': t('guide.title'), title: t('guide.title'), text: '?'
@@ -2131,25 +2173,22 @@
 
       if (state) {
         var initials = U.initials(state.profile.name || state.profile.email);
+        var signOut = this.signOutButton();
+        signOut.classList.add('sb-out');
         bar.appendChild(U.el('div.sb-user', null, [
           U.el('span.sb-avatar', { text: initials, 'aria-hidden': 'true' }),
           U.el('span.sb-user-text', null, [
             U.el('b', { text: state.profile.name || state.profile.email }),
             U.el('span', { text: state.profile.name ? state.profile.email : t('brand.eyebrow') })
           ]),
-          U.el('button.icon-btn.sb-out', {
-            type: 'button', 'aria-label': t('auth.logout'), title: t('auth.logout'), text: '⇥',
-            onclick: function () {
-              JTS.Auth.logout().then(function () {
-                JTS.shell.renderHeader();
-                JTS.router.go('#/auth');
-              });
-            }
-          })
+          signOut
         ]));
       }
 
-      bar.hidden = !state;
+      /* Nothing in this bar is navigation until a plan exists, so until then
+         the screens carry JTS.shell.setupBar() instead and the frame stays
+         out of the way entirely. */
+      bar.hidden = !state || onboarding;
     },
 
     /** Phone only: the five primary destinations, mirroring the sidebar. */
@@ -2189,7 +2228,8 @@
         U.el('span.tb-date', { text: U.fmtDate(U.today(), Store.settings().uiLang) })
       ]));
       bar.appendChild(U.el('div.tb-actions', { id: 'topbar-actions' }));
-      bar.hidden = !Store.state();
+      var st = Store.state();
+      bar.hidden = !st || !st.profile.onboardingComplete;
     },
 
     /** Screens call this to hang their own controls in the top bar. */
@@ -2207,13 +2247,13 @@
         else a.removeAttribute('aria-current');
       });
       var st = Store.state();
-      var hasUser = !!st;
-      var bar = U.$('#app-sidebar'); if (bar) bar.hidden = !hasUser;
-      var top = U.$('#app-topbar'); if (top) top.hidden = !hasUser;
+      var ready = !!st && !!st.profile.onboardingComplete;
+      var bar = U.$('#app-sidebar'); if (bar) bar.hidden = !ready;
+      var top = U.$('#app-topbar'); if (top) top.hidden = !ready;
       /* The tab bar is the five destinations, and during onboarding every one
          of them bounces back here — so it stays away until there is somewhere
          to go. renderTabbar builds nothing in that state either. */
-      U.$('#tabbar').hidden = !hasUser || !st.profile.onboardingComplete;
+      U.$('#tabbar').hidden = !ready;
       /* A route change closes the phone drawer; leaving it open over the new
          screen is how you end up tapping through it by accident. */
       document.body.classList.remove('sb-open');
