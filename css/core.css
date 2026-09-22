@@ -883,7 +883,7 @@ svg.chart { display: block; max-width: 100%; height: auto; }
   .auth-head .auth-title { font-size: 25px; }
 }
 
-/* ----- 23b. Goal step: the target, and where it lands ---------------------
+/* ----- 23a. Goal step: the target, and where it lands ---------------------
    Two columns, because the two halves answer each other: the score on the
    left, and what that score reaches on the right, recomputed as it is typed. */
 .goal-split {
@@ -923,7 +923,7 @@ svg.chart { display: block; max-width: 100%; height: auto; }
   .uni-list { max-height: none; }
 }
 
-/* ----- 23a. Setup header --------------------------------------------------
+/* ----- 23b. Setup header --------------------------------------------------
    Onboarding and the diagnostic run before there is anywhere to navigate to,
    so the sidebar, the top bar and the tab bar are not built at all. These two
    screens carry the brand and the controls that still mean something. */
@@ -952,7 +952,7 @@ svg.chart { display: block; max-width: 100%; height: auto; }
 .setup-bar .icon-btn:hover { background: var(--brand-050); border-color: var(--brand-500); color: var(--brand-700); }
 .setup-brand .brand-mark { background: var(--brand-600); color: #fff; }
 
-/* ----- 23b2. Onboarding ---------------------------------------------------
+/* ----- 23c. Onboarding ----------------------------------------------------
    The way forward never leaves the screen, and a score is never typed when it
    can be pressed. */
 .onb-foot {
@@ -987,7 +987,7 @@ svg.chart { display: block; max-width: 100%; height: auto; }
 }
 .score-in { -moz-appearance: textfield; appearance: textfield; }
 
-/* ----- 23c. Exam dates ----------------------------------------------------
+/* ----- 23d. Exam dates ----------------------------------------------------
    Each administration as a tear-off from a calendar: the month on the band,
    the day under it, and one line saying what to do about it. A date, two
    deadlines and a region run together in a sentence is how a beginner misses
@@ -1202,21 +1202,6 @@ button.rm-pin:hover { transform: translate(-50%, -50%) scale(1.06); }
   .cal-month { min-width: 620px; }
   .cal-month-wrap { overflow-x: auto; }
 }
-
-/* ----- 26. Guide ---------------------------------------------------------- */
-.guide-row {
-  display: flex; align-items: center; gap: 12px; padding: 11px 12px;
-  border: 1px solid var(--border); background: var(--surface);
-  color: var(--ink); text-decoration: none;
-}
-.guide-row:hover { border-color: var(--brand-500); background: var(--brand-050); text-decoration: none; }
-.guide-icon {
-  flex: 0 0 32px; width: 32px; height: 32px; display: grid; place-items: center;
-  background: var(--brand-100); color: var(--brand-700); font-size: 15px;
-}
-.guide-text { display: flex; flex-direction: column; line-height: 1.3; flex: 1; min-width: 0; }
-.guide-go { color: var(--muted); }
-.guide-row:hover .guide-go { color: var(--brand-600); }
 
 @media print {
   .app-sidebar, .app-topbar, .tabbar, .q-footer, #desmos-panel { display: none !important; }
