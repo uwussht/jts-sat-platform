@@ -132,8 +132,6 @@ JTS.dict.en = {
   'onb.title': 'Set up your preparation',
   'onb.step': 'Step {n} of {total}',
   'onb.intro': 'About five minutes. Nothing you choose here is permanent — all of it can be changed later in Settings.',
-  'onb.skipInfo': 'I already know the SAT — skip the explanations',
-  'onb.showInfo': 'Show the explanations',
   'onb.s1.title': 'When is your exam?',
   'onb.s1.pickHint': 'Pick the sitting you are actually aiming at. You can change it later in Settings.',
   'onb.s1.inWeeks': 'in {n} weeks',

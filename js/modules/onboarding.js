@@ -676,28 +676,17 @@
 
   /* ------------------------------------------------------------------ shell */
 
-  /**
-   * Which steps a student actually walks. Four of the six teach; a student who
-   * already knows the exam can say so once and go straight to the two steps
-   * that ask them something. Nothing is lost by skipping — the same content is
-   * on the guide and in the roadmap.
-   */
-  function stepList(skip) {
-    if (!skip) return [1, 2, 3, 4, 5, 6];
-    return STEPS.map(function (d, i) { return d.block ? i + 1 : 0; })
-      .filter(function (n) { return n; });
-  }
-
   JTS.router.register('#/onboarding', {
     title: 'onb.title',
     render: function (root) {
       var state = S.state();
       if (!state) { JTS.router.go('#/auth'); return; }
 
-      var skip = !!state.profile.onbSkipInfo;
-      var order = stepList(skip);
+      /* Every student walks all six steps, including the ones that only teach.
+         Someone who has sat the SAT before still has to be told how this
+         platform reads a diagnostic and what it will and will not claim, and
+         the two steps that ask questions sit inside that explanation. */
       var step = U.clamp(state.profile.onboardingStep || 1, 1, TOTAL_STEPS);
-      if (order.indexOf(step) < 0) step = order[0];
 
       var screen = U.el('div.container.screen', { style: 'max-width:1100px' });
       root.appendChild(screen);
@@ -711,33 +700,19 @@
         window.scrollTo(0, 0);
       }
 
-      function setSkip(on) {
-        S.update(function (s) { s.profile.onbSkipInfo = on; });
-        skip = on;
-        order = stepList(skip);
-        if (on) { goTo(order[0]); return; }
-        /* Turning the shortcut off is a Back press, so it lands on the step
-           before this one rather than on the one the student was already on. */
-        var full = stepList(false);
-        goTo(full[Math.max(0, full.indexOf(step) - 1)]);
-      }
-
       function refresh() { draw(); }
 
       function draw() {
         U.clear(screen);
         state = S.state();
-        var idx = order.indexOf(step);
-        var total = order.length;
-
-        var steps = U.el('ol.steps', { 'aria-label': t('onb.step', { n: idx + 1, total: total }) });
-        order.forEach(function (n, i) {
-          steps.appendChild(U.el('li' + (i < idx ? '.done' : i === idx ? '.current' : '')));
-        });
+        var steps = U.el('ol.steps', { 'aria-label': t('onb.step', { n: step, total: TOTAL_STEPS }) });
+        for (var i = 1; i <= TOTAL_STEPS; i++) {
+          steps.appendChild(U.el('li' + (i < step ? '.done' : i === step ? '.current' : '')));
+        }
         screen.appendChild(U.el('div.stack-sm', { style: 'margin-bottom:18px' }, [
           U.el('div.row-between', null, [
             U.el('div.eyebrow', { text: t('onb.title') }),
-            U.el('div.small.muted', { text: t('onb.step', { n: idx + 1, total: total }) })
+            U.el('div.small.muted', { text: t('onb.step', { n: step, total: TOTAL_STEPS }) })
           ]),
           steps
         ]));
@@ -750,7 +725,7 @@
         /* One line at the very start, because the first question a student has
            is not about the SAT — it is how long this is going to take and
            whether they are about to get something wrong. */
-        if (idx === 0) {
+        if (step === 1) {
           body.appendChild(U.el('div.notice', { text: t('onb.intro') }));
         }
 
@@ -766,30 +741,13 @@
           result = { valid: examDateBlock(body, state, refresh) };
         }
 
-        /* The offer to skip the teaching stands on the steps that come before
-           the first question: it is an answer to "do I have to read all this",
-           and after that point there is nothing left to skip. */
-        if (!skip && !def.block && step < stepList(true)[0]) {
-          body.appendChild(U.el('div.row.row-wrap', null, [
-            U.el('button.btn.btn-sm.btn-ghost', {
-              type: 'button', text: t('onb.skipInfo'),
-              onclick: function () { setSkip(true); }
-            })
-          ]));
-        }
-
         var back = U.el('button.btn', {
-          type: 'button',
-          text: skip && idx === 0 ? t('onb.showInfo') : t('common.back'),
-          disabled: (!skip && idx === 0) || null,
-          onclick: function () {
-            if (skip && idx === 0) { setSkip(false); return; }
-            goTo(order[idx - 1]);
-          }
+          type: 'button', text: t('common.back'), disabled: step === 1 || null,
+          onclick: function () { goTo(step - 1); }
         });
         var next = U.el('button.btn.btn-primary', {
           type: 'button',
-          text: idx === total - 1 ? t('onb.toDiagnostic') : t('common.next'),
+          text: step === TOTAL_STEPS ? t('onb.toDiagnostic') : t('common.next'),
           onclick: function () {
             if (!result.valid()) {
               /* Say why, where the student is looking. */
@@ -797,7 +755,7 @@
               if (msg && msg.scrollIntoView) msg.scrollIntoView({ block: 'center' });
               return;
             }
-            if (idx < total - 1) { goTo(order[idx + 1]); return; }
+            if (step < TOTAL_STEPS) { goTo(step + 1); return; }
             /* Onboarding ends at the diagnostic for everyone. Nothing here
                assigns a level, so the diagnostic is the only thing that has
                measured anything by the time the plan is built. */
@@ -810,7 +768,7 @@
            the way forward used to be a full screen of scrolling away. */
         card.appendChild(U.el('div.row-between.onb-foot', null, [
           back,
-          U.el('span.small.muted.onb-count', { text: t('onb.step', { n: idx + 1, total: total }) }),
+          U.el('span.small.muted.onb-count', { text: t('onb.step', { n: step, total: TOTAL_STEPS }) }),
           next
         ]));
       }

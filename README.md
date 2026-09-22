@@ -489,10 +489,12 @@ Six steps, four of which teach. The rules that shape the screen:
   destination in the sidebar and the tab bar is blocked by the router guard, so
   neither is built: what remains is the language switch, the theme, Settings and
   the way out.
-- **A student who knows the exam can say so.** "I already know the SAT — skip
-  the explanations" on the first two steps drops onboarding to the two steps
-  that actually ask something, with the progress bar and the counter following.
-  Back on the first of those brings the explanations back, so it is not a trap.
+- **There is no way to skip the teaching, deliberately.** A shortcut for
+  students who already know the exam was built and then removed at JTS's
+  request: someone who has sat the SAT before still has to be told how this
+  platform reads a diagnostic, what it will not claim, and why help is counted
+  separately — and the two steps that ask questions sit inside that
+  explanation. Onboarding is six steps for everybody.
 
 ## Picking the exam date
 
