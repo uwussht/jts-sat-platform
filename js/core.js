@@ -2038,7 +2038,7 @@
       /* The guide is read once at the start and then wanted again, months
          later, by someone who has forgotten why errors keep coming back. A
          question mark in a corner is not where anyone looks for that. */
-      { path: '#/guide',        key: 'guide.title',  icon: '?' }
+      { path: '#/guide',        key: 'guide.nav',    icon: '?' }
     ],
     applyProfileSettings: function () {
       var st = Store.settings();

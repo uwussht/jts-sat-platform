@@ -56,6 +56,9 @@ JTS.dict.en = {
   'roadmap.goal.mocks': 'You will sit a full test without running out of energy, and know exactly where the points went.',
   'roadmap.goal.refinement': 'You will arrive rested, with nothing new to learn and nothing unresolved behind you.',
 
+  'guide.nav': 'Guide',
+  'guide.tabSat': 'About the SAT',
+  'guide.satLead': 'The six chapters onboarding walks you through, to read again whenever you want them.',
   'guide.title': 'How this works',
   'guide.lead': 'Every part of the platform, what it is for, and the four rules that decide how it behaves.',
   'guide.sections': 'Where everything is',

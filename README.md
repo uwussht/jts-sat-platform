@@ -338,7 +338,17 @@ The sign-in screen does not draw it. A visitor has no plan, so a roadmap there
 is a picture of somebody else's; the screen is the form and the note saying
 where a profile actually lives, and nothing else.
 
-**`#/guide`** is what every part of the platform is for, built from
+**`#/guide`** has two tabs, because a student asks two different questions
+months apart.
+
+**About the SAT** is the six chapters onboarding teaches — what the exam is, how
+it is built, what a target score means, exam day, and what each section asks —
+rendered from the same `js/data/sat-info.js` by the same
+`JTS.onboarding.infoStep`. Onboarding is walked once and cannot be skipped; this
+is where it is re-read, one chapter at a time, the first open and the rest
+folded.
+
+**How this works** is what every part of the platform is for, built from
 `JTS.shell.navItems` rather than written out again — a destination added to the
 sidebar cannot go missing from the guide, and the only thing a new screen has to
 supply is one `guide.for.<path>` string. Under the section list are the four
@@ -347,10 +357,8 @@ counted separately, errors come back, exam mode has no help in it, and no screen
 predicts your SAT score.
 
 It is a destination in the sidebar like any other, not a question mark in a
-corner: the guide is read once at the start and then wanted again months later,
-by someone who has forgotten why their errors keep coming back. It is the one
-screen that does not list itself — a page telling you to go where you already
-are is not navigation.
+corner. It is also the one screen that does not list itself — a page telling you
+to go where you already are is not navigation.
 
 **The plan has two views of the same lessons.** The week grid answers "what am I
 doing on Wednesday"; the month calendar answers "when does this actually end",

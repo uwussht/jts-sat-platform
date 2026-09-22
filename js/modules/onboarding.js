@@ -220,12 +220,16 @@
     return wrap;
   }
 
-  /** Render one sat-info section. Blocks it does not declare are skipped. */
-  function infoStep(body, id) {
+  /**
+   * Render one sat-info section. Blocks it does not declare are skipped.
+   * opts.noTitle leaves the heading out, for callers that already have one —
+   * the guide lists these six sections under their own headings.
+   */
+  function infoStep(body, id, opts) {
     var sec = infoSection(id);
     if (!sec) return;
 
-    body.appendChild(U.el('h2.h2', { text: t('onb.info.' + id) }));
+    if (!opts || !opts.noTitle) body.appendChild(U.el('h2.h2', { text: t('onb.info.' + id) }));
     body.appendChild(U.el('p.muted.prose', { text: pick(sec.lead) }));
 
     if (sec.stats) {
