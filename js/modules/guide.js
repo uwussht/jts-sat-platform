@@ -28,6 +28,9 @@
        and the roadmap is worth explaining even before it is visited. */
     byPath['#/settings'] = byPath['#/settings'] || { path: '#/settings', key: 'nav.settings', icon: '⚙' };
     byPath['#/roadmap'] = byPath['#/roadmap'] || { path: '#/roadmap', key: 'roadmap.title', icon: '⟋' };
+    /* The guide is a destination in the sidebar now, but a page that lists
+       itself as somewhere to go is a page telling you to stay where you are. */
+    delete byPath['#/guide'];
     return ORDER.map(function (p) { return byPath[p]; }).filter(Boolean);
   }
 

@@ -346,6 +346,12 @@ rules that explain why the platform sometimes says something unwelcome: help is
 counted separately, errors come back, exam mode has no help in it, and no screen
 predicts your SAT score.
 
+It is a destination in the sidebar like any other, not a question mark in a
+corner: the guide is read once at the start and then wanted again months later,
+by someone who has forgotten why their errors keep coming back. It is the one
+screen that does not list itself — a page telling you to go where you already
+are is not navigation.
+
 **The plan has two views of the same lessons.** The week grid answers "what am I
 doing on Wednesday"; the month calendar answers "when does this actually end",
 which is the question a student asks when they open a plan at all. Both read

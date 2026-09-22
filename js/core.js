@@ -2034,7 +2034,11 @@
          score, and it is worth retaking every few weeks. */
       { path: '#/diagnostic',   key: 'diag.title',   icon: '◎' },
       { path: '#/vocab',        key: 'vocab.title',  icon: '⌸' },
-      { path: '#/desmos-guide', key: 'desmos.title', icon: 'ƒ' }
+      { path: '#/desmos-guide', key: 'desmos.title', icon: 'ƒ' },
+      /* The guide is read once at the start and then wanted again, months
+         later, by someone who has forgotten why errors keep coming back. A
+         question mark in a corner is not where anyone looks for that. */
+      { path: '#/guide',        key: 'guide.title',  icon: '?' }
     ],
     applyProfileSettings: function () {
       var st = Store.settings();
@@ -2161,11 +2165,6 @@
       var tools = U.el('div.sb-tools');
       tools.appendChild(this.langSwitch());
       tools.appendChild(this.themeButton());
-      if (!onboarding) {
-        tools.appendChild(U.el('a.icon-btn', {
-          href: '#/guide', 'aria-label': t('guide.title'), title: t('guide.title'), text: '?'
-        }));
-      }
       tools.appendChild(U.el('a.icon-btn', {
         href: '#/settings', 'aria-label': t('nav.settings'), html: '&#9881;'
       }));
