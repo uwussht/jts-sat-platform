@@ -2059,8 +2059,14 @@
       U.clear(bar);
       bar.setAttribute('aria-label', t('nav.main'));
       var state = Store.state();
+      /* During onboarding every destination in this bar is blocked by the
+         router guard, so showing them offers a student nine ways to be bounced
+         straight back. Only the controls that work are built. */
+      var onboarding = !!state && !state.profile.onboardingComplete;
 
-      bar.appendChild(U.el('a.sb-brand', { href: '#/today' }, [
+      /* Mid-onboarding the only other screen a student can reach is Settings,
+         and #/today would bounce them; the brand is their way back. */
+      bar.appendChild(U.el('a.sb-brand', { href: onboarding ? '#/onboarding' : '#/today' }, [
         U.el('span.brand-mark', { text: 'JTS', 'aria-hidden': 'true' }),
         U.el('span.brand-text', null, [
           U.el('b', { text: 'JTS SAT' }),
@@ -2081,14 +2087,16 @@
         ]));
       }
 
-      var nav = U.el('nav.sb-nav', { id: 'main-nav' });
-      this.navItems.concat(this.subNavItems).forEach(function (it) {
-        nav.appendChild(U.el('a', { href: it.path, dataset: { path: it.path } }, [
-          U.el('em', { text: it.icon, 'aria-hidden': 'true' }),
-          U.el('span', { text: t(it.key) })
-        ]));
-      });
-      bar.appendChild(nav);
+      if (!onboarding) {
+        var nav = U.el('nav.sb-nav', { id: 'main-nav' });
+        this.navItems.concat(this.subNavItems).forEach(function (it) {
+          nav.appendChild(U.el('a', { href: it.path, dataset: { path: it.path } }, [
+            U.el('em', { text: it.icon, 'aria-hidden': 'true' }),
+            U.el('span', { text: t(it.key) })
+          ]));
+        });
+        bar.appendChild(nav);
+      }
 
       bar.appendChild(U.el('div.spacer'));
 
@@ -2111,9 +2119,11 @@
           document.documentElement.setAttribute('data-theme', next);
         }
       }));
-      tools.appendChild(U.el('a.icon-btn', {
-        href: '#/guide', 'aria-label': t('guide.title'), title: t('guide.title'), text: '?'
-      }));
+      if (!onboarding) {
+        tools.appendChild(U.el('a.icon-btn', {
+          href: '#/guide', 'aria-label': t('guide.title'), title: t('guide.title'), text: '?'
+        }));
+      }
       tools.appendChild(U.el('a.icon-btn', {
         href: '#/settings', 'aria-label': t('nav.settings'), html: '&#9881;'
       }));
@@ -2147,13 +2157,16 @@
       var tabbar = U.$('#tabbar');
       if (!tabbar) return;
       U.clear(tabbar);
+      /* Same reason as the sidebar: mid-onboarding these five all bounce. */
+      var st = Store.state();
+      tabbar.hidden = !st || !st.profile.onboardingComplete;
+      if (tabbar.hidden) return;
       this.navItems.forEach(function (it) {
         tabbar.appendChild(U.el('a', { href: it.path, dataset: { path: it.path } }, [
           U.el('em', { text: it.icon, 'aria-hidden': 'true' }),
           U.el('span', { text: t(it.key) })
         ]));
       });
-      tabbar.hidden = !Store.state();
     },
 
     /**
@@ -2193,10 +2206,14 @@
         if (a.dataset.path === path) a.setAttribute('aria-current', 'page');
         else a.removeAttribute('aria-current');
       });
-      var hasUser = !!Store.state();
+      var st = Store.state();
+      var hasUser = !!st;
       var bar = U.$('#app-sidebar'); if (bar) bar.hidden = !hasUser;
       var top = U.$('#app-topbar'); if (top) top.hidden = !hasUser;
-      U.$('#tabbar').hidden = !hasUser;
+      /* The tab bar is the five destinations, and during onboarding every one
+         of them bounces back here — so it stays away until there is somewhere
+         to go. renderTabbar builds nothing in that state either. */
+      U.$('#tabbar').hidden = !hasUser || !st.profile.onboardingComplete;
       /* A route change closes the phone drawer; leaving it open over the new
          screen is how you end up tapping through it by accident. */
       document.body.classList.remove('sb-open');

@@ -463,6 +463,37 @@ top after a redraw — the question screen, moving from one question to the next
 scroll for themselves, as they always did. The e2e suites measure this on the
 builder, inside a session, and after a real navigation.
 
+## Onboarding: nothing here is a dead end
+
+Six steps, four of which teach. The rules that shape the screen:
+
+- **Nothing blocks silently.** Pressing Next with no exam date chosen used to do
+  literally nothing — the button refused and said nothing. Every step that can
+  block now says why, and the message is scrolled into view.
+- **A score is rounded, not rejected.** 705 is not a reportable SAT score, but
+  refusing it one click later teaches a student only that the form dislikes
+  them. The field rounds to the nearest 10 when it loses focus, the − and +
+  buttons mean it never has to be typed, and three presets answer "I have no
+  idea what to aim at". The only way to fail the step now is to leave a box
+  empty, and the message says which.
+- **The way forward never leaves the screen.** The Back/Next row is sticky at
+  the bottom of the card. On the exam-day step it used to be a full screen of
+  scrolling away.
+- **A new step starts at the top of itself.** Pressing Next at the bottom of a
+  long step used to leave the student halfway down the next one.
+- **The longest step folds.** Exam day exists to pick a date, so the
+  registration steps and the packing lists sit behind one press. They are built
+  into the page either way, so a browser find and a screen reader still reach
+  them.
+- **The chrome stops offering what it cannot give.** During onboarding every
+  destination in the sidebar and the tab bar is blocked by the router guard, so
+  neither is built: what remains is the language switch, the theme, Settings and
+  the way out.
+- **A student who knows the exam can say so.** "I already know the SAT — skip
+  the explanations" on the first two steps drops onboarding to the two steps
+  that actually ask something, with the progress bar and the counter following.
+  Back on the first of those brings the explanations back, so it is not a trap.
+
 ## Picking the exam date
 
 Step 4 draws each administration as a tear-off from a calendar — month on the

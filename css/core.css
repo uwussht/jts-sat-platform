@@ -868,7 +868,11 @@ svg.chart { display: block; max-width: 100%; height: auto; }
 .goal-unis { min-width: 0; }
 .uni-list {
   display: flex; flex-direction: column; gap: 8px;
-  max-height: 520px; overflow-y: auto; padding-inline-end: 4px;
+  max-height: 520px; overflow-y: auto;
+  /* A frame, so the cut-off row at the bottom reads as a list that scrolls
+     rather than as a card that failed to render. */
+  border: 1px solid var(--border); padding: 8px; background: var(--bg);
+  scrollbar-gutter: stable;
 }
 .uni-row {
   width: 100%; text-align: start; cursor: pointer;
@@ -893,6 +897,41 @@ svg.chart { display: block; max-width: 100%; height: auto; }
   .goal-split { grid-template-columns: minmax(0, 1fr); }
   .uni-list { max-height: none; }
 }
+
+/* ----- 23b2. Onboarding ---------------------------------------------------
+   The way forward never leaves the screen, and a score is never typed when it
+   can be pressed. */
+.onb-foot {
+  position: sticky; bottom: 0; z-index: 5;
+  /* Pulled out to the card's edges so the rule reads as the card's own base. */
+  margin: 4px calc(var(--sp-5) * -1) calc(var(--sp-5) * -1);
+  padding: 12px var(--sp-5);
+  background: var(--surface); border-top: 1px solid var(--border);
+}
+.onb-count { flex: 0 0 auto; }
+@media (max-width: 1023px) {
+  .onb-foot {
+    bottom: var(--tabbar-h, 0px);
+    margin: 4px calc(var(--sp-4) * -1) calc(var(--sp-4) * -1);
+    padding: 12px var(--sp-4);
+  }
+}
+@media (max-width: 420px) { .onb-count { display: none; } }
+
+.score-row { display: flex; align-items: stretch; gap: 0; }
+.score-row .input { text-align: center; border-radius: 0; min-width: 0; }
+.score-step {
+  flex: 0 0 42px; border: 1px solid var(--border-strong); background: var(--surface);
+  color: var(--brand-700); font: inherit; font-size: 18px; line-height: 1; cursor: pointer;
+}
+.score-step:first-child { border-inline-end: 0; }
+.score-step:last-child { border-inline-start: 0; }
+.score-step:hover { background: var(--brand-050); border-color: var(--brand-500); }
+/* The browser's own spinner duplicates the two buttons either side of it. */
+.score-in::-webkit-outer-spin-button, .score-in::-webkit-inner-spin-button {
+  -webkit-appearance: none; margin: 0;
+}
+.score-in { -moz-appearance: textfield; appearance: textfield; }
 
 /* ----- 23c. Exam dates ----------------------------------------------------
    Each administration as a tear-off from a calendar: the month on the band,

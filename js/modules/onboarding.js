@@ -12,6 +12,11 @@
    at the diagnostic, which returns a mastery map; a real SAT or Bluebook
    result comes in through Mock tests, not through a text box here.
 
+   The second rule is that nothing here is allowed to be a dead end. A student
+   is never blocked by a button that does nothing, never refused over a number
+   that can be rounded, never made to scroll to find the way forward, and never
+   made to read four screens of explanation they did not ask for.
+
    Content lives in js/data/sat-info.js. Section weights are not copied into
    it — they are read from the live skill taxonomy so the numbers a student is
    taught cannot drift from the numbers the planner uses.
@@ -38,13 +43,51 @@
      JTS.util rather than here. */
   var dayLabel = U.dayLabel;
 
+  /**
+   * A section score, and a field that refuses to be a trap. 705 is not a real
+   * SAT score, but rejecting it on the Next button — one screen and one click
+   * later — teaches a student nothing except that the form dislikes them. The
+   * field rounds to the nearest reportable score as soon as it loses focus,
+   * and the steppers mean it never has to be typed at all.
+   */
+  function snapScore(v) {
+    var n = Number(v);
+    if (String(v).trim() === '' || isNaN(n)) return null;
+    return U.clamp(Math.round(n / 10) * 10, 200, 800);
+  }
+
   function scoreInput(id, value, onInput) {
-    var el = U.el('input.input', {
+    var el = U.el('input.input.score-in', {
       type: 'number', id: id, min: '200', max: '800', step: '10',
       inputmode: 'numeric', value: (value === null || value === undefined) ? '' : String(value)
     });
     if (onInput) el.addEventListener('input', onInput);
+    el.addEventListener('blur', function () {
+      var snapped = snapScore(el.value);
+      if (snapped === null) return;
+      if (String(snapped) !== el.value) { el.value = String(snapped); if (onInput) onInput(); }
+    });
     return el;
+  }
+
+  /** The field with a step down and a step up either side of it. */
+  function scoreField(label, input, onInput) {
+    function bump(by) {
+      var base = snapScore(input.value);
+      input.value = String(U.clamp((base === null ? 600 : base) + by, 200, 800));
+      if (onInput) onInput();
+    }
+    return ui.field(label, U.el('div.score-row', null, [
+      U.el('button.score-step', {
+        type: 'button', text: '−', 'aria-label': t('onb.s3.lower'),
+        onclick: function () { bump(-10); }
+      }),
+      input,
+      U.el('button.score-step', {
+        type: 'button', text: '+', 'aria-label': t('onb.s3.raise'),
+        onclick: function () { bump(10); }
+      })
+    ]));
   }
 
   function validScore(v) {
@@ -141,6 +184,30 @@
     return wrap;
   }
 
+  /**
+   * Reference material a student can open if they want it. The exam-day step
+   * is the longest in onboarding and its actual job is picking a date, so the
+   * registration steps and the packing lists wait behind one press.
+   */
+  function disclosure(label, build) {
+    /* Built now, shown later: the content is a few paragraphs, and having it
+       in the page means a browser find, a screen reader in browse mode and a
+       print all still reach it. */
+    var body = U.el('div.acc-body', { hidden: true });
+    build(body);
+    var caret = U.el('span.caret', { text: '❯' });
+    var head = U.el('button.acc-head', {
+      type: 'button', 'aria-expanded': 'false',
+      onclick: function () {
+        var open = body.hidden;
+        body.hidden = !open;
+        head.setAttribute('aria-expanded', String(open));
+        caret.style.transform = open ? 'rotate(90deg)' : '';
+      }
+    }, [caret, U.el('b', { text: label })]);
+    return U.el('div.acc', null, [head, body]);
+  }
+
   function checklist(items, kind) {
     var wrap = U.el('div.stack-sm');
     (items || []).forEach(function (it) {
@@ -178,21 +245,27 @@
     }
     if (sec.points) body.appendChild(bullets(sec.points));
 
-    if (sec.steps) {
-      body.appendChild(U.el('h3.h3', { text: t('onb.info.howToRegister') }));
-      var ol = U.el('ol.stack-sm.list-num.prose');
-      sec.steps.forEach(function (line) { ol.appendChild(U.el('li.small', { html: pick(line) })); });
-      body.appendChild(ol);
-    }
-    if (sec.bring || sec.avoid) {
-      body.appendChild(U.el('div.grid.grid-2', null, [
-        U.el('div.card.card-sm.card-flat.stack-sm', null, [
-          U.el('div.eyebrow', { text: t('onb.info.bring') }), checklist(sec.bring, 'bring')
-        ]),
-        U.el('div.card.card-sm.card-flat.stack-sm', null, [
-          U.el('div.eyebrow', { text: t('onb.info.avoid') }), checklist(sec.avoid, 'avoid')
-        ])
-      ]));
+    /* Everything a student needs on the morning itself, folded away: this step
+       exists to pick a date, and the rest is reference. */
+    if (sec.steps || sec.bring || sec.avoid) {
+      body.appendChild(disclosure(t('onb.info.dayDetails'), function (host) {
+        if (sec.steps) {
+          host.appendChild(U.el('h3.h3', { text: t('onb.info.howToRegister') }));
+          var ol = U.el('ol.stack-sm.list-num.prose');
+          sec.steps.forEach(function (line) { ol.appendChild(U.el('li.small', { html: pick(line) })); });
+          host.appendChild(ol);
+        }
+        if (sec.bring || sec.avoid) {
+          host.appendChild(U.el('div.grid.grid-2', { style: 'margin-top:12px' }, [
+            U.el('div.card.card-sm.card-flat.stack-sm', null, [
+              U.el('div.eyebrow', { text: t('onb.info.bring') }), checklist(sec.bring, 'bring')
+            ]),
+            U.el('div.card.card-sm.card-flat.stack-sm', null, [
+              U.el('div.eyebrow', { text: t('onb.info.avoid') }), checklist(sec.avoid, 'avoid')
+            ])
+          ]));
+        }
+      }));
     }
     if (sec.links) {
       body.appendChild(U.el('div.row.row-wrap', null, sec.links.map(function (l) {
@@ -308,6 +381,10 @@
     });
     body.appendChild(grid);
 
+    /* Pressing Next with nothing chosen used to do nothing at all — the button
+       simply refused, with no word about why. */
+    var err = U.el('div.error-text', { role: 'alert', hidden: true });
+
     /* Not deciding is a decision the plan can work with, so it is an option
        here rather than something a student has to skip the step to express. */
     body.appendChild(radioCard('examdate',
@@ -319,10 +396,16 @@
         updateCountdown();
       }));
 
+    body.appendChild(err);
     body.appendChild(countdown);
     updateCountdown();
 
-    return function valid() { return !!S.state().examDate; };
+    return function valid() {
+      if (!S.state().examDate) {
+        err.textContent = t('onb.s1.errPick'); err.hidden = false; return false;
+      }
+      err.hidden = true; return true;
+    };
   }
 
   /**
@@ -381,9 +464,27 @@
     /* ------------------------------------------------------------- left -- */
     var setter = U.el('div.stack');
     var grid = U.el('div.grid.grid-2');
-    grid.appendChild(ui.field(t('onb.s3.targetRw'), rwIn));
-    grid.appendChild(ui.field(t('onb.s3.targetMath'), maIn));
+    grid.appendChild(scoreField(t('onb.s3.targetRw'), rwIn, recalc));
+    grid.appendChild(scoreField(t('onb.s3.targetMath'), maIn, recalc));
     setter.appendChild(grid);
+    setter.appendChild(U.el('div.hint', { text: t('onb.s3.step10') }));
+
+    /* Three answers for the student whose honest reply is "I have no idea". */
+    setter.appendChild(U.el('div.stack-sm', null, [
+      U.el('div.label', { text: t('onb.s3.presets') }),
+      U.el('div.row.row-wrap', null, [[600, 620], [650, 700], [730, 770]].map(function (pair) {
+        return U.el('button.chip', {
+          type: 'button', text: String(pair[0] + pair[1]),
+          dataset: { preset: String(pair[0] + pair[1]) },
+          onclick: function () {
+            rwIn.value = String(pair[0]);
+            maIn.value = String(pair[1]);
+            recalc();
+          }
+        });
+      }))
+    ]));
+
     setter.appendChild(U.el('div.card.card-sm.card-flat', null, [
       U.el('div.stat', null, [U.el('div.stat-label', { text: t('onb.s2.total') }), totalOut, needOut])
     ]));
@@ -494,8 +595,17 @@
     recalc();
 
     return function valid() {
+      /* Round rather than refuse: the only way to fail here now is to leave a
+         box empty, and the message says which one. */
+      [rwIn, maIn].forEach(function (input) {
+        var snapped = snapScore(input.value);
+        if (snapped !== null && String(snapped) !== input.value) input.value = String(snapped);
+      });
+      recalc();
       if (!validScore(rwIn.value) || !validScore(maIn.value)) {
-        err.textContent = t('onb.s2.errRange'); err.hidden = false; return false;
+        err.textContent = t('onb.s2.errRange'); err.hidden = false;
+        (validScore(rwIn.value) ? maIn : rwIn).focus();
+        return false;
       }
       err.hidden = true; return true;
     };
@@ -566,30 +676,68 @@
 
   /* ------------------------------------------------------------------ shell */
 
+  /**
+   * Which steps a student actually walks. Four of the six teach; a student who
+   * already knows the exam can say so once and go straight to the two steps
+   * that ask them something. Nothing is lost by skipping — the same content is
+   * on the guide and in the roadmap.
+   */
+  function stepList(skip) {
+    if (!skip) return [1, 2, 3, 4, 5, 6];
+    return STEPS.map(function (d, i) { return d.block ? i + 1 : 0; })
+      .filter(function (n) { return n; });
+  }
+
   JTS.router.register('#/onboarding', {
     title: 'onb.title',
     render: function (root) {
       var state = S.state();
       if (!state) { JTS.router.go('#/auth'); return; }
 
+      var skip = !!state.profile.onbSkipInfo;
+      var order = stepList(skip);
       var step = U.clamp(state.profile.onboardingStep || 1, 1, TOTAL_STEPS);
+      if (order.indexOf(step) < 0) step = order[0];
+
       var screen = U.el('div.container.screen', { style: 'max-width:1100px' });
       root.appendChild(screen);
+
+      function goTo(n) {
+        step = n;
+        S.update(function (s) { s.profile.onboardingStep = step; });
+        draw();
+        /* A step that opens halfway down the previous one is the commonest way
+           to lose a beginner. Every move starts at the top of the new step. */
+        window.scrollTo(0, 0);
+      }
+
+      function setSkip(on) {
+        S.update(function (s) { s.profile.onbSkipInfo = on; });
+        skip = on;
+        order = stepList(skip);
+        if (on) { goTo(order[0]); return; }
+        /* Turning the shortcut off is a Back press, so it lands on the step
+           before this one rather than on the one the student was already on. */
+        var full = stepList(false);
+        goTo(full[Math.max(0, full.indexOf(step) - 1)]);
+      }
 
       function refresh() { draw(); }
 
       function draw() {
         U.clear(screen);
         state = S.state();
+        var idx = order.indexOf(step);
+        var total = order.length;
 
-        var steps = U.el('ol.steps', { 'aria-label': t('onb.step', { n: step, total: TOTAL_STEPS }) });
-        for (var i = 1; i <= TOTAL_STEPS; i++) {
-          steps.appendChild(U.el('li' + (i < step ? '.done' : i === step ? '.current' : '')));
-        }
+        var steps = U.el('ol.steps', { 'aria-label': t('onb.step', { n: idx + 1, total: total }) });
+        order.forEach(function (n, i) {
+          steps.appendChild(U.el('li' + (i < idx ? '.done' : i === idx ? '.current' : '')));
+        });
         screen.appendChild(U.el('div.stack-sm', { style: 'margin-bottom:18px' }, [
           U.el('div.row-between', null, [
             U.el('div.eyebrow', { text: t('onb.title') }),
-            U.el('div.small.muted', { text: t('onb.step', { n: step, total: TOTAL_STEPS }) })
+            U.el('div.small.muted', { text: t('onb.step', { n: idx + 1, total: total }) })
           ]),
           steps
         ]));
@@ -598,6 +746,13 @@
         var body = U.el('div.stack');
         card.appendChild(body);
         screen.appendChild(card);
+
+        /* One line at the very start, because the first question a student has
+           is not about the SAT — it is how long this is going to take and
+           whether they are about to get something wrong. */
+        if (idx === 0) {
+          body.appendChild(U.el('div.notice', { text: t('onb.intro') }));
+        }
 
         var def = STEPS[step - 1];
         infoStep(body, def.info);
@@ -611,25 +766,38 @@
           result = { valid: examDateBlock(body, state, refresh) };
         }
 
+        /* The offer to skip the teaching stands on the steps that come before
+           the first question: it is an answer to "do I have to read all this",
+           and after that point there is nothing left to skip. */
+        if (!skip && !def.block && step < stepList(true)[0]) {
+          body.appendChild(U.el('div.row.row-wrap', null, [
+            U.el('button.btn.btn-sm.btn-ghost', {
+              type: 'button', text: t('onb.skipInfo'),
+              onclick: function () { setSkip(true); }
+            })
+          ]));
+        }
+
         var back = U.el('button.btn', {
-          type: 'button', text: t('common.back'), disabled: step === 1 || null,
+          type: 'button',
+          text: skip && idx === 0 ? t('onb.showInfo') : t('common.back'),
+          disabled: (!skip && idx === 0) || null,
           onclick: function () {
-            step--;
-            S.update(function (s) { s.profile.onboardingStep = step; });
-            draw();
+            if (skip && idx === 0) { setSkip(false); return; }
+            goTo(order[idx - 1]);
           }
         });
         var next = U.el('button.btn.btn-primary', {
           type: 'button',
-          text: step === TOTAL_STEPS ? t('onb.toDiagnostic') : t('common.next'),
+          text: idx === total - 1 ? t('onb.toDiagnostic') : t('common.next'),
           onclick: function () {
-            if (!result.valid()) return;
-            if (step < TOTAL_STEPS) {
-              step++;
-              S.update(function (s) { s.profile.onboardingStep = step; });
-              draw();
+            if (!result.valid()) {
+              /* Say why, where the student is looking. */
+              var msg = card.querySelector('.error-text:not([hidden])');
+              if (msg && msg.scrollIntoView) msg.scrollIntoView({ block: 'center' });
               return;
             }
+            if (idx < total - 1) { goTo(order[idx + 1]); return; }
             /* Onboarding ends at the diagnostic for everyone. Nothing here
                assigns a level, so the diagnostic is the only thing that has
                measured anything by the time the plan is built. */
@@ -638,7 +806,13 @@
           }
         });
 
-        card.appendChild(U.el('div.row-between', { style: 'margin-top:8px' }, [back, next]));
+        /* The footer sticks to the bottom of the window: on the exam-day step
+           the way forward used to be a full screen of scrolling away. */
+        card.appendChild(U.el('div.row-between.onb-foot', null, [
+          back,
+          U.el('span.small.muted.onb-count', { text: t('onb.step', { n: idx + 1, total: total }) }),
+          next
+        ]));
       }
 
       draw();
