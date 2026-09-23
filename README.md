@@ -29,9 +29,9 @@ css/core.css            design system: tokens, light/dark themes, components
 js/core.js              store, router, i18n, UI kit, timer, Desmos, AI adapter,
                         SPR checker, question bank, mastery engine, planner
 js/data/                content: skills, exam dates, colleges, 300 questions,
-                        vocabulary, Desmos guide
+                        vocabulary, the two vocabulary game sets, Desmos guide
 js/modules/             one file per screen
-i18n/en.js ru.js kk.js  interface strings, 539 keys each, verified at parity
+i18n/en.js ru.js kk.js  interface strings, 643 keys each, verified at parity
 ```
 
 The screens, in the order a student meets them: `#/auth` → `#/onboarding` →
@@ -384,6 +384,41 @@ score predictor and nothing that says "you will get X".
 - **90-day calendar**, streak with its best, and the three badges: a 7-day
   streak, a first mastered skill, and 100 independent questions. All three are
   always on screen; an unearned one is greyed rather than hidden.
+
+## The three vocabulary games
+
+Beside the deck are three games, in the order a word is actually learned.
+
+**Match** is the warm-up: six words, six short definitions, shuffled, against a
+clock. Tap a word then a definition, or drag one onto the other — both routes
+end in the same `pair()` call, because a game that only works with a mouse is a
+game half the students cannot play. A wrong pair is refused and shakes; a right
+one locks. The best time is kept.
+
+**Sentence** is the real question type: an SAT-style sentence with a blank and
+four options, of which three are near-synonyms that fail on register,
+connotation or collocation. *The storm was expected to ___ by morning* —
+**abate**, not *annihilate* (total destruction), *deplete* (emptying a supply)
+or *perish* (death).
+
+**Register** goes the other way, from speech to the page. The line as it would
+be said — *"the plan was really bad for the company"* — and the sentence as it
+would be written, with the word missing. **Detrimental** keeps the meaning;
+*abysmal* judges quality, *dreary* describes a mood, *irksome* is a small
+annoyance. This trains precision rather than "use a fancier word".
+
+The content is in `js/data/vocab-games.js`: **24 sentence items and 18 register
+items**, written by JTS, nothing taken from College Board, Bluebook, Khan
+Academy or any other publisher. Every option in every item is a word that is
+already in the deck, so a student can look any of them up afterwards, and every
+item carries a one-line note in all three languages saying why the answer fits
+and why the near-misses do not — the note is the teaching, the score is not.
+
+**The games do not touch the SM-2 schedule.** A word answered correctly in a
+game two minutes after its card came up is not evidence that it will be known
+in three weeks, and letting a game reset an interval would corrupt the one
+measurement the deck actually makes. They keep their own tally
+(`profile.vocab.games`) and the screen says so.
 
 ## Adding a word, from anywhere
 

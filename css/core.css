@@ -756,6 +756,38 @@ html[data-theme="dark"] mark.hl { background: #8C7415; color: #FFF7DA; }
 .vocab-stage .row, .vocab-stage .row-between { width: 100%; }
 .vocab-grades { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 6px; }
 
+/* ----- 20b. Vocabulary games ---------------------------------------------
+   Match is two columns of tiles; the quizzes reuse the question screen's own
+   option list, because a student should meet one shape of answer button in
+   this platform and not three. */
+.mg-board { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 10px; }
+.mg-col { display: flex; flex-direction: column; gap: 8px; }
+.mg-tile {
+  border: 1.5px solid var(--border-strong); background: var(--surface); color: var(--ink);
+  font: inherit; font-size: 14px; line-height: 1.35; text-align: start;
+  padding: 10px 12px; cursor: pointer; min-height: 46px;
+}
+.mg-word { font-weight: 750; }
+.mg-def { font-size: 13px; color: var(--ink-2); }
+.mg-tile:hover:not(:disabled) { border-color: var(--brand-500); background: var(--brand-050); }
+.mg-tile.sel { border-color: var(--brand-600); background: var(--brand-050); box-shadow: inset 0 0 0 1px var(--brand-600); }
+.mg-tile.done { opacity: .45; border-style: dashed; cursor: default; background: var(--ok-bg); border-color: var(--ok); }
+.mg-tile.miss { border-color: var(--danger); background: var(--danger-bg); animation: mg-shake .32s; }
+@keyframes mg-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+@media (max-width: 560px) { .mg-board { grid-template-columns: minmax(0, 1fr); } }
+
+.quiz-prompt { font-size: 16px; line-height: 1.7; }
+/* The blank is a rule of fixed width, so the sentence does not reflow when the
+   answer is revealed — and nothing about its length hints at the word. */
+.quiz-blank {
+  display: inline-block; width: 96px; border-bottom: 2px solid var(--brand-600);
+  margin-inline: 3px; vertical-align: baseline;
+}
+
 /* ----- 21. Misc ----------------------------------------------------------- */
 .video-slot {
   border: 2px dashed var(--border-strong); border-radius: var(--r-md);

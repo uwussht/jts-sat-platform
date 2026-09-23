@@ -4,6 +4,20 @@
    Flashcards on SM-2 over the JTS word list plus whatever the student adds.
    Scheduling state lives in profile.vocab.cards, keyed by word id, so the
    deck can grow underneath a student without disturbing their progress.
+
+   Three games sit beside the deck, in the order a word is actually learned:
+
+     Match     recognition — word against definition, six pairs, against a
+               clock. The warm-up: it asks only "which of these six".
+     Cloze     the real question type — a sentence with a blank and four
+               near-synonyms, only one of which fits the register.
+     Register  production — a sentence as it would be said out loud, and the
+               academic word that keeps its meaning rather than its volume.
+
+   The games do NOT touch the SM-2 schedule. A word answered correctly in a
+   game two minutes after seeing its card is not evidence that it is known in
+   three weeks, and letting a game reset an interval would corrupt the one
+   measurement the deck actually makes. They keep their own tally instead.
    ========================================================================== */
 (function () {
   'use strict';
@@ -17,6 +31,10 @@
      before that it is still being learned, whatever the last answer was. */
   var MASTERED_DAYS = 21;
 
+  /* Ten questions is one sitting; six pairs is one screen. */
+  var QUIZ_LEN = 10;
+  var MATCH_PAIRS = 6;
+
   /* --------------------------------------------------------------- the deck */
 
   JTS.vocab = {
@@ -24,6 +42,28 @@
     /** Opened from the shell's + button, from anywhere in the app. */
     addModal: function (onDone) { addModal(onDone); },
     MASTERED_DAYS: MASTERED_DAYS,
+
+    /**
+     * The games' own record, which is deliberately separate from the cards.
+     * { match: {plays, bestMs}, cloze: {asked, correct}, register: {...} }
+     */
+    games: function () {
+      var st = S.state();
+      var g = (st && st.vocab && st.vocab.games) || {};
+      return {
+        match: g.match || { plays: 0, bestMs: null },
+        cloze: g.cloze || { asked: 0, correct: 0 },
+        register: g.register || { asked: 0, correct: 0 }
+      };
+    },
+    recordGame: function (kind, patch) {
+      S.update(function (st) {
+        st.vocab.games = st.vocab.games || {};
+        var cur = st.vocab.games[kind] || {};
+        Object.keys(patch).forEach(function (k) { cur[k] = patch[k]; });
+        st.vocab.games[kind] = cur;
+      });
+    },
 
     /** The JTS list plus the student's own words, in one array. */
     deck: function () {
@@ -374,6 +414,267 @@
     paint();
   }
 
+  /* ------------------------------------------------------------------ games */
+
+  /** A short definition fits a tile; the full one often does not. */
+  function shortDef(w) {
+    var d = String(w.definition || '').trim();
+    var cut = d.split(/[;(]/)[0].trim();
+    return cut.length > 74 ? cut.slice(0, 71).replace(/[\s,]+$/, '') + '…' : cut;
+  }
+
+  /**
+   * Match — six words, six definitions, shuffled, against a clock.
+   *
+   * Tap a word then tap a definition; mouse users can also drag one onto the
+   * other. Both routes end in the same pair() call, because a game that only
+   * works with a mouse is a game half the students cannot play.
+   */
+  function matchGame(host, rerender) {
+    var pool = JTS.vocab.deck().filter(function (w) { return shortDef(w).length > 3; });
+    if (pool.length < MATCH_PAIRS) { host.appendChild(ui.empty(t('vocab.game.noWords'))); return null; }
+
+    var round = U.shuffle(pool, Date.now() % 9973).slice(0, MATCH_PAIRS);
+    var startedAt = Date.now();
+    var left = 0;
+    var picked = null;                 /* the word tile waiting for a definition */
+    var tick = null;
+
+    var clock = U.el('span.badge.badge-muted', { text: '0:00' });
+    var best = JTS.vocab.games().match.bestMs;
+    var head = U.el('div.row-between.row-wrap', null, [
+      U.el('span.small.muted', { text: t('vocab.game.matchLead') }),
+      U.el('div.row.row-wrap', null, [
+        best ? U.el('span.badge', { text: t('vocab.game.best') + ': ' + U.fmtClock(best) }) : null,
+        clock
+      ])
+    ]);
+    host.appendChild(head);
+
+    var board = U.el('div.mg-board');
+    var wordCol = U.el('div.mg-col');
+    var defCol = U.el('div.mg-col');
+    board.appendChild(wordCol);
+    board.appendChild(defCol);
+    host.appendChild(board);
+
+    var done = U.el('div.notice.notice-ok', { hidden: true });
+    host.appendChild(done);
+
+    function finish() {
+      var ms = Date.now() - startedAt;
+      if (tick) { clearInterval(tick); tick = null; }
+      var rec = JTS.vocab.games().match;
+      JTS.vocab.recordGame('match', {
+        plays: (rec.plays || 0) + 1,
+        bestMs: rec.bestMs ? Math.min(rec.bestMs, ms) : ms
+      });
+      U.clear(done);
+      done.hidden = false;
+      done.appendChild(U.el('div.stack-sm', null, [
+        U.el('b', { text: t('vocab.game.matchDone', { time: U.fmtClock(ms) }) }),
+        U.el('button.btn.btn-sm.btn-primary', {
+          type: 'button', text: t('vocab.game.again'), onclick: rerender
+        })
+      ]));
+    }
+
+    function pair(wordTile, defTile) {
+      if (!wordTile || !defTile) return;
+      if (wordTile.dataset.id === defTile.dataset.id) {
+        wordTile.classList.add('done');
+        defTile.classList.add('done');
+        wordTile.disabled = true;
+        defTile.disabled = true;
+        wordTile.classList.remove('sel');
+        picked = null;
+        left--;
+        if (!left) finish();
+        return;
+      }
+      [wordTile, defTile].forEach(function (el) {
+        el.classList.add('miss');
+        setTimeout(function () { el.classList.remove('miss'); }, 420);
+      });
+      wordTile.classList.remove('sel');
+      picked = null;
+    }
+
+    function tile(col, cls, id, label) {
+      var el = U.el('button.mg-tile.' + cls, {
+        type: 'button', text: label, dataset: { id: id }, draggable: 'true'
+      });
+      el.addEventListener('click', function () {
+        if (el.disabled) return;
+        if (cls === 'mg-word') {
+          if (picked === el) { el.classList.remove('sel'); picked = null; return; }
+          if (picked) picked.classList.remove('sel');
+          picked = el; el.classList.add('sel');
+          return;
+        }
+        if (picked) pair(picked, el);
+      });
+      /* Drag and drop for a mouse, on top of tap-to-pair rather than instead
+         of it: touch devices do not fire these events at all. */
+      el.addEventListener('dragstart', function (e) {
+        e.dataTransfer.setData('text/plain', id + '|' + cls);
+        e.dataTransfer.effectAllowed = 'move';
+      });
+      el.addEventListener('dragover', function (e) { e.preventDefault(); });
+      el.addEventListener('drop', function (e) {
+        e.preventDefault();
+        var raw = (e.dataTransfer.getData('text/plain') || '').split('|');
+        if (raw.length !== 2 || raw[1] === cls) return;
+        var other = U.$$('.mg-tile[data-id="' + raw[0] + '"]', board)
+          .filter(function (x) { return x !== el && x.classList.contains(raw[1]); })[0];
+        if (!other) return;
+        pair(cls === 'mg-word' ? el : other, cls === 'mg-word' ? other : el);
+      });
+      col.appendChild(el);
+      return el;
+    }
+
+    round.forEach(function (w) { tile(wordCol, 'mg-word', w.id, w.word); });
+    U.shuffle(round, (Date.now() + 7) % 9973).forEach(function (w) {
+      tile(defCol, 'mg-def', w.id, shortDef(w));
+    });
+    left = round.length;
+
+    tick = setInterval(function () {
+      clock.textContent = U.fmtClock(Date.now() - startedAt);
+    }, 1000);
+    return function () { if (tick) clearInterval(tick); };
+  }
+
+  /**
+   * Cloze and Register Swap are the same machine: a prompt, four options, one
+   * right, and a note that says why the other three miss. Only the prompt is
+   * drawn differently, so only the prompt is passed in.
+   */
+  function quizGame(host, kind, items, promptOf) {
+    if (!items.length) { host.appendChild(ui.empty(t('vocab.game.noItems'))); return; }
+
+    var round = U.shuffle(items, Date.now() % 9973).slice(0, Math.min(QUIZ_LEN, items.length));
+    var idx = 0, correct = 0, answered = false;
+
+    var head = U.el('div.row-between.row-wrap');
+    var stage = U.el('div.stack');
+    host.appendChild(head);
+    host.appendChild(stage);
+
+    function paintHead() {
+      U.clear(head);
+      var rec = JTS.vocab.games()[kind];
+      head.appendChild(U.el('span.small.muted', { text: t('vocab.game.' + kind + 'Lead') }));
+      head.appendChild(U.el('div.row.row-wrap', null, [
+        rec.asked ? U.el('span.badge.badge-muted', {
+          text: t('vocab.game.lifetime', {
+            pct: Math.round((rec.correct / rec.asked) * 100), n: rec.asked
+          })
+        }) : null,
+        U.el('span.badge', { text: t('vocab.game.progress', { n: idx + 1, total: round.length }) })
+      ]));
+    }
+
+    function result() {
+      U.clear(head); U.clear(stage);
+      stage.appendChild(U.el('div.card.card-accent.stack-sm', null, [
+        U.el('div.eyebrow', { text: t('vocab.game.' + kind) }),
+        U.el('div.h2', { text: t('vocab.game.score', { correct: correct, total: round.length }) }),
+        U.el('p.small.muted', { text: t('vocab.game.noSchedule') }),
+        U.el('button.btn.btn-primary', {
+          type: 'button', text: t('vocab.game.again'),
+          onclick: function () {
+            round = U.shuffle(items, Date.now() % 9973).slice(0, Math.min(QUIZ_LEN, items.length));
+            idx = 0; correct = 0; answered = false;
+            paint();
+          }
+        })
+      ]));
+    }
+
+    function paint() {
+      if (idx >= round.length) { result(); return; }
+      answered = false;
+      paintHead();
+      U.clear(stage);
+      var item = round[idx];
+      stage.appendChild(promptOf(item));
+
+      var opts = U.shuffle(item.options, (idx + 1) * 131 + Date.now() % 97);
+      var list = U.el('div.opt-list');
+      var note = U.el('div.notice', { hidden: true });
+
+      var KEYS = ['A', 'B', 'C', 'D'];
+      opts.forEach(function (word, i) {
+        var btn = U.el('button.opt', { type: 'button', dataset: { word: word } }, [
+          U.el('span.opt-key', { text: KEYS[i] }),
+          U.el('span', { text: word })
+        ]);
+        btn.addEventListener('click', function () {
+          if (answered) return;
+          answered = true;
+          var right = word === item.answer;
+          if (right) correct++;
+          var rec = JTS.vocab.games()[kind];
+          JTS.vocab.recordGame(kind, {
+            asked: (rec.asked || 0) + 1,
+            correct: (rec.correct || 0) + (right ? 1 : 0)
+          });
+          U.$$('.opt', list).forEach(function (o) {
+            if (o.dataset.word === item.answer) o.classList.add('is-correct');
+            else if (o === btn) o.classList.add('is-wrong');
+            o.disabled = true;
+          });
+          U.clear(note);
+          note.hidden = false;
+          note.className = 'notice ' + (right ? 'notice-ok' : 'notice-warn');
+          note.appendChild(U.el('div.stack-sm', null, [
+            U.el('div', null, [
+              U.el('b', { text: right ? t('vocab.game.right') : t('vocab.game.wrong', { word: item.answer }) })
+            ]),
+            U.el('div.small', { text: JTS.i18n.pick(item.note, S.settings().uiLang) }),
+            U.el('button.btn.btn-sm.btn-primary', {
+              type: 'button',
+              text: idx === round.length - 1 ? t('vocab.game.finish') : t('common.next'),
+              onclick: function () { idx++; paint(); }
+            })
+          ]));
+        });
+        list.appendChild(btn);
+      });
+      stage.appendChild(list);
+      stage.appendChild(note);
+    }
+
+    paint();
+  }
+
+  function clozeGame(host) {
+    quizGame(host, 'cloze', JTS.data.vocabCloze || [], function (item) {
+      return U.el('div.card.card-sm.card-flat.quiz-prompt', {
+        html: U.esc(item.sentence).replace('___', '<span class="quiz-blank"></span>')
+      });
+    });
+  }
+
+  function registerGame(host) {
+    quizGame(host, 'register', JTS.data.vocabRegister || [], function (item) {
+      return U.el('div.stack-sm', null, [
+        U.el('div.card.card-sm.card-flat.stack-sm', null, [
+          U.el('div.eyebrow', { text: t('vocab.game.casual') }),
+          U.el('div', { text: item.casual })
+        ]),
+        U.el('div.card.card-sm.card-flat.quiz-prompt', null, [
+          U.el('div.eyebrow', { text: t('vocab.game.formal'), style: 'margin-bottom:6px' }),
+          U.el('div', {
+            html: U.esc(item.formal).replace('___', '<span class="quiz-blank"></span>')
+          })
+        ])
+      ]);
+    });
+  }
+
   /* ----------------------------------------------------------------- screen */
 
   JTS.router.register('#/vocab', {
@@ -407,6 +708,21 @@
               dropListeners();
               teardown = flashcard(host, rerender) || null;
             }
+          },
+          {
+            id: 'match', label: t('vocab.game.match'),
+            render: function (host) {
+              dropListeners();
+              teardown = matchGame(host, rerender) || null;
+            }
+          },
+          {
+            id: 'cloze', label: t('vocab.game.cloze'),
+            render: function (host) { dropListeners(); clozeGame(host); }
+          },
+          {
+            id: 'register', label: t('vocab.game.register'),
+            render: function (host) { dropListeners(); registerGame(host); }
           },
           {
             id: 'words', label: t('vocab.myWords'),
