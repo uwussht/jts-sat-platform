@@ -385,6 +385,21 @@ score predictor and nothing that says "you will get X".
   streak, a first mastered skill, and 100 independent questions. All three are
   always on screen; an unearned one is greyed rather than hidden.
 
+## The vocabulary screen is a hub
+
+`#/vocab` opens on what a student can do with the deck, not on one exercise
+with the other four behind a tab strip: five cards, each with its own name, a
+line saying what it trains, and the one number that matters before you open it
+— how many cards this sitting holds, the best Match time, the lifetime accuracy
+on each quiz, the size of the deck.
+
+Each exercise is its own address (`#/vocab/cards`, `/match`, `/cloze`,
+`/register`, `/words`), so it can be linked, bookmarked and returned to, and
+every one of them carries a way back to the hub. The router already resolved
+the longest registered prefix for `#/practice/weak`, so this needed no new
+route: the screen reads `route.segments[0]` and draws the hub when there is
+none.
+
 ## The three vocabulary games
 
 Beside the deck are three games, in the order a word is actually learned.

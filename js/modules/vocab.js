@@ -675,75 +675,109 @@
     });
   }
 
+  /* -------------------------------------------------------------------- hub */
+
+  /**
+   * The five things a student can actually do with the deck. Each one is its
+   * own address under #/vocab, so a tab strip is not standing between a
+   * student and the exercise they came for — and a link to one of them can be
+   * sent, bookmarked and returned to.
+   */
+  var EXERCISES = [
+    { id: 'cards',    icon: '◨', key: 'vocab.flashcard',      desc: 'vocab.hub.cardsDesc' },
+    { id: 'match',    icon: '⇄', key: 'vocab.game.match',     desc: 'vocab.hub.matchDesc' },
+    { id: 'cloze',    icon: '▭', key: 'vocab.game.cloze',     desc: 'vocab.hub.clozeDesc' },
+    { id: 'register', icon: '⇅', key: 'vocab.game.register',  desc: 'vocab.hub.registerDesc' },
+    { id: 'words',    icon: '☰', key: 'vocab.myWords',        desc: 'vocab.hub.wordsDesc' }
+  ];
+
+  /** What each card can honestly say about itself before it is opened. */
+  function exerciseStat(id) {
+    var g = JTS.vocab.games();
+    /* "0 due" is true and useless on a deck of 514 unseen words: what the
+       student wants to know is how many cards this sitting holds. */
+    if (id === 'cards') return t('vocab.remaining', { n: JTS.vocab.queue().length });
+    if (id === 'words') return t('vocab.hub.wordCount', { n: JTS.vocab.deck().length });
+    if (id === 'match') {
+      return g.match.bestMs
+        ? t('vocab.game.best') + ': ' + U.fmtClock(g.match.bestMs)
+        : t('vocab.hub.notPlayed');
+    }
+    var rec = g[id];
+    return rec.asked
+      ? t('vocab.game.lifetime', { pct: Math.round((rec.correct / rec.asked) * 100), n: rec.asked })
+      : t('vocab.hub.notPlayed');
+  }
+
+  function hub(screen) {
+    screen.appendChild(U.el('p.muted.prose', { text: t('vocab.hub.lead') }));
+
+    var grid = U.el('div.ex-grid');
+    EXERCISES.forEach(function (ex) {
+      grid.appendChild(U.el('a.ex-card', { href: '#/vocab/' + ex.id }, [
+        U.el('span.ex-icon', { text: ex.icon, 'aria-hidden': 'true' }),
+        U.el('span.ex-text', null, [
+          U.el('b', { text: t(ex.key) }),
+          U.el('span.small.muted', { text: t(ex.desc) }),
+          U.el('span.ex-stat', { text: exerciseStat(ex.id) })
+        ]),
+        U.el('span.ex-go', { text: '→', 'aria-hidden': 'true' })
+      ]));
+    });
+    screen.appendChild(grid);
+  }
+
   /* ----------------------------------------------------------------- screen */
 
   JTS.router.register('#/vocab', {
     title: 'vocab.title',
-    render: function (root) {
+    render: function (root, route) {
+      var which = (route && route.segments && route.segments[0]) || '';
+      var ex = EXERCISES.filter(function (e) { return e.id === which; })[0] || null;
+
       var screen = U.el('div.container.screen.stack-lg');
       root.appendChild(screen);
-      var teardown = null;
 
-      function rerender() {
-        if (teardown) { teardown(); teardown = null; }
-        U.clear(screen);
-        paint();
-      }
+      var counts = JTS.vocab.counts();
+      var badges = [
+        U.el('span.badge.badge-muted', { text: t('vocab.new') + ': ' + counts.new }),
+        U.el('span.badge.badge-warn', { text: t('vocab.learning') + ': ' + counts.learning }),
+        U.el('span.badge.badge-ok', { text: t('vocab.mastered') + ': ' + counts.mastered })
+      ];
+      /* On an exercise the way back comes first, because it is the one control
+         that is not about the exercise itself. */
+      JTS.shell.topbarActions(ex
+        ? [U.el('a.btn.btn-sm', { href: '#/vocab', text: '← ' + t('vocab.hub.back') })].concat(badges)
+        : badges);
 
-      function paint() {
-        var counts = JTS.vocab.counts();
-        JTS.shell.topbarActions([
-          U.el('span.badge.badge-muted', { text: t('vocab.new') + ': ' + counts.new }),
-          U.el('span.badge.badge-warn', { text: t('vocab.learning') + ': ' + counts.learning }),
-          U.el('span.badge.badge-ok', { text: t('vocab.mastered') + ': ' + counts.mastered })
-        ]);
+      function rerender() { JTS.router.render(); }
 
-        function dropListeners() {
-          if (teardown) { teardown(); teardown = null; }
-        }
-        var tabs = ui.tabs([
-          {
-            id: 'cards', label: t('vocab.flashcard'),
-            render: function (host) {
-              dropListeners();
-              teardown = flashcard(host, rerender) || null;
-            }
-          },
-          {
-            id: 'match', label: t('vocab.game.match'),
-            render: function (host) {
-              dropListeners();
-              teardown = matchGame(host, rerender) || null;
-            }
-          },
-          {
-            id: 'cloze', label: t('vocab.game.cloze'),
-            render: function (host) { dropListeners(); clozeGame(host); }
-          },
-          {
-            id: 'register', label: t('vocab.game.register'),
-            render: function (host) { dropListeners(); registerGame(host); }
-          },
-          {
-            id: 'words', label: t('vocab.myWords'),
-            /* Leaving the flashcard tab must take its key handler with it, or
-               1-4 keeps grading a card nobody can see. */
-            render: function (host) { dropListeners(); wordList(host, rerender); }
-          }
-        ]);
-        screen.appendChild(U.el('div.card', null, [tabs]));
-
+      if (!ex) {
+        hub(screen);
         screen.appendChild(U.el('p.xsmall.muted', {
           text: t('vocab.sourceNote', {
             n: (JTS.data.vocab || []).length,
             source: (JTS.data.vocabMeta || {}).source || '—'
           })
         }));
-
+        return;
       }
 
-      paint();
-      return function () { if (teardown) teardown(); };
+      var card = U.el('div.card.stack');
+      card.appendChild(U.el('div.row-between.row-wrap', null, [
+        U.el('h2.h2', { text: t(ex.key) }),
+        U.el('a.btn.btn-sm', { href: '#/vocab', text: '← ' + t('vocab.hub.back') })
+      ]));
+      screen.appendChild(card);
+
+      var host = U.el('div.stack');
+      card.appendChild(host);
+
+      if (ex.id === 'cards') return flashcard(host, rerender) || undefined;
+      if (ex.id === 'match') return matchGame(host, rerender) || undefined;
+      if (ex.id === 'cloze') { clozeGame(host); return; }
+      if (ex.id === 'register') { registerGame(host); return; }
+      wordList(host, rerender);
     }
   });
 })();
