@@ -29,7 +29,6 @@ JTS.dict.ru = {
   'roadmap.overall': 'Весь план',
   'roadmap.pctDone': '{n}% пройдено',
   'roadmap.examSub': 'Всё до этой остановки существует ради того, чтобы то одно утро прошло хорошо.',
-  'roadmap.allSteps': 'Все шесть шагов',
   'roadmap.step': 'Шаг {n} из {total}',
   'roadmap.stars': '{n} из 3 звёзд',
   'roadmap.prev': 'Предыдущий шаг',

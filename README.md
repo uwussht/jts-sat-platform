@@ -302,8 +302,7 @@ today. Which weeks each phase covers is not restated here — it comes from
 which week belongs to which phase.
 
 **Map left, the step you are reading right.** The screen is one grid: the road
-fills the left column, the phase you selected and an index of all six sit in the
-right. Side by side and not stacked, for two reasons — a detail two hundred
+fills the left column, the phase you selected fills the right. Side by side and not stacked, for two reasons — a detail two hundred
 pixels below the pin you just pressed does not read as that pin's detail, and
 stacking is what used to force the map down to a 340px square in the middle of a
 1400px screen with nothing either side of it.
@@ -318,8 +317,8 @@ holds a reference to, so it goes away with the screen it was made for. Below
 scroll — which on a phone is what a thumb expects anyway.
 
 You move along the road with the ‹ › arrows, the arrow keys (← → ↑ ↓, plus
-Home and End), a swipe on the map, a tap on a stop, or a row of the index; only
-the panel changes. Being able to see the whole road at once is the point of
+Home and End), a swipe on the map, or a tap on a stop; only the panel
+changes. Being able to see the whole road at once is the point of
 drawing a road, and a road you have to scroll is a list.
 
 The stops are not positioned by hand. The road is one SVG path drawn four times
@@ -342,11 +341,6 @@ the stop under the cursor and the end of the road: the road folds over itself,
 so two stops can sit a pin's height apart, and the panel beside the map says
 what every number means anyway. Pressing the prize at the end says what that
 morning is and links to where the date is changed.
-
-The index under the panel is the same six phases as a list — number, name, week
-range, a thin bar — and a second way to jump. Its rows are deliberately
-`.is-done` / `.is-now` / `.is-on` and not `.rm-done` / `.rm-current` / `.rm-sel`:
-those three mean "a stop on the map" and are counted there.
 
 Everything that moves is behind `prefers-reduced-motion`.
 

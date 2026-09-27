@@ -508,45 +508,13 @@
         ]));
       }
 
-      /* All six at once, under the step you are reading: the map is the shape of
-         the plan and this is its table of contents — a second, faster way to
-         jump, and the answer to "how long is each of these" without six clicks.
-         Deliberately not .rm-done/.rm-current/.rm-sel: those classes mean
-         something on the map and are counted there. */
-      function stepIndex(onPick) {
-        var rows = U.el('div.rm-idx-list');
-        phases.forEach(function (p) {
-          var info = infoFor(p);
-          var pct = pctOf(p);
-          rows.appendChild(U.el('button.rm-idx-row' +
-            (info.status === 'done' ? '.is-done' : info.status === 'current' ? '.is-now' : ''), {
-            type: 'button', dataset: { step: String(p.id) },
-            onclick: function () { onPick(p.id); }
-          }, [
-            U.el('span.rm-idx-n', {
-              text: info.status === 'done' ? '\u2713' : String(p.id), 'aria-hidden': 'true'
-            }),
-            U.el('span.rm-idx-text', null, [
-              U.el('span.rm-idx-name', { text: t('plan.phase.' + p.key) }),
-              U.el('span.rm-idx-weeks', { text: info.weeks })
-            ]),
-            U.el('span.rm-idx-bar', { 'aria-hidden': 'true' }, [
-              U.el('span', { style: 'width:' + pct + '%' })
-            ])
-          ]));
-        });
-        return U.el('div.card.rm-idx', null, [
-          U.el('div.eyebrow', { text: t('roadmap.allSteps') }), rows
-        ]);
-      }
-
       /* Map on the left, the step you are reading on the right. Side by side
          and not stacked, because the road has to stay whole on one screen and
          because a detail two hundred pixels under the pin you just pressed
-         does not read as that pin's detail. */
+         does not read as that pin's detail. The panel has the whole column to
+         itself, so no phase is long enough to make it scroll. */
       var mapHost = U.el('div.rm-map');
       var panelHost = U.el('div.rm-panel-host');
-      var right = U.el('div.rm-right');
       var left = U.el('div.rm-left');
       left.appendChild(mapHost);
 
@@ -564,10 +532,7 @@
       left.appendChild(U.el('div.rm-arrows', null, [prevBtn, stepLabel, nextBtn]));
       left.appendChild(U.el('p.xsmall.muted.rm-hint', { text: t('roadmap.hint') }));
 
-      var index = stepIndex(function (id) { select(id); });
-      right.appendChild(panelHost);
-      right.appendChild(index);
-      screen.appendChild(U.el('div.rm-body', null, [left, right]));
+      screen.appendChild(U.el('div.rm-body', null, [left, panelHost]));
 
       /* Selecting a stop redraws the map's marks and the panel in place. A
          full render() would redraw the whole screen for a click that changed
@@ -582,12 +547,6 @@
         stepLabel.textContent = t('roadmap.step', { n: selected, total: phases.length });
         prevBtn.disabled = selected === 1;
         nextBtn.disabled = selected === phases.length;
-
-        U.$$('.rm-idx-row', right).forEach(function (row) {
-          var on = row.dataset.step === String(selected);
-          row.classList.toggle('is-on', on);
-          row.setAttribute('aria-pressed', String(on));
-        });
 
         U.$$('.rm-stop', mapHost).forEach(function (el) {
           var pin = el.querySelector('.rm-pin');

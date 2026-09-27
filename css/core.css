@@ -1266,12 +1266,9 @@ button.rm-pin:focus-visible {
 
 /* The step you are reading. Its own scroller, so a long phase cannot push the
    road off the screen. */
-.rm-right { min-width: 0; min-height: 0; display: flex; flex-direction: column; gap: var(--sp-3); }
-/* The panel is the variable one — six phases of prose, and more of it in
-   Russian — so the panel absorbs a short window and scrolls. The index is
-   always exactly six rows, so it keeps its own height whenever there is room
-   for it and a clipped seventh of a row never appears. */
-.rm-panel-host { min-width: 0; flex: 1 200 auto; min-height: 150px; display: flex; align-items: flex-start; }
+/* The panel has the column to itself and takes all of it, so the longest
+   phase in the wordiest language still reads without a scrollbar. */
+.rm-panel-host { min-width: 0; min-height: 0; display: flex; }
 .rm-panel {
   flex: 1; min-width: 0; max-height: 100%; overflow-y: auto;
   display: flex; flex-direction: column; gap: var(--sp-3);
@@ -1295,45 +1292,10 @@ button.rm-pin:focus-visible {
 .rm-panel-desc { margin: 0; }
 .rm-panel-bar { display: flex; flex-direction: column; gap: 4px; }
 .rm-panel-foot {
-  padding-top: var(--sp-3); border-top: 1px solid var(--border);
+  margin-top: auto; padding-top: var(--sp-3); border-top: 1px solid var(--border);
   display: flex; align-items: center; justify-content: space-between;
   gap: var(--sp-3); flex-wrap: wrap;
 }
-
-/* The table of contents: all six at once, and a second way to jump. */
-.rm-idx {
-  flex: 0 1 auto; min-height: 110px; overflow-y: auto;
-  display: flex; flex-direction: column; gap: 6px;
-  padding: var(--sp-3) var(--sp-4);
-}
-.rm-idx-list { display: flex; flex-direction: column; }
-.rm-idx-row {
-  display: grid; grid-template-columns: 24px minmax(0, 1fr) 44px;
-  align-items: center; gap: 10px;
-  width: 100%; text-align: left; padding: 5px 4px;
-  font: inherit; background: none; border: 0; border-top: 1px solid var(--border);
-  cursor: pointer;
-}
-.rm-idx-row:first-child { border-top: 0; }
-.rm-idx-row:hover { background: var(--brand-050); }
-.rm-idx-row.is-on { background: var(--brand-100); }
-.rm-idx-n {
-  width: 24px; height: 24px; display: grid; place-items: center;
-  font-size: 12px; font-weight: 800;
-  background: var(--bg); color: var(--muted);
-}
-.rm-idx-row.is-done .rm-idx-n { background: var(--ok-bg); color: var(--ok); }
-.rm-idx-row.is-now .rm-idx-n { background: var(--brand-600); color: #fff; }
-.rm-idx-row.is-on .rm-idx-n { box-shadow: 0 0 0 2px var(--brand-700); }
-.rm-idx-text { min-width: 0; display: flex; flex-direction: column; }
-.rm-idx-name {
-  font-size: 12.5px; font-weight: 700; color: var(--ink-2);
-  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-}
-.rm-idx-weeks { font-size: 10.5px; color: var(--muted); }
-.rm-idx-bar { display: block; height: 5px; background: var(--border); }
-.rm-idx-bar > span { display: block; height: 100%; background: var(--brand-500); }
-.rm-idx-row.is-done .rm-idx-bar > span { background: var(--ok); }
 
 .rm-stepno {
   text-transform: uppercase; letter-spacing: .06em; font-weight: 750; color: var(--brand-600);
@@ -1354,7 +1316,7 @@ button.rm-pin:focus-visible {
   .rm-body { grid-template-columns: minmax(0, 1fr); }
   .rm-stage { --rm-h: min(62vh, 560px, calc(100vw - 40px)); }
   .rm-panel { max-height: none; overflow: visible; }
-  .rm-idx { overflow: visible; }
+  .rm-panel-foot { margin-top: 0; }
 }
 @media (max-width: 560px) {
   .rm-fact { flex-direction: column; gap: 1px; }

@@ -29,7 +29,6 @@ JTS.dict.en = {
   'roadmap.overall': 'Whole plan',
   'roadmap.pctDone': '{n}% done',
   'roadmap.examSub': 'Everything before this stop exists to make that one morning go well.',
-  'roadmap.allSteps': 'All six steps',
   'roadmap.step': 'Step {n} of {total}',
   'roadmap.stars': '{n} of 3 stars',
   'roadmap.prev': 'Previous step',
