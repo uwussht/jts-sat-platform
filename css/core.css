@@ -205,8 +205,14 @@ sup, sub { line-height: 0; font-size: .75em; }
 /* ----- 5. Sidebar, top bar & navigation ----------------------------------- */
 .app-sidebar {
   position: fixed; top: 0; left: 0; bottom: 0; z-index: 40;
-  width: var(--sidebar-w); overflow-y: auto;
-  display: flex; flex-direction: column; gap: var(--sp-3);
+  /* The sidebar itself never scrolls. On a short window it used to grow a
+     scrollbar of its own, so the page had two — one against the sidebar and
+     the browser's against the page — which reads as a bug whichever one you
+     reach for. The nav is the only part that can be too tall, so the nav is
+     the part that scrolls; the brand, the goal, the language row and the
+     account stay where they are. */
+  width: var(--sidebar-w); overflow: hidden;
+  display: flex; flex-direction: column; gap: 10px;
   padding: var(--sp-4) var(--sp-3);
   background: var(--brand-900); color: #fff;
   border-right: 3px solid var(--brand-600);
@@ -237,10 +243,16 @@ sup, sub { line-height: 0; font-size: .75em; }
 .sb-goal-value { font-size: 22px; font-weight: 750; letter-spacing: -.02em; line-height: 1.1; font-variant-numeric: tabular-nums; }
 .sb-goal-meta { font-size: 11px; color: rgba(255,255,255,.66); }
 
-.sb-nav { display: flex; flex-direction: column; gap: 1px; }
+/* Shrink-only: it never takes the spare space (the spacer below it does that,
+   so the account block stays pinned to the bottom), and it gives up height
+   before anything else does. */
+.sb-nav {
+  display: flex; flex-direction: column; gap: 1px;
+  flex: 0 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain;
+}
 .sb-nav a {
   display: flex; align-items: center; gap: 10px;
-  padding: 9px 12px; font-size: 14px; font-weight: 600;
+  padding: 8px 12px; font-size: 14px; font-weight: 600;
   color: rgba(255,255,255,.76); text-decoration: none;
   border-left: 3px solid transparent;
 }

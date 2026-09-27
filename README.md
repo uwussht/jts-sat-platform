@@ -187,14 +187,14 @@ clicking too much, not against a stolen key.
 
 ## Mock tests
 
-Two separate things share the `#/mocks` screen.
+Two things share the `#/mocks` screen: the internal simulation and the past
+papers below it.
 
-**Imported results** are scores the student got somewhere else — a real SAT, a
-Bluebook practice test, anything. You type the two section scores; the total is
-derived, never typed, so a total that disagrees with its parts cannot be
-entered. A section score must be a multiple of 10 between 200 and 800. The
-history table shows the change against the previous result, and the trajectory
-chart draws imported results against the goal line from onboarding.
+There used to be a third — a form for typing in scores from tests sat
+elsewhere, with a history table beside it. It was removed at the school's
+request. `JTS.mock.reports()` survives as a read: anything a student entered
+before is still drawn on the trajectory chart and on `#/progress`, so no one's
+history disappeared, but nothing writes there any more.
 
 **The internal simulation** is four modules with the Digital SAT's shape:
 
@@ -215,7 +215,7 @@ from the DOM**, not merely hidden — and a finished module cannot be reopened. 
 timed run uses the wall clock, so closing the laptop for ten minutes costs ten
 minutes; an untimed run keeps a clock on screen that never closes a module, and
 its result carries an `untimed` tag. The simulation needs a screen of at least
-1024px; a phone gets a note and can still import results and read history.
+1024px; a phone gets a note instead of a start button, for the papers as well.
 
 ### What the score estimate is, and is not
 
@@ -291,6 +291,18 @@ much of the exam each domain carries**, not simply from the lowest percentage.
 
 Availability is asked for at the bottom of that report rather than during
 onboarding, because that is the moment the plan is actually built.
+
+## The sidebar does not scroll
+
+Only the nav list inside it does, and only when it has to. The sidebar used to
+be `overflow-y: auto` as a whole, so on a short window — a laptop at 125%
+scaling, say — the page carried two scrollbars: the browser's against the page
+and a second one hard against the sidebar. Two scrollbars a few hundred pixels
+apart read as a bug whichever one you reach for. `.app-sidebar` is now
+`overflow: hidden` and `.sb-nav` is `flex: 0 1 auto` with its own `overflow-y`,
+so the brand, the goal card, the language row and the account block keep their
+places and the nav gives up height first. It fits without scrolling down to
+about 700px of viewport height.
 
 ## Roadmap, guide, and the plan as a calendar
 
@@ -403,8 +415,8 @@ score predictor and nothing that says "you will get X".
   should trust. Clicking a cell builds a ten-question session on that skill.
 - **Accuracy by domain** — independent attempts only. Work done with a hint or
   after reading the explanation is counted, and shown, separately.
-- **Mock trend** — imported results and internal simulations as two series
-  against the goal line.
+- **Mock trend** — internal simulations against the goal line, plus any results
+  imported before that form was removed.
 - **Study time** — minutes this week and this month, plus median seconds per
   question against the pace benchmark (71s R&W, 95s Math), shown only once
   there are at least six independent timed attempts in that section.
@@ -712,6 +724,9 @@ SAT target they do not read.
 ---
 
 ## Past papers
+
+Called **Past papers** in all three languages, because that is the term students
+already use for it.
 
 A past paper is a whole exam, fixed: the same 98 questions in the same order for
 every student, four modules, the real clock. It runs on the simulation's own
