@@ -456,6 +456,15 @@
               JTS.router.go('#/today');
             }
           }),
+          /* The screen tours are shown once and then never again, which is
+             right until someone wants them back. */
+          U.el('button.btn', {
+            type: 'button', text: t('tour.replay'),
+            onclick: function () {
+              JTS.tour.reset();
+              ui.toast(t('tour.replayDone'), 'ok');
+            }
+          }),
           U.el('button.btn.btn-danger', {
             type: 'button', text: t('settings.resetProfile'),
             onclick: function () {

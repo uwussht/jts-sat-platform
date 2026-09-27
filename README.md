@@ -292,6 +292,69 @@ much of the exam each domain carries**, not simply from the lowest percentage.
 Availability is asked for at the bottom of that report rather than during
 onboarding, because that is the moment the plan is actually built.
 
+## The daily check
+
+Five questions a day, at `#/daily`, with a card on the dashboard. It is not a
+lesson and not a mock: a lesson teaches, a mock measures stamina, and this only
+asks whether what was learned is still there. It takes a few minutes and it
+cannot be retaken — a check you can sit again until it goes green is not
+checking anything.
+
+What it asks, in order of what is worth asking: mistakes whose review is due
+today, then the weakest skills, then anything unseen. The weak-skill pool is
+the top ten of `JTS.mastery.ranked` shuffled by the day rather than the top
+five straight down it — two days running with nothing answered in between would
+otherwise ask the same five skills and often the same five questions, and a
+check that repeats itself measures memory of the check.
+
+The set is seeded from the date and the student's own e-mail, so it is stable
+all day however often the page is reloaded, and two students do not get the
+same five. **The seed must be a number**: `U.rng` does `seed >>> 0`, which
+turns any string into `0`, so seeding it with `U.weakHash`'s string gave every
+day the identical shuffle.
+
+It runs in exam mode with an advisory clock: no hints, no explanations and no
+AI while it is open, and a timer that never closes the set. The result screen
+is where the answers are, and it links into Practice for the skills that went
+wrong.
+
+Its own streak lives in `profile.daily`, separately from `profile.streak` —
+that one counts days the student studied at all, which is a different question.
+`record()` is idempotent: the result screen calls it on every render, so a
+reload must not count a check twice or move the streak again.
+
+**The nudge.** Once a calendar day, once a page load, never over a session in
+flight, never on the question screen, and never before the plan exists. The day
+it asked is written to `daily.promptedOn`, so it asks once whether or not the
+student says yes.
+
+## First-visit tours
+
+The first time a student opens a screen, the screen introduces itself: three to
+five coach marks on the controls whose label does not already say what they do.
+Once per screen per profile, recorded in `profile.tours` — profile-level and
+not `localStorage`, so two students sharing a laptop each get their own
+introduction. Settings can clear the record and show them again.
+
+`JTS.tour` dims the page with four panels around the target rather than a ring
+with a large shadow, because a shadow cannot be clicked through and panels can
+simply not be drawn where the control is. Two things it gets right that are
+easy to get wrong:
+
+- **A step whose element is not on screen is dropped**, so a tour can mention a
+  control only some students have without breaking for the rest. "Not on
+  screen" is measured with `getBoundingClientRect`, not `offsetParent`:
+  `offsetParent` is null for every `position: fixed` element by definition,
+  which silently dropped the mark pointing at the floating "+" button.
+- **Navigating away closes it.** The marks point at the screen they were built
+  for; a tour that outlives its screen ends up ringing a rectangle that is not
+  there any more.
+
+The tour and the daily nudge never appear together: `JTS.tours.maybeShow`
+returns whether a tour is on its way and the router holds the nudge back when
+it is. Without that the modal opened first and its backdrop dimmed the coach
+mark underneath it.
+
 ## The gap between onboarding and the plan
 
 `profile.onboardingComplete` only turns true when the plan is built, and the

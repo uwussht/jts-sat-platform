@@ -1364,6 +1364,59 @@ button.rm-pin:focus-visible {
 .rm-mini-i.done { background: var(--ok-bg); color: var(--ok); border-color: var(--ok-bg); }
 .rm-mini-i.now { background: var(--brand-600); color: #fff; border-color: var(--brand-600); }
 
+/* ----- 24a. Daily check ---------------------------------------------------- */
+/* The fortnight as a strip. Squares and not a chart: the question it answers
+   is "did I turn up", which is a yes or a no per day. */
+.dc-strip { display: flex; gap: 3px; }
+.dc-day {
+  flex: 1 1 0; min-width: 0; height: 22px;
+  background: var(--bg); border: 1px solid var(--border);
+}
+.dc-day.is-done { background: var(--brand-300); border-color: var(--brand-400); }
+.dc-day.is-perfect { background: var(--ok); border-color: var(--ok); }
+.dc-day.is-today { box-shadow: inset 0 0 0 2px var(--brand-700); }
+.dc-stats { display: flex; gap: var(--sp-5); }
+.dc-stat { display: flex; flex-direction: column; line-height: 1.15; }
+.dc-stat b { font-size: 20px; font-weight: 750; font-variant-numeric: tabular-nums; }
+.dc-stat span {
+  font-size: 10.5px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .06em; color: var(--muted);
+}
+
+/* ----- 24b. First-visit tour ----------------------------------------------- */
+/* A dimmed page with one control cut out of the dimming. The cut-out is four
+   panels around the target rather than a ring with a huge shadow, because the
+   shadow cannot be clicked through and the panels can simply not be drawn
+   where the control is. */
+.tour { position: fixed; inset: 0; z-index: 90; }
+.tour-mask { position: fixed; background: rgba(18, 14, 48, .62); }
+.tour-ring {
+  position: fixed; pointer-events: none;
+  border: 2px solid var(--brand-400); box-shadow: 0 0 0 2px rgba(255, 255, 255, .5);
+}
+.tour-bubble {
+  position: fixed; z-index: 91; width: min(320px, calc(100vw - 24px));
+  background: var(--surface); border: 1px solid var(--border-strong);
+  border-top: 3px solid var(--brand-600);
+  padding: var(--sp-4); box-shadow: 0 10px 30px rgba(18, 14, 48, .28);
+  display: flex; flex-direction: column; gap: 6px;
+}
+.tour-count {
+  font-size: 10.5px; font-weight: 750; text-transform: uppercase;
+  letter-spacing: .06em; color: var(--brand-600);
+}
+.tour-title { font-size: 15px; font-weight: 750; color: var(--ink); }
+.tour-body { margin: 0; font-size: 13px; line-height: 1.5; color: var(--ink-2); }
+.tour-foot {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--sp-2); margin-top: 4px;
+}
+.tour-foot .row { gap: var(--sp-2); }
+/* Nothing behind the overlay is reachable while it is up, including the
+   sticky top bar, which would otherwise sit over the dimming. */
+body.tour-open { overflow: hidden; }
+body.tour-open .app-topbar, body.tour-open #add-word { z-index: 1; }
+
 /* ----- 25. Month calendar ------------------------------------------------- */
 .cal-month { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
 .cal-dow {

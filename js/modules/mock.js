@@ -457,7 +457,7 @@
   function runCard(rerender) {
     var cap = JTS.mock.capacity();
     var active = JTS.mock.active();
-    var card = U.el('div.card.stack', null, [
+    var card = U.el('div.card.stack', { id: 'mock-run-card' }, [
       /* The heading is the name of the thing, not the name of the button that
          starts it: "Start the simulation" must match one clickable element. */
       U.el('h2.h2', { text: t('mock.internal') }),
@@ -562,7 +562,7 @@
     if (!papers.length) return null;
     var active = JTS.mock.active();
 
-    var card = U.el('div.card.stack', null, [
+    var card = U.el('div.card.stack', { id: 'paper-card' }, [
       U.el('h2.h2', { text: t('paper.title') }),
       U.el('p.small.muted', { text: t('paper.lead') }),
       U.el('p.xsmall.muted', { text: t('paper.noHelp') })

@@ -40,7 +40,7 @@
       ])
     ]);
 
-    return U.el('div.card.card-hero', null, [
+    return U.el('div.card.card-hero', { id: 'today-countdown' }, [
       U.el('div.row-between.row-wrap', null, [left, right]),
       !provisional && state.examDate.testDate
         ? U.el('div.small.muted', { style: 'margin-top:14px',
@@ -63,7 +63,7 @@
     var isToday = lesson.date === U.iso(U.today());
     var actualCount = JTS.planner.lessonQuestionIds(lesson).length;
 
-    return U.el('div.card.card-accent.stack', null, [
+    return U.el('div.card.card-accent.stack', { id: 'today-lesson' }, [
       U.el('div.row-between.row-wrap', null, [
         U.el('div.eyebrow', { text: t('today.nextLesson') }),
         U.el('div.row', null, [
@@ -184,6 +184,14 @@
 
       screen.appendChild(countdownCard(state));
       screen.appendChild(lessonCard(state));
+
+      /* The daily check sits directly under the day's session, because it is
+         the other thing a student is meant to do today and the only one that
+         keeps a streak. */
+      if (JTS.daily) {
+        var dc = JTS.daily.dashboardCard();
+        if (dc) screen.appendChild(dc);
+      }
 
       var grid = U.el('div.grid.grid-2');
       /* The roadmap is a separate screen, but a road you have to remember to

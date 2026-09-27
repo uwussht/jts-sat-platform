@@ -15,7 +15,7 @@
   /* ---------------------------------------------------------------- config */
   JTS.config = {
     storageKey: 'jts_sat_v1',
-    schemaVersion: 3,
+    schemaVersion: 4,
     languages: ['en', 'ru', 'kk'],
     defaultLanguage: 'en',
     desmosUrl: 'https://www.desmos.com/calculator',
@@ -250,6 +250,11 @@
         scoreReports: [],   /* imported results: official SAT, Bluebook, other */
         mocks: [],          /* internal simulations, one record per run */
         vocab: { cards: {}, dailyGoal: 10, custom: [], log: {} },
+        /* The daily check: one short set a day, its own streak, and the day it
+           last asked about itself so it asks once and not on every navigation. */
+        daily: { history: [], streak: 0, best: 0, lastDay: null, promptedOn: null },
+        /* Which screens have already introduced themselves. */
+        tours: {},
         desmosGuideProgress: {},
         aiFeedback: [],
         aiUsage: { day: null, count: 0 },
@@ -310,6 +315,20 @@
           if (p && !Array.isArray(p.mocks)) p.mocks = [];
         });
         data.schemaVersion = 3;
+      }
+      if (data.schemaVersion < 4) {
+        /* The daily check and the first-visit tours. Both are additive, and an
+           empty record is the correct starting point for a profile that has
+           never seen either: no streak, no screens introduced yet. */
+        Object.keys(data.profiles || {}).forEach(function (email) {
+          var p = data.profiles[email];
+          if (!p) return;
+          if (!p.daily) {
+            p.daily = { history: [], streak: 0, best: 0, lastDay: null, promptedOn: null };
+          }
+          if (!p.tours) p.tours = {};
+        });
+        data.schemaVersion = 4;
       }
       return data;
     }
@@ -780,7 +799,23 @@
          one question to the next — scroll for themselves. */
       if (this._renderedHash === hash) global.scrollTo(0, wasAt);
       else global.scrollTo(0, 0);
+      var changed = this._renderedHash !== hash;
       this._renderedHash = hash;
+      if (changed && JTS.tour && JTS.tour.isOpen()) JTS.tour.close();
+
+      /* Two things that belong to arriving on a screen rather than to drawing
+         it: the screen's own first-visit tour, and the once-a-day nudge about
+         the daily check. Both only on a real navigation — a redraw is not an
+         arrival, and a coach mark that reappears every time a filter is
+         ticked is a good feature turned into a fault. */
+      if (changed) {
+        var touring = JTS.tours ? JTS.tours.maybeShow(route.base) : false;
+        /* One at a time. A screen introducing itself and a modal asking for
+           five minutes are both reasonable; together they are a pile-up, and
+           the modal's backdrop dims the coach mark it lands on. The nudge
+           waits for the next arrival. */
+        if (!touring && JTS.daily) JTS.daily.maybePrompt();
+      }
     },
     start: function () {
       var self = this;
@@ -2056,6 +2091,177 @@
   };
 
   /* ------------------------------------------------------------------- shell */
+  /* ------------------------------------------------------------------ tour */
+  /**
+   * First-visit coach marks: a dimmed page with one control cut out of the
+   * dimming, and a bubble beside it saying what that control is for.
+   *
+   * A screen describes itself as a list of {sel, title, body}; a step whose
+   * selector matches nothing is dropped rather than shown pointing at the
+   * corner of the page, so a tour survives a screen that renders different
+   * controls for different students. A tour is shown once per screen per
+   * profile — `profile-level`, not `localStorage`, so two students sharing a
+   * laptop each get their own introduction.
+   *
+   * The cut-out is four divs around the target rather than a box-shadow ring,
+   * because the ring has to dim what is *outside* it and a shadow cannot be
+   * clicked through where the ring is.
+   */
+  JTS.tour = (function () {
+    var open = null;
+
+    function seen() {
+      var st = Store.state();
+      if (!st) return {};
+      if (!st.tours) st.tours = {};
+      return st.tours;
+    }
+
+    function place(bubble, box) {
+      var pad = 10;
+      var vw = global.innerWidth, vh = global.innerHeight;
+      var bw = bubble.offsetWidth, bh = bubble.offsetHeight;
+      /* Below the target if it fits, above if it does not, and never off the
+         side — a bubble half off the screen is worse than no bubble. */
+      var top = box.bottom + pad;
+      if (top + bh > vh - 8) top = Math.max(8, box.top - bh - pad);
+      var left = U.clamp(box.left + box.width / 2 - bw / 2, 8, Math.max(8, vw - bw - 8));
+      bubble.style.top = top + 'px';
+      bubble.style.left = left + 'px';
+    }
+
+    function close(markSeen) {
+      if (!open) return;
+      if (markSeen && open.id) {
+        var st = Store.state();
+        if (st) { seen()[open.id] = true; Store.save(); }
+      }
+      global.removeEventListener('resize', open.onResize);
+      global.removeEventListener('scroll', open.onResize, true);
+      document.removeEventListener('keydown', open.onKey, true);
+      open.root.remove();
+      document.body.classList.remove('tour-open');
+      open = null;
+    }
+
+    return {
+      isOpen: function () { return !!open; },
+      seen: function (id) { return !!seen()[id]; },
+      /**
+       * Shut whatever is open. The router calls this on every navigation: the
+       * marks point at elements of the screen they were built for, and a tour
+       * that outlives its screen ends up ringing a rectangle that is not there
+       * any more. Leaving is a dismissal, so it counts as seen — Settings is
+       * where a student asks for them back.
+       */
+      close: function (markSeen) { close(markSeen !== false); },
+      /** Forget every tour, so Settings can offer to show them again. */
+      reset: function () {
+        var st = Store.state();
+        if (!st) return;
+        st.tours = {};
+        Store.save();
+      },
+
+      /**
+       * steps: [{sel, title, body}]. opts.id marks the tour as seen on finish;
+       * opts.force shows it even if it has been seen.
+       */
+      start: function (steps, opts) {
+        opts = opts || {};
+        if (open) return null;
+        if (opts.id && !opts.force && seen()[opts.id]) return null;
+        /* Visible means "has a box on screen", measured. offsetParent is the
+           usual shorthand and it is wrong here: it is null for every
+           position:fixed element by definition, which silently dropped the
+           step pointing at the floating "+" button. */
+        var live = (steps || []).filter(function (st) {
+          if (!st.sel) return true;
+          var el = U.$(st.sel);
+          if (!el || el.hidden) return false;
+          var r = el.getBoundingClientRect();
+          return r.width > 0 && r.height > 0;
+        });
+        if (!live.length) return null;
+
+        var i = 0;
+        var root = U.el('div.tour', { role: 'dialog', 'aria-modal': 'true' });
+        var holes = [0, 1, 2, 3].map(function () { return U.el('div.tour-mask'); });
+        holes.forEach(function (h) { root.appendChild(h); });
+        var ring = U.el('div.tour-ring', { 'aria-hidden': 'true' });
+        root.appendChild(ring);
+        var bubble = U.el('div.tour-bubble');
+        root.appendChild(bubble);
+        document.body.appendChild(root);
+        document.body.classList.add('tour-open');
+
+        function draw() {
+          var step = live[i];
+          var el = step.sel ? U.$(step.sel) : null;
+          var box = el ? el.getBoundingClientRect()
+                       : { top: global.innerHeight / 2 - 1, left: global.innerWidth / 2 - 1,
+                           width: 2, height: 2, bottom: global.innerHeight / 2 + 1,
+                           right: global.innerWidth / 2 + 1 };
+          var pad = 6;
+          var top = Math.max(0, box.top - pad), left = Math.max(0, box.left - pad);
+          var w = box.width + pad * 2, h = box.height + pad * 2;
+
+          /* top / bottom / left / right of the cut-out */
+          holes[0].style.cssText = 'top:0;left:0;right:0;height:' + top + 'px';
+          holes[1].style.cssText = 'top:' + (top + h) + 'px;left:0;right:0;bottom:0';
+          holes[2].style.cssText = 'top:' + top + 'px;left:0;width:' + left + 'px;height:' + h + 'px';
+          holes[3].style.cssText = 'top:' + top + 'px;left:' + (left + w) + 'px;right:0;height:' + h + 'px';
+          ring.style.cssText = 'top:' + top + 'px;left:' + left + 'px;width:' + w + 'px;height:' + h + 'px';
+
+          U.clear(bubble);
+          bubble.appendChild(U.el('div.tour-count', {
+            text: JTS.t('tour.step', { n: i + 1, total: live.length })
+          }));
+          bubble.appendChild(U.el('div.tour-title', { text: step.title }));
+          bubble.appendChild(U.el('p.tour-body', { text: step.body }));
+          bubble.appendChild(U.el('div.tour-foot', null, [
+            U.el('button.btn.btn-sm.btn-ghost', {
+              type: 'button', text: JTS.t('tour.skip'),
+              onclick: function () { close(true); }
+            }),
+            U.el('div.row', null, [
+              i > 0 ? U.el('button.btn.btn-sm', {
+                type: 'button', text: JTS.t('common.back'),
+                onclick: function () { i--; draw(); }
+              }) : null,
+              U.el('button.btn.btn-sm.btn-primary', {
+                type: 'button', 'data-autofocus': '',
+                text: i === live.length - 1 ? JTS.t('tour.done') : JTS.t('common.next'),
+                onclick: function () {
+                  if (i === live.length - 1) { close(true); return; }
+                  i++; draw();
+                }
+              })
+            ])
+          ]));
+          place(bubble, { top: top, left: left, width: w, height: h,
+                          bottom: top + h, right: left + w });
+          var focus = bubble.querySelector('[data-autofocus]');
+          if (focus) focus.focus();
+        }
+
+        function onKey(e) {
+          if (e.key === 'Escape') { e.stopPropagation(); close(true); return; }
+          if (e.key === 'ArrowRight' && i < live.length - 1) { i++; draw(); }
+          if (e.key === 'ArrowLeft' && i > 0) { i--; draw(); }
+        }
+        function onResize() { if (open) draw(); }
+
+        open = { root: root, id: opts.id, onKey: onKey, onResize: onResize };
+        global.addEventListener('resize', onResize);
+        global.addEventListener('scroll', onResize, true);
+        document.addEventListener('keydown', onKey, true);
+        draw();
+        return { close: function () { close(false); } };
+      }
+    };
+  })();
+
   JTS.shell = {
     navItems: [
       { path: '#/today',    key: 'nav.today',    icon: '◉' },

@@ -76,7 +76,7 @@
   }
 
   function modeCards(rerender) {
-    var grid = U.el('div.grid.grid-3');
+    var grid = U.el('div.grid.grid-3', { id: 'practice-modes' });
     MODES.filter(function (m) { return !m.section || m.section === filters.section; })
       .forEach(function (m) {
         var on = chosenMode === m.id;
