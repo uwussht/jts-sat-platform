@@ -301,21 +301,54 @@ today. Which weeks each phase covers is not restated here — it comes from
 `JTS.planner.phaseForWeek`, so the roadmap and the plan can never disagree about
 which week belongs to which phase.
 
-**The road does not scroll.** The stage is sized from the window
-(`clamp(220px, 100vh - 540px, 420px)`), so the whole road and the detail panel
-under it are on screen together at every laptop size we test; you move along it
-with the ‹ › arrows, the arrow keys, or by tapping a stop, and only the panel
-changes. Being able to see the whole road at once is the point of drawing a
-road, and a road you have to scroll is a list.
+**Map left, the step you are reading right.** The screen is one grid: the road
+fills the left column, the phase you selected and an index of all six sit in the
+right. Side by side and not stacked, for two reasons — a detail two hundred
+pixels below the pin you just pressed does not read as that pin's detail, and
+stacking is what used to force the map down to a 340px square in the middle of a
+1400px screen with nothing either side of it.
 
-The stops are not positioned by hand. The road is one SVG path; after it mounts,
-each stop is placed at its own fraction of `getTotalLength()`, so a pin can
-never drift off the tarmac however the road is redrawn, and the travelled part
-is coloured with the same measurement. Stars are the phase's own sessions — some,
-most, all — and never a score of any kind. Names appear only on the stop you have
-selected, the stop you are on and the end of the road: the road folds over
-itself, so two stops can sit a pin's height apart, and the panel under the map
-says what every number means anyway.
+**The road does not scroll.** The stage is square because the stops are placed
+as percentages of a square drawing space, and it is sized in JS to the smaller
+of its column's two axes: CSS can clamp width or height but not "whichever of
+the two is smaller", and a letterboxed stage would put every stop beside the
+tarmac instead of on it. The measurement is a `ResizeObserver` that nothing else
+holds a reference to, so it goes away with the screen it was made for. Below
+1040px the columns become one, the road goes on top and the page is allowed to
+scroll — which on a phone is what a thumb expects anyway.
+
+You move along the road with the ‹ › arrows, the arrow keys (← → ↑ ↓, plus
+Home and End), a swipe on the map, a tap on a stop, or a row of the index; only
+the panel changes. Being able to see the whole road at once is the point of
+drawing a road, and a road you have to scroll is a list.
+
+The stops are not positioned by hand. The road is one SVG path drawn four times
+over — a shoulder, the tarmac, the centre dashes, and over them the stretch
+already walked — so the road ahead keeps its dashes and the part behind you is
+solid. After it mounts, each stop is placed at its own fraction of
+`getTotalLength()`, so a pin can never drift off the tarmac however the road is
+redrawn, and the travelled part is measured the same way. That stretch paints
+itself in once, on arrival; the dash pattern is installed with the transition
+switched off first, or the browser animates the road *down* from fully drawn and
+paints a distance nobody has walked.
+
+Each stop wears its own phase's progress as a ring — a conic gradient behind the
+pin, so only the rim shows. A phase with no sessions of its own (the diagnostic
+week usually has none) reads 100% once the calendar is past it and 0% while it
+is still ahead: printing 0% under a tick is the one reading that is certainly
+wrong. Stars are the phase's own sessions — some, most, all — and never a score
+of any kind. Names appear on the stop you have selected, the stop you are on,
+the stop under the cursor and the end of the road: the road folds over itself,
+so two stops can sit a pin's height apart, and the panel beside the map says
+what every number means anyway. Pressing the prize at the end says what that
+morning is and links to where the date is changed.
+
+The index under the panel is the same six phases as a list — number, name, week
+range, a thin bar — and a second way to jump. Its rows are deliberately
+`.is-done` / `.is-now` / `.is-on` and not `.rm-done` / `.rm-current` / `.rm-sel`:
+those three mean "a stop on the map" and are counted there.
+
+Everything that moves is behind `prefers-reduced-motion`.
 
 The panel is written for someone who has never sat an SAT and does not yet know
 what "phase 3" is meant to mean: **what you do** all week, **what you will be
