@@ -767,7 +767,14 @@
             /* Onboarding ends at the diagnostic for everyone. Nothing here
                assigns a level, so the diagnostic is the only thing that has
                measured anything by the time the plan is built. */
-            S.update(function (s) { s.profile.onboardingStep = TOTAL_STEPS; });
+            /* onboardingStep alone cannot say this: it reads TOTAL_STEPS the
+               moment the last step is opened, not when it is finished with.
+               The router needs the difference, because from here on the way
+               back into the app is the diagnostic and not step 6. */
+            S.update(function (s) {
+              s.profile.onboardingStep = TOTAL_STEPS;
+              s.profile.onboardingStepsDone = true;
+            });
             JTS.router.go('#/diagnostic');
           }
         });

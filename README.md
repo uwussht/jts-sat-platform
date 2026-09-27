@@ -292,6 +292,26 @@ much of the exam each domain carries**, not simply from the lowest percentage.
 Availability is asked for at the bottom of that report rather than during
 onboarding, because that is the moment the plan is actually built.
 
+## The gap between onboarding and the plan
+
+`profile.onboardingComplete` only turns true when the plan is built, and the
+plan is built on the **diagnostic's result screen**. So between pressing the
+last onboarding step and pressing "Build my plan" a student is formally
+mid-onboarding while having nothing left for onboarding to ask — and the
+router's guard used to send anyone in that window back to `#/onboarding`.
+
+Closing the laptop on the diagnostic result and opening the app again therefore
+dropped the student on step 6 with their finished diagnostic sitting in storage
+and no route back to it. The guard now asks whether the six steps are behind
+them (`pastOnboardingSteps`) and sends them to `#/diagnostic` instead, which
+renders the result and the plan builder on it.
+
+The signal is `profile.onboardingStepsDone`, set by the last step's button.
+`onboardingStep` could not do the job: it reads `TOTAL_STEPS` the moment step 6
+is *opened*, not when it is finished with. A finished diagnostic counts as the
+same signal, so a profile created before the flag existed is not sent round the
+loop either — which is also why this needed no schema bump.
+
 ## The sidebar does not scroll
 
 Only the nav list inside it does, and only when it has to. The sidebar used to

@@ -233,7 +233,7 @@
       return {
         profile: {
           email: email, name: '', level: 'undetermined',
-          onboardingComplete: false, createdAt: Date.now(),
+          onboardingComplete: false, onboardingStepsDone: false, createdAt: Date.now(),
           currentPhase: 1, streak: { count: 0, lastDay: null, best: 0 }
         },
         examDate: null,       /* {mode:'date'|'undecided', examDateId, testDate, registrationDeadline} */
@@ -670,6 +670,19 @@
   };
 
   /* ---------------------------------------------------------------- router */
+  /**
+   * Has the student walked the six onboarding steps? The flag is what the last
+   * step sets; a finished diagnostic is the older answer, kept so a profile
+   * created before the flag existed is not sent round the loop again.
+   */
+  function pastOnboardingSteps(state) {
+    if (!state) return false;
+    if (state.profile.onboardingStepsDone) return true;
+    return (state.sessions || []).filter(function (x) {
+      return x.kind === 'diagnostic';
+    }).length > 0;
+  }
+
   JTS.router = {
     routes: {},
     current: null,
@@ -717,7 +730,15 @@
          presses Start and is bounced straight back to step 6. */
       if (state && !state.profile.onboardingComplete &&
           ['#/onboarding', '#/diagnostic', '#/question', '#/settings'].indexOf(route.base) < 0) {
-        this.go('#/onboarding'); return;
+        /* Onboarding is not finished until the plan is built, and the plan is
+           built on the diagnostic's result screen — so between finishing the
+           diagnostic and pressing that button the student is still, formally,
+           mid-onboarding. Sending them back to step 6 there is wrong twice
+           over: the six steps have nothing left to ask, and their finished
+           diagnostic is sitting in storage with no way back to it. Reopening
+           the app at that point used to do exactly that. */
+        this.go(pastOnboardingSteps(state) ? '#/diagnostic' : '#/onboarding');
+        return;
       }
       if (state && state.profile.onboardingComplete && route.base === '#/auth') { this.go('#/today'); return; }
 
