@@ -159,8 +159,14 @@
 
     create: function (opts) {
       opts = opts || {};
+      /* A paper run is the same run with its questions already decided. The
+         modules still come from the exam structure, so the clock and the break
+         are the exam's and not the paper's to invent; only the question lists
+         and the routing differ. */
+      var paper = opts.paperId ? JTS.papers.get(opts.paperId) : null;
       var run = {
         id: U.uid('mock'),
+        paperId: paper ? paper.id : null,
         startedAt: Date.now(),
         finishedAt: null,
         status: 'in-progress',
@@ -169,9 +175,16 @@
         phase: 'module',          /* 'module' | 'handoff' | 'break' | 'done' */
         breakEndsAt: null,
         modules: blueprint().map(function (m) {
+          var fixed = paper ? paper.modules.filter(function (pm) {
+            return pm.key === m.id;
+          })[0] : null;
           return {
-            key: m.id, section: m.section, count: m.count, minutes: m.minutes,
-            adaptive: m.adaptive, route: null, questionIds: null,
+            key: m.id, section: m.section,
+            count: fixed ? fixed.questionIds.length : m.count,
+            minutes: m.minutes,
+            /* A paper's second module is whatever the paper says it is. */
+            adaptive: fixed ? false : m.adaptive,
+            route: null, questionIds: null,
             sessionId: null, correct: null, answered: null, timeMs: 0,
             closedByTimer: false
           };
@@ -194,6 +207,13 @@
     prepare: function (run, index) {
       var m = run.modules[index];
       if (m.questionIds) return m;
+      if (run.paperId) {
+        var paper = JTS.papers.get(run.paperId);
+        var pm = paper && paper.modules.filter(function (x) { return x.key === m.key; })[0];
+        m.questionIds = pm ? pm.questionIds.slice() : [];
+        S.save();
+        return m;
+      }
       var prefer = PREFER.mixed;
       if (m.adaptive) {
         var first = run.modules[index - 1];
@@ -646,6 +666,72 @@
     return card;
   }
 
+  /* ---------------------------------------------------------- past papers */
+
+  /**
+   * Whole papers, sat as they are. Unlike the generated simulation above, a
+   * paper is the same 98 questions in the same order for everyone, its second
+   * modules are fixed rather than routed, and it carries no explanations and
+   * no AI — the review afterwards shows what you picked and what was right.
+   *
+   * The gates are the simulation's gates, because it is the simulation's
+   * machinery: one run at a time, and not on a phone.
+   */
+  function paperCard(rerender) {
+    var papers = JTS.papers.all();
+    if (!papers.length) return null;
+    var active = JTS.mock.active();
+
+    var card = U.el('div.card.stack', null, [
+      U.el('h2.h2', { text: t('paper.title') }),
+      U.el('p.small.muted', { text: t('paper.lead') }),
+      U.el('p.xsmall.muted', { text: t('paper.noHelp') })
+    ]);
+
+    if (!fitsMock()) {
+      card.appendChild(U.el('div.notice.desktop-only-note', null, [
+        U.el('div.stack-sm', null, [
+          U.el('div', null, [U.el('b', { text: t('mock.desktopOnly') })]),
+          U.el('div.small', { text: t('mock.needDesktop') })
+        ])
+      ]));
+      return card;
+    }
+
+    var list = U.el('div.stack-sm');
+    papers.forEach(function (paper) {
+      var sat = JTS.mock.all().filter(function (r) {
+        return r.paperId === paper.id && r.status === 'finished';
+      }).length;
+      list.appendChild(U.el('div.card.card-sm.row-between.row-wrap', null, [
+        U.el('div.stack-sm', null, [
+          U.el('div', null, [U.el('b', { text: paper.title })]),
+          U.el('div.xsmall.muted', {
+            text: t('paper.modules', { n: paper.count }) +
+              (sat ? ' \u00b7 ' + t('paper.satTimes', { n: sat }) : '')
+          })
+        ]),
+        U.el('button.btn.btn-primary', {
+          type: 'button', text: t('paper.sit'), disabled: !!active,
+          onclick: function () {
+            ui.confirm({
+              title: paper.title,
+              message: t('paper.confirm'),
+              okText: t('paper.sit')
+            }).then(function (yes) {
+              if (!yes) return;
+              var run = JTS.mock.create({ timed: true, paperId: paper.id });
+              JTS.mock.startModule(run.id);
+            });
+          }
+        })
+      ]));
+    });
+    card.appendChild(list);
+    if (active) card.appendChild(U.el('div.xsmall.muted', { text: t('mock.oneAtATime') }));
+    return card;
+  }
+
   function finishedRuns() {
     var runs = JTS.mock.finished().slice().reverse();
     if (!runs.length) return null;
@@ -656,6 +742,10 @@
         U.el('div.stack-sm', null, [
           U.el('div', null, [
             U.el('b', { text: U.fmtDate(new Date(run.finishedAt), S.settings().uiLang) }),
+            run.paperId && JTS.papers.get(run.paperId)
+              ? U.el('span.badge.badge-muted', { text: JTS.papers.get(run.paperId).title,
+                  style: 'margin-inline-start:8px' })
+              : null,
             run.timed ? null : U.el('span.badge.badge-muted', { text: t('mock.untimedTag'),
               style: 'margin-inline-start:8px' })
           ]),
@@ -688,6 +778,9 @@
 
       function paint() {
         screen.appendChild(runCard(rerender));
+
+        var papers = paperCard(rerender);
+        if (papers) screen.appendChild(papers);
 
         var runs = finishedRuns();
         if (runs) screen.appendChild(U.el('div.stack-sm', null, [
@@ -1042,6 +1135,14 @@
         text: t('mock.yourAnswer') + ': ' + answerText(q, a && a.selected)
       })
     ]));
+    /* A past paper carries no explanation and offers no AI. The review says
+       what you picked and what was right, and stops there — which is what the
+       paper is for. */
+    if (JTS.papers.of(q)) {
+      ui.modal({ title: JTS.skills.name(q.skillId), wide: true, content: body });
+      return;
+    }
+
     body.appendChild(JTS.studyHelp.explanationBody(q));
 
     var aiOut = U.el('div.stack-sm');

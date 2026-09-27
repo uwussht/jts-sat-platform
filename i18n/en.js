@@ -222,6 +222,13 @@ JTS.dict.en = {
 
   'plan.provisional': 'Provisional plan — no exam date set',
   'plan.phases': 'Preparation phases',
+  'paper.title': 'Past papers',
+  'paper.lead': 'A whole paper, fixed: the same 98 questions in the same order for everyone, four modules and the real clock. The second modules are the paper\'s, not chosen by how the first went.',
+  'paper.noHelp': 'No explanations, no hints and no AI — here or in the review afterwards. The review shows what you picked and what was right. Bring what you want explained to Practice.',
+  'paper.modules': '{n} questions · 4 modules',
+  'paper.satTimes': 'sat {n}×',
+  'paper.sit': 'Sit this paper',
+  'paper.confirm': 'About two hours and fifteen minutes, with one ten-minute break. A module that is closed cannot be reopened. Start now?',
   'plan.week': 'Week {n}',
   'plan.thisWeek': 'This week',
   'plan.prevWeek': 'Previous week', 'plan.nextWeek': 'Next week',

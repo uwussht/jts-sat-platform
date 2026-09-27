@@ -711,11 +711,51 @@ SAT target they do not read.
 
 ---
 
+## Past papers
+
+A past paper is a whole exam, fixed: the same 98 questions in the same order for
+every student, four modules, the real clock. It runs on the simulation's own
+machinery — same session engine, same break, same one-run-at-a-time and
+desktop-only gates — and differs in exactly two ways. Its second modules are the
+paper's rather than routed off the first (`adaptive` is forced false when a run
+carries a `paperId`), and it has **no teaching layer at all**: no explanations,
+no distractor rationales, no hints, no methods, and no AI, during the paper or
+in the review afterwards. The review says what you picked and what was right,
+and stops there. That is what makes it a paper rather than a long practice set.
+
+Paper questions live in the bank, because a session has to be able to render and
+grade them, and they carry `meta.kind = 'paper'`. `JTS.bank.query` filters on
+that in both directions: a query that has not asked for papers never sees one,
+and `query({kind:'paper'})` sees nothing else. Without it a paper question would
+leak into practice, the diagnostic, the error queue and the generated mock, and
+a student would meet under the clock a question they had already been walked
+through. `JTS.bank.stats()` — the per-skill counts in the practice builder —
+excludes them for the same reason.
+
+`validateAll` enforces the missing teaching layer rather than trusting the next
+author to remember it: a paper item that grows an `explanation`, `distractors`,
+`hints` or `methods` fails the bank.
+
+Adding one: write the questions in a file like `js/data/paper-01.js` and call
+`JTS.data.addPaper` with the four modules in exam order. Minutes come from
+`JTS.config.examStructure`, so a paper cannot disagree with the exam about how
+long a module is.
+
 ## Content and licensing
 
 Every question carries `meta.licenseStatus`, one of `original`, `licensed` or
 `link-only`. Only `original` items are used in the internal mock exam. External
 practice material must be referenced as `link-only` — never copied into the bank.
+
+**This applies to past papers too, and it is the whole reason the papers here
+are written rather than collected.** Real administered SAT forms — including the
+ones that circulate as PDFs of screenshots taken during a sitting — are College
+Board's copyrighted, non-disclosed material. Making a repository private does
+not change who owns them, and College Board treats preparing on a leaked live
+form as misconduct: the cost lands on the student as a cancelled score. JTS
+Practice Paper 1 is original JTS work written to the published blueprint
+(27/27/22/22, domains in their published shares, about a quarter of Math as
+student-produced response). Nothing in it is copied from anyone.
 
 ## Editing questions without a developer
 

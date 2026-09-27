@@ -1380,14 +1380,21 @@
     },
     get: function (id) { if (!this._index) this.reindex(); return this._index.byId[id] || null; },
     raw: function (id) { if (!this._index) this.reindex(); return this._index.raw[id] || null; },
-    /** filters: {section, skillIds[], domains[], difficulty[], excludeIds[], licenseStatus, status} */
+    /** filters: {section, skillIds[], domains[], difficulty[], excludeIds[], licenseStatus, status, kind} */
     query: function (filters) {
       filters = filters || {};
+      var wantPaper = filters.kind === 'paper';
       var state = Store.state();
       var attempts = state ? state.attempts : [];
       var lastByQ = {};
       attempts.forEach(function (a) { lastByQ[a.questionId] = a; });
       return this.all().filter(function (q) {
+        /* Past-paper items belong to one fixed paper and to nothing else. They
+           are in the bank so a session can render and grade them, but a query
+           that has not asked for them must never see them: a paper question
+           leaking into practice, the diagnostic or a generated mock would spend
+           a question the student is meant to meet once, under the clock. */
+        if (((q.meta && q.meta.kind) === 'paper') !== wantPaper) return false;
         if (filters.section && q.section !== filters.section) return false;
         if (filters.skillIds && filters.skillIds.length && filters.skillIds.indexOf(q.skillId) < 0) return false;
         if (filters.domains && filters.domains.length) {
@@ -1418,8 +1425,9 @@
       ), opts.seed === undefined ? 11 : opts.seed);
       return chosen.slice(0, n);
     },
+    /** Per-skill counts for the practice builder — practice questions only. */
     stats: function () {
-      var by = U.groupBy(this.all(), function (q) { return q.skillId; });
+      var by = U.groupBy(this.query({}), function (q) { return q.skillId; });
       var out = {};
       Object.keys(by).forEach(function (k) { out[k] = by[k].length; });
       return out;
@@ -1436,10 +1444,11 @@
         if (!JTS.skills.get(q.skillId)) bad('unknown skillId ' + q.skillId);
         if ([1, 2, 3].indexOf(q.difficulty) < 0) bad('difficulty must be 1|2|3');
         if (['mcq', 'spr'].indexOf(q.type) < 0) bad('bad type');
+        var isPaper = !!(q.meta && q.meta.kind === 'paper');
         if (q.type === 'mcq') {
           if (!q.options || q.options.length !== 4) bad('mcq needs 4 options');
           if (['A', 'B', 'C', 'D'].indexOf(q.answer) < 0) bad('mcq answer must be A-D');
-          if (q.section === 'rw' && !q.distractors) bad('R&W mcq needs distractor rationales');
+          if (q.section === 'rw' && !q.distractors && !isPaper) bad('R&W mcq needs distractor rationales');
         }
         if (q.type === 'spr') {
           if (!Array.isArray(q.answer) || !q.answer.length) bad('spr answer must be a non-empty array');
@@ -1447,7 +1456,16 @@
             if (JTS.spr.value(JTS.spr.normalize(a)) === null) bad('spr answer not numeric: ' + a);
           });
         }
-        if (!q.explanation || !q.explanation.en || !q.explanation.ru || !q.explanation.kk) bad('explanation needs en/ru/kk');
+        /* A past paper is a paper, not a lesson: it carries no teaching layer at
+           all, and the validator enforces that rather than trusting whoever
+           writes the next one to remember. */
+        if (isPaper) {
+          if (q.explanation || q.distractors || q.hints || q.methods) {
+            bad('a paper item carries no explanation, distractors, hints or methods');
+          }
+        } else if (!q.explanation || !q.explanation.en || !q.explanation.ru || !q.explanation.kk) {
+          bad('explanation needs en/ru/kk');
+        }
         if (q.calculator !== (q.section === 'math')) bad('calculator must be true for math and false for rw');
         if (!q.meta) bad('missing meta');
         else {
