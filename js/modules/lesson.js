@@ -55,13 +55,12 @@
       var teach = JTS.programme.teachOf(code);
       var drill = JTS.programme.drillOf(code) || {};
       var ids = JTS.programme.lessonSet(code);
-      var rec = JTS.programme.lessonRecord(ids);
+      var rec = JTS.programme.lessonRecord(code, ids);
 
       var steps = 1 + ids.length;
-      var answeredIds = {};
-      (state.attempts || []).forEach(function (a) {
-        if (ids.indexOf(a.questionId) >= 0) answeredIds[a.questionId] = a;
-      });
+      /* The marks on the rail are this lesson's own answers, the same ones the
+         counter above them reports. */
+      var answeredIds = rec.byQ || {};
 
       /* Open the ten at the question the student pressed. `start` navigates,
          so the index is set on the session it hands back and the screen is
@@ -95,7 +94,6 @@
           drill.hard ? U.el('span.badge.badge-warn', { text: t('lesson.hard') }) : null
         ]),
         U.el('div.h2', { text: pick(lesson.t) }),
-        U.el('div.small.muted', { text: t('mat.nSteps', { n: steps }) }),
         U.el('div.stack-sm', null, [
           U.el('div.stat-label', { text: t('lesson.mustDo') }),
           U.el('p', { text: pick(lesson.skills) })

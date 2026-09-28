@@ -405,21 +405,56 @@
       var sec = (JTS.skills.get(skills[0]) || {}).section;
       take(U.shuffle(JTS.bank.query({ section: sec }), seed));
     }
-    return out.slice(0, n);
+    out = out.slice(0, n);
+
+    /* Easy first, hard last. A set that opens on its hardest item teaches a
+       student that the topic is beyond them before the explanation above has
+       had a chance to be tried. Within a difficulty the order stays as picked,
+       so a two-skill lesson still alternates rather than doing one skill and
+       then the other. */
+    return out.slice().sort(function (a, b) {
+      var qa = JTS.bank.get(a), qb = JTS.bank.get(b);
+      return ((qa && qa.difficulty) || 0) - ((qb && qb.difficulty) || 0);
+    });
   }
 
-  /** What the student has already done of that set, for the page to report. */
-  function lessonRecord(ids) {
+  /**
+   * What the student has done OF THIS LESSON.
+   *
+   * Counted from the lesson's own sessions and not from every attempt ever
+   * made on those questions: the bank is shared with the diagnostic, the
+   * practice builder and the daily check, and a page that opened saying
+   * "3 of 10 answered, 0 right" about work done somewhere else — with three
+   * steps already marked red — was telling a student they had failed a set
+   * they had not started.
+   */
+  function lessonAnswers(code, ids) {
     var s = S.state();
-    var attempts = (s && s.attempts) || [];
     var byQ = {};
-    attempts.forEach(function (a) {
-      if (ids.indexOf(a.questionId) >= 0) byQ[a.questionId] = a;
+    function take(answers, qids) {
+      (qids || []).forEach(function (qid) {
+        if (ids.indexOf(qid) < 0) return;
+        var a = answers[qid];
+        if (!a || a.selected === null || a.selected === '') return;
+        byQ[qid] = a;
+      });
+    }
+    /* Oldest first, so a retake overwrites the attempt before it. */
+    ((s && s.sessions) || []).forEach(function (sum) {
+      if (!sum.meta || sum.meta.lessonCode !== code) return;
+      take(sum.answers, sum.questionIds);
     });
-    var done = Object.keys(byQ).length;
+    var live = JTS.session.current && JTS.session.current();
+    if (live && live.meta && live.meta.lessonCode === code) take(live.answers, live.questionIds);
+    return byQ;
+  }
+
+  function lessonRecord(code, ids) {
+    var byQ = lessonAnswers(code, ids);
+    var keys = Object.keys(byQ);
     var right = 0;
-    Object.keys(byQ).forEach(function (k) { if (byQ[k].correct) right++; });
-    return { done: done, right: right, total: ids.length };
+    keys.forEach(function (k) { if (byQ[k].correct) right++; });
+    return { done: keys.length, right: right, total: ids.length, byQ: byQ };
   }
 
   /* ------------------------------------------- a planned day and its lesson */
@@ -508,6 +543,7 @@
     teachOf: teachOf,
     lessonSet: lessonSet,
     lessonRecord: lessonRecord,
+    lessonAnswers: lessonAnswers,
     codeChip: codeChip,
     unitState: unitState,
     schedule: schedule,
