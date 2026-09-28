@@ -168,18 +168,5 @@ JTS.data.programme = {
       body: { en: 'The video for the NEXT lesson’s topic, with notes — so the lesson starts from practice, not from first contact.',
               ru: 'Видео по теме СЛЕДУЮЩЕГО урока с конспектом — чтобы урок начинался с практики, а не с первого знакомства.',
               kk: 'КЕЛЕСІ сабақтың тақырыбы бойынша бейне және конспект — сабақ практикадан басталуы үшін, алғашқы танысудан емес.' } }
-  ],
-  /** And the one thing that follows every week rather than every lesson. */
-  weekly: {
-    id: 'test', mins: '134',
-    name: { en: 'Practice test', ru: 'Practice test', kk: 'Practice test' },
-    body: { en: 'A full test in Bluebook, strictly timed → every miss into the error log → a review session before the next week.',
-            ru: 'Полный тест в Bluebook, строго на время → каждый промах в error log → review session до следующей недели.',
-            kk: 'Bluebook-та толық тест, қатаң уақытпен → әр қате error log-қа → келесі аптаға дейін review session.' }
-  },
-  homeworkLoad: {
-    en: 'About 6–9 hours a week at three lessons a week, and 4–6 at two.',
-    ru: 'Примерно 6–9 часов в неделю при трёх уроках в неделю и 4–6 при двух.',
-    kk: 'Аптасына үш сабақта — шамамен 6–9 сағат, екеуінде — 4–6 сағат.'
-  }
+  ]
 };

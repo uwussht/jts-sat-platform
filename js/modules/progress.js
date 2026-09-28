@@ -150,6 +150,15 @@
     ]);
   }
 
+  /**
+   * The finished tests themselves, under the trend they made. The list used to
+   * sit on #/mocks, which is the screen for SITTING a test; reviewing one is a
+   * question about how you are doing, and that is this screen.
+   */
+  function mockList() {
+    return (JTS.mock && JTS.mock.finishedList) ? JTS.mock.finishedList() : null;
+  }
+
   /* ------------------------------------------------------------- study time */
 
   function studyTime() {
@@ -285,9 +294,16 @@
         ])
       ]));
 
-      screen.appendChild(U.el('div.card.stack-sm', null, [
+      var trend = U.el('div.card.stack-sm', { id: 'mock-trend' }, [
         U.el('h2.h2', { text: t('progress.mockTrend') }), mockTrend()
-      ]));
+      ]);
+      var list = mockList();
+      if (list) {
+        trend.appendChild(U.el('div.stack-sm', null, [
+          U.el('div.eyebrow', { text: t('mock.reviewOnly') }), list
+        ]));
+      }
+      screen.appendChild(trend);
 
       screen.appendChild(U.el('div.card.stack-sm', null, [
         U.el('h2.h2', { text: t('progress.calendar') }), calendar()

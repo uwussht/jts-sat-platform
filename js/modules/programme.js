@@ -9,7 +9,6 @@
                                    — used by #/roadmap
      JTS.programme.unitList(sec)   the units and their lessons — #/materials
      JTS.programme.unitTable(sec)  the same as a table — #/plan
-     JTS.programme.homeworkCard()  what follows every lesson — #/materials
      JTS.programme.errorLogCard()  the error log — used by #/guide
      JTS.programme.lessonDetail(n) one lesson, for a day on the calendar
 
@@ -283,41 +282,6 @@
     return U.el('div.table-wrap', null, [table]);
   }
 
-  /* ------------------------------------------------------------ homework */
-
-  function homeworkCard() {
-    var list = U.el('div.pg-hw');
-    P.homework.forEach(function (h, i) {
-      list.appendChild(U.el('div.pg-hw-item', null, [
-        U.el('span.pg-hw-n', { text: String(i + 1) }),
-        U.el('div', null, [
-          U.el('div', null, [
-            U.el('b', { text: pick(h.name) }),
-            U.el('span.pg-mins', { text: h.mins + ' ' + t('common.minutes') })
-          ]),
-          U.el('div.small.muted', { text: pick(h.body) })
-        ])
-      ]));
-    });
-    var w = P.weekly;
-    list.appendChild(U.el('div.pg-hw-item.is-weekly', null, [
-      U.el('span.pg-hw-n', { text: '★' }),
-      U.el('div', null, [
-        U.el('div', null, [
-          U.el('b', { text: pick(w.name) }),
-          U.el('span.pg-mins', { text: t('prog.everyWeek') })
-        ]),
-        U.el('div.small.muted', { text: pick(w.body) })
-      ])
-    ]));
-    return U.el('div.card.stack-sm', { id: 'prog-homework' }, [
-      U.el('div.eyebrow', { text: t('prog.hwTitle') }),
-      U.el('p.small.muted', { text: t('prog.hwLead') }),
-      list,
-      U.el('p.xsmall.muted', { text: pick(P.homeworkLoad) })
-    ]);
-  }
-
   /* -------------------------------------------------------- the error log */
 
   function errorLogCard() {
@@ -558,7 +522,6 @@
     unitTable: unitTable,
     lessonCount: lessonCount,
     doneCount: doneCount,
-    homeworkCard: homeworkCard,
     errorLogCard: errorLogCard
   };
 })();

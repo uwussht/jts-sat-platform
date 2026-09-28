@@ -154,46 +154,10 @@
     var tabs = ui.tabs([
       { id: 'explanation', label: t('q.explanation'), render: function (host) {
           host.appendChild(explanationBody(question));
-          host.appendChild(similarButton(ses, question));
         } },
       { id: 'ai', label: t('ai.title'), render: function (host) { chatPanel(host, ses, question, a, refresh); } }
     ], tabId);
     body.appendChild(tabs);
-  }
-
-  function similarButton(ses, question) {
-    return U.el('div.stack-sm', { style: 'margin-top:18px' }, [
-      U.el('button.btn.btn-primary.btn-block', {
-        type: 'button', text: t('q.solveSimilar'),
-        onclick: function () { startSimilar(ses, question); }
-      }),
-      U.el('p.hint', { text: t('q.independentOnly') })
-    ]);
-  }
-
-  /**
-   * Remix / 'solve a similar one': another unseen question on the same skill
-   * and difficulty, run as its own one-question session with the help controls
-   * withheld until the answer is submitted.
-   */
-  function startSimilar(ses, question) {
-    var seen = S.state().seenQuestionIds || [];
-    var pool = JTS.bank.query({ skillIds: [question.skillId], excludeIds: [question.id] });
-    var fresh = pool.filter(function (q) { return seen.indexOf(q.id) < 0; });
-    var sameLevel = fresh.filter(function (q) { return q.difficulty === question.difficulty; });
-    var pick = U.shuffle(sameLevel.length ? sameLevel : fresh, Date.now() % 9973)[0];
-    if (!pick) { ui.toast(t('q.noSimilar'), 'err'); return; }
-
-    /* Close the current session cleanly first so its attempts are recorded. */
-    var back = ses ? ses.returnHash : '#/practice';
-    if (ses) { S.save(); JTS.session.finish(); }
-    JTS.session.start({
-      kind: 'practice', mode: 'study',
-      title: JTS.skills.name(question.skillId),
-      questionIds: [pick.id],
-      returnHash: back, finishHash: back,
-      meta: { independentOnly: true, similarTo: question.id }
-    });
   }
 
   /* ------------------------------------------------------------ chat panel */
@@ -333,13 +297,6 @@
   JTS.studyHelp = {
     /** Buttons added to the question footer in study mode. */
     footerControls: function (footer, ses, question, a, refresh) {
-      /* A 'solve a similar one' session withholds help until the answer is in,
-         so that attempt is genuinely independent. */
-      if (ses.meta.independentOnly && !a.submitted) {
-        footer.appendChild(U.el('span.badge.badge-muted', { text: t('q.independentOnly') }));
-        return;
-      }
-
       var hints = question.hints || [];
       a.hintHistory = a.hintHistory || [];
 
@@ -396,11 +353,6 @@
           openPanel('explanation', ses, question, a, refresh);
         }
       }));
-
-      footer.appendChild(U.el('button.btn.btn-sm', {
-        type: 'button', text: t('q.remix'), title: t('q.solveSimilar'),
-        onclick: function () { startSimilar(ses, question); }
-      }));
     },
 
     /** Called right after an answer is checked in study mode. */
@@ -412,7 +364,6 @@
     /* exposed for tests and for reuse by the mock review screen */
     explanationBody: explanationBody,
     suggestErrorType: suggestErrorType,
-    startSimilar: startSimilar,
     ERROR_TYPES: ERROR_TYPES
   };
 })();

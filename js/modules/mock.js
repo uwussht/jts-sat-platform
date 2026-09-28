@@ -422,38 +422,6 @@
 
   function fitsMock() { return window.innerWidth >= JTS.config.mockMinWidth; }
 
-  function trajectory() {
-    var s = S.state();
-    var goal = s && s.goals ? s.goals.total : null;
-    var imported = JTS.mock.reports().map(function (r) {
-      return { x: new Date(r.date + 'T00:00:00').getTime(), y: r.total };
-    });
-    var internal = JTS.mock.finished().map(function (run) {
-      var est = JTS.mock.totalEstimate(run);
-      return est ? { x: run.finishedAt, y: Math.round((est.low + est.high) / 2) } : null;
-    }).filter(Boolean).sort(function (a, b) { return a.x - b.x; });
-
-    if (!imported.length && !internal.length) return null;
-
-    var series = [];
-    if (imported.length) series.push({ label: t('mock.seriesImported'), color: 'var(--brand-600)', points: imported });
-    if (internal.length) series.push({ label: t('mock.seriesInternal'), color: 'var(--warn)', points: internal });
-
-    return U.el('div.stack-sm', null, [
-      ui.lineChart(series, {
-        target: goal || undefined, yMin: 400, yMax: 1600,
-        ariaLabel: t('mock.trajectory')
-      }),
-      U.el('div.legend', null, series.map(function (x) {
-        return U.el('span', null, [
-          U.el('span.badge-dot', { style: 'background:' + x.color }), ' ' + x.label
-        ]);
-      }).concat(goal ? [U.el('span', { text: '– – ' + t('mock.goalLine') + ' ' + goal })] : []))
-    ]);
-  }
-
-  /* ----------------------------------------------------------- simulation */
-
   function runCard(rerender) {
     var cap = JTS.mock.capacity();
     var active = JTS.mock.active();
@@ -612,6 +580,7 @@
     return card;
   }
 
+  /** Finished runs, newest first — rendered by #/progress. */
   function finishedRuns() {
     var runs = JTS.mock.finished().slice().reverse();
     if (!runs.length) return null;
@@ -648,6 +617,10 @@
     return wrap;
   }
 
+  /* Exported rather than rendered here: the list of finished runs belongs to
+     #/progress, which is the screen that answers "how am I doing". */
+  JTS.mock.finishedList = finishedRuns;
+
   JTS.router.register('#/mocks', {
     title: 'mock.title',
     render: function (root) {
@@ -662,15 +635,9 @@
         var papers = paperCard(rerender);
         if (papers) screen.appendChild(papers);
 
-        var runs = finishedRuns();
-        if (runs) screen.appendChild(U.el('div.stack-sm', null, [
-          U.el('h2.h2', { text: t('mock.reviewOnly') }), runs
-        ]));
-
-        var chart = trajectory();
-        if (chart) screen.appendChild(U.el('div.card.stack-sm', null, [
-          U.el('h2.h2', { text: t('mock.trajectory') }), chart
-        ]));
+        /* The page is for sitting a test. The list of finished ones and the
+           trajectory both live on #/progress, which is the screen that answers
+           "how am I doing" — and the chart here was the same chart twice. */
       }
 
       paint();

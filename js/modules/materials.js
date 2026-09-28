@@ -100,7 +100,6 @@
         ]));
       }
 
-      screen.appendChild(JTS.programme.homeworkCard());
       screen.appendChild(U.el('p.hint', { text: t('mat.hint') }));
     }
   });
