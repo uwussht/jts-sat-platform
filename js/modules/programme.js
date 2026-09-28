@@ -220,12 +220,18 @@
     lessons.forEach(function (l) {
       var n = P.numberOn(l, pw);
       var st = stateOfNumber(n, done);
-      body.appendChild(U.el('div.mat-lesson.is-' + st, null, [
+      /* A lesson opens: the explanation and its ten questions are a page, not
+         a tooltip. The row is a link so it behaves like one — middle-click,
+         copy the address, open in a tab. */
+      body.appendChild(U.el('a.mat-lesson.is-' + st, {
+        href: '#/materials/lesson?code=' + l.code
+      }, [
         U.el('span.mat-n', { text: String(n) }),
         U.el('div.mat-lesson-text', null, [
           U.el('div.pg-name', null, [codeChip(l), U.el('b', { text: lessonName(l) })]),
           U.el('div.small.muted', { text: pick(l.skills) })
-        ])
+        ]),
+        U.el('span.mat-go', { text: '❯', 'aria-hidden': 'true' })
       ]));
     });
 
@@ -342,6 +348,89 @@
     ]);
   }
 
+  /* -------------------------------------------------- a lesson's ten items */
+
+  /** djb2, kept numeric: U.rng does `seed >>> 0`, and a string becomes 0. */
+  function numericSeed(str) {
+    var h = 5381;
+    for (var i = 0; i < str.length; i++) h = ((h * 33) ^ str.charCodeAt(i)) >>> 0;
+    return h >>> 0;
+  }
+
+  function drillOf(code) { return (P.drills && P.drills[code]) || null; }
+  function teachOf(code) { return (P.teach && P.teach[code]) || null; }
+
+  /**
+   * The ten questions of a lesson.
+   *
+   * They come from JTS's own bank, by the skills the lesson drills — never
+   * from Bluebook or any other published test. A lesson with one skill is that
+   * skill's ten; a lesson with two is five and five, so both get practised.
+   * A hard lesson takes the hardest items the bank holds for those skills, and
+   * a review lesson takes what the student's own error log says is due.
+   */
+  function lessonSet(code, n) {
+    n = n || 10;
+    var d = drillOf(code);
+    if (!d) return [];
+    var seed = numericSeed(code);
+    var out = [], seen = {};
+
+    function take(list) {
+      list.forEach(function (q) {
+        var id = q.id || q;
+        if (out.length >= n || seen[id] || !JTS.bank.get(id)) return;
+        seen[id] = 1; out.push(id);
+      });
+    }
+
+    /* A review lesson is the student's own error log, in the order the
+       spacing says, and then their weakest skills. */
+    if (d.fromErrorLog) {
+      take(U.shuffle(JTS.analytics.pendingReviews().map(function (e) { return e.questionId; }), seed));
+      if (out.length < n && JTS.mastery && JTS.mastery.ranked) {
+        var days = JTS.analytics.daysToExam();
+        JTS.mastery.ranked({ daysToExam: days === null ? 84 : days }).forEach(function (r) {
+          if (out.length >= n) return;
+          take(JTS.bank.pickForSkill(r.skillId, 2, { exclude: out, seed: seed }));
+        });
+      }
+    }
+
+    var skills = d.skills || [];
+    var per = Math.ceil(n / Math.max(1, skills.length));
+    skills.forEach(function (skillId) {
+      var pool = JTS.bank.query({ skillIds: [skillId] });
+      /* Hardest first for the hard phase; otherwise a stable shuffle, so the
+         set of a lesson is the same set every time it is opened. */
+      pool = d.hard
+        ? pool.slice().sort(function (a, b) { return (b.difficulty || 0) - (a.difficulty || 0); })
+        : U.shuffle(pool, seed);
+      take(pool.slice(0, per));
+    });
+    /* Short only if the bank is short for those skills; fill from the same
+       section rather than leaving a set of six. */
+    if (out.length < n && skills.length) {
+      var sec = (JTS.skills.get(skills[0]) || {}).section;
+      take(U.shuffle(JTS.bank.query({ section: sec }), seed));
+    }
+    return out.slice(0, n);
+  }
+
+  /** What the student has already done of that set, for the page to report. */
+  function lessonRecord(ids) {
+    var s = S.state();
+    var attempts = (s && s.attempts) || [];
+    var byQ = {};
+    attempts.forEach(function (a) {
+      if (ids.indexOf(a.questionId) >= 0) byQ[a.questionId] = a;
+    });
+    var done = Object.keys(byQ).length;
+    var right = 0;
+    Object.keys(byQ).forEach(function (k) { if (byQ[k].correct) right++; });
+    return { done: done, right: right, total: ids.length };
+  }
+
   /* ------------------------------------------- a planned day and its lesson */
 
   /**
@@ -424,6 +513,12 @@
 
   JTS.programme = {
     perWeek: perWeek,
+    drillOf: drillOf,
+    teachOf: teachOf,
+    lessonSet: lessonSet,
+    lessonRecord: lessonRecord,
+    codeChip: codeChip,
+    unitState: unitState,
     schedule: schedule,
     numberOf: numberOf,
     lessonDetail: lessonDetail,

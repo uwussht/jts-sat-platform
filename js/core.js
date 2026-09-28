@@ -19,6 +19,11 @@
     languages: ['en', 'ru', 'kk'],
     defaultLanguage: 'en',
     desmosUrl: 'https://www.desmos.com/calculator',
+    /* Official practice is done in College Board's own app. The platform
+       links to it and never reproduces its items: they are College Board's,
+       and a student who prepares on a leaked live form is treated as having
+       cheated and loses the score. */
+    bluebookUrl: 'https://bluebook.collegeboard.org/students',
     /* Pace benchmarks used for the speed metric (seconds per question). */
     pace: { rw: 71, math: 95 },
     /* Mastery thresholds — see JTS.mastery for the full rules. */

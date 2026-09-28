@@ -1755,7 +1755,17 @@ button.cal-tag:hover { background: var(--brand-100); color: var(--brand-700); }
 .mat-caret { color: var(--muted); font-size: 12px; transition: transform .15s ease; }
 
 .mat-unit-body { padding: 0 14px 14px 48px; display: flex; flex-direction: column; gap: 8px; }
-.mat-lesson { display: flex; gap: 10px; align-items: flex-start; }
+/* A lesson row is a link into the lesson: explanation plus its ten questions.
+   It reads as a row rather than as a link until you are on it. */
+.mat-lesson {
+  display: flex; gap: 10px; align-items: flex-start;
+  padding: 6px 8px; margin-inline: -8px;
+  color: inherit; text-decoration: none;
+}
+a.mat-lesson:hover { background: var(--brand-050); text-decoration: none; }
+a.mat-lesson:hover .mat-go { color: var(--brand-700); }
+a.mat-lesson:focus-visible { outline: 2px solid var(--brand-700); outline-offset: -2px; }
+.mat-go { margin-inline-start: auto; align-self: center; color: var(--border-strong); font-size: 11px; }
 .mat-n {
   flex: 0 0 26px; width: 26px; height: 22px; display: grid; place-items: center;
   font-size: 12px; font-weight: 700; color: var(--muted);
@@ -1770,6 +1780,14 @@ button.cal-tag:hover { background: var(--brand-100); color: var(--brand-700); }
 @media (max-width: 560px) {
   .mat-unit-body { padding-left: 14px; }
 }
+
+/* ----- 27. One lesson ------------------------------------------------------ */
+/* The rule and the trap are the whole explanation, so they are set apart from
+   each other: one is what is true, the other is how the test uses it. */
+.lesson-rule { border-left: 3px solid var(--brand-600); padding-inline-start: 12px; }
+.lesson-trap { border-left: 3px solid var(--warn); padding-inline-start: 12px; }
+.lesson-rule p, .lesson-trap p { margin: 2px 0 0; }
+#lesson-nav { gap: 10px; }
 
 @media print {
   .app-sidebar, .app-topbar, .tabbar, .q-footer, #desmos-panel { display: none !important; }
