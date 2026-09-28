@@ -1605,6 +1605,17 @@ body.tour-open .app-topbar, body.tour-open #add-word { z-index: 1; }
    week, so its marker is not a number in the sequence. */
 .pg-hw-item.is-weekly .pg-hw-n { background: var(--warn); }
 
+/* A gate is a checkpoint, not a stretch of road: its pin is marked out from
+   the phases either side of it. */
+.rm-stop.rm-gate .rm-pin { border-color: var(--warn); }
+.rm-stop.rm-gate.rm-current .rm-pin, .rm-stop.rm-gate.rm-done .rm-pin { background: var(--warn); border-color: var(--warn); }
+.rm-panel.is-current .rm-panel-n { background: var(--brand-600); }
+
+/* The codes in a stretch, each a link into its own unit. */
+.rm-codes { display: flex; flex-wrap: wrap; gap: 4px; }
+.rm-codes .pg-tag { text-decoration: none; }
+.rm-codes .pg-tag:hover { background: var(--brand-200); text-decoration: none; }
+
 /* The course under the roadmap. The map half is sized to the window; with the
    course below it the screen is a page again and has to be allowed to scroll. */
 .rm-screen.has-course { height: auto; }

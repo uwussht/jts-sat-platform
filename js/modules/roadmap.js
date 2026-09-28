@@ -1,32 +1,43 @@
 /* ==========================================================================
    Screen: Roadmap (#/roadmap)
 
-   The whole preparation drawn as a level map: one winding road from the
-   diagnostic at the bottom to exam day at the top, a numbered stop for each
-   phase, a ring around each stop for how much of that phase is done, three
-   stars over it, and a marker showing which stop the student is standing on
-   today.
+   The course drawn as a level map: one winding road from the baseline
+   diagnostic at the bottom to exam day at the top, a stop for each thing that
+   actually happens on the way, a ring around each stop for how much of it is
+   behind you, three stars over it, and a marker showing where you are
+   standing today.
+
+   The six stops are the course's own, not a shape invented for the drawing:
+
+     1  the baseline diagnostic, which lesson 1 opens with
+     2  the content phase — every topic once, by unit
+     3  gate 1, passed on the weekly practice test
+     4  the hard Module 2 phase
+     5  gate 2
+     6  test week, and then the exam
+
+   Everything they say comes from js/data/programme*.js, so this screen cannot
+   disagree with the materials, the plan or the guide. Which lesson numbers
+   and which weeks they cover depends on the student's schedule — three
+   lessons a week or two — because that is the one thing the two schedules
+   really change.
 
    The map does not scroll. It is sized to the window so the road always fits
    on one screen; moving along it is done with the arrows, the keyboard, a
-   swipe or by tapping a stop, and only the detail beside the map changes.
+   swipe or by pressing a stop, and only the detail beside the map changes.
    Being able to see the whole road at once is the entire point of drawing a
-   road — so the detail sits in a column NEXT to the map rather than under it,
-   which is also what lets the map be big enough to be worth looking at.
+   road — so the detail sits in a column NEXT to the map rather than under it.
 
    Two jobs, one module:
 
-   - #/roadmap is the map of THIS student's plan;
+   - #/roadmap is the map of the course this student is on;
    - JTS.roadmap.reminder() is the compact version the dashboard shows every
      day, so the road is a reminder and not a page you have to remember to open.
-
-   Nothing here invents structure. Phase boundaries come from
-   JTS.planner.phaseForWeek and the current phase from JTS.planner.currentPhase,
-   so this screen and the plan can never disagree.
    ========================================================================== */
 (function () {
   'use strict';
   var U = JTS.util, t = JTS.t, ui = JTS.ui, S = JTS.store;
+  var P = JTS.data.programme;
 
   /* The map is drawn in a fixed 400×400 space and the stage is kept square by
      the sizer below, so every position here can be a plain percentage of the
@@ -35,6 +46,8 @@
   var ROWS = [352, 262, 172, 82];   /* the horizontal runs of the road */
   var LEFT = 80, RIGHT = 320;       /* where a run starts and ends */
   var TURN = 58;                    /* how far a U-turn bulges past the run */
+
+  function pick(obj) { return JTS.i18n.pick(obj, S.settings().uiLang); }
 
   /**
    * One road, back and forth up the map, with a U-turn at each end — the shape
@@ -54,50 +67,88 @@
     return d + 'L' + (ROWS.length % 2 === 0 ? LEFT : RIGHT) + ',' + ROWS[ROWS.length - 1];
   }
 
-  /** Someone who asked not to be moved is not moved. */
-  function stillPlease() {
-    return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-  }
-
   /* ---------------------------------------------------------------- model */
 
-  /** Week ranges per phase, derived from the planner rather than restated. */
-  function phaseSpans(totalWeeks) {
-    var spans = {};
-    for (var w = 0; w < totalWeeks; w++) {
-      var id = JTS.planner.phaseForWeek(w, totalWeeks);
-      if (!spans[id]) spans[id] = { from: w, to: w };
-      else spans[id].to = w;
-    }
-    return spans;
+  function perWeek() {
+    return JTS.programme ? JTS.programme.perWeek() : 3;
   }
 
-  /** Lessons done / total inside a phase's week range. */
-  function phaseProgress(plan, span) {
-    if (!plan || !span) return null;
-    var done = 0, total = 0;
-    plan.weeks.slice(span.from, span.to + 1).forEach(function (wk) {
-      wk.lessons.forEach(function (l) {
-        total++;
-        if (l.status === 'done') done++;
-      });
-    });
-    return { done: done, total: total };
-  }
-
-  /** The same count over the whole plan, for the line above the map. */
-  function planProgress(plan) {
-    if (!plan) return null;
-    var done = 0, total = 0;
-    plan.weeks.forEach(function (wk) {
-      wk.lessons.forEach(function (l) { total++; if (l.status === 'done') done++; });
-    });
-    return { done: done, total: total };
+  /** How many lessons of the course are behind this student. */
+  function doneCount() {
+    return JTS.programme ? JTS.programme.doneCount() : 0;
   }
 
   /**
-   * Stars are the phase's own sessions — none yet, some, most, all of them.
-   * They are progress through the plan and not a score of any kind.
+   * The six stops, from the course.
+   *
+   * `from`/`to` are lesson numbers on this student's schedule; `weeks` is the
+   * range of weeks they fall in. A gate is a single point rather than a range:
+   * it is one practice test, sat in the week the phase before it ends.
+   */
+  function stops() {
+    var pw = perWeek();
+    var out = [];
+    var phases = P.phases;
+    var gates = P.gates;
+
+    out.push({
+      id: 1, kind: 'diagnostic', from: 1, to: 1,
+      name: t('diag.title'),
+      lead: t('roadmap.diagLead'),
+      weeks: t('prog.weekNo', { n: 1 }),
+      cta: { href: '#/diagnostic', label: t('diag.title') }
+    });
+
+    phases.forEach(function (ph, i) {
+      var from = pw === 2 ? ph.from2 : ph.from3;
+      var to = pw === 2 ? ph.to2 : ph.to3;
+      out.push({
+        id: out.length + 1, kind: 'phase', phase: ph, from: from, to: to,
+        name: pick(ph.name),
+        lead: pick(ph.lead),
+        weeks: t('prog.weeks', { range: pw === 2 ? ph.weeks2 : ph.weeks3 }),
+        cta: { href: '#/materials', label: t('nav.materials') }
+      });
+      /* The gate that closes this phase is the next stop, because on the road
+         it genuinely is: you do not walk past it. */
+      var gate = gates.filter(function (g) { return g.n === ph.gate; })[0];
+      if (gate) {
+        var at = pw === 2 ? gate.afterLesson2 : gate.afterLesson3;
+        var test = pw === 2 ? gate.test2 : gate.test3;
+        out.push({
+          id: out.length + 1, kind: 'gate', gate: gate, from: at, to: at,
+          name: pick(gate.name),
+          lead: t('roadmap.gateLead', { name: pick(ph.name) }),
+          weeks: t('prog.testNo', { n: test }),
+          cta: { href: '#/mocks', label: t('nav.mocks') }
+        });
+      }
+    });
+    return out;
+  }
+
+  /** Lessons done / total inside a stop's own range. */
+  function stopProgress(stop, done) {
+    var total = stop.to - stop.from + 1;
+    var inside = U.clamp(done - (stop.from - 1), 0, total);
+    return { done: inside, total: total };
+  }
+
+  /**
+   * A stop is done when its last lesson is behind you, and exactly one stop is
+   * current: the first one that is not. The ranges overlap on purpose — the
+   * diagnostic IS lesson 1 of the content phase — so "the first unfinished
+   * one" is the only reading that puts the marker in one place.
+   */
+  function statusOf(stop, done, list) {
+    if (done >= stop.to) return 'done';
+    if (list && currentStop(list, done) !== stop.id) return 'ahead';
+    return 'current';
+  }
+
+  /**
+   * Stars are the stop's own lessons — none yet, some, most, all of them.
+   * They are progress through the course and not a score of any kind.
    */
   function starsFor(prog) {
     if (!prog || !prog.total || !prog.done) return 0;
@@ -105,88 +156,17 @@
     return r >= 1 ? 3 : r >= 0.6 ? 2 : 1;
   }
 
-  /**
-   * How far through a phase, 0..100.
-   *
-   * A phase with no sessions of its own — the diagnostic week usually has
-   * none — is not 0%: there was nothing in it to do. Once the calendar is past
-   * it there is nothing left, so it counts as walked; while it is still ahead
-   * it counts as untouched. Printing 0% under a tick would be worse than
-   * either, because it is the one reading that is certainly wrong.
-   */
-  function pctOfPhase(prog, status) {
+  function pctOfStop(prog, status) {
     if (!prog || !prog.total) return status === 'done' ? 100 : 0;
     return Math.round((prog.done / prog.total) * 100);
   }
 
-  /** Real calendar dates for a phase, so "week 5" also means something. */
-  function spanDates(plan, span) {
-    if (!plan || !span || !plan.weeks[span.from]) return null;
-    var from = U.parseISO(plan.weeks[span.from].monday);
-    var lastWeek = plan.weeks[Math.min(span.to, plan.weeks.length - 1)];
-    var to = U.addDays(U.parseISO(lastWeek.monday), 6);
-    return t('roadmap.dates', { from: U.fmtDate(from), to: U.fmtDate(to) });
-  }
-
-  /** "Oct 2026", in the student's own language. */
-  function monthName(d, lang) {
-    try {
-      return d.toLocaleDateString(lang === 'kk' ? 'kk-KZ' : lang === 'ru' ? 'ru-RU' : 'en-GB',
-                                  { month: 'short', year: 'numeric' });
-    } catch (e) {
-      return String(d.getMonth() + 1) + '.' + d.getFullYear();
+  /** Which stop a student is standing on. */
+  function currentStop(list, done) {
+    for (var i = 0; i < list.length; i++) {
+      if (done < list[i].to) return list[i].id;
     }
-  }
-
-  /**
-   * Where today sits in the plan, counted in calendar months rather than in
-   * weeks: how many months the plan touches and which of them this is.
-   */
-  function monthPosition(plan) {
-    if (!plan || !plan.weeks.length) return null;
-    var lang = S.settings().uiLang;
-    var keys = [], names = [];
-    plan.weeks.forEach(function (wk) {
-      for (var d = 0; d < 7; d++) {
-        var day = U.addDays(U.parseISO(wk.monday), d);
-        var k = day.getFullYear() + '-' + day.getMonth();
-        if (keys.indexOf(k) < 0) { keys.push(k); names.push(monthName(day, lang)); }
-      }
-    });
-    var today = U.today();
-    var here = keys.indexOf(today.getFullYear() + '-' + today.getMonth());
-    return {
-      n: (here < 0 ? 0 : here) + 1, total: keys.length,
-      name: names[here < 0 ? 0 : here]
-    };
-  }
-
-  /**
-   * Which months a phase covers. Weeks were what the planner counts in, but
-   * "weeks 7–13" is a number a student has to convert before it means
-   * anything; the months are the thing they already have on a wall.
-   */
-  function monthsLabel(plan, span, phase) {
-    if (!plan || !span || !plan.weeks[span.from]) {
-      return t('roadmap.share', { n: Math.round(phase.share * 100) });
-    }
-    var lang = S.settings().uiLang;
-    var from = U.parseISO(plan.weeks[span.from].monday);
-    var lastWeek = plan.weeks[Math.min(span.to, plan.weeks.length - 1)];
-    var to = U.addDays(U.parseISO(lastWeek.monday), 6);
-    var a = monthName(from, lang), b = monthName(to, lang);
-    return a === b ? a : t('roadmap.months', { from: a, to: b });
-  }
-
-  function ctaFor(phaseId) {
-    switch (phaseId) {
-      case 1: return { href: '#/diagnostic', label: t('diag.title') };
-      case 2: return { href: '#/practice', label: t('nav.practice') };
-      case 3: return { href: '#/practice/weak', label: t('practice.weakTitle') };
-      case 4: return { href: '#/practice', label: t('practice.mode.rwModule') };
-      case 5: return { href: '#/mocks', label: t('nav.mocks') };
-      default: return { href: '#/progress', label: t('progress.title') };
-    }
+    return list.length;
   }
 
   /* ------------------------------------------------------------------ map */
@@ -221,16 +201,17 @@
   /**
    * The level map.
    *
-   * opts.statusOf(phase)  'done' | 'current' | 'ahead'
-   * opts.starsOf(phase)   0..3 — how much of that phase is done
-   * opts.pctOf(phase)     0..100 — the same thing as the ring around the stop
-   * opts.onSelect(id)     called with the phase a student pressed
-   * opts.onGoal()         called when the end of the road is pressed
-   * opts.here             initials for the "you are here" marker
+   * opts.list          the stops
+   * opts.statusOf(s)   'done' | 'current' | 'ahead'
+   * opts.starsOf(s)    0..3 — how much of that stop is done
+   * opts.pctOf(s)      0..100 — the same thing as the ring around the stop
+   * opts.onSelect(id)  called with the stop a student pressed
+   * opts.onGoal()      called when the end of the road is pressed
+   * opts.here          initials for the "you are here" marker
    */
   function levelMap(opts) {
-    var phases = JTS.planner.phases;
-    var stops = phases.length + 1;           /* the exam is the last stop */
+    var list = opts.list;
+    var total = list.length + 1;             /* the exam is the last stop */
     var stage = U.el('div.rm-stage', {
       role: 'group', 'aria-label': t('roadmap.mapLabel')
     });
@@ -254,14 +235,15 @@
     var nodes = U.el('div.rm-nodes', { style: 'visibility:hidden' });
     stage.appendChild(nodes);
 
-    phases.forEach(function (phase, i) {
-      var status = opts.statusOf(phase);
-      var stars = opts.starsOf(phase);
-      var pct = opts.pctOf(phase);
-      var wrap = U.el('div.rm-stop.rm-' + status, { style: '--i:' + i });
+    list.forEach(function (stop, i) {
+      var status = opts.statusOf(stop);
+      var stars = opts.starsOf(stop);
+      var pct = opts.pctOf(stop);
+      var wrap = U.el('div.rm-stop.rm-' + status + (stop.kind === 'gate' ? '.rm-gate' : ''),
+        { style: '--i:' + i });
       wrap.appendChild(starRow(stars));
 
-      /* The ring is the phase's own progress, drawn where the eye already is.
+      /* The ring is the stop's own progress, drawn where the eye already is.
          It is a plain conic gradient behind the pin, so the pin covers all of
          it but the rim. */
       wrap.appendChild(U.el('span.rm-ring', {
@@ -269,15 +251,15 @@
       }));
       wrap.appendChild(U.el('button.rm-pin', {
         type: 'button',
-        text: status === 'done' ? '✓' : String(phase.id),
-        'aria-label': t('roadmap.step', { n: phase.id, total: phases.length }) + ' · ' +
-          t('plan.phase.' + phase.key) + ' · ' + t('roadmap.pctDone', { n: pct }) + ' · ' +
+        text: status === 'done' ? '✓' : stop.kind === 'gate' ? '⚑' : String(stop.id),
+        'aria-label': t('roadmap.step', { n: stop.id, total: list.length }) + ' · ' +
+          stop.name + ' · ' + t('roadmap.pctDone', { n: pct }) + ' · ' +
           t('roadmap.stars', { n: stars }),
         'aria-current': status === 'current' ? 'step' : null,
-        dataset: { phase: String(phase.id) },
-        onclick: function () { opts.onSelect(phase.id); }
+        dataset: { phase: String(stop.id) },
+        onclick: function () { opts.onSelect(stop.id); }
       }));
-      wrap.appendChild(U.el('span.rm-name', { text: t('plan.phase.' + phase.key) }));
+      wrap.appendChild(U.el('span.rm-name', { text: stop.name }));
 
       if (status === 'current') {
         wrap.appendChild(U.el('span.rm-here', {
@@ -290,7 +272,7 @@
     /* The end of the road, drawn as the prize it is: everything before it
        exists to make that one morning go well. Pressing it says what that
        morning is and where the date is changed. */
-    nodes.appendChild(U.el('div.rm-stop.rm-goal', { style: '--i:' + phases.length }, [
+    nodes.appendChild(U.el('div.rm-stop.rm-goal', { style: '--i:' + list.length }, [
       U.el('button.rm-gift', {
         type: 'button', text: '★',
         'aria-label': t('roadmap.examDay') + ' · ' + (opts.examDate || ''),
@@ -301,7 +283,7 @@
     ]));
 
     var doneStops = 0;
-    phases.forEach(function (p, i) { if (opts.statusOf(p) === 'done') doneStops = i + 1; });
+    list.forEach(function (s, i) { if (opts.statusOf(s) === 'done') doneStops = i + 1; });
 
     /* Place the stops along the road by measuring it, so a pin can never drift
        off the tarmac however the road is redrawn. Percentages, so a resize
@@ -311,7 +293,7 @@
       if (!line || !line.getTotalLength) { nodes.style.visibility = ''; return; }
       var len = line.getTotalLength();
       U.$$('.rm-stop', nodes).forEach(function (el, i) {
-        var pt = line.getPointAtLength(len * (i / (stops - 1)));
+        var pt = line.getPointAtLength(len * (i / (total - 1)));
         el.style.left = (pt.x / VB.w * 100) + '%';
         el.style.top = (pt.y / VB.h * 100) + '%';
       });
@@ -321,7 +303,7 @@
       /* The walked stretch paints itself in from the start of the road, which
          is the one place on this screen where a second of motion says
          something: that is the distance you have actually covered. */
-      var target = len * (1 - doneStops / (stops - 1));
+      var target = len * (1 - doneStops / (total - 1));
       /* The dash pattern is put in place with the transition switched off —
          otherwise the browser animates the road from "fully drawn" down to the
          starting point, which paints a stretch nobody has walked. */
@@ -352,42 +334,68 @@
     ]);
   }
 
-  /** Everything worth knowing about one phase, for the panel beside the map. */
-  function phasePanel(phase, info) {
-    var actions = JTS.planner.actionsForPhase(phase.id, true)
-      .filter(function (a, i, arr) { return arr.indexOf(a) === i; });
-
+  /** The stop a student is reading, beside the map. */
+  function stopPanel(stop, info, listLength) {
     /* .is-* and not .rm-done/.rm-current: those two mean "a stop on the
        map" and are counted there — the panel is not a stop. */
     var panel = U.el('div.card.rm-panel.is-' + info.status, null, [
       U.el('div.rm-panel-head', null, [
-        U.el('span.rm-panel-n', { text: String(phase.id), 'aria-hidden': 'true' }),
+        U.el('span.rm-panel-n', {
+          text: stop.kind === 'gate' ? '⚑' : String(stop.id), 'aria-hidden': 'true'
+        }),
         U.el('div.rm-panel-title', null, [
           U.el('div.xsmall.rm-stepno', {
-            text: t('roadmap.step', { n: phase.id, total: JTS.planner.phases.length })
+            text: t('roadmap.step', { n: stop.id, total: listLength })
           }),
-          U.el('div.h2', { text: t('plan.phase.' + phase.key) })
+          U.el('div.h2', { text: stop.name })
         ])
       ]),
       U.el('div.row.row-wrap.rm-panel-tags', null, [
         info.status === 'current' ? U.el('span.badge', { text: t('roadmap.youAreHere') })
           : info.status === 'done' ? U.el('span.badge.badge-ok', { text: t('common.done') })
           : null,
-        U.el('span.badge.badge-muted', { text: info.months }),
+        U.el('span.badge.badge-muted', { text: stop.weeks }),
+        stop.kind === 'gate'
+          ? null
+          : U.el('span.badge.badge-muted', {
+              text: t('prog.lessonRange', { from: stop.from, to: stop.to })
+            }),
+        /* "Lessons 34–42" is a position in the course; the dates are when the
+           student's own plan puts them, which is the question they actually
+           have when they look at a stop that is still ahead. */
         info.dates ? U.el('span.badge.badge-muted', { text: info.dates }) : null
       ]),
-      U.el('p.small.muted.rm-panel-desc', { text: t('roadmap.desc.' + phase.key) }),
-      U.el('div.rm-fact', null, [
-        U.el('span.rm-fact-lab', { text: t('roadmap.whatYouDo') }),
-        U.el('span', { text: t('roadmap.you.' + phase.key) })
-      ]),
-      U.el('div.rm-fact', null, [
-        U.el('span.rm-fact-lab', { text: t('roadmap.byTheEnd') }),
-        U.el('span', { text: t('roadmap.goal.' + phase.key) })
-      ])
+      U.el('p.small.muted.rm-panel-desc', { text: stop.lead })
     ]);
 
-    if (info.progress && info.progress.total) {
+    /* What is actually in this stretch of road: the codes, in order. A gate
+       has no lessons of its own — it is a test — so it says what it demands
+       instead. */
+    if (stop.kind === 'gate') {
+      /* The rule above already says what a gate is and what failing it costs;
+         saying it twice in two labels was the panel talking to itself. */
+      panel.appendChild(U.el('div.rm-fact', null, [
+        U.el('span.rm-fact-lab', { text: t('roadmap.whatYouDo') }),
+        U.el('span', { text: t('roadmap.gateWhat') })
+      ]));
+    } else if (JTS.programme) {
+      var codes = P.order(perWeek())
+        .filter(function (s) { return s.n >= stop.from && s.n <= stop.to; })
+        .reduce(function (acc, s) { return acc.concat(s.lessons); }, []);
+      if (codes.length) {
+        var chips = U.el('div.rm-codes');
+        codes.slice(0, 24).forEach(function (l) {
+          chips.appendChild(U.el('a.pg-tag', {
+            href: '#/materials/lesson?code=' + l.code, text: l.code, title: pick(l.t)
+          }));
+        });
+        panel.appendChild(U.el('div.stack-sm', null, [
+          U.el('span.rm-fact-lab', { text: t('roadmap.whatYouDo') }), chips
+        ]));
+      }
+    }
+
+    if (stop.kind !== 'gate' && info.progress && info.progress.total) {
       panel.appendChild(U.el('div.rm-panel-bar', null, [
         ui.bar(info.progress.done, info.progress.total,
           info.progress.done === info.progress.total ? 'bar-ok' : ''),
@@ -397,26 +405,23 @@
       ]));
     }
 
-    var cta = ctaFor(phase.id);
     panel.appendChild(U.el('div.rm-panel-foot', null, [
-      U.el('div.row.row-wrap', null, actions.map(function (a) {
-        return U.el('span.badge.badge-muted', { text: t('plan.action.' + a) });
-      })),
+      U.el('span'),
       U.el('a.btn.btn-sm' + (info.status === 'current' ? '.btn-primary' : ''), {
-        href: cta.href, text: cta.label
+        href: stop.cta.href, text: stop.cta.label
       })
     ]));
     return panel;
   }
 
   /** Six squares on a rule: the whole road at a glance, for the dashboard. */
-  function miniTrack(current) {
+  function miniTrack(list, current) {
     var wrap = U.el('div.rm-mini', { role: 'img',
-      'aria-label': t('roadmap.step', { n: current, total: JTS.planner.phases.length }) });
-    JTS.planner.phases.forEach(function (p) {
+      'aria-label': t('roadmap.step', { n: current, total: list.length }) });
+    list.forEach(function (s) {
       wrap.appendChild(U.el('span.rm-mini-i' +
-        (p.id < current ? '.done' : p.id === current ? '.now' : ''), {
-        text: String(p.id), title: t('plan.phase.' + p.key)
+        (s.id < current ? '.done' : s.id === current ? '.now' : ''), {
+        text: s.kind === 'gate' ? '⚑' : String(s.id), title: s.name
       }));
     });
     return wrap;
@@ -425,37 +430,34 @@
   /**
    * The dashboard reminder. A student should not have to go looking for the
    * road to remember which part of it they are on, so Today carries this every
-   * morning: which step, what it is for, how far in, one way back to the map.
+   * morning: which stop, what it is for, how far in, one way back to the map.
    */
   function reminder() {
     var state = S.state();
     if (!state) return null;
-    var current = JTS.planner.currentPhase();
-    var phase = JTS.planner.phases.filter(function (p) { return p.id === current; })[0]
-      || JTS.planner.phases[0];
-    var plan = state.plan;
-    var totalWeeks = plan ? plan.weeks.length : JTS.analytics.horizonWeeks();
-    var span = phaseSpans(totalWeeks)[phase.id];
-    var prog = phaseProgress(plan, span);
-    var weekNo = JTS.planner.todayWeekIndex() + 1;
-    var mp = monthPosition(plan);
+    var list = stops();
+    var done = doneCount();
+    var current = currentStop(list, done);
+    var stop = list.filter(function (s) { return s.id === current; })[0] || list[0];
+    var prog = stopProgress(stop, done);
+    var pw = perWeek();
+    var week = Math.min(Math.ceil(Math.max(done + 1, 1) / pw), P.scheduleOf(pw).weeks);
 
     return U.el('div.card.stack-sm', null, [
       U.el('div.row-between.row-wrap', null, [
         U.el('div.eyebrow', { text: t('roadmap.whereYouAre') }),
-        plan ? U.el('span.badge.badge-muted', {
-          text: mp ? t('roadmap.monthOf', { month: mp.name, n: mp.n, total: mp.total })
-                   : t('roadmap.weekOf', { n: weekNo, total: totalWeeks })
-        }) : null
+        U.el('span.badge.badge-muted', {
+          text: t('roadmap.weekOf', { n: week, total: P.scheduleOf(pw).weeks })
+        })
       ]),
-      miniTrack(current),
+      miniTrack(list, current),
       U.el('div.stack-sm', null, [
         U.el('div.row.row-wrap', { style: 'gap:8px;align-items:center' }, [
-          U.el('b', { text: t('roadmap.step', { n: phase.id, total: JTS.planner.phases.length }) +
-            ' · ' + t('plan.phase.' + phase.key) }),
+          U.el('b', { text: t('roadmap.step', { n: stop.id, total: list.length }) +
+            ' · ' + stop.name }),
           starRow(starsFor(prog))
         ]),
-        U.el('p.small.muted', { text: t('roadmap.you.' + phase.key) })
+        U.el('p.small.muted', { text: stop.lead })
       ]),
       prog && prog.total ? ui.bar(prog.done, prog.total) : null,
       prog && prog.total ? U.el('div.xsmall.muted', {
@@ -465,7 +467,7 @@
     ]);
   }
 
-  JTS.roadmap = { reminder: reminder, phaseSpans: phaseSpans, starsFor: starsFor };
+  JTS.roadmap = { reminder: reminder, stops: stops, starsFor: starsFor };
 
   /* --------------------------------------------------------------- screen */
 
@@ -480,30 +482,35 @@
       var screen = U.el('div.container.screen.rm-screen' + (JTS.programme ? '.has-course' : ''));
       root.appendChild(screen);
 
-      var phases = JTS.planner.phases;
-      var plan = state.plan;
-      var current = JTS.planner.currentPhase();
-      var totalWeeks = plan ? plan.weeks.length : JTS.analytics.horizonWeeks();
-      var spans = phaseSpans(totalWeeks);
+      var list = stops();
+      var done = doneCount();
+      var pw = perWeek();
+      var sch = P.scheduleOf(pw);
+      var current = currentStop(list, done);
+      var selected = current;
       var days = JTS.analytics.daysToExam();
       var exam = state.examDate && state.examDate.testDate;
       var examLabel = exam ? U.fmtDate(U.parseISO(exam), S.settings().uiLang)
         : t('settings.noExamDate');
-      var overall = planProgress(plan);
-      var selected = current;
+      var week = Math.min(Math.ceil(Math.max(done + 1, 1) / pw), sch.weeks);
 
-      function statusOf(p) {
-        return p.id < current ? 'done' : p.id === current ? 'current' : 'ahead';
+      function statusFor(stop) { return statusOf(stop, done, list); }
+      /** When this student's own plan puts a stop's lessons. */
+      function datesFor(stop) {
+        var all = JTS.planner.allLessons ? JTS.planner.allLessons() : [];
+        var from = all[stop.from - 1], to = all[Math.min(stop.to, all.length) - 1];
+        if (!from || !to) return null;
+        var lang = S.settings().uiLang;
+        return t('roadmap.dates', {
+          from: U.fmtDate(U.parseISO(from.date), lang),
+          to: U.fmtDate(U.parseISO(to.date), lang)
+        });
       }
-      function pctOf(p) {
-        return pctOfPhase(phaseProgress(plan, spans[p.id]), statusOf(p));
-      }
-      function infoFor(p) {
+      function infoFor(stop) {
         return {
-          status: statusOf(p),
-          months: monthsLabel(plan, spans[p.id], p),
-          dates: spanDates(plan, spans[p.id]),
-          progress: phaseProgress(plan, spans[p.id])
+          status: statusFor(stop),
+          progress: stopProgress(stop, done),
+          dates: datesFor(stop)
         };
       }
 
@@ -512,20 +519,18 @@
       var top = U.el('div.rm-top', null, [
         U.el('div.rm-top-who', null, [
           U.el('div.eyebrow', { text: t('roadmap.whereYouAre') }),
-          U.el('div.h2', { text: t('plan.phase.' +
-            (phases.filter(function (p) { return p.id === current; })[0] || phases[0]).key) })
+          U.el('div.h2', {
+            text: (list.filter(function (s) { return s.id === current; })[0] || list[0]).name
+          })
         ]),
         U.el('div.row.row-wrap.rm-top-meta', null, [
           U.el('span.badge.badge-muted', {
             text: t('today.countdown') + ': ' + (days === null ? '—' : Math.max(0, days))
           }),
-          plan ? U.el('span.badge.badge-muted', {
-            text: (function () {
-              var m = monthPosition(plan);
-              return m ? t('roadmap.monthOf', { month: m.name, n: m.n, total: m.total })
-                       : t('roadmap.weekOf', { n: JTS.planner.todayWeekIndex() + 1, total: totalWeeks });
-            })()
-          }) : null,
+          U.el('span.badge.badge-muted', {
+            text: t('roadmap.weekOf', { n: week, total: sch.weeks })
+          }),
+          U.el('span.badge.badge-muted', { text: t('prog.perWeek', { n: pw }) }),
           U.el('button.btn.btn-sm', {
             type: 'button', text: t('roadmap.howTitle'),
             onclick: function () {
@@ -534,21 +539,19 @@
           })
         ])
       ]);
-      /* How far along the whole road, not just this phase: a thin rule under
+      /* How far along the whole course, not just this stop: a thin rule under
          the header so the answer is on screen without a click. */
-      if (overall && overall.total) {
-        top.appendChild(U.el('div.rm-total', null, [
-          U.el('span.rm-total-lab', { text: t('roadmap.overall') }),
-          ui.bar(overall.done, overall.total,
-            overall.done === overall.total ? 'bar-ok' : ''),
-          U.el('span.rm-total-n', {
-            text: t('roadmap.pctDone', { n: U.pct(overall.done, overall.total) })
-          })
-        ]));
-      }
+      top.appendChild(U.el('div.rm-total', null, [
+        U.el('span.rm-total-lab', { text: t('roadmap.overall') }),
+        ui.bar(Math.min(done, P.lessonsTotal), P.lessonsTotal,
+          done >= P.lessonsTotal ? 'bar-ok' : ''),
+        U.el('span.rm-total-n', {
+          text: t('roadmap.pctDone', { n: U.pct(Math.min(done, P.lessonsTotal), P.lessonsTotal) })
+        })
+      ]));
       screen.appendChild(top);
 
-      if (!plan) {
+      if (!state.plan) {
         screen.appendChild(U.el('div.notice.notice-warn', null, [
           U.el('div', null, [
             U.el('div', { text: t('roadmap.noPlan') }),
@@ -558,11 +561,10 @@
         ]));
       }
 
-      /* Map on the left, the step you are reading on the right. Side by side
+      /* Map on the left, the stop you are reading on the right. Side by side
          and not stacked, because the road has to stay whole on one screen and
          because a detail two hundred pixels under the pin you just pressed
-         does not read as that pin's detail. The panel has the whole column to
-         itself, so no phase is long enough to make it scroll. */
+         does not read as that pin's detail. */
       var mapHost = U.el('div.rm-map');
       var panelHost = U.el('div.rm-panel-host');
       var left = U.el('div.rm-left');
@@ -588,15 +590,15 @@
          full render() would redraw the whole screen for a click that changed
          one card, and would take the scroll position with it. */
       function select(id) {
-        selected = U.clamp(id, 1, phases.length);
-        var phase = phases.filter(function (p) { return p.id === selected; })[0];
+        selected = U.clamp(id, 1, list.length);
+        var stop = list.filter(function (s) { return s.id === selected; })[0];
 
         U.clear(panelHost);
-        panelHost.appendChild(phasePanel(phase, infoFor(phase)));
+        panelHost.appendChild(stopPanel(stop, infoFor(stop), list.length));
 
-        stepLabel.textContent = t('roadmap.step', { n: selected, total: phases.length });
+        stepLabel.textContent = t('roadmap.step', { n: selected, total: list.length });
         prevBtn.disabled = selected === 1;
-        nextBtn.disabled = selected === phases.length;
+        nextBtn.disabled = selected === list.length;
 
         U.$$('.rm-stop', mapHost).forEach(function (el) {
           var pin = el.querySelector('.rm-pin');
@@ -626,14 +628,15 @@
       }
 
       mapHost.appendChild(levelMap({
-        statusOf: statusOf,
-        starsOf: function (p) {
-          var pr = phaseProgress(plan, spans[p.id]);
-          /* Same reading as the ring: a walked phase with nothing in it is
+        list: list,
+        statusOf: statusFor,
+        starsOf: function (s) {
+          var pr = stopProgress(s, done);
+          /* Same reading as the ring: a walked stop with nothing in it is
              finished, not unstarted. */
-          return (!pr || !pr.total) && statusOf(p) === 'done' ? 3 : starsFor(pr);
+          return (!pr || !pr.total) && statusFor(s) === 'done' ? 3 : starsFor(pr);
         },
-        pctOf: pctOf,
+        pctOf: function (s) { return pctOfStop(stopProgress(s, done), statusFor(s)); },
         here: U.initials(state.profile.name || state.profile.email),
         examDate: examLabel,
         onSelect: select,
@@ -646,7 +649,7 @@
         if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') { e.preventDefault(); select(selected - 1); }
         if (e.key === 'ArrowRight' || e.key === 'ArrowUp') { e.preventDefault(); select(selected + 1); }
         if (e.key === 'Home') { e.preventDefault(); select(1); }
-        if (e.key === 'End') { e.preventDefault(); select(phases.length); }
+        if (e.key === 'End') { e.preventDefault(); select(list.length); }
       });
 
       /* On a phone the arrows are small and the map is most of the screen, so
@@ -663,11 +666,10 @@
 
       select(current);
 
-      /* Under the map: the course itself. The road is the shape of the
-         preparation — six phases a student can hold in their head — and the
-         chronology is the forty-eight steps that fill it. They are two views of
-         the same journey and neither replaces the other, so the chronology goes
-         below rather than beside. */
+      /* Under the map: the course itself, week by week. The road is the shape
+         of the preparation — six stops a student can hold in their head — and
+         the chronology is the forty-five lessons that fill it. They are two
+         views of the same journey and neither replaces the other. */
       if (JTS.programme) {
         screen.appendChild(U.el('div.rm-course', null, [
           U.el('div.row-between.row-wrap', null, [
