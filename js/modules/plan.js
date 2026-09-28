@@ -309,6 +309,23 @@
         }
       ])]));
 
+      /* What the calendar cannot say: what is set after every lesson, and the
+         whole list of topics with the lesson each is taught in. The calendar
+         answers "when"; these answer "what". */
+      if (JTS.programme) {
+        screen.appendChild(JTS.programme.homeworkCard());
+        screen.appendChild(U.el('div.card.stack-sm', { id: 'prog-topics' }, [
+          U.el('div.eyebrow', { text: t('prog.topicsTitle') }),
+          U.el('p.small.muted', { text: t('prog.topicsLead') }),
+          ui.tabs([
+            { id: 'math', label: t('common.math'),
+              render: function (host) { host.appendChild(JTS.programme.topicTable('math')); } },
+            { id: 'rw', label: t('common.rw'),
+              render: function (host) { host.appendChild(JTS.programme.topicTable('rw')); } }
+          ])
+        ]));
+      }
+
       screen.appendChild(U.el('div.legend', null,
         [['', 'planned'], ['done', 'done'], ['skipped', 'skipped'], ['moved', 'moved']]
           .map(function (pair) {

@@ -361,6 +361,39 @@ returns whether a tour is on its way and the router holds the nudge back when
 it is. Without that the modal opened first and its backdrop dimmed the coach
 mark underneath it.
 
+## The JTS 1500+ programme
+
+The school's own course — 48 lessons over four months, three stages, three
+gates — lives in `js/data/programme*.js` and is rendered by
+`js/modules/programme.js` onto three screens:
+
+- **`#/roadmap`** carries the **chronology** under the map. The road is the
+  shape of the preparation, six phases a student can hold in their head; the
+  chronology is the forty-eight steps that fill it. Two views of one journey,
+  so the course goes below the map rather than replacing it — which is why the
+  roadmap is a scrolling page again, while the map and the step beside it still
+  fit one screen on their own.
+- **`#/plan`** carries the **homework** set after every lesson and the **topic
+  tables**. The calendar answers *when*; these answer *what*.
+- **`#/guide`** gained two chapters after the six onboarding teaches: the
+  **words a beginner has not met**, and the **error log**.
+
+**A lesson names tags, never topic prose.** A topic is worded once, in
+`programme-topics.js`, and the lesson list, the plan's tables and the error log
+all read it from there — so renaming a topic renames it everywhere, and a
+lesson cannot drift out of step with the table that defines it. `prog-check`
+enforces both directions: every tag a lesson names exists, and every topic is
+taught in the lesson it claims.
+
+The 46 tags (M1–M29, R1–R17) are the point of the whole scheme: a lesson, a
+homework set, a mistake in the error log and a weak spot in the results all use
+the same word, so "I am bad at Math" becomes "M12 and M17".
+
+**The glossary mixes two kinds of word on purpose** — the exam's (Bluebook,
+grid-in, the adaptive second module) and the programme's (a tag, a set, the
+spiral, a gate) — because a student meeting them in week two does not know
+which kind they are looking at.
+
 ## Months, not weeks
 
 The plan and the roadmap are read at the length of a month.

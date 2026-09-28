@@ -1437,6 +1437,76 @@ button.rm-pin:focus-visible {
 body.tour-open { overflow: hidden; }
 body.tour-open .app-topbar, body.tour-open #add-word { z-index: 1; }
 
+/* ----- 24c. The programme ------------------------------------------------- */
+/* Forty-eight lessons in order. A row is a number, a name and its tags; the
+   tags are the same chips everywhere the programme is shown, so a tag is
+   recognisable before it is read. */
+.pg-stage-head { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--sp-3); flex-wrap: wrap; }
+.pg-stage-head .h3 { margin: 0; }
+.pg-lessons { display: flex; flex-direction: column; }
+.pg-lesson {
+  display: grid; grid-template-columns: 30px minmax(0, 1fr) auto;
+  align-items: start; gap: 10px;
+  padding: 7px 0; border-top: 1px solid var(--border);
+}
+.pg-lesson:first-child { border-top: 0; }
+.pg-lesson.is-gate { background: var(--warn-bg); margin-inline: -6px; padding-inline: 6px; }
+.pg-n {
+  width: 26px; height: 22px; display: grid; place-items: center;
+  font-size: 11.5px; font-weight: 800; color: var(--muted); background: var(--bg);
+}
+.pg-lesson.is-gate .pg-n { background: var(--warn); color: #fff; }
+.pg-body { min-width: 0; }
+.pg-name { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; font-size: 13px; }
+.pg-practice {
+  font-size: 10.5px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .04em; color: var(--muted);
+}
+.pg-topics { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; margin-top: 2px; }
+.pg-topic-text { font-size: 12px; color: var(--muted); }
+.pg-from-log { font-style: italic; }
+
+/* A tag chip. The border carries the level, so hard topics are visible in a
+   list of forty without reading a word of it. */
+.pg-tag {
+  display: inline-block; padding: 1px 5px;
+  font-size: 10.5px; font-weight: 800; font-variant-numeric: tabular-nums;
+  background: var(--brand-050); color: var(--brand-700);
+  border: 1px solid var(--brand-200);
+}
+.pg-tag.lv-core { border-color: var(--brand-400); }
+.pg-tag.lv-hard { background: var(--warn-bg); color: var(--warn); border-color: var(--warn); }
+.pg-level {
+  display: inline-block; margin-inline-end: 4px; padding: 0 5px;
+  font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
+  background: var(--bg); color: var(--muted); border: 1px solid var(--border);
+}
+.pg-level.lv-hard { background: var(--warn-bg); color: var(--warn); border-color: var(--warn); }
+.pg-table td { vertical-align: top; }
+.pg-table td:first-child { white-space: nowrap; }
+
+.pg-zero { border-left: 3px solid var(--brand-600); }
+
+/* The four things that follow every lesson. */
+.pg-hw { display: flex; flex-direction: column; gap: 10px; }
+.pg-hw-item { display: flex; gap: 10px; align-items: flex-start; }
+.pg-hw-n {
+  flex: none; width: 22px; height: 22px; display: grid; place-items: center;
+  background: var(--brand-600); color: #fff; font-size: 11px; font-weight: 750;
+}
+.pg-mins {
+  margin-inline-start: 8px; font-size: 10.5px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .04em; color: var(--muted);
+}
+
+/* The course under the roadmap. The map half is sized to the window; with the
+   course below it the screen is a page again and has to be allowed to scroll. */
+.rm-screen.has-course { height: auto; }
+.rm-screen.has-course .rm-body { min-height: min(72vh, 680px); }
+.rm-course { display: flex; flex-direction: column; gap: var(--sp-4); }
+
+.gl-item { border-left: 2px solid var(--border-strong); padding-inline-start: 10px; }
+
 /* ----- 25. Month calendar ------------------------------------------------- */
 .cal-month { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
 .cal-dow {

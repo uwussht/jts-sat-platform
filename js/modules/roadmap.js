@@ -475,7 +475,9 @@
       var state = S.state();
       if (!state) { JTS.router.go('#/auth'); return; }
 
-      var screen = U.el('div.container.screen.rm-screen');
+      /* The map half is sized to the window; the course under it is a long
+         read, so the screen stops being height-locked once it is there. */
+      var screen = U.el('div.container.screen.rm-screen' + (JTS.programme ? '.has-course' : ''));
       root.appendChild(screen);
 
       var phases = JTS.planner.phases;
@@ -660,6 +662,23 @@
       }, { passive: true });
 
       select(current);
+
+      /* Under the map: the course itself. The road is the shape of the
+         preparation — six phases a student can hold in their head — and the
+         chronology is the forty-eight steps that fill it. They are two views of
+         the same journey and neither replaces the other, so the chronology goes
+         below rather than beside. */
+      if (JTS.programme) {
+        screen.appendChild(U.el('div.rm-course', null, [
+          U.el('div.row-between.row-wrap', null, [
+            U.el('div', null, [
+              U.el('div.eyebrow', { text: t('prog.title') }),
+              U.el('p.small.muted', { text: t('prog.lead'), style: 'margin:4px 0 0' })
+            ])
+          ]),
+          JTS.programme.chronology()
+        ]));
+      }
     }
   });
 })();
