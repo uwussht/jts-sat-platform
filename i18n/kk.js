@@ -564,6 +564,7 @@ JTS.dict.kk = {
   'desmos.section.basics': 'Негіздер',
   'desmos.section.graph': 'Функцияларды сызу',
   'desmos.section.solve': 'Теңдеулерді шешу',
+  'desmos.section.system': 'Теңдеулер жүйесі',
   'desmos.section.tables': 'Кестелер мен регрессия',
   'desmos.section.sat': 'SAT тәсілдері',
   'desmos.section.tasks': 'Практикалық тапсырмалар',

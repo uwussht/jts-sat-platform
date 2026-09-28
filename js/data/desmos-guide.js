@@ -62,6 +62,54 @@ JTS.data.desmosGuide = [
     tryIt: ['y=x^2-5', 'y=3x-7', 'y=|4-x|', 'y=7', 'y>2x+1']
   },
   {
+    id: 'system',
+    /* Lesson 2 of the video series. */
+    lesson: 2,
+    video: 'https://www.youtube.com/embed/oL9_EOn5x7w',
+    videoCredit: {
+      name: 'Tutorlini Test Prep — Desmos Lesson #2',
+      url: 'https://youtu.be/oL9_EOn5x7w'
+    },
+    lead: {
+      en: 'A system is two equations that have to be true at the same time, and the answer is the one point that works in both. The thing worth knowing is that you do not have to rearrange either of them first — that is the step most calculators make you do, and this one does not.',
+      ru: 'Система — это два уравнения, которые должны выполняться одновременно, а ответ — та единственная точка, которая подходит обоим. Главное, что стоит знать: ни одно из них не нужно предварительно преобразовывать — этот шаг требуют почти все калькуляторы, а этот не требует.',
+      kk: 'Жүйе — бір уақытта орындалуы тиіс екі теңдеу, ал жауап — екеуіне де келетін жалғыз нүкте. Білуге тұрарлық нәрсе: екеуінің де түрін алдын ала өзгертудің қажеті жоқ — бұл қадамды көптеген калькулятор талап етеді, бұл — етпейді.'
+    },
+    steps: {
+      en: [
+        '<b>You do not have to get y by itself.</b> Desmos draws anything written with x and y in it, exactly as the question printed it — <code>4x=20</code>, <code>x-y=1</code>, <code>3x+2y=12</code>. Rearranging first is where mistakes come from, so do not.',
+        'Take the system <code>2x + y = 11</code> and <code>x − y = 1</code>. Type <code>2x+y=11</code> in row 1.',
+        'Press Enter and type <code>x-y=1</code> in row 2. Two lines appear.',
+        'If you cannot see them meet, scroll to zoom out and drag the paper around until you find the crossing.',
+        'Click the crossing. Desmos labels it <code>(4, 3)</code>. That is the solution: <b>x = 4 and y = 3</b>.',
+        '<b>Now read what was asked.</b> Here — unlike a single equation — both numbers are real answers. The question may want y (3), or x (4), or something built from them like x + y (7). Work it out from the point; do not guess which number to write.',
+        '<b>It works when one of them is a curve.</b> Try <code>y=x^2-4x+7</code> with <code>y=2x-2</code>. Be careful here: the line only grazes the parabola. Zoom right in on the meeting place to see whether they touch at one point or cross at two — from far away those look the same.',
+        'If the number Desmos gives is a decimal the answer choices do not have, type it on its own row and press the fraction button beside that row.'
+      ],
+      ru: [
+        '<b>Не нужно выражать y.</b> Desmos рисует всё, где есть x и y, ровно в том виде, в каком напечатано в задаче: <code>4x=20</code>, <code>x-y=1</code>, <code>3x+2y=12</code>. Предварительные преобразования — источник ошибок, так что не делайте их.',
+        'Возьмём систему <code>2x + y = 11</code> и <code>x − y = 1</code>. В строке 1 наберите <code>2x+y=11</code>.',
+        'Нажмите Enter и в строке 2 наберите <code>x-y=1</code>. Появятся две прямые.',
+        'Если не видно, где они встречаются, прокрутите колесо, чтобы отдалить, и потаскайте поле мышью.',
+        'Кликните точку пересечения. Desmos подпишет её: <code>(4, 3)</code>. Это и есть решение: <b>x = 4 и y = 3</b>.',
+        '<b>Теперь прочитайте, что спросили.</b> Здесь — в отличие от одного уравнения — оба числа настоящие ответы. Могут спросить y (3), или x (4), или что-то из них, например x + y (7). Посчитайте это по точке, а не угадывайте, какое число записать.',
+        '<b>Работает и когда одно из уравнений — кривая.</b> Попробуйте <code>y=x^2-4x+7</code> вместе с <code>y=2x-2</code>. Здесь осторожно: прямая лишь касается параболы. Приблизьте место встречи вплотную и посмотрите, одна там точка или две, — издали это выглядит одинаково.',
+        'Если Desmos дал десятичную дробь, которой нет в вариантах, введите её в отдельной строке и нажмите кнопку дроби рядом с ней.'
+      ],
+      kk: [
+        '<b>y-ті жеке шығарудың қажеті жоқ.</b> Desmos құрамында x пен y бар кез келген өрнекті есепте басылған күйінде сызады: <code>4x=20</code>, <code>x-y=1</code>, <code>3x+2y=12</code>. Алдын ала түрлендіру — қатенің көзі, сондықтан олай істемеңіз.',
+        '<code>2x + y = 11</code> және <code>x − y = 1</code> жүйесін алайық. 1-жолға <code>2x+y=11</code> теріңіз.',
+        'Enter басып, 2-жолға <code>x-y=1</code> теріңіз. Екі түзу шығады.',
+        'Қай жерде қиылысатыны көрінбесе, дөңгелекпен кішірейтіп, тінтуірмен сүйреңіз.',
+        'Қиылысуды басыңыз. Desmos оны <code>(4, 3)</code> деп белгілейді. Бұл — шешім: <b>x = 4 және y = 3</b>.',
+        '<b>Енді не сұрағанын оқыңыз.</b> Мұнда — жалғыз теңдеуден өзгеше — екі сан да нақты жауап. y (3), x (4) немесе олардан құралған x + y (7) сұралуы мүмкін. Оны нүктеден есептеңіз, қай санды жазуды болжамаңыз.',
+        '<b>Біреуі қисық болғанда да жұмыс істейді.</b> <code>y=x^2-4x+7</code> пен <code>y=2x-2</code> көріңіз. Мұнда абай болыңыз: түзу параболаға тек жанасады. Кездескен жерді жақындатып, бір нүкте ме әлде екі нүкте ме екенін қараңыз — алыстан бұлар бірдей көрінеді.',
+        'Desmos берген сан жауап нұсқаларында жоқ ондық бөлшек болса, оны жеке жолға теріп, қасындағы бөлшек түймесін басыңыз.'
+      ]
+    },
+    tryIt: ['2x+y=11', 'x-y=1', 'y=x^2-4x+7', 'y=2x-2']
+  },
+  {
     id: 'basics', video: null,
     lead: {
       en: 'Type an expression and it is drawn immediately. Everything below lives in the expression list on the left; the graph paper on the right is only a view of it.',
@@ -290,6 +338,21 @@ JTS.data.desmosTasks = [
       en: 'Two rows, two crossings; take the x-values, keep the positive one, and press the fraction button to turn 1.5 into 3/2. Nothing to guess and check.',
       ru: 'Две строки, два пересечения; берём значения x, оставляем положительное и кнопкой дроби превращаем 1,5 в 3/2. Подставлять и проверять нечего.',
       kk: 'Екі жол, екі қиылысу; x мәндерін алып, оңын қалдырып, бөлшек түймесімен 1,5-ті 3/2 етеміз. Қойып тексеретін ештеңе жоқ.'
+    } },
+  /* A system whose answer is neither x nor y on its own — the trap the video
+     spends a question on, and the one a student walks into after learning that
+     "the answer is the x-value" from single equations. */
+  { id: 'dt8', withoutSec: 95, withSec: 30,
+    prompt: {
+      en: 'For the system 5x + 2y = 16 and 3x − 2y = 8, what is the value of x + y?',
+      ru: 'Для системы 5x + 2y = 16 и 3x − 2y = 8 чему равно x + y?',
+      kk: '5x + 2y = 16 және 3x − 2y = 8 жүйесі үшін x + y неге тең?'
+    },
+    expr: ['5x+2y=16', '3x-2y=8'],
+    note: {
+      en: 'Type both as printed — no need to get y by itself. The crossing is (3, 0.5), so the answer is 3.5. Neither number alone was what was asked.',
+      ru: 'Введите обе как напечатано — выражать y не нужно. Пересечение (3, 0,5), значит ответ 3,5. Ни одно из чисел по отдельности не было ответом.',
+      kk: 'Екеуін де басылған күйінде теріңіз — y-ті жеке шығарудың қажеті жоқ. Қиылысу (3, 0,5), демек жауап 3,5. Сандардың бірде-бірі жеке-дара жауап емес еді.'
     } },
   { id: 'dt5', withoutSec: 20, withSec: 35,
     prompt: {

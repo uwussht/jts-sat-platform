@@ -564,6 +564,7 @@ JTS.dict.en = {
   'desmos.section.basics': 'Basics',
   'desmos.section.graph': 'Graph functions',
   'desmos.section.solve': 'Solving equations',
+  'desmos.section.system': 'Systems of equations',
   'desmos.section.tables': 'Tables',
   'desmos.section.sat': 'SAT techniques',
   'desmos.section.tasks': 'Practice tasks',

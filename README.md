@@ -634,8 +634,8 @@ bigger. This one does the same.
 
 ## Desmos guide
 
-Seven sections — solving, basics, graphing, tables and regression, SAT
-techniques, shortcuts, and the practice tasks — each with its own calculator,
+Eight sections — solving, systems, basics, graphing, tables and regression,
+SAT techniques, shortcuts, and the practice tasks — each with its own calculator,
 its own expressions to type, a "mark as learned" checkbox, and a slot for a
 video (put the URL in `video:` in `js/data/desmos-guide.js`).
 
@@ -651,13 +651,15 @@ The calculator is mounted when a section is first opened, not seven at once,
 and is never removed or reparented afterwards, so it keeps whatever the student
 typed into it.
 
-Seven timed practice tasks carry two figures each: how long the task takes by
-hand and how long it takes in Desmos. **Two of the seven are faster by hand**,
+Eight timed practice tasks carry two figures each: how long the task takes by
+hand and how long it takes in Desmos. **Two of them are faster by hand**,
 and the screen says so. A student who learns to reach for the calculator on
 every question has learned the wrong lesson, and 25 seconds spent graphing
 `3x + 12 = 5x − 8` is 25 seconds off the end of the module.
 
-### Solve-by-intersection
+### The lessons
+
+**Lesson 1, solve-by-intersection**
 
 The **Solving equations** section is one worked example, seven steps, in the
 order a student's hands move: here is the left side, type it in row 1 with
@@ -679,6 +681,16 @@ so a student reading a Russian interface still sees English steps until they
 set the explanation language in Settings. That is deliberate (many want one in
 each), but it surprises people, and a test that only switched the UI language
 and then read the page was passing for the wrong reason.
+
+**Lesson 2, systems.** The same move with one thing added that students do not
+expect: Desmos graphs an equation however it is written, so `4x=20` and
+`x-y=1` go in as printed and nobody has to solve for y first. That is the step
+a physical graphing calculator forces, and the step where the mistakes happen.
+The other two things the section insists on are that both numbers of the
+crossing are now real answers (the question may want y, or x + y, and a student
+who learned "the answer is the x-value" from lesson 1 will write the wrong one),
+and that a line can graze a curve — zoom right in, because one touch and two
+crossings look identical from far away.
 
 A section can carry a video. `video:` takes an embed URL and `videoCredit:`
 takes `{name, url}`; when a credit is present the player gets a byline under it.

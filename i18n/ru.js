@@ -564,6 +564,7 @@ JTS.dict.ru = {
   'desmos.section.basics': 'Основы',
   'desmos.section.graph': 'Построение функций',
   'desmos.section.solve': 'Решение уравнений',
+  'desmos.section.system': 'Системы уравнений',
   'desmos.section.tables': 'Таблицы и регрессия',
   'desmos.section.sat': 'SAT-приёмы',
   'desmos.section.tasks': 'Практические задания',
