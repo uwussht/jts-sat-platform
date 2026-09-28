@@ -25,7 +25,8 @@
     return U.el('div.card.stack-sm', { id: id }, [
       U.el('div.row-between.row-wrap', null, [
         U.el('div.h3', { text: t(section === 'math' ? 'common.math' : 'mat.verbal') }),
-        U.el('span.badge.badge-muted', { text: t('prog.nLessons', { n: count }) })
+        /* One subtopic, one unit: the count is the same number either way. */
+        U.el('span.badge.badge-muted', { text: t('prog.nUnits', { n: count }) })
       ]),
       JTS.programme.unitList(section, { perWeek: perWeek, done: done })
     ]);
@@ -64,7 +65,7 @@
           /* Eight units — the review, hard and test-week blocks are phases of
              the course rather than units of content, and counting them here
              would contradict the document the course is written from. */
-          U.el('span', { text: t('prog.nUnits', { n: P.units.filter(function (u) { return u.kind === 'unit'; }).length }) }),
+          U.el('span', { text: t('prog.nUnits', { n: P.lessons.filter(function (l) { return P.numberOn(l, pw); }).length }) }),
           U.el('span', { text: '·' }),
           U.el('span', { text: t('mat.words', { n: P.wordsTotal }) })
         ])
@@ -88,15 +89,15 @@
 
       /* Test week belongs to neither section, so it is its own block rather
          than being counted twice. */
-      var both = P.unitsOf('both');
-      if (both.length) {
-        var box = U.el('div.mat-units');
-        both.forEach(function (u) {
-          box.appendChild(JTS.programme.unitCard(u, { perWeek: pw, done: done }));
-        });
-        /* One unit, whose own header already names it — a heading above it
-           would print "Test week" twice. */
-        screen.appendChild(U.el('div.card.stack-sm', { id: 'mat-end' }, [box]));
+      var endLessons = JTS.programme.lessonsOfSection('both', pw);
+      if (endLessons.length) {
+        screen.appendChild(U.el('div.card.stack-sm', { id: 'mat-end' }, [
+          U.el('div.row-between.row-wrap', null, [
+            U.el('div.h3', { text: pick(P.unitsOf('both')[0].name) }),
+            U.el('span.badge.badge-muted', { text: t('prog.nUnits', { n: endLessons.length }) })
+          ]),
+          JTS.programme.unitList('both', { perWeek: pw, done: done })
+        ]));
       }
 
       screen.appendChild(JTS.programme.homeworkCard());

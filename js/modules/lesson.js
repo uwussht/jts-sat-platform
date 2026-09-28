@@ -1,9 +1,11 @@
 /* ==========================================================================
-   Screen: one lesson of the course (#/materials/lesson?code=V1.1)
+   Screen: one unit of the course (#/materials/lesson?code=V1.1)
 
-   What a student gets when they press a lesson inside a unit: the rule, the
-   trap the test sets around it, what they have to be able to do, and ten
-   questions on exactly that.
+   A unit is one subtopic, and it runs as steps: step 1 is the explanation —
+   the rule and the trap the test sets around it — and steps 2 to 11 are the
+   ten questions. A student who opens it for the first time is given the rule
+   before anything else; the numbered rail underneath says how many are left
+   and lets them go straight to a question they want again.
 
    The ten are JTS's own, from the platform's bank, picked by the skills the
    lesson drills. They are NOT Bluebook items and never will be: those are
@@ -55,6 +57,31 @@
       var ids = JTS.programme.lessonSet(code);
       var rec = JTS.programme.lessonRecord(ids);
 
+      var steps = 1 + ids.length;
+      var answeredIds = {};
+      (state.attempts || []).forEach(function (a) {
+        if (ids.indexOf(a.questionId) >= 0) answeredIds[a.questionId] = a;
+      });
+
+      /* Open the ten at the question the student pressed. `start` navigates,
+         so the index is set on the session it hands back and the screen is
+         rendered once more for it. */
+      function startAt(i) {
+        var ses = JTS.session.start({
+          kind: 'practice', mode: 'study',
+          title: pick(lesson.t),
+          questionIds: ids,
+          softTimer: true,
+          returnHash: '#/materials/lesson?code=' + code,
+          finishHash: '#/materials/lesson?code=' + code,
+          meta: { lessonCode: code }
+        });
+        if (i > 0 && ses) {
+          S.update(function (st) { st.activeSession.index = i; });
+          JTS.router.render();
+        }
+      }
+
       screen.appendChild(U.el('a.small', { href: backHref(), text: '← ' + t('lesson.back') }));
 
       /* ------------------------------------------------------------ head */
@@ -62,12 +89,13 @@
         U.el('div.row.row-wrap', null, [
           JTS.programme.codeChip(lesson),
           n ? U.el('span.badge.badge-muted', { text: t('prog.lessonNo', { n: n }) }) : null,
-          unit ? U.el('span.badge.badge-muted', {
-            text: unit.kind === 'unit' ? t('prog.unitNo', { n: unit.n, name: pick(unit.name) }) : pick(unit.name)
-          }) : null,
+          /* The domain, not "Unit N of it": the unit is this subtopic now, and
+             two different numberings in one row taught nobody anything. */
+          unit ? U.el('span.badge.badge-muted', { text: pick(unit.name) }) : null,
           drill.hard ? U.el('span.badge.badge-warn', { text: t('lesson.hard') }) : null
         ]),
         U.el('div.h2', { text: pick(lesson.t) }),
+        U.el('div.small.muted', { text: t('mat.nSteps', { n: steps }) }),
         U.el('div.stack-sm', null, [
           U.el('div.stat-label', { text: t('lesson.mustDo') }),
           U.el('p', { text: pick(lesson.skills) })
@@ -88,7 +116,11 @@
           ]));
         }
         screen.appendChild(U.el('div.card.stack-sm', { id: 'lesson-teach' }, [
-          U.el('div.eyebrow', { text: t('lesson.explanation') }), body
+          U.el('div.row-between.row-wrap', null, [
+            U.el('div.eyebrow', { text: t('lesson.explanation') }),
+            U.el('span.badge.badge-muted', { text: t('lesson.stepOf', { n: 1, total: steps }) })
+          ]),
+          body
         ]));
       }
 
@@ -119,21 +151,29 @@
         exercises.appendChild(U.el('div.notice', { text: t('lesson.noneYet') }));
       } else {
         if (rec.done) exercises.appendChild(ui.bar(rec.done, rec.total, 'bar-ok'));
+
+        /* The rail: step 1 is the explanation above, and the rest are the
+           questions. Pressing one opens the set there rather than making a
+           student walk to it. */
+        var rail = U.el('div.step-rail', { role: 'group', 'aria-label': t('lesson.steps') });
+        rail.appendChild(U.el('span.step.is-here', {
+          text: '1', title: t('lesson.explanation'), 'aria-current': 'step'
+        }));
+        ids.forEach(function (id, i) {
+          var a = answeredIds[id];
+          rail.appendChild(U.el('button.step' + (a ? (a.correct ? '.is-right' : '.is-wrong') : ''), {
+            type: 'button', text: String(i + 2),
+            title: t('lesson.goToQuestion', { n: i + 1 }),
+            onclick: function () { startAt(i); }
+          }));
+        });
+        exercises.appendChild(rail);
+
         exercises.appendChild(U.el('div.row.row-wrap', null, [
           U.el('button.btn.btn-primary.btn-lg', {
             type: 'button',
             text: rec.done ? t('lesson.again') : t('lesson.start'),
-            onclick: function () {
-              JTS.session.start({
-                kind: 'practice', mode: 'study',
-                title: pick(lesson.t),
-                questionIds: ids,
-                softTimer: true,
-                returnHash: '#/materials/lesson?code=' + code,
-                finishHash: '#/materials/lesson?code=' + code,
-                meta: { lessonCode: code }
-              });
-            }
+            onclick: function () { startAt(0); }
           }),
           U.el('a.btn', {
             href: JTS.config.bluebookUrl, target: '_blank', rel: 'noopener',

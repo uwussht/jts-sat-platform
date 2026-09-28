@@ -180,74 +180,65 @@
   }
 
   /**
-   * A unit as the materials page shows it: a pressable header with its state
-   * and how many lessons are in it, and the lessons themselves inside.
+   * A unit is a subtopic. There is no card for "Standard English Conventions"
+   * holding six lessons inside it: a student opens a topic, not a folder, and
+   * a folder between them and the topic was one press that taught nothing.
+   * The domain it belongs to stays on the card as a caption, because knowing
+   * that sentence boundaries are Conventions is worth a line and not a level.
+   *
+   * The card is a link: the lesson is a page, so middle-click and copy-link
+   * behave the way they look as though they should.
    */
-  function unitCard(unit, opts) {
+  function unitCard(lesson, opts) {
     opts = opts || {};
     var pw = opts.perWeek || perWeek();
     var done = opts.done === undefined ? doneCount() : opts.done;
-    var lessons = P.lessonsOfUnit(unit.id).filter(function (l) {
-      return P.numberOn(l, pw);
-    }).sort(function (a, b) { return P.numberOn(a, pw) - P.numberOn(b, pw); });
+    var n = P.numberOn(lesson, pw);
+    var st = stateOfNumber(n, done);
+    var unit = P.unitById(lesson.unit);
+    var steps = 1 + ((JTS.programme.lessonSet && JTS.programme.lessonSet(lesson.code).length) || 10);
 
-    var state = unitState(unit, pw, done);
-    var body = U.el('div.mat-unit-body', { hidden: true });
-    var caret = U.el('span.mat-caret', { text: '❯', 'aria-hidden': 'true' });
+    var caption = [
+      unit ? pick(unit.name) : null,
+      t('mat.nSteps', { n: steps }),
+      n ? t('prog.lessonNo', { n: n }) : null
+    ].filter(Boolean).join(' · ');
 
-    var head = U.el('button.mat-unit-head', {
-      type: 'button', 'aria-expanded': 'false',
-      onclick: function () {
-        var open = body.hidden;
-        body.hidden = !open;
-        head.setAttribute('aria-expanded', String(open));
-        caret.style.transform = open ? 'rotate(90deg)' : '';
-      }
-    }, [
-      U.el('span.mat-state', { text: state === 'done' ? '✓' : state === 'current' ? '▶' : '', 'aria-hidden': 'true' }),
+    return U.el('a.mat-unit.is-' + st, { href: '#/materials/lesson?code=' + lesson.code }, [
+      U.el('span.mat-state', {
+        text: st === 'done' ? '✓' : st === 'current' ? '▶' : '', 'aria-hidden': 'true'
+      }),
       U.el('span.mat-unit-text', null, [
-        U.el('b', { text: unit.kind === 'unit'
-          ? t('prog.unitNo', { n: unit.n, name: pick(unit.name) })
-          : pick(unit.name) }),
-        U.el('span.small.muted', {
-          text: lessons.length === 1 ? t('prog.nLesson') : t('prog.nLessons', { n: lessons.length })
-        })
+        U.el('b', { text: t('mat.unitNo', { n: opts.index, name: lessonName(lesson) }) }),
+        U.el('span.small.muted', { text: caption })
       ]),
-      caret
+      codeChip(lesson),
+      U.el('span.mat-go', { text: '❯', 'aria-hidden': 'true' })
     ]);
-
-    if (unit.lead) body.appendChild(U.el('p.small.muted', { text: pick(unit.lead) }));
-    lessons.forEach(function (l) {
-      var n = P.numberOn(l, pw);
-      var st = stateOfNumber(n, done);
-      /* A lesson opens: the explanation and its ten questions are a page, not
-         a tooltip. The row is a link so it behaves like one — middle-click,
-         copy the address, open in a tab. */
-      body.appendChild(U.el('a.mat-lesson.is-' + st, {
-        href: '#/materials/lesson?code=' + l.code
-      }, [
-        U.el('span.mat-n', { text: String(n) }),
-        U.el('div.mat-lesson-text', null, [
-          U.el('div.pg-name', null, [codeChip(l), U.el('b', { text: lessonName(l) })]),
-          U.el('div.small.muted', { text: pick(l.skills) })
-        ]),
-        U.el('span.mat-go', { text: '❯', 'aria-hidden': 'true' })
-      ]));
-    });
-
-    return U.el('div.mat-unit.is-' + state, null, [head, body]);
   }
 
-  /** Every unit of one section, in course order. */
+  /**
+   * Every subtopic of one section, in course order and numbered within it —
+   * unit 1 of Verbal is the first Verbal lesson of the course, whatever its
+   * number in the whole 45.
+   */
   function unitList(section, opts) {
     opts = opts || {};
     var pw = opts.perWeek || perWeek();
     var done = opts.done === undefined ? doneCount() : opts.done;
     var box = U.el('div.mat-units');
-    P.unitsOf(section).forEach(function (u) {
-      box.appendChild(unitCard(u, { perWeek: pw, done: done }));
+    lessonsOfSection(section, pw).forEach(function (l, i) {
+      box.appendChild(unitCard(l, { perWeek: pw, done: done, index: i + 1 }));
     });
     return box;
+  }
+
+  /** A section's lessons, in the order this student will sit them. */
+  function lessonsOfSection(section, pw) {
+    pw = pw || perWeek();
+    return P.lessons.filter(function (l) {
+      return P.sectionOf(l) === section && P.numberOn(l, pw);
+    }).sort(function (a, b) { return P.numberOn(a, pw) - P.numberOn(b, pw); });
   }
 
   /** How many lessons of a section there are, for the heading's badge. */
@@ -527,6 +518,7 @@
     lessonName: lessonName,
     unitList: unitList,
     unitCard: unitCard,
+    lessonsOfSection: lessonsOfSection,
     unitTable: unitTable,
     lessonCount: lessonCount,
     doneCount: doneCount,
