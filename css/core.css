@@ -205,12 +205,12 @@ sup, sub { line-height: 0; font-size: .75em; }
 /* ----- 5. Sidebar, top bar & navigation ----------------------------------- */
 .app-sidebar {
   position: fixed; top: 0; left: 0; bottom: 0; z-index: 40;
-  /* The sidebar itself never scrolls. On a short window it used to grow a
-     scrollbar of its own, so the page had two — one against the sidebar and
-     the browser's against the page — which reads as a bug whichever one you
-     reach for. The nav is the only part that can be too tall, so the nav is
-     the part that scrolls; the brand, the goal, the language row and the
-     account stay where they are. */
+  /* Nothing in the sidebar scrolls — not the bar, and not the navigation
+     inside it. On a short window the nav used to grow a scrollbar of its own,
+     so the page had two, and a destination could be below the fold of a menu
+     nobody expects to have a fold. Instead the chrome tightens as the window
+     gets shorter (the blocks at the end of this section): the rows give up
+     padding, then type size, and all nine destinations stay on screen. */
   width: var(--sidebar-w); overflow: hidden;
   display: flex; flex-direction: column; gap: 10px;
   padding: var(--sp-4) var(--sp-3);
@@ -243,12 +243,13 @@ sup, sub { line-height: 0; font-size: .75em; }
 .sb-goal-value { font-size: 22px; font-weight: 750; letter-spacing: -.02em; line-height: 1.1; font-variant-numeric: tabular-nums; }
 .sb-goal-meta { font-size: 11px; color: rgba(255,255,255,.66); }
 
-/* Shrink-only: it never takes the spare space (the spacer below it does that,
-   so the account block stays pinned to the bottom), and it gives up height
-   before anything else does. */
+/* Fixed: it neither takes the spare space (the spacer below it does that, so
+   the account block stays pinned to the bottom) nor scrolls. Its height is
+   what the rows need, and the height-based rules below are what make the rows
+   need less. */
 .sb-nav {
   display: flex; flex-direction: column; gap: 1px;
-  flex: 0 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain;
+  flex: 0 0 auto;
 }
 .sb-nav a {
   display: flex; align-items: center; gap: 10px;
@@ -298,6 +299,45 @@ sup, sub { line-height: 0; font-size: .75em; }
 }
 .lang-switch button:hover { background: var(--brand-800); color: #fff; }
 .lang-switch button[aria-pressed="true"] { background: var(--brand-600); color: #fff; }
+
+/* Nine destinations, a brand, a goal, a tools row and an account block are
+   about 700px of sidebar at full size. Below that the bar tightens rather
+   than scrolling: first the space between things, then the padding inside the
+   rows, then the type. Each step is small enough that the one before it has
+   to be exhausted first, which keeps a 1080p window looking exactly as it
+   did. */
+@media (max-height: 800px) {
+  .app-sidebar { gap: 7px; padding-block: var(--sp-3); }
+  .sb-goal { padding: 8px 12px; }
+  .sb-goal-value { font-size: 19px; }
+  .sb-nav a { padding: 6px 12px; }
+}
+@media (max-height: 700px) {
+  .app-sidebar { gap: 5px; }
+  .sb-goal { padding: 6px 12px; }
+  .sb-goal-value { font-size: 17px; }
+  .sb-nav a { padding: 4px 12px; }
+  .sb-user { padding: 6px 10px; }
+  .sb-avatar { width: 28px; height: 28px; flex: 0 0 28px; }
+}
+@media (max-height: 620px) {
+  .app-sidebar { gap: 4px; padding-block: 10px; }
+  .brand-mark { width: 28px; height: 28px; flex: 0 0 28px; font-size: 11px; }
+  /* The goal is a number the student steers by; at this height it keeps the
+     number and gives up the exam date, which is also in Settings. */
+  .sb-goal-meta { display: none; }
+  .sb-nav a { padding: 3px 12px; font-size: 13px; }
+  .sb-tools .icon-btn { flex: 0 0 28px; width: 28px; height: 28px; }
+  .sb-user { padding: 4px 8px; }
+}
+/* Under about 470px there is not enough glass for nine destinations and an
+   account block however tight the rows get, and clipping the sign-out button
+   out of existence is worse than a scrollbar. So the bar scrolls as a last
+   resort — the navigation still does not, and no laptop window is this
+   short. */
+@media (max-height: 470px) {
+  .app-sidebar { overflow-y: auto; }
+}
 
 /* ----- 5b. Top bar -------------------------------------------------------- */
 .app-topbar {

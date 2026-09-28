@@ -1,9 +1,9 @@
 /* ==========================================================================
    Screen: Desmos guide (#/desmos-guide)
 
-   Seven sections, each with its own live calculator, plus six timed practice
-   tasks. The calculator is mounted when a section is first opened rather than
-   seven at once — an iframe that nobody has scrolled to is seven seconds of
+   Every section has its own live calculator, and the practice tasks come
+   after them. The calculator is mounted when a section is first opened rather
+   than all of them at once — an iframe that nobody has scrolled to is seven seconds of
    somebody's connection spent on nothing.
 
    The two tasks that are faster by hand are deliberate. A student who learns
@@ -32,7 +32,7 @@
 
   function isLearned(id) { return !!progress()[id]; }
 
-  /** All seven: the six content sections plus the practice-task section. */
+  /** Every content section plus the practice-task section. */
   function allSectionIds() {
     return sections().map(function (x) { return x.id; }).concat(['tasks']);
   }
