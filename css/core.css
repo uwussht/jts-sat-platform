@@ -826,6 +826,22 @@ html[data-theme="dark"] mark.hl { background: #8C7415; color: #FFF7DA; }
   border: 2px dashed var(--border-strong); border-radius: var(--r-md);
   padding: 26px; text-align: center; color: var(--muted); background: var(--surface-2);
 }
+/* With a video in it the slot IS the video: the dashed box is the empty
+   state's styling and has no business framing a player.
+
+   Two elements, not one. 16:9 comes from padding-bottom rather than
+   aspect-ratio so the height is right in whatever browser a student turns up
+   with — but a percentage padding resolves against the PARENT's width, so the
+   cap has to live on a wrapper. With both on one element the slot read
+   820px wide and 602px tall, which is 56.25% of the card, not of the video. */
+.video-wrap { width: 100%; max-width: 820px; margin-inline: auto; }
+.video-slot.has-video {
+  position: relative; height: 0; padding: 0 0 56.25% 0; width: 100%;
+  border: 1px solid var(--border-strong); background: #000;
+}
+.video-slot.has-video iframe {
+  position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+}
 /* The one floating control in the app: add a word, from anywhere. */
 .fab {
   position: fixed; right: 20px; bottom: 20px; z-index: 50;

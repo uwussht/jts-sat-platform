@@ -651,17 +651,35 @@ every question has learned the wrong lesson, and 25 seconds spent graphing
 
 ### Solve-by-intersection
 
-The **Solving equations** section is built around the one move that covers
-every equation on the test: each side of it on its own row, and the solutions
-are the **x-values** where the two graphs cross. The three things it insists on
-are the three a beginner gets wrong — the y-value of the crossing is never the
-answer, two crossings means the question is probably asking for one of them
-("the positive solution"), and an empty screen means zoom out before it means
-no solution. It is also the answer to student-produced responses, where there
-is nothing to substitute and check and guessing used to start.
+The **Solving equations** section is one worked example, seven steps, in the
+order a student's hands move: here is the left side, type it in row 1 with
+`y=`, press Enter, type the right side in row 2, find where the graphs cross,
+click the crossing, **your answer is the first of the two numbers**. It is
+written for someone who does not yet know the words "left-hand side", which is
+why it names them rather than assuming them, and why the method arrives as a
+sequence rather than as a principle with the reasoning in front.
+
+The three things it insists on are the three a beginner gets wrong: the second
+number of a crossing is never the answer, two crossings means the question is
+probably asking for one of them ("the positive solution"), and an empty screen
+means zoom out before it means no solution. It is also the answer to
+student-produced responses, where there is nothing to substitute and check and
+guessing used to start.
+
+A section's body follows `settings.explainLang`, not the interface language —
+so a student reading a Russian interface still sees English steps until they
+set the explanation language in Settings. That is deliberate (many want one in
+each), but it surprises people, and a test that only switched the UI language
+and then read the page was passing for the wrong reason.
 
 A section can carry a video. `video:` takes an embed URL and `videoCredit:`
 takes `{name, url}`; when a credit is present the player gets a byline under it.
+The player is 16:9 and capped at 820px — wide enough to follow someone typing
+into a calculator, not so wide that a 1400px card turns it into an 840px-tall
+thing you scroll past. The ratio comes from `padding-bottom: 56.25%` on an
+inner element with the cap on a wrapper around it: a percentage padding
+resolves against the **parent's** width, so with both on one element the box
+came out 820 wide and 602 tall — 56.25% of the card, not of the video.
 The slot was built for JTS's own screencasts, and an embed of somebody else's
 work with no name on it reads as ours — so the field is not optional in
 practice, only in the schema. The Solving section currently carries Tutorlini

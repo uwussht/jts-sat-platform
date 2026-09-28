@@ -81,10 +81,12 @@
 
   function videoSlot(url, credit) {
     if (url) {
-      var frame = U.el('div.video-slot', null, [U.el('iframe', {
-        src: url, title: t('desmos.title'), style: 'width:100%;height:100%;border:0',
-        allowfullscreen: true, loading: 'lazy'
-      })]);
+      var frame = U.el('div.video-wrap', null, [
+        U.el('div.video-slot.has-video', null, [U.el('iframe', {
+          src: url, title: t('desmos.title'),
+          allowfullscreen: true, loading: 'lazy'
+        })])
+      ]);
       if (!credit) return frame;
       /* Someone else's screencast is said to be someone else's, by name and
          with a link. The slot was built for JTS's own videos, and an embed with
