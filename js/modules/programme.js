@@ -196,11 +196,11 @@
     var n = P.numberOn(lesson, pw);
     var st = stateOfNumber(n, done);
     var unit = P.unitById(lesson.unit);
-    var steps = 1 + ((JTS.programme.lessonSet && JTS.programme.lessonSet(lesson.code).length) || 10);
+    var count = (JTS.programme.lessonSet && JTS.programme.lessonSet(lesson.code).length) || 10;
 
     var caption = [
       unit ? pick(unit.name) : null,
-      t('mat.nSteps', { n: steps }),
+      t('mat.nQuestions', { n: count }),
       n ? t('prog.lessonNo', { n: n }) : null
     ].filter(Boolean).join(' · ');
 

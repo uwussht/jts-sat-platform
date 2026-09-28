@@ -57,10 +57,8 @@
       var ids = JTS.programme.lessonSet(code);
       var rec = JTS.programme.lessonRecord(code, ids);
 
-      var steps = 1 + ids.length;
-      /* The marks on the rail are this lesson's own answers, the same ones the
-         counter above them reports. */
-      var answeredIds = rec.byQ || {};
+      /* The unit is two steps: what to know, then the questions. */
+      var steps = 2;
 
       /* Open the ten at the question the student pressed. `start` navigates,
          so the index is set on the session it hands back and the screen is
@@ -100,77 +98,62 @@
         ])
       ]));
 
-      /* ----------------------------------------------------- explanation */
+      /* --------------------------------------- step 1: what to know first */
+
+      /* Two steps and not eleven. The unit is the explanation and then the
+         questions; a rail of eleven numbers in front of a set nobody has
+         started was a table of contents for a page that is two presses long,
+         and it made the set look like homework rather than like the next
+         thing to do. */
+      var step1 = U.el('div.card.stack-sm', { id: 'lesson-teach' });
+      step1.appendChild(U.el('div.row-between.row-wrap', null, [
+        U.el('div.eyebrow', { text: t('lesson.explanation') }),
+        U.el('div.row.row-wrap', null, [
+          rec.done
+            ? U.el('span.badge.badge-muted', {
+                text: t('lesson.recordShort', { done: rec.done, total: rec.total, right: rec.right })
+              })
+            : null,
+          U.el('span.badge.badge-muted', { text: t('lesson.stepOf', { n: 1, total: steps }) })
+        ])
+      ]));
+
       if (teach) {
-        var body = U.el('div.stack-sm');
-        body.appendChild(U.el('div.lesson-rule', null, [
+        step1.appendChild(U.el('div.lesson-rule', null, [
           U.el('div.stat-label', { text: t('lesson.rule') }),
           U.el('p', { text: pick(teach.rule) })
         ]));
         if (teach.trap) {
-          body.appendChild(U.el('div.lesson-trap', null, [
+          step1.appendChild(U.el('div.lesson-trap', null, [
             U.el('div.stat-label', { text: t('lesson.trap') }),
             U.el('p', { text: pick(teach.trap) })
           ]));
         }
-        screen.appendChild(U.el('div.card.stack-sm', { id: 'lesson-teach' }, [
-          U.el('div.row-between.row-wrap', null, [
-            U.el('div.eyebrow', { text: t('lesson.explanation') }),
-            U.el('span.badge.badge-muted', { text: t('lesson.stepOf', { n: 1, total: steps }) })
-          ]),
-          body
-        ]));
       }
 
       /* Desmos has a guide of its own; a lesson about it should send you
          there rather than restate it badly. */
       if (drill.guide) {
-        screen.appendChild(U.el('div.notice.row-between.row-wrap', null, [
+        step1.appendChild(U.el('div.notice.row-between.row-wrap', null, [
           U.el('span', { text: t('lesson.seeGuide') }),
           U.el('a.btn.btn-sm', { href: drill.guide, text: t('desmos.title') })
         ]));
       }
+      screen.appendChild(step1);
 
-      /* ------------------------------------------------------- the drill */
+      /* -------------------------------------------- step 2: the questions */
       var exercises = U.el('div.card.stack-sm', { id: 'lesson-drill' });
-      exercises.appendChild(U.el('div.row-between.row-wrap', null, [
-        U.el('div.eyebrow', { text: t('lesson.exercises', { n: ids.length }) }),
-        rec.done
-          ? U.el('span.badge.badge-muted', {
-              text: t('lesson.recordShort', { done: rec.done, total: rec.total, right: rec.right })
-            })
-          : null
-      ]));
-      exercises.appendChild(U.el('p.small.muted', {
-        text: drill.fromErrorLog ? t('lesson.fromLog') : t('lesson.setLead')
-      }));
-
       if (!ids.length) {
         exercises.appendChild(U.el('div.notice', { text: t('lesson.noneYet') }));
       } else {
         if (rec.done) exercises.appendChild(ui.bar(rec.done, rec.total, 'bar-ok'));
-
-        /* The rail: step 1 is the explanation above, and the rest are the
-           questions. Pressing one opens the set there rather than making a
-           student walk to it. */
-        var rail = U.el('div.step-rail', { role: 'group', 'aria-label': t('lesson.steps') });
-        rail.appendChild(U.el('span.step.is-here', {
-          text: '1', title: t('lesson.explanation'), 'aria-current': 'step'
-        }));
-        ids.forEach(function (id, i) {
-          var a = answeredIds[id];
-          rail.appendChild(U.el('button.step' + (a ? (a.correct ? '.is-right' : '.is-wrong') : ''), {
-            type: 'button', text: String(i + 2),
-            title: t('lesson.goToQuestion', { n: i + 1 }),
-            onclick: function () { startAt(i); }
-          }));
-        });
-        exercises.appendChild(rail);
-
         exercises.appendChild(U.el('div.row.row-wrap', null, [
+          /* One button, and it goes to the first question. The set runs easy
+             to hard, so starting anywhere else is starting in the middle. */
           U.el('button.btn.btn-primary.btn-lg', {
             type: 'button',
-            text: rec.done ? t('lesson.again') : t('lesson.start'),
+            text: (rec.done ? t('lesson.again') : t('lesson.start')) +
+              '  ·  ' + t('lesson.stepOf', { n: 2, total: steps }),
             onclick: function () { startAt(0); }
           }),
           U.el('a.btn', {
@@ -178,6 +161,9 @@
             text: t('lesson.bluebook')
           })
         ]));
+        exercises.appendChild(U.el('p.small.muted', {
+          text: drill.fromErrorLog ? t('lesson.fromLog') : t('lesson.easyToHard', { n: ids.length })
+        }));
       }
       /* Said once, plainly, on the screen where a student would expect to
          find official items. */

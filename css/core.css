@@ -1817,20 +1817,6 @@ button.cal-tag:hover { background: var(--brand-100); color: var(--brand-700); }
 .lesson-rule p, .lesson-trap p { margin: 2px 0 0; }
 #lesson-nav { gap: 10px; }
 
-/* The steps of a unit: 1 is the explanation above, the rest are the ten
-   questions. Answered ones say how they went, so coming back to the two you
-   got wrong takes one press rather than a walk through the set. */
-.step-rail { display: flex; flex-wrap: wrap; gap: 6px; }
-.step {
-  width: 34px; height: 34px; display: grid; place-items: center;
-  border: 1px solid var(--border); background: var(--surface);
-  font: inherit; font-size: 13px; font-weight: 700; color: var(--ink-2);
-  font-variant-numeric: tabular-nums; cursor: pointer;
-}
-button.step:hover { border-color: var(--brand-500); background: var(--brand-050); color: var(--brand-700); }
-.step.is-here { background: var(--brand-600); border-color: var(--brand-600); color: #fff; cursor: default; }
-.step.is-right { border-color: var(--ok); color: var(--ok); background: var(--ok-bg); }
-.step.is-wrong { border-color: var(--danger); color: var(--danger); background: var(--danger-bg); }
 
 /* ----- 28. The dashboard hero ---------------------------------------------- */
 /* The clock the whole course runs on, and the two things a student does with
