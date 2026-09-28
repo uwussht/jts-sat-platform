@@ -8,7 +8,6 @@
      JTS.programme.chronology()    the 45 lessons by phase, with the gates
                                    — used by #/roadmap
      JTS.programme.unitList(sec)   the units and their lessons — #/materials
-     JTS.programme.unitTable(sec)  the same as a table — #/plan
      JTS.programme.errorLogCard()  the error log — used by #/guide
      JTS.programme.lessonDetail(n) one lesson, for a day on the calendar
 
@@ -248,40 +247,6 @@
     }).length;
   }
 
-  /* --------------------------------------------------------- unit tables */
-
-  /**
-   * Every lesson of a section with its code and its number — the answer to
-   * "what have we covered and what is still ahead", which is why it lives on
-   * the plan and not in the roadmap.
-   */
-  function unitTable(section) {
-    var pw = perWeek();
-    var rows = P.lessons.filter(function (l) {
-      return P.sectionOf(l) === section && P.numberOn(l, pw);
-    }).sort(function (a, b) { return P.numberOn(a, pw) - P.numberOn(b, pw); });
-
-    var table = U.el('table.table.pg-table');
-    table.appendChild(U.el('thead', null, [U.el('tr', null, [
-      U.el('th', { text: t('prog.col.code') }),
-      U.el('th', { text: t('prog.col.topic') }),
-      U.el('th', { text: t('prog.col.unit') }),
-      U.el('th.num', { text: t('prog.col.lesson') })
-    ])]));
-    var body = U.el('tbody');
-    rows.forEach(function (l) {
-      var unit = P.unitById(l.unit);
-      body.appendChild(U.el('tr', null, [
-        U.el('td', null, [codeChip(l)]),
-        U.el('td', { text: lessonName(l) }),
-        U.el('td.small.muted', { text: unit ? pick(unit.name) : '' }),
-        U.el('td.num', { text: String(P.numberOn(l, pw)) })
-      ]));
-    });
-    table.appendChild(body);
-    return U.el('div.table-wrap', null, [table]);
-  }
-
   /* -------------------------------------------------------- the error log */
 
   function errorLogCard() {
@@ -445,6 +410,20 @@
   }
 
   /**
+   * What a sitting actually covers, as words: the programme lessons that fall
+   * on sitting `n`. The calendar prints this instead of "Lesson 7", because a
+   * number on a square tells a student the count of what is behind them and
+   * nothing about what Tuesday is for.
+   *
+   * Returns [] when `n` is past the end of the course, which is how a day the
+   * programme does not reach keeps its ordinary label.
+   */
+  function topicsOf(n) {
+    var slot = slotOf(n, perWeek());
+    return slot ? slot.lessons.slice() : [];
+  }
+
+  /**
    * Everything the programme sets for one lesson, for the day a student taps:
    * which lesson of the 45 it is, what it covers, and the homework with its
    * numbers filled in.
@@ -512,6 +491,7 @@
     unitState: unitState,
     schedule: schedule,
     numberOf: numberOf,
+    topicsOf: topicsOf,
     lessonDetail: lessonDetail,
     chronology: chronology,
     slotRow: slotRow,
@@ -519,7 +499,6 @@
     unitList: unitList,
     unitCard: unitCard,
     lessonsOfSection: lessonsOfSection,
-    unitTable: unitTable,
     lessonCount: lessonCount,
     doneCount: doneCount,
     errorLogCard: errorLogCard

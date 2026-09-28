@@ -1712,6 +1712,16 @@ body.tour-open .app-topbar, body.tour-open #add-word { z-index: 1; }
   background: var(--surface-2); color: var(--ink-2);
 }
 .cal-tag-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+/* A month square now carries the topic rather than "Lesson 7", and a topic is
+   a sentence fragment, not three words. The square has the height to spare, so
+   it wraps to three lines and clips after that; the dot stays at the top so a
+   two-line chip does not push it into the middle of nowhere. */
+.cal-month .cal-tag { align-items: flex-start; }
+.cal-month .cal-dot { margin-top: 4px; }
+.cal-month .cal-tag-text {
+  white-space: normal; text-overflow: clip;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3;
+}
 /* The week's chips carry the skills as well as the label, so they are two
    lines and sit against the top of the dot rather than beside its middle. */
 .cal-tag.is-rich { align-items: flex-start; padding: 7px 9px; font-size: 12px; }
@@ -1760,10 +1770,6 @@ button.cal-tag:hover { background: var(--brand-100); color: var(--brand-700); }
 /* The week grid and the empty state sit inside the same card. */
 .cal-body > .week-grid, .cal-body > .empty { padding: var(--sp-4); }
 
-.cal-swatch { width: 11px; height: 11px; display: inline-block; background: var(--brand-100); }
-.cal-swatch.done { background: var(--ok-bg); }
-.cal-swatch.skipped { background: var(--bg); border: 1px solid var(--border); }
-.cal-swatch.moved { background: var(--warn-bg); }
 
 @media (max-width: 760px) {
   /* Seven columns of readable chips do not fit a phone, so the month becomes a

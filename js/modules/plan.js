@@ -40,10 +40,26 @@
      steering by that the calendar used to know nothing about. */
   var TYPES = ['lesson', 'test', 'deadline', 'exam'];
 
+  /* What a day says it is. A square used to read "Lesson 7 · Learn · Practice",
+     which is the same three words on every square and tells a student only how
+     many sittings are behind them. It reads as the topic now — "Linear
+     equations in one variable" — because the question a calendar is asked is
+     what Tuesday is for. The number and the actions are still there, in the
+     tooltip and in the day the student presses. */
   function lessonLabel(lesson) {
-    var n = JTS.programme ? JTS.programme.numberOf(lesson) : null;
-    var actions = lesson.actions.map(function (a) { return t('plan.action.' + a); }).join(' · ');
-    return (n ? t('prog.lessonNo', { n: n }) + ' · ' : '') + actions;
+    var topics = JTS.programme
+      ? JTS.programme.topicsOf(JTS.programme.numberOf(lesson) || 0) : [];
+    if (topics.length) {
+      return topics.map(function (l) { return JTS.programme.lessonName(l); }).join(' · ');
+    }
+    /* Past the end of the 45, or before the programme has loaded: the skills
+       the planner picked are still a better answer than a bare number. */
+    var skills = lesson.skillIds.map(function (id) { return JTS.skills.name(id); });
+    return skills.length ? skills.join(' · ') : lessonActions(lesson);
+  }
+
+  function lessonActions(lesson) {
+    return lesson.actions.map(function (a) { return t('plan.action.' + a); }).join(' · ');
   }
 
   /** date (ISO) -> the events on it, in the order they should be read. */
@@ -54,11 +70,14 @@
       (map[iso] = map[iso] || []).push(ev);
     }
     JTS.planner.allLessons().forEach(function (l) {
+      var n = JTS.programme ? JTS.programme.numberOf(l) : null;
       put(l.date, {
         type: l.actions.indexOf('mini-test') >= 0 ? 'test' : 'lesson',
         lesson: l,
         label: lessonLabel(l),
-        title: l.skillIds.map(function (id) { return JTS.skills.name(id); }).join(' · ')
+        /* Second line in the week view, tooltip everywhere else: which sitting
+           of the course it is and what is done in it. */
+        sub: (n ? t('prog.lessonNo', { n: n }) + ' · ' : '') + lessonActions(l)
       });
     });
     var ex = state.examDate || {};
@@ -84,15 +103,16 @@
     var status = ev.lesson ? STATUS_CLASS[ev.lesson.status] : '';
     /* The week has room for the skills as well as the label, and a day column
        with three words in it reads as an empty day. */
-    var rich = opts.rich && ev.title;
+    var rich = opts.rich && ev.sub;
     var cls = '.cal-tag' + (ev.lesson ? '.cal-tag-lesson' : '') + (rich ? '.is-rich' : '') +
       (ev.type === 'exam' ? '.cal-tag-exam' : '') + (status ? '.' + status : '');
+    var full = ev.label + (ev.sub ? ' · ' + ev.sub : '');
     var kids = [
       U.el('span.cal-dot', { 'aria-hidden': 'true' }),
       rich
         ? U.el('span.cal-tag-body', null, [
-            U.el('b', { text: ev.title }),
-            U.el('span', { text: ev.label })
+            U.el('b', { text: ev.label }),
+            U.el('span', { text: ev.sub })
           ])
         : U.el('span.cal-tag-text', { text: ev.label })
     ];
@@ -100,7 +120,7 @@
       return U.el('div' + cls, { dataset: { type: ev.type }, title: ev.label }, kids);
     }
     return U.el('button' + cls, {
-      type: 'button', dataset: { type: ev.type }, title: ev.title || ev.label,
+      type: 'button', dataset: { type: ev.type }, title: full,
       onclick: function (e) { e.stopPropagation(); lessonModal(ev.lesson, rerender); }
     }, kids);
   }
@@ -529,44 +549,11 @@
         }
       }, rerender));
 
-      /* The homework and the topic tables used to sit here, under the month,
-         where they were the same words on every day and belonged to none of
-         them. They are inside the calendar now: press a day and it tells you
-         which of the 48 lessons it is, what it covers, and what is set after
-         it. The full tag tables stay reachable, folded, for the question a
-         day cannot answer — "when do we do M17". */
-      if (JTS.programme) {
-        var tablesBody = U.el('div.acc-body.stack-sm', { hidden: true });
-        var tablesCaret = U.el('span.caret', { text: '❯' });
-        var tablesHead = U.el('button.acc-head', {
-          type: 'button', 'aria-expanded': 'false',
-          onclick: function () {
-            var now = tablesBody.hidden;
-            tablesBody.hidden = !now;
-            tablesHead.setAttribute('aria-expanded', String(now));
-            tablesCaret.style.transform = now ? 'rotate(90deg)' : '';
-          }
-        }, [tablesCaret, U.el('b', { text: t('prog.topicsTitle') })]);
-        tablesBody.appendChild(ui.tabs([
-          { id: 'math', label: t('common.math'),
-            render: function (host) { host.appendChild(JTS.programme.unitTable('math')); } },
-          { id: 'rw', label: t('common.rw'),
-            render: function (host) { host.appendChild(JTS.programme.unitTable('rw')); } }
-        ]));
-        screen.appendChild(U.el('div.card', { id: 'prog-topics' }, [
-          U.el('div.acc', null, [tablesHead, tablesBody])
-        ]));
-      }
-
-      screen.appendChild(U.el('div.legend', null,
-        [['', 'planned'], ['done', 'done'], ['skipped', 'skipped'], ['moved', 'moved']]
-          .map(function (pair) {
-            return U.el('span', null, [
-              U.el('span.cal-swatch' + (pair[0] ? '.' + pair[0] : '')),
-              ' ' + t('plan.status.' + pair[1])
-            ]);
-          })));
-      screen.appendChild(U.el('p.hint', { text: t('plan.rebuildNote') }));
+      /* Nothing follows the calendar. The folded topic tables, the status
+         legend and the note about missed sessions all sat under it saying the
+         same thing on every visit; a day that is struck through is already a
+         skipped day, and the rebuild rule is on the button that rebuilds. The
+         calendar is the screen. */
     }
   });
 })();
