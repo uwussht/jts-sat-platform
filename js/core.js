@@ -215,8 +215,8 @@
       for (var i = 0; i < String(s).length; i++) h = ((h * 33) ^ String(s).charCodeAt(i)) >>> 0;
       return 'wh' + h.toString(36);
     },
-    download: function (filename, text) {
-      var blob = new Blob([text], { type: 'application/json' });
+    download: function (filename, text, type) {
+      var blob = new Blob([text], { type: type || 'application/json' });
       var a = document.createElement('a');
       a.href = URL.createObjectURL(blob); a.download = filename;
       document.body.appendChild(a); a.click();
@@ -2288,6 +2288,10 @@
          to do. #/diagnostic is still a route: onboarding ends there, the plan
          is built there, and the roadmap's first stop links to it, which is
          also where "take it again" lives. */
+      /* The error log is a destination, not a panel: a student opens it after
+         a test with a tutor and reads it across weeks, which is not something
+         a card on another screen can carry. */
+      { path: '#/errors',       key: 'errors.nav',   icon: '⚑' },
       { path: '#/vocab',        key: 'vocab.title',  icon: '⌸' },
       { path: '#/desmos-guide', key: 'desmos.title', icon: 'ƒ' },
       /* The guide is read once at the start and then wanted again, months

@@ -298,7 +298,8 @@
     if (!due.length) {
       return U.el('div.card.stack-sm', { id: 'review-card' }, [
         U.el('div.eyebrow', { text: t('practice.errorsToReview') }),
-        U.el('p.muted.small', { text: t('practice.noErrors') })
+        U.el('p.muted.small', { text: t('practice.noErrors') }),
+        U.el('a.small', { href: '#/errors', text: t('errors.openLog') + ' →' })
       ]);
     }
     var bySkill = U.groupBy(due, function (e) { return e.skillId; });
@@ -312,6 +313,9 @@
           text: JTS.skills.name(sk) + ' · ' + bySkill[sk].length
         });
       })),
+      /* What is due is a queue; what kind of mistakes they are is a different
+         question, and it has a screen. */
+      U.el('a.small', { href: '#/errors', text: t('errors.openLog') + ' →' }),
       U.el('button.btn.btn-primary.btn-block', {
         type: 'button', text: t('practice.reviewNow'),
         onclick: function () {

@@ -262,6 +262,10 @@
     return U.el('div.stack-sm', null, [
       U.el('p.small', { text: t('prog.logLead') }),
       U.el('div.table-wrap', null, [table]),
+      /* The guide shows the shape of the log; the student's own is a screen.
+         Explaining a format without a door to the thing itself is how a log
+         ends up explained and never kept. */
+      U.el('a.btn.btn-primary', { href: '#/errors', text: t('errors.openLog') }),
       U.el('div.notice', { text: t('prog.logClose') }),
       U.el('div.notice.notice-warn', { text: pick(P.redrill) }),
       U.el('p.small.muted', { text: t('prog.logWhy') })
