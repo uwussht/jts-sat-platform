@@ -772,18 +772,9 @@ html[data-theme="dark"] mark.hl { background: #8C7415; color: #FFF7DA; }
 .day-col.today { border-color: var(--brand-600); box-shadow: 0 0 0 2px var(--brand-100); }
 .day-name { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
 .day-date { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
-.lesson-chip {
-  display: block; width: 100%; text-align: left; border: 1px solid var(--border); border-radius: var(--r-sm);
-  padding: 7px 8px; font-size: 12px; background: var(--brand-050); cursor: pointer; color: var(--ink);
-}
-.lesson-chip + .lesson-chip { margin-top: 5px; }
-.lesson-chip.done { background: var(--ok-bg); border-color: transparent; }
-.lesson-chip.skipped { background: var(--bg); color: var(--muted); text-decoration: line-through; }
-.lesson-chip.moved { background: var(--warn-bg); }
-/* A day column is a seventh of the week, so the chip title is set small and
-   tight rather than left to break one word per line. */
-.lesson-chip b { display: block; font-size: 12px; font-weight: 700; line-height: 1.25; hyphens: auto; }
-.lesson-chip span { display: block; margin-top: 2px; color: var(--muted); }
+/* The chips inside a day column are the calendar's own (section 25): the week
+   and the month are one calendar, so an entry looks the same in both. */
+.day-col .cal-tag + .cal-tag { margin-top: 5px; }
 
 /* ----- 20. Flashcards ----------------------------------------------------- */
 /* The card is a <button> so it is reachable by keyboard, which means undoing
@@ -1547,47 +1538,167 @@ body.tour-open .app-topbar, body.tour-open #add-word { z-index: 1; }
 
 .gl-item { border-left: 2px solid var(--border-strong); padding-inline-start: 10px; }
 
-/* A day in the month is pressable, and says so on hover and on focus. */
-.cal-cell.is-tappable { cursor: pointer; }
-.cal-cell.is-tappable:hover { background: var(--brand-050); }
-.cal-cell.is-tappable:focus-visible { outline: 2px solid var(--brand-700); outline-offset: -2px; }
 /* The day's own detail, inside the modal the day opens. */
 .pg-day-topic { display: flex; align-items: baseline; gap: 8px; font-size: 13px; line-height: 1.45; }
 .pg-day-topic .pg-tag { flex: none; }
 
-/* ----- 25. Month calendar ------------------------------------------------- */
-.cal-month { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+/* ----- 25. The calendar ---------------------------------------------------- */
+/* One card holds the whole calendar: a toolbar, a legend of what the colours
+   mean, and whichever of the three views is open. The colour of an entry says
+   what kind of thing it is (a session, a checkpoint, a deadline, the exam);
+   its state — done, skipped, moved — is said in the chip itself. */
+.cal { padding: 0; overflow: hidden; }
+
+.cal-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--sp-3) var(--sp-4); flex-wrap: wrap;
+  padding: 12px var(--sp-4); border-bottom: 1px solid var(--border);
+}
+.cal-nav { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.cal-title-box { display: flex; flex-direction: column; line-height: 1.2; }
+.cal-title { margin: 0 4px; white-space: nowrap; }
+.cal-arrow {
+  width: 30px; height: 30px; font-size: 17px; line-height: 1;
+  background: var(--surface); border-color: var(--border); color: var(--ink-2);
+}
+.cal-arrow:hover { background: var(--brand-050); border-color: var(--brand-500); color: var(--brand-700); }
+.cal-arrow.is-off { opacity: .4; pointer-events: none; }
+.cal-bar-right { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+/* The view switch. Three links styled as one control, because that is what
+   they are: the same plan, seen three ways. */
+.cal-seg { display: inline-flex; border: 1px solid var(--border); background: var(--surface); }
+.cal-seg a {
+  padding: 6px 14px; font-size: 13px; font-weight: 650;
+  color: var(--ink-2); text-decoration: none; border-inline-end: 1px solid var(--border);
+}
+.cal-seg a:last-child { border-inline-end: 0; }
+.cal-seg a:hover { background: var(--brand-050); color: var(--brand-700); text-decoration: none; }
+.cal-seg a[aria-pressed="true"] { background: var(--brand-600); color: #fff; }
+.cal-filter {
+  border: 1px solid var(--border); background: var(--surface); color: var(--ink);
+  font: inherit; font-size: 13px; font-weight: 600; padding: 6px 10px;
+}
+
+/* The legend doubles as the filter: press a kind to see only it. */
+.cal-legend {
+  display: flex; align-items: center; gap: 6px 16px; flex-wrap: wrap;
+  padding: 9px var(--sp-4); border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+}
+.cal-key {
+  display: inline-flex; align-items: center; gap: 7px;
+  border: 0; background: none; cursor: pointer; padding: 2px 0;
+  font: inherit; font-size: 12px; font-weight: 600; color: var(--muted);
+}
+.cal-key:hover { color: var(--ink); }
+.cal-key[aria-pressed="true"] { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+
+/* The dot carries the kind, in the legend and on every chip alike. */
+.cal-dot {
+  width: 7px; height: 7px; flex: 0 0 7px; border-radius: 50%;
+  background: var(--brand-600); display: inline-block;
+}
+[data-type="test"] .cal-dot, .cal-key[data-type="test"] .cal-dot { background: var(--warn); }
+[data-type="deadline"] .cal-dot, .cal-key[data-type="deadline"] .cal-dot { background: var(--danger); }
+[data-type="exam"] .cal-dot, .cal-key[data-type="exam"] .cal-dot { background: var(--ok); }
+
+/* ----- the month ----------------------------------------------------------- */
+/* Header band and grid share one set of columns, and the grid lines are the
+   gaps: cells sit on a background the width of a hairline rather than each
+   carrying its own border. */
+.cal-head, .cal-month { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.cal-head { background: var(--surface-2); border-bottom: 1px solid var(--border); }
 .cal-dow {
-  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
-  color: var(--muted); padding-bottom: 2px;
+  font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+  color: var(--muted); padding: 8px 10px;
 }
+.cal-month { gap: 1px; background: var(--border); }
 .cal-cell {
-  min-height: 84px; border: 1px solid var(--border); background: var(--surface);
-  padding: 5px; display: flex; flex-direction: column; gap: 3px;
+  min-height: 104px; background: var(--surface);
+  padding: 6px 7px 8px; display: flex; flex-direction: column; gap: 4px;
 }
-.cal-out { background: var(--bg); opacity: .55; }
-.cal-today { border-color: var(--brand-600); box-shadow: inset 0 0 0 1px var(--brand-600); }
-.cal-exam { background: var(--brand-050); border-color: var(--brand-500); }
-.cal-num { font-size: 12px; font-weight: 700; color: var(--ink-2); }
+.cal-evs { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.cal-out { background: var(--bg); }
+.cal-out .cal-num { color: var(--muted); opacity: .7; }
+.cal-out .cal-tag { opacity: .55; }
+.cal-num {
+  font-size: 12.5px; font-weight: 700; color: var(--ink-2);
+  width: 22px; height: 22px; display: grid; place-items: center;
+}
+/* Today is a filled marker on the date itself, the way a calendar marks it,
+   rather than a box around the whole square. */
+.cal-today .cal-num { background: var(--brand-600); color: #fff; }
+.cal-exam { background: var(--brand-050); }
+
 .cal-tag {
-  display: block; width: 100%; text-align: left; border: 0; cursor: pointer;
-  font: inherit; font-size: 10.5px; line-height: 1.25; font-weight: 600;
-  padding: 3px 5px; background: var(--brand-100); color: var(--brand-700);
+  display: flex; align-items: center; gap: 6px; width: 100%; min-width: 0;
+  text-align: left; border: 0; font: inherit; font-size: 11px; line-height: 1.3;
+  font-weight: 600; padding: 3px 6px;
+  background: var(--surface-2); color: var(--ink-2);
 }
-.cal-tag:hover { background: var(--brand-200); }
-.cal-tag.done { background: var(--ok-bg); color: var(--ok); }
-.cal-tag.skipped { background: var(--bg); color: var(--muted); text-decoration: line-through; }
-.cal-tag.moved { background: var(--warn-bg); color: var(--warn); }
-.cal-tag-exam { background: var(--brand-600); color: #fff; cursor: default; }
+.cal-tag-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+/* The week's chips carry the skills as well as the label, so they are two
+   lines and sit against the top of the dot rather than beside its middle. */
+.cal-tag.is-rich { align-items: flex-start; padding: 7px 9px; font-size: 12px; }
+.cal-tag.is-rich .cal-dot { margin-top: 5px; }
+.cal-tag-body { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.cal-tag-body b { font-weight: 700; line-height: 1.3; }
+.cal-tag-body span { font-size: 11px; font-weight: 600; opacity: .8; }
+button.cal-tag { cursor: pointer; }
+button.cal-tag:hover { background: var(--brand-100); color: var(--brand-700); }
+.cal-tag[data-type="deadline"] { background: var(--danger-bg); color: var(--danger); }
+.cal-tag[data-type="test"] { background: var(--warn-bg); color: var(--warn); }
+.cal-tag-exam { background: var(--brand-600); color: #fff; }
+.cal-tag-exam .cal-dot { background: #fff; }
+.cal-tag.done { color: var(--ok); background: var(--ok-bg); }
+.cal-tag.done .cal-dot { background: var(--ok); }
+.cal-tag.skipped { color: var(--muted); text-decoration: line-through; }
+.cal-tag.skipped .cal-dot { background: var(--border-strong); }
+.cal-tag.moved { color: var(--warn); }
+.cal-tag.moved .cal-dot { background: var(--warn); }
+
+/* A day in the month is pressable, and says so on hover and on focus. */
+.cal-cell.is-tappable { cursor: pointer; }
+.cal-cell.is-tappable:hover { background: var(--brand-050); }
+.cal-cell.is-tappable:focus-visible { outline: 2px solid var(--brand-700); outline-offset: -2px; }
+
+/* ----- the list ------------------------------------------------------------ */
+.cal-agenda { display: flex; flex-direction: column; }
+.cal-ag-row {
+  display: flex; gap: var(--sp-4); align-items: flex-start;
+  padding: 10px var(--sp-4); border-bottom: 1px solid var(--border);
+}
+.cal-ag-row:last-child { border-bottom: 0; }
+.cal-ag-row.is-today { background: var(--brand-050); }
+.cal-ag-date {
+  flex: 0 0 52px; display: flex; flex-direction: column; align-items: center;
+  line-height: 1.15;
+}
+.cal-ag-date b { font-size: 19px; font-weight: 750; letter-spacing: -.02em; }
+.cal-ag-date span {
+  font-size: 10px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .06em; color: var(--muted);
+}
+.cal-ag-evs { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; }
+.cal-ag-evs .cal-tag { font-size: 12.5px; padding: 5px 9px; }
+
+/* The week grid and the empty state sit inside the same card. */
+.cal-body > .week-grid, .cal-body > .empty { padding: var(--sp-4); }
+
 .cal-swatch { width: 11px; height: 11px; display: inline-block; background: var(--brand-100); }
 .cal-swatch.done { background: var(--ok-bg); }
 .cal-swatch.skipped { background: var(--bg); border: 1px solid var(--border); }
 .cal-swatch.moved { background: var(--warn-bg); }
+
 @media (max-width: 760px) {
   /* Seven columns of readable chips do not fit a phone, so the month becomes a
-     scrolling strip rather than seven unreadable slivers. */
-  .cal-month { min-width: 620px; }
+     scrolling strip rather than seven unreadable slivers. The header band
+     scrolls with it, which is why both live in the same box. */
   .cal-month-wrap { overflow-x: auto; }
+  .cal-head, .cal-month { min-width: 620px; }
+  .cal-bar, .cal-legend { padding-inline: var(--sp-3); }
+  .cal-bar { gap: 10px; }
 }
 
 @media print {

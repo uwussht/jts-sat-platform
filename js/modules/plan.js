@@ -32,50 +32,203 @@
     ]);
   }
 
+  /* --------------------------------------------------------------- events */
+
+  /* The four kinds of thing the plan puts on a date. A lesson whose actions
+     include the mini-test is a checkpoint rather than an ordinary session, and
+     the exam and its two registration deadlines are dates the student is
+     steering by that the calendar used to know nothing about. */
+  var TYPES = ['lesson', 'test', 'deadline', 'exam'];
+
+  function lessonLabel(lesson) {
+    var n = JTS.programme ? JTS.programme.numberOf(lesson) : null;
+    var actions = lesson.actions.map(function (a) { return t('plan.action.' + a); }).join(' · ');
+    return (n ? t('prog.lessonNo', { n: n }) + ' · ' : '') + actions;
+  }
+
+  /** date (ISO) -> the events on it, in the order they should be read. */
+  function eventsByDay(state) {
+    var map = {};
+    function put(iso, ev) {
+      if (!iso) return;
+      (map[iso] = map[iso] || []).push(ev);
+    }
+    JTS.planner.allLessons().forEach(function (l) {
+      put(l.date, {
+        type: l.actions.indexOf('mini-test') >= 0 ? 'test' : 'lesson',
+        lesson: l,
+        label: lessonLabel(l),
+        title: l.skillIds.map(function (id) { return JTS.skills.name(id); }).join(' · ')
+      });
+    });
+    var ex = state.examDate || {};
+    if (ex.registrationDeadline) {
+      put(ex.registrationDeadline, { type: 'deadline', label: t('plan.ev.regDeadline') });
+    }
+    if (ex.lateDeadline) {
+      put(ex.lateDeadline, { type: 'deadline', label: t('plan.ev.lateDeadline') });
+    }
+    if (ex.testDate) put(ex.testDate, { type: 'exam', label: t('roadmap.examDay') });
+    Object.keys(map).forEach(function (iso) {
+      map[iso].sort(function (a, b) { return TYPES.indexOf(a.type) - TYPES.indexOf(b.type); });
+    });
+    return map;
+  }
+
   /**
-   * One month of the plan. Lessons are matched by date, exactly as the week
-   * grid does it, so a moved lesson appears on the day it moved to.
+   * One entry on a day. A lesson is a button because it opens; a deadline and
+   * the exam are statements, so they are not.
    */
-  function monthView(state, rerender) {
-    var wrap = U.el('div.stack-sm');
+  function eventChip(ev, rerender, opts) {
+    opts = opts || {};
+    var status = ev.lesson ? STATUS_CLASS[ev.lesson.status] : '';
+    /* The week has room for the skills as well as the label, and a day column
+       with three words in it reads as an empty day. */
+    var rich = opts.rich && ev.title;
+    var cls = '.cal-tag' + (ev.lesson ? '.cal-tag-lesson' : '') + (rich ? '.is-rich' : '') +
+      (ev.type === 'exam' ? '.cal-tag-exam' : '') + (status ? '.' + status : '');
+    var kids = [
+      U.el('span.cal-dot', { 'aria-hidden': 'true' }),
+      rich
+        ? U.el('span.cal-tag-body', null, [
+            U.el('b', { text: ev.title }),
+            U.el('span', { text: ev.label })
+          ])
+        : U.el('span.cal-tag-text', { text: ev.label })
+    ];
+    if (!ev.lesson) {
+      return U.el('div' + cls, { dataset: { type: ev.type }, title: ev.label }, kids);
+    }
+    return U.el('button' + cls, {
+      type: 'button', dataset: { type: ev.type }, title: ev.title || ev.label,
+      onclick: function (e) { e.stopPropagation(); lessonModal(ev.lesson, rerender); }
+    }, kids);
+  }
+
+  /* ------------------------------------------------------------- calendar */
+
+  /**
+   * The plan as a calendar: one toolbar, one legend, and whichever of the
+   * three views is open. The month is the shape of the plan, the week is the
+   * work in front of you, and the list is the answer to "what is next" without
+   * counting squares.
+   *
+   * Which view is open lives in the hash (?view=), so a reload and a link both
+   * land where the student was.
+   */
+  function calendarCard(state, ctx, rerender) {
+    var events = eventsByDay(state);
+    var todayISO = U.iso(U.today());
+    var filter = 'all';
+
     var cursor = U.today();
     cursor.setDate(1);
 
-    var examISO = state.examDate && state.examDate.testDate;
-    var todayISO = U.iso(U.today());
+    var bar = U.el('div.cal-bar');
+    var legend = U.el('div.cal-legend');
+    var body = U.el('div.cal-body');
+    var card = U.el('div.card.cal', { id: 'plan-calendar' }, [bar, legend, body]);
 
-    var head = U.el('div.row-between.row-wrap');
-    var grid = U.el('div.cal-month');
-    wrap.appendChild(head);
-    /* Seven readable columns do not fit a phone, so the month scrolls inside
-       its own box rather than widening the page. */
-    wrap.appendChild(U.el('div.cal-month-wrap', null, [grid]));
+    function shown(iso) {
+      var list = events[iso] || [];
+      if (filter === 'all') return list;
+      return list.filter(function (ev) { return ev.type === filter; });
+    }
 
-    function paint() {
-      U.clear(head); U.clear(grid);
-
-      var label = cursor.toLocaleDateString(
+    function monthLabel() {
+      return cursor.toLocaleDateString(
         { en: 'en-US', ru: 'ru-RU', kk: 'kk-KZ' }[JTS.i18n.lang] || 'en-US',
         { month: 'long', year: 'numeric' });
-      head.appendChild(U.el('div.h3', { text: label }));
-      head.appendChild(U.el('div.row.row-wrap', null, [
-        U.el('button.btn.btn-sm', {
-          type: 'button', text: '←', 'aria-label': t('plan.prevMonth'),
-          onclick: function () { cursor.setMonth(cursor.getMonth() - 1); paint(); }
-        }),
-        U.el('button.btn.btn-sm', {
-          type: 'button', text: t('plan.thisMonth'),
-          onclick: function () { cursor = U.today(); cursor.setDate(1); paint(); }
-        }),
-        U.el('button.btn.btn-sm', {
-          type: 'button', text: '→', 'aria-label': t('plan.nextMonth'),
-          onclick: function () { cursor.setMonth(cursor.getMonth() + 1); paint(); }
-        })
-      ]));
+    }
 
-      for (var d = 1; d <= 7; d++) {
-        grid.appendChild(U.el('div.cal-dow', { text: U.dayLabel(d) }));
+    function paintBar() {
+      U.clear(bar);
+      var nav = U.el('div.cal-nav');
+
+      if (ctx.view === 'month') {
+        nav.appendChild(U.el('button.icon-btn.cal-arrow', {
+          type: 'button', text: '‹', 'aria-label': t('plan.prevMonth'),
+          onclick: function () { cursor.setMonth(cursor.getMonth() - 1); paintBody(); paintBar(); }
+        }));
+        nav.appendChild(U.el('div.h3.cal-title', { text: monthLabel() }));
+        nav.appendChild(U.el('button.icon-btn.cal-arrow', {
+          type: 'button', text: '›', 'aria-label': t('plan.nextMonth'),
+          onclick: function () { cursor.setMonth(cursor.getMonth() + 1); paintBody(); paintBar(); }
+        }));
+        nav.appendChild(U.el('button.btn.btn-sm', {
+          type: 'button', text: t('plan.today'),
+          onclick: function () { cursor = U.today(); cursor.setDate(1); paintBody(); paintBar(); }
+        }));
+      } else if (ctx.view === 'week') {
+        nav.appendChild(U.el('a.icon-btn.cal-arrow' + (ctx.weekIndex === 0 ? '.is-off' : ''), {
+          href: ctx.href({ view: 'week', week: Math.max(0, ctx.weekIndex - 1) }),
+          text: '‹', 'aria-label': t('plan.prevWeek')
+        }));
+        nav.appendChild(U.el('div.cal-title-box', null, [
+          U.el('div.h3.cal-title', { text: t('plan.week', { n: ctx.weekIndex + 1 }) }),
+          U.el('div.small.muted', { text: t('plan.lessonsThisWeek', { n: ctx.week.lessons.length }) })
+        ]));
+        nav.appendChild(U.el('a.icon-btn.cal-arrow' +
+          (ctx.weekIndex === ctx.weekCount - 1 ? '.is-off' : ''), {
+          href: ctx.href({ view: 'week', week: Math.min(ctx.weekCount - 1, ctx.weekIndex + 1) }),
+          text: '›', 'aria-label': t('plan.nextWeek')
+        }));
+        nav.appendChild(U.el('a.btn.btn-sm', {
+          href: ctx.href({ view: 'week' }), text: t('plan.today')
+        }));
+      } else {
+        nav.appendChild(U.el('div.h3.cal-title', { text: t('plan.agendaRange') }));
       }
+      bar.appendChild(nav);
+
+      var seg = U.el('div.cal-seg', { role: 'group', 'aria-label': t('nav.plan') });
+      [['month', 'plan.viewMonth'], ['week', 'plan.viewWeek'], ['agenda', 'plan.viewAgenda']]
+        .forEach(function (pair) {
+          seg.appendChild(U.el('a', {
+            href: ctx.href({ view: pair[0] }), text: t(pair[1]),
+            'aria-pressed': String(ctx.view === pair[0])
+          }));
+        });
+
+      var sel = U.el('select.cal-filter', {
+        'aria-label': t('plan.filterType'),
+        onchange: function () { filter = this.value; paintLegend(); paintBody(); }
+      });
+      sel.appendChild(U.el('option', { value: 'all', text: t('plan.allTypes') }));
+      TYPES.forEach(function (ty) {
+        sel.appendChild(U.el('option', { value: ty, text: t('plan.type.' + ty) }));
+      });
+      sel.value = filter;
+
+      bar.appendChild(U.el('div.cal-bar-right', null, [seg, sel]));
+    }
+
+    /* The legend is also the fastest filter: pressing a kind shows only it,
+       pressing it again shows everything. */
+    function paintLegend() {
+      U.clear(legend);
+      TYPES.forEach(function (ty) {
+        legend.appendChild(U.el('button.cal-key', {
+          type: 'button', dataset: { type: ty },
+          'aria-pressed': String(filter === ty),
+          onclick: function () {
+            filter = filter === ty ? 'all' : ty;
+            var sel = bar.querySelector('.cal-filter');
+            if (sel) sel.value = filter;
+            paintLegend(); paintBody();
+          }
+        }, [
+          U.el('span.cal-dot', { 'aria-hidden': 'true' }),
+          U.el('span', { text: t('plan.type.' + ty) })
+        ]));
+      });
+    }
+
+    function monthGrid() {
+      var wrap = U.el('div.cal-month-wrap');
+      var head = U.el('div.cal-head');
+      for (var d = 1; d <= 7; d++) head.appendChild(U.el('div.cal-dow', { text: U.dayLabel(d) }));
+      var grid = U.el('div.cal-month');
 
       /* The grid starts on the Monday on or before the 1st, so the columns
          stay weekdays rather than drifting a day each month. */
@@ -83,54 +236,79 @@
       var shift = (first.getDay() + 6) % 7;
       var start = U.addDays(first, -shift);
       var month = cursor.getMonth();
-      var lessons = JTS.planner.allLessons();
 
       for (var i = 0; i < 42; i++) {
-        var day = U.addDays(start, i);
-        var iso = U.iso(day);
-        var outside = day.getMonth() !== month;
-        var cell = U.el('div.cal-cell' +
-          (outside ? '.cal-out' : '') +
-          (iso === todayISO ? '.cal-today' : '') +
-          (iso === examISO ? '.cal-exam' : ''));
-        cell.appendChild(U.el('div.cal-num', { text: String(day.getDate()) }));
+        (function (day) {
+          var iso = U.iso(day);
+          var outside = day.getMonth() !== month;
+          var list = shown(iso);
+          var cell = U.el('div.cal-cell' + (outside ? '.cal-out' : '') +
+            (iso === todayISO ? '.cal-today' : '') +
+            (events[iso] && events[iso].some(function (e) { return e.type === 'exam'; }) ? '.cal-exam' : ''));
+          cell.appendChild(U.el('div.cal-num', { text: String(day.getDate()) }));
+          var box = U.el('div.cal-evs');
+          list.forEach(function (ev) { box.appendChild(eventChip(ev, rerender)); });
+          cell.appendChild(box);
 
-        if (iso === examISO) {
-          cell.appendChild(U.el('div.cal-tag.cal-tag-exam', { text: t('roadmap.examDay') }));
-        }
-        var onDay = lessons.filter(function (l) { return l.date === iso; });
-        onDay.forEach(function (lesson) {
-          var cls = STATUS_CLASS[lesson.status];
-          var n = JTS.programme ? JTS.programme.numberOf(lesson) : null;
-          cell.appendChild(U.el('button.cal-tag' + (cls ? '.' + cls : ''), {
-            type: 'button',
-            title: lesson.skillIds.map(function (id) { return JTS.skills.name(id); }).join(' · '),
-            text: (n ? t('prog.lessonNo', { n: n }) + ' · ' : '') +
-              lesson.actions.map(function (a) { return t('plan.action.' + a); }).join(' · '),
-            onclick: function (e) { e.stopPropagation(); lessonModal(lesson, rerender); }
-          }));
-        });
-        /* The whole square opens the day, not just the chip inside it: on a
-           calendar the thing you press is a date. */
-        if (!outside) {
-          cell.classList.add('is-tappable');
-          cell.setAttribute('role', 'button');
-          cell.setAttribute('tabindex', '0');
-          cell.setAttribute('aria-label', U.fmtDate(day, S.settings().uiLang));
-          (function (dayLessons, dayISO) {
-            function open() { dayModal(dayISO, dayLessons, rerender); }
+          /* The whole square opens the day, not just the chip inside it: on a
+             calendar the thing you press is a date. */
+          if (!outside) {
+            cell.classList.add('is-tappable');
+            cell.setAttribute('role', 'button');
+            cell.setAttribute('tabindex', '0');
+            cell.setAttribute('aria-label', U.fmtDate(day, S.settings().uiLang));
+            /* The filter decides what the square shows at a glance; the day
+               it opens is still the whole day, because a modal headed with a
+               date that hid half of what is on it would be lying. */
+            var lessons = (events[iso] || []).filter(function (ev) { return ev.lesson; })
+              .map(function (ev) { return ev.lesson; });
+            function open() { dayModal(iso, lessons, rerender); }
             cell.addEventListener('click', open);
             cell.addEventListener('keydown', function (e) {
               if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
             });
-          })(onDay, iso);
-        }
-        grid.appendChild(cell);
+          }
+          grid.appendChild(cell);
+        })(U.addDays(start, i));
       }
+      wrap.appendChild(head);
+      wrap.appendChild(grid);
+      return wrap;
     }
 
-    paint();
-    return wrap;
+    /** Six weeks of dated entries, as a list. */
+    function agenda() {
+      var list = U.el('div.cal-agenda');
+      var rows = 0;
+      for (var i = 0; i < 42; i++) {
+        var day = U.addDays(U.today(), i);
+        var iso = U.iso(day);
+        var evs = shown(iso);
+        if (!evs.length) continue;
+        rows++;
+        var row = U.el('div.cal-ag-row' + (iso === todayISO ? '.is-today' : ''));
+        row.appendChild(U.el('div.cal-ag-date', null, [
+          U.el('b', { text: String(day.getDate()) }),
+          U.el('span', { text: U.dayLabel(((day.getDay() + 6) % 7) + 1) })
+        ]));
+        var box = U.el('div.cal-ag-evs');
+        evs.forEach(function (ev) { box.appendChild(eventChip(ev, rerender)); });
+        row.appendChild(box);
+        list.appendChild(row);
+      }
+      if (!rows) return ui.empty(t('plan.agendaEmpty'));
+      return list;
+    }
+
+    function paintBody() {
+      U.clear(body);
+      if (ctx.view === 'week') body.appendChild(weekGrid(ctx.week, shown, rerender));
+      else if (ctx.view === 'agenda') body.appendChild(agenda());
+      else body.appendChild(monthGrid());
+    }
+
+    paintBar(); paintLegend(); paintBody();
+    return card;
   }
 
   /**
@@ -224,7 +402,12 @@
     });
   }
 
-  function weekGrid(week, rerender) {
+  /**
+   * The week, built from the same events as the month: the filter and the
+   * colours mean the same thing whichever view is open, and a deadline that
+   * falls in this week is on it.
+   */
+  function weekGrid(week, list, rerender) {
     var monday = U.parseISO(week.monday);
     var todayISO = U.iso(U.today());
     var grid = U.el('div.week-grid');
@@ -242,19 +425,11 @@
         col.appendChild(U.el('div.day-name', { text: dayName }));
         col.appendChild(U.el('div.day-date', { text: String(date.getDate()) }));
 
-        /* Lessons are matched by date, so a moved lesson shows up on its new
+        /* Events are matched by date, so a moved lesson shows up on its new
            day even though it still belongs to the week it was generated in. */
-        JTS.planner.allLessons().filter(function (l) { return l.date === iso; })
-          .forEach(function (lesson) {
-            var cls = STATUS_CLASS[lesson.status];
-            col.appendChild(U.el('button.lesson-chip' + (cls ? '.' + cls : ''), {
-              type: 'button',
-              onclick: function () { lessonModal(lesson, rerender); }
-            }, [
-              U.el('b', { text: lesson.skillIds.map(function (id) { return JTS.skills.name(id); }).join(' · ') }),
-              U.el('span', { text: lesson.actions.map(function (a) { return t('plan.action.' + a); }).join(' · ') })
-            ]));
-          });
+        list(iso).forEach(function (ev) {
+          col.appendChild(eventChip(ev, rerender, { rich: true }));
+        });
 
         grid.appendChild(col);
       })(i);
@@ -329,42 +504,30 @@
         })
       ]));
 
-      /* The month and the week are two views of the same lessons. The month is
-         first: a week is what you do next, but a plan is a shape, and the
-         shape only appears at the length of a month — which weeks are heavy,
-         where the checkpoints fall, how much of the run to the exam is left.
-         The week is still a click away for the day's work. */
-      screen.appendChild(U.el('div.card', null, [ui.tabs([
-        {
-          id: 'month', label: t('plan.viewMonth'),
-          render: function (host) { host.appendChild(monthView(state, rerender)); }
-        },
-        {
-          id: 'week', label: t('plan.viewWeek'),
-          render: function (host) {
-            host.appendChild(U.el('div.row-between.row-wrap', { style: 'margin-bottom:12px' }, [
-              U.el('div.stack-sm', null, [
-                U.el('div.h3', { text: t('plan.week', { n: idx + 1 }) }),
-                U.el('div.small.muted', { text: t('plan.lessonsThisWeek', { n: week.lessons.length }) })
-              ]),
-              U.el('div.row.row-wrap', null, [
-                U.el('a.btn.btn-sm', {
-                  href: '#/plan?week=' + Math.max(0, idx - 1),
-                  text: '← ' + t('plan.prevWeek'),
-                  'aria-disabled': idx === 0 ? 'true' : null
-                }),
-                U.el('a.btn.btn-sm', { href: '#/plan', text: t('plan.thisWeek') }),
-                U.el('a.btn.btn-sm', {
-                  href: '#/plan?week=' + Math.min(weeks.length - 1, idx + 1),
-                  text: t('plan.nextWeek') + ' →',
-                  'aria-disabled': idx === weeks.length - 1 ? 'true' : null
-                })
-              ])
-            ]));
-            host.appendChild(weekGrid(week, rerender));
-          }
+      /* The month, the week and the list are three views of the same lessons,
+         and the switch between them sits in the calendar's own toolbar rather
+         than above it — on a calendar that control belongs next to the month
+         you are looking at. The month is the default: a week is what you do
+         next, but a plan is a shape, and the shape only appears at the length
+         of a month — which weeks are heavy, where the checkpoints fall, how
+         much of the run to the exam is left. */
+      var view = (JTS.router.current && JTS.router.current.query.view) || 'month';
+      if (['month', 'week', 'agenda'].indexOf(view) < 0) view = 'month';
+
+      screen.appendChild(calendarCard(state, {
+        view: view,
+        week: week,
+        weekIndex: idx,
+        weekCount: weeks.length,
+        /* Which view and which week are on screen live in the hash, so a
+           reload and a shared link both land where the student was. */
+        href: function (q) {
+          var parts = [];
+          if (q.view && q.view !== 'month') parts.push('view=' + q.view);
+          if (q.week !== undefined && q.week !== null) parts.push('week=' + q.week);
+          return '#/plan' + (parts.length ? '?' + parts.join('&') : '');
         }
-      ])]));
+      }, rerender));
 
       /* The homework and the topic tables used to sit here, under the month,
          where they were the same words on every day and belonged to none of
