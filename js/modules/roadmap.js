@@ -128,12 +128,54 @@
     return t('roadmap.dates', { from: U.fmtDate(from), to: U.fmtDate(to) });
   }
 
-  function weeksLabel(plan, span, phase) {
-    if (!span) return t('roadmap.share', { n: Math.round(phase.share * 100) });
-    /* "Weeks 1–1" is not a range anyone says out loud. */
-    return span.from === span.to
-      ? t('plan.week', { n: span.from + 1 })
-      : t('roadmap.weeks', { from: span.from + 1, to: span.to + 1 });
+  /** "Oct 2026", in the student's own language. */
+  function monthName(d, lang) {
+    try {
+      return d.toLocaleDateString(lang === 'kk' ? 'kk-KZ' : lang === 'ru' ? 'ru-RU' : 'en-GB',
+                                  { month: 'short', year: 'numeric' });
+    } catch (e) {
+      return String(d.getMonth() + 1) + '.' + d.getFullYear();
+    }
+  }
+
+  /**
+   * Where today sits in the plan, counted in calendar months rather than in
+   * weeks: how many months the plan touches and which of them this is.
+   */
+  function monthPosition(plan) {
+    if (!plan || !plan.weeks.length) return null;
+    var lang = S.settings().uiLang;
+    var keys = [], names = [];
+    plan.weeks.forEach(function (wk) {
+      for (var d = 0; d < 7; d++) {
+        var day = U.addDays(U.parseISO(wk.monday), d);
+        var k = day.getFullYear() + '-' + day.getMonth();
+        if (keys.indexOf(k) < 0) { keys.push(k); names.push(monthName(day, lang)); }
+      }
+    });
+    var today = U.today();
+    var here = keys.indexOf(today.getFullYear() + '-' + today.getMonth());
+    return {
+      n: (here < 0 ? 0 : here) + 1, total: keys.length,
+      name: names[here < 0 ? 0 : here]
+    };
+  }
+
+  /**
+   * Which months a phase covers. Weeks were what the planner counts in, but
+   * "weeks 7–13" is a number a student has to convert before it means
+   * anything; the months are the thing they already have on a wall.
+   */
+  function monthsLabel(plan, span, phase) {
+    if (!plan || !span || !plan.weeks[span.from]) {
+      return t('roadmap.share', { n: Math.round(phase.share * 100) });
+    }
+    var lang = S.settings().uiLang;
+    var from = U.parseISO(plan.weeks[span.from].monday);
+    var lastWeek = plan.weeks[Math.min(span.to, plan.weeks.length - 1)];
+    var to = U.addDays(U.parseISO(lastWeek.monday), 6);
+    var a = monthName(from, lang), b = monthName(to, lang);
+    return a === b ? a : t('roadmap.months', { from: a, to: b });
   }
 
   function ctaFor(phaseId) {
@@ -331,7 +373,7 @@
         info.status === 'current' ? U.el('span.badge', { text: t('roadmap.youAreHere') })
           : info.status === 'done' ? U.el('span.badge.badge-ok', { text: t('common.done') })
           : null,
-        U.el('span.badge.badge-muted', { text: info.weeks }),
+        U.el('span.badge.badge-muted', { text: info.months }),
         info.dates ? U.el('span.badge.badge-muted', { text: info.dates }) : null
       ]),
       U.el('p.small.muted.rm-panel-desc', { text: t('roadmap.desc.' + phase.key) }),
@@ -396,12 +438,14 @@
     var span = phaseSpans(totalWeeks)[phase.id];
     var prog = phaseProgress(plan, span);
     var weekNo = JTS.planner.todayWeekIndex() + 1;
+    var mp = monthPosition(plan);
 
     return U.el('div.card.stack-sm', null, [
       U.el('div.row-between.row-wrap', null, [
         U.el('div.eyebrow', { text: t('roadmap.whereYouAre') }),
         plan ? U.el('span.badge.badge-muted', {
-          text: t('roadmap.weekOf', { n: weekNo, total: totalWeeks })
+          text: mp ? t('roadmap.monthOf', { month: mp.name, n: mp.n, total: mp.total })
+                   : t('roadmap.weekOf', { n: weekNo, total: totalWeeks })
         }) : null
       ]),
       miniTrack(current),
@@ -455,7 +499,7 @@
       function infoFor(p) {
         return {
           status: statusOf(p),
-          weeks: weeksLabel(plan, spans[p.id], p),
+          months: monthsLabel(plan, spans[p.id], p),
           dates: spanDates(plan, spans[p.id]),
           progress: phaseProgress(plan, spans[p.id])
         };
@@ -474,7 +518,11 @@
             text: t('today.countdown') + ': ' + (days === null ? '—' : Math.max(0, days))
           }),
           plan ? U.el('span.badge.badge-muted', {
-            text: t('roadmap.weekOf', { n: JTS.planner.todayWeekIndex() + 1, total: totalWeeks })
+            text: (function () {
+              var m = monthPosition(plan);
+              return m ? t('roadmap.monthOf', { month: m.name, n: m.n, total: m.total })
+                       : t('roadmap.weekOf', { n: JTS.planner.todayWeekIndex() + 1, total: totalWeeks });
+            })()
           }) : null,
           U.el('button.btn.btn-sm', {
             type: 'button', text: t('roadmap.howTitle'),

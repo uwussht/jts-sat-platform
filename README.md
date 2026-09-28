@@ -355,6 +355,24 @@ returns whether a tour is on its way and the router holds the nudge back when
 it is. Without that the modal opened first and its backdrop dimmed the coach
 mark underneath it.
 
+## Months, not weeks
+
+The plan and the roadmap are read at the length of a month.
+
+`#/plan` opens on the **month** calendar; the week grid is the second tab. A
+week is what you do next, but a plan is a shape — which weeks are heavy, where
+the checkpoints fall, how much of the run to the exam is left — and the shape
+only appears at a month's length. Both views are the same lessons, and moving a
+session in one moves it in the other.
+
+The roadmap says the same thing in the same units: a phase is badged with the
+calendar months it covers ("Sept 2026 – Oct 2026"), not with "weeks 7–13",
+and the header reads "Sept 2026 · month 3 of 7". The planner still counts in
+weeks internally — `phaseSpans` is week indices and always was — and the months
+are derived from those weeks' own Mondays, so the two can never disagree.
+A week number is a figure a student has to convert before it means anything;
+a month is already on their wall.
+
 ## The gap between onboarding and the plan
 
 `profile.onboardingComplete` only turns true when the plan is built, and the

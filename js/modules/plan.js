@@ -272,10 +272,16 @@
         })
       ]));
 
-      /* The week and the month are two views of the same lessons. The week is
-         first because it is the one a student acts on; the month is there for
-         the question the week cannot answer, which is when this ends. */
+      /* The month and the week are two views of the same lessons. The month is
+         first: a week is what you do next, but a plan is a shape, and the
+         shape only appears at the length of a month — which weeks are heavy,
+         where the checkpoints fall, how much of the run to the exam is left.
+         The week is still a click away for the day's work. */
       screen.appendChild(U.el('div.card', null, [ui.tabs([
+        {
+          id: 'month', label: t('plan.viewMonth'),
+          render: function (host) { host.appendChild(monthView(state, rerender)); }
+        },
         {
           id: 'week', label: t('plan.viewWeek'),
           render: function (host) {
@@ -300,10 +306,6 @@
             ]));
             host.appendChild(weekGrid(week, rerender));
           }
-        },
-        {
-          id: 'month', label: t('plan.viewMonth'),
-          render: function (host) { host.appendChild(monthView(state, rerender)); }
         }
       ])]));
 
