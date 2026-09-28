@@ -1507,6 +1507,14 @@ body.tour-open .app-topbar, body.tour-open #add-word { z-index: 1; }
 
 .gl-item { border-left: 2px solid var(--border-strong); padding-inline-start: 10px; }
 
+/* A day in the month is pressable, and says so on hover and on focus. */
+.cal-cell.is-tappable { cursor: pointer; }
+.cal-cell.is-tappable:hover { background: var(--brand-050); }
+.cal-cell.is-tappable:focus-visible { outline: 2px solid var(--brand-700); outline-offset: -2px; }
+/* The day's own detail, inside the modal the day opens. */
+.pg-day-topic { display: flex; align-items: baseline; gap: 8px; font-size: 13px; line-height: 1.45; }
+.pg-day-topic .pg-tag { flex: none; }
+
 /* ----- 25. Month calendar ------------------------------------------------- */
 .cal-month { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
 .cal-dow {

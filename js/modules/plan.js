@@ -98,21 +98,71 @@
         if (iso === examISO) {
           cell.appendChild(U.el('div.cal-tag.cal-tag-exam', { text: t('roadmap.examDay') }));
         }
-        lessons.filter(function (l) { return l.date === iso; }).forEach(function (lesson) {
+        var onDay = lessons.filter(function (l) { return l.date === iso; });
+        onDay.forEach(function (lesson) {
           var cls = STATUS_CLASS[lesson.status];
+          var n = JTS.programme ? JTS.programme.numberOf(lesson) : null;
           cell.appendChild(U.el('button.cal-tag' + (cls ? '.' + cls : ''), {
             type: 'button',
             title: lesson.skillIds.map(function (id) { return JTS.skills.name(id); }).join(' · '),
-            text: lesson.actions.map(function (a) { return t('plan.action.' + a); }).join(' · '),
-            onclick: function () { lessonModal(lesson, rerender); }
+            text: (n ? t('prog.lessonNo', { n: n }) + ' · ' : '') +
+              lesson.actions.map(function (a) { return t('plan.action.' + a); }).join(' · '),
+            onclick: function (e) { e.stopPropagation(); lessonModal(lesson, rerender); }
           }));
         });
+        /* The whole square opens the day, not just the chip inside it: on a
+           calendar the thing you press is a date. */
+        if (!outside) {
+          cell.classList.add('is-tappable');
+          cell.setAttribute('role', 'button');
+          cell.setAttribute('tabindex', '0');
+          cell.setAttribute('aria-label', U.fmtDate(day, S.settings().uiLang));
+          (function (dayLessons, dayISO) {
+            function open() { dayModal(dayISO, dayLessons, rerender); }
+            cell.addEventListener('click', open);
+            cell.addEventListener('keydown', function (e) {
+              if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+            });
+          })(onDay, iso);
+        }
         grid.appendChild(cell);
       }
     }
 
     paint();
     return wrap;
+  }
+
+  /**
+   * A day, opened from the calendar. Everything the programme sets for it
+   * lives here now — the lesson, its topics, the homework with its numbers —
+   * rather than in a card under the month, where it was the same words on
+   * every day and belonged to none of them.
+   */
+  function dayModal(iso, dayLessons, rerender) {
+    if (dayLessons.length === 1) return lessonModal(dayLessons[0], rerender);
+    var m;
+    var body = U.el('div.stack');
+    if (!dayLessons.length) {
+      body.appendChild(U.el('p.muted', { text: t('prog.dayEmpty') }));
+    }
+    dayLessons.forEach(function (lesson) {
+      var n = JTS.programme ? JTS.programme.numberOf(lesson) : null;
+      var detail = n && JTS.programme ? JTS.programme.lessonDetail(n) : null;
+      body.appendChild(U.el('div.card.card-sm.stack-sm', null, [
+        U.el('div.row-between.row-wrap', null, [
+          U.el('b', { text: t('plan.goalFor', {
+            skills: lesson.skillIds.map(function (id) { return JTS.skills.name(id); }).join(', ')
+          }) }),
+          U.el('button.btn.btn-sm', {
+            type: 'button', text: t('common.open'),
+            onclick: function () { m.close(); lessonModal(lesson, rerender); }
+          })
+        ]),
+        detail
+      ]));
+    });
+    m = ui.modal({ title: U.fmtDate(U.parseISO(iso), S.settings().uiLang), content: body, wide: true });
   }
 
   function lessonModal(lesson, rerender) {
@@ -139,6 +189,13 @@
         lesson.movedFrom
           ? U.el('div.small.muted', { text: t('plan.move') + ': ' + U.fmtDate(lesson.movedFrom) })
           : null,
+        /* The programme's half of the day: which of the 48 lessons this is,
+           the topics it covers, and the homework that follows it. */
+        (function () {
+          if (!JTS.programme) return null;
+          var n = JTS.programme.numberOf(lesson);
+          return n ? JTS.programme.lessonDetail(n) : null;
+        })(),
         ui.field(t('plan.moveTo'), dateInput)
       ]),
       actions: [
@@ -309,20 +366,33 @@
         }
       ])]));
 
-      /* What the calendar cannot say: what is set after every lesson, and the
-         whole list of topics with the lesson each is taught in. The calendar
-         answers "when"; these answer "what". */
+      /* The homework and the topic tables used to sit here, under the month,
+         where they were the same words on every day and belonged to none of
+         them. They are inside the calendar now: press a day and it tells you
+         which of the 48 lessons it is, what it covers, and what is set after
+         it. The full tag tables stay reachable, folded, for the question a
+         day cannot answer — "when do we do M17". */
       if (JTS.programme) {
-        screen.appendChild(JTS.programme.homeworkCard());
-        screen.appendChild(U.el('div.card.stack-sm', { id: 'prog-topics' }, [
-          U.el('div.eyebrow', { text: t('prog.topicsTitle') }),
-          U.el('p.small.muted', { text: t('prog.topicsLead') }),
-          ui.tabs([
-            { id: 'math', label: t('common.math'),
-              render: function (host) { host.appendChild(JTS.programme.topicTable('math')); } },
-            { id: 'rw', label: t('common.rw'),
-              render: function (host) { host.appendChild(JTS.programme.topicTable('rw')); } }
-          ])
+        var tablesBody = U.el('div.acc-body.stack-sm', { hidden: true });
+        var tablesCaret = U.el('span.caret', { text: '❯' });
+        var tablesHead = U.el('button.acc-head', {
+          type: 'button', 'aria-expanded': 'false',
+          onclick: function () {
+            var now = tablesBody.hidden;
+            tablesBody.hidden = !now;
+            tablesHead.setAttribute('aria-expanded', String(now));
+            tablesCaret.style.transform = now ? 'rotate(90deg)' : '';
+          }
+        }, [tablesCaret, U.el('b', { text: t('prog.topicsTitle') })]);
+        tablesBody.appendChild(U.el('p.small.muted', { text: t('prog.topicsLead') }));
+        tablesBody.appendChild(ui.tabs([
+          { id: 'math', label: t('common.math'),
+            render: function (host) { host.appendChild(JTS.programme.topicTable('math')); } },
+          { id: 'rw', label: t('common.rw'),
+            render: function (host) { host.appendChild(JTS.programme.topicTable('rw')); } }
+        ]));
+        screen.appendChild(U.el('div.card', { id: 'prog-topics' }, [
+          U.el('div.acc', null, [tablesHead, tablesBody])
         ]));
       }
 

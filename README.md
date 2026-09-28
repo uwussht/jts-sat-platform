@@ -373,8 +373,14 @@ gates — lives in `js/data/programme*.js` and is rendered by
   so the course goes below the map rather than replacing it — which is why the
   roadmap is a scrolling page again, while the map and the step beside it still
   fit one screen on their own.
-- **`#/plan`** carries the **homework** set after every lesson and the **topic
-  tables**. The calendar answers *when*; these answer *what*.
+- **`#/plan`** puts it **inside the calendar**. Press a day and it tells you
+  which of the 48 lessons falls there, the topics that lesson covers, and the
+  four pieces of homework with their numbers filled in — word list #10, set
+  #10, not "#N". The link between the generated plan and the fixed 48 is simply
+  the order: the third session anyone sits is lesson 3, whatever date it lands
+  on, which is what lets a calendar square carry a set number at all. The full
+  tag tables stay on the page, folded, for the question a single day cannot
+  answer: *when do we do M17*.
 - **`#/guide`** gained two chapters after the six onboarding teaches: the
   **words a beginner has not met**, and the **error log**.
 

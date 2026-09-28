@@ -133,7 +133,7 @@
         U.el('div', null, [
           U.el('div', null, [
             U.el('b', { text: pick(h.name) }),
-            U.el('span.pg-mins', { text: h.mins + ' ' + t('common.min') })
+            U.el('span.pg-mins', { text: h.mins + ' ' + t('common.minutes') })
           ]),
           U.el('div.small.muted', { text: pick(h.body) })
         ])
@@ -198,7 +198,94 @@
     ]);
   }
 
+  /* ------------------------------------------- a planned day and its lesson */
+
+  /**
+   * Which programme lesson a planned session is.
+   *
+   * The plan is generated from the student's own dates and the programme is a
+   * fixed list of 48; the link between them is simply the order. The third
+   * session anyone sits is lesson 3, whatever day it falls on — which is what
+   * makes "set #10" and "word list #10" mean something on a calendar.
+   */
+  function numberOf(lesson) {
+    var all = JTS.planner.allLessons();
+    var i = -1;
+    all.forEach(function (l, k) { if (l.id === lesson.id) i = k; });
+    if (i < 0) return null;
+    var n = i + 1;
+    return n <= P.lessonsTotal ? n : null;
+  }
+
+  function programmeLesson(n) {
+    return P.lessons.filter(function (l) { return l.n === n; })[0] || null;
+  }
+
+  /**
+   * Everything the programme sets for one lesson, for the day a student taps:
+   * which lesson of the 48 it is, the topics it covers, and the four pieces of
+   * homework with their numbers filled in. This is what used to sit in a card
+   * under the calendar, where it was the same text on every day of the month.
+   */
+  function lessonDetail(n) {
+    var pl = programmeLesson(n);
+    if (!pl) return null;
+    var box = U.el('div.stack-sm.pg-day');
+
+    box.appendChild(U.el('div.row.row-wrap', null, [
+      U.el('span.badge', { text: t('prog.lessonNo', { n: n }) }),
+      U.el('span.badge.badge-muted', { text: lessonName(pl) }),
+      U.el('span.badge.badge-muted', { text: t('prog.practice.' + pl.practice) })
+    ]));
+
+    if (pl.tags.length) {
+      var topics = U.el('div.stack-sm');
+      pl.tags.forEach(function (tag) {
+        var top = P.topicOf(tag);
+        topics.appendChild(U.el('div.pg-day-topic', null, [
+          U.el('span.pg-tag' + (top ? '.lv-' + top.level[top.level.length - 1] : ''), { text: tag }),
+          U.el('span', { text: top ? pick(top.t) : tag })
+        ]));
+      });
+      box.appendChild(U.el('div.stack-sm', null, [
+        U.el('div.stat-label', { text: t('prog.topicsToday') }), topics
+      ]));
+    } else if (pl.focus) {
+      box.appendChild(U.el('p.small.muted', { text: pick(pl.focus) }));
+    } else if (pl.errorLogDriven) {
+      box.appendChild(U.el('p.small.muted', { text: t('prog.fromErrorLog') }));
+    }
+
+    var hw = U.el('div.pg-hw');
+    P.homework.forEach(function (h, i) {
+      /* "#N" in the wording is this lesson's number, so the student is told
+         which list and which set rather than being told the pattern. */
+      var body = pick(h.body).replace(/#N/g, '#' + n);
+      hw.appendChild(U.el('div.pg-hw-item', null, [
+        U.el('span.pg-hw-n', { text: String(i + 1) }),
+        U.el('div', null, [
+          U.el('div', null, [
+            U.el('b', { text: pick(h.name).replace(/#N/g, '#' + n) }),
+            U.el('span.pg-mins', { text: h.mins + ' ' + t('common.minutes') })
+          ]),
+          U.el('div.small.muted', { text: body })
+        ])
+      ]));
+    });
+    box.appendChild(U.el('div.stack-sm', null, [
+      U.el('div.stat-label', { text: t('prog.hwTitle') }), hw
+    ]));
+
+    var gate = P.gates.filter(function (g) { return g.afterLesson === n; })[0];
+    if (gate) {
+      box.appendChild(U.el('div.notice.notice-warn', { text: pick(gate.name) }));
+    }
+    return box;
+  }
+
   JTS.programme = {
+    numberOf: numberOf,
+    lessonDetail: lessonDetail,
     chronology: chronology,
     lessonRow: lessonRow,
     lessonName: lessonName,
