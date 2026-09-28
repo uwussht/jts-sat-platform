@@ -150,7 +150,10 @@
       ]),
       U.el('div.small.muted', {
         text: U.daysBetween(U.today(), U.parseISO(cp.date)) + ' ' + t('common.days')
-      })
+      }),
+      /* Progress left the navigation when Materials took its place, and the
+         charts are wanted exactly here — next to the checkpoint they measure. */
+      U.el('a.small', { href: '#/progress', text: t('progress.title') + ' →' })
     ]);
   }
 

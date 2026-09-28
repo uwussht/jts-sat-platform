@@ -547,12 +547,11 @@
             tablesCaret.style.transform = now ? 'rotate(90deg)' : '';
           }
         }, [tablesCaret, U.el('b', { text: t('prog.topicsTitle') })]);
-        tablesBody.appendChild(U.el('p.small.muted', { text: t('prog.topicsLead') }));
         tablesBody.appendChild(ui.tabs([
           { id: 'math', label: t('common.math'),
-            render: function (host) { host.appendChild(JTS.programme.topicTable('math')); } },
+            render: function (host) { host.appendChild(JTS.programme.unitTable('math')); } },
           { id: 'rw', label: t('common.rw'),
-            render: function (host) { host.appendChild(JTS.programme.topicTable('rw')); } }
+            render: function (host) { host.appendChild(JTS.programme.unitTable('rw')); } }
         ]));
         screen.appendChild(U.el('div.card', { id: 'prog-topics' }, [
           U.el('div.acc', null, [tablesHead, tablesBody])

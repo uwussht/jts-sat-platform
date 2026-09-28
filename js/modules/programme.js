@@ -2,14 +2,21 @@
    Rendering the JTS 1500+ programme.
 
    The data is in js/data/programme*.js; this file turns it into the pieces the
-   three screens hang on their own pages, so a lesson row looks the same
-   wherever it appears and a tag is worded once:
+   screens hang on their own pages, so a lesson row looks the same wherever it
+   appears and a topic is worded once:
 
-     JTS.programme.chronology()   the 48 lessons by stage, with the gates
-                                  — used by #/roadmap
-     JTS.programme.homeworkCard()  what follows every lesson — used by #/plan
-     JTS.programme.topicTable(sec) the tag tables — used by #/plan
+     JTS.programme.chronology()    the 45 lessons by phase, with the gates
+                                   — used by #/roadmap
+     JTS.programme.unitList(sec)   the units and their lessons — #/materials
+     JTS.programme.unitTable(sec)  the same as a table — #/plan
+     JTS.programme.homeworkCard()  what follows every lesson — #/materials
      JTS.programme.errorLogCard()  the error log — used by #/guide
+     JTS.programme.lessonDetail(n) one lesson, for a day on the calendar
+
+   Everything that prints a lesson number asks which schedule the student is
+   on first: the same 45 lessons are numbered differently at two a week and at
+   three, and a number that belongs to the other schedule is worse than no
+   number at all.
 
    Nothing here writes to the store. The programme is the school's course and
    the same for everyone; a student's own progress lives in the plan.
@@ -22,52 +29,54 @@
   function lang() { return S.settings ? S.settings().uiLang : 'en'; }
   function pick(obj) { return JTS.i18n.pick(obj, lang()); }
 
-  /** "Writing 3", "Math 7", "Hard Reading 2" — the lesson's name. */
-  function lessonName(l) {
-    if (l.kind === 'diagnostic') return t('prog.kind.diagnostic');
-    return t('prog.kind.' + l.kind) + ' ' + l.seq;
+  /**
+   * How many lessons a week this student is on: whatever they chose in
+   * Settings, and failing that whatever their study days say. Anything other
+   * than three is run as the two-a-week schedule, which is the one with room
+   * in it.
+   */
+  function perWeek() {
+    var s = S.state();
+    var av = (s && s.availability) || null;
+    var n = av && av.lessonsPerWeek;
+    if (!n && av && av.days) n = av.days.length;
+    return Number(n) >= 3 ? 3 : 2;
   }
 
-  /** The chips for a lesson: its tags, or its one-line focus when it has none. */
-  function lessonTopics(l, opts) {
+  function schedule() { return P.scheduleOf(perWeek()); }
+
+  /* ------------------------------------------------------------- lessons */
+
+  /** "M2.3 · Quadratics: the formula" — a lesson named the way it is coded. */
+  function lessonName(l) { return pick(l.t); }
+
+  function codeChip(l) {
+    var unit = P.unitById(l.unit);
+    return U.el('span.pg-tag' + (unit && unit.kind === 'hard' ? '.lv-hard' : ''), {
+      text: l.code, title: unit ? pick(unit.name) : l.code
+    });
+  }
+
+  /** One sitting: its number, the lessons in it, and the gate that follows. */
+  function slotRow(slot, opts) {
     opts = opts || {};
-    var box = U.el('div.pg-topics');
-    if (l.tags.length) {
-      l.tags.forEach(function (tag) {
-        var top = P.topicOf(tag);
-        box.appendChild(U.el('span.pg-tag' + (top ? '.lv-' + top.level[top.level.length - 1] : ''), {
-          text: tag, title: top ? pick(top.t) : tag
-        }));
-      });
-      if (opts.spell && l.tags.length) {
-        box.appendChild(U.el('span.pg-topic-text', {
-          text: l.tags.map(function (tag) {
-            var top = P.topicOf(tag);
-            return top ? pick(top.t) : tag;
-          }).join(' · ')
-        }));
-      }
-      return box;
-    }
-    if (l.focus) box.appendChild(U.el('span.pg-topic-text', { text: pick(l.focus) }));
-    else if (l.errorLogDriven) {
-      box.appendChild(U.el('span.pg-topic-text.pg-from-log', { text: t('prog.fromErrorLog') }));
-    }
-    return box;
-  }
+    var pw = opts.perWeek || perWeek();
+    var gate = P.gateAfter(slot.n, pw);
+    var row = U.el('div.pg-lesson' + (gate ? '.is-gate' : ''));
+    row.appendChild(U.el('span.pg-n', { text: String(slot.n) }));
 
-  function lessonRow(l, opts) {
-    var gate = P.gates.filter(function (g) { return g.afterLesson === l.n; })[0];
-    var row = U.el('div.pg-lesson' + (gate ? '.is-gate' : ''), null, [
-      U.el('span.pg-n', { text: l.kind === 'diagnostic' ? '0' : String(l.n) }),
-      U.el('div.pg-body', null, [
-        U.el('div.pg-name', null, [
-          U.el('b', { text: lessonName(l) }),
-          U.el('span.pg-practice', { text: t('prog.practice.' + l.practice) })
-        ]),
-        lessonTopics(l, opts)
-      ])
-    ]);
+    var body = U.el('div.pg-body');
+    slot.lessons.forEach(function (l) {
+      body.appendChild(U.el('div.pg-name', null, [
+        codeChip(l),
+        U.el('b', { text: lessonName(l) })
+      ]));
+      if (opts.skills) {
+        body.appendChild(U.el('div.pg-topic-text', { text: pick(l.skills) }));
+      }
+    });
+    row.appendChild(body);
+
     if (gate) {
       row.appendChild(U.el('div.pg-gate', null, [
         U.el('span.badge.badge-warn', { text: pick(gate.name) })
@@ -76,40 +85,59 @@
     return row;
   }
 
+  /* ---------------------------------------------------------- chronology */
+
   /**
-   * The whole course in order: four stages, the lessons inside each, and the
-   * gate that closes it. This is the chronology — it answers "what comes
-   * after what", which the road cannot because the road has six shapes and the
-   * course has forty-eight steps.
+   * The whole course in order: three phases, the weeks inside each, and the
+   * gate that closes it. This is the chronology — it answers "what comes after
+   * what", which the road cannot because the road has six shapes and the
+   * course has forty-five steps.
    */
   function chronology(opts) {
     opts = opts || {};
+    var pw = opts.perWeek || perWeek();
+    var sch = P.scheduleOf(pw);
     var wrap = U.el('div.stack');
-    var diag = P.lessons[0];
 
     wrap.appendChild(U.el('div.card.card-sm.pg-zero', null, [
-      U.el('div.eyebrow', { text: t('prog.lessonZero') }),
-      U.el('div', null, [U.el('b', { text: t('prog.kind.diagnostic') })]),
-      U.el('div.small.muted', { text: t('prog.lessonZeroNote') })
+      U.el('div.eyebrow', { text: pick(sch.name) }),
+      U.el('div', null, [U.el('b', {
+        text: t('prog.scheduleShape', { weeks: sch.weeks, lessons: P.lessonsTotal, tests: sch.tests })
+      })]),
+      U.el('div.small.muted', { text: pick(sch.note) })
     ]));
 
-    P.stages.forEach(function (st) {
-      var lessons = P.lessonsOfStage(st);
+    var weeks = P.weeks(pw);
+    P.phases.forEach(function (ph) {
+      var from = pw === 2 ? ph.from2 : ph.from3;
+      var to = pw === 2 ? ph.to2 : ph.to3;
+      var mine = weeks.filter(function (w) {
+        return w.slots.some(function (s) { return s.n >= from && s.n <= to; });
+      });
+
       var head = U.el('div.pg-stage-head', null, [
         U.el('div', null, [
-          U.el('div.eyebrow', { text: t('prog.month', { n: st.months }) }),
-          U.el('div.h3', { text: pick(st.name) })
+          U.el('div.eyebrow', { text: t('prog.weeks', { range: pw === 2 ? ph.weeks2 : ph.weeks3 }) }),
+          U.el('div.h3', { text: pick(ph.name) })
         ]),
-        U.el('span.badge.badge-muted', {
-          text: t('prog.lessonRange', { from: st.from, to: st.to })
-        })
+        U.el('span.badge.badge-muted', { text: t('prog.lessonRange', { from: from, to: to }) })
       ]);
+
       var body = U.el('div.pg-lessons');
-      lessons.forEach(function (l) { body.appendChild(lessonRow(l, opts)); });
+      mine.forEach(function (w) {
+        body.appendChild(U.el('div.pg-week', null, [
+          U.el('span.pg-week-n', { text: t('prog.weekNo', { n: w.n }) }),
+          U.el('span.pg-week-test', { text: t('prog.testNo', { n: w.n }) })
+        ]));
+        w.slots.forEach(function (s) {
+          if (s.n < from || s.n > to) return;
+          body.appendChild(slotRow(s, { perWeek: pw }));
+        });
+      });
 
       wrap.appendChild(U.el('div.card.stack-sm', null, [
         head,
-        U.el('p.small.muted', { text: pick(st.lead) }),
+        U.el('p.small.muted', { text: pick(ph.lead) }),
         body
       ]));
     });
@@ -121,6 +149,141 @@
       ])
     ]));
     return wrap;
+  }
+
+  /* --------------------------------------------------------------- units */
+
+  /** How far the student has got, as a lesson number. */
+  function doneCount() {
+    if (!JTS.planner || !JTS.planner.allLessons) return 0;
+    return JTS.planner.allLessons().filter(function (l) { return l.status === 'done'; }).length;
+  }
+
+  /** done | current | ahead, for a lesson number on this student's schedule. */
+  function stateOfNumber(n, done) {
+    if (!n) return 'ahead';
+    if (n <= done) return 'done';
+    if (n === done + 1) return 'current';
+    return 'ahead';
+  }
+
+  function unitState(unit, pw, done) {
+    var ns = P.lessonsOfUnit(unit.id)
+      .map(function (l) { return P.numberOn(l, pw); })
+      .filter(Boolean);
+    if (!ns.length) return 'ahead';
+    var last = Math.max.apply(null, ns);
+    var first = Math.min.apply(null, ns);
+    if (done >= last) return 'done';
+    if (done + 1 >= first) return 'current';
+    return 'ahead';
+  }
+
+  /**
+   * A unit as the materials page shows it: a pressable header with its state
+   * and how many lessons are in it, and the lessons themselves inside.
+   */
+  function unitCard(unit, opts) {
+    opts = opts || {};
+    var pw = opts.perWeek || perWeek();
+    var done = opts.done === undefined ? doneCount() : opts.done;
+    var lessons = P.lessonsOfUnit(unit.id).filter(function (l) {
+      return P.numberOn(l, pw);
+    }).sort(function (a, b) { return P.numberOn(a, pw) - P.numberOn(b, pw); });
+
+    var state = unitState(unit, pw, done);
+    var body = U.el('div.mat-unit-body', { hidden: true });
+    var caret = U.el('span.mat-caret', { text: '❯', 'aria-hidden': 'true' });
+
+    var head = U.el('button.mat-unit-head', {
+      type: 'button', 'aria-expanded': 'false',
+      onclick: function () {
+        var open = body.hidden;
+        body.hidden = !open;
+        head.setAttribute('aria-expanded', String(open));
+        caret.style.transform = open ? 'rotate(90deg)' : '';
+      }
+    }, [
+      U.el('span.mat-state', { text: state === 'done' ? '✓' : state === 'current' ? '▶' : '', 'aria-hidden': 'true' }),
+      U.el('span.mat-unit-text', null, [
+        U.el('b', { text: unit.kind === 'unit'
+          ? t('prog.unitNo', { n: unit.n, name: pick(unit.name) })
+          : pick(unit.name) }),
+        U.el('span.small.muted', {
+          text: lessons.length === 1 ? t('prog.nLesson') : t('prog.nLessons', { n: lessons.length })
+        })
+      ]),
+      caret
+    ]);
+
+    if (unit.lead) body.appendChild(U.el('p.small.muted', { text: pick(unit.lead) }));
+    lessons.forEach(function (l) {
+      var n = P.numberOn(l, pw);
+      var st = stateOfNumber(n, done);
+      body.appendChild(U.el('div.mat-lesson.is-' + st, null, [
+        U.el('span.mat-n', { text: String(n) }),
+        U.el('div.mat-lesson-text', null, [
+          U.el('div.pg-name', null, [codeChip(l), U.el('b', { text: lessonName(l) })]),
+          U.el('div.small.muted', { text: pick(l.skills) })
+        ])
+      ]));
+    });
+
+    return U.el('div.mat-unit.is-' + state, null, [head, body]);
+  }
+
+  /** Every unit of one section, in course order. */
+  function unitList(section, opts) {
+    opts = opts || {};
+    var pw = opts.perWeek || perWeek();
+    var done = opts.done === undefined ? doneCount() : opts.done;
+    var box = U.el('div.mat-units');
+    P.unitsOf(section).forEach(function (u) {
+      box.appendChild(unitCard(u, { perWeek: pw, done: done }));
+    });
+    return box;
+  }
+
+  /** How many lessons of a section there are, for the heading's badge. */
+  function lessonCount(section, pw) {
+    pw = pw || perWeek();
+    return P.lessons.filter(function (l) {
+      return P.sectionOf(l) === section && P.numberOn(l, pw);
+    }).length;
+  }
+
+  /* --------------------------------------------------------- unit tables */
+
+  /**
+   * Every lesson of a section with its code and its number — the answer to
+   * "what have we covered and what is still ahead", which is why it lives on
+   * the plan and not in the roadmap.
+   */
+  function unitTable(section) {
+    var pw = perWeek();
+    var rows = P.lessons.filter(function (l) {
+      return P.sectionOf(l) === section && P.numberOn(l, pw);
+    }).sort(function (a, b) { return P.numberOn(a, pw) - P.numberOn(b, pw); });
+
+    var table = U.el('table.table.pg-table');
+    table.appendChild(U.el('thead', null, [U.el('tr', null, [
+      U.el('th', { text: t('prog.col.code') }),
+      U.el('th', { text: t('prog.col.topic') }),
+      U.el('th', { text: t('prog.col.unit') }),
+      U.el('th.num', { text: t('prog.col.lesson') })
+    ])]));
+    var body = U.el('tbody');
+    rows.forEach(function (l) {
+      var unit = P.unitById(l.unit);
+      body.appendChild(U.el('tr', null, [
+        U.el('td', null, [codeChip(l)]),
+        U.el('td', { text: lessonName(l) }),
+        U.el('td.small.muted', { text: unit ? pick(unit.name) : '' }),
+        U.el('td.num', { text: String(P.numberOn(l, pw)) })
+      ]));
+    });
+    table.appendChild(body);
+    return U.el('div.table-wrap', null, [table]);
   }
 
   /* ------------------------------------------------------------ homework */
@@ -139,43 +302,23 @@
         ])
       ]));
     });
+    var w = P.weekly;
+    list.appendChild(U.el('div.pg-hw-item.is-weekly', null, [
+      U.el('span.pg-hw-n', { text: '★' }),
+      U.el('div', null, [
+        U.el('div', null, [
+          U.el('b', { text: pick(w.name) }),
+          U.el('span.pg-mins', { text: t('prog.everyWeek') })
+        ]),
+        U.el('div.small.muted', { text: pick(w.body) })
+      ])
+    ]));
     return U.el('div.card.stack-sm', { id: 'prog-homework' }, [
       U.el('div.eyebrow', { text: t('prog.hwTitle') }),
       U.el('p.small.muted', { text: t('prog.hwLead') }),
       list,
       U.el('p.xsmall.muted', { text: pick(P.homeworkLoad) })
     ]);
-  }
-
-  /* -------------------------------------------------------- topic tables */
-
-  /**
-   * Every tag of a section, with the lesson it is taught in. This is the
-   * answer to "what have we covered and what is still ahead", which is why it
-   * lives on the plan and not in the roadmap.
-   */
-  function topicTable(section) {
-    var rows = P.topics.filter(function (x) { return x.section === section; });
-    var table = U.el('table.table.pg-table');
-    table.appendChild(U.el('thead', null, [U.el('tr', null, [
-      U.el('th', { text: t('prog.col.tag') }),
-      U.el('th', { text: t('prog.col.topic') }),
-      U.el('th', { text: t('prog.col.level') }),
-      U.el('th.num', { text: t('prog.col.lesson') })
-    ])]));
-    var body = U.el('tbody');
-    rows.forEach(function (x) {
-      body.appendChild(U.el('tr', null, [
-        U.el('td', null, [U.el('span.pg-tag.lv-' + x.level[x.level.length - 1], { text: x.tag })]),
-        U.el('td', { text: pick(x.t) }),
-        U.el('td', null, x.level.map(function (lv) {
-          return U.el('span.pg-level.lv-' + lv, { text: t('prog.level.' + lv) });
-        })),
-        U.el('td.num', { text: String(x.lesson) })
-      ]));
-    });
-    table.appendChild(body);
-    return U.el('div.table-wrap', null, [table]);
   }
 
   /* -------------------------------------------------------- the error log */
@@ -194,6 +337,7 @@
       U.el('p.small', { text: t('prog.logLead') }),
       U.el('div.table-wrap', null, [table]),
       U.el('div.notice', { text: t('prog.logClose') }),
+      U.el('div.notice.notice-warn', { text: pick(P.redrill) }),
       U.el('p.small.muted', { text: t('prog.logWhy') })
     ]);
   }
@@ -204,7 +348,7 @@
    * Which programme lesson a planned session is.
    *
    * The plan is generated from the student's own dates and the programme is a
-   * fixed list of 48; the link between them is simply the order. The third
+   * fixed list of 45; the link between them is simply the order. The third
    * session anyone sits is lesson 3, whatever day it falls on — which is what
    * makes "set #10" and "word list #10" mean something on a calendar.
    */
@@ -217,44 +361,41 @@
     return n <= P.lessonsTotal ? n : null;
   }
 
-  function programmeLesson(n) {
-    return P.lessons.filter(function (l) { return l.n === n; })[0] || null;
+  function slotOf(n, pw) {
+    return P.order(pw).filter(function (s) { return s.n === n; })[0] || null;
   }
 
   /**
    * Everything the programme sets for one lesson, for the day a student taps:
-   * which lesson of the 48 it is, the topics it covers, and the four pieces of
-   * homework with their numbers filled in. This is what used to sit in a card
-   * under the calendar, where it was the same text on every day of the month.
+   * which lesson of the 45 it is, what it covers, and the homework with its
+   * numbers filled in.
    */
   function lessonDetail(n) {
-    var pl = programmeLesson(n);
-    if (!pl) return null;
+    var pw = perWeek();
+    var slot = slotOf(n, pw);
+    if (!slot) return null;
     var box = U.el('div.stack-sm.pg-day');
+    var phase = P.phaseOf(n, pw);
 
     box.appendChild(U.el('div.row.row-wrap', null, [
       U.el('span.badge', { text: t('prog.lessonNo', { n: n }) }),
-      U.el('span.badge.badge-muted', { text: lessonName(pl) }),
-      U.el('span.badge.badge-muted', { text: t('prog.practice.' + pl.practice) })
+      phase ? U.el('span.badge.badge-muted', { text: pick(phase.name) }) : null,
+      U.el('span.badge.badge-muted', { text: t('prog.perWeek', { n: pw }) })
     ]));
 
-    if (pl.tags.length) {
-      var topics = U.el('div.stack-sm');
-      pl.tags.forEach(function (tag) {
-        var top = P.topicOf(tag);
-        topics.appendChild(U.el('div.pg-day-topic', null, [
-          U.el('span.pg-tag' + (top ? '.lv-' + top.level[top.level.length - 1] : ''), { text: tag }),
-          U.el('span', { text: top ? pick(top.t) : tag })
-        ]));
-      });
-      box.appendChild(U.el('div.stack-sm', null, [
-        U.el('div.stat-label', { text: t('prog.topicsToday') }), topics
+    var topics = U.el('div.stack-sm');
+    slot.lessons.forEach(function (l) {
+      topics.appendChild(U.el('div.pg-day-topic', null, [
+        codeChip(l),
+        U.el('span', null, [
+          U.el('b', { text: lessonName(l) }),
+          U.el('span.small.muted', { text: ' — ' + pick(l.skills) })
+        ])
       ]));
-    } else if (pl.focus) {
-      box.appendChild(U.el('p.small.muted', { text: pick(pl.focus) }));
-    } else if (pl.errorLogDriven) {
-      box.appendChild(U.el('p.small.muted', { text: t('prog.fromErrorLog') }));
-    }
+    });
+    box.appendChild(U.el('div.stack-sm', null, [
+      U.el('div.stat-label', { text: t('prog.topicsToday') }), topics
+    ]));
 
     var hw = U.el('div.pg-hw');
     P.homework.forEach(function (h, i) {
@@ -276,21 +417,25 @@
       U.el('div.stat-label', { text: t('prog.hwTitle') }), hw
     ]));
 
-    var gate = P.gates.filter(function (g) { return g.afterLesson === n; })[0];
-    if (gate) {
-      box.appendChild(U.el('div.notice.notice-warn', { text: pick(gate.name) }));
-    }
+    var gate = P.gateAfter(n, pw);
+    if (gate) box.appendChild(U.el('div.notice.notice-warn', { text: pick(gate.name) }));
     return box;
   }
 
   JTS.programme = {
+    perWeek: perWeek,
+    schedule: schedule,
     numberOf: numberOf,
     lessonDetail: lessonDetail,
     chronology: chronology,
-    lessonRow: lessonRow,
+    slotRow: slotRow,
     lessonName: lessonName,
+    unitList: unitList,
+    unitCard: unitCard,
+    unitTable: unitTable,
+    lessonCount: lessonCount,
+    doneCount: doneCount,
     homeworkCard: homeworkCard,
-    topicTable: topicTable,
     errorLogCard: errorLogCard
   };
 })();

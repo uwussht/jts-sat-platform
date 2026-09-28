@@ -2268,7 +2268,10 @@
       { path: '#/plan',     key: 'nav.plan',     icon: '☷' },
       { path: '#/practice', key: 'nav.practice', icon: '✎' },
       { path: '#/mocks',    key: 'nav.mocks',    icon: '⏱' },
-      { path: '#/progress', key: 'nav.progress', icon: '↗' }
+      /* Materials rather than Progress: the course is what a student opens
+         daily, and the charts are a place you visit after a test. #/progress
+         is still a route, linked from Today and from the diagnostic result. */
+      { path: '#/materials', key: 'nav.materials', icon: '▤' }
     ],
     /* Destinations that belong in the sidebar but not in the phone tab bar,
        where five is already the most that fits. */

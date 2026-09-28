@@ -1,133 +1,185 @@
 /* ==========================================================================
    The JTS 1500+ programme.
 
-   This is the school's own course, not the platform's generated plan: 48
-   lessons over four months, three stages and three gates, with every topic
-   carrying a tag (M1…M29, R1…R17) that the error log refers to.
+   This is the school's own course, not the platform's generated plan: 45
+   lessons in eight units — four Math, four Verbal — plus a hard-Module-2
+   phase and a test week, with a full practice test every week from the first.
 
-   Three screens read this one file, which is why it is data and not prose in
-   three places:
+   The same 45 lessons run on two schedules. Three lessons a week finishes in
+   15 weeks; two a week finishes in 23 and leaves room for a second mixed
+   review and a buffer lesson. The content does not change between them, only
+   the pace and the lesson numbers in the hard phase — which is why a lesson
+   carries two numbers, n3 and n2, and everything that prints a number asks
+   which schedule the student is on.
 
-   - #/roadmap  — the chronology: stages, gates, and all 48 lessons in order;
-   - #/plan     — the homework after each lesson, and the topic tables;
-   - #/guide    — the error log and the terms a beginner has not met.
+   Four screens read this one file, which is why it is data and not prose in
+   four places:
 
-   A lesson does NOT repeat its topics as text. It names tags, and the titles
-   come from the tables below, so a topic is worded once. Renaming a topic
-   renames it everywhere it appears.
+   - #/roadmap    — the chronology: phases, gates and every lesson in order;
+   - #/materials  — the units, Verbal and Math apart, with their lessons;
+   - #/plan       — the homework after each lesson;
+   - #/guide      — the error log and the terms a beginner has not met.
 
-   Levels: base — Module 1 material, core — the body of the exam, hard — the
-   kind of item that only appears in a hard Module 2.
+   A lesson's wording lives once, in js/data/programme-units.js, and every
+   screen reads it from there by code (M1.1, V2.2, HM4). The code is also the
+   tag the error log refers to, which is the whole point of having one.
    ========================================================================== */
 window.JTS = window.JTS || {}; JTS.data = JTS.data || {};
 
 JTS.data.programme = {
   /* ------------------------------------------------------------- shape */
-  lessonsTotal: 48,
+  lessonsTotal: 45,
   wordsPerLesson: 10,
+  /** 45 lessons × 10 words. Printed on the plan so the number is not a guess. */
+  wordsTotal: 450,
 
-  /** The four months. `gate` is the gate that closes the stage. */
-  stages: [
+  /**
+   * The two schedules. `weeks` is how long the course takes, `perWeek` how
+   * many lessons are in a week, and `tests` how many practice tests that
+   * comes to — one a week, from week one.
+   */
+  schedules: [
     {
-      id: 'topics1', months: '1', from: 1, to: 12,
-      name: { en: 'All topics, part 1', ru: 'Все темы, часть 1', kk: 'Барлық тақырып, 1-бөлім' },
-      lead: {
-        en: 'Every question type once, in the order they appear in a module. After each lesson: a set on that topic and ten new words.',
-        ru: 'Каждый тип вопроса по разу, в том порядке, в каком они идут в модуле. После каждого урока — набор по теме и десять новых слов.',
-        kk: 'Әр сұрақ түрі бір реттен, модульдегі ретімен. Әр сабақтан кейін — тақырып бойынша жинақ және он жаңа сөз.'
+      id: 3, perWeek: 3, weeks: 15, tests: 15,
+      name: { en: 'Three lessons a week', ru: 'Три урока в неделю', kk: 'Аптасына үш сабақ' },
+      note: {
+        en: '15 weeks. One mixed review inside the content phase. The risk is overload: little time to go through the mistakes.',
+        ru: '15 недель. Один mixed review внутри content-фазы. Риск — перегруз: мало времени на разбор промахов.',
+        kk: '15 апта. Content-фазаның ішінде бір mixed review. Тәуекел — шамадан тыс жүктеме: қателерді талдауға уақыт аз.'
       }
     },
     {
-      id: 'topics2', months: '2', from: 13, to: 24, gate: 1,
-      name: { en: 'All topics, part 2', ru: 'Все темы, часть 2', kk: 'Барлық тақырып, 2-бөлім' },
-      lead: {
-        en: 'The second half of the tags, same rhythm. The stage closes with a full test.',
-        ru: 'Вторая половина тегов, тот же ритм. Этап закрывается полным тестом.',
-        kk: 'Тегтердің екінші жартысы, сол ырғақпен. Кезең толық тестпен жабылады.'
-      }
-    },
-    {
-      id: 'tests', months: '3', from: 25, to: 36, gate: 2,
-      name: { en: 'Full tests', ru: 'Полные тесты', kk: 'Толық тестер' },
-      lead: {
-        en: 'A full test at home before every lesson; the lesson is the review of every error in it, plus a short lesson on the two or three commonest tags in the error log.',
-        ru: 'Полный тест дома перед каждым уроком; урок — это разбор каждой ошибки в нём плюс мини-урок по двум-трём самым частым тегам из error log.',
-        kk: 'Әр сабақ алдында үйде толық тест; сабақ — ондағы әр қатені талдау, қосымша error log-тағы ең жиі екі-үш тег бойынша шағын сабақ.'
-      }
-    },
-    {
-      id: 'hard', months: '4', from: 37, to: 48, gate: 3,
-      name: { en: 'Hard practice', ru: 'Hard-практика', kk: 'Hard-практика' },
-      lead: {
-        en: 'The same rhythm with hard items only, everything on the clock. This is the stage that decides whether a hard Module 2 is survivable.',
-        ru: 'Тот же ритм, но только сложные задания, всё на время. Именно этот этап решает, выдержите ли вы сложный Модуль 2.',
-        kk: 'Сол ырғақ, бірақ тек күрделі тапсырмалар, бәрі уақытпен. Күрделі 2-модульді шыдай алатыныңызды осы кезең шешеді.'
+      id: 2, perWeek: 2, weeks: 23, tests: 23,
+      name: { en: 'Two lessons a week', ru: 'Два урока в неделю', kk: 'Аптасына екі сабақ' },
+      note: {
+        en: '23 weeks. Two mixed reviews and a buffer lesson. The risk is distance: topics drift far apart and are forgotten, which is what the re-drill rule is for.',
+        ru: '23 недели. Два mixed review и буферный урок. Риск — расстояние: темы уходят далеко друг от друга и забываются, ради этого и существует правило re-drill.',
+        kk: '23 апта. Екі mixed review және буферлік сабақ. Тәуекел — қашықтық: тақырыптар бір-бірінен алыстап, ұмытылады; re-drill ережесі сол үшін бар.'
       }
     }
   ],
 
-  /** Gates are compulsory: a stage does not close until its test is passed. */
+  /**
+   * Three phases. `from`/`to` are lesson numbers on each schedule, because the
+   * hard phase starts at a different lesson depending on the pace.
+   */
+  phases: [
+    {
+      id: 'content', weeks3: '1–11', weeks2: '1–18', from3: 1, to3: 33, from2: 1, to2: 36,
+      gate: 1,
+      name: { en: 'Content phase', ru: 'Content phase', kk: 'Content phase' },
+      lead: {
+        en: 'Every topic once, by unit: four Math units and four Verbal units, 34 lessons of new material plus mixed review. A full practice test every week from the first.',
+        ru: 'Все темы по разу, по юнитам: 4 Math-юнита и 4 Verbal-юнита, 34 урока нового материала плюс mixed review. Полный practice test каждую неделю, начиная с первой.',
+        kk: 'Барлық тақырып бір реттен, юниттер бойынша: 4 Math және 4 Verbal юнит, 34 сабақ жаңа материал және mixed review. Бірінші аптадан бастап апта сайын толық practice test.'
+      }
+    },
+    {
+      id: 'hard', weeks3: '12–14', weeks2: '19–22', from3: 34, to3: 42, from2: 37, to2: 44,
+      gate: 2,
+      name: { en: 'Hard Module 2 phase', ru: 'Hard Module 2 phase', kk: 'Hard Module 2 phase' },
+      lead: {
+        en: 'Eight lessons on hard Module 2 material only — Hard Math and Hard Verbal. This is where 1500 is won or lost: few mistakes in Module 1 earns a hard Module 2, and only there are the 650+ points available at all.',
+        ru: 'Восемь уроков только на сложном материале уровня Модуля 2 — Hard Math и Hard Verbal. Именно здесь 1500 выигрывается или теряется: мало ошибок в Модуле 1 → сложный Модуль 2, и только там доступны баллы 650+.',
+        kk: 'Тек күрделі 2-модуль деңгейіндегі материалға арналған сегіз сабақ — Hard Math және Hard Verbal. 1500 дәл осында ұтылады немесе жоғалады: 1-модульде қате аз болса, күрделі 2-модуль ашылады, ал 650+ ұпай тек сонда қолжетімді.'
+      }
+    },
+    {
+      id: 'test', weeks3: '15', weeks2: '23', from3: 43, to3: 45, from2: 45, to2: 45,
+      name: { en: 'Test week', ru: 'Test week', kk: 'Test week' },
+      lead: {
+        en: 'The final hard set, pacing and strategy, a light review. The last practice test is at the START of the week, and after it there is no new material.',
+        ru: 'Финальный hard-набор, pacing и стратегия, лёгкий повтор. Последний practice test — в НАЧАЛЕ недели, дальше нового материала нет.',
+        kk: 'Қорытынды hard-жинақ, pacing және стратегия, жеңіл қайталау. Соңғы practice test — аптаның БАСЫНДА, одан кейін жаңа материал жоқ.'
+      }
+    }
+  ],
+
+  /** Two gates. A phase does not close until its practice test is passed. */
   gates: [
     {
-      n: 1, afterLesson: 24,
-      name: { en: 'Gate 1 — full Practice Test', ru: 'Гейт 1 — полный Practice Test', kk: 'Гейт 1 — толық Practice Test' }
+      n: 1, afterLesson3: 33, afterLesson2: 36, test3: 11, test2: 18,
+      name: { en: 'Gate 1 — the content phase closes', ru: 'Гейт 1 — закрытие content-фазы', kk: 'Гейт 1 — content-фазаның жабылуы' }
     },
     {
-      n: 2, afterLesson: 36,
-      name: { en: 'Gate 2 — review of the final test', ru: 'Гейт 2 — разбор итогового теста', kk: 'Гейт 2 — қорытынды тестті талдау' }
-    },
-    {
-      n: 3, afterLesson: 48,
-      name: { en: 'Gate 3 — two full tests', ru: 'Гейт 3 — два полных теста', kk: 'Гейт 3 — екі толық тест' }
+      n: 2, afterLesson3: 42, afterLesson2: 44, test3: 14, test2: 22,
+      name: { en: 'Gate 2 — the hard phase closes', ru: 'Гейт 2 — закрытие hard-фазы', kk: 'Гейт 2 — hard-фазаның жабылуы' }
     }
   ],
   gateRule: {
-    en: 'Not through a gate means three to six more lessons in the same stage on the tags in your error log, then the test again. A gate is never skipped: a hard Module 2 without the base under it does not raise a score.',
-    ru: 'Не прошёл гейт — ещё три-шесть уроков в текущем этапе по тегам из error log, затем повторный тест. Гейт пропускать нельзя: сложный Модуль 2 без базы не даёт роста.',
-    kk: 'Гейттен өтпесеңіз — error log тегтері бойынша ағымдағы кезеңде тағы үш-алты сабақ, содан кейін тест қайта. Гейтті өткізіп жіберуге болмайды: негізсіз күрделі 2-модуль өсім бермейді.'
+    en: 'A gate is passed on the weekly practice test. Not through it means one or two extra mixed-review lessons on your error log and another test before the next phase. The hard phase without a closed base does not raise a score.',
+    ru: 'Гейт сдаётся на еженедельном practice test. Не прошёл — один-два дополнительных урока mixed review по error log и ещё один тест до следующей фазы. Hard-фаза без закрытой базы не даёт роста.',
+    kk: 'Гейт апталық practice test-те тапсырылады. Өтпесеңіз — error log бойынша бір-екі қосымша mixed review сабағы және келесі фазаға дейін тағы бір тест. Базасы жабылмаған hard-фаза өсім бермейді.'
   },
 
-  /** Lesson 0 is the diagnostic; the starting score changes pace, not content. */
-  tracks: [
-    { from: 900,  to: 1090, perWeek: '3',   weeks: '~16',
-      hw: { en: 'Easy and Medium; a tag under 80% gets a second set before the next lesson',
-            ru: 'Easy и Medium; тег ниже 80% — повторный набор до следующего урока',
-            kk: 'Easy және Medium; 80%-дан төмен тег — келесі сабаққа дейін қайталама жинақ' } },
-    { from: 1100, to: 1290, perWeek: '3',   weeks: '~16',
-      hw: { en: 'Medium, with some Hard', ru: 'Medium и часть Hard', kk: 'Medium және Hard-тың бір бөлігі' } },
-    { from: 1300, to: 1400, perWeek: '4',   weeks: '~12',
-      hw: { en: 'Medium and Hard', ru: 'Medium и Hard', kk: 'Medium және Hard' } },
-    { from: 1410, to: null, perWeek: '4–5', weeks: '~10–12',
-      hw: { en: 'mostly Hard', ru: 'в основном Hard', kk: 'негізінен Hard' } }
+  /** What the weekly rhythm is, on both schedules. */
+  rhythm: [
+    { id: 'lessons',
+      en: 'Lessons on separate days, with a rest day between them. Lesson 1 opens with the baseline diagnostic.',
+      ru: 'Уроки в разные дни, с днями отдыха между ними. Урок 1 начинается с baseline-диагностики.',
+      kk: 'Сабақтар бөлек күндері, арасында демалыс күнімен. 1-сабақ baseline-диагностикадан басталады.' },
+    { id: 'test',
+      en: 'The practice test near the end of the week: full, in Bluebook, under strict conditions.',
+      ru: 'Practice test ближе к концу недели — полный, в Bluebook, в строгих условиях.',
+      kk: 'Practice test апта соңына қарай — толық, Bluebook-та, қатаң жағдайда.' },
+    { id: 'log',
+      en: 'Every miss goes into the error log by skill — the lesson code — and by reason.',
+      ru: 'Каждый промах записывается в error log по навыку (код урока) и причине.',
+      kk: 'Әр қате error log-қа дағды (сабақ коды) және себеп бойынша жазылады.' },
+    { id: 'review',
+      en: 'A review session on those misses before the next week starts.',
+      ru: 'Review session по промахам — до начала следующей недели.',
+      kk: 'Қателер бойынша review session — келесі апта басталғанға дейін.' },
+    { id: 'daily',
+      en: 'Every day: 10–15 minutes of vocabulary and one dense passage.',
+      ru: 'Каждый день: 10–15 минут словаря и один плотный текст.',
+      kk: 'Күн сайын: 10–15 минут сөздік және бір күрделі мәтін.' }
   ],
 
+  /** The rule that keeps a two-lesson week from forgetting its own start. */
+  redrill: {
+    en: 'Re-drill rule. If a topic from four weeks ago comes back as a mistake on a practice test, it is re-drilled that same week rather than waiting for the mixed review. On the two-lessons-a-week schedule this is the main defence against forgetting.',
+    ru: 'Правило re-drill. Если тема урока четырёхнедельной давности всплывает ошибкой на practice test, её перерешивают на этой же неделе, не дожидаясь mixed review. Для графика 2×/нед это главная защита от забывания.',
+    kk: 'Re-drill ережесі. Төрт апта бұрынғы сабақтың тақырыбы practice test-те қате болып шықса, оны mixed review-ды күтпей сол аптада қайта пысықтайды. 2×/апта кестесінде бұл — ұмытуға қарсы басты қорғаныс.'
+  },
+
+  /** The error budget a 1500 allows, as an orientation and not a promise. */
+  errorBudget: {
+    en: 'For 1500, about 3–5 misses in Reading & Writing and 2–4 in Math. The scale moves from test to test, so the working target in practice is 1520+.',
+    ru: 'Для 1500 обычно допустимо около 3–5 ошибок в R&W и 2–4 в Math. Шкала меняется от теста к тесту, поэтому цель на практике — 1520+.',
+    kk: '1500 үшін әдетте R&W-де 3–5, Math-та 2–4 қате рұқсат етіледі. Шкала тесттен тестке өзгереді, сондықтан практикадағы мақсат — 1520+.'
+  },
+
   /* ------------------------------------------------------------ homework */
-  /** The four things that follow every lesson, in the order they are set. */
+  /** The three things that follow every lesson, in the order they are set. */
   homework: [
-    { id: 'words', mins: '15',
-      name: { en: 'Learn the words', ru: 'Выучить слова', kk: 'Сөздерді жаттау' },
-      body: { en: 'Word list #N — ten words. The test on them opens the next lesson.',
-              ru: 'Word list #N — десять слов. Тест по ним — в начале следующего урока.',
-              kk: 'Word list #N — он сөз. Олар бойынша тест келесі сабақтың басында.' } },
+    { id: 'words', mins: '10–15',
+      name: { en: 'Word list #N', ru: 'Word list #N', kk: 'Word list #N' },
+      body: { en: 'Ten words, N being the lesson number. The test on them opens the next lesson.',
+              ru: 'Десять слов, где N — номер урока. Тест по ним — в начале следующего урока.',
+              kk: 'Он сөз, N — сабақ нөмірі. Олар бойынша тест келесі сабақтың басында.' } },
     { id: 'set', mins: '60–90',
       name: { en: 'Set #N', ru: 'Набор #N', kk: '#N жинағы' },
-      body: { en: '30–40 questions on this lesson’s tags, Easy through Hard.',
-              ru: '30–40 задач по тегам этого урока, от Easy к Hard.',
-              kk: 'Осы сабақтың тегтері бойынша 30–40 тапсырма, Easy-ден Hard-қа дейін.' } },
-    { id: 'timed', mins: '15–134',
-      name: { en: 'Timed practice', ru: 'Практика на время', kk: 'Уақытпен практика' },
-      body: { en: 'A section or a full test where the lesson calls for one; otherwise the spiral — ten questions on earlier tags, on the clock.',
-              ru: 'Секция или полный тест, если урок этого требует; в остальные дни спираль — десять задач по прошлым тегам на время.',
-              kk: 'Сабақ талап етсе — секция немесе толық тест; басқа күндері спираль — өткен тегтер бойынша он тапсырма, уақытпен.' } },
+      body: { en: '30–40 questions on this lesson’s code, Easy through Hard. In the hard phase, Hard only.',
+              ru: '30–40 задач по коду этого урока, от Easy к Hard. В hard-фазе — только Hard.',
+              kk: 'Осы сабақтың коды бойынша 30–40 тапсырма, Easy-ден Hard-қа дейін. Hard-фазада — тек Hard.' } },
     { id: 'video', mins: '20–30',
       name: { en: 'Watch and take notes', ru: 'Видео и конспект', kk: 'Бейне және конспект' },
       body: { en: 'The video for the NEXT lesson’s topic, with notes — so the lesson starts from practice, not from first contact.',
               ru: 'Видео по теме СЛЕДУЮЩЕГО урока с конспектом — чтобы урок начинался с практики, а не с первого знакомства.',
               kk: 'КЕЛЕСІ сабақтың тақырыбы бойынша бейне және конспект — сабақ практикадан басталуы үшін, алғашқы танысудан емес.' } }
   ],
+  /** And the one thing that follows every week rather than every lesson. */
+  weekly: {
+    id: 'test', mins: '134',
+    name: { en: 'Practice test', ru: 'Practice test', kk: 'Practice test' },
+    body: { en: 'A full test in Bluebook, strictly timed → every miss into the error log → a review session before the next week.',
+            ru: 'Полный тест в Bluebook, строго на время → каждый промах в error log → review session до следующей недели.',
+            kk: 'Bluebook-та толық тест, қатаң уақытпен → әр қате error log-қа → келесі аптаға дейін review session.' }
+  },
   homeworkLoad: {
-    en: 'About 6–9 hours a week at three lessons a week.',
-    ru: 'Примерно 6–9 часов в неделю при трёх уроках в неделю.',
-    kk: 'Аптасына үш сабақта — шамамен аптасына 6–9 сағат.'
+    en: 'About 6–9 hours a week at three lessons a week, and 4–6 at two.',
+    ru: 'Примерно 6–9 часов в неделю при трёх уроках в неделю и 4–6 при двух.',
+    kk: 'Аптасына үш сабақта — шамамен 6–9 сағат, екеуінде — 4–6 сағат.'
   }
 };

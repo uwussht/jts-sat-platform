@@ -248,12 +248,12 @@ sup, sub { line-height: 0; font-size: .75em; }
    what the rows need, and the height-based rules below are what make the rows
    need less. */
 .sb-nav {
-  display: flex; flex-direction: column; gap: 1px;
+  display: flex; flex-direction: column; gap: 6px;
   flex: 0 0 auto;
 }
 .sb-nav a {
-  display: flex; align-items: center; gap: 10px;
-  padding: 8px 12px; font-size: 14px; font-weight: 600;
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 12px; font-size: 14px; font-weight: 600;
   color: rgba(255,255,255,.76); text-decoration: none;
   border-left: 3px solid transparent;
 }
@@ -306,14 +306,20 @@ sup, sub { line-height: 0; font-size: .75em; }
    rows, then the type. Each step is small enough that the one before it has
    to be exhausted first, which keeps a 1080p window looking exactly as it
    did. */
-@media (max-height: 800px) {
+@media (max-height: 880px) {
   .app-sidebar { gap: 7px; padding-block: var(--sp-3); }
   .sb-goal { padding: 8px 12px; }
   .sb-goal-value { font-size: 19px; }
+  .sb-nav { gap: 4px; }
+  .sb-nav a { padding: 8px 12px; }
+}
+@media (max-height: 800px) {
+  .sb-nav { gap: 2px; }
   .sb-nav a { padding: 6px 12px; }
 }
 @media (max-height: 700px) {
   .app-sidebar { gap: 5px; }
+  .sb-nav { gap: 1px; }
   .sb-goal { padding: 6px 12px; }
   .sb-goal-value { font-size: 17px; }
   .sb-nav a { padding: 4px 12px; }
@@ -322,6 +328,7 @@ sup, sub { line-height: 0; font-size: .75em; }
 }
 @media (max-height: 620px) {
   .app-sidebar { gap: 4px; padding-block: 10px; }
+  .sb-nav { gap: 0; }
   .brand-mark { width: 28px; height: 28px; flex: 0 0 28px; font-size: 11px; }
   /* The goal is a number the student steers by; at this height it keeps the
      number and gives up the exam date, which is also in Settings. */
@@ -1469,9 +1476,9 @@ body.tour-open { overflow: hidden; }
 body.tour-open .app-topbar, body.tour-open #add-word { z-index: 1; }
 
 /* ----- 24c. The programme ------------------------------------------------- */
-/* Forty-eight lessons in order. A row is a number, a name and its tags; the
-   tags are the same chips everywhere the programme is shown, so a tag is
-   recognisable before it is read. */
+/* Forty-five lessons in order, cut into weeks. A row is a number, a code and a
+   name; the code chips are the same everywhere the programme is shown, so a
+   lesson is recognisable before it is read. */
 .pg-stage-head { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--sp-3); flex-wrap: wrap; }
 .pg-stage-head .h3 { margin: 0; }
 .pg-lessons { display: flex; flex-direction: column; }
@@ -1518,7 +1525,22 @@ body.tour-open .app-topbar, body.tour-open #add-word { z-index: 1; }
 
 .pg-zero { border-left: 3px solid var(--brand-600); }
 
-/* The four things that follow every lesson. */
+/* A week's heading inside a phase: which week it is, and the practice test
+   that closes it. The test is the gate's currency, so it is never implied. */
+.pg-week {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
+  padding: 10px 6px 4px; margin-inline: -6px; border-top: 1px solid var(--border);
+}
+.pg-lessons > .pg-week:first-child { border-top: 0; }
+.pg-week-n {
+  font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em;
+  color: var(--ink-2);
+}
+.pg-week-test { font-size: 11px; font-weight: 650; color: var(--muted); }
+.pg-lesson { border-top: 0; }
+.pg-lessons > .pg-lesson + .pg-lesson { border-top: 1px solid var(--border); }
+
+/* What follows every lesson, and the one thing that follows every week. */
 .pg-hw { display: flex; flex-direction: column; gap: 10px; }
 .pg-hw-item { display: flex; gap: 10px; align-items: flex-start; }
 .pg-hw-n {
@@ -1529,6 +1551,10 @@ body.tour-open .app-topbar, body.tour-open #add-word { z-index: 1; }
   margin-inline-start: 8px; font-size: 10.5px; font-weight: 700;
   text-transform: uppercase; letter-spacing: .04em; color: var(--muted);
 }
+
+/* The weekly practice test is not homework like the others: it belongs to the
+   week, so its marker is not a number in the sequence. */
+.pg-hw-item.is-weekly .pg-hw-n { background: var(--warn); }
 
 /* The course under the roadmap. The map half is sized to the window; with the
    course below it the screen is a page again and has to be allowed to scroll. */
@@ -1699,6 +1725,50 @@ button.cal-tag:hover { background: var(--brand-100); color: var(--brand-700); }
   .cal-head, .cal-month { min-width: 620px; }
   .cal-bar, .cal-legend { padding-inline: var(--sp-3); }
   .cal-bar { gap: 10px; }
+}
+
+/* ----- 26. Materials ------------------------------------------------------- */
+/* The course as a syllabus: units that open on their lessons. A unit's state
+   is carried by its left edge and its mark, not by a colour wash — a page of
+   eight coloured blocks says nothing about which one is next. */
+.mat-units { display: flex; flex-direction: column; gap: 8px; }
+.mat-unit { border: 1px solid var(--border); background: var(--surface); border-left: 3px solid var(--border-strong); }
+.mat-unit.is-done { border-left-color: var(--ok); }
+.mat-unit.is-current { border-left-color: var(--brand-600); background: var(--brand-050); }
+
+.mat-unit-head {
+  display: flex; align-items: center; gap: 12px; width: 100%;
+  border: 0; background: none; cursor: pointer; font: inherit; text-align: left;
+  padding: 13px 14px; color: var(--ink);
+}
+.mat-unit-head:hover { background: var(--brand-050); }
+.mat-unit.is-current .mat-unit-head:hover { background: var(--brand-100); }
+.mat-state {
+  flex: 0 0 22px; width: 22px; height: 22px; display: grid; place-items: center;
+  font-size: 12px; font-weight: 700; color: var(--muted);
+  border: 1px solid var(--border-strong);
+}
+.mat-unit.is-done .mat-state { color: var(--ok); border-color: var(--ok); }
+.mat-unit.is-current .mat-state { color: #fff; background: var(--brand-600); border-color: var(--brand-600); }
+.mat-unit-text { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+.mat-unit-text b { font-size: 15px; font-weight: 650; line-height: 1.3; }
+.mat-caret { color: var(--muted); font-size: 12px; transition: transform .15s ease; }
+
+.mat-unit-body { padding: 0 14px 14px 48px; display: flex; flex-direction: column; gap: 8px; }
+.mat-lesson { display: flex; gap: 10px; align-items: flex-start; }
+.mat-n {
+  flex: 0 0 26px; width: 26px; height: 22px; display: grid; place-items: center;
+  font-size: 12px; font-weight: 700; color: var(--muted);
+  background: var(--surface-2); font-variant-numeric: tabular-nums;
+}
+.mat-lesson.is-done .mat-n { background: var(--ok-bg); color: var(--ok); }
+.mat-lesson.is-current .mat-n { background: var(--brand-600); color: #fff; }
+.mat-lesson-text { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.mat-lesson-text .pg-name { gap: 8px; }
+.mat-lesson.is-ahead .mat-lesson-text b { color: var(--ink-2); }
+
+@media (max-width: 560px) {
+  .mat-unit-body { padding-left: 14px; }
 }
 
 @media print {
