@@ -2274,10 +2274,12 @@
        where five is already the most that fits. */
     subNavItems: [
       { path: '#/roadmap',      key: 'roadmap.title', icon: '⟋' },
-      /* The diagnostic lives here rather than only at the end of onboarding:
-         it is the same measurement whether or not a student already has a
-         score, and it is worth retaking every few weeks. */
-      { path: '#/diagnostic',   key: 'diag.title',   icon: '◎' },
+      /* The diagnostic is not in the navigation. It is step 1 of the road and
+         a thing you retake every few weeks, not a place you go — and a
+         permanent entry made it look like somewhere there was always something
+         to do. #/diagnostic is still a route: onboarding ends there, the plan
+         is built there, and the roadmap's first stop links to it, which is
+         also where "take it again" lives. */
       { path: '#/vocab',        key: 'vocab.title',  icon: '⌸' },
       { path: '#/desmos-guide', key: 'desmos.title', icon: 'ƒ' },
       /* The guide is read once at the start and then wanted again, months

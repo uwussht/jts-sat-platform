@@ -276,9 +276,15 @@ result comes in through **Mock tests → Add a result**, not through a text box.
 **A student who already has a score takes it too.** The old "do you have a
 result?" branch is gone: a reported score says where you landed, and the
 diagnostic says which of the eight domains it came from, which is what a plan
-needs. The diagnostic also has a permanent place in the sidebar so it can be
-retaken — a retake adds a run rather than replacing one, every attempt stays in
-the history, and the plan is rebuilt from the newest (keeping the weeks already
+needs.
+
+**It is not in the navigation**, and deliberately so: it is step 1 of the road
+and a thing you retake every few weeks, not a place you go, and a permanent
+entry made it look like somewhere there was always something to do. `#/diagnostic`
+is still a route — onboarding ends there, the plan is built there, and the
+roadmap's first stop links to it, which is also where "take it again" lives.
+A retake adds a run rather than replacing one, every attempt stays in the
+history, and the plan is rebuilt from the newest (keeping the weeks already
 spent, redoing the ones ahead).
 
 The report gives a percentage overall, a percentage per section and a
