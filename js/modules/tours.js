@@ -29,7 +29,7 @@
     '#/today': function () {
       return [
         step('#main-nav', 'nav'),
-        step('#today-countdown', 'countdown'),
+        step('#today-hero', 'countdown'),
         step('#today-lesson', 'lesson'),
         step('#daily-card', 'daily'),
         step('#add-word', 'fab')
