@@ -558,6 +558,7 @@ JTS.dict.en = {
   'desmos.progress': '{done} of {total} sections',
   'desmos.practiceTasks': 'Practice tasks',
   'desmos.withoutDesmos': 'Without Desmos ≈{a}', 'desmos.withDesmos': 'With Desmos ≈{b}',
+  'desmos.videoCredit': 'Video by',
   'desmos.videoSlot': 'Video slot — paste a URL',
   'desmos.section.basics': 'Basics',
   'desmos.section.graph': 'Graph functions',

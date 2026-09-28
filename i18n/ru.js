@@ -558,6 +558,7 @@ JTS.dict.ru = {
   'desmos.progress': '{done} из {total} разделов',
   'desmos.practiceTasks': 'Практические задания',
   'desmos.withoutDesmos': 'Без Desmos ≈{a}', 'desmos.withDesmos': 'С Desmos ≈{b}',
+  'desmos.videoCredit': 'Видео:',
   'desmos.videoSlot': 'Слот под видео — вставьте URL',
   'desmos.section.basics': 'Основы',
   'desmos.section.graph': 'Построение функций',

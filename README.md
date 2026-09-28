@@ -643,11 +643,30 @@ The calculator is mounted when a section is first opened, not seven at once,
 and is never removed or reparented afterwards, so it keeps whatever the student
 typed into it.
 
-Six timed practice tasks carry two figures each: how long the task takes by
-hand and how long it takes in Desmos. **Two of the six are faster by hand**, and
-the screen says so. A student who learns to reach for the calculator on every
-question has learned the wrong lesson, and 25 seconds spent graphing
+Seven timed practice tasks carry two figures each: how long the task takes by
+hand and how long it takes in Desmos. **Two of the seven are faster by hand**,
+and the screen says so. A student who learns to reach for the calculator on
+every question has learned the wrong lesson, and 25 seconds spent graphing
 `3x + 12 = 5x − 8` is 25 seconds off the end of the module.
+
+### Solve-by-intersection
+
+The **Solving equations** section is built around the one move that covers
+every equation on the test: each side of it on its own row, and the solutions
+are the **x-values** where the two graphs cross. The three things it insists on
+are the three a beginner gets wrong — the y-value of the crossing is never the
+answer, two crossings means the question is probably asking for one of them
+("the positive solution"), and an empty screen means zoom out before it means
+no solution. It is also the answer to student-produced responses, where there
+is nothing to substitute and check and guessing used to start.
+
+A section can carry a video. `video:` takes an embed URL and `videoCredit:`
+takes `{name, url}`; when a credit is present the player gets a byline under it.
+The slot was built for JTS's own screencasts, and an embed of somebody else's
+work with no name on it reads as ours — so the field is not optional in
+practice, only in the schema. The Solving section currently carries Tutorlini
+Test Prep's Desmos Lesson #1, linked and credited; the wording of the section
+is JTS's own.
 
 ## Acceptance criteria (§14)
 

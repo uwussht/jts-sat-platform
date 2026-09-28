@@ -79,12 +79,24 @@
     return row;
   }
 
-  function videoSlot(url) {
+  function videoSlot(url, credit) {
     if (url) {
-      return U.el('div.video-slot', null, [U.el('iframe', {
+      var frame = U.el('div.video-slot', null, [U.el('iframe', {
         src: url, title: t('desmos.title'), style: 'width:100%;height:100%;border:0',
         allowfullscreen: true, loading: 'lazy'
       })]);
+      if (!credit) return frame;
+      /* Someone else's screencast is said to be someone else's, by name and
+         with a link. The slot was built for JTS's own videos, and an embed with
+         no byline reads as one. */
+      return U.el('div.stack-sm', null, [
+        frame,
+        U.el('p.xsmall.muted', { style: 'margin:0' }, [
+          U.el('span', { text: t('desmos.videoCredit') + ' ' }),
+          U.el('a', { href: credit.url, target: '_blank', rel: 'noopener noreferrer',
+                      text: credit.name })
+        ])
+      ]);
     }
     /* An empty slot says what it is waiting for rather than pretending the
        video is coming; the URL goes in js/data/desmos-guide.js. */
@@ -127,7 +139,7 @@
       body.appendChild(steps);
       body.appendChild(tryItRow(sec.tryIt));
       calculator(body);
-      body.appendChild(videoSlot(sec.video));
+      body.appendChild(videoSlot(sec.video, sec.videoCredit));
 
       var cb = U.el('input', {
         type: 'checkbox', id: 'dg-' + sec.id,

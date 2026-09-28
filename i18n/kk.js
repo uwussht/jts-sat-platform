@@ -558,6 +558,7 @@ JTS.dict.kk = {
   'desmos.progress': '{total} бөлімнің {done}-і',
   'desmos.practiceTasks': 'Практикалық тапсырмалар',
   'desmos.withoutDesmos': 'Desmos-сыз ≈{a}', 'desmos.withDesmos': 'Desmos-пен ≈{b}',
+  'desmos.videoCredit': 'Видео:',
   'desmos.videoSlot': 'Видеоға арналған слот — URL қойыңыз',
   'desmos.section.basics': 'Негіздер',
   'desmos.section.graph': 'Функцияларды сызу',

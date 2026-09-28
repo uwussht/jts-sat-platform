@@ -74,36 +74,44 @@ JTS.data.desmosGuide = [
     tryIt: ['y=a(x-h)^2+k', 'y=sin(x)', 'y=|x-3|']
   },
   {
-    id: 'solve', video: null,
+    id: 'solve',
+    video: 'https://www.youtube.com/embed/TFmt1VwZte8',
+    videoCredit: {
+      name: 'Tutorlini Test Prep \u2014 Desmos Lesson #1',
+      url: 'https://youtu.be/TFmt1VwZte8'
+    },
     lead: {
-      en: 'Most SAT equations are faster solved by intersection than by algebra — and the graph shows you how many solutions there are before you find any of them.',
-      ru: 'Большинство уравнений SAT быстрее решать пересечением, чем алгеброй, — и график показывает, сколько решений, ещё до того как вы найдёте хоть одно.',
-      kk: 'SAT теңдеулерінің көбін алгебрадан гөрі қиылысу арқылы шешу жылдам — әрі график бірде-бір шешім табылмай тұрып, олардың нешеу екенін көрсетеді.'
+      en: 'One recipe solves every equation on the test: put each side of it on its own row and read where the two graphs cross. It is faster than algebra, it shows how many solutions exist before you find any of them, and it works when there are no answer choices to test.',
+      ru: 'Один приём решает любое уравнение на экзамене: каждую сторону — в свою строку и смотрите, где графики пересекаются. Это быстрее алгебры, показывает число решений ещё до того, как вы найдёте хоть одно, и работает там, где вариантов ответа нет.',
+      kk: 'Емтихандағы кез келген теңдеуді бір тәсіл шешеді: әр жағын өз жолына жазып, графиктердің қай жерде қиылысатынын қараңыз. Бұл алгебрадан жылдам, бірде-бір шешім табылмай тұрып олардың санын көрсетеді және жауап нұсқалары жоқ жерде де жұмыс істейді.'
     },
     steps: {
       en: [
-        'Put the left side in one row and the right side in another: <code>y=3x-7</code> and <code>y=x^2-5</code>.',
-        'Click each crossing point to read the solutions.',
-        'A system of two linear equations works the same way: one row each, one intersection.',
-        'For an inequality type it directly — <code>y>2x+1</code> shades the region.',
-        'No intersection on screen means either no real solution or the wrong window. Zoom out once before believing it.'
+        '<b>Left side, then right side, each on its own row.</b> For <code>x\u00b2-5 = 3x-7</code> type <code>y=x^2-5</code> and <code>y=3x-7</code>. Copy the equation as it is printed — do not rearrange it first.',
+        '<b>The answers are the x-values.</b> Click a crossing point and Desmos labels it; take the x and ignore the y. The y is only where the two sides happened to be equal, and it is never what the question asked for.',
+        '<b>Read the question again before you write.</b> Two crossings means two solutions, and the question usually wants one of them \u2014 "the positive solution", "the greatest value of x".',
+        '<b>It works when there are no answer choices.</b> On a student-produced response there is nothing to substitute and check, which is exactly where guessing used to start. The graph does not care.',
+        'Nothing on screen? Zoom out once with the scroll wheel before believing there is no solution \u2014 the crossing is usually just outside the default window.',
+        'A system of two linear equations is the same move: one row each, one intersection. An inequality can be typed directly \u2014 <code>y>2x+1</code> shades the region.'
       ],
       ru: [
-        'Левую часть — в одну строку, правую — в другую: <code>y=3x-7</code> и <code>y=x^2-5</code>.',
-        'Кликните каждую точку пересечения, чтобы прочитать решения.',
-        'Система из двух линейных уравнений решается так же: по строке на каждое, одна точка пересечения.',
-        'Неравенство вводится прямо: <code>y>2x+1</code> заштрихует область.',
-        'Нет пересечения на экране — значит либо нет действительных решений, либо не то окно. Сначала отдалите, потом верьте.'
+        '<b>Левая часть, затем правая — каждая в своей строке.</b> Для <code>x\u00b2-5 = 3x-7</code> введите <code>y=x^2-5</code> и <code>y=3x-7</code>. Переносите уравнение как оно напечатано — не преобразуйте его сначала.',
+        '<b>Ответы — это значения x.</b> Кликните точку пересечения, Desmos её подпишет; берите x и не смотрите на y. y — это лишь та высота, на которой стороны совпали, и в ответе его не спрашивают никогда.',
+        '<b>Перечитайте вопрос перед тем, как записать.</b> Два пересечения — два решения, и спрашивают обычно одно из них: «положительное решение», «наибольшее значение x».',
+        '<b>Работает и там, где вариантов ответа нет.</b> В заданиях с вводом ответа подставлять нечего — именно там раньше начиналось угадывание. Графику это безразлично.',
+        'На экране пусто? Сначала отдалите колесом мыши, потом решайте, что решений нет, — пересечение обычно чуть за границей исходного окна.',
+        'Система из двух линейных уравнений — тот же приём: по строке на каждое, одна точка пересечения. Неравенство вводится прямо: <code>y>2x+1</code> заштрихует область.'
       ],
       kk: [
-        'Сол жағын бір жолға, оң жағын екінші жолға жазыңыз: <code>y=3x-7</code> және <code>y=x^2-5</code>.',
-        'Шешімдерді оқу үшін әр қиылысу нүктесін басыңыз.',
-        'Екі сызықтық теңдеуден тұратын жүйе дәл солай шешіледі: әрқайсысына бір жол, бір қиылысу.',
-        'Теңсіздікті тікелей теріңіз: <code>y>2x+1</code> аймақты бояйды.',
-        'Экранда қиылысу жоқ болса — не нақты шешім жоқ, не терезе дұрыс емес. Алдымен кішірейтіңіз, содан кейін сеніңіз.'
+        '<b>Сол жағы, сосын оң жағы — әрқайсысы өз жолында.</b> <code>x\u00b2-5 = 3x-7</code> үшін <code>y=x^2-5</code> және <code>y=3x-7</code> теріңіз. Теңдеуді басылған күйінде көшіріңіз — алдын ала түрлендірмеңіз.',
+        '<b>Жауап — x мәндері.</b> Қиылысу нүктесін басыңыз, Desmos оны белгілейді; x-ті алыңыз, y-ке қарамаңыз. y — екі жақтың теңескен биіктігі ғана, оны ешқашан сұрамайды.',
+        '<b>Жазар алдында сұрақты қайта оқыңыз.</b> Екі қиылысу — екі шешім, ал сұрақ әдетте біреуін сұрайды: «оң шешім», «x-тің ең үлкен мәні».',
+        '<b>Жауап нұсқалары жоқ жерде де жұмыс істейді.</b> Жауабын өзі жазатын тапсырмада қоятын ештеңе жоқ — бұрын дәл сол жерден болжау басталатын. Графикке бәрібір.',
+        'Экранда ештеңе жоқ па? Шешім жоқ деп шешпес бұрын тінтуір дөңгелегімен кішірейтіңіз — қиылысу көбіне бастапқы терезенің сыртында тұрады.',
+        'Екі сызықтық теңдеуден тұратын жүйе — сол қимыл: әрқайсысына бір жол, бір қиылысу. Теңсіздікті тікелей теруге болады: <code>y>2x+1</code> аймақты бояйды.'
       ]
     },
-    tryIt: ['y=3x-7', 'y=x^2-5', 'y>2x+1']
+    tryIt: ['y=x^2-5', 'y=3x-7', 'y=|4-x|', 'y=7', 'y>2x+1']
   },
   {
     id: 'tables', video: null,
@@ -147,21 +155,24 @@ JTS.data.desmosGuide = [
         '<b>Unknown coefficient.</b> Replace it with a slider and drag until the condition in the question holds.',
         '<b>"How many solutions".</b> Graph both sides and count crossings; no algebra needed.',
         '<b>Systems with a parameter.</b> <code>y=kx+2</code> against <code>y=x^2</code> — drag k to find where the line stops touching the curve.',
-        'Type the numbers from the question, not the numbers you simplified. Simplifying first is where the marks go.'
+        'Type the numbers from the question, not the numbers you simplified. Simplifying first is where the marks go.',
+        '<b>Bring a mouse.</b> Every one of these moves is drag to pan and scroll to zoom, and a trackpad turns a two-second look into a fiddle. A mouse is allowed in the room.'
       ],
       ru: [
         '<b>Варианты ответа как графики.</b> Четыре уравнения — четыре строки, один взгляд на то, какое проходит через данную точку.',
         '<b>Неизвестный коэффициент.</b> Замените его ползунком и двигайте, пока не выполнится условие задачи.',
         '<b>«Сколько решений».</b> Постройте обе части и посчитайте пересечения; алгебра не нужна.',
         '<b>Системы с параметром.</b> <code>y=kx+2</code> против <code>y=x^2</code> — двигайте k и найдите, где прямая перестаёт касаться параболы.',
-        'Вводите числа из условия, а не те, что вы уже упростили. Баллы теряются именно на упрощении в уме.'
+        'Вводите числа из условия, а не те, что вы уже упростили. Баллы теряются именно на упрощении в уме.',
+        '<b>Возьмите мышь.</b> Все эти приёмы — это перетаскивание и прокрутка, а на тачпаде двухсекундный взгляд превращается в возню. Мышь в аудиторию брать можно.'
       ],
       kk: [
         '<b>Жауап нұсқалары график ретінде.</b> Төрт теңдеу — төрт жол, қайсысы берілген нүктеден өтетінін бір қарап шығасыз.',
         '<b>Белгісіз коэффициент.</b> Оны жүгірткімен алмастырып, есеп шарты орындалғанша жылжытыңыз.',
         '<b>«Неше шешім».</b> Екі жағын да сызып, қиылысуларды санаңыз; алгебраның қажеті жоқ.',
         '<b>Параметрі бар жүйелер.</b> <code>y=kx+2</code> пен <code>y=x^2</code> — k-ны жылжытып, түзу параболаға тиюді қай жерде қоятынын табыңыз.',
-        'Шарттағы сандарды теріңіз, өзіңіз ықшамдағанын емес. Балл дәл сол ойша ықшамдауда кетеді.'
+        'Шарттағы сандарды теріңіз, өзіңіз ықшамдағанын емес. Балл дәл сол ойша ықшамдауда кетеді.',
+        '<b>Тінтуір алып келіңіз.</b> Бұл тәсілдердің бәрі — сүйреу мен айналдыру, ал тачпадта екі секундтық қарау әуреге айналады. Аудиторияға тінтуір алуға болады.'
       ]
     },
     tryIt: ['y=kx+2', 'y=x^2']
@@ -178,6 +189,8 @@ JTS.data.desmosGuide = [
         '<code>Ctrl</code>+<code>F</code> in the expression box gives a fraction; <code>Ctrl</code>+<code>/</code> does the same.',
         'Type <code>sqrt</code> for a root, <code>pi</code> for π, <code>theta</code> for θ.',
         'Subscripts: <code>x_1</code>. Useful for table columns and named constants.',
+        '<b>Absolute value:</b> hold Shift and press the key above Enter for <code>|</code>, twice: <code>y=|4-x|</code>. Faster than opening the functions menu for it.',
+        '<b>A decimal the answer choices do not have:</b> type it on its own row and press the fraction button beside that row. 2.25 becomes 9/4, which is the form the choices are usually in.',
         'Hold Shift while scrolling to zoom one axis only — the fix for a graph that is all vertical line.',
         'The calculator does not carry over between modules. Anything you want to keep, write on the scratch paper.'
       ],
@@ -185,6 +198,8 @@ JTS.data.desmosGuide = [
         '<code>Ctrl</code>+<code>F</code> в поле выражения даёт дробь; <code>Ctrl</code>+<code>/</code> делает то же самое.',
         '<code>sqrt</code> — корень, <code>pi</code> — π, <code>theta</code> — θ.',
         'Индексы: <code>x_1</code>. Нужны для столбцов таблицы и именованных констант.',
+        '<b>Модуль:</b> Shift и клавиша над Enter дают <code>|</code>, нужны две: <code>y=|4-x|</code>. Быстрее, чем открывать ради этого меню функций.',
+        '<b>Десятичная дробь, которой нет в вариантах:</b> введите её в отдельной строке и нажмите кнопку дроби рядом с этой строкой. 2,25 станет 9/4 — в такой форме варианты обычно и даны.',
         'Прокрутка с зажатым Shift масштабирует только одну ось — лекарство от графика, который выглядит вертикальной линией.',
         'Калькулятор не переносится между модулями. Всё, что нужно сохранить, пишите на черновике.'
       ],
@@ -192,11 +207,13 @@ JTS.data.desmosGuide = [
         'Өрнек өрісінде <code>Ctrl</code>+<code>F</code> бөлшек береді; <code>Ctrl</code>+<code>/</code> да солай.',
         '<code>sqrt</code> — түбір, <code>pi</code> — π, <code>theta</code> — θ.',
         'Индекстер: <code>x_1</code>. Кесте бағандары мен аталған тұрақтыларға керек.',
+        '<b>Модуль:</b> Shift пен Enter үстіндегі перне <code>|</code> береді, екеуі керек: <code>y=|4-x|</code>. Сол үшін функциялар мәзірін ашқаннан жылдам.',
+        '<b>Жауап нұсқаларында жоқ ондық бөлшек:</b> оны жеке жолға теріп, сол жолдың қасындағы бөлшек түймесін басыңыз. 2,25 деген 9/4 болады — нұсқалар әдетте осы түрде беріледі.',
         'Shift басып тұрып айналдырсаңыз, бір ғана ось масштабталады — тік сызыққа ұқсап қалған графиктің емі.',
         'Калькулятор модульдер арасында сақталмайды. Сақтағыңыз келетіннің бәрін қаралама қағазға жазыңыз.'
       ]
     },
-    tryIt: ['sqrt(x)', 'theta']
+    tryIt: ['sqrt(x)', 'theta', 'y=|4-x|']
   }
 ];
 
@@ -252,6 +269,21 @@ JTS.data.desmosTasks = [
       en: 'Counting crossings answers the question without solving it.',
       ru: 'Подсчёт пересечений отвечает на вопрос, не решая уравнение.',
       kk: 'Қиылысуларды санау теңдеуді шешпей-ақ жауап береді.'
+    } },
+  /* A grid-in on purpose: nothing to substitute, two roots, and an answer that
+     has to be written as a fraction. That is the whole of the solve-by-
+     intersection method in one task. */
+  { id: 'dt7', withoutSec: 110, withSec: 35,
+    prompt: {
+      en: 'Write the positive solution of 8x\u00b2 \u2212 2x = 15 as a fraction. There are no answer choices.',
+      ru: 'Запишите положительное решение 8x\u00b2 \u2212 2x = 15 в виде дроби. Вариантов ответа нет.',
+      kk: '8x\u00b2 \u2212 2x = 15 теңдеуінің оң шешімін бөлшек түрінде жазыңыз. Жауап нұсқалары жоқ.'
+    },
+    expr: ['y=8x^2-2x', 'y=15'],
+    note: {
+      en: 'Two rows, two crossings; take the x-values, keep the positive one, and press the fraction button to turn 1.5 into 3/2. Nothing to guess and check.',
+      ru: 'Две строки, два пересечения; берём значения x, оставляем положительное и кнопкой дроби превращаем 1,5 в 3/2. Подставлять и проверять нечего.',
+      kk: 'Екі жол, екі қиылысу; x мәндерін алып, оңын қалдырып, бөлшек түймесімен 1,5-ті 3/2 етеміз. Қойып тексеретін ештеңе жоқ.'
     } },
   { id: 'dt5', withoutSec: 20, withSec: 35,
     prompt: {
