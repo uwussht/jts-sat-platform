@@ -435,6 +435,8 @@ JTS.dict.en = {
   'q.pause': 'Pause', 'q.resume': 'Resume', 'q.hideTimer': 'Hide', 'q.showTimer': 'Show',
   'q.paused': 'Paused',
   'q.position': '{n} of {total}',
+  'q.counter': 'Question {n} of {total}',
+  'q.jumpTo': 'Go to a question',
   'q.hint': 'Hint',
   'q.askAi': 'Ask AI',
   'q.explanation': 'Explanation',

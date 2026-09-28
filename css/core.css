@@ -652,6 +652,13 @@ body.no-frame .q-shell { --q-top: 0px; }
 /* The 100px that used to sit under the content was there to clear a fixed
    footer. The footer is sticky and in flow, so it was 100px of nothing. */
 .q-content { padding: 18px 16px 28px; max-width: 980px; margin: 0 auto; width: 100%; }
+/* A question with no passage is a column of text and four choices; at 980px
+   the choices become stripes and the eye has to travel the whole width. */
+.q-content.is-single { max-width: 720px; padding-top: 28px; }
+/* Alone on the page the stem is the thing being read, so it is set like one. */
+.q-content.is-single .q-stem { font-size: 17px; font-weight: 600; line-height: 1.5; }
+.q-head { align-items: center; gap: 10px; margin-bottom: 4px; }
+.q-count { font-size: 13px; color: var(--muted); font-weight: 600; }
 /* Only the passage and the stem can be highlighted, so only they can be
    selected. Dragging across the toolbar used to leave the browser's blue
    selection lying over half the screen with nothing to clear it. */
@@ -671,14 +678,16 @@ body.no-frame .q-shell { --q-top: 0px; }
 
 .opt-list { display: flex; flex-direction: column; gap: 9px; }
 .opt {
-  display: flex; align-items: flex-start; gap: 11px; width: 100%; text-align: left;
-  padding: 11px 13px; border: 1.5px solid var(--border-strong); border-radius: var(--r-md);
+  display: flex; align-items: center; gap: 12px; width: 100%; text-align: left;
+  padding: 13px 16px; border: 1.5px solid var(--border-strong); border-radius: 14px;
   background: var(--surface); cursor: pointer; font-size: 14.5px; line-height: 1.5;
 }
 .opt:hover { border-color: var(--brand-500); }
+/* Round, like the letter on an answer sheet. */
 .opt .key {
   flex: 0 0 26px; width: 26px; height: 26px; display: grid; place-items: center;
-  border: 1.5px solid var(--border-strong); font-size: 13px; font-weight: 700; color: var(--ink-2);
+  border: 1.5px solid var(--border-strong); border-radius: 50%;
+  font-size: 13px; font-weight: 700; color: var(--ink-2);
 }
 .opt[aria-pressed="true"] { border-color: var(--brand-600); background: var(--brand-050); }
 .opt[aria-pressed="true"] .key { background: var(--brand-600); border-color: var(--brand-600); color: #fff; }
@@ -687,11 +696,16 @@ body.no-frame .q-shell { --q-top: 0px; }
 .opt.is-wrong { border-color: var(--danger); background: var(--danger-bg); }
 .opt.is-wrong .key { background: var(--danger); border-color: var(--danger); color: #fff; }
 .opt.struck .opt-text { text-decoration: line-through; opacity: .45; }
+/* Crossing a choice out is the pencil move, so the control is the letter
+   again, outside the pill, and it wears the line it puts through the choice. */
 .opt-strike {
-  margin-left: auto; border: 0; background: transparent; cursor: pointer;
-  color: var(--muted); font-size: 13px; font-weight: 700; padding: 2px 6px; border-radius: var(--r-sm);
+  margin-left: auto; flex: 0 0 26px; width: 26px; height: 26px;
+  display: grid; place-items: center;
+  border: 1px solid var(--border); border-radius: 50%; background: transparent;
+  cursor: pointer; color: var(--muted); font-size: 12px; font-weight: 700;
 }
-.opt-strike:hover { background: var(--bg); color: var(--ink); }
+.opt-strike:hover { border-color: var(--ink-2); color: var(--ink); }
+.opt-strike.is-struck { text-decoration: line-through; border-color: var(--ink-2); color: var(--ink-2); }
 .opt-text { flex: 1; min-width: 0; }
 
 .spr-box { max-width: 320px; }
@@ -707,8 +721,43 @@ html[data-theme="dark"] mark.hl { background: #8C7415; color: #FFF7DA; }
   box-shadow: 0 -2px 0 var(--border);
 }
 .q-jump {
-  border: 1px solid var(--border-strong); border-radius: var(--r-md); background: var(--surface);
-  padding: 7px 12px; font-size: 13.5px; font-weight: 650; cursor: pointer;
+  flex: none; border: 1px solid transparent; border-radius: var(--r-md);
+  background: transparent; color: var(--muted);
+  padding: 7px 10px; font-size: 13.5px; font-weight: 650; cursor: pointer;
+  font-variant-numeric: tabular-nums;
+}
+.q-jump:hover { border-color: var(--border-strong); color: var(--ink); }
+
+/* The set, numbered, in the middle of the bar: where you are and how much is
+   left, without opening anything. It takes the spare width and scrolls inside
+   itself on a phone rather than pushing the buttons off the bar. */
+.q-rail {
+  flex: 1 1 auto; min-width: 0;
+  display: flex; justify-content: center; gap: 6px;
+  overflow-x: auto; scrollbar-width: none; padding: 2px;
+}
+.q-rail::-webkit-scrollbar { display: none; }
+.q-step {
+  flex: 0 0 34px; width: 34px; height: 34px; display: grid; place-items: center;
+  border: 1px solid var(--border); border-radius: var(--r-sm); background: var(--surface);
+  font: inherit; font-size: 13px; font-weight: 700; color: var(--ink-2);
+  font-variant-numeric: tabular-nums; cursor: pointer; position: relative;
+}
+.q-step:hover { border-color: var(--brand-500); color: var(--brand-700); background: var(--brand-050); }
+.q-step.is-answered { border-color: var(--brand-400); background: var(--brand-050); color: var(--brand-700); }
+.q-step.is-here {
+  background: var(--brand-600); border-color: var(--brand-600); color: #fff; cursor: default;
+}
+.q-step.is-marked::after {
+  content: "\2691"; position: absolute; top: -5px; right: -3px; font-size: 11px; color: var(--warn);
+}
+@media (max-width: 760px) {
+  /* A rail and five controls do not fit one phone row, and shrinking either
+     makes both unusable. The rail takes a row of its own above them and
+     scrolls inside it; the controls keep their size and wrap. */
+  .q-rail { order: -1; flex: 1 1 100%; justify-content: flex-start; }
+  .q-footer { gap: 8px; padding-inline: 10px; }
+  .q-step { flex: 0 0 30px; width: 30px; height: 30px; }
 }
 .q-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(42px,1fr)); gap: 7px; }
 .q-grid button {

@@ -435,6 +435,8 @@ JTS.dict.kk = {
   'q.pause': 'Кідірту', 'q.resume': 'Жалғастыру', 'q.hideTimer': 'Жасыру', 'q.showTimer': 'Көрсету',
   'q.paused': 'Кідіртілді',
   'q.position': '{total} ішінен {n}',
+  'q.counter': '{total} сұрақтың {n}-сі',
+  'q.jumpTo': 'Сұраққа өту',
   'q.hint': 'Кеңес',
   'q.askAi': 'AI-ға сұрақ',
   'q.explanation': 'Түсіндірме',

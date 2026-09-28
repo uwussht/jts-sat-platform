@@ -511,19 +511,26 @@
           return;
         }
 
-        var head = U.el('div.row', null, [
-          U.el('span.q-num', { text: String(ses.index + 1) }),
+        /* "Question 3 of 7" rather than a numbered tile: where you are in the
+           set is a sentence, and the tile was competing with the stem. */
+        var head = U.el('div.row.q-head', null, [
+          U.el('span.q-count', {
+            text: t('q.counter', { n: ses.index + 1, total: ses.questionIds.length })
+          }),
+          U.el('span.spacer'),
           U.el('button.q-tool', {
             type: 'button', 'aria-pressed': String(!!a.marked),
             text: '⚑ ' + (a.marked ? t('q.marked') : t('q.markReview')),
             onclick: function () { a.marked = !a.marked; saveNow(); renderQuestion(); }
           }),
-          U.el('span.spacer'),
           /* Naming the skill is useful while practising and is a hint while
              being measured, so it appears in study mode only. */
           isStudy ? U.el('span.badge.badge-muted', { text: JTS.skills.name(question.skillId) }) : null
         ]);
         content.appendChild(head);
+        /* A question with no passage is a column of text and four choices, and
+           it reads better narrow than spread across a desktop. */
+        content.classList.toggle('is-single', !question.passage);
 
         /* Passage and stem are each their own highlight root. Answer choices
            and feedback must never sit inside one, or their text would shift
@@ -622,9 +629,9 @@
             U.el('span.key', { text: key }),
             U.el('span.opt-text', { html: text })
           ]);
-          btn.appendChild(U.el('span.opt-strike', {
+          btn.appendChild(U.el('span.opt-strike' + (struck ? '.is-struck' : ''), {
             role: 'button', tabindex: '0',
-            text: struck ? '↺' : '―',
+            text: key,
             title: struck ? t('q.unstrike') : t('q.strike'),
             'aria-label': (struck ? t('q.unstrike') : t('q.strike')) + ' ' + key,
             onclick: function (e) {
@@ -744,22 +751,41 @@
         var a = ans(), question = q();
         var last = ses.index === ses.questionIds.length - 1;
 
+        /* Left: how much of the set is answered, and a way into the grid for
+           a long set. Middle: the set itself, numbered. Right: what to press. */
         footer.appendChild(U.el('button.q-jump', {
           type: 'button',
-          text: t('q.position', { n: ses.index + 1, total: ses.questionIds.length }) + '  ▾',
+          text: '▾  ' + answeredCount() + '/' + ses.questionIds.length,
+          'aria-label': t('q.position', { n: ses.index + 1, total: ses.questionIds.length }),
           onclick: openGrid
         }));
-        footer.appendChild(U.el('span.small.muted', {
-          text: t('practice.counter', { answered: answeredCount(), total: ses.questionIds.length })
-        }));
+
+        var rail = U.el('div.q-rail', { role: 'group', 'aria-label': t('q.jumpTo') });
+        ses.questionIds.forEach(function (qid, i) {
+          var ai = ses.answers[qid];
+          var answered = ai.selected !== null && ai.selected !== '';
+          var cls = '.q-step';
+          if (answered) cls += '.is-answered';
+          if (ai.marked) cls += '.is-marked';
+          if (i === ses.index) cls += '.is-here';
+          rail.appendChild(U.el('button' + cls, {
+            type: 'button', text: String(i + 1),
+            'aria-current': i === ses.index ? 'step' : null,
+            'aria-label': t('q.position', { n: i + 1, total: ses.questionIds.length }),
+            onclick: function () {
+              if (i === ses.index) return;
+              commitTime(); ses.index = i; saveNow();
+              buildTopbar(); renderQuestion(); window.scrollTo(0, 0);
+            }
+          }));
+        });
+        footer.appendChild(rail);
 
         /* Study-mode help is constructed only in study mode, so in exam and
            diagnostic mode these controls do not exist in the DOM at all. */
         if (isStudy && JTS.studyHelp && JTS.studyHelp.footerControls) {
           JTS.studyHelp.footerControls(footer, ses, question, a, refresh);
         }
-
-        footer.appendChild(U.el('span.spacer'));
         footer.appendChild(U.el('button.btn', {
           type: 'button', text: t('q.back'), disabled: ses.index === 0 || null,
           onclick: function () { go(-1); }

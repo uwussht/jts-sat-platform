@@ -435,6 +435,8 @@ JTS.dict.ru = {
   'q.pause': 'Пауза', 'q.resume': 'Продолжить', 'q.hideTimer': 'Скрыть', 'q.showTimer': 'Показать',
   'q.paused': 'Пауза',
   'q.position': '{n} из {total}',
+  'q.counter': 'Вопрос {n} из {total}',
+  'q.jumpTo': 'Перейти к вопросу',
   'q.hint': 'Подсказка',
   'q.askAi': 'Спросить AI',
   'q.explanation': 'Объяснение',
