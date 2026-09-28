@@ -1459,18 +1459,6 @@ button.rm-pin:focus-visible {
   background: var(--brand-600); color: #fff; font-size: 12px; font-weight: 750;
 }
 
-/* The whole road as six squares — the dashboard reminder and nothing else. */
-.rm-mini { display: flex; align-items: center; gap: 0; }
-.rm-mini-i {
-  flex: 1 1 0; min-width: 0; height: 24px; display: grid; place-items: center;
-  font-size: 11px; font-weight: 750;
-  background: var(--bg); color: var(--muted);
-  border: 1px solid var(--border); border-right: 0;
-}
-.rm-mini-i:last-child { border-right: 1px solid var(--border); }
-.rm-mini-i.done { background: var(--ok-bg); color: var(--ok); border-color: var(--ok-bg); }
-.rm-mini-i.now { background: var(--brand-600); color: #fff; border-color: var(--brand-600); }
-
 /* ----- 24a. Daily check ---------------------------------------------------- */
 /* The fortnight as a strip. Squares and not a chart: the question it answers
    is "did I turn up", which is a yes or a no per day. */

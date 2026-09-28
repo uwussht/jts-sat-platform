@@ -30,8 +30,8 @@
       return [
         step('#main-nav', 'nav'),
         step('#today-hero', 'countdown'),
-        step('#today-lesson', 'lesson'),
-        step('#daily-card', 'daily'),
+        step('#today-weekly', 'weekly'),
+        step('#today-targets', 'targets'),
         step('#add-word', 'fab')
       ];
     },

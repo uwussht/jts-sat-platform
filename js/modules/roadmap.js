@@ -28,11 +28,9 @@
    Being able to see the whole road at once is the entire point of drawing a
    road — so the detail sits in a column NEXT to the map rather than under it.
 
-   Two jobs, one module:
-
-   - #/roadmap is the map of the course this student is on;
-   - JTS.roadmap.reminder() is the compact version the dashboard shows every
-     day, so the road is a reminder and not a page you have to remember to open.
+   The compact version the dashboard used to carry is gone with the rest of
+   the dashboard's cards: Today is the clock, this week's test and the two
+   numbers, and the road is a screen you open.
    ========================================================================== */
 (function () {
   'use strict';
@@ -414,60 +412,7 @@
     return panel;
   }
 
-  /** Six squares on a rule: the whole road at a glance, for the dashboard. */
-  function miniTrack(list, current) {
-    var wrap = U.el('div.rm-mini', { role: 'img',
-      'aria-label': t('roadmap.step', { n: current, total: list.length }) });
-    list.forEach(function (s) {
-      wrap.appendChild(U.el('span.rm-mini-i' +
-        (s.id < current ? '.done' : s.id === current ? '.now' : ''), {
-        text: s.kind === 'gate' ? '⚑' : String(s.id), title: s.name
-      }));
-    });
-    return wrap;
-  }
-
-  /**
-   * The dashboard reminder. A student should not have to go looking for the
-   * road to remember which part of it they are on, so Today carries this every
-   * morning: which stop, what it is for, how far in, one way back to the map.
-   */
-  function reminder() {
-    var state = S.state();
-    if (!state) return null;
-    var list = stops();
-    var done = doneCount();
-    var current = currentStop(list, done);
-    var stop = list.filter(function (s) { return s.id === current; })[0] || list[0];
-    var prog = stopProgress(stop, done);
-    var pw = perWeek();
-    var week = Math.min(Math.ceil(Math.max(done + 1, 1) / pw), P.scheduleOf(pw).weeks);
-
-    return U.el('div.card.stack-sm', null, [
-      U.el('div.row-between.row-wrap', null, [
-        U.el('div.eyebrow', { text: t('roadmap.whereYouAre') }),
-        U.el('span.badge.badge-muted', {
-          text: t('roadmap.weekOf', { n: week, total: P.scheduleOf(pw).weeks })
-        })
-      ]),
-      miniTrack(list, current),
-      U.el('div.stack-sm', null, [
-        U.el('div.row.row-wrap', { style: 'gap:8px;align-items:center' }, [
-          U.el('b', { text: t('roadmap.step', { n: stop.id, total: list.length }) +
-            ' · ' + stop.name }),
-          starRow(starsFor(prog))
-        ]),
-        U.el('p.small.muted', { text: stop.lead })
-      ]),
-      prog && prog.total ? ui.bar(prog.done, prog.total) : null,
-      prog && prog.total ? U.el('div.xsmall.muted', {
-        text: t('roadmap.lessonsDone', { done: prog.done, total: prog.total })
-      }) : null,
-      U.el('a.btn.btn-sm', { href: '#/roadmap', text: t('roadmap.openRoadmap') })
-    ]);
-  }
-
-  JTS.roadmap = { reminder: reminder, stops: stops, starsFor: starsFor };
+  JTS.roadmap = { stops: stops, starsFor: starsFor };
 
   /* --------------------------------------------------------------- screen */
 

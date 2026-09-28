@@ -183,7 +183,7 @@
    * last fortnight as a strip of squares. It is a card and not a notice
    * because it is there every day whether or not anything is owed.
    */
-  function dashboardCard() {
+  function historyCard() {
     var d = rec();
     if (!d) return null;
     var done = forDay(todayISO());
@@ -282,7 +282,7 @@
     });
   }
 
-  JTS.daily.dashboardCard = dashboardCard;
+  JTS.daily.historyCard = historyCard;
   JTS.daily.maybePrompt = maybePrompt;
 
   /* ---------------------------------------------------------- the screen */
@@ -373,6 +373,12 @@
       var entry = forDay(todayISO());
       if (entry) resultView(screen, entry);
       else introView(screen);
+
+      /* The fortnight of dots and the streak used to live on the dashboard.
+         The dashboard is the course's clock now, so they live on the screen
+         they belong to — the one you land on to do the check. */
+      var card = historyCard();
+      if (card) screen.appendChild(card);
     }
   });
 })();

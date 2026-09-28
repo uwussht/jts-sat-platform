@@ -285,6 +285,52 @@
 
   /* ----------------------------------------------------------------- screen */
 
+  /**
+   * The errors that are due back today.
+   *
+   * This used to be a card on the dashboard. The dashboard is the clock, the
+   * week's test and the targets now, so the queue lives where the practice
+   * is: an error that never comes back was never reviewed, and a queue with
+   * no entry point is exactly that.
+   */
+  function reviewCard() {
+    var due = JTS.analytics.pendingReviews();
+    if (!due.length) {
+      return U.el('div.card.stack-sm', { id: 'review-card' }, [
+        U.el('div.eyebrow', { text: t('practice.errorsToReview') }),
+        U.el('p.muted.small', { text: t('practice.noErrors') })
+      ]);
+    }
+    var bySkill = U.groupBy(due, function (e) { return e.skillId; });
+    return U.el('div.card.stack', { id: 'review-card' }, [
+      U.el('div.row-between', null, [
+        U.el('div.eyebrow', { text: t('practice.errorsToReview') }),
+        U.el('span.badge.badge-warn', { text: t('practice.errorsCount', { n: due.length }) })
+      ]),
+      U.el('div.row.row-wrap', null, Object.keys(bySkill).slice(0, 6).map(function (sk) {
+        return U.el('span.badge.badge-muted', {
+          text: JTS.skills.name(sk) + ' · ' + bySkill[sk].length
+        });
+      })),
+      U.el('button.btn.btn-primary.btn-block', {
+        type: 'button', text: t('practice.reviewNow'),
+        onclick: function () {
+          var ids = [];
+          due.forEach(function (e) {
+            if (ids.indexOf(e.questionId) < 0 && JTS.bank.get(e.questionId)) ids.push(e.questionId);
+          });
+          if (!ids.length) return ui.toast(t('practice.noQuestions'), 'err');
+          JTS.session.start({
+            kind: 'review', mode: 'study', title: t('practice.errorsToReview'),
+            questionIds: ids.slice(0, 20),
+            returnHash: '#/practice', finishHash: '#/practice',
+            meta: { review: true }
+          });
+        }
+      })
+    ]);
+  }
+
   JTS.router.register('#/practice', {
     title: 'nav.practice',
     render: function (root) {
@@ -298,6 +344,7 @@
         U.el('a.btn.btn-sm', { href: '#/desmos-guide', text: t('practice.desmosGuide') })
       ]);
       screen.appendChild(U.el('div.notice', { text: t('practice.studyModeNote') }));
+      screen.appendChild(reviewCard());
 
       var card = U.el('div.card.stack');
       card.appendChild(U.el('h2.h2', { text: t('practice.create') }));

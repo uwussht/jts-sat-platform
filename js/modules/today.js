@@ -1,14 +1,17 @@
 /* ==========================================================================
    Screen: Today (#/today)
 
-   The one screen a student opens every day. It answers five questions without
-   much scrolling: how long is left, what am I doing now, where on the roadmap
-   this sits, what is coming back to bite me, and what measures me next.
+   The one screen a student opens every day, and it holds three things: how
+   long is left, the test that measures this week, and the two numbers they
+   are steering by. Everything else has a screen of its own — the next
+   session is on the plan, the daily check at #/daily, the road at #/roadmap,
+   the review queue in practice — and repeating them here made the screen
+   opened every morning the longest in the product.
 
-   The clock at the top runs: days, hours, minutes and seconds to the morning
-   of the exam. A countdown that only counts days is a number you can ignore
-   for twenty-three hours, and this one is the reason every other card on the
-   screen exists.
+   The clock runs: days, hours, minutes and seconds to the morning of the
+   exam. A countdown that only counts days is a number you can ignore for
+   twenty-three hours, and this one is the reason the rest of the product
+   exists.
    ========================================================================== */
 (function () {
   'use strict';
@@ -206,121 +209,19 @@
           U.el('b.tg-num', { text: now ? String(now.total) : '—' })
         ])
       ]),
-      U.el('div.xsmall.muted', {
-        text: now
-          ? t('today.targets.measured', {
-              what: now.label, when: U.fmtDate(new Date(now.at), S.settings().uiLang)
-            })
-          : t('today.targets.none')
-      })
-    ]);
-  }
-
-  function lessonCard(state) {
-    var lesson = JTS.planner.nextLesson();
-    if (!lesson) {
-      return U.el('div.card', null, [
-        ui.empty(t('today.noLesson'), null,
-          U.el('a.btn.btn-primary', { href: '#/plan', text: t('plan.generate') }))
-      ]);
-    }
-
-    var phase = JTS.planner.phases.filter(function (p) { return p.id === lesson.phaseId; })[0];
-    var skillNames = lesson.skillIds.map(function (id) { return JTS.skills.name(id); });
-    var isToday = lesson.date === U.iso(U.today());
-    var actualCount = JTS.planner.lessonQuestionIds(lesson).length;
-
-    return U.el('div.card.card-accent.stack', { id: 'today-lesson' }, [
       U.el('div.row-between.row-wrap', null, [
-        U.el('div.eyebrow', { text: t('today.nextLesson') }),
-        U.el('div.row', null, [
-          U.el('span.badge', { text: t('today.phase', { n: lesson.phaseId, name: t('plan.phase.' + phase.key) }) }),
-          U.el('span.badge.badge-muted', { text: isToday ? t('common.today') : U.fmtDate(lesson.date) })
-        ])
-      ]),
-      U.el('div.stack-sm', null, [
-        U.el('div.stat-label', { text: t('today.lessonGoal') }),
-        U.el('div.h2', { text: t('plan.goalFor', { skills: skillNames.join(', ') }) })
-      ]),
-      U.el('div.stack-sm', null, [
-        U.el('div.stat-label', { text: t('today.lessonActions') }),
-        U.el('div.row.row-wrap', null, lesson.actions.map(function (a) {
-          return U.el('span.badge', { text: t('plan.action.' + a) });
-        }).concat([
-          U.el('span.badge.badge-muted', { text: t('today.expected', { n: lesson.expectedMinutes }) }),
-          U.el('span.badge.badge-muted', {
-            text: actualCount + ' ' + t('common.questions')
-          })
-        ]))
-      ]),
-      U.el('button.btn.btn-primary.btn-lg.btn-block', {
-        type: 'button', text: t('today.startLesson'),
-        onclick: function () {
-          if (!JTS.planner.startLesson(lesson.id)) ui.toast(t('practice.noQuestions'), 'err');
-        }
-      })
-    ]);
-  }
-
-  function reviewCard() {
-    var due = JTS.analytics.pendingReviews();
-    if (!due.length) {
-      return U.el('div.card.stack-sm', null, [
-        U.el('div.eyebrow', { text: t('today.errorsToReview') }),
-        U.el('p.muted.small', { text: t('today.noErrors') })
-      ]);
-    }
-    var bySkill = U.groupBy(due, function (e) { return e.skillId; });
-    return U.el('div.card.stack', null, [
-      U.el('div.row-between', null, [
-        U.el('div.eyebrow', { text: t('today.errorsToReview') }),
-        U.el('span.badge.badge-warn', { text: t('today.errorsCount', { n: due.length }) })
-      ]),
-      U.el('div.row.row-wrap', null, Object.keys(bySkill).slice(0, 6).map(function (sk) {
-        return U.el('span.badge.badge-muted', {
-          text: JTS.skills.name(sk) + ' · ' + bySkill[sk].length
-        });
-      })),
-      U.el('button.btn.btn-primary.btn-block', {
-        type: 'button', text: t('today.reviewNow'),
-        onclick: function () {
-          var ids = [];
-          due.forEach(function (e) {
-            if (ids.indexOf(e.questionId) < 0 && JTS.bank.get(e.questionId)) ids.push(e.questionId);
-          });
-          if (!ids.length) return ui.toast(t('practice.noQuestions'), 'err');
-          JTS.session.start({
-            kind: 'review', mode: 'study', title: t('today.errorsToReview'),
-            questionIds: ids.slice(0, 20),
-            returnHash: '#/today', finishHash: '#/today',
-            meta: { review: true }
-          });
-        }
-      })
-    ]);
-  }
-
-  function checkpointCard() {
-    var cp = JTS.planner.nextCheckpoint();
-    if (!cp) return null;
-    var label = cp.type === 'mini-test'
-      ? t('plan.action.mini-test')
-      : t('today.phase', {
-          n: cp.phaseId,
-          name: t('plan.phase.' + JTS.planner.phases.filter(function (p) { return p.id === cp.phaseId; })[0].key)
-        });
-    return U.el('div.card.stack-sm', null, [
-      U.el('div.eyebrow', { text: t('today.checkpoint') }),
-      U.el('div.row-between', null, [
-        U.el('b', { text: label }),
-        U.el('span.badge.badge-muted', { text: U.fmtDate(cp.date) })
-      ]),
-      U.el('div.small.muted', {
-        text: U.daysBetween(U.today(), U.parseISO(cp.date)) + ' ' + t('common.days')
-      }),
-      /* Progress left the navigation when Materials took its place, and the
-         charts are wanted exactly here — next to the checkpoint they measure. */
-      U.el('a.small', { href: '#/progress', text: t('progress.title') + ' →' })
+        U.el('span.xsmall.muted', {
+          text: now
+            ? t('today.targets.measured', {
+                what: now.label, when: U.fmtDate(new Date(now.at), S.settings().uiLang)
+              })
+            : t('today.targets.none')
+        }),
+        /* Progress is not in the navigation — Materials took its place — and
+           the charts belong to exactly this question, so the one link to them
+           is under the two numbers they explain. */
+        U.el('a.small', { href: '#/progress', text: t('progress.title') + ' →' })
+      ])
     ]);
   }
 
@@ -355,30 +256,15 @@
       var hero = heroCard(state);
       screen.appendChild(hero.el);
 
+      /* Three things and no more: the clock, the test that measures the week,
+         and the two numbers a student is steering by. What used to be stacked
+         under them — the next session, the daily check, the roadmap reminder,
+         the review queue and the next checkpoint — each has a screen of its
+         own, and repeating them here made the one screen opened every morning
+         the longest in the product. */
       var wk = weeklyCard(state);
       if (wk) screen.appendChild(wk);
       screen.appendChild(targetsCard(state));
-      screen.appendChild(lessonCard(state));
-
-      /* The daily check sits directly under the day's session, because it is
-         the other thing a student is meant to do today and the only one that
-         keeps a streak. */
-      if (JTS.daily) {
-        var dc = JTS.daily.dashboardCard();
-        if (dc) screen.appendChild(dc);
-      }
-
-      var grid = U.el('div.grid.grid-2');
-      /* The roadmap is a separate screen, but a road you have to remember to
-         open is not a reminder. The compact version rides along on the screen
-         the student opens every day. */
-      if (JTS.roadmap) grid.appendChild(JTS.roadmap.reminder());
-      grid.appendChild(reviewCard());
-      var cp = checkpointCard();
-      if (cp) grid.appendChild(cp);
-      screen.appendChild(grid);
-      /* The three shortcut buttons that used to sit here repeated the sidebar
-         exactly, which is one navigation too many. */
 
       /* The clock ticks once a second; the router calls this when the screen
          is left, so it does not go on ticking over a card nobody can see. */
