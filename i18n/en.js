@@ -554,6 +554,7 @@ JTS.dict.en = {
   'desmos.embedded': 'live',
   'desmos.tryIt': 'Try it: {expr}',
   'desmos.markLearned': 'Mark as learned',
+  'desmos.lesson': 'Lesson {n}',
   'desmos.learned': 'Learned',
   'desmos.progress': '{done} of {total} sections',
   'desmos.practiceTasks': 'Practice tasks',

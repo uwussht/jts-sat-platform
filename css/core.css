@@ -834,6 +834,10 @@ html[data-theme="dark"] mark.hl { background: #8C7415; color: #FFF7DA; }
    with — but a percentage padding resolves against the PARENT's width, so the
    cap has to live on a wrapper. With both on one element the slot read
    820px wide and 602px tall, which is 56.25% of the card, not of the video. */
+/* The lesson number sits before the title, not after it: it is part of the
+   name of the section, not a label on it. */
+.dg-lesson { flex: none; margin-inline-end: 2px; }
+
 .video-wrap { width: 100%; max-width: 820px; margin-inline: auto; }
 .video-slot.has-video {
   position: relative; height: 0; padding: 0 0 56.25% 0; width: 100%;

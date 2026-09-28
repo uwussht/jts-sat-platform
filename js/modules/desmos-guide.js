@@ -13,7 +13,11 @@
   'use strict';
   var U = JTS.util, t = JTS.t, ui = JTS.ui, S = JTS.store;
 
-  var SECTION_ORDER = ['basics', 'graph', 'solve', 'tables', 'sat', 'shortcuts'];
+  /* The order is the data file's order, and only the data file's. It used to
+     be restated here as a literal list, which meant moving a section in
+     js/data/desmos-guide.js changed nothing on screen — two sources of truth,
+     and the one being edited was the one that lost. */
+  function sections() { return JTS.data.desmosGuide || []; }
 
   function progress() {
     var s = S.state();
@@ -29,7 +33,9 @@
   function isLearned(id) { return !!progress()[id]; }
 
   /** All seven: the six content sections plus the practice-task section. */
-  function allSectionIds() { return SECTION_ORDER.concat(['tasks']); }
+  function allSectionIds() {
+    return sections().map(function (x) { return x.id; }).concat(['tasks']);
+  }
 
   /* ------------------------------------------------------------- calculator */
 
@@ -127,6 +133,12 @@
       }
     }, [
       caret,
+      /* Sections that follow the video series carry their number, so the order
+         on screen is visibly an order and not an arrangement. Sections that are
+         JTS's own carry none and sit after them. */
+      sec.lesson ? U.el('span.badge.badge-muted.dg-lesson', {
+        text: t('desmos.lesson', { n: sec.lesson })
+      }) : null,
       U.el('b', { text: t('desmos.section.' + sec.id) }),
       U.el('span.spacer'),
       learned ? U.el('span.badge.badge-ok', { text: t('desmos.learned') }) : null
@@ -245,9 +257,8 @@
         ]));
 
         var list = U.el('div.stack-sm');
-        SECTION_ORDER.forEach(function (id) {
-          var sec = (JTS.data.desmosGuide || []).filter(function (s) { return s.id === id; })[0];
-          if (sec) list.appendChild(sectionAcc(sec, rerender));
+        sections().forEach(function (sec) {
+          list.appendChild(sectionAcc(sec, rerender));
         });
         list.appendChild(tasksAcc(rerender));
         screen.appendChild(list);

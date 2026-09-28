@@ -554,6 +554,7 @@ JTS.dict.kk = {
   'desmos.embedded': 'тірі',
   'desmos.tryIt': 'Қайталаңыз: {expr}',
   'desmos.markLearned': '«Меңгерілді» деп белгілеу',
+  'desmos.lesson': '{n}-сабақ',
   'desmos.learned': 'Меңгерілді',
   'desmos.progress': '{total} бөлімнің {done}-і',
   'desmos.practiceTasks': 'Практикалық тапсырмалар',

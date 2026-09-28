@@ -16,6 +16,52 @@ window.JTS = window.JTS || {}; JTS.data = JTS.data || {};
 
 JTS.data.desmosGuide = [
   {
+    id: 'solve',
+    /* Lesson 1 of the video series. The numbered sections come first and in
+       order; JTS's own sections follow them. */
+    lesson: 1,
+    video: 'https://www.youtube.com/embed/TFmt1VwZte8',
+    videoCredit: {
+      name: 'Tutorlini Test Prep \u2014 Desmos Lesson #1',
+      url: 'https://youtu.be/TFmt1VwZte8'
+    },
+    lead: {
+      en: 'You can solve any equation on the test by drawing it. You do not have to know how to rearrange it, and you do not have to be good at algebra. Walk through the steps below once with the example, and you have the whole method.',
+      ru: 'Любое уравнение на экзамене можно решить, нарисовав его. Не нужно уметь его преобразовывать и не нужно быть сильным в алгебре. Пройдите шаги ниже один раз на примере — и весь приём у вас в руках.',
+      kk: 'Емтихандағы кез келген теңдеуді сызып шешуге болады. Оны түрлендіре білудің де, алгебрадан мықты болудың да қажеті жоқ. Төмендегі қадамдарды мысалмен бір рет өтіңіз — бүкіл тәсіл қолыңызда.'
+    },
+    steps: {
+      en: [
+        'Take the example <code>x\u00b2 \u2212 5 = 3x \u2212 7</code>. Everything before the <code>=</code> is the <b>left side</b>. Everything after it is the <b>right side</b>.',
+        'In row 1 type <code>y=</code> and then the left side, exactly as it is printed: <code>y=x^2-5</code>. Do not tidy the equation up first \u2014 copy the numbers you were given.',
+        'Press Enter. In row 2 type <code>y=</code> and the right side: <code>y=3x-7</code>.',
+        'Two graphs appear. Look for the points where they <b>cross</b>. If you see nothing, scroll to zoom out \u2014 the crossing is usually just off the edge of the screen.',
+        'Click a crossing point. Desmos writes its two numbers, like <code>(2, \u22121)</code>. <b>Your answer is the first number, 2.</b> The second one is only how high up the two graphs met, and no question ever asks for it.',
+        'Count the crossings. Two crossings means the equation has two answers \u2014 so read the question again before you write one down. It usually asks for a particular one: "the positive solution", "the greatest value of x".',
+        'That is the whole method, and it works even when the question gives you no answer choices to try. Two things it does for free: a system of two equations is the same move (one row each, one crossing), and an inequality can be typed straight in \u2014 <code>y>2x+1</code> shades the region that works.'
+      ],
+      ru: [
+        'Возьмём пример <code>x\u00b2 \u2212 5 = 3x \u2212 7</code>. Всё, что до знака <code>=</code>, — это <b>левая часть</b>. Всё, что после, — <b>правая</b>.',
+        'В строке 1 наберите <code>y=</code> и левую часть ровно так, как она напечатана: <code>y=x^2-5</code>. Не приводите уравнение к «удобному» виду — переносите те числа, которые вам дали.',
+        'Нажмите Enter. В строке 2 наберите <code>y=</code> и правую часть: <code>y=3x-7</code>.',
+        'Появятся два графика. Найдите точки, где они <b>пересекаются</b>. Если ничего не видно — прокрутите колесо, чтобы отдалить: пересечение обычно чуть за краем экрана.',
+        'Кликните точку пересечения. Desmos напишет два числа, например <code>(2, \u22121)</code>. <b>Ваш ответ — первое число, 2.</b> Второе — лишь высота, на которой графики встретились, и его не спрашивают никогда.',
+        'Посчитайте пересечения. Два пересечения — у уравнения два ответа, поэтому перечитайте вопрос, прежде чем записывать. Обычно просят конкретный: «положительное решение», «наибольшее значение x».',
+        'Это весь приём, и он работает даже тогда, когда вариантов ответа не дали. Ещё две вещи он делает даром: система из двух уравнений — то же самое (по строке на каждое, одно пересечение), а неравенство вводится прямо: <code>y>2x+1</code> заштрихует подходящую область.'
+      ],
+      kk: [
+        '<code>x\u00b2 \u2212 5 = 3x \u2212 7</code> мысалын алайық. <code>=</code> белгісіне дейінгінің бәрі — <b>сол жағы</b>. Одан кейінгінің бәрі — <b>оң жағы</b>.',
+        '1-жолға <code>y=</code> деп, сосын сол жағын басылған күйінде теріңіз: <code>y=x^2-5</code>. Теңдеуді алдымен «ыңғайлы» түрге келтірмеңіз — берілген сандарды сол күйінде көшіріңіз.',
+        'Enter басыңыз. 2-жолға <code>y=</code> деп, оң жағын теріңіз: <code>y=3x-7</code>.',
+        'Екі график шығады. Олардың <b>қиылысатын</b> нүктелерін табыңыз. Ештеңе көрінбесе, дөңгелекті айналдырып кішірейтіңіз — қиылысу көбіне экранның шетінен тыс тұрады.',
+        'Қиылысу нүктесін басыңыз. Desmos екі санды жазады, мысалы <code>(2, \u22121)</code>. <b>Жауабыңыз — бірінші сан, 2.</b> Екіншісі — графиктердің кездескен биіктігі ғана, оны ешқашан сұрамайды.',
+        'Қиылысуларды санаңыз. Екі қиылысу — теңдеудің екі жауабы бар, сондықтан жазбас бұрын сұрақты қайта оқыңыз. Әдетте нақты біреуін сұрайды: «оң шешім», «x-тің ең үлкен мәні».',
+        'Тәсіл осымен бітті, әрі ол жауап нұсқалары берілмеген жерде де жұмыс істейді. Ол тегін істейтін тағы екі нәрсе: екі теңдеуден тұратын жүйе — дәл сол қимыл (әрқайсысына бір жол, бір қиылысу), ал теңсіздікті тікелей теруге болады: <code>y>2x+1</code> келетін аймақты бояйды.'
+      ]
+    },
+    tryIt: ['y=x^2-5', 'y=3x-7', 'y=|4-x|', 'y=7', 'y>2x+1']
+  },
+  {
     id: 'basics', video: null,
     lead: {
       en: 'Type an expression and it is drawn immediately. Everything below lives in the expression list on the left; the graph paper on the right is only a view of it.',
@@ -72,49 +118,6 @@ JTS.data.desmosGuide = [
       ]
     },
     tryIt: ['y=a(x-h)^2+k', 'y=sin(x)', 'y=|x-3|']
-  },
-  {
-    id: 'solve',
-    video: 'https://www.youtube.com/embed/TFmt1VwZte8',
-    videoCredit: {
-      name: 'Tutorlini Test Prep \u2014 Desmos Lesson #1',
-      url: 'https://youtu.be/TFmt1VwZte8'
-    },
-    lead: {
-      en: 'You can solve any equation on the test by drawing it. You do not have to know how to rearrange it, and you do not have to be good at algebra. Walk through the steps below once with the example, and you have the whole method.',
-      ru: 'Любое уравнение на экзамене можно решить, нарисовав его. Не нужно уметь его преобразовывать и не нужно быть сильным в алгебре. Пройдите шаги ниже один раз на примере — и весь приём у вас в руках.',
-      kk: 'Емтихандағы кез келген теңдеуді сызып шешуге болады. Оны түрлендіре білудің де, алгебрадан мықты болудың да қажеті жоқ. Төмендегі қадамдарды мысалмен бір рет өтіңіз — бүкіл тәсіл қолыңызда.'
-    },
-    steps: {
-      en: [
-        'Take the example <code>x\u00b2 \u2212 5 = 3x \u2212 7</code>. Everything before the <code>=</code> is the <b>left side</b>. Everything after it is the <b>right side</b>.',
-        'In row 1 type <code>y=</code> and then the left side, exactly as it is printed: <code>y=x^2-5</code>. Do not tidy the equation up first \u2014 copy the numbers you were given.',
-        'Press Enter. In row 2 type <code>y=</code> and the right side: <code>y=3x-7</code>.',
-        'Two graphs appear. Look for the points where they <b>cross</b>. If you see nothing, scroll to zoom out \u2014 the crossing is usually just off the edge of the screen.',
-        'Click a crossing point. Desmos writes its two numbers, like <code>(2, \u22121)</code>. <b>Your answer is the first number, 2.</b> The second one is only how high up the two graphs met, and no question ever asks for it.',
-        'Count the crossings. Two crossings means the equation has two answers \u2014 so read the question again before you write one down. It usually asks for a particular one: "the positive solution", "the greatest value of x".',
-        'That is the whole method, and it works even when the question gives you no answer choices to try. Two things it does for free: a system of two equations is the same move (one row each, one crossing), and an inequality can be typed straight in \u2014 <code>y>2x+1</code> shades the region that works.'
-      ],
-      ru: [
-        'Возьмём пример <code>x\u00b2 \u2212 5 = 3x \u2212 7</code>. Всё, что до знака <code>=</code>, — это <b>левая часть</b>. Всё, что после, — <b>правая</b>.',
-        'В строке 1 наберите <code>y=</code> и левую часть ровно так, как она напечатана: <code>y=x^2-5</code>. Не приводите уравнение к «удобному» виду — переносите те числа, которые вам дали.',
-        'Нажмите Enter. В строке 2 наберите <code>y=</code> и правую часть: <code>y=3x-7</code>.',
-        'Появятся два графика. Найдите точки, где они <b>пересекаются</b>. Если ничего не видно — прокрутите колесо, чтобы отдалить: пересечение обычно чуть за краем экрана.',
-        'Кликните точку пересечения. Desmos напишет два числа, например <code>(2, \u22121)</code>. <b>Ваш ответ — первое число, 2.</b> Второе — лишь высота, на которой графики встретились, и его не спрашивают никогда.',
-        'Посчитайте пересечения. Два пересечения — у уравнения два ответа, поэтому перечитайте вопрос, прежде чем записывать. Обычно просят конкретный: «положительное решение», «наибольшее значение x».',
-        'Это весь приём, и он работает даже тогда, когда вариантов ответа не дали. Ещё две вещи он делает даром: система из двух уравнений — то же самое (по строке на каждое, одно пересечение), а неравенство вводится прямо: <code>y>2x+1</code> заштрихует подходящую область.'
-      ],
-      kk: [
-        '<code>x\u00b2 \u2212 5 = 3x \u2212 7</code> мысалын алайық. <code>=</code> белгісіне дейінгінің бәрі — <b>сол жағы</b>. Одан кейінгінің бәрі — <b>оң жағы</b>.',
-        '1-жолға <code>y=</code> деп, сосын сол жағын басылған күйінде теріңіз: <code>y=x^2-5</code>. Теңдеуді алдымен «ыңғайлы» түрге келтірмеңіз — берілген сандарды сол күйінде көшіріңіз.',
-        'Enter басыңыз. 2-жолға <code>y=</code> деп, оң жағын теріңіз: <code>y=3x-7</code>.',
-        'Екі график шығады. Олардың <b>қиылысатын</b> нүктелерін табыңыз. Ештеңе көрінбесе, дөңгелекті айналдырып кішірейтіңіз — қиылысу көбіне экранның шетінен тыс тұрады.',
-        'Қиылысу нүктесін басыңыз. Desmos екі санды жазады, мысалы <code>(2, \u22121)</code>. <b>Жауабыңыз — бірінші сан, 2.</b> Екіншісі — графиктердің кездескен биіктігі ғана, оны ешқашан сұрамайды.',
-        'Қиылысуларды санаңыз. Екі қиылысу — теңдеудің екі жауабы бар, сондықтан жазбас бұрын сұрақты қайта оқыңыз. Әдетте нақты біреуін сұрайды: «оң шешім», «x-тің ең үлкен мәні».',
-        'Тәсіл осымен бітті, әрі ол жауап нұсқалары берілмеген жерде де жұмыс істейді. Ол тегін істейтін тағы екі нәрсе: екі теңдеуден тұратын жүйе — дәл сол қимыл (әрқайсысына бір жол, бір қиылысу), ал теңсіздікті тікелей теруге болады: <code>y>2x+1</code> келетін аймақты бояйды.'
-      ]
-    },
-    tryIt: ['y=x^2-5', 'y=3x-7', 'y=|4-x|', 'y=7', 'y>2x+1']
   },
   {
     id: 'tables', video: null,

@@ -554,6 +554,7 @@ JTS.dict.ru = {
   'desmos.embedded': 'живой',
   'desmos.tryIt': 'Повторите: {expr}',
   'desmos.markLearned': 'Отметить «Изучено»',
+  'desmos.lesson': 'Урок {n}',
   'desmos.learned': 'Изучено',
   'desmos.progress': '{done} из {total} разделов',
   'desmos.practiceTasks': 'Практические задания',

@@ -634,10 +634,18 @@ bigger. This one does the same.
 
 ## Desmos guide
 
-Seven sections — basics, graphing, solving, tables and regression, SAT
+Seven sections — solving, basics, graphing, tables and regression, SAT
 techniques, shortcuts, and the practice tasks — each with its own calculator,
-its own expressions to type, a "mark as learned" checkbox, and a slot for a JTS
-screencast (put the URL in `video:` in `js/data/desmos-guide.js`).
+its own expressions to type, a "mark as learned" checkbox, and a slot for a
+video (put the URL in `video:` in `js/data/desmos-guide.js`).
+
+**The order on screen is the order in `js/data/desmos-guide.js`, and nowhere
+else.** Sections that follow the video series carry `lesson: n` and are shown
+with that number before the title; the rest are JTS's own and carry none, and
+sit after them. Adding lesson 3 means writing the section and putting it third
+in the array. The module used to restate the order as a literal list of ids,
+so moving a section in the data file changed nothing on screen — two sources
+of truth, and the one being edited was the one that lost.
 
 The calculator is mounted when a section is first opened, not seven at once,
 and is never removed or reparented afterwards, so it keeps whatever the student
