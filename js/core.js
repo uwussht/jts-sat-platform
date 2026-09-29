@@ -1700,10 +1700,18 @@
       var w = this.weeksToExam();
       return w === null ? 12 : U.clamp(w, 1, 40);
     },
+    /**
+     * Errors due to be re-served as questions. A mistake the student typed in
+     * themselves has no question behind it, so it can never come back round in
+     * a review session — it is reviewed by being read, and it carries its own
+     * tick for that. Everything else here has a questionId the bank can serve.
+     */
     pendingReviews: function () {
       var s = Store.state(); if (!s) return [];
       var now = Date.now();
-      return s.errors.filter(function (e) { return !e.resolvedAt && e.reviewDueAt <= now; });
+      return s.errors.filter(function (e) {
+        return !e.manual && !e.resolvedAt && e.reviewDueAt <= now;
+      });
     },
     touchStreak: function () {
       var s = Store.state(); if (!s) return;
@@ -1798,6 +1806,52 @@
       s.errors.push(err);
       Store.save();
       return err;
+    },
+    /**
+     * A mistake the student writes down themselves: what it was, which topic it
+     * belongs to, and why they think it happened. The platform can only see
+     * the questions it served; most of what goes wrong on a real test happens
+     * where nobody was watching, and a log only the software can write is a log
+     * that misses exactly that.
+     *
+     * It goes in the same list as the automatic ones so one table shows both,
+     * with manual: true and no questionId — which is what keeps it out of the
+     * review queue, since there is nothing for the bank to serve again.
+     */
+    addManualError: function (rec) {
+      var s = Store.state(); if (!s) return null;
+      var err = {
+        id: U.uid('err'), manual: true, attemptId: null, questionId: null,
+        skillId: rec.skillId || null,
+        topicCode: rec.topicCode || null,
+        topicText: rec.topicText || '',
+        title: String(rec.title || '').trim(),
+        note: String(rec.note || '').trim(),
+        errorType: rec.errorType || null,
+        ts: rec.ts || Date.now(),
+        reviewDueAt: (rec.ts || Date.now()) + JTS.config.errorReviewDelayDays * U.DAY_MS,
+        resolvedAt: null, mode: 'manual'
+      };
+      s.errors.push(err);
+      Store.save();
+      return err;
+    },
+    updateError: function (id, patch) {
+      Store.update(function (s) {
+        s.errors.forEach(function (e) {
+          if (e.id === id) Object.keys(patch).forEach(function (k) { e[k] = patch[k]; });
+        });
+      });
+    },
+    /** The student's own tick. Getting the question right again sets the same
+        field, so one column answers "has this been dealt with" either way. */
+    setReviewed: function (id, on) {
+      this.updateError(id, { resolvedAt: on ? Date.now() : null });
+    },
+    removeError: function (id) {
+      Store.update(function (s) {
+        s.errors = s.errors.filter(function (e) { return e.id !== id; });
+      });
     },
     setErrorType: function (attemptId, errorType) {
       Store.update(function (s) {
