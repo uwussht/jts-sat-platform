@@ -19,8 +19,6 @@ JTS.dict.ru = {
   'roadmap.pctDone': '{n}% пройдено',
   'roadmap.examSub': 'Всё до этой остановки существует ради того, чтобы то одно утро прошло хорошо.',
   'roadmap.step': 'Шаг {n} из {total}',
-  'roadmap.prev': 'Предыдущий шаг',
-  'roadmap.next': 'Следующий шаг',
   'roadmap.whereYouAre': 'Где вы сейчас',
   'roadmap.weekOf': 'Неделя {n} из {total}',
   'roadmap.kind.diagnostic': 'Замер', 'roadmap.kind.phase': 'Учёба', 'roadmap.kind.gate': 'Контрольная точка',

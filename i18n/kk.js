@@ -19,8 +19,6 @@ JTS.dict.kk = {
   'roadmap.pctDone': '{n}% өтілді',
   'roadmap.examSub': 'Осы аялдамаға дейінгінің бәрі сол бір таң жақсы өтуі үшін бар.',
   'roadmap.step': '{total} қадамның {n}-сі',
-  'roadmap.prev': 'Алдыңғы қадам',
-  'roadmap.next': 'Келесі қадам',
   'roadmap.whereYouAre': 'Қазір қайдасыз',
   'roadmap.weekOf': '{total} аптаның {n}-сі',
   'roadmap.kind.diagnostic': 'Өлшеу', 'roadmap.kind.phase': 'Оқу', 'roadmap.kind.gate': 'Бақылау нүктесі',

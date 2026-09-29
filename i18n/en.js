@@ -19,8 +19,6 @@ JTS.dict.en = {
   'roadmap.pctDone': '{n}% done',
   'roadmap.examSub': 'Everything before this stop exists to make that one morning go well.',
   'roadmap.step': 'Step {n} of {total}',
-  'roadmap.prev': 'Previous step',
-  'roadmap.next': 'Next step',
   'roadmap.whereYouAre': 'Where you are',
   'roadmap.weekOf': 'Week {n} of {total}',
   'roadmap.kind.diagnostic': 'Measure', 'roadmap.kind.phase': 'Learn', 'roadmap.kind.gate': 'Checkpoint',

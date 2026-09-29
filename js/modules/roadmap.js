@@ -526,19 +526,10 @@
       var left = U.el('div.rm-left');
       left.appendChild(mapHost);
 
-      /* The arrows are how you walk the road, which is why they sit under the
-         map rather than off at the edge of the screen. */
-      var prevBtn = U.el('button.rm-arrow', {
-        type: 'button', text: '‹', 'aria-label': t('roadmap.prev')
-      });
-      var nextBtn = U.el('button.rm-arrow', {
-        type: 'button', text: '›', 'aria-label': t('roadmap.next')
-      });
-      var stepLabel = U.el('div.rm-arrow-label', { 'aria-live': 'polite' });
-      prevBtn.addEventListener('click', function () { select(selected - 1); });
-      nextBtn.addEventListener('click', function () { select(selected + 1); });
-      left.appendChild(U.el('div.rm-arrows', null, [prevBtn, stepLabel, nextBtn]));
-
+      /* No arrow row under the map. Every stop is drawn, named and one press
+         away, so a pager that walked the same six stops one at a time was a
+         second way to do what the map already does. The arrow KEYS still walk
+         it, and so does a swipe on a phone. */
 
       screen.appendChild(U.el('div.rm-body', null, [left, panelHost]));
 
@@ -551,10 +542,6 @@
 
         U.clear(panelHost);
         panelHost.appendChild(stopPanel(stop, infoFor(stop), list.length));
-
-        stepLabel.textContent = t('roadmap.step', { n: selected, total: list.length });
-        prevBtn.disabled = selected === 1;
-        nextBtn.disabled = selected === list.length;
 
         U.$$('.rm-stop', mapHost).forEach(function (el) {
           var pin = el.querySelector('.rm-pin');

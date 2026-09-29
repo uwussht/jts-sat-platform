@@ -1385,20 +1385,6 @@ button.rm-pin:focus-visible {
 }
 .rm-here { transform: translate(14px, -26px); z-index: 4; }
 
-/* Walking the road, instead of scrolling it. */
-.rm-arrows { display: flex; align-items: center; justify-content: center; gap: 14px; }
-.rm-arrow {
-  width: 46px; height: 42px; border: 1px solid var(--border-strong); background: var(--surface);
-  color: var(--brand-700); font: inherit; font-size: 22px; line-height: 1; cursor: pointer;
-  transition: background .12s ease, border-color .12s ease;
-}
-.rm-arrow:hover:not(:disabled) { border-color: var(--brand-500); background: var(--brand-050); }
-.rm-arrow:disabled { opacity: .38; cursor: default; }
-.rm-arrow-label {
-  min-width: 140px; text-align: center; font-size: 12px; font-weight: 750;
-  text-transform: uppercase; letter-spacing: .05em; color: var(--muted);
-}
-
 /* The step you are reading. Its own scroller, so a long phase cannot push the
    road off the screen. */
 /* The panel has the column to itself and takes all of it, so the longest
