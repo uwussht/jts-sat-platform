@@ -231,7 +231,15 @@
       return ((1 - x.share) * wx) < ((1 - y.share) * wy) ? 1 : -1;
     });
     var focus = ranked.slice(0, 2);
-    if (focus.length) {
+    /* Both of the cards below belong to the FIRST run, where this screen is
+       the last step of onboarding: it names what the plan will open with and
+       then builds it. Coming back to read an old result, they are two large
+       cards saying things the student settled weeks ago — and the plan is
+       already built, so "Rebuild" sat under a result it would discard. The
+       plan is rebuilt from #/plan and from Settings, which is also where the
+       available time is kept. */
+    var first = S.state().profile.onboardingComplete !== true;
+    if (first && focus.length) {
       screen.appendChild(U.el('div.card.card-accent.stack-sm', null, [
         U.el('div.eyebrow', { text: t('diag.startWith') }),
         U.el('div.h2', { text: focus.map(function (f) { return JTS.i18n.pickName(f.domain); }).join(' · ') }),
@@ -241,7 +249,7 @@
     }
 
     /* -------------------------------------------------- availability → plan */
-    var first = S.state().profile.onboardingComplete !== true;
+    if (first) {
     var planCard = U.el('div.card.stack');
     planCard.appendChild(U.el('h2.h2', { text: first ? t('diag.buildPlan') : t('settings.rebuildPlan') }));
     planCard.appendChild(U.el('p.small.muted', {
@@ -263,11 +271,33 @@
       }
     }));
     screen.appendChild(planCard);
-
-    if (!first) {
+    } else {
+      /* Removing the rebuild card must not remove the rebuild. A retake moves
+         the mastery the plan was built from, so a plan older than the result
+         being read is out of date — and only then is it worth saying. One
+         line and one button, not the availability form again: the time itself
+         is edited in Settings, where it is kept. */
+      var plan = S.state().plan;
+      var planAt = plan ? Math.max(plan.generatedAt || 0, plan.rebuiltAt || 0) : 0;
+      if (plan && summary.finishedAt > planAt) {
+        screen.appendChild(U.el('div.notice.row-between.row-wrap', { id: 'diag-restale' }, [
+          U.el('span.small', { text: t('diag.planStale') }),
+          U.el('button.btn.btn-sm.btn-primary', {
+            type: 'button', text: t('settings.rebuildPlan'),
+            onclick: function () {
+              S.update(function (st) { st.profile.currentPhase = phase; });
+              JTS.planner.rebuild();
+              JTS.router.go('#/plan');
+            }
+          })
+        ]));
+      }
+      /* What is left to do with an old result: take it again, or look at what
+         has happened since. */
       screen.appendChild(U.el('div.row.row-wrap', null, [
         U.el('a.btn', { href: '#/diagnostic?show=intro', text: t('diag.retake') }),
-        U.el('a.btn', { href: '#/progress', text: t('progress.title') })
+        U.el('a.btn', { href: '#/progress', text: t('progress.title') }),
+        U.el('a.btn', { href: '#/plan', text: t('nav.plan') })
       ]));
     }
   }

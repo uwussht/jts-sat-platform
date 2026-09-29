@@ -77,6 +77,21 @@
   }
 
   /**
+   * Has the baseline actually been sat?
+   *
+   * The diagnostic is step 1 of the road but it is not a plan lesson, so
+   * counting ticked lessons left it standing at "you are here" for a student
+   * who had finished it weeks ago — and the road cannot start at a step that
+   * is already behind you. A finished diagnostic session is the record of it.
+   */
+  function diagTaken() {
+    var st = S.state();
+    return !!(st && (st.sessions || []).filter(function (x) {
+      return x.kind === 'diagnostic' && x.finishedAt;
+    }).length);
+  }
+
+  /**
    * The six stops, from the course.
    *
    * `from`/`to` are lesson numbers on this student's schedule; `weeks` is the
@@ -132,6 +147,9 @@
   /** Lessons done / total inside a stop's own range. */
   function stopProgress(stop, done) {
     var total = stop.to - stop.from + 1;
+    /* The diagnostic is one sitting and it is either sat or it is not; there
+       is no plan lesson under it to count. */
+    if (stop.kind === 'diagnostic') return { done: diagTaken() ? total : 0, total: total };
     var inside = U.clamp(done - (stop.from - 1), 0, total);
     return { done: inside, total: total };
   }
@@ -143,6 +161,7 @@
    * one" is the only reading that puts the marker in one place.
    */
   function statusOf(stop, done, list) {
+    if (stop.kind === 'diagnostic') return diagTaken() ? 'done' : 'current';
     if (done >= stop.to) return 'done';
     if (list && currentStop(list, done) !== stop.id) return 'ahead';
     return 'current';
@@ -155,7 +174,9 @@
 
   /** Which stop a student is standing on. */
   function currentStop(list, done) {
+    var taken = diagTaken();
     for (var i = 0; i < list.length; i++) {
+      if (list[i].kind === 'diagnostic' && taken) continue;
       if (done < list[i].to) return list[i].id;
     }
     return list.length;
@@ -518,17 +539,6 @@
       nextBtn.addEventListener('click', function () { select(selected + 1); });
       left.appendChild(U.el('div.rm-arrows', null, [prevBtn, stepLabel, nextBtn]));
 
-      /* What the drawing means, said once. A map whose marks have to be
-         guessed at is a decoration; four words under it make it a map. */
-      left.appendChild(U.el('div.rm-legend', null,
-        [['done', '✓'], ['current', '◉'], ['ahead', '○'], ['gate', '⚑']]
-          .map(function (pair) {
-            return U.el('span.rm-key.rm-key-' + pair[0], null, [
-              U.el('i', { text: pair[1], 'aria-hidden': 'true' }),
-              U.el('span', { text: t('roadmap.key.' + pair[0]) })
-            ]);
-          })));
-      left.appendChild(U.el('p.xsmall.muted.rm-hint', { text: t('roadmap.hint') }));
 
       screen.appendChild(U.el('div.rm-body', null, [left, panelHost]));
 
