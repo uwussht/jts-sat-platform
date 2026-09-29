@@ -91,7 +91,7 @@
 
     out.push({
       id: 1, kind: 'diagnostic', from: 1, to: 1,
-      name: t('diag.title'),
+      name: t('diag.title'), short: t('diag.title'),
       lead: t('roadmap.diagLead'),
       weeks: t('prog.weekNo', { n: 1 }),
       cta: { href: '#/diagnostic', label: t('diag.title') }
@@ -103,6 +103,9 @@
       out.push({
         id: out.length + 1, kind: 'phase', phase: ph, from: from, to: to,
         name: pick(ph.name),
+        /* Under a pin there is room for two words, so a phase says what it is
+           rather than repeating its full title. */
+        short: t('roadmap.short.' + ph.id),
         lead: pick(ph.lead),
         weeks: t('prog.weeks', { range: pw === 2 ? ph.weeks2 : ph.weeks3 }),
         cta: { href: '#/materials', label: t('nav.materials') }
@@ -116,6 +119,7 @@
         out.push({
           id: out.length + 1, kind: 'gate', gate: gate, from: at, to: at,
           name: pick(gate.name),
+          short: t('roadmap.short.gate', { n: gate.n }),
           lead: t('roadmap.gateLead', { name: pick(ph.name) }),
           weeks: t('prog.testNo', { n: test }),
           cta: { href: '#/mocks', label: t('nav.mocks') }
@@ -144,16 +148,6 @@
     return 'current';
   }
 
-  /**
-   * Stars are the stop's own lessons — none yet, some, most, all of them.
-   * They are progress through the course and not a score of any kind.
-   */
-  function starsFor(prog) {
-    if (!prog || !prog.total || !prog.done) return 0;
-    var r = prog.done / prog.total;
-    return r >= 1 ? 3 : r >= 0.6 ? 2 : 1;
-  }
-
   function pctOfStop(prog, status) {
     if (!prog || !prog.total) return status === 'done' ? 100 : 0;
     return Math.round((prog.done / prog.total) * 100);
@@ -168,14 +162,6 @@
   }
 
   /* ------------------------------------------------------------------ map */
-
-  function starRow(n) {
-    var row = U.el('div.rm-stars', { 'aria-hidden': 'true' });
-    for (var i = 0; i < 3; i++) {
-      row.appendChild(U.el('span' + (i < n ? '.on' : ''), { text: '★' }));
-    }
-    return row;
-  }
 
   /**
    * Keep the stage square whatever the column around it does. The stops are
@@ -201,7 +187,6 @@
    *
    * opts.list          the stops
    * opts.statusOf(s)   'done' | 'current' | 'ahead'
-   * opts.starsOf(s)    0..3 — how much of that stop is done
    * opts.pctOf(s)      0..100 — the same thing as the ring around the stop
    * opts.onSelect(id)  called with the stop a student pressed
    * opts.onGoal()      called when the end of the road is pressed
@@ -235,11 +220,9 @@
 
     list.forEach(function (stop, i) {
       var status = opts.statusOf(stop);
-      var stars = opts.starsOf(stop);
       var pct = opts.pctOf(stop);
       var wrap = U.el('div.rm-stop.rm-' + status + (stop.kind === 'gate' ? '.rm-gate' : ''),
         { style: '--i:' + i });
-      wrap.appendChild(starRow(stars));
 
       /* The ring is the stop's own progress, drawn where the eye already is.
          It is a plain conic gradient behind the pin, so the pin covers all of
@@ -247,17 +230,30 @@
       wrap.appendChild(U.el('span.rm-ring', {
         'aria-hidden': 'true', style: '--p:' + pct
       }));
+      /* The number stays on every stop, a gate included: the road is "step 3
+         of 6" and a pin that swapped its number for a flag broke the count
+         exactly where a student most needs to know how far in they are. What
+         KIND of stop it is rides above the pin as a small badge. */
       wrap.appendChild(U.el('button.rm-pin', {
         type: 'button',
-        text: status === 'done' ? '✓' : stop.kind === 'gate' ? '⚑' : String(stop.id),
+        text: String(stop.id),
         'aria-label': t('roadmap.step', { n: stop.id, total: list.length }) + ' · ' +
-          stop.name + ' · ' + t('roadmap.pctDone', { n: pct }) + ' · ' +
-          t('roadmap.stars', { n: stars }),
+          stop.name + ' · ' + t('roadmap.kind.' + stop.kind) + ' · ' +
+          t('roadmap.pctDone', { n: pct }),
         'aria-current': status === 'current' ? 'step' : null,
         dataset: { phase: String(stop.id) },
         onclick: function () { opts.onSelect(stop.id); }
       }));
-      wrap.appendChild(U.el('span.rm-name', { text: stop.name }));
+      if (status === 'done') {
+        wrap.appendChild(U.el('span.rm-tick', { text: '✓', 'aria-hidden': 'true' }));
+      }
+      wrap.appendChild(U.el('span.rm-kind', {
+        text: stop.kind === 'gate' ? '⚑' : stop.kind === 'diagnostic' ? '◉' : '▤',
+        title: t('roadmap.kind.' + stop.kind), 'aria-hidden': 'true'
+      }));
+      /* Every stop is named, always. A map whose stops read 1, 2, ⚑, 4, ⚑, 6
+         is a map you have to click six times to understand. */
+      wrap.appendChild(U.el('span.rm-name', { text: stop.short || stop.name }));
 
       if (status === 'current') {
         wrap.appendChild(U.el('span.rm-here', {
@@ -276,8 +272,7 @@
         'aria-label': t('roadmap.examDay') + ' · ' + (opts.examDate || ''),
         onclick: opts.onGoal
       }),
-      U.el('span.rm-name', { text: t('roadmap.examDay') }),
-      opts.examDate ? U.el('span.rm-sub', { text: opts.examDate }) : null
+      U.el('span.rm-name', { text: t('roadmap.examDay') })
     ]));
 
     var doneStops = 0;
@@ -292,8 +287,15 @@
       var len = line.getTotalLength();
       U.$$('.rm-stop', nodes).forEach(function (el, i) {
         var pt = line.getPointAtLength(len * (i / (total - 1)));
-        el.style.left = (pt.x / VB.w * 100) + '%';
+        var x = pt.x / VB.w * 100;
+        el.style.left = x + '%';
         el.style.top = (pt.y / VB.h * 100) + '%';
+        /* A name is centred on its pin, and a pin on the outside of a U-turn
+           sits close enough to the edge that a centred label hangs off the
+           stage — which clips it, because the stage has to hide the road's
+           overshoot. Stops near an edge hang their name inward instead. */
+        el.classList.toggle('rm-edge-l', x < 20);
+        el.classList.toggle('rm-edge-r', x > 80);
       });
       nodes.style.visibility = '';
       nodes.classList.add('rm-in');
@@ -343,7 +345,8 @@
         }),
         U.el('div.rm-panel-title', null, [
           U.el('div.xsmall.rm-stepno', {
-            text: t('roadmap.step', { n: stop.id, total: listLength })
+            text: t('roadmap.step', { n: stop.id, total: listLength }) +
+              '  ·  ' + t('roadmap.kind.' + stop.kind)
           }),
           U.el('div.h2', { text: stop.name })
         ])
@@ -353,15 +356,17 @@
           : info.status === 'done' ? U.el('span.badge.badge-ok', { text: t('common.done') })
           : null,
         U.el('span.badge.badge-muted', { text: stop.weeks }),
+        /* Weeks and lesson numbers, and no calendar dates. A stop is a
+           position in the course; a date on it is the plan's business, moves
+           every time the plan is rebuilt, and read as a deadline that was
+           never promised. "Lesson 1 — Lesson 1" was also simply silly. */
         stop.kind === 'gate'
           ? null
           : U.el('span.badge.badge-muted', {
-              text: t('prog.lessonRange', { from: stop.from, to: stop.to })
-            }),
-        /* "Lessons 34–42" is a position in the course; the dates are when the
-           student's own plan puts them, which is the question they actually
-           have when they look at a stop that is still ahead. */
-        info.dates ? U.el('span.badge.badge-muted', { text: info.dates }) : null
+              text: stop.from === stop.to
+                ? t('prog.lessonNo', { n: stop.from })
+                : t('prog.lessonRange', { from: stop.from, to: stop.to })
+            })
       ]),
       U.el('p.small.muted.rm-panel-desc', { text: stop.lead })
     ]);
@@ -412,7 +417,7 @@
     return panel;
   }
 
-  JTS.roadmap = { stops: stops, starsFor: starsFor };
+  JTS.roadmap = { stops: stops };
 
   /* --------------------------------------------------------------- screen */
 
@@ -440,23 +445,8 @@
       var week = Math.min(Math.ceil(Math.max(done + 1, 1) / pw), sch.weeks);
 
       function statusFor(stop) { return statusOf(stop, done, list); }
-      /** When this student's own plan puts a stop's lessons. */
-      function datesFor(stop) {
-        var all = JTS.planner.allLessons ? JTS.planner.allLessons() : [];
-        var from = all[stop.from - 1], to = all[Math.min(stop.to, all.length) - 1];
-        if (!from || !to) return null;
-        var lang = S.settings().uiLang;
-        return t('roadmap.dates', {
-          from: U.fmtDate(U.parseISO(from.date), lang),
-          to: U.fmtDate(U.parseISO(to.date), lang)
-        });
-      }
       function infoFor(stop) {
-        return {
-          status: statusFor(stop),
-          progress: stopProgress(stop, done),
-          dates: datesFor(stop)
-        };
+        return { status: statusFor(stop), progress: stopProgress(stop, done) };
       }
 
       /* One line of state, then the map. Everything else is available on
@@ -527,6 +517,17 @@
       prevBtn.addEventListener('click', function () { select(selected - 1); });
       nextBtn.addEventListener('click', function () { select(selected + 1); });
       left.appendChild(U.el('div.rm-arrows', null, [prevBtn, stepLabel, nextBtn]));
+
+      /* What the drawing means, said once. A map whose marks have to be
+         guessed at is a decoration; four words under it make it a map. */
+      left.appendChild(U.el('div.rm-legend', null,
+        [['done', '✓'], ['current', '◉'], ['ahead', '○'], ['gate', '⚑']]
+          .map(function (pair) {
+            return U.el('span.rm-key.rm-key-' + pair[0], null, [
+              U.el('i', { text: pair[1], 'aria-hidden': 'true' }),
+              U.el('span', { text: t('roadmap.key.' + pair[0]) })
+            ]);
+          })));
       left.appendChild(U.el('p.xsmall.muted.rm-hint', { text: t('roadmap.hint') }));
 
       screen.appendChild(U.el('div.rm-body', null, [left, panelHost]));
@@ -575,12 +576,6 @@
       mapHost.appendChild(levelMap({
         list: list,
         statusOf: statusFor,
-        starsOf: function (s) {
-          var pr = stopProgress(s, done);
-          /* Same reading as the ring: a walked stop with nothing in it is
-             finished, not unstarted. */
-          return (!pr || !pr.total) && statusFor(s) === 'done' ? 3 : starsFor(pr);
-        },
         pctOf: function (s) { return pctOfStop(stopProgress(s, done), statusFor(s)); },
         here: U.initials(state.profile.name || state.profile.email),
         examDate: examLabel,
