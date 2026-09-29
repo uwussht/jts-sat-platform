@@ -372,7 +372,6 @@ JTS.dict.ru = {
   'plan.action.review-errors': 'Разбор ошибок', 'plan.action.mini-test': 'Мини-тест',
   'plan.goalFor': 'Работа над навыками: {skills}',
   'plan.lessonsThisWeek': 'Занятий на неделе: {n}',
-
   'practice.title': 'Практика',
   'practice.create': 'Создать сессию',
   'practice.browse': 'Выбор по навыкам',
@@ -407,10 +406,6 @@ JTS.dict.ru = {
   'practice.quickDiag': 'Короткая диагностика (5 вопросов)',
   'practice.inBank': '{n} в банке',
   'practice.studyModeNote': 'Все сессии практики идут в учебном режиме: подсказки, объяснения и AI доступны.',
-  'practice.errorsToReview': 'Ошибки к разбору',
-  'practice.errorsCount': 'к разбору: {n}',
-  'practice.reviewNow': 'Разобрать сейчас',
-  'practice.noErrors': 'Разбирать нечего. Ошибки возвращаются через три дня, и закрывает их только верный ответ без подсказок.',
 
   'q.directions': 'Инструкция',
   'q.highlight': 'Выделение',

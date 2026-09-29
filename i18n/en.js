@@ -372,7 +372,6 @@ JTS.dict.en = {
   'plan.action.review-errors': 'Review errors', 'plan.action.mini-test': 'Mini-test',
   'plan.goalFor': 'Work on {skills}',
   'plan.lessonsThisWeek': '{n} sessions this week',
-
   'practice.title': 'Practice',
   'practice.create': 'Create your session',
   'practice.browse': 'Browse by skill',
@@ -407,10 +406,6 @@ JTS.dict.en = {
   'practice.quickDiag': 'Short diagnostic (5 questions)',
   'practice.inBank': '{n} in bank',
   'practice.studyModeNote': 'All practice sessions run in study mode: hints, explanations and the AI tutor are available.',
-  'practice.errorsToReview': 'Errors due back',
-  'practice.errorsCount': '{n} due',
-  'practice.reviewNow': 'Review now',
-  'practice.noErrors': 'Nothing is due. Errors return three days after you make them, and only a correct answer without help clears one.',
 
   'q.directions': 'Directions',
   'q.highlight': 'Highlight',

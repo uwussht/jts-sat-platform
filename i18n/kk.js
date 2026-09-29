@@ -372,7 +372,6 @@ JTS.dict.kk = {
   'plan.action.review-errors': 'Қателерді талдау', 'plan.action.mini-test': 'Мини-тест',
   'plan.goalFor': 'Дағдылармен жұмыс: {skills}',
   'plan.lessonsThisWeek': 'Осы аптада {n} сабақ',
-
   'practice.title': 'Практика',
   'practice.create': 'Сессия құру',
   'practice.browse': 'Дағды бойынша таңдау',
@@ -407,10 +406,6 @@ JTS.dict.kk = {
   'practice.quickDiag': 'Қысқа диагностика (5 сұрақ)',
   'practice.inBank': 'банкте {n}',
   'practice.studyModeNote': 'Барлық практика сессиялары оқу режимінде: кеңестер, түсіндірмелер және AI қолжетімді.',
-  'practice.errorsToReview': 'Талдауға тиіс қателер',
-  'practice.errorsCount': 'талдауға: {n}',
-  'practice.reviewNow': 'Қазір талдау',
-  'practice.noErrors': 'Талдайтын ештеңе жоқ. Қателер үш күннен кейін қайтады, оларды тек кеңессіз берілген дұрыс жауап жабады.',
 
   'q.directions': 'Нұсқаулық',
   'q.highlight': 'Бөлектеу',
