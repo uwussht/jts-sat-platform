@@ -4,8 +4,8 @@
    A session builder rather than a menu: pick a section, narrow by skill and
    filter, see honestly how many questions that leaves, and start.
 
-   Everything here runs in study mode (§2), so hints, explanations and the AI
-   tutor are available throughout.
+   Everything here runs in study mode (§2), so hints and explanations are
+   available throughout.
    ========================================================================== */
 (function () {
   'use strict';
@@ -97,24 +97,32 @@
     return grid;
   }
 
+  /* Which domains are open. Ticking a skill re-renders the screen, and a
+     group that snapped shut every time a box was ticked made choosing two
+     skills from one domain a matter of opening it twice. */
+  var openDomains = {};
+
   function skillAccordion(rerender) {
-    var wrap = U.el('div.stack-sm');
+    var wrap = U.el('div.stack-sm.sk-groups');
     var counts = JTS.bank.stats();
 
     JTS.skills.domains(filters.section).forEach(function (domain) {
       var skills = JTS.skills.bySection(filters.section)
         .filter(function (s) { return s.domain === domain.id; });
       var picked = skills.filter(function (s) { return filters.skillIds.indexOf(s.id) >= 0; }).length;
+      var isOpen = !!openDomains[domain.id];
 
-      var body = U.el('div.acc-body', { hidden: true });
+      var body = U.el('div.acc-body.sk-list', { hidden: !isOpen });
       var caret = U.el('span.caret', { text: '❯' });
+      var acc = U.el('div.acc.sk-group' + (isOpen ? '.open' : ''));
       var head = U.el('button.acc-head', {
-        type: 'button', 'aria-expanded': 'false',
+        type: 'button', 'aria-expanded': String(isOpen),
         onclick: function () {
           var open = body.hidden;
+          openDomains[domain.id] = open;
           body.hidden = !open;
+          acc.classList.toggle('open', open);
           head.setAttribute('aria-expanded', String(open));
-          caret.style.transform = open ? 'rotate(90deg)' : '';
         }
       }, [
         caret,
@@ -122,15 +130,16 @@
         U.el('span.spacer'),
         picked ? U.el('span.badge', { text: picked + ' ' + t('common.selected') }) : null,
         U.el('span.badge.badge-muted', {
-          text: U.sum(skills.map(function (s) { return counts[s.id] || 0; })) + ''
+          text: t('practice.inBank', { n: U.sum(skills.map(function (s) { return counts[s.id] || 0; })) })
         })
       ]);
 
       skills.forEach(function (skill) {
         var m = JTS.mastery.compute(skill.id);
         var n = counts[skill.id] || 0;
-        var cb = U.el('input', {
-          type: 'checkbox', checked: filters.skillIds.indexOf(skill.id) >= 0 || null,
+        var on = filters.skillIds.indexOf(skill.id) >= 0;
+        var cb = U.el('input.sk-check', {
+          type: 'checkbox', checked: on || null,
           'aria-label': JTS.i18n.pickName(skill)
         });
         cb.addEventListener('change', function () {
@@ -140,26 +149,34 @@
           rerender();
         });
 
-        body.appendChild(U.el('div.skill-row', null, [
+        var status = m.status || 'no-data';
+        var meta = status === 'no-data'
+          ? t('common.notEnoughData') + (m.needed ? ' · ' + t('mastery.needMore', { n: m.needed }) : '')
+          : t('mastery.' + status) + ' · ' + Math.round((m.accuracy || 0) * 100) + '%';
+
+        /* The whole row is the checkbox's label, so the row is what you
+           press; the start button inside it does its own thing. */
+        body.appendChild(U.el('label.sk-row' + (on ? '.is-on' : ''), null, [
           cb,
-          U.el('span.name', null, [
-            U.el('div', { text: JTS.i18n.pickName(skill) }),
-            U.el('div.xsmall.muted', {
-              text: m.status === 'no-data'
-                ? t('common.notEnoughData') + (m.needed ? ' · ' + t('mastery.needMore', { n: m.needed }) : '')
-                : t('mastery.' + m.status) + ' · ' + Math.round((m.accuracy || 0) * 100) + '%'
-            })
+          U.el('span.sk-box', { 'aria-hidden': 'true' }),
+          U.el('span.sk-text', null, [
+            U.el('span.sk-name', { text: JTS.i18n.pickName(skill) }),
+            U.el('span.sk-meta', null, [
+              U.el('span.sk-dot.st-' + status, { 'aria-hidden': 'true' }),
+              U.el('span', { text: meta })
+            ])
           ]),
-          U.el('span.badge.badge-muted', { text: t('practice.inBank', { n: n }) }),
-          U.el('button.btn.btn-sm', {
+          U.el('span.sk-count', { text: t('practice.inBank', { n: n }) }),
+          U.el('button.btn.btn-sm.sk-go', {
             type: 'button', text: '▶', title: t('practice.startSession'),
             'aria-label': t('practice.startSession') + ': ' + JTS.i18n.pickName(skill),
-            onclick: function () { startTopic([skill.id], 10); }
+            onclick: function (e) { e.preventDefault(); e.stopPropagation(); startTopic([skill.id], 10); }
           })
         ]));
       });
 
-      var acc = U.el('div.acc', null, [head, body]);
+      acc.appendChild(head);
+      acc.appendChild(body);
       wrap.appendChild(acc);
     });
     return wrap;
