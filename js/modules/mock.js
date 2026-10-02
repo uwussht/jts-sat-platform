@@ -947,7 +947,6 @@
   }
 
   function questionModal(run, q, a) {
-    var lang = S.settings().explainLang;
     var body = U.el('div.stack');
     if (q.passage) body.appendChild(U.el('div.q-passage', { html: q.passage }));
     body.appendChild(U.el('div.q-stem', { html: q.stem }));
@@ -970,39 +969,14 @@
         text: t('mock.yourAnswer') + ': ' + answerText(q, a && a.selected)
       })
     ]));
-    /* A past paper carries no explanation and offers no AI. The review says
-       what you picked and what was right, and stops there — which is what the
-       paper is for. */
+    /* A past paper carries no explanation. The review says what you picked
+       and what was right, and stops there — which is what the paper is for. */
     if (JTS.papers.of(q)) {
       ui.modal({ title: JTS.skills.name(q.skillId), wide: true, content: body });
       return;
     }
 
     body.appendChild(JTS.studyHelp.explanationBody(q));
-
-    var aiOut = U.el('div.stack-sm');
-    var askBtn = U.el('button.btn.btn-sm', {
-      type: 'button', text: t('mock.askAi'),
-      onclick: function () {
-        askBtn.disabled = true;
-        askBtn.textContent = t('common.loading');
-        JTS.AI.ask({
-          intent: a && a.correct ? 'explanation' : 'why-wrong',
-          questionRecord: q,
-          selectedAnswer: a ? a.selected : null,
-          correctAnswer: q.answer,
-          skillId: q.skillId, skillName: JTS.skills.name(q.skillId),
-          language: lang
-        }).then(function (r) {
-          askBtn.disabled = false;
-          askBtn.textContent = t('mock.askAi');
-          U.clear(aiOut);
-          aiOut.appendChild(U.el('div.ai-msg', { text: r.text }));
-          if (r.warning) aiOut.appendChild(U.el('div.notice.notice-warn.small', { text: t('ai.fellBack') }));
-        });
-      }
-    });
-    body.appendChild(U.el('div.stack-sm', null, [askBtn, aiOut]));
 
     ui.modal({
       title: JTS.skills.name(q.skillId),

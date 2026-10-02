@@ -3,11 +3,11 @@
 
    The question engine calls into JTS.studyHelp only when the session mode is
    'study', so in exam and diagnostic mode none of this is constructed and the
-   controls are absent from the DOM (AI-08).
+   controls are absent from the DOM.
 
    The rules that make the help honest rather than decorative:
-     - a hint never contains the answer, and the answer is not even sent to the
-       model when the intent is 'hint' (AI-02)
+     - a hint is the question's own written hint, one at a time, and never
+       contains the answer
      - opening the explanation before answering marks the attempt as helped, so
        it is counted separately from independent work and never feeds mastery
      - after a wrong answer the student classifies the error; that is what
@@ -22,32 +22,6 @@
   var ERROR_TYPES = ['knowledge gap', 'misread', 'calculation', 'strategy', 'time pressure', 'careless'];
 
   /* --------------------------------------------------------------- helpers */
-
-  function levelSummary(skillId) {
-    var m = JTS.mastery.compute(skillId);
-    if (m.independent < JTS.config.mastery.minIndependentAttempts) {
-      return 'few independent attempts on this skill (' + m.independent + ')';
-    }
-    return m.status + ', ' + Math.round((m.accuracy || 0) * 100) + '% independent accuracy';
-  }
-
-  function payloadFor(question, a, intent, extra) {
-    var p = {
-      intent: intent,
-      questionRecord: question,
-      question: { stem: question.stem, passage: question.passage || null, options: question.options || null },
-      selectedAnswer: a ? a.selected : null,
-      correctAnswer: question.answer,
-      skillId: question.skillId,
-      skillName: JTS.skills.name(question.skillId),
-      language: S.settings().explainLang,
-      hintHistory: (a && a.hintHistory) || [],
-      errorType: (a && a.errorType) || null,
-      studentLevelSummary: levelSummary(question.skillId)
-    };
-    if (extra) Object.keys(extra).forEach(function (k) { p[k] = extra[k]; });
-    return p;
-  }
 
   /** Raise the help level recorded against this attempt, never lower it. */
   function raiseHelp(a, level) {
@@ -86,7 +60,7 @@
     ]));
     wrap.appendChild(U.el('div', { html: JTS.i18n.pick(question.explanation, lang) }));
 
-    /* R&W: every wrong option gets its own reason (AI-03). */
+    /* R&W: every wrong option gets its own reason. */
     if (question.distractors) {
       var list = U.el('div.stack-sm');
       list.appendChild(U.el('h3.h3', { text: t('q.whyWrong') }));
@@ -131,15 +105,15 @@
     if (side) side.remove();
   }
 
-  function openPanel(tabId, ses, question, a, refresh) {
+  function openPanel(ses, question, a, refresh) {
     closePanel();
     var main = U.$('.q-main');
     if (!main) return;
     main.classList.add('with-side');
 
-    var side = U.el('aside.q-side', { 'aria-label': t('ai.title') });
+    var side = U.el('aside.q-side', { 'aria-label': t('q.explanation') });
     var head = U.el('div.q-topbar', { style: 'position:static' }, [
-      U.el('strong', { text: t('ai.title') }),
+      U.el('strong', { text: t('q.explanation') }),
       U.el('span.spacer'),
       U.el('button.btn.btn-sm', {
         type: 'button', text: t('common.close'),
@@ -151,96 +125,7 @@
     side.appendChild(body);
     main.appendChild(side);
 
-    var tabs = ui.tabs([
-      { id: 'explanation', label: t('q.explanation'), render: function (host) {
-          host.appendChild(explanationBody(question));
-        } },
-      { id: 'ai', label: t('ai.title'), render: function (host) { chatPanel(host, ses, question, a, refresh); } }
-    ], tabId);
-    body.appendChild(tabs);
-  }
-
-  /* ------------------------------------------------------------ chat panel */
-
-  function chatPanel(host, ses, question, a, refresh) {
-    var log = U.el('div.stack-sm');
-    var thread = (a.aiThread = a.aiThread || []);
-
-    function addMessage(m) {
-      var box = U.el('div.ai-msg' + (m.role === 'user' ? '.from-user' : ''));
-      box.appendChild(U.el('div', { html: String(m.text || '').replace(/\n/g, '<br>') }));
-
-      if (m.role === 'ai') {
-        if (m.warning) box.appendChild(U.el('div.notice.notice-warn.small', { text: t('ai.fellBack') }));
-        if (m.unsure) {
-          box.appendChild(U.el('div.row.row-wrap', { style: 'margin-top:8px' }, [
-            U.el('a.btn.btn-sm', {
-              href: JTS.config.links.whatsapp, target: '_blank', rel: 'noopener',
-              text: t('ai.askTeacher')
-            })
-          ]));
-        }
-        var acts = U.el('div.ai-actions');
-        [['up', t('ai.helpful')], ['down', t('ai.notHelpful')]].forEach(function (v) {
-          acts.appendChild(U.el('button.btn.btn-sm', {
-            type: 'button', text: v[1],
-            onclick: function () {
-              JTS.AI.feedback({
-                questionId: question.id, skillId: question.skillId,
-                intent: m.intent || 'chat', vote: v[0], source: m.source || 'bank',
-                text: String(m.text || '').slice(0, 400)
-              });
-              ui.toast(t('ai.thanks'), 'ok');
-            }
-          }));
-        });
-        box.appendChild(acts);
-      }
-      log.appendChild(box);
-      box.scrollIntoView({ block: 'nearest' });
-    }
-
-    thread.forEach(addMessage);
-
-    var input = U.el('input.input', { type: 'text', placeholder: t('ai.placeholder') });
-    var send = U.el('button.btn.btn-primary', { type: 'button', text: t('ai.send') });
-
-    function ask(text) {
-      if (!text.trim()) return;
-      var userMsg = { role: 'user', text: text };
-      thread.push(userMsg); addMessage(userMsg);
-      input.value = '';
-      send.disabled = true;
-      var pending = U.el('div.ai-msg', { text: t('ai.thinking') });
-      log.appendChild(pending);
-
-      JTS.AI.ask(payloadFor(question, a, 'chat', { userMessage: text })).then(function (r) {
-        pending.remove();
-        send.disabled = false;
-        var msg = {
-          role: 'ai', text: r.text, unsure: !!r.unsure, warning: r.warning || null,
-          source: r.source, intent: 'chat'
-        };
-        thread.push(msg); addMessage(msg);
-        if (r.fallbackExplanation) {
-          var fb = { role: 'ai', text: r.fallbackExplanation, source: 'bank', intent: 'explanation' };
-          thread.push(fb); addMessage(fb);
-        }
-        raiseHelp(a, a.submitted ? a.helpType || 'none' : 'explanation');
-        S.save();
-        refresh && refresh();
-      });
-    }
-
-    send.addEventListener('click', function () { ask(input.value); });
-    input.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); ask(input.value); }
-    });
-
-    host.appendChild(U.el('div.small.muted', { text: t('ai.quotaLeft', { n: JTS.AI.quotaLeft() }) }));
-    if (!JTS.AI.isLive()) host.appendChild(U.el('div.notice.small', { text: t('ai.mockNote') }));
-    host.appendChild(log);
-    host.appendChild(U.el('div.row', { style: 'margin-top:10px' }, [input, send]));
+    body.appendChild(explanationBody(question));
   }
 
   /* ------------------------------------------------- error classification */
@@ -259,7 +144,7 @@
         U.el('span', null, [
           U.el('b', { text: t('err.' + type) }),
           type === suggested ? U.el('span.badge.badge-muted', {
-            text: t('q.aiSuggests', { type: t('err.' + type) }), style: 'margin-left:8px'
+            text: t('q.suggested'), style: 'margin-left:8px'
           }) : null
         ])
       ]));
@@ -300,49 +185,43 @@
       var hints = question.hints || [];
       a.hintHistory = a.hintHistory || [];
 
-      if (!a.submitted) {
+      /* Hints are the question's own, shown one at a time; once they run out
+         the last one stays. Reading one costs the attempt its independence. */
+      if (!a.submitted && hints.length) {
         footer.appendChild(U.el('button.btn.btn-sm', {
           type: 'button', text: t('q.hint'),
           onclick: function () {
-            JTS.AI.ask(payloadFor(question, a, 'hint')).then(function (r) {
-              a.hintHistory.push(r.text);
-              raiseHelp(a, 'hint');
-              S.save();
-              var hm;
-              /* The answer is never in the hint; it is one deliberate click
-                 further, and that click costs the attempt its independence. */
-              hm = ui.modal({
-                title: t('q.hint') + ' ' + a.hintHistory.length + '/' + Math.max(1, hints.length),
-                content: U.el('div.stack', null, [
-                  U.el('p', { text: r.text }),
-                  r.warning ? U.el('div.notice.notice-warn.small', { text: t('ai.fellBack') }) : null
-                ]),
-                actions: [
-                  U.el('button.btn', {
-                    type: 'button', text: t('common.close'),
-                    onclick: function () { hm.close(); }
-                  }),
-                  U.el('button.btn.btn-primary', {
-                    type: 'button', text: t('ai.showFull'),
-                    onclick: function () {
-                      raiseHelp(a, 'full'); S.save();
-                      hm.close();
-                      refresh();
-                      openPanel('explanation', ses, question, a, refresh);
-                    }
-                  })
-                ]
-              });
-              refresh();
+            var i = Math.min(a.hintHistory.length, hints.length - 1);
+            var text = JTS.i18n.pick(hints[i], S.settings().explainLang);
+            if (a.hintHistory.length < hints.length) a.hintHistory.push(text);
+            raiseHelp(a, 'hint');
+            S.save();
+            var hm;
+            /* The answer is never in the hint; it is one deliberate click
+               further, and that click costs the attempt its independence. */
+            hm = ui.modal({
+              title: t('q.hint') + ' ' + (i + 1) + '/' + hints.length,
+              content: U.el('p', { text: text }),
+              actions: [
+                U.el('button.btn', {
+                  type: 'button', text: t('common.close'),
+                  onclick: function () { hm.close(); }
+                }),
+                U.el('button.btn.btn-primary', {
+                  type: 'button', text: t('q.showFull'),
+                  onclick: function () {
+                    raiseHelp(a, 'full'); S.save();
+                    hm.close();
+                    refresh();
+                    openPanel(ses, question, a, refresh);
+                  }
+                })
+              ]
             });
+            refresh();
           }
         }));
       }
-
-      footer.appendChild(U.el('button.btn.btn-sm', {
-        type: 'button', text: t('q.askAi'),
-        onclick: function () { openPanel('ai', ses, question, a, refresh); }
-      }));
 
       footer.appendChild(U.el('button.btn.btn-sm', {
         type: 'button', text: t('q.explanation'),
@@ -350,7 +229,7 @@
           /* Reading the explanation before answering is what disqualifies the
              attempt from counting as independent work. */
           if (!a.submitted) { raiseHelp(a, 'explanation'); S.save(); refresh(); }
-          openPanel('explanation', ses, question, a, refresh);
+          openPanel(ses, question, a, refresh);
         }
       }));
     },

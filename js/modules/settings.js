@@ -2,8 +2,7 @@
    Screen: Settings (#/settings)
 
    Covers the profile, exam date, goals, available time, language and theme,
-   the AI provider (including where the development key goes), the vocabulary
-   goal, and data export/import/reset.
+   the vocabulary goal, and data export/import/reset.
 
    Changing anything the plan is built from offers to rebuild the plan rather
    than rebuilding it silently: a student halfway through a week should decide
@@ -20,133 +19,6 @@
         subtitle ? U.el('p.small.muted', { text: subtitle }) : null
       ])
     ].concat(children));
-  }
-
-  function secretField(value, onChange) {
-    var input = U.el('input.input', {
-      id: 'ai-key',
-      type: 'password', value: value || '', autocomplete: 'off', spellcheck: 'false',
-      placeholder: 'gsk_…', style: 'font-family:var(--mono)'
-    });
-    input.addEventListener('input', function () { onChange(input.value.trim()); });
-    var toggle = U.el('button', {
-      type: 'button', text: t('auth.show'),
-      onclick: function () {
-        var shown = input.type === 'text';
-        input.type = shown ? 'password' : 'text';
-        toggle.textContent = shown ? t('auth.show') : t('auth.hide');
-      }
-    });
-    return U.el('div.input-affix', null, [input, toggle]);
-  }
-
-  /* ------------------------------------------------------------ AI section */
-  function aiSection(rerender) {
-    var st = S.settings();
-    var cfg = JTS.AI.config();
-    var preset = JTS.AI.providers[cfg.name] || JTS.AI.providers.mock;
-    var rows = [];
-
-    var provider = U.el('select.select', { id: 'ai-provider' });
-    Object.keys(JTS.AI.providers).forEach(function (key) {
-      var o = U.el('option', { value: key, text: JTS.AI.providers[key].label });
-      if (key === cfg.name) o.selected = true;
-      provider.appendChild(o);
-    });
-    provider.addEventListener('change', function () {
-      S.update(function (s) {
-        s.settings.aiProvider = provider.value;
-        /* Clear the overrides so the newly chosen preset's defaults apply;
-           the fields below still show them as placeholders. */
-        s.settings.endpoint = '';
-        s.settings.model = '';
-      });
-      rerender();
-    });
-    rows.push(ui.field(t('settings.aiProvider'), provider));
-
-    var status = U.el('div.row.row-wrap', null, [
-      U.el('span.badge' + (JTS.AI.isLive() ? '.badge-ok' : '.badge-muted'), {
-        text: JTS.AI.isLive() ? t('settings.aiLive') : t('settings.aiMock')
-      }),
-      U.el('span.small.muted', { text: t('ai.quotaLeft', { n: JTS.AI.quotaLeft() }) })
-    ]);
-    rows.push(status);
-
-    if (cfg.style === 'mock') {
-      rows.push(U.el('div.notice.notice-ok', { text: t('settings.aiMockNote') }));
-    } else {
-      var endpoint = U.el('input.input', {
-        id: 'ai-endpoint',
-        type: 'url', value: st.endpoint || '', placeholder: preset.endpoint || 'https://…',
-        spellcheck: 'false', style: 'font-family:var(--mono);font-size:13px'
-      });
-      endpoint.addEventListener('input', function () {
-        S.update(function (s) { s.settings.endpoint = endpoint.value.trim(); });
-      });
-      rows.push(ui.field(t('settings.endpoint'), endpoint, t('settings.endpointNote')));
-
-      if (cfg.style === 'openai') {
-        var model = U.el('input.input', {
-          id: 'ai-model',
-          type: 'text', value: st.model || '', placeholder: preset.model || 'model-id',
-          spellcheck: 'false', style: 'font-family:var(--mono);font-size:13px'
-        });
-        model.addEventListener('input', function () {
-          S.update(function (s) { s.settings.model = model.value.trim(); });
-        });
-        rows.push(ui.field(t('settings.aiModel'), model));
-      }
-
-      rows.push(ui.field(t('settings.aiKey'), secretField(st.apiKey, function (v) {
-        S.update(function (s) { s.settings.apiKey = v; });
-      })));
-
-      /* The honest warning, not buried in a tooltip. */
-      rows.push(U.el('div.notice.notice-warn', { text: t('settings.aiKeyWarning') }));
-
-      var links = U.el('div.row.row-wrap');
-      if (preset.keysUrl) links.appendChild(U.el('a.btn.btn-sm', {
-        href: preset.keysUrl, target: '_blank', rel: 'noopener', text: t('settings.aiGetKey')
-      }));
-      if (preset.modelsUrl) links.appendChild(U.el('a.btn.btn-sm', {
-        href: preset.modelsUrl, target: '_blank', rel: 'noopener', text: t('settings.aiModelList')
-      }));
-      if (links.firstChild) rows.push(links);
-    }
-
-    var testOut = U.el('div', { hidden: true });
-    var testBtn = U.el('button.btn', {
-      type: 'button', text: t('settings.aiTest'),
-      onclick: function () {
-        testBtn.disabled = true;
-        testBtn.textContent = t('settings.aiTesting');
-        testOut.hidden = false;
-        U.clear(testOut);
-        testOut.appendChild(U.el('div.notice', { text: t('settings.aiTesting') }));
-        JTS.AI.test().then(function (r) {
-          testBtn.disabled = false;
-          testBtn.textContent = t('settings.aiTest');
-          U.clear(testOut);
-          testOut.appendChild(U.el('div.notice' + (r.ok ? '.notice-ok' : '.notice-danger'), {
-            text: r.ok ? t('settings.aiTestOk', { text: r.text }) : t('settings.aiTestFail', { text: r.text })
-          }));
-        });
-      }
-    });
-    rows.push(U.el('div.row.row-wrap', null, [testBtn]));
-    rows.push(testOut);
-
-    var limit = U.el('input.input', {
-      id: 'ai-limit',
-      type: 'number', min: '0', max: '500', value: String(st.aiDailyLimit || 40), style: 'max-width:140px'
-    });
-    limit.addEventListener('change', function () {
-      S.update(function (s) { s.settings.aiDailyLimit = U.clamp(Number(limit.value) || 0, 0, 500); });
-    });
-    rows.push(ui.field(t('settings.aiLimit'), limit));
-
-    return card(t('settings.developer'), rows);
   }
 
   /* --------------------------------------------------------------- screen */
@@ -426,7 +298,6 @@
       ]));
 
       /* --- AI provider --- */
-      screen.appendChild(aiSection(rerender));
 
       /* --- data --- */
       var importArea = U.el('textarea.textarea', { id: 'set-import', placeholder: '{ "profile": … }', style: 'min-height:90px' });

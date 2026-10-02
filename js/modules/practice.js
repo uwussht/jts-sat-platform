@@ -297,7 +297,6 @@
         U.el('a.btn.btn-sm', { href: '#/vocab', text: t('practice.vocab') }),
         U.el('a.btn.btn-sm', { href: '#/desmos-guide', text: t('practice.desmosGuide') })
       ]);
-      screen.appendChild(U.el('div.notice', { text: t('practice.studyModeNote') }));
 
       var card = U.el('div.card.stack');
       card.appendChild(U.el('h2.h2', { text: t('practice.create') }));

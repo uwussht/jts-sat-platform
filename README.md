@@ -12,8 +12,7 @@ open index.html          # macOS
 start index.html         # Windows
 ```
 
-Serving the folder over HTTP is optional for the app itself, but **required if
-you want a live AI provider** (see below):
+Serving the folder over HTTP is optional:
 
 ```
 npx http-server .        # then open http://localhost:8080
@@ -26,7 +25,7 @@ python3 -m http.server   # then open http://localhost:8000
 index.html              shell: header, tab bar, router container, Desmos panel
 admin.html              question editor (localStorage overlay + change history)
 css/core.css            design system: tokens, light/dark themes, components
-js/core.js              store, router, i18n, UI kit, timer, Desmos, AI adapter,
+js/core.js              store, router, i18n, UI kit, timer, Desmos,
                         SPR checker, question bank, mastery engine, planner
 js/data/                content: skills, exam dates, colleges, 300 questions,
                         vocabulary, the two vocabulary game sets, Desmos guide
@@ -89,101 +88,11 @@ The sign-in screen is the one place the brand speaks at full volume: the chrome
 is hidden while signed out, so `#/auth` fills the window with the purple ramp
 and centres a single square card.
 
-## AI provider
+## No AI
 
-The AI tutor goes through a single adapter, `JTS.AI.ask()`. It has four modes,
-chosen in **Settings → Developer → AI provider**:
-
-| Provider | What it does | Cost |
-|---|---|---|
-| **Mock (question bank)** — default | No network call at all. Hints, explanations and per-distractor rationales come from the reviewed JTS bank already attached to each question. | none |
-| **Groq** | OpenAI-compatible `/chat/completions`. Preset endpoint and model; you supply a key. | Groq's own free tier, then their rates |
-| **OpenAI-compatible endpoint** | Same request shape, your endpoint and model (OpenRouter, Together, a local llama.cpp server…). | depends |
-| **Own server (JTS payload)** | POSTs the AI-01 payload unchanged to your server, which decides what to call. **This is the shape to use in production.** | depends |
-
-A pilot can ship on **Mock**: it costs nothing and never invents an answer.
-
-### Using Groq during development
-
-1. Get a key at <https://console.groq.com/keys>.
-2. Settings → Developer → AI provider → **Groq**.
-3. Paste the key into **API key**. Endpoint and model are pre-filled; override
-   the model with any current id from <https://console.groq.com/docs/models>.
-4. Press **Test connection**. It makes one tiny request and prints the real
-   result, so a misconfiguration is found here and not in front of a student.
-
-**If Test connection says "Failed to fetch"** it is almost always CORS. Opening
-`index.html` from `file://` sends `Origin: null`, which most APIs reject. Serve
-the folder over `http://localhost` (see Running it above) and try again. If it
-still fails, the provider does not allow browser calls at all and you need the
-proxy below.
-
-Whatever happens, a failed call is not a dead end: the adapter logs the error
-and falls back to the reviewed bank explanation, and the student sees a note
-saying so.
-
-### Putting your own key in, properly
-
-> **The key in Settings is stored in `localStorage` and sent from the browser.**
-> Anyone who opens devtools on the deployed app can read it and spend your
-> quota. That is fine for development with a throwaway key. It is **not** fine
-> once real students use the platform.
-
-For the pilot, put a thin proxy between the browser and the provider, so the key
-never leaves your server:
-
-```js
-// server.js  —  node server.js
-const express = require('express');
-const app = express();
-app.use(express.json());
-app.use(express.static('.'));
-
-const KEY = process.env.GROQ_API_KEY;        // set in the environment, never in git
-
-app.post('/api/ai', async (req, res) => {
-  // req.body is the JTS AI-01 payload; translate it for your provider here,
-  // or forward it as-is if your provider speaks the same shape.
-  const r = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${KEY}` },
-    body: JSON.stringify({
-      model: 'llama-3.3-70b-versatile',
-      messages: [
-        { role: 'system', content: req.body.system || 'You are a Digital SAT tutor.' },
-        { role: 'user', content: req.body.user || JSON.stringify(req.body) }
-      ],
-      max_tokens: 700
-    })
-  });
-  const j = await r.json();
-  res.status(r.status).json({ text: j.choices?.[0]?.message?.content || '' });
-});
-
-app.listen(3000, () => console.log('http://localhost:3000'));
-```
-
-Then in Settings pick **OpenAI-compatible endpoint** (or **Own server**) with
-endpoint `http://localhost:3000/api/ai` and leave the API key field empty. The
-client code does not change — that is what the adapter is for.
-
-Add per-student limits and request logging in the proxy; the in-app daily limit
-(Settings → Daily AI request limit, default 40) only protects against a student
-clicking too much, not against a stolen key.
-
-### What the adapter guarantees, whichever provider you pick
-
-- **A hint never contains the answer.** On `intent: 'hint'` the correct answer
-  is not even included in the request, and the system prompt forbids naming it.
-  Revealing the solution takes a separate, deliberate "Show the full solution".
-- **Reading the explanation before answering marks the attempt as helped.** It
-  is then logged separately and never counts toward mastery.
-- **Uncertainty is stated, not papered over.** When the model is unsure — or in
-  mock mode, where free-form chat has no verified answer — the reply says so and
-  offers the reviewed bank explanation plus a link to a JTS teacher.
-- Every AI reply carries 👍 / 👎, written to `aiFeedback[]` as pilot metrics.
-
----
+The platform has no AI tutor. Study mode offers each question's own written
+hints and its full explanation — with a reason for every wrong option in
+Reading & Writing — and nothing is sent anywhere.
 
 ## Mock tests
 
@@ -210,7 +119,7 @@ Module 2 of each section is chosen after module 1 is graded: 60% or better
 routes to a harder set, anything less to an easier one, the way the real
 adaptive form works. The routing is shown to the student rather than hidden.
 
-Modules run in exam mode — hints, explanations and the AI tutor are **absent
+Modules run in exam mode — hints and explanations are **absent
 from the DOM**, not merely hidden — and a finished module cannot be reopened. A
 timed run uses the wall clock, so closing the laptop for ten minutes costs ten
 minutes; an untimed run keeps a clock on screen that never closes a module, and
