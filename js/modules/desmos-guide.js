@@ -43,16 +43,9 @@
           referrerpolicy: 'no-referrer'
         });
         slot.appendChild(frame);
-        /* A cross-origin iframe cannot be inspected, so the fallback is not a
-           detection but a standing offer: if nothing appears, this link works. */
-        slot.appendChild(U.el('div.xsmall.muted', { text: t('desmos.blocked') }));
       }
     });
     slot.appendChild(mount);
-    slot.appendChild(U.el('a.btn.btn-sm.btn-ghost', {
-      href: JTS.config.desmosUrl, target: '_blank', rel: 'noopener',
-      text: t('desmos.openTab')
-    }));
     host.appendChild(slot);
   }
 
@@ -152,11 +145,10 @@
       function rerender() { U.clear(screen); paint(); }
 
       function paint() {
-        screen.appendChild(U.el('div.row.row-wrap', { style: 'justify-content:flex-end' }, [
-          U.el('a.btn.btn-sm', {
-            href: JTS.config.desmosUrl, target: '_blank', rel: 'noopener',
-            text: t('desmos.openTab')
-          })
+        /* What the page is, above the lessons. */
+        screen.appendChild(U.el('div.card.stack-sm', { id: 'dg-intro' }, [
+          U.el('h2.h2', { text: t('desmos.introTitle') }),
+          U.el('p.muted', { text: t('desmos.lead') })
         ]));
 
         var list = U.el('div.stack-sm');
