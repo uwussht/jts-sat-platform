@@ -2040,8 +2040,6 @@ table.table.xl tbody tr.is-done .xl-clip, table.table.xl tbody tr.is-done .xl-to
   padding: 7px 10px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top;
 }
 .lesson-written th { color: var(--muted); font-weight: 600; font-size: 13px; }
-.lesson-desmos { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); }
-.lesson-desmos .desmos-embed { height: 520px; }
 
 .wb { display: flex; flex-direction: column; gap: 8px; outline: none; }
 .wb-tools { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }

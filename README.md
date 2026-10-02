@@ -389,8 +389,7 @@ practice test closes Month 1 and Month 2.
 
 A unit page (`#/materials/lesson?code=U9`) is what a teacher puts on the
 screen. It fills the browser window (the app's menu and top bar step aside)
-and runs from the written lesson — with Desmos under it for a Math unit — to
-the practice set. A side panel keeps the lesson's parts in view and opens the
+and runs from the written lesson to the practice set. A side panel keeps the lesson's parts in view and opens the
 tools in windows of their own that can be moved and resized: the whiteboard
 (`js/modules/whiteboard.js` — pen, highlighter, eraser, text, undo, save as
 image, kept per unit in the browser's local storage) and, on Math units,

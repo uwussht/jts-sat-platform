@@ -1,25 +1,22 @@
 /* ==========================================================================
    Screen: one unit of the course (#/materials/lesson?code=U1)
 
-   A class page is what a teacher puts on the screen at the front of the
-   room, in the order the class runs:
+   A unit page is what a teacher puts on the screen at the front of the
+   room. It fills the window and runs in the order the unit does: the
+   written lesson — the method, the worked examples and the traps, from the
+   school's course (js/data/programme-teach.js) — then the practice set, when
+   the unit has one. The side panel keeps the lesson's parts in view and
+   opens the tools in windows of their own: the unit's whiteboard, saved in
+   this browser, and on a Math unit Desmos.
 
-   1. the written lesson — the method, the worked examples and the traps,
-      from the school's course (js/data/programme-teach.js);
-   2. for a Math class, Desmos right under it, because every Math lesson has
-      a Desmos part and the calculator is the one the exam builds in;
-   3. a whiteboard, the class's own, saved in this browser;
-   4. the practice set, when the class has one.
-
-   The practice questions are JTS's own, written for the class. They are NOT
+   The practice questions are JTS's own, written for the unit. They are NOT
    Bluebook items and never will be: those are College Board's, reproducing
    them is an infringement, and a student who prepares on a leaked live form
-   is treated as having cheated and loses the score. Official practice is done
-   in Bluebook itself, which this page links to instead.
+   is treated as having cheated and loses the score.
 
    The set runs through the ordinary study session — explanations, error
    classification, the error log — because practice that does not feed the
-   error log teaches nothing the next class can use.
+   error log teaches nothing the next unit can use.
    ========================================================================== */
 (function () {
   'use strict';
@@ -34,34 +31,6 @@
   }
 
   function backHref() { return '#/materials'; }
-
-  /** Desmos, loaded on request: an iframe nobody asked for costs every visit. */
-  function desmosBlock() {
-    var slot = U.el('div.stack-sm.lesson-desmos', { id: 'lesson-desmos' });
-    var mount = U.el('button.btn.btn-primary.btn-sm', {
-      type: 'button', text: t('lesson.desmosLoad'),
-      onclick: function () {
-        mount.remove();
-        slot.insertBefore(U.el('iframe.desmos-embed', {
-          src: JTS.config.desmosUrl, title: t('desmos.title'),
-          loading: 'lazy', referrerpolicy: 'no-referrer'
-        }), links);
-      }
-    });
-    var links = U.el('div.row.row-wrap', null, [
-      mount,
-      U.el('a.btn.btn-sm.btn-ghost', {
-        href: JTS.config.desmosUrl, target: '_blank', rel: 'noopener', text: t('desmos.openTab')
-      }),
-      U.el('a.btn.btn-sm.btn-ghost', { href: '#/desmos-guide', text: t('desmos.title') })
-    ]);
-    slot.appendChild(U.el('div.row-between.row-wrap', null, [
-      U.el('div.eyebrow', { text: t('lesson.desmosTitle') })
-    ]));
-    slot.appendChild(U.el('p.small.muted', { text: t('lesson.desmosLead') }));
-    slot.appendChild(links);
-    return slot;
-  }
 
   /**
    * The side panel: the tools first, then the lesson's parts as a list that
@@ -275,7 +244,6 @@
       } else {
         written.appendChild(U.el('div.notice', { text: t('lesson.textSoon') }));
       }
-      if (section === 'math') written.appendChild(desmosBlock());
       screen.appendChild(written);
 
       /* The whiteboard has no place on the page: it lives in its own window,
