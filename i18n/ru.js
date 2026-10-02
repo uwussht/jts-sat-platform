@@ -310,7 +310,7 @@ JTS.dict.ru = {
   'roadmap.short.month2': 'Месяц 2',
   'roadmap.short.challenge': 'Challenge',
   'lesson.practice': 'Практика',
-  'lesson.practiceSoon': 'Практика для этого юнита ещё не добавлена. Пока её нет, используйте официальную практику в Bluebook.',
+  'lesson.practiceSoon': 'Практика для этого юнита ещё не добавлена.',
   'lesson.practiceSoonShort': 'практика скоро',
   'lesson.englishOnly': 'На английском',
   'lesson.challengeNote': 'Наборы Challenge будут добавлены позже. Проведите набор на время на уроке, затем разберите каждый промах в error log.',

@@ -130,8 +130,8 @@
       U.el('div.eyebrow', { text: t('side.tools') }), tools
     ]));
 
-    /* The parts: each heading of the written lesson, then the board and the
-       practice set, which are parts of the unit too. */
+    /* The parts: each heading of the written lesson, then the practice set,
+       which is a part of the unit too. */
     var targets = [];
     U.$$('.lesson-written h4', written).forEach(function (h, i) {
       h.id = 'part-' + (i + 1);
@@ -140,7 +140,6 @@
       /* The list numbers the parts itself, so "Part 3 · " is not repeated. */
       targets.push({ el: h, text: label.textContent.trim().replace(/^Part \d+\s*·\s*/, '') });
     });
-    targets.push({ id: 'lesson-board', text: t('side.board') });
     targets.push({ id: 'lesson-drill', text: t('side.practice') });
 
     var list = U.el('ol.lesson-parts');
@@ -279,15 +278,10 @@
       if (section === 'math') written.appendChild(desmosBlock());
       screen.appendChild(written);
 
-      /* ------------------------------------------------------ whiteboard */
+      /* The whiteboard has no place on the page: it lives in its own window,
+         opened from the side panel, so the lesson runs straight from the
+         explanation to the practice. */
       var board = JTS.whiteboard.create(code);
-      screen.appendChild(U.el('div.card.stack-sm', { id: 'lesson-board' }, [
-        U.el('div.row-between.row-wrap', null, [
-          U.el('div.eyebrow', { text: t('wb.title') }),
-          U.el('span.xsmall.muted', { text: t('wb.lead') })
-        ]),
-        board
-      ]));
 
       /* -------------------------------------------------------- practice */
       var practice = U.el('div.card.stack-sm', { id: 'lesson-drill' });
@@ -301,11 +295,6 @@
       ]));
       if (!ids.length) {
         practice.appendChild(U.el('div.notice', { text: t('lesson.practiceSoon') }));
-        practice.appendChild(U.el('div.row.row-wrap', null, [
-          U.el('a.btn', {
-            href: JTS.config.bluebookUrl, target: '_blank', rel: 'noopener', text: t('lesson.bluebook')
-          })
-        ]));
       } else {
         if (rec.done) practice.appendChild(ui.bar(rec.done, rec.total, 'bar-ok'));
         practice.appendChild(U.el('div.row.row-wrap', null, [
@@ -313,9 +302,6 @@
             type: 'button',
             text: rec.done ? t('lesson.again') : t('lesson.start'),
             onclick: function () { startAt(0); }
-          }),
-          U.el('a.btn', {
-            href: JTS.config.bluebookUrl, target: '_blank', rel: 'noopener', text: t('lesson.bluebook')
           })
         ]));
         practice.appendChild(U.el('p.small.muted', { text: t('lesson.easyToHard', { n: ids.length }) }));

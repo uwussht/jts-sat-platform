@@ -388,11 +388,13 @@ practice test closes Month 1 and Month 2.
   validator accepts an English-only explanation for them.
 
 A unit page (`#/materials/lesson?code=U9`) is what a teacher puts on the
-screen: the written lesson; for a Math unit, Desmos right under it; a
-whiteboard (`js/modules/whiteboard.js`) with pen, highlighter, eraser, text,
-undo, full screen and save-as-image, kept per unit in the browser's local
-storage; and the practice set. A side panel keeps the lesson's parts and
-one-press buttons for the whiteboard (full screen) and Desmos in view.
+screen. It fills the browser window (the app's menu and top bar step aside)
+and runs from the written lesson — with Desmos under it for a Math unit — to
+the practice set. A side panel keeps the lesson's parts in view and opens the
+tools in windows of their own that can be moved and resized: the whiteboard
+(`js/modules/whiteboard.js` — pen, highlighter, eraser, text, undo, save as
+image, kept per unit in the browser's local storage) and, on Math units,
+Desmos. A Full screen button takes the unit to the whole screen.
 
 The unit codes are the point of the scheme: a unit, a homework set, a
 mistake in the error log and a weak spot in the results all use the same word,

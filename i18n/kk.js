@@ -310,7 +310,7 @@ JTS.dict.kk = {
   'roadmap.short.month2': '2-ай',
   'roadmap.short.challenge': 'Challenge',
   'lesson.practice': 'Жаттығу',
-  'lesson.practiceSoon': 'Бұл юниттің жаттығуы әлі қосылмаған. Әзірше Bluebook-тағы ресми практиканы қолданыңыз.',
+  'lesson.practiceSoon': 'Бұл юниттің жаттығуы әлі қосылмаған.',
   'lesson.practiceSoonShort': 'жаттығу жақында',
   'lesson.englishOnly': 'Ағылшын тілінде',
   'lesson.challengeNote': 'Challenge жинақтары кейін қосылады. Сабақта уақытпен жинақты орындап, әр қатені error log-та талдаңыз.',

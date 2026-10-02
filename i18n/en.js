@@ -310,7 +310,7 @@ JTS.dict.en = {
   'roadmap.short.month2': 'Month 2',
   'roadmap.short.challenge': 'Challenge',
   'lesson.practice': 'Practice',
-  'lesson.practiceSoon': 'The practice set for this unit has not been added yet. Until it is, use official practice in Bluebook.',
+  'lesson.practiceSoon': 'The practice set for this unit has not been added yet.',
   'lesson.practiceSoonShort': 'practice coming soon',
   'lesson.englishOnly': 'In English',
   'lesson.challengeNote': 'Challenge sets are added later. Run the timed set in the lesson, then review every miss in the error log.',

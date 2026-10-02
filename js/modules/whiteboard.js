@@ -380,17 +380,21 @@
         U.el('span.dp-grip', { 'aria-hidden': 'true', text: '⠿' }),
         U.el('strong', { text: t('wb.title') }),
         U.el('span.spacer'),
-        U.el('button.btn.btn-sm', { type: 'button', text: t('wb.bringBack'), onclick: closeWindow })
+        U.el('button.btn.btn-sm', { type: 'button', text: t(root.parentNode ? 'wb.bringBack' : 'common.close'), onclick: closeWindow })
       ]);
       win = U.el('div.wb-window', {
         role: 'dialog', 'aria-label': t('wb.title'),
         style: 'left:' + g.left + 'px;top:' + g.top + 'px;width:' + g.width + 'px;height:' + g.height + 'px'
       }, [head]);
-      away = U.el('div.notice.row-between.row-wrap.wb-away', null, [
-        U.el('span', { text: t('wb.inWindow') }),
-        U.el('button.btn.btn-sm', { type: 'button', text: t('wb.bringBack'), onclick: closeWindow })
-      ]);
-      root.parentNode.insertBefore(away, root);
+      /* A board that sits on a page leaves a note in its place; a board that
+         only ever lives in its window has no place to leave one. */
+      if (root.parentNode) {
+        away = U.el('div.notice.row-between.row-wrap.wb-away', null, [
+          U.el('span', { text: t('wb.inWindow') }),
+          U.el('button.btn.btn-sm', { type: 'button', text: t('wb.bringBack'), onclick: closeWindow })
+        ]);
+        root.parentNode.insertBefore(away, root);
+      }
       win.appendChild(root);
       document.body.appendChild(win);
       clampInto(win);
@@ -425,6 +429,7 @@
       if (!win) return;
       remember();
       if (away && away.parentNode) { away.parentNode.insertBefore(root, away); away.remove(); }
+      else root.remove();
       win.remove();
       win = away = null;
       setTimeout(fit, 0);
