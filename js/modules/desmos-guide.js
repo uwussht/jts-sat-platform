@@ -1,13 +1,14 @@
 /* ==========================================================================
    Screen: Desmos guide (#/desmos-guide)
 
-   Every section has its own live calculator, and the practice tasks come
-   after them. The calculator is mounted when a section is first opened rather
-   than all of them at once — an iframe that nobody has scrolled to is seven seconds of
+   Each lesson is its heading, a live calculator, the video and the exercises
+   to practise — no written walkthrough; the video is the lesson. The
+   calculator is mounted when a section is first opened rather than all of
+   them at once — an iframe that nobody has scrolled to is seconds of
    somebody's connection spent on nothing.
 
-   The two tasks that are faster by hand are deliberate. A student who learns
-   to reach for Desmos on every question has learned the wrong lesson.
+   A section's exercises are links listed in js/data/desmos-guide.js as
+   `exercises: [{ title, url }]`; until they are added the heading says so.
    ========================================================================== */
 (function () {
   'use strict';
@@ -18,24 +19,6 @@
      js/data/desmos-guide.js changed nothing on screen — two sources of truth,
      and the one being edited was the one that lost. */
   function sections() { return JTS.data.desmosGuide || []; }
-
-  function progress() {
-    var s = S.state();
-    if (!s.desmosGuideProgress) s.desmosGuideProgress = {};
-    return s.desmosGuideProgress;
-  }
-
-  function setLearned(id, on) {
-    progress()[id] = on ? Date.now() : null;
-    S.save();
-  }
-
-  function isLearned(id) { return !!progress()[id]; }
-
-  /** Every content section plus the practice-task section. */
-  function allSectionIds() {
-    return sections().map(function (x) { return x.id; }).concat(['tasks']);
-  }
 
   /* ------------------------------------------------------------- calculator */
 
@@ -73,18 +56,6 @@
     host.appendChild(slot);
   }
 
-  function tryItRow(exprs) {
-    var row = U.el('div.row.row-wrap');
-    (exprs || []).forEach(function (e) {
-      row.appendChild(U.el('code.chip', {
-        text: e,
-        title: t('desmos.tryIt', { expr: e }),
-        'aria-label': t('desmos.tryIt', { expr: e })
-      }));
-    });
-    return row;
-  }
-
   function videoSlot(url, credit) {
     if (url) {
       var frame = U.el('div.video-wrap', null, [
@@ -116,8 +87,6 @@
   /* ---------------------------------------------------------------- section */
 
   function sectionAcc(sec, rerender) {
-    var lang = S.settings().explainLang;
-    var learned = isLearned(sec.id);
     var body = U.el('div.acc-body', { hidden: true });
     var mounted = false;
     var caret = U.el('span.caret', { text: '❯' });
@@ -139,95 +108,37 @@
       sec.lesson ? U.el('span.badge.badge-muted.dg-lesson', {
         text: t('desmos.lesson', { n: sec.lesson })
       }) : null,
-      U.el('b', { text: t('desmos.section.' + sec.id) }),
-      U.el('span.spacer'),
-      learned ? U.el('span.badge.badge-ok', { text: t('desmos.learned') }) : null
+      U.el('b', { text: t('desmos.section.' + sec.id) })
     ]);
 
     function fill() {
-      body.appendChild(U.el('p.small.muted', { text: JTS.i18n.pick(sec.lead, lang) }));
-      var steps = U.el('ol.stack-sm.list-num');
-      JTS.i18n.pick(sec.steps, lang).forEach(function (line) {
-        steps.appendChild(U.el('li.small', { html: line }));
-      });
-      body.appendChild(steps);
-      body.appendChild(tryItRow(sec.tryIt));
       calculator(body);
       body.appendChild(videoSlot(sec.video, sec.videoCredit));
-
-      var cb = U.el('input', {
-        type: 'checkbox', id: 'dg-' + sec.id,
-        checked: isLearned(sec.id) || null
-      });
-      cb.addEventListener('change', function () {
-        setLearned(sec.id, cb.checked);
-        rerender();
-      });
-      body.appendChild(U.el('label.check', { for: 'dg-' + sec.id }, [
-        cb, U.el('span', { text: t('desmos.markLearned') })
-      ]));
+      body.appendChild(exercisesBlock(sec));
     }
 
     return U.el('div.acc', null, [head, body]);
   }
 
-  /* ------------------------------------------------------------------ tasks */
-
-  function tasksAcc(rerender) {
-    var lang = S.settings().explainLang;
-    var body = U.el('div.acc-body', { hidden: true });
-    var mounted = false;
-    var caret = U.el('span.caret', { text: '❯' });
-    var learned = isLearned('tasks');
-
-    var head = U.el('button.acc-head', {
-      type: 'button', 'aria-expanded': 'false',
-      onclick: function () {
-        var open = body.hidden;
-        body.hidden = !open;
-        head.setAttribute('aria-expanded', String(open));
-        caret.style.transform = open ? 'rotate(90deg)' : '';
-        if (open && !mounted) { mounted = true; fill(); }
-      }
-    }, [
-      caret,
-      U.el('b', { text: t('desmos.practiceTasks') }),
-      U.el('span.spacer'),
-      U.el('span.badge.badge-muted', { text: String((JTS.data.desmosTasks || []).length) }),
-      learned ? U.el('span.badge.badge-ok', { text: t('desmos.learned') }) : null
+  /** "Practice these exercises": the links for this lesson, or a line saying
+      they are still to come. */
+  function exercisesBlock(sec) {
+    var list = sec.exercises || [];
+    var box = U.el('div.stack-sm.dg-exercises', null, [
+      U.el('h3.h3', { text: t('desmos.exercises') })
     ]);
-
-    function fill() {
-      body.appendChild(U.el('p.small.muted', { text: t('desmos.tasksLead') }));
-      (JTS.data.desmosTasks || []).forEach(function (task, i) {
-        var faster = task.withSec < task.withoutSec;
-        body.appendChild(U.el('div.card.card-sm.card-flat.stack-sm', null, [
-          U.el('div.row-between.row-wrap', null, [
-            U.el('b', { text: (i + 1) + '. ' + JTS.i18n.pick(task.prompt, lang) }),
-            U.el('span.badge.badge-' + (faster ? 'ok' : 'warn'), {
-              /* The label is the honest verdict for this task, not a slogan
-                 about the calculator in general. */
-              text: t(faster ? 'desmos.fasterWith' : 'desmos.fasterByHand')
-            })
-          ]),
-          U.el('div.row.row-wrap', null, [
-            U.el('span.badge.badge-muted', { text: t('desmos.withoutDesmos', { a: task.withoutSec + 's' }) }),
-            U.el('span.badge.badge-muted', { text: t('desmos.withDesmos', { b: task.withSec + 's' }) })
-          ]),
-          tryItRow(task.expr),
-          U.el('p.xsmall.muted', { text: JTS.i18n.pick(task.note, lang) })
-        ]));
-      });
-      calculator(body);
-
-      var cb = U.el('input', { type: 'checkbox', id: 'dg-tasks', checked: isLearned('tasks') || null });
-      cb.addEventListener('change', function () { setLearned('tasks', cb.checked); rerender(); });
-      body.appendChild(U.el('label.check', { for: 'dg-tasks' }, [
-        cb, U.el('span', { text: t('desmos.markLearned') })
-      ]));
+    if (!list.length) {
+      box.appendChild(U.el('p.small.muted', { text: t('desmos.exercisesSoon') }));
+      return box;
     }
-
-    return U.el('div.acc', null, [head, body]);
+    var ol = U.el('ol.stack-sm.list-num');
+    list.forEach(function (ex) {
+      ol.appendChild(U.el('li', null, [
+        U.el('a', { href: ex.url, target: '_blank', rel: 'noopener noreferrer', text: ex.title || ex.url })
+      ]));
+    });
+    box.appendChild(ol);
+    return box;
   }
 
   /* ----------------------------------------------------------------- screen */
@@ -241,26 +152,17 @@
       function rerender() { U.clear(screen); paint(); }
 
       function paint() {
-        var ids = allSectionIds();
-        var done = ids.filter(isLearned).length;
-
-        screen.appendChild(U.el('div.stack-sm', null, [
-          U.el('p.muted', { text: t('desmos.lead') }),
-          U.el('div.row-between.row-wrap', null, [
-            U.el('span.small.muted', { text: t('desmos.progress', { done: done, total: ids.length }) }),
-            U.el('a.btn.btn-sm', {
-              href: JTS.config.desmosUrl, target: '_blank', rel: 'noopener',
-              text: t('desmos.openTab')
-            })
-          ]),
-          ui.bar(done, ids.length)
+        screen.appendChild(U.el('div.row.row-wrap', { style: 'justify-content:flex-end' }, [
+          U.el('a.btn.btn-sm', {
+            href: JTS.config.desmosUrl, target: '_blank', rel: 'noopener',
+            text: t('desmos.openTab')
+          })
         ]));
 
         var list = U.el('div.stack-sm');
         sections().forEach(function (sec) {
           list.appendChild(sectionAcc(sec, rerender));
         });
-        list.appendChild(tasksAcc(rerender));
         screen.appendChild(list);
       }
 

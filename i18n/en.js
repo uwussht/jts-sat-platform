@@ -669,6 +669,8 @@ JTS.dict.en = {
   'vocab.sourceNote': '{n} cards from “{source}”, plus your own words. Scheduling is SM-2: a card you grade Again comes back in ten minutes, a card you grade Easy goes further out each time.',
 
   'desmos.title': 'Desmos guide',
+  'desmos.exercises': 'Practice these exercises',
+  'desmos.exercisesSoon': 'The exercises for this lesson will be added here.',
   'desmos.openTab': 'Open Desmos in a new tab',
   'desmos.dock': 'Dock or float the calculator',
   'desmos.blocked': 'Desmos could not be embedded (no connection, or embedding is blocked).',
