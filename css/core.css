@@ -2175,3 +2175,8 @@ body.unit-focus .lesson-side { top: 16px; max-height: calc(100vh - 32px); }
 @media (max-width: 640px) {
   .sk-count { display: none; }
 }
+
+/* An official Bluebook practice test, as its own card in the course list. */
+.pg-official { border-left: 4px solid var(--warn); background: var(--warn-bg); }
+.pg-official .eyebrow { color: var(--warn); }
+.pg-official .h3 { margin: 0; }

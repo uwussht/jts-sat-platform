@@ -96,6 +96,22 @@
       })])
     ]));
 
+    /* An official Bluebook test is its own card, where it falls in the
+       course: before Month 1, and after each of the first two months. */
+    function testCard(test) {
+      return U.el('div.card.stack-sm.pg-official', null, [
+        U.el('div.eyebrow', { text: t('prog.officialTest') }),
+        U.el('div.h3', { text: pick(test.name) }),
+        U.el('p.small.muted', { text: pick(test.note) })
+      ]);
+    }
+    function testsAfter(phaseId) {
+      (P.officialTests || []).forEach(function (test) {
+        if (test.after === phaseId) wrap.appendChild(testCard(test));
+      });
+    }
+    testsAfter(null);
+
     var weeks = P.weeks(pw);
     P.phases.forEach(function (ph) {
       var from = pw === 2 ? ph.from2 : ph.from3;
@@ -129,6 +145,7 @@
         U.el('p.small.muted', { text: pick(ph.lead) }),
         body
       ]));
+      testsAfter(ph.id);
     });
 
     wrap.appendChild(U.el('div.notice.notice-warn', null, [

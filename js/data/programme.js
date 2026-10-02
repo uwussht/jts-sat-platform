@@ -82,15 +82,39 @@ JTS.data.programme = {
     }
   ],
 
+  /**
+   * The three official Bluebook practice tests the course is measured by:
+   * Practice Test 6 before Unit 1 as the diagnostic, Practice Test 8 after
+   * Month 1, and the latest one after Month 2. `after` is the phase the test
+   * follows; null means it comes before the course starts.
+   */
+  officialTests: [
+    { id: 'pt6', after: null,
+      name: { en: 'Official Bluebook Practice Test 6', ru: 'Официальный Bluebook Practice Test 6', kk: 'Ресми Bluebook Practice Test 6' },
+      note: { en: 'The diagnostic. Take it before Unit 1, in one sitting and under exam conditions, so the course starts from your real score.',
+              ru: 'Диагностика. Пройдите его до юнита 1, за один присест и в условиях экзамена, чтобы курс начинался с вашего реального балла.',
+              kk: 'Диагностика. Оны 1-юнитке дейін, бір отырыста және емтихан жағдайында тапсырыңыз, сонда курс нақты баллыңыздан басталады.' } },
+    { id: 'pt8', after: 'month1',
+      name: { en: 'Official Bluebook Practice Test 8', ru: 'Официальный Bluebook Practice Test 8', kk: 'Ресми Bluebook Practice Test 8' },
+      note: { en: 'The progress test that closes Month 1. Take it in one sitting under exam conditions and review it the next day.',
+              ru: 'Прогресс-тест, закрывающий месяц 1. Пройдите его за один присест в условиях экзамена и разберите на следующий день.',
+              kk: '1-айды жабатын прогресс тест. Оны бір отырыста емтихан жағдайында тапсырып, келесі күні талдаңыз.' } },
+    { id: 'ptLatest', after: 'month2',
+      name: { en: 'The latest official Bluebook practice test', ru: 'Последний официальный practice test в Bluebook', kk: 'Bluebook-тағы ең соңғы ресми practice test' },
+      note: { en: 'The progress test that closes Month 2: the newest full-length test in Bluebook. Take it in one sitting under exam conditions and review it the next day.',
+              ru: 'Прогресс-тест, закрывающий месяц 2: самый новый полный тест в Bluebook. Пройдите его за один присест в условиях экзамена и разберите на следующий день.',
+              kk: '2-айды жабатын прогресс тест: Bluebook-тағы ең жаңа толық тест. Оны бір отырыста емтихан жағдайында тапсырып, келесі күні талдаңыз.' } }
+  ],
+
   /** Two checkpoints: the official practice test after Month 1 and Month 2. */
   gates: [
     {
       n: 1, afterLesson3: 12, afterLesson2: 12, test3: 4, test2: 6,
-      name: { en: 'Progress test 1 — end of Month 1', ru: 'Прогресс-тест 1 — конец месяца 1', kk: '1-прогресс тест — 1-айдың соңы' }
+      name: { en: 'Bluebook Practice Test 8 — end of Month 1', ru: 'Bluebook Practice Test 8 — конец месяца 1', kk: 'Bluebook Practice Test 8 — 1-айдың соңы' }
     },
     {
       n: 2, afterLesson3: 24, afterLesson2: 24, test3: 8, test2: 12,
-      name: { en: 'Progress test 2 — end of Month 2', ru: 'Прогресс-тест 2 — конец месяца 2', kk: '2-прогресс тест — 2-айдың соңы' }
+      name: { en: 'Latest Bluebook practice test — end of Month 2', ru: 'Последний Bluebook practice test — конец месяца 2', kk: 'Bluebook-тағы соңғы practice test — 2-айдың соңы' }
     }
   ],
   gateRule: {
