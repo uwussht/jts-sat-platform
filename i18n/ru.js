@@ -10,7 +10,7 @@ JTS.dict.ru = {
   'nav.mocks': 'Пробники',
   'nav.settings': 'Настройки',
   'nav.goal': 'Целевой балл',
-  'roadmap.title': 'Роудмап',
+  'roadmap.title': 'Roadmap',
   'roadmap.youAreHere': 'Вы здесь',
   'roadmap.lessonsDone': '{done} из {total} занятий выполнено',
   'roadmap.examDay': 'День экзамена',

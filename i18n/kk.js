@@ -10,7 +10,7 @@ JTS.dict.kk = {
   'nav.mocks': 'Сынама тесттер',
   'nav.settings': 'Баптаулар',
   'nav.goal': 'Мақсатты балл',
-  'roadmap.title': 'Роудмап',
+  'roadmap.title': 'Roadmap',
   'roadmap.youAreHere': 'Сіз осындасыз',
   'roadmap.lessonsDone': '{total} сабақтың {done}-і орындалды',
   'roadmap.examDay': 'Емтихан күні',
