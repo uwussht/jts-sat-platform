@@ -62,19 +62,19 @@ JTS.data.glossary = [
     id: 'questionBank', group: 'exam',
     term: { en: 'SAT Suite Question Bank', ru: 'SAT Suite Question Bank', kk: 'SAT Suite Question Bank' },
     body: {
-      en: 'College Board’s free searchable store of real past questions, filterable by topic and difficulty. Your homework sets are built from it; in month 4 the filter is set to Hard and left there.',
-      ru: 'Бесплатное хранилище настоящих прошлых заданий от College Board с фильтрами по теме и сложности. Наборы в домашке собираются из него; в месяце 4 фильтр ставится на Hard и больше не меняется.',
-      kk: 'College Board-тың тақырып пен деңгей бойынша сүзгіленетін тегін нағыз тапсырмалар қоймасы. Үй тапсырмасындағы жинақтар содан жиналады; 4-айда сүзгі Hard-та тұрады.'
+      en: 'College Board’s free searchable store of real past questions, filterable by topic and difficulty. Your homework sets are built from it; in month 3, the Challenge month, the filter is set to Hard and left there.',
+      ru: 'Бесплатное хранилище настоящих прошлых заданий от College Board с фильтрами по теме и сложности. Наборы в домашке собираются из него; в месяце 3, месяце Challenge, фильтр ставится на Hard и больше не меняется.',
+      kk: 'College Board-тың тақырып пен деңгей бойынша сүзгіленетін тегін нағыз тапсырмалар қоймасы. Үй тапсырмасындағы жинақтар содан жиналады; 3-айда, Challenge айында, сүзгі Hard-та тұрады.'
     }
   },
 
   {
     id: 'tag', group: 'programme',
-    term: { en: 'A tag (M1…M29, R1…R17)', ru: 'Тег (M1…M29, R1…R17)', kk: 'Тег (M1…M29, R1…R17)' },
+    term: { en: 'A class code (C1…C24, CH1…CH12)', ru: 'Код занятия (C1…C24, CH1…CH12)', kk: 'Сабақ коды (C1…C24, CH1…CH12)' },
     body: {
-      en: 'The programme’s name for one topic. There are 46 and they cover the whole exam. The point of naming them is that a lesson, a homework set, a mistake in the error log and a weak spot in your results can all use the same word — so "I am bad at Math" becomes "M12 and M17".',
-      ru: 'Название одной темы в программе. Их 46, и они покрывают весь экзамен. Смысл названий в том, что урок, набор в домашке, ошибка в error log и слабое место в результатах называются одним словом — и «у меня плохо с математикой» превращается в «M12 и M17».',
-      kk: 'Бағдарламадағы бір тақырыптың атауы. Олар 46-ау және бүкіл емтиханды қамтиды. Атаудың мәні — сабақ, үй жинағы, error log-тағы қате және нәтижедегі әлсіз тұс бір сөзбен аталады, сөйтіп «математикам нашар» деген «M12 және M17» болады.'
+      en: 'The course’s name for one class. There are 36: 24 content classes that cover the whole exam and 12 Challenge classes. The point of naming them is that a lesson, a homework set, a mistake in the error log and a weak spot in your results can all use the same word — so "I am bad at Math" becomes "C12 and C17".',
+      ru: 'Название одного занятия курса. Их 36: 24 занятия по материалу, которые покрывают весь экзамен, и 12 занятий Challenge. Смысл названий в том, что урок, набор в домашке, ошибка в error log и слабое место в результатах называются одним словом — и «у меня плохо с математикой» превращается в «C12 и C17».',
+      kk: 'Курстағы бір сабақтың атауы. Олар 36: бүкіл емтиханды қамтитын 24 сабақ және 12 Challenge сабағы. Атаудың мәні — сабақ, үй жинағы, error log-тағы қате және нәтижедегі әлсіз тұс бір сөзбен аталады, сөйтіп «математикам нашар» деген «C12 және C17» болады.'
     }
   },
   {
@@ -99,18 +99,18 @@ JTS.data.glossary = [
     id: 'gate', group: 'programme',
     term: { en: 'A gate', ru: 'Гейт', kk: 'Гейт' },
     body: {
-      en: 'The full test that closes a stage. Not passed means three to six more lessons in the same stage on the tags in your error log, then the test again. It cannot be skipped, and that is the kindest rule in the programme: hard practice on top of a shaky base raises nothing and costs a month.',
-      ru: 'Полный тест, который закрывает этап. Не прошёл — ещё три-шесть уроков в том же этапе по тегам из error log, затем тест снова. Пропустить нельзя, и это самое доброе правило в программе: hard-практика поверх шаткой базы ничего не поднимает и стоит месяца.',
-      kk: 'Кезеңді жабатын толық тест. Өтпесеңіз — сол кезеңде error log тегтері бойынша тағы үш-алты сабақ, содан кейін тест қайта. Өткізіп жіберуге болмайды, әрі бұл — бағдарламадағы ең мейірімді ереже: осал негіздің үстіндегі hard-практика ештеңе көтермейді, бір айды алады.'
+      en: 'The official practice test that closes Month 1 and Month 2. Review it the next day and log every miss by class code; the weakest codes are re-drilled before the next month. It cannot be skipped, and that is the kindest rule in the course: hard practice on top of a shaky base raises nothing and costs a month.',
+      ru: 'Официальный practice test, который закрывает месяц 1 и месяц 2. Разберите его на следующий день и запишите каждый промах по коду занятия; самые слабые коды перерешиваются до следующего месяца. Пропустить нельзя, и это самое доброе правило в курсе: hard-практика поверх шаткой базы ничего не поднимает и стоит месяца.',
+      kk: '1-ай мен 2-айды жабатын ресми practice test. Оны келесі күні талдап, әр қатені сабақ коды бойынша жазыңыз; ең әлсіз кодтар келесі айға дейін қайта пысықталады. Өткізіп жіберуге болмайды, әрі бұл — курстағы ең мейірімді ереже: осал негіздің үстіндегі hard-практика ештеңе көтермейді, бір айды алады.'
     }
   },
   {
     id: 'wordlist', group: 'programme',
     term: { en: 'Word list #N', ru: 'Word list #N', kk: 'Word list #N' },
     body: {
-      en: 'Ten words after every lesson, tested at the start of the next one. Over 48 lessons that is 480 words, which is most of the academic vocabulary the Words in Context questions draw on.',
-      ru: 'Десять слов после каждого урока, тест в начале следующего. За 48 уроков это 480 слов — большая часть академической лексики, из которой берутся вопросы Words in Context.',
-      kk: 'Әр сабақтан кейін он сөз, келесісінің басында тест. 48 сабақта бұл 480 сөз — Words in Context сұрақтары алатын академиялық лексиканың көбі.'
+      en: 'Ten words after every lesson, tested at the start of the next one. Over 36 classes that is 360 words, which is most of the academic vocabulary the Words in Context questions draw on.',
+      ru: 'Десять слов после каждого урока, тест в начале следующего. За 36 занятий это 360 слов — большая часть академической лексики, из которой берутся вопросы Words in Context.',
+      kk: 'Әр сабақтан кейін он сөз, келесісінің басында тест. 36 сабақта бұл 360 сөз — Words in Context сұрақтары алатын академиялық лексиканың көбі.'
     }
   },
   {
@@ -133,11 +133,11 @@ JTS.data.glossary = [
   },
   {
     id: 'hardStage', group: 'programme',
-    term: { en: 'Hard practice (month 4)', ru: 'Hard-практика (месяц 4)', kk: 'Hard-практика (4-ай)' },
+    term: { en: 'Challenge (month 3)', ru: 'Challenge (месяц 3)', kk: 'Challenge (3-ай)' },
     body: {
-      en: 'The last month repeats the same rhythm with hard items only. It is not extra difficulty for its own sake: it is rehearsal for the hard Module 2, where the scores you are aiming at live. It comes last because hard practice before the base is in place teaches nothing.',
-      ru: 'Последний месяц повторяет тот же ритм, но только на сложных заданиях. Это не сложность ради сложности: это репетиция сложного Модуля 2, где и живут те баллы, к которым вы идёте. Он стоит последним, потому что hard-практика до базы ничему не учит.',
-      kk: 'Соңғы ай сол ырғақты тек күрделі тапсырмалармен қайталайды. Бұл қиындық үшін қиындық емес: сіз ұмтылған балдар тұратын күрделі 2-модульдің репетициясы. Ол соңында тұр, себебі негізсіз hard-практика ештеңе үйретпейді.'
+      en: 'The last month is Challenge 1–12: timed sets at hard-module difficulty, each followed by an error review. It is not extra difficulty for its own sake: it is rehearsal for the hard Module 2, where the scores you are aiming at live. It comes last because hard practice before the base is in place teaches nothing.',
+      ru: 'Последний месяц — Challenge 1–12: наборы на время на уровне сложного модуля, после каждого — разбор ошибок. Это не сложность ради сложности: это репетиция сложного Модуля 2, где и живут те баллы, к которым вы идёте. Он стоит последним, потому что hard-практика до базы ничему не учит.',
+      kk: 'Соңғы ай — Challenge 1–12: күрделі модуль деңгейіндегі уақытпен орындалатын жинақтар, әрқайсысынан кейін қателерді талдау. Бұл қиындық үшін қиындық емес: сіз ұмтылған балдар тұратын күрделі 2-модульдің репетициясы. Ол соңында тұр, себебі негізсіз hard-практика ештеңе үйретпейді.'
     }
   },
   {

@@ -1444,7 +1444,7 @@
     /** filters: {section, skillIds[], domains[], difficulty[], excludeIds[], licenseStatus, status, kind} */
     query: function (filters) {
       filters = filters || {};
-      var wantPaper = filters.kind === 'paper';
+      var wantKind = filters.kind || null;
       var state = Store.state();
       var attempts = state ? state.attempts : [];
       var lastByQ = {};
@@ -1454,8 +1454,10 @@
            are in the bank so a session can render and grade them, but a query
            that has not asked for them must never see them: a paper question
            leaking into practice, the diagnostic or a generated mock would spend
-           a question the student is meant to meet once, under the clock. */
-        if (((q.meta && q.meta.kind) === 'paper') !== wantPaper) return false;
+           a question the student is meant to meet once, under the clock. A
+           class's own practice set (kind 'lesson') is kept inside its class
+           the same way. */
+        if (((q.meta && q.meta.kind) || null) !== wantKind) return false;
         if (filters.section && q.section !== filters.section) return false;
         if (filters.skillIds && filters.skillIds.length && filters.skillIds.indexOf(q.skillId) < 0) return false;
         if (filters.domains && filters.domains.length) {
@@ -1523,6 +1525,13 @@
         if (isPaper) {
           if (q.explanation || q.distractors || q.hints || q.methods) {
             bad('a paper item carries no explanation, distractors, hints or methods');
+          }
+        } else if (q.meta && q.meta.kind === 'lesson') {
+          /* A class's own set follows its written lesson, which is English
+             for now; the other languages fall back to it. */
+          if (!q.explanation || !q.explanation.en) bad('explanation needs en');
+          if (!JTS.data.programme || !JTS.data.programme.byCode(q.meta.lessonCode)) {
+            bad('lesson item names no class of the course: ' + q.meta.lessonCode);
           }
         } else if (!q.explanation || !q.explanation.en || !q.explanation.ru || !q.explanation.kk) {
           bad('explanation needs en/ru/kk');

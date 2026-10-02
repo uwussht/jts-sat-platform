@@ -2009,3 +2009,72 @@ table.table.xl tbody tr.is-done .xl-clip, table.table.xl tbody tr.is-done .xl-to
   .app-sidebar, .app-topbar, .tabbar, .q-footer, #desmos-panel { display: none !important; }
   .container { max-width: none; padding-inline: 0; }
 }
+
+/* ------------------------------------------------------------------------
+   Class page: the written lesson, Desmos and the whiteboard
+   ------------------------------------------------------------------------ */
+.lesson-written { line-height: 1.6; max-width: 72ch; }
+.lesson-written > :first-child { margin-top: 0; }
+.lesson-written h4 {
+  margin: 22px 0 6px; font-size: 16px; padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.lesson-written .lw-mins { font-weight: 400; font-size: 12px; color: var(--muted); margin-inline-start: 6px; }
+.lesson-written p { margin: 8px 0; }
+.lesson-written ul, .lesson-written ol { margin: 8px 0; padding-inline-start: 22px; }
+.lesson-written ul { list-style: disc; }
+.lesson-written ol { list-style: decimal; }
+.lesson-written li > ul { list-style: circle; }
+.lesson-written li { margin: 4px 0; }
+.lesson-written li > ul { margin: 4px 0; }
+.lesson-written blockquote {
+  margin: 12px 0; padding: 10px 14px; background: var(--info-bg);
+  border-left: 3px solid var(--info); color: var(--ink);
+}
+.lesson-written blockquote p { margin: 4px 0; }
+.lesson-written table {
+  width: 100%; border-collapse: collapse; font-size: 14px; margin: 10px 0;
+  display: block; overflow-x: auto;
+}
+.lesson-written th, .lesson-written td {
+  padding: 7px 10px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top;
+}
+.lesson-written th { color: var(--muted); font-weight: 600; font-size: 13px; }
+.lesson-desmos { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); }
+.lesson-desmos .desmos-embed { height: 520px; }
+
+.wb { display: flex; flex-direction: column; gap: 8px; outline: none; }
+.wb-tools { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+.wb-group { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+.wb-tool[aria-pressed="true"], .wb-size[aria-pressed="true"] {
+  background: var(--ink); color: var(--surface); border-color: var(--ink);
+}
+.wb-swatch {
+  width: 26px; height: 26px; border: 2px solid var(--surface); border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--border-strong); cursor: pointer; padding: 0;
+}
+.wb-swatch[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--ink); }
+.wb-size { min-width: 34px; justify-content: center; }
+.wb-dot { display: inline-block; border-radius: 50%; background: currentColor; }
+.wb-stage {
+  position: relative; width: 100%; aspect-ratio: 16 / 9;
+  display: flex; align-items: flex-start; justify-content: center;
+  background: #ffffff; border: 1px solid var(--border-strong); overflow: hidden;
+}
+.wb-canvas {
+  display: block; touch-action: none; cursor: crosshair;
+  background-color: #ffffff;
+  background-image: radial-gradient(#d9d6e8 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.wb-canvas[data-tool="text"] { cursor: text; }
+.wb-text-input {
+  position: absolute; z-index: 2; min-width: 160px; padding: 2px 4px; margin: 0;
+  font-weight: 600; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.25;
+  background: rgba(255, 255, 255, .92); border: 1px dashed #8f86b8; resize: both; outline: none;
+}
+.wb:fullscreen, .wb.wb-max {
+  background: var(--surface); padding: 12px; gap: 10px;
+}
+.wb.wb-max { position: fixed; inset: 0; z-index: 1000; }
+.wb:fullscreen .wb-stage, .wb.wb-max .wb-stage { flex: 1; aspect-ratio: auto; min-height: 0; }

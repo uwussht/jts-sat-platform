@@ -340,9 +340,8 @@
         });
 
         /* How many lessons a week — which of the programme's two schedules
-           the student is on. Three a week is 15 weeks; two is 23, with room
-           for a second mixed review and a buffer lesson. It decides the
-           lesson numbers on the materials page and the roadmap, so it is
+           the student is on. Three a week is 12 weeks; two is 18. It decides
+           the weeks on the materials page and the roadmap, so it is
            asked here rather than guessed from the day chips. */
         var perWeek = U.el('select.select', { id: 'set-perweek' });
         [3, 2].forEach(function (n) {

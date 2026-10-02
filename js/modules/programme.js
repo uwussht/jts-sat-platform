@@ -1,20 +1,20 @@
 /* ==========================================================================
-   Rendering the JTS 1500+ programme.
+   Rendering the JTS 36-class course.
 
    The data is in js/data/programme*.js; this file turns it into the pieces the
    screens hang on their own pages, so a lesson row looks the same wherever it
    appears and a topic is worded once:
 
-     JTS.programme.chronology()    the 45 lessons by phase, with the gates
+     JTS.programme.chronology()    the 36 classes by month, with the checkpoints
                                    — used by #/roadmap
      JTS.programme.unitList(sec)   the units and their lessons — #/materials
      JTS.programme.errorLogCard()  the error log — used by #/guide
      JTS.programme.lessonDetail(n) one lesson, for a day on the calendar
 
    Everything that prints a lesson number asks which schedule the student is
-   on first: the same 45 lessons are numbered differently at two a week and at
-   three, and a number that belongs to the other schedule is worse than no
-   number at all.
+   on first: the same 36 classes fall in different weeks at two a week and at
+   three, and a week that belongs to the other schedule is worse than no
+   week at all.
 
    Nothing here writes to the store. The programme is the school's course and
    the same for everyone; a student's own progress lives in the plan.
@@ -89,7 +89,7 @@
    * The whole course in order: three phases, the weeks inside each, and the
    * gate that closes it. This is the chronology — it answers "what comes after
    * what", which the road cannot because the road has six shapes and the
-   * course has forty-five steps.
+   * course has thirty-six steps.
    */
   function chronology(opts) {
     opts = opts || {};
@@ -194,12 +194,11 @@
     var n = P.numberOn(lesson, pw);
     var st = stateOfNumber(n, done);
     var unit = P.unitById(lesson.unit);
-    var count = (JTS.programme.lessonSet && JTS.programme.lessonSet(lesson.code).length) || 10;
+    var count = JTS.programme.lessonSet ? JTS.programme.lessonSet(lesson.code).length : 0;
 
     var caption = [
       unit ? pick(unit.name) : null,
-      t('mat.nQuestions', { n: count }),
-      n ? t('prog.lessonNo', { n: n }) : null
+      count ? t('mat.nQuestions', { n: count }) : t('lesson.practiceSoonShort')
     ].filter(Boolean).join(' · ');
 
     return U.el('a.mat-unit.is-' + st, { href: '#/materials/lesson?code=' + lesson.code }, [
@@ -207,7 +206,7 @@
         text: st === 'done' ? '✓' : st === 'current' ? '▶' : '', 'aria-hidden': 'true'
       }),
       U.el('span.mat-unit-text', null, [
-        U.el('b', { text: t('mat.unitNo', { n: opts.index, name: lessonName(lesson) }) }),
+        U.el('b', { text: t('mat.unitNo', { n: n || opts.index, name: lessonName(lesson) }) }),
         U.el('span.small.muted', { text: caption })
       ]),
       codeChip(lesson),
@@ -218,7 +217,7 @@
   /**
    * Every subtopic of one section, in course order and numbered within it —
    * unit 1 of Verbal is the first Verbal lesson of the course, whatever its
-   * number in the whole 45.
+   * number in the whole 36.
    */
   function unitList(section, opts) {
     opts = opts || {};
@@ -285,18 +284,20 @@
   function teachOf(code) { return (P.teach && P.teach[code]) || null; }
 
   /**
-   * The ten questions of a lesson.
+   * The practice set of a class.
    *
-   * They come from JTS's own bank, by the skills the lesson drills — never
-   * from Bluebook or any other published test. A lesson with one skill is that
-   * skill's ten; a lesson with two is five and five, so both get practised.
-   * A hard lesson takes the hardest items the bank holds for those skills, and
-   * a review lesson takes what the student's own error log says is due.
+   * A class with its own written set (js/data/lesson-questions.js) gets that
+   * set, whole and in the order it was written. Otherwise, if the class names
+   * skills, it is filled from JTS's own bank by those skills — never from
+   * Bluebook or any other published test. A class with neither has no set yet,
+   * and its page says so.
    */
   function lessonSet(code, n) {
+    var own = JTS.data.lessonQuestions && JTS.data.lessonQuestions[code];
+    if (own) return own.filter(function (id) { return !!JTS.bank.get(id); });
     n = n || 10;
     var d = drillOf(code);
-    if (!d) return [];
+    if (!d || !(d.skills || d.fromErrorLog)) return [];
     var seed = numericSeed(code);
     var out = [], seen = {};
 
@@ -396,7 +397,7 @@
    * Which programme lesson a planned session is.
    *
    * The plan is generated from the student's own dates and the programme is a
-   * fixed list of 45; the link between them is simply the order. The third
+   * fixed list of 36; the link between them is simply the order. The third
    * session anyone sits is lesson 3, whatever day it falls on — which is what
    * makes "set #10" and "word list #10" mean something on a calendar.
    */
@@ -429,7 +430,7 @@
 
   /**
    * Everything the programme sets for one lesson, for the day a student taps:
-   * which lesson of the 45 it is, what it covers, and the homework with its
+   * which class of the 36 it is, what it covers, and the homework with its
    * numbers filled in.
    */
   function lessonDetail(n) {

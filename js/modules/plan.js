@@ -52,7 +52,7 @@
     if (topics.length) {
       return topics.map(function (l) { return JTS.programme.lessonName(l); }).join(' · ');
     }
-    /* Past the end of the 45, or before the programme has loaded: the skills
+    /* Past the end of the 36, or before the programme has loaded: the skills
        the planner picked are still a better answer than a bare number. */
     var skills = lesson.skillIds.map(function (id) { return JTS.skills.name(id); });
     return skills.length ? skills.join(' · ') : lessonActions(lesson);

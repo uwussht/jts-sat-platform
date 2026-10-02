@@ -361,39 +361,41 @@ returns whether a tour is on its way and the router holds the nudge back when
 it is. Without that the modal opened first and its backdrop dimmed the coach
 mark underneath it.
 
-## The JTS 1500+ programme
+## The JTS 36-class course
 
-The school's own course — 48 lessons over four months, three stages, three
-gates — lives in `js/data/programme*.js` and is rendered by
-`js/modules/programme.js` onto three screens:
+The school's own course — 36 classes over three months — lives in
+`js/data/programme*.js` and is rendered by `js/modules/programme.js` and
+`js/modules/lesson.js`. Months 1 and 2 are 24 content classes (C1–C24), one
+for each topic of the eight Digital SAT domains, in alternating weeks of two
+Reading & Writing classes and one Math class, then one and two. Month 3 is
+Challenge 1–12 (CH1–CH12): timed sets at hard-module difficulty, each followed
+by an error review. Bluebook Practice Test 6 is the diagnostic, and an official
+practice test closes Month 1 and Month 2.
 
-- **`#/roadmap`** carries the **chronology** under the map. The road is the
-  shape of the preparation, six phases a student can hold in their head; the
-  chronology is the forty-eight steps that fill it. Two views of one journey,
-  so the course goes below the map rather than replacing it — which is why the
-  roadmap is a scrolling page again, while the map and the step beside it still
-  fit one screen on their own.
-- **`#/plan`** puts it **inside the calendar**. Press a day and it tells you
-  which of the 48 lessons falls there, the topics that lesson covers, and the
-  four pieces of homework with their numbers filled in — word list #10, set
-  #10, not "#N". The link between the generated plan and the fixed 48 is simply
-  the order: the third session anyone sits is lesson 3, whatever date it lands
-  on, which is what lets a calendar square carry a set number at all. The full
-  tag tables stay on the page, folded, for the question a single day cannot
-  answer: *when do we do M17*.
-- **`#/guide`** gained two chapters after the six onboarding teaches: the
-  **words a beginner has not met**, and the **error log**.
+- `programme.js` — the shape: two schedules (three classes a week is 12 weeks,
+  two is 18), the three months, the two checkpoints and the homework.
+- `programme-units.js` — the eight domain units, the Challenge unit and the 36
+  classes, each worded once and referred to everywhere by its code.
+- `programme-teach.js` — the full written lesson for each of C1–C24. It is
+  generated from the course document ("SAT 36-Lesson Course"): edit the
+  document and regenerate with `tools/md2teach.py` rather than editing the
+  HTML by hand. English only
+  for now; every interface language falls back to it.
+- `lesson-questions.js` — each class's own practice set, by class code. So far
+  C1 and C2 have 15 questions each; a class without a set says so on its page.
+  These items carry `meta.kind = 'lesson'`, which keeps them inside their class
+  the way `'paper'` keeps past-paper items inside their paper, and the
+  validator accepts an English-only explanation for them.
 
-**A lesson names tags, never topic prose.** A topic is worded once, in
-`programme-topics.js`, and the lesson list, the plan's tables and the error log
-all read it from there — so renaming a topic renames it everywhere, and a
-lesson cannot drift out of step with the table that defines it. `prog-check`
-enforces both directions: every tag a lesson names exists, and every topic is
-taught in the lesson it claims.
+A class page (`#/materials/lesson?code=C9`) is what a teacher puts on the
+screen: the written lesson; for a Math class, Desmos right under it; a
+whiteboard (`js/modules/whiteboard.js`) with pen, highlighter, eraser, text,
+undo, full screen and save-as-image, kept per class in the browser's local
+storage; and the practice set.
 
-The 46 tags (M1–M29, R1–R17) are the point of the whole scheme: a lesson, a
-homework set, a mistake in the error log and a weak spot in the results all use
-the same word, so "I am bad at Math" becomes "M12 and M17".
+The class codes are the point of the scheme: a class, a homework set, a
+mistake in the error log and a weak spot in the results all use the same word,
+so "I am bad at Math" becomes "C12 and C17".
 
 **The glossary mixes two kinds of word on purpose** — the exam's (Bluebook,
 grid-in, the adaptive second module) and the programme's (a tag, a set, the
