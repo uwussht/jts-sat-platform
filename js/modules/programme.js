@@ -28,18 +28,11 @@
   function pick(obj) { return JTS.i18n.pick(obj, lang()); }
 
   /**
-   * How many lessons a week this student is on: whatever they chose in
-   * Settings, and failing that whatever their study days say. Anything other
-   * than three is run as the two-a-week schedule, which is the one with room
-   * in it.
+   * The course runs at three classes a week, 12 weeks, for everyone. The
+   * schedule is not a student's choice; this stays a function so the screens
+   * that number weeks keep asking one place.
    */
-  function perWeek() {
-    var s = S.state();
-    var av = (s && s.availability) || null;
-    var n = av && av.lessonsPerWeek;
-    if (!n && av && av.days) n = av.days.length;
-    return Number(n) >= 3 ? 3 : 2;
-  }
+  function perWeek() { return 3; }
 
   function schedule() { return P.scheduleOf(perWeek()); }
 
@@ -98,11 +91,9 @@
     var wrap = U.el('div.stack');
 
     wrap.appendChild(U.el('div.card.card-sm.pg-zero', null, [
-      U.el('div.eyebrow', { text: pick(sch.name) }),
       U.el('div', null, [U.el('b', {
         text: t('prog.scheduleShape', { weeks: sch.weeks, lessons: P.lessonsTotal, tests: sch.tests })
-      })]),
-      U.el('div.small.muted', { text: pick(sch.note) })
+      })])
     ]));
 
     var weeks = P.weeks(pw);
@@ -442,8 +433,7 @@
 
     box.appendChild(U.el('div.row.row-wrap', null, [
       U.el('span.badge', { text: t('prog.lessonNo', { n: n }) }),
-      phase ? U.el('span.badge.badge-muted', { text: pick(phase.name) }) : null,
-      U.el('span.badge.badge-muted', { text: t('prog.perWeek', { n: pw }) })
+      phase ? U.el('span.badge.badge-muted', { text: pick(phase.name) }) : null
     ]));
 
     var topics = U.el('div.stack-sm');

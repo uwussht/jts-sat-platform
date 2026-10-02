@@ -486,7 +486,6 @@
           U.el('span.badge.badge-muted', {
             text: t('roadmap.weekOf', { n: week, total: sch.weeks })
           }),
-          U.el('span.badge.badge-muted', { text: t('prog.perWeek', { n: pw }) }),
           U.el('button.btn.btn-sm', {
             type: 'button', text: t('roadmap.howTitle'),
             onclick: function () {

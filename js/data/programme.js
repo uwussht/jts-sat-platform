@@ -9,11 +9,10 @@
    review. Bluebook Practice Test 6 is the diagnostic, and an official
    practice test closes Month 1 and Month 2.
 
-   The same 36 classes run on two schedules. Three a week finishes in 12
-   weeks; two a week takes 18. The content and the order do not change, only
-   the pace — so a class carries the same number, n3 and n2, on both, and the
-   fields stay apart only because every screen asks which schedule the student
-   is on before printing a week.
+   The course runs at three classes a week for everyone, so it takes 12
+   weeks. A class still carries n3 and n2 (its number on a three- and a
+   two-a-week schedule) because the lookups were written for both; they are
+   the same number, and only the three-a-week schedule is used.
 
    Four screens read this one file, which is why it is data and not prose in
    four places:
@@ -37,28 +36,13 @@ JTS.data.programme = {
   wordsTotal: 360,
 
   /**
-   * The two schedules. `weeks` is how long the course takes, `perWeek` how
-   * many classes are in a week, and `tests` how many practice tests that
-   * comes to — one a week, from week one.
+   * The schedule: three classes a week, 12 weeks, a practice test every
+   * week. It is the same for every student and is not a setting.
    */
   schedules: [
     {
       id: 3, perWeek: 3, weeks: 12, tests: 12,
-      name: { en: 'Three classes a week', ru: 'Три занятия в неделю', kk: 'Аптасына үш сабақ' },
-      note: {
-        en: '12 weeks: one month per stage. The risk is overload: little time to go through the mistakes between classes.',
-        ru: '12 недель: по месяцу на этап. Риск — перегруз: между занятиями мало времени на разбор ошибок.',
-        kk: '12 апта: әр кезеңге бір ай. Тәуекел — шамадан тыс жүктеме: сабақтар арасында қателерді талдауға уақыт аз.'
-      }
-    },
-    {
-      id: 2, perWeek: 2, weeks: 18, tests: 18,
-      name: { en: 'Two classes a week', ru: 'Два занятия в неделю', kk: 'Аптасына екі сабақ' },
-      note: {
-        en: '18 weeks, the same 36 classes. The risk is distance: topics drift far apart and are forgotten, which is what the re-drill rule is for.',
-        ru: '18 недель, те же 36 занятий. Риск — расстояние: темы уходят далеко друг от друга и забываются, ради этого и существует правило re-drill.',
-        kk: '18 апта, сол 36 сабақ. Тәуекел — қашықтық: тақырыптар бір-бірінен алыстап, ұмытылады; re-drill ережесі сол үшін бар.'
-      }
+      name: { en: 'Three classes a week', ru: 'Три занятия в неделю', kk: 'Аптасына үш сабақ' }
     }
   ],
 

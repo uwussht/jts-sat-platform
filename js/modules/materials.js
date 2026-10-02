@@ -68,20 +68,10 @@
           U.el('span', { text: t('prog.nUnits', { n: P.lessons.filter(function (l) { return P.numberOn(l, pw); }).length }) }),
           U.el('span', { text: '·' }),
           U.el('span', { text: t('mat.words', { n: P.wordsTotal }) })
-        ])
-      ]));
-
-      /* Which schedule the numbers on this page belong to, and the one link
-         that changes it. A lesson number from the other schedule would be
-         worse than no number at all. */
-      screen.appendChild(U.el('div.notice.row-between.row-wrap', { id: 'mat-schedule' }, [
-        U.el('div.stack-sm', null, [
-          U.el('div', null, [U.el('b', { text: pick(sch.name) })]),
-          U.el('div.small.muted', {
-            text: t('prog.scheduleShape', { weeks: sch.weeks, lessons: total, tests: sch.tests })
-          })
         ]),
-        U.el('a.btn.btn-sm', { href: '#/settings', text: t('mat.changeSchedule') })
+        U.el('div.small.muted', {
+          text: t('prog.scheduleShape', { weeks: sch.weeks, lessons: total, tests: sch.tests })
+        })
       ]));
 
       screen.appendChild(sectionBlock('mat-rw', 'rw', pw, done));

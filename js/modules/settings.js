@@ -339,22 +339,6 @@
           markDirty();
         });
 
-        /* How many lessons a week — which of the programme's two schedules
-           the student is on. Three a week is 12 weeks; two is 18. It decides
-           the weeks on the materials page and the roadmap, so it is
-           asked here rather than guessed from the day chips. */
-        var perWeek = U.el('select.select', { id: 'set-perweek' });
-        [3, 2].forEach(function (n) {
-          var o = U.el('option', { value: String(n), text: t('prog.perWeek', { n: n }) });
-          if (Number(av.lessonsPerWeek || (av.days.length >= 3 ? 3 : 2)) === n) o.selected = true;
-          perWeek.appendChild(o);
-        });
-        perWeek.addEventListener('change', function () {
-          av.lessonsPerWeek = Number(perWeek.value);
-          S.update(function (st) { st.availability = av; });
-          markDirty();
-        });
-
         var intensity = U.el('select.select', { id: 'set-intensity' });
         ['light', 'standard', 'intensive'].forEach(function (k) {
           var o = U.el('option', { value: k, text: t('onb.intensity.' + k) });
@@ -368,11 +352,7 @@
         });
 
         availWrap.appendChild(ui.field(t('settings.availDays'), dayRow));
-        availWrap.appendChild(U.el('div.grid.grid-2', null, [
-          ui.field(t('settings.perWeek'), perWeek),
-          ui.field(t('settings.availMinutes'), minutes)
-        ]));
-        availWrap.appendChild(U.el('p.small.muted', { text: t('settings.perWeekNote') }));
+        availWrap.appendChild(ui.field(t('settings.availMinutes'), minutes));
         availWrap.appendChild(ui.field(t('settings.availIntensity'), intensity));
         availWrap.appendChild(U.el('button.btn', {
           type: 'button', text: t('settings.rebuildPlan'),
