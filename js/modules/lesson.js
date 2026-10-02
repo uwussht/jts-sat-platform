@@ -65,28 +65,67 @@
 
   /**
    * The side panel: the tools first, then the lesson's parts as a list that
-   * scrolls the page to them and marks the one being read. The whiteboard
-   * button opens the board full screen rather than scrolling to it, because
-   * a teacher reaching for it mid-explanation wants to draw, not to find it.
+   * scrolls the page to them and marks the one being read. The whiteboard and
+   * Desmos open as windows of their own — moved by their title bars and
+   * resized from their corners — over the lesson, because a teacher reaching
+   * for them mid-explanation wants them beside the text, at whatever size
+   * the moment needs, not instead of it.
    */
   function sidePanel(written, board, isMath) {
     var side = U.el('aside.lesson-side', { 'aria-label': t('side.title') });
 
     var tools = U.el('div.row.row-wrap.lesson-side-tools');
-    tools.appendChild(U.el('button.btn.btn-primary', {
-      type: 'button', text: '✏️ ' + t('side.board'), title: t('side.boardHint'),
-      onclick: function () { board.openFull(); }
-    }));
+    var wbBtn = U.el('button.btn.btn-primary', { type: 'button', title: t('side.boardHint') });
+    function syncBoard() {
+      wbBtn.textContent = '✏️ ' + t(board.isWindowOpen() ? 'side.boardClose' : 'side.board');
+      wbBtn.setAttribute('aria-pressed', String(board.isWindowOpen()));
+    }
+    wbBtn.addEventListener('click', function () {
+      if (board.isWindowOpen()) board.closeWindow(); else board.openWindow();
+      syncBoard();
+    });
+    /* The window's own "put back" button closes it without this panel, so
+       the board says when its window opens or closes. */
+    board.addEventListener('wb:window', syncBoard);
+    side.cleanup = [];
+    syncBoard();
+    tools.appendChild(wbBtn);
+
     if (isMath) {
-      var calc = U.el('button.btn', { type: 'button', text: 'ƒ ' + t('side.desmos') });
+      var calc = U.el('button.btn', { type: 'button' });
       var sync = function () {
         calc.textContent = 'ƒ ' + t(JTS.desmos.isOpen() ? 'side.desmosClose' : 'side.desmos');
         calc.setAttribute('aria-pressed', String(JTS.desmos.isOpen()));
       };
-      calc.addEventListener('click', function () { JTS.desmos.toggle(); sync(); });
+      calc.addEventListener('click', function () {
+        if (JTS.desmos.isOpen()) JTS.desmos.hide(); else JTS.desmos.showFloating();
+        sync();
+      });
+      /* Desmos has its own Close button; watch the panel rather than guess. */
+      var panel = document.getElementById('desmos-panel');
+      if (panel && window.MutationObserver) {
+        var mo = new MutationObserver(sync);
+        mo.observe(panel, { attributes: true, attributeFilter: ['class'] });
+        side.cleanup.push(function () { mo.disconnect(); });
+      }
       sync();
       tools.appendChild(calc);
     }
+
+    /* The unit already fills the window; this takes it to the whole screen,
+       for a projector. Esc or the same button brings it back. */
+    var fsBtn = U.el('button.btn', { type: 'button' });
+    function syncFs() {
+      fsBtn.textContent = '⛶ ' + t(document.fullscreenElement ? 'side.exitFullscreen' : 'side.fullscreen');
+    }
+    fsBtn.addEventListener('click', function () {
+      if (document.fullscreenElement) document.exitFullscreen();
+      else if (document.documentElement.requestFullscreen) document.documentElement.requestFullscreen().catch(function () {});
+    });
+    document.addEventListener('fullscreenchange', syncFs);
+    side.cleanup.push(function () { document.removeEventListener('fullscreenchange', syncFs); });
+    syncFs();
+    tools.appendChild(fsBtn);
     side.appendChild(U.el('div.card.card-sm.stack-sm', null, [
       U.el('div.eyebrow', { text: t('side.tools') }), tools
     ]));
@@ -159,9 +198,12 @@
         return;
       }
 
-      /* The unit on the left, the side panel on the right: the lesson's parts
-         and the two tools a teacher reaches for mid-lesson, one press away
-         wherever the page is scrolled to. */
+      /* A unit takes the whole window: the app's menu and top bar step aside
+         while it is open (body.unit-focus), and come back the moment the
+         teacher leaves it. The unit on the left, the side panel on the
+         right: the lesson's parts and the tools a teacher reaches for
+         mid-lesson, one press away wherever the page is scrolled to. */
+      document.body.classList.add('unit-focus');
       var page = U.el('div.container.container-wide.screen.lesson-page');
       var screen = U.el('div.stack.lesson-main');
       page.appendChild(screen);
@@ -193,7 +235,9 @@
         }
       }
 
-      screen.appendChild(U.el('a.small', { href: backHref(), text: '← ' + t('lesson.back') }));
+      screen.appendChild(U.el('div.row.row-wrap', null, [
+        U.el('a.btn.btn-sm', { href: backHref(), text: '← ' + t('lesson.back') })
+      ]));
 
       /* ------------------------------------------------------------ head */
       screen.appendChild(U.el('div.card.stack-sm', { id: 'lesson-head' }, [
@@ -298,7 +342,18 @@
         : U.el('span'));
       screen.appendChild(nav);
 
-      page.appendChild(sidePanel(written, board, section === 'math'));
+      var side = sidePanel(written, board, section === 'math');
+      page.appendChild(side);
+
+      /* Leaving the unit: the app's chrome comes back, the board's window
+         goes back into its page (which is about to be cleared), and the
+         screen leaves full screen. */
+      return function () {
+        document.body.classList.remove('unit-focus');
+        side.cleanup.forEach(function (f) { f(); });
+        board.closeWindow();
+        if (document.fullscreenElement) document.exitFullscreen().catch(function () {});
+      };
     }
   });
 })();

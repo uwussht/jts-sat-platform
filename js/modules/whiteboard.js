@@ -342,8 +342,99 @@
     else window.addEventListener('resize', fit);
     setTimeout(fit, 0);
     render();
-    /* Other controls (the unit page's side panel) open the board too. */
-    root.openFull = function () { if (!isFull()) enterFull(); root.focus({ preventScroll: true }); };
+    /* ------------------------------------------------- its own window */
+    /* The board can leave the page for a window of its own: dragged by its
+       title bar, resized from its corner, kept over the lesson while the
+       teacher scrolls. The board element itself moves — nothing is redrawn
+       from scratch, and the strokes, tool and colour come with it. Where it
+       stood on the page a note says where it went and brings it back. */
+    var win = null, away = null;
+    var GEOM = 'jts.whiteboard.window';
+
+    function geom() {
+      try { var g = JSON.parse(window.localStorage.getItem(GEOM) || 'null'); if (g && g.width) return g; }
+      catch (e) { /* fall through to the default */ }
+      var w = Math.min(960, window.innerWidth - 48), h = Math.min(600, window.innerHeight - 48);
+      return { width: w, height: h, left: Math.round((window.innerWidth - w) / 2), top: Math.round((window.innerHeight - h) / 2) };
+    }
+    function remember() {
+      if (!win) return;
+      var r = win.getBoundingClientRect();
+      try {
+        window.localStorage.setItem(GEOM, JSON.stringify({
+          left: Math.round(r.left), top: Math.round(r.top), width: Math.round(r.width), height: Math.round(r.height)
+        }));
+      } catch (e) { /* the window still works, it just opens in the default place */ }
+    }
+    function clampInto(el) {
+      var r = el.getBoundingClientRect();
+      el.style.left = U.clamp(r.left, 0, Math.max(0, window.innerWidth - Math.min(r.width, window.innerWidth))) + 'px';
+      el.style.top = U.clamp(r.top, 0, Math.max(0, window.innerHeight - 44)) + 'px';
+    }
+
+    function openWindow() {
+      if (win) { root.focus({ preventScroll: true }); return; }
+      if (isFull()) exitFull();
+      var g = geom();
+      var head = U.el('div.wb-win-head', null, [
+        U.el('span.dp-grip', { 'aria-hidden': 'true', text: '⠿' }),
+        U.el('strong', { text: t('wb.title') }),
+        U.el('span.spacer'),
+        U.el('button.btn.btn-sm', { type: 'button', text: t('wb.bringBack'), onclick: closeWindow })
+      ]);
+      win = U.el('div.wb-window', {
+        role: 'dialog', 'aria-label': t('wb.title'),
+        style: 'left:' + g.left + 'px;top:' + g.top + 'px;width:' + g.width + 'px;height:' + g.height + 'px'
+      }, [head]);
+      away = U.el('div.notice.row-between.row-wrap.wb-away', null, [
+        U.el('span', { text: t('wb.inWindow') }),
+        U.el('button.btn.btn-sm', { type: 'button', text: t('wb.bringBack'), onclick: closeWindow })
+      ]);
+      root.parentNode.insertBefore(away, root);
+      win.appendChild(root);
+      document.body.appendChild(win);
+      clampInto(win);
+
+      head.addEventListener('pointerdown', function (ev) {
+        if (ev.button > 0 || ev.target.closest('button, a')) return;
+        ev.preventDefault();
+        var r = win.getBoundingClientRect(), dx = ev.clientX - r.left, dy = ev.clientY - r.top;
+        win.classList.add('dragging');
+        function move(e) {
+          win.style.left = U.clamp(e.clientX - dx, 0, Math.max(0, window.innerWidth - win.offsetWidth)) + 'px';
+          win.style.top = U.clamp(e.clientY - dy, 0, Math.max(0, window.innerHeight - 44)) + 'px';
+        }
+        function up() {
+          document.removeEventListener('pointermove', move);
+          document.removeEventListener('pointerup', up);
+          win.classList.remove('dragging');
+          remember();
+        }
+        document.addEventListener('pointermove', move);
+        document.addEventListener('pointerup', up);
+      });
+      /* The native resize grip reports nothing; the release over the window
+         is when its new size is known. */
+      win.addEventListener('pointerup', remember);
+      setTimeout(fit, 0);
+      root.focus({ preventScroll: true });
+      root.dispatchEvent(new CustomEvent('wb:window'));
+    }
+
+    function closeWindow() {
+      if (!win) return;
+      remember();
+      if (away && away.parentNode) { away.parentNode.insertBefore(root, away); away.remove(); }
+      win.remove();
+      win = away = null;
+      setTimeout(fit, 0);
+      root.dispatchEvent(new CustomEvent('wb:window'));
+    }
+
+    /* Other controls (the unit page's side panel) open and close it too. */
+    root.openWindow = openWindow;
+    root.closeWindow = closeWindow;
+    root.isWindowOpen = function () { return !!win; };
     return root;
   }
 

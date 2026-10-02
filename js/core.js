@@ -990,18 +990,7 @@
           type: 'button', text: '⤢', title: t('desmos.dock'), 'aria-label': t('desmos.dock'),
           onclick: function () {
             if (panel.classList.contains('floating')) self._dock(panel);
-            else {
-              /* Not docked and not placed yet: put it in the middle, large,
-                 which is where a student who wants a big calculator wants it. */
-              self._float(panel);
-              var w = Math.min(760, global.innerWidth - 32);
-              var h = Math.min(620, global.innerHeight - 32);
-              panel.style.width = w + 'px';
-              panel.style.height = h + 'px';
-              panel.style.left = Math.round((global.innerWidth - w) / 2) + 'px';
-              panel.style.top = Math.round((global.innerHeight - h) / 2) + 'px';
-              self._remember(panel);
-            }
+            else self._center(panel);
           }
         }),
         U.el('a.btn.btn-sm', { href: JTS.config.desmosUrl, target: '_blank', rel: 'noopener',
@@ -1033,6 +1022,25 @@
         if (!self._loaded) { frame.hidden = true; fallback.hidden = false; }
       }, 6000);
       this._built = true;
+    },
+    /* Not docked and not placed yet: put it in the middle, large, which is
+       where someone who wants a big calculator wants it. */
+    _center: function (panel) {
+      this._float(panel);
+      var w = Math.min(760, global.innerWidth - 32);
+      var h = Math.min(620, global.innerHeight - 32);
+      panel.style.width = w + 'px';
+      panel.style.height = h + 'px';
+      panel.style.left = Math.round((global.innerWidth - w) / 2) + 'px';
+      panel.style.top = Math.round((global.innerHeight - h) / 2) + 'px';
+      this._remember(panel);
+    },
+    /** Open as a window the user moves and resizes, where it was last left. */
+    showFloating: function () {
+      this.show();
+      var p = U.$('#desmos-panel');
+      if (p && !p.classList.contains('floating')) this._center(p);
+      return this.isOpen();
     },
     isOpen: function () {
       var p = U.$('#desmos-panel');
