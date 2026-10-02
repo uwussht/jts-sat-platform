@@ -1,28 +1,28 @@
 /* ==========================================================================
-   The JTS 36-class course.
+   The JTS 36-unit course.
 
    This is the school's own course, not the platform's generated plan: three
-   months, 36 classes. Months 1 and 2 are 24 content classes in alternating
-   weeks — two Reading & Writing classes and one Math class, then one Reading
-   & Writing class and two Math classes. Month 3 is Challenge 1–12: timed sets
+   months, 36 units. Months 1 and 2 are 24 content units in alternating
+   weeks — two Reading & Writing units and one Math unit, then one Reading
+   & Writing unit and two Math units. Month 3 is Challenge 1–12: timed sets
    at the difficulty of the second, harder module, each followed by an error
    review. Bluebook Practice Test 6 is the diagnostic, and an official
    practice test closes Month 1 and Month 2.
 
-   The course runs at three classes a week for everyone, so it takes 12
-   weeks. A class still carries n3 and n2 (its number on a three- and a
+   The course runs at three units a week for everyone, so it takes 12
+   weeks. A unit still carries n3 and n2 (its number on a three- and a
    two-a-week schedule) because the lookups were written for both; they are
    the same number, and only the three-a-week schedule is used.
 
    Four screens read this one file, which is why it is data and not prose in
    four places:
 
-   - #/roadmap    — the chronology: months, checkpoints and every class in order;
-   - #/materials  — the classes, Verbal and Math apart, with their units;
-   - #/plan       — the homework after each class;
+   - #/roadmap    — the chronology: months, checkpoints and every unit in order;
+   - #/materials  — the units, Verbal and Math apart, with their domains;
+   - #/plan       — the homework after each unit;
    - #/guide      — the error log and the terms a beginner has not met.
 
-   A class's wording lives once, in js/data/programme-units.js, and every
+   A unit's wording lives once, in js/data/programme-units.js, and every
    screen reads it from there by code (C1 … C24, CH1 … CH12). The code is also
    the tag the error log refers to, which is the whole point of having one.
    ========================================================================== */
@@ -32,22 +32,22 @@ JTS.data.programme = {
   /* ------------------------------------------------------------- shape */
   lessonsTotal: 36,
   wordsPerLesson: 10,
-  /** 36 classes × 10 words. Printed on the plan so the number is not a guess. */
+  /** 36 units × 10 words. Printed on the plan so the number is not a guess. */
   wordsTotal: 360,
 
   /**
-   * The schedule: three classes a week, 12 weeks, a practice test every
+   * The schedule: three units a week, 12 weeks, a practice test every
    * week. It is the same for every student and is not a setting.
    */
   schedules: [
     {
       id: 3, perWeek: 3, weeks: 12, tests: 12,
-      name: { en: 'Three classes a week', ru: 'Три занятия в неделю', kk: 'Аптасына үш сабақ' }
+      name: { en: 'Three units a week', ru: 'Три юнита в неделю', kk: 'Аптасына үш юнит' }
     }
   ],
 
   /**
-   * Three stages, a month each at three classes a week. `from`/`to` are class
+   * Three stages, a month each at three units a week. `from`/`to` are unit
    * numbers; they are the same on both schedules, only the weeks differ.
    */
   phases: [
@@ -56,9 +56,9 @@ JTS.data.programme = {
       gate: 1,
       name: { en: 'Month 1 · Foundations', ru: 'Месяц 1 · Основа', kk: '1-ай · Негіз' },
       lead: {
-        en: 'Classes 1–12, weeks 1–4: the first half of the content. Every class is a method, a full lesson and a practice set, with a full practice test every weekend.',
-        ru: 'Занятия 1–12, недели 1–4: первая половина материала. Каждое занятие — метод, полный урок и практика, и каждые выходные — полный practice test.',
-        kk: '1–12 сабақтар, 1–4 апталар: материалдың бірінші жартысы. Әр сабақ — әдіс, толық сабақ және жаттығу, әр демалыс сайын толық practice test.'
+        en: 'Units 1–12, weeks 1–4: the first half of the content. Every unit is a method, a full lesson and a practice set, with a full practice test every weekend.',
+        ru: 'Юниты 1–12, недели 1–4: первая половина материала. Каждый юнит — метод, полный урок и практика, и каждые выходные — полный practice test.',
+        kk: '1–12 юниттер, 1–4 апталар: материалдың бірінші жартысы. Әр юнит — әдіс, толық сабақ және жаттығу, әр демалыс сайын толық practice test.'
       }
     },
     {
@@ -66,9 +66,9 @@ JTS.data.programme = {
       gate: 2,
       name: { en: 'Month 2 · The rest of the content', ru: 'Месяц 2 · Остальной материал', kk: '2-ай · Қалған материал' },
       lead: {
-        en: 'Classes 13–24, weeks 5–8: the remaining topics. Timing starts to matter from week 4, and practice shifts to the hardest questions in weeks 6–8.',
-        ru: 'Занятия 13–24, недели 5–8: оставшиеся темы. С 4-й недели важен тайминг, а в неделях 6–8 практика смещается к самым сложным вопросам.',
-        kk: '13–24 сабақтар, 5–8 апталар: қалған тақырыптар. 4-аптадан бастап уақыт маңызды, ал 6–8 апталарда жаттығу ең күрделі сұрақтарға ауысады.'
+        en: 'Units 13–24, weeks 5–8: the remaining topics. Timing starts to matter from week 4, and practice shifts to the hardest questions in weeks 6–8.',
+        ru: 'Юниты 13–24, недели 5–8: оставшиеся темы. С 4-й недели важен тайминг, а в неделях 6–8 практика смещается к самым сложным вопросам.',
+        kk: '13–24 юниттер, 5–8 апталар: қалған тақырыптар. 4-аптадан бастап уақыт маңызды, ал 6–8 апталарда жаттығу ең күрделі сұрақтарға ауысады.'
       }
     },
     {
@@ -99,7 +99,7 @@ JTS.data.programme = {
     kk: 'Әр ай Bluebook-тағы жаңа ресми practice test-пен аяқталады — ол сол демалыстың тесті де. Оны келесі күні талдаңыз: талдаусыз тест жарты тестке тең.'
   },
 
-  /** The five routines that run alongside the classes, for 1500+. */
+  /** The five routines that run alongside the units, for 1500+. */
   rhythm: [
     { id: 'test',
       en: 'A full practice test every weekend in weeks 1–8, in one sitting, reviewed the next day.',
@@ -118,16 +118,16 @@ JTS.data.programme = {
       ru: 'Сложные вопросы в неделях 6–8, особенно в Math. Месяц 3 — только сложные модули.',
       kk: '6–8 апталарда күрделі сұрақтар, әсіресе Math-та. 3-ай — тек күрделі модульдер.' },
     { id: 'daily',
-      en: 'Vocabulary, 10 minutes a day, from Class 1 through test day.',
-      ru: 'Словарь, 10 минут в день, с 1-го занятия до дня экзамена.',
-      kk: 'Сөздік, күніне 10 минут, 1-сабақтан емтихан күніне дейін.' }
+      en: 'Vocabulary, 10 minutes a day, from Unit 1 through test day.',
+      ru: 'Словарь, 10 минут в день, с 1-го юнита до дня экзамена.',
+      kk: 'Сөздік, күніне 10 минут, 1-юниттен емтихан күніне дейін.' }
   ],
 
-  /** The rule that keeps a two-classes-a-week course from forgetting its own start. */
+  /** The rule that keeps the course from forgetting its own start. */
   redrill: {
-    en: 'Re-drill rule. If a topic from four weeks ago comes back as a mistake on a practice test, it is re-drilled that same week. On the two-classes-a-week schedule this is the main defence against forgetting.',
-    ru: 'Правило re-drill. Если тема четырёхнедельной давности всплывает ошибкой на practice test, её перерешивают на этой же неделе. Для графика 2×/нед это главная защита от забывания.',
-    kk: 'Re-drill ережесі. Төрт апта бұрынғы тақырып practice test-те қате болып шықса, оны сол аптада қайта пысықтайды. 2×/апта кестесінде бұл — ұмытуға қарсы басты қорғаныс.'
+    en: 'Re-drill rule. If a topic from four weeks ago comes back as a mistake on a practice test, it is re-drilled that same week. It is the main defence against forgetting.',
+    ru: 'Правило re-drill. Если тема четырёхнедельной давности всплывает ошибкой на practice test, её перерешивают на этой же неделе. Это главная защита от забывания.',
+    kk: 'Re-drill ережесі. Төрт апта бұрынғы тақырып practice test-те қате болып шықса, оны сол аптада қайта пысықтайды. Бұл — ұмытуға қарсы басты қорғаныс.'
   },
 
   /** The error budget a 1500 allows, as an orientation and not a promise. */
@@ -138,22 +138,22 @@ JTS.data.programme = {
   },
 
   /* ------------------------------------------------------------ homework */
-  /** The three things that follow every class, in the order they are set. */
+  /** The three things that follow every unit, in the order they are set. */
   homework: [
     { id: 'words', mins: '10–15',
       name: { en: 'Word list #N', ru: 'Word list #N', kk: 'Word list #N' },
-      body: { en: 'Ten words, N being the class number. The test on them opens the next class.',
-              ru: 'Десять слов, где N — номер занятия. Тест по ним — в начале следующего занятия.',
-              kk: 'Он сөз, N — сабақ нөмірі. Олар бойынша тест келесі сабақтың басында.' } },
+      body: { en: 'Ten words, N being the unit number. The test on them opens the next unit.',
+              ru: 'Десять слов, где N — номер юнита. Тест по ним — в начале следующего юнита.',
+              kk: 'Он сөз, N — юнит нөмірі. Олар бойынша тест келесі юниттің басында.' } },
     { id: 'set', mins: '60–90',
       name: { en: 'Set #N', ru: 'Набор #N', kk: '#N жинағы' },
-      body: { en: 'The practice set on this class’s code, Easy through Hard. In the Challenge month, Hard only.',
-              ru: 'Практика по коду этого занятия, от Easy к Hard. В месяц Challenge — только Hard.',
-              kk: 'Осы сабақтың коды бойынша жаттығу, Easy-ден Hard-қа дейін. Challenge айында — тек Hard.' } },
+      body: { en: 'The practice set on this unit’s code, Easy through Hard. In the Challenge month, Hard only.',
+              ru: 'Практика по коду этого юнита, от Easy к Hard. В месяц Challenge — только Hard.',
+              kk: 'Осы юниттің коды бойынша жаттығу, Easy-ден Hard-қа дейін. Challenge айында — тек Hard.' } },
     { id: 'video', mins: '20–30',
       name: { en: 'Read ahead', ru: 'Прочитать заранее', kk: 'Алдын ала оқу' },
-      body: { en: 'Read the written lesson for the NEXT class and take notes — so the class starts from practice, not from first contact.',
-              ru: 'Прочитайте урок СЛЕДУЮЩЕГО занятия с конспектом — чтобы занятие начиналось с практики, а не с первого знакомства.',
-              kk: 'КЕЛЕСІ сабақтың жазбаша сабағын конспектімен оқыңыз — сабақ практикадан басталуы үшін, алғашқы танысудан емес.' } }
+      body: { en: 'Read the written lesson for the NEXT unit and take notes — so the unit starts from practice, not from first contact.',
+              ru: 'Прочитайте урок СЛЕДУЮЩЕГО юнита с конспектом — чтобы юнит начинался с практики, а не с первого знакомства.',
+              kk: 'КЕЛЕСІ юниттің жазбаша сабағын конспектімен оқыңыз — сабақ практикадан басталуы үшін, алғашқы танысудан емес.' } }
   ]
 };

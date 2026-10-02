@@ -342,6 +342,8 @@
     else window.addEventListener('resize', fit);
     setTimeout(fit, 0);
     render();
+    /* Other controls (the unit page's side panel) open the board too. */
+    root.openFull = function () { if (!isFull()) enterFull(); root.focus({ preventScroll: true }); };
     return root;
   }
 

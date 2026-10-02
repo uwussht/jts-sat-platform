@@ -1,4 +1,4 @@
-"""Turn the 36-class course Markdown into js/data/programme-teach.js.
+"""Turn the 36-unit course Markdown into js/data/programme-teach.js.
 
 Usage:  pip install markdown
         python tools/md2teach.py "SAT 36-Lesson Course.md" js/data/programme-teach.js
@@ -32,7 +32,7 @@ for i, m in enumerate(hits):
     first_h4 = html.find('<h4>')
     lead, rest = (html[:first_h4], html[first_h4:]) if first_h4 > 0 else ('', html)
     lessons.append({
-        'code': 'C' + m.group(2), 'week': int(m.group(1)), 'n': int(m.group(2)),
+        'code': 'U' + m.group(2), 'week': int(m.group(1)), 'n': int(m.group(2)),
         'section': 'math' if m.group(3) == 'Math' else 'rw',
         'title': title, 'lead': lead.strip(), 'html': rest.strip()
     })

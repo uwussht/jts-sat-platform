@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Rendering the JTS 36-class course.
+   Rendering the JTS 36-unit course.
 
    The data is in js/data/programme*.js; this file turns it into the pieces the
    screens hang on their own pages, so a lesson row looks the same wherever it

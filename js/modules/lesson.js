@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Screen: one class of the course (#/materials/lesson?code=C1)
+   Screen: one unit of the course (#/materials/lesson?code=U1)
 
    A class page is what a teacher puts on the screen at the front of the
    room, in the order the class runs:
@@ -63,6 +63,86 @@
     return slot;
   }
 
+  /**
+   * The side panel: the tools first, then the lesson's parts as a list that
+   * scrolls the page to them and marks the one being read. The whiteboard
+   * button opens the board full screen rather than scrolling to it, because
+   * a teacher reaching for it mid-explanation wants to draw, not to find it.
+   */
+  function sidePanel(written, board, isMath) {
+    var side = U.el('aside.lesson-side', { 'aria-label': t('side.title') });
+
+    var tools = U.el('div.row.row-wrap.lesson-side-tools');
+    tools.appendChild(U.el('button.btn.btn-primary', {
+      type: 'button', text: '✏️ ' + t('side.board'), title: t('side.boardHint'),
+      onclick: function () { board.openFull(); }
+    }));
+    if (isMath) {
+      var calc = U.el('button.btn', { type: 'button', text: 'ƒ ' + t('side.desmos') });
+      var sync = function () {
+        calc.textContent = 'ƒ ' + t(JTS.desmos.isOpen() ? 'side.desmosClose' : 'side.desmos');
+        calc.setAttribute('aria-pressed', String(JTS.desmos.isOpen()));
+      };
+      calc.addEventListener('click', function () { JTS.desmos.toggle(); sync(); });
+      sync();
+      tools.appendChild(calc);
+    }
+    side.appendChild(U.el('div.card.card-sm.stack-sm', null, [
+      U.el('div.eyebrow', { text: t('side.tools') }), tools
+    ]));
+
+    /* The parts: each heading of the written lesson, then the board and the
+       practice set, which are parts of the unit too. */
+    var targets = [];
+    U.$$('.lesson-written h4', written).forEach(function (h, i) {
+      h.id = 'part-' + (i + 1);
+      var label = h.cloneNode(true);
+      U.$$('.lw-mins', label).forEach(function (x) { x.remove(); });
+      /* The list numbers the parts itself, so "Part 3 · " is not repeated. */
+      targets.push({ el: h, text: label.textContent.trim().replace(/^Part \d+\s*·\s*/, '') });
+    });
+    targets.push({ id: 'lesson-board', text: t('side.board') });
+    targets.push({ id: 'lesson-drill', text: t('side.practice') });
+
+    var list = U.el('ol.lesson-parts');
+    var items = targets.map(function (tg) {
+      var b = U.el('button.lesson-part', {
+        type: 'button', text: tg.text,
+        onclick: function () {
+          var el = tg.el || document.getElementById(tg.id);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+      list.appendChild(U.el('li', null, [b]));
+      return b;
+    });
+    side.appendChild(U.el('div.card.card-sm.stack-sm.lesson-side-parts', null, [
+      U.el('div.eyebrow', { text: t('side.title') }), list
+    ]));
+
+    /* Mark the part on screen. The page is torn down on navigation, and the
+       observer goes with the nodes it watches. */
+    if (window.IntersectionObserver) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          var k = -1;
+          targets.forEach(function (tg, i) {
+            if ((tg.el || document.getElementById(tg.id)) === e.target) k = i;
+          });
+          items.forEach(function (b, i) { b.setAttribute('aria-current', i === k ? 'true' : 'false'); });
+        });
+      }, { rootMargin: '-15% 0px -70% 0px' });
+      setTimeout(function () {
+        targets.forEach(function (tg) {
+          var el = tg.el || document.getElementById(tg.id);
+          if (el) io.observe(el);
+        });
+      }, 0);
+    }
+    return side;
+  }
+
   JTS.router.register('#/materials/lesson', {
     title: 'nav.materials',
     render: function (root) {
@@ -71,14 +151,21 @@
 
       var code = currentCode();
       var lesson = code && P.byCode(code);
-      var screen = U.el('div.container.screen.stack');
-      root.appendChild(screen);
-
       if (!lesson) {
-        screen.appendChild(ui.empty(t('lesson.unknown'), null,
+        var none = U.el('div.container.screen.stack');
+        root.appendChild(none);
+        none.appendChild(ui.empty(t('lesson.unknown'), null,
           U.el('a.btn.btn-primary', { href: backHref(), text: t('lesson.back') })));
         return;
       }
+
+      /* The unit on the left, the side panel on the right: the lesson's parts
+         and the two tools a teacher reaches for mid-lesson, one press away
+         wherever the page is scrolled to. */
+      var page = U.el('div.container.container-wide.screen.lesson-page');
+      var screen = U.el('div.stack.lesson-main');
+      page.appendChild(screen);
+      root.appendChild(page);
 
       var unit = P.unitById(lesson.unit);
       var section = P.sectionOf(lesson);
@@ -149,12 +236,13 @@
       screen.appendChild(written);
 
       /* ------------------------------------------------------ whiteboard */
+      var board = JTS.whiteboard.create(code);
       screen.appendChild(U.el('div.card.stack-sm', { id: 'lesson-board' }, [
         U.el('div.row-between.row-wrap', null, [
           U.el('div.eyebrow', { text: t('wb.title') }),
           U.el('span.xsmall.muted', { text: t('wb.lead') })
         ]),
-        JTS.whiteboard.create(code)
+        board
       ]));
 
       /* -------------------------------------------------------- practice */
@@ -191,7 +279,7 @@
       }
       screen.appendChild(practice);
 
-      /* ------------------------------------- the class before and after */
+      /* -------------------------------------- the unit before and after */
       var all = P.order(pw).map(function (s) { return s.lessons[0]; });
       var here = -1;
       all.forEach(function (l, i) { if (l.code === code) here = i; });
@@ -209,6 +297,8 @@
           })
         : U.el('span'));
       screen.appendChild(nav);
+
+      page.appendChild(sidePanel(written, board, section === 'math'));
     }
   });
 })();
