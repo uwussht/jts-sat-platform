@@ -305,7 +305,6 @@ JTS.dict.kk = {
   'lesson.start': 'Тапсырмаларды бастау',
   'lesson.again': 'Жинақты қайта өту',
   'lesson.continue': 'Сұрақтарды жалғастыру: {n} / {total}',
-  'lesson.restart': 'Жинақты басынан бастау',
   'lesson.recordShort': '{total} ішінен {done} жауап · дұрыс {right}',
   'lesson.noneYet': 'Әзірге қайталайтын ештеңе жоқ. Practice test-тен кейін оралыңыз.',
   'lesson.bluebook': 'Bluebook-тағы ресми практика',

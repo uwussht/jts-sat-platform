@@ -305,7 +305,6 @@ JTS.dict.ru = {
   'lesson.start': 'Начать задания',
   'lesson.again': 'Пройти набор заново',
   'lesson.continue': 'Продолжить вопросы: {n} из {total}',
-  'lesson.restart': 'Начать набор заново',
   'lesson.recordShort': 'отвечено {done} из {total} · верно {right}',
   'lesson.noneYet': 'Повторять пока нечего. Возвращайтесь после practice test.',
   'lesson.bluebook': 'Официальная практика в Bluebook',

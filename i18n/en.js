@@ -305,7 +305,6 @@ JTS.dict.en = {
   'lesson.start': 'Start the questions',
   'lesson.again': 'Take the set again',
   'lesson.continue': 'Continue the questions: {n} of {total}',
-  'lesson.restart': 'Start the set over',
   'lesson.recordShort': '{done} of {total} answered · {right} right',
   'lesson.noneYet': 'Nothing is due for review yet. Come back after a practice test.',
   'lesson.bluebook': 'Official practice in Bluebook',
