@@ -310,7 +310,7 @@ JTS.data.addPaper({
         {
           "question_type": "form_structure_sense",
           "difficulty": "hard",
-          "stimulus": "Which choice best completes the account without a dangling modifier?",
+          "stimulus": "The hill fort above the river had never been excavated before 2021. ______",
           "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
           "choices": {
             "A": "Having surveyed the site for three seasons, the report was written by the team.",
@@ -562,7 +562,7 @@ JTS.data.addPaper({
         {
           "question_type": "boundaries",
           "difficulty": "medium",
-          "stimulus": "Which choice completes the text so that it conforms to the conventions of Standard English?\n\n______ against the Trans-Ili Alatau.",
+          "stimulus": "______ at the foot of the Trans-Ili Alatau mountains.",
           "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
           "choices": {
             "A": "Almaty, the largest city in Kazakhstan, sits",
@@ -931,7 +931,7 @@ JTS.data.addPaper({
           "question": "<p>A box holds 8 red, 5 blue and 7 green counters. One counter is drawn at random. What is the probability that it is not blue?</p>",
           "choices": {
             "A": "1/4",
-            "B": "5/20",
+            "B": "1/3",
             "C": "3/4",
             "D": "7/20"
           },
