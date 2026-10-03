@@ -913,3 +913,15 @@ Open `admin.html`, find a question by id, edit any field. Changes are stored as
 a `localStorage` overlay with a full change history and never touch
 `js/data/questions-*.js`. Export the overlay as JSON to hand the edits back for
 merging into the source files.
+
+## Fresh files after every update
+
+`index.html` links each script and stylesheet with a version, such as
+`js/modules/lesson.js?v=69b275e132`, made from the file's contents. A changed
+file gets a new address, so browsers fetch it fresh instead of mixing a new
+file with an old cached one. After changing any file in `js/`, `css/` or
+`i18n/`, run
+
+    python tools/stamp_assets.py
+
+before committing.
