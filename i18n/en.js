@@ -363,7 +363,6 @@ JTS.dict.en = {
   'mat.courseTitle': 'JTS SAT 1500+: 36 units in 3 months',
   'mat.progress': 'Course progress',
   'mat.lessonsOf': '{done} of {total} units',
-  'mat.words': '{n} words',
   'mat.hint': 'Each unit opens on its full lesson, a whiteboard and its practice set. The code beside a unit — U5, U14 — is what the error log records, so a mistake and its unit are named the same thing.',
   'nav.materials': 'Materials',
   'prog.lessonNo': 'Unit {n}',

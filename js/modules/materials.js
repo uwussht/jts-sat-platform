@@ -65,9 +65,7 @@
           /* Eight units — the review, hard and test-week blocks are phases of
              the course rather than units of content, and counting them here
              would contradict the document the course is written from. */
-          U.el('span', { text: t('prog.nUnits', { n: P.lessons.filter(function (l) { return P.numberOn(l, pw); }).length }) }),
-          U.el('span', { text: '·' }),
-          U.el('span', { text: t('mat.words', { n: P.wordsTotal }) })
+          U.el('span', { text: t('prog.nUnits', { n: P.lessons.filter(function (l) { return P.numberOn(l, pw); }).length }) })
         ]),
         U.el('div.small.muted', {
           text: t('prog.scheduleShape', { weeks: sch.weeks, lessons: total, tests: sch.tests })

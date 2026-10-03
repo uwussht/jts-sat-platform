@@ -32,8 +32,6 @@ JTS.data.programme = {
   /* ------------------------------------------------------------- shape */
   lessonsTotal: 36,
   wordsPerLesson: 10,
-  /** 36 units × 10 words. Printed on the plan so the number is not a guess. */
-  wordsTotal: 360,
 
   /**
    * The schedule: three units a week, 12 weeks, a practice test every
