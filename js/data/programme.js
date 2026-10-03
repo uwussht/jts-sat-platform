@@ -75,9 +75,9 @@ JTS.data.programme = {
       id: 'challenge', weeks3: '9–12', weeks2: '13–18', from3: 25, to3: 36, from2: 25, to2: 36,
       name: { en: 'Month 3 · Challenge', ru: 'Месяц 3 · Challenge', kk: '3-ай · Challenge' },
       lead: {
-        en: 'Challenge 1–12: hard-module practice only. Timed sets at the difficulty of the second, harder module, each followed by an error review.',
-        ru: 'Challenge 1–12: только сложный модуль. Наборы на время на уровне второго, сложного модуля, и после каждого — разбор ошибок.',
-        kk: 'Challenge 1–12: тек күрделі модуль. Екінші, күрделі модуль деңгейіндегі уақытпен орындалатын жинақтар, әрқайсысынан кейін қателерді талдау.'
+        en: 'Challenge 1–12: hard-module practice tests. R&W and Math modules alternate, then two full simulations. Every test ends with an error review.',
+        ru: 'Challenge 1–12: практика сложного модуля. Модули R&W и Math чередуются, затем две полные симуляции. После каждого теста — разбор ошибок.',
+        kk: 'Challenge 1–12: күрделі модуль практикасы. R&W және Math модульдері кезектеседі, содан кейін екі толық симуляция. Әр тесттен кейін қателерді талдау.'
       }
     }
   ],

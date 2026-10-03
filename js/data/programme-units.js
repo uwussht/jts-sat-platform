@@ -171,19 +171,19 @@ JTS.data.programme.lessons = [
               ru: 'Системы неравенств, метод Desmos, неравенства в контексте, модуль',
               kk: 'Теңсіздіктер жүйесі, Desmos әдісі, контексттегі теңсіздіктер, модуль' } },
   { code: 'U19', unit: 'v-sec', n3: 19, n2: 19, week: 7,
-    t: { en: 'Form, Structure, and Sense Part 1: Verbs',
-         ru: 'Form, Structure, and Sense, часть 1: глаголы',
-         kk: 'Form, Structure, and Sense, 1-бөлім: етістіктер' },
-    skills: { en: 'Subject–verb agreement, verb tense, the method',
-              ru: 'Согласование подлежащего и сказуемого, время глагола, метод',
-              kk: 'Бастауыш пен баяндауыштың қиысуы, етістік шағы, әдіс' } },
-  { code: 'U20', unit: 'v-sec', n3: 20, n2: 20, week: 7,
-    t: { en: 'Form, Structure, and Sense Part 2: Pronouns, Modifiers, Possessives',
-         ru: 'Form, Structure, and Sense, часть 2: местоимения, определения, притяжательные',
-         kk: 'Form, Structure, and Sense, 2-бөлім: есімдіктер, анықтауыштар, тәуелдік' },
-    skills: { en: 'Pronouns, modifiers, possessives and apostrophes, one unified method',
-              ru: 'Местоимения, определения, притяжательные формы и апострофы, единый метод',
-              kk: 'Есімдіктер, анықтауыштар, тәуелдік формалар мен апострофтар, бірыңғай әдіс' } },
+    t: { en: 'Form, Structure, and Sense: Verbs, Pronouns, Modifiers, Possessives',
+         ru: 'Form, Structure, and Sense: глаголы, местоимения, определения, притяжательные',
+         kk: 'Form, Structure, and Sense: етістіктер, есімдіктер, анықтауыштар, тәуелдік' },
+    skills: { en: 'Subject–verb agreement, verb tense, pronouns, modifiers, possessives and apostrophes, one unified method',
+              ru: 'Согласование подлежащего и сказуемого, время глагола, местоимения, определения, притяжательные формы и апострофы, единый метод',
+              kk: 'Бастауыш пен баяндауыштың қиысуы, етістік шағы, есімдіктер, анықтауыштар, тәуелдік формалар мен апострофтар, бірыңғай әдіс' } },
+  { code: 'U20', unit: 'm-geo', n3: 20, n2: 20, week: 7,
+    t: { en: 'Geometry Part 1: Lines, Angles, Triangles, Area and Volume',
+         ru: 'Геометрия, часть 1: прямые, углы, треугольники, площадь и объём',
+         kk: 'Геометрия, 1-бөлім: түзулер, бұрыштар, үшбұрыштар, аудан және көлем' },
+    skills: { en: 'The reference sheet, lines and angles, similar triangles, area and scaling, volume',
+              ru: 'Справочный лист, прямые и углы, подобные треугольники, площадь и масштаб, объём',
+              kk: 'Анықтамалық парақ, түзулер мен бұрыштар, ұқсас үшбұрыштар, аудан және масштаб, көлем' } },
   { code: 'U21', unit: 'm-adv', n3: 21, n2: 21, week: 7,
     t: { en: 'Functions, Polynomials, and Rational Equations',
          ru: 'Функции, многочлены и рациональные уравнения',
@@ -202,26 +202,76 @@ JTS.data.programme.lessons = [
               ru: 'Метод и две классические ловушки',
               kk: 'Әдіс және екі классикалық тұзақ' } },
   { code: 'U24', unit: 'm-geo', n3: 24, n2: 24, week: 8,
-    t: { en: 'Geometry and Trigonometry', ru: 'Геометрия и тригонометрия', kk: 'Геометрия және тригонометрия' },
-    skills: { en: 'The reference sheet, angles, triangles, circles, trigonometry, circle theorems, volume, Desmos',
-              ru: 'Справочный лист, углы, треугольники, окружности, тригонометрия, теоремы об окружности, объём, Desmos',
-              kk: 'Анықтамалық парақ, бұрыштар, үшбұрыштар, шеңберлер, тригонометрия, шеңбер теоремалары, көлем, Desmos' } }
+    t: { en: 'Geometry Part 2: Right Triangles, Trigonometry, Circles',
+         ru: 'Геометрия, часть 2: прямоугольные треугольники, тригонометрия, окружности',
+         kk: 'Геометрия, 2-бөлім: тікбұрышты үшбұрыштар, тригонометрия, шеңберлер' },
+    skills: { en: 'Right triangles, trigonometry, circle equations, arcs, sectors and radians, circle theorems, Desmos',
+              ru: 'Прямоугольные треугольники, тригонометрия, уравнения окружности, дуги, секторы и радианы, теоремы об окружности, Desmos',
+              kk: 'Тікбұрышты үшбұрыштар, тригонометрия, шеңбер теңдеулері, доғалар, секторлар және радиандар, шеңбер теоремалары, Desmos' } }
 ];
 
 /* ------------------------------------------- Month 3 · Challenge 1–12 */
 (function () {
   var P = JTS.data.programme;
-  for (var i = 1; i <= 12; i++) {
+  /* [title, focus] for each Challenge class, in the order they are taken:
+     R&W and Math hard modules alternate, then two full simulations. */
+  var CH = [
+    [{ en: 'R&W Hard Module A', ru: 'R&W: сложный модуль A', kk: 'R&W: күрделі модуль A' },
+     { en: 'Baseline hard module. Focus on Words in Context and Text Structure (Classes 1–2).',
+       ru: 'Стартовый сложный модуль. Фокус: Words in Context и структура текста (уроки 1–2).',
+       kk: 'Бастапқы күрделі модуль. Назарда: Words in Context және мәтін құрылымы (1–2 сабақ).' }],
+    [{ en: 'Math Hard Module A', ru: 'Math: сложный модуль A', kk: 'Math: күрделі модуль A' },
+     { en: 'Baseline hard module. Focus on linear equations, systems and inequalities (Classes 3, 5, 6, 18).',
+       ru: 'Стартовый сложный модуль. Фокус: линейные уравнения, системы и неравенства (уроки 3, 5, 6, 18).',
+       kk: 'Бастапқы күрделі модуль. Назарда: сызықтық теңдеулер, жүйелер және теңсіздіктер (3, 5, 6, 18 сабақ).' }],
+    [{ en: 'R&W Hard Module B', ru: 'R&W: сложный модуль B', kk: 'R&W: күрделі модуль B' },
+     { en: 'Command of Evidence: textual and quantitative (Classes 8, 10).',
+       ru: 'Доказательства из текста и из данных (уроки 8, 10).',
+       kk: 'Мәтіннен және деректен дәлел (8, 10 сабақ).' }],
+    [{ en: 'Math Hard Module B', ru: 'Math: сложный модуль B', kk: 'Math: күрделі модуль B' },
+     { en: 'Advanced Math: quadratics, equivalent expressions, exponentials, radicals, functions, polynomials (Classes 9, 11, 12, 21).',
+       ru: 'Advanced Math: квадратичные, равносильные выражения, показательные, корни, функции, многочлены (уроки 9, 11, 12, 21).',
+       kk: 'Advanced Math: квадраттық, тең өрнектер, көрсеткіштік, түбірлер, функциялар, көпмүшелер (9, 11, 12, 21 сабақ).' }],
+    [{ en: 'R&W Hard Module C', ru: 'R&W: сложный модуль C', kk: 'R&W: күрделі модуль C' },
+     { en: 'Inferences, Cross-Text, Central Ideas (Classes 4, 7, 13).',
+       ru: 'Выводы, два текста, главная мысль (уроки 4, 7, 13).',
+       kk: 'Қорытындылар, екі мәтін, негізгі ой (4, 7, 13 сабақ).' }],
+    [{ en: 'Math Hard Module C', ru: 'Math: сложный модуль C', kk: 'Math: күрделі модуль C' },
+     { en: 'Ratios, percents, statistics, probability, margin of error (Classes 15, 17).',
+       ru: 'Пропорции, проценты, статистика, вероятность, погрешность (уроки 15, 17).',
+       kk: 'Қатынастар, пайыздар, статистика, ықтималдық, қателік (15, 17 сабақ).' }],
+    [{ en: 'R&W Hard Module D', ru: 'R&W: сложный модуль D', kk: 'R&W: күрделі модуль D' },
+     { en: 'Boundaries, Form/Structure/Sense, Synthesis, Transitions (Classes 14, 16, 19, 22, 23).',
+       ru: 'Границы предложений, Form/Structure/Sense, синтез, связки (уроки 14, 16, 19, 22, 23).',
+       kk: 'Сөйлем шекаралары, Form/Structure/Sense, синтез, байланыстырғыштар (14, 16, 19, 22, 23 сабақ).' }],
+    [{ en: 'Math Hard Module D', ru: 'Math: сложный модуль D', kk: 'Math: күрделі модуль D' },
+     { en: 'Geometry, circles, trigonometry (Classes 20, 24; completing the square from Class 11).',
+       ru: 'Геометрия, окружности, тригонометрия (уроки 20, 24; полный квадрат из урока 11).',
+       kk: 'Геометрия, шеңберлер, тригонометрия (20, 24 сабақ; толық квадрат — 11 сабақтан).' }],
+    [{ en: 'R&W Hard Module E', ru: 'R&W: сложный модуль E', kk: 'R&W: күрделі модуль E' },
+     { en: 'Mixed, hardest-difficulty only. Target: 30 min finish.',
+       ru: 'Смешанный, только самые сложные. Цель: уложиться в 30 минут.',
+       kk: 'Аралас, тек ең күрделілері. Мақсат: 30 минутта бітіру.' }],
+    [{ en: 'Math Hard Module E', ru: 'Math: сложный модуль E', kk: 'Math: күрделі модуль E' },
+     { en: 'Mixed, hardest-difficulty only, student-produced responses.',
+       ru: 'Смешанный, только самые сложные, задания с вводом ответа.',
+       kk: 'Аралас, тек ең күрделілері, жауабын өзі енгізетін тапсырмалар.' }],
+    [{ en: 'Full Hard Simulation I', ru: 'Полная сложная симуляция I', kk: 'Толық күрделі симуляция I' },
+     { en: 'Full adaptive test under real conditions (Bluebook).',
+       ru: 'Полный адаптивный тест в реальных условиях (Bluebook).',
+       kk: 'Нақты жағдайдағы толық адаптивті тест (Bluebook).' }],
+    [{ en: 'Full Hard Simulation II', ru: 'Полная сложная симуляция II', kk: 'Толық күрделі симуляция II' },
+     { en: 'Final simulation one week before test day.',
+       ru: 'Финальная симуляция за неделю до экзамена.',
+       kk: 'Емтиханға бір апта қалғандағы соңғы симуляция.' }]
+  ];
+  CH.forEach(function (c, k) {
+    var i = k + 1;
     P.lessons.push({
       code: 'CH' + i, unit: 'ch', n3: 24 + i, n2: 24 + i, week: 8 + Math.ceil(i / 3),
-      t: { en: 'Challenge ' + i, ru: 'Challenge ' + i, kk: 'Challenge ' + i },
-      skills: {
-        en: 'A timed set at hard-module difficulty, then an error review.',
-        ru: 'Набор на время на уровне сложного модуля, затем разбор ошибок.',
-        kk: 'Күрделі модуль деңгейіндегі уақытпен орындалатын жинақ, содан кейін қателерді талдау.'
-      }
+      t: c[0], skills: c[1]
     });
-  }
+  });
 })();
 
 /* ------------------------------------------------------------------ lookups */
