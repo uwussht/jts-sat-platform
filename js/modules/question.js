@@ -396,7 +396,7 @@
       function paintTimer(elapsed) {
         var showMs = ses.durationMs ? Math.max(0, ses.durationMs - elapsed) : elapsed;
         var txt = U.fmtLongTime(showMs);
-        if (S.settings().timerHidden && !unitCode) {
+        if (S.settings().timerHidden) {
           timerEl.textContent = '--:--';
         } else {
           timerEl.textContent = txt;
@@ -434,11 +434,15 @@
       /* ----------------------------------------------------------- top bar */
       function buildTopbar() {
         U.clear(topbar);
-        topbar.appendChild(timerEl);
-        topbar.appendChild(timerLive);
+        /* A unit's tasks are worked in class with no clock on screen; the
+           time on each question is still recorded for the student's stats. */
+        if (!unitCode) {
+          topbar.appendChild(timerEl);
+          topbar.appendChild(timerLive);
+        }
 
-        /* A unit's set is worked in class, so its bar has no pause and no
-           hide: only the clock, the way back and the tools. */
+        /* A unit's set is worked in class, so its bar has no clock, pause
+           or hide: only the way back and the tools. */
         if (isStudy && !unitCode) {
           var pause = U.el('button.q-tool', {
             type: 'button', text: ses.paused ? t('q.resume') : t('q.pause'),
