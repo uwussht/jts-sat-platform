@@ -648,7 +648,7 @@ body.no-frame .q-shell { --q-top: 0px; }
 .q-tool[aria-pressed="true"] { background: var(--brand-600); border-color: var(--brand-600); color: #fff; }
 
 .q-main { flex: 1; display: grid; grid-template-columns: minmax(0,1fr); gap: 0; }
-.q-main.with-side { grid-template-columns: minmax(0,1fr) 380px; }
+.q-main.with-side { grid-template-columns: minmax(0,1fr) minmax(380px, 34vw); }
 /* The 100px that used to sit under the content was there to clear a fixed
    footer. The footer is sticky and in flow, so it was 100px of nothing. */
 .q-content { padding: 18px 16px 28px; max-width: 980px; margin: 0 auto; width: 100%; }
@@ -2242,3 +2242,42 @@ body.unit-focus .lesson-side { top: 16px; max-height: calc(100vh - 32px); }
 .ref-facts p { margin: 6px 0; }
 @media (max-width: 420px) { .ref-grid { gap: 14px 12px; } .ref-formula { font-size: 16px; } }
 .ref-formula .frac { font-size: .9em; vertical-align: middle; margin: 0 .1em; line-height: 1.15; }
+
+/* ---------------------------------------------------------- explanation, step by step */
+.xp { gap: 18px; font-size: 15px; line-height: 1.6; }
+.xp-verdict { border: 1px solid var(--border); background: var(--surface); padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; }
+.xp-verdict.is-right { border-color: #1a9a6c; }
+.xp-verdict.is-wrong { border-color: var(--danger); }
+.xp-verdict-title { font-size: 17px; font-weight: 700; }
+.xp-verdict.is-right .xp-verdict-title { color: #157a56; }
+.xp-verdict.is-wrong .xp-verdict-title { color: var(--danger); }
+.xp-verdict-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.xp-pill { font-size: 13px; font-weight: 700; padding: 4px 10px; border: 1px solid; }
+.xp-pill.is-right { color: #157a56; border-color: #1a9a6c; background: rgba(26,154,108,.08); }
+.xp-pill.is-wrong { color: var(--danger); border-color: var(--danger); background: rgba(220,53,69,.06); }
+.xp-block { display: flex; flex-direction: column; gap: 10px; }
+.xp-h { margin: 0; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+.xp-text p { margin: 0 0 8px; }
+.xp-steps { margin: 0; padding-left: 0; list-style: none; counter-reset: xp; display: flex; flex-direction: column; gap: 8px; }
+.xp-steps li { counter-increment: xp; position: relative; padding-left: 34px; }
+.xp-steps li::before {
+  content: counter(xp); position: absolute; left: 0; top: 1px; width: 24px; height: 24px;
+  display: grid; place-items: center; font-size: 12px; font-weight: 700;
+  background: var(--brand-600); color: #fff;
+}
+.xp-choice { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border: 1px solid var(--border); background: var(--surface); }
+.xp-choice.is-right { border-color: #1a9a6c; background: rgba(26,154,108,.07); }
+.xp-choice.is-mine { border-color: var(--danger); }
+.xp-key { flex: 0 0 26px; width: 26px; height: 26px; display: grid; place-items: center; font-size: 13px; font-weight: 700; border: 1.5px solid var(--border-strong); }
+.xp-choice.is-right .xp-key { background: #1a9a6c; border-color: #1a9a6c; color: #fff; }
+.xp-choice.is-mine .xp-key { border-color: var(--danger); color: var(--danger); }
+.xp-choice-body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.xp-choice-text { font-weight: 600; }
+.xp-tag { align-self: flex-start; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--danger); }
+.xp-reason { font-size: 14px; color: var(--ink-2); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .xp-verdict.is-right .xp-verdict-title,
+  :root:not([data-theme="light"]) .xp-pill.is-right { color: #5fd0a3; }
+}
+:root[data-theme="dark"] .xp-verdict.is-right .xp-verdict-title,
+:root[data-theme="dark"] .xp-pill.is-right { color: #5fd0a3; }

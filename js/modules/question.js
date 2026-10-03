@@ -370,6 +370,10 @@
         shownAt = Date.now();
       }
 
+      /* A unit's tasks take the whole window, like the unit itself: the
+         app's sidebar and header step aside until the screen is left. */
+      if (unitCode) document.body.classList.add('unit-focus');
+
       /* ------------------------------------------------------------- shell */
       var shell = U.el('div.q-shell');
       var topbar = U.el('div.q-topbar');
@@ -392,7 +396,7 @@
       function paintTimer(elapsed) {
         var showMs = ses.durationMs ? Math.max(0, ses.durationMs - elapsed) : elapsed;
         var txt = U.fmtLongTime(showMs);
-        if (S.settings().timerHidden) {
+        if (S.settings().timerHidden && !unitCode) {
           timerEl.textContent = '--:--';
         } else {
           timerEl.textContent = txt;
@@ -433,7 +437,9 @@
         topbar.appendChild(timerEl);
         topbar.appendChild(timerLive);
 
-        if (isStudy) {
+        /* A unit's set is worked in class, so its bar has no pause and no
+           hide: only the clock, the way back and the tools. */
+        if (isStudy && !unitCode) {
           var pause = U.el('button.q-tool', {
             type: 'button', text: ses.paused ? t('q.resume') : t('q.pause'),
             onclick: function () {
@@ -446,13 +452,15 @@
           });
           topbar.appendChild(pause);
         }
-        topbar.appendChild(U.el('button.q-tool', {
-          type: 'button', text: S.settings().timerHidden ? t('q.showTimer') : t('q.hideTimer'),
-          onclick: function () {
-            S.update(function (s) { s.settings.timerHidden = !s.settings.timerHidden; });
-            buildTopbar(); paintTimer(timer.value());
-          }
-        }));
+        if (!unitCode) {
+          topbar.appendChild(U.el('button.q-tool', {
+            type: 'button', text: S.settings().timerHidden ? t('q.showTimer') : t('q.hideTimer'),
+            onclick: function () {
+              S.update(function (s) { s.settings.timerHidden = !s.settings.timerHidden; });
+              buildTopbar(); paintTimer(timer.value());
+            }
+          }));
+        }
 
         /* A unit's own set is worked in class: the way back to the
            explanation keeps the set where it is, to be continued from the
@@ -1002,6 +1010,7 @@
         if (JTS.session.current()) saveNow();
         JTS.desmos.hide();
         if (board) board.closeWindow();
+        if (unitCode) document.body.classList.remove('unit-focus');
       };
     }
   });

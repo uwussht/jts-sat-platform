@@ -50,47 +50,109 @@
 
   /* --------------------------------------------------- explanation rendering */
 
-  function explanationBody(question) {
+  /**
+   * Split a worked solution into steps at sentence ends, so a paragraph of
+   * algebra reads as 1, 2, 3. A sentence ends at ". " before a capital or a
+   * digit-free word; "1.5" and "e.g." stay whole.
+   */
+  function steps(html) {
+    var parts = String(html).split(/(?<=[.!?])\s+(?=[A-Z(])/);
+    return parts.length > 1 ? parts : null;
+  }
+
+  /**
+   * The explanation, built to be read in order:
+   *   1. the verdict: your answer against the correct one;
+   *   2. why the correct choice is right, as numbered steps when it is a
+   *      worked solution;
+   *   3. every other choice, its own text beside the reason it fails, the
+   *      student's own pick marked;
+   *   4. other ways to solve it (Math), when the question has them.
+   * `a` (the student's answer) is optional: the mock review passes none.
+   */
+  function explanationBody(question, a) {
     var lang = S.settings().explainLang;
-    var wrap = U.el('div.stack');
-
+    var wrap = U.el('div.stack.xp');
+    var isMcq = question.type === 'mcq' && question.options;
     var correct = question.type === 'spr' ? question.answer.join('  ·  ') : question.answer;
-    wrap.appendChild(U.el('div.notice.notice-ok', null, [
-      U.el('span', null, [U.el('b', { text: t('q.correctAnswer', { a: correct }) })])
-    ]));
-    wrap.appendChild(U.el('div', { html: JTS.i18n.pick(question.explanation, lang) }));
+    var picked = a && a.selected !== null && a.selected !== '' ? a.selected : null;
+    var answered = !!(a && a.submitted);
 
-    /* R&W: every wrong option gets its own reason. */
-    if (question.distractors) {
-      var list = U.el('div.stack-sm');
-      list.appendChild(U.el('h3.h3', { text: t('q.whyWrong') }));
-      ['A', 'B', 'C', 'D'].forEach(function (k) {
+    /* 1. Verdict */
+    var verdict = U.el('div.xp-verdict' + (answered ? (a.correct ? '.is-right' : '.is-wrong') : ''));
+    if (answered) {
+      verdict.appendChild(U.el('div.xp-verdict-title', {
+        text: a.correct ? '✓ ' + t('xp.youGotIt') : '✗ ' + t('xp.notQuite')
+      }));
+    }
+    var vrow = U.el('div.xp-verdict-row');
+    if (answered && !a.correct && picked) {
+      vrow.appendChild(U.el('span.xp-pill.is-wrong', { text: t('xp.yourAnswer', { a: picked }) }));
+    }
+    vrow.appendChild(U.el('span.xp-pill.is-right', { text: t('q.correctAnswer', { a: correct }) }));
+    verdict.appendChild(vrow);
+    wrap.appendChild(verdict);
+
+    /* 2. Why the correct answer is right */
+    var right = U.el('section.xp-block');
+    right.appendChild(U.el('h3.xp-h', { text: isMcq ? t('xp.whyRight', { a: correct }) : t('xp.howToSolve') }));
+    if (isMcq) {
+      right.appendChild(U.el('div.xp-choice.is-right', null, [
+        U.el('span.xp-key', { text: correct }),
+        U.el('span.xp-choice-text', { html: question.options['ABCD'.indexOf(correct)] })
+      ]));
+    }
+    var expl = JTS.i18n.pick(question.explanation, lang) || '';
+    var st = question.section === 'math' ? steps(expl) : null;
+    if (st) {
+      right.appendChild(U.el('ol.xp-steps', null, st.map(function (x) { return U.el('li', { html: x }); })));
+    } else {
+      right.appendChild(U.el('div.xp-text', { html: expl }));
+    }
+    wrap.appendChild(right);
+
+    /* 3. The other choices */
+    if (isMcq && question.distractors) {
+      var others = U.el('section.xp-block');
+      others.appendChild(U.el('h3.xp-h', { text: t('q.whyWrong') }));
+      ['A', 'B', 'C', 'D'].forEach(function (k, i) {
+        if (k === correct) return;
         var d = question.distractors[k];
-        if (!d) return;
-        list.appendChild(U.el('div.card.card-sm.card-flat', null, [
-          U.el('div.row', { style: 'align-items:flex-start' }, [
-            U.el('span.key', { text: k, style: 'flex:0 0 26px;width:26px;height:26px;display:grid;place-items:center;border:1.5px solid var(--border-strong);font-size:13px;font-weight:700' }),
-            U.el('span.small', { html: JTS.i18n.pick(d, lang) })
+        var mine = picked === k;
+        others.appendChild(U.el('div.xp-choice' + (mine ? '.is-mine' : ''), null, [
+          U.el('span.xp-key', { text: k }),
+          U.el('div.xp-choice-body', null, [
+            U.el('div.xp-choice-text', { html: question.options[i] }),
+            mine ? U.el('span.xp-tag', { text: t('xp.yourPick') }) : null,
+            d ? U.el('div.xp-reason', { html: JTS.i18n.pick(d, lang) }) : null
           ])
         ]));
       });
-      wrap.appendChild(list);
+      wrap.appendChild(others);
     }
 
-    /* Math: alternative methods, but only when there really are several.
-       A single walkthrough is shown as one section, never as "Method #1". */
-    if (question.methods && question.methods.length >= 2) {
-      wrap.appendChild(U.el('h3.h3', { text: t('q.methods') }));
-      wrap.appendChild(ui.tabs(question.methods.map(function (m, i) {
-        return {
-          id: 'm' + i,
-          label: m.title || t('q.method', { n: i + 1 }),
-          render: function (host) { host.appendChild(U.el('p', { html: JTS.i18n.pick(m.steps, lang) })); }
-        };
-      })));
-    } else if (question.methods && question.methods.length === 1) {
-      wrap.appendChild(U.el('h3.h3', { text: t('q.singleMethod') }));
-      wrap.appendChild(U.el('p', { html: JTS.i18n.pick(question.methods[0].steps, lang) }));
+    /* 4. Other ways to solve it */
+    if (question.methods && question.methods.length) {
+      var ways = U.el('section.xp-block');
+      ways.appendChild(U.el('h3.xp-h', { text: question.methods.length > 1 ? t('q.methods') : t('q.singleMethod') }));
+      function methodBody(m) {
+        var txt = JTS.i18n.pick(m.steps, lang);
+        var ms = steps(txt);
+        return ms ? U.el('ol.xp-steps', null, ms.map(function (x) { return U.el('li', { html: x }); }))
+                  : U.el('div.xp-text', { html: txt });
+      }
+      if (question.methods.length >= 2) {
+        ways.appendChild(ui.tabs(question.methods.map(function (m, i) {
+          return {
+            id: 'm' + i,
+            label: m.title || t('q.method', { n: i + 1 }),
+            render: function (host) { host.appendChild(methodBody(m)); }
+          };
+        })));
+      } else {
+        ways.appendChild(methodBody(question.methods[0]));
+      }
+      wrap.appendChild(ways);
     }
 
     return wrap;
@@ -125,7 +187,7 @@
     side.appendChild(body);
     main.appendChild(side);
 
-    body.appendChild(explanationBody(question));
+    body.appendChild(explanationBody(question, a));
   }
 
   /* ------------------------------------------------- error classification */
