@@ -683,7 +683,6 @@
           ? renderOptions(question, a) : renderSpr(question, a));
         if (a.submitted) feedbackHost.appendChild(renderFeedback(question, a));
 
-        content.appendChild(U.el('p.hint', { text: t('q.keyboardHelp'), style: 'margin-top:18px' }));
         buildFooter();
       }
 

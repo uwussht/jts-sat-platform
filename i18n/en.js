@@ -499,7 +499,6 @@ JTS.dict.en = {
   'q.correctAnswer': 'Correct answer: {a}',
   'q.strike': 'Cross out',
   'q.unstrike': 'Undo cross out',
-  'q.keyboardHelp': 'Keyboard: 1–4 or A–D choose an answer, Enter goes next, M marks for review.',
   'q.restored': 'Session restored',
   'q.exitConfirm': 'Leave the session? Your answers are saved.',
   'q.helpUsed': 'Help used — this attempt is logged separately from independent work.',
