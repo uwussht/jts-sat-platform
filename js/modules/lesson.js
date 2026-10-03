@@ -265,7 +265,20 @@
         practice.appendChild(U.el('div.notice', { text: t('lesson.practiceSoon') }));
       } else {
         if (rec.done) practice.appendChild(ui.bar(rec.done, rec.total, 'bar-ok'));
-        practice.appendChild(U.el('div.row.row-wrap', null, [
+        /* Back from the questions to the explanation: the set is still open,
+           so the first button picks it up at the question that was left. */
+        var open = JTS.session.current();
+        var inSet = open && open.meta && open.meta.lessonCode === code ? open : null;
+        practice.appendChild(U.el('div.row.row-wrap', null, inSet ? [
+          U.el('a.btn.btn-primary.btn-lg', {
+            href: '#/question',
+            text: t('lesson.continue', { n: inSet.index + 1, total: inSet.questionIds.length }) + ' →'
+          }),
+          U.el('button.btn', {
+            type: 'button', text: t('lesson.restart'),
+            onclick: function () { startAt(0); }
+          })
+        ] : [
           U.el('button.btn.btn-primary.btn-lg', {
             type: 'button',
             text: rec.done ? t('lesson.again') : t('lesson.start'),

@@ -290,6 +290,9 @@
       if (!ses) { JTS.router.go('#/today'); return; }
 
       var isStudy = ses.mode === 'study';
+      /* Set when the questions are a unit's own practice set. */
+      var unitCode = (ses.meta && ses.meta.lessonCode) || null;
+      var board = null, boardSync = null;
       var hardTimer = ses.durationMs > 0 && !ses.softTimer;
       var shownAt = Date.now();
       /* On a wall-clock session the stored elapsedMs is only a crash record;
@@ -400,10 +403,24 @@
           }
         }));
 
+        /* A unit's own set is worked in class: the way back to the
+           explanation keeps the set where it is, to be continued from the
+           unit page. */
+        if (unitCode) {
+          topbar.appendChild(U.el('button.q-tool', {
+            type: 'button', text: '← ' + t('q.backToLesson'),
+            onclick: function () {
+              commitTime(); saveNow();
+              JTS.router.go('#/materials/lesson?code=' + encodeURIComponent(unitCode));
+            }
+          }));
+        }
+
         var tools = U.el('div.q-tools');
         /* Practice only, in both sections: study time today and a Pomodoro.
-           A timed test has its own clock and nothing else to watch. */
-        if (ses.kind === 'practice' && JTS.studyTimer) {
+           A timed test has its own clock and nothing else to watch, and a
+           unit's set runs in class time. */
+        if (ses.kind === 'practice' && !unitCode && JTS.studyTimer) {
           tools.appendChild(JTS.studyTimer.button({
             section: function () { return q().section; },
             pending: function () {
@@ -473,6 +490,29 @@
         }
 
         syncCalc();
+
+        /* The unit's whiteboard, the same board as on the unit page, in its
+           own window over the question. */
+        if (unitCode && JTS.whiteboard) {
+          if (!board) {
+            board = JTS.whiteboard.create(unitCode);
+            /* Its window's own Close button says so through this event. */
+            board.addEventListener('wb:window', function () { if (boardSync) boardSync(); });
+          }
+          var wbBtn = U.el('button.q-tool', {
+            type: 'button',
+            onclick: function () {
+              if (board.isWindowOpen()) board.closeWindow(); else board.openWindow();
+              boardSync();
+            }
+          });
+          boardSync = function () {
+            wbBtn.textContent = '✏️ ' + t(board.isWindowOpen() ? 'side.boardClose' : 'side.board');
+            wbBtn.setAttribute('aria-pressed', String(board.isWindowOpen()));
+          };
+          boardSync();
+          tools.appendChild(wbBtn);
+        }
 
         tools.appendChild(U.el('button.q-tool', {
           type: 'button', text: '✕',
@@ -865,6 +905,8 @@
       /* ---------------------------------------------------------- keyboard */
       function onKey(e) {
         if (e.metaKey || e.ctrlKey || e.altKey) return;
+        /* Keys typed on the whiteboard or in the study-time panel are theirs. */
+        if (e.target.closest && e.target.closest('.wb-window, .pomo-panel')) return;
         var tag = (e.target.tagName || '').toLowerCase();
         if (tag === 'input' || tag === 'textarea' || tag === 'select') {
           if (e.key === 'Enter') { e.preventDefault(); isStudy && !ans().submitted ? check() : go(1); }
@@ -901,6 +943,7 @@
         if (timer) { commitTime(); timer.pause(); ses.elapsedMs = timer.value(); }
         if (JTS.session.current()) saveNow();
         JTS.desmos.hide();
+        if (board) board.closeWindow();
       };
     }
   });
