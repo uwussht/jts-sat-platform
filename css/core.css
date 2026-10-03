@@ -2180,3 +2180,52 @@ body.unit-focus .lesson-side { top: 16px; max-height: calc(100vh - 32px); }
 .pg-official { border-left: 4px solid var(--warn); background: var(--warn-bg); }
 .pg-official .eyebrow { color: var(--warn); }
 .pg-official .h3 { margin: 0; }
+
+/* ---------------------------------------------------------- study time (practice top bar) */
+.pomo-wrap { position: relative; }
+.pomo-btn { font-variant-numeric: tabular-nums; }
+.pomo-btn.is-running { border-color: var(--brand-600); color: var(--brand-700); }
+.pomo-btn.is-running.is-rest { border-color: #1a9a6c; color: #157a56; }
+.pomo-panel {
+  position: absolute; top: calc(100% + 8px); right: 0; z-index: 60;
+  width: 320px; max-width: calc(100vw - 32px);
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--border); border-radius: var(--r-md);
+  box-shadow: var(--shadow-3); padding: 16px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.pomo-head strong { font-size: 17px; }
+.pomo-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; padding: 4px; border-radius: var(--r-md); background: var(--surface-2); }
+.pomo-tab, .pomo-phase {
+  border: 0; background: transparent; color: var(--muted); font: inherit; font-size: 14px; font-weight: 600;
+  padding: 8px 10px; border-radius: var(--r-md); cursor: pointer;
+}
+.pomo-tab[aria-pressed="true"], .pomo-phase[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 3px rgba(24, 18, 49, .12); }
+.pomo-timer { background: var(--surface-2); border-radius: var(--r-md); padding: 14px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.pomo-phases { display: flex; gap: 4px; }
+.pomo-clock { font-size: 56px; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+.pomo-timer.is-rest .pomo-clock { color: #157a56; }
+.pomo-tag, .pomo-row { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+.pomo-dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+.pomo-dot.rw { background: #0c8a7a; }
+.pomo-dot.math { background: var(--brand-600); }
+.pomo-actions { display: flex; gap: 8px; width: 100%; }
+.pomo-go { flex: 1; justify-content: center; }
+.pomo-hint { margin: 0; font-size: 12px; color: var(--muted); text-align: center; line-height: 1.4; }
+.pomo-stats { display: flex; flex-direction: column; gap: 10px; }
+.pomo-total { display: flex; justify-content: space-between; align-items: baseline; }
+.pomo-total strong { font-size: 18px; }
+.pomo-bar { display: flex; height: 8px; border-radius: 99px; overflow: hidden; background: var(--surface-2); }
+.pomo-bar .rw { background: #0c8a7a; }
+.pomo-bar .math { background: var(--brand-600); }
+.pomo-row strong { margin-left: auto; font-variant-numeric: tabular-nums; }
+.pomo-stats .pomo-hint { text-align: left; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .pomo-btn.is-running.is-rest,
+  :root:not([data-theme="light"]) .pomo-timer.is-rest .pomo-clock { color: #5fd0a3; }
+}
+:root[data-theme="dark"] .pomo-btn.is-running.is-rest,
+:root[data-theme="dark"] .pomo-timer.is-rest .pomo-clock { color: #5fd0a3; }
+@media (max-width: 600px) {
+  .pomo-panel { position: fixed; top: 120px; left: 16px; right: 16px; width: auto; max-width: none; }
+}

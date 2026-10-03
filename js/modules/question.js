@@ -401,6 +401,24 @@
         }));
 
         var tools = U.el('div.q-tools');
+        /* Practice only, in both sections: study time today and a Pomodoro.
+           A timed test has its own clock and nothing else to watch. */
+        if (ses.kind === 'practice' && JTS.studyTimer) {
+          tools.appendChild(JTS.studyTimer.button({
+            section: function () { return q().section; },
+            pending: function () {
+              /* Checked answers are already in the attempt log; the rest of
+                 this session's time is not yet, so it is added here. */
+              var p = { rw: 0, math: 0 };
+              ses.questionIds.forEach(function (id) {
+                var a = ses.answers[id], qq = JTS.bank.get(id);
+                if (a && !a.submitted && a.timeMs) p[qq && qq.section === 'math' ? 'math' : 'rw'] += a.timeMs;
+              });
+              if (!ses.paused) p[q().section === 'math' ? 'math' : 'rw'] = Date.now() - shownAt;
+              return p;
+            }
+          }).el);
+        }
         tools.appendChild(U.el('button.q-tool', {
           type: 'button', text: t('q.directions'),
           onclick: function () {
