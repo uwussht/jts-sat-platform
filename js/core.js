@@ -777,6 +777,9 @@
       var root = U.$('#app-root');
       U.clear(root);
       JTS.desmos.hide();
+      /* A chosen exam date follows College Board's changes to it before any
+         screen prints it. */
+      if (JTS.examDates) JTS.examDates.reconcile();
       this.current = route;
       document.title = (def.title ? t(def.title) + ' · ' : '') + 'JTS SAT';
       JTS.shell.renderTopbar(def.title || '');

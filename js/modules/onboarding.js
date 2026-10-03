@@ -300,8 +300,10 @@
     var todayISO = U.iso(U.today());
     var days = U.daysBetween(U.today(), day);
 
-    var closed = d.lateDeadline < todayISO;
-    var lateOnly = !closed && d.registrationDeadline < todayISO;
+    /* An anticipated date has no deadlines until College Board confirms it. */
+    var expected = d.confirmed === false || !d.registrationDeadline;
+    var closed = !expected && d.lateDeadline < todayISO;
+    var lateOnly = !expected && !closed && d.registrationDeadline < todayISO;
     var state = closed ? 'closed' : lateOnly ? 'late' : 'open';
 
     function fmt(iso, opts) {
@@ -316,7 +318,9 @@
 
     /* What to do about this date, in one line that changes with the deadline. */
     var action;
-    if (closed) {
+    if (expected) {
+      action = U.el('span.badge.badge-muted', { text: t('onb.s1.expected') });
+    } else if (closed) {
       action = U.el('span.badge.badge-muted', { text: t('onb.s1.regClosed') });
     } else if (lateOnly) {
       action = U.el('span.badge.badge-warn', { text: t('onb.s1.lateOnly') });
@@ -337,9 +341,12 @@
         U.el('span.date-when', { text: fmt(d.testDate, { weekday: 'long' }) }),
         U.el('span.date-away', { text: t('onb.s1.inWeeks', { n: Math.ceil(days / 7) }) }),
         action,
-        U.el('span.date-line', { text: t('onb.s1.deadline') + ': ' + U.fmtDate(d.registrationDeadline, lang) }),
-        U.el('span.date-line', { text: t('onb.s1.lateDeadline') + ': ' + U.fmtDate(d.lateDeadline, lang) }),
-        U.el('span.date-line', { text: t('onb.s1.region') + ': ' + d.region.join(', ') })
+        expected
+          ? U.el('span.date-line', { text: t('onb.s1.noDeadline') })
+          : U.el('span.date-line', { text: t('onb.s1.deadline') + ': ' + U.fmtDate(d.registrationDeadline, lang) }),
+        expected ? null
+          : U.el('span.date-line', { text: t('onb.s1.lateDeadline') + ': ' + U.fmtDate(d.lateDeadline, lang) }),
+        U.el('span.date-line', { text: t('onb.s1.region') + ': ' + (d.region || []).join(', ') })
       ])
     ]);
   }
@@ -356,6 +363,12 @@
     if (meta.verified === false) {
       body.appendChild(U.el('div.notice.notice-warn', {
         text: t('onb.s1.provisional', { source: meta.source || '\u2014' })
+      }));
+    } else if (meta.checkedAt) {
+      /* The dates come from College Board and refresh themselves; say so,
+         and say when they were last checked. */
+      body.appendChild(U.el('p.small.muted', {
+        text: t('onb.s1.datesSource', { date: U.fmtDate(meta.checkedAt, S.settings().uiLang) })
       }));
     }
 

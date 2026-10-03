@@ -1,0 +1,38 @@
+# Keeps the SAT test dates current without anyone editing them.
+#
+# Every Monday this reads College Board's dates-and-deadlines page with
+# tools/update_exam_dates.py and, when a date has been added, moved or given
+# its deadlines, commits the new js/data/exam-dates.js and exam-dates.json.
+# The app fetches exam-dates.json when it starts, so students see the change
+# without a new release. Run it by hand from the Actions tab at any time.
+name: Refresh SAT dates
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'   # Mondays, 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Read College Board's dates
+        run: python tools/update_exam_dates.py
+      - name: Commit the new dates
+        run: |
+          if git diff --quiet -- js/data/exam-dates.js js/data/exam-dates.json; then
+            echo "No change in the SAT dates."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898729+github-actions[bot]@users.noreply.github.com"
+          git add js/data/exam-dates.js js/data/exam-dates.json
+          git commit -m "Refresh SAT dates from College Board"
+          git push

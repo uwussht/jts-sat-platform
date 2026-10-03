@@ -88,6 +88,25 @@ The sign-in screen is the one place the brand speaks at full volume: the chrome
 is hidden while signed out, so `#/auth` fills the window with the purple ramp
 and centres a single square card.
 
+## SAT dates update themselves
+
+The test dates students pick from in onboarding and Settings come from
+College Board's dates-and-deadlines page, not from a hand-kept list:
+
+- `tools/update_exam_dates.py` reads the page — the confirmed dates with
+  their registration and late deadlines, and the anticipated dates for the
+  next school year — and writes `js/data/exam-dates.js` and
+  `js/data/exam-dates.json`. If the page stops looking the way it expects,
+  it writes nothing.
+- `.github/workflows/exam-dates.yml` runs it every Monday and commits the
+  files when a date is added, moved or given its deadlines. It can also be
+  run by hand from the repository's Actions tab.
+- `js/modules/exam-dates.js` fetches the newest `exam-dates.json` from the
+  repository when the app starts, so even a copy nobody has updated shows
+  the new dates; a student's chosen date follows College Board's changes to
+  it. Past dates drop out of the lists on their own, and anticipated dates
+  show as "Expected date" until their deadlines are announced.
+
 ## No AI
 
 The platform has no AI tutor. Study mode offers each question's own written

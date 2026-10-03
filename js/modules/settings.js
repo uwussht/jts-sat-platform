@@ -89,10 +89,17 @@
 
         var select = U.el('select.select', { id: 'set-exam-date' });
         select.appendChild(U.el('option', { value: '', text: t('settings.undecided') }));
-        (JTS.data.examDates || []).forEach(function (d) {
+        /* Past administrations drop out of the list by themselves; the one
+           the student already chose stays so the select can show it. */
+        var todayISO = U.iso(U.today());
+        (JTS.data.examDates || []).filter(function (d) {
+          return d.testDate >= todayISO || d.id === ed.examDateId;
+        }).forEach(function (d) {
           var o = U.el('option', {
             value: d.id,
-            text: d.testDate + ' · ' + t('onb.s1.deadline') + ' ' + d.registrationDeadline
+            text: d.testDate + ' · ' + (d.registrationDeadline
+              ? t('onb.s1.deadline') + ' ' + d.registrationDeadline
+              : t('onb.s1.expected'))
           });
           if (ed.examDateId === d.id) o.selected = true;
           select.appendChild(o);
@@ -102,7 +109,7 @@
           S.update(function (st) {
             st.examDate = d
               ? { mode: 'date', examDateId: d.id, testDate: d.testDate,
-                  registrationDeadline: d.registrationDeadline }
+                  registrationDeadline: d.registrationDeadline, lateDeadline: d.lateDeadline }
               : { mode: 'undecided', examDateId: null, testDate: null, registrationDeadline: null };
           });
           offerRebuild();
@@ -114,15 +121,14 @@
             ? t('onb.s1.countdown', { weeks: Math.max(0, Math.ceil(days / 7)), days: Math.max(0, days) })
             : t('settings.noExamDate')
         }));
-        /* The dates file ships unverified, and a wrong deadline costs a
-           registration — so the warning travels with the control. */
-        examWrap.appendChild(U.el('div.notice.notice-warn.xsmall', null, [
-          U.el('span', {
-            text: t('onb.s1.provisional', {
-              source: (JTS.data.examDatesMeta || {}).source || '—'
-            })
-          })
-        ]));
+        /* Where the dates come from travels with the control: a wrong
+           deadline costs a registration. */
+        var meta = JTS.data.examDatesMeta || {};
+        examWrap.appendChild(meta.verified === false
+          ? U.el('div.notice.notice-warn.xsmall', { text: t('onb.s1.provisional', { source: meta.source || '-' }) })
+          : U.el('div.xsmall.muted', {
+              text: t('onb.s1.datesSource', { date: U.fmtDate(meta.checkedAt, S.settings().uiLang) })
+            }));
       })();
       screen.appendChild(card(t('settings.exam'), [examWrap]));
 

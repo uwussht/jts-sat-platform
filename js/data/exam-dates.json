@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "source": "College Board, satsuite.collegeboard.org/sat/dates-deadlines",
+    "url": "https://satsuite.collegeboard.org/sat/dates-deadlines",
+    "checkedAt": "2026-10-03",
+    "verified": true
+  },
+  "dates": [
+    {
+      "id": "sat-2026-10",
+      "testDate": "2026-10-03",
+      "registrationDeadline": "2026-09-18",
+      "lateDeadline": "2026-09-22",
+      "confirmed": true,
+      "region": [
+        "US",
+        "International"
+      ]
+    },
+    {
+      "id": "sat-2026-11",
+      "testDate": "2026-11-07",
+      "registrationDeadline": "2026-10-23",
+      "lateDeadline": "2026-10-27",
+      "confirmed": true,
+      "region": [
+        "US",
+        "International"
+      ]
+    },
+    {
+      "id": "sat-2026-12",
+      "testDate": "2026-12-05",
+      "registrationDeadline": "2026-11-20",
+      "lateDeadline": "2026-11-24",
+      "confirmed": true,
+      "region": [
+        "US",
+        "International"
+      ]
+    },
+    {
+      "id": "sat-2027-03",
+      "testDate": "2027-03-06",
+      "registrationDeadline": "2027-02-19",
+      "lateDeadline": "2027-02-23",
+      "confirmed": true,
+      "region": [
+        "US",
+        "International"
+      ]
+    },
+    {
+      "id": "sat-2027-05",
+      "testDate": "2027-05-01",
+      "registrationDeadline": "2027-04-16",
+      "lateDeadline": "2027-04-20",
+      "confirmed": true,
+      "region": [
+        "US",
+        "International"
+      ]
+    },
+    {
+      "id": "sat-2027-06",
+      "testDate": "2027-06-05",
+      "registrationDeadline": "2027-05-21",
+      "lateDeadline": "2027-05-25",
+      "confirmed": true,
+      "region": [
+        "US",
+        "International"
+      ]
+    },
+    {
+      "id": "sat-2027-08",
+      "testDate": "2027-08-28",
+      "registrationDeadline": null,
+      "lateDeadline": null,
+      "confirmed": false,
+      "region": [
+        "US",
+        "International"
+      ]
+    },
+    {
+      "id": "sat-2027-09",
+      "testDate": "2027-09-18",
+      "registrationDeadline": null,
+      "lateDeadline": null,
+      "confirmed": false,
+      "region": [
+        "US",
+        "International"
+      ]
+    },
+    {
+      "id": "sat-2027-10",
+      "testDate": "2027-10-09",
+      "registrationDeadline": null,
+      "lateDeadline": null,
+      "confirmed": false,
+      "region": [
+        "US",
+        "International"
+      ]
+    },
+    {
+      "id": "sat-2027-11",
+      "testDate": "2027-11-06",
+      "registrationDeadline": null,
+      "lateDeadline": null,
+      "confirmed": false,
+      "region": [
+        "US",
+        "International"
+      ]
+    },
+    {
+      "id": "sat-2027-12",
+      "testDate": "2027-12-04",
+      "registrationDeadline": null,
+      "lateDeadline": null,
+      "confirmed": false,
+      "region": [
+        "US",
+        "International"
+      ]
+    },
+    {
+      "id": "sat-2028-03",
+      "testDate": "2028-03-04",
+      "registrationDeadline": null,
+      "lateDeadline": null,
+      "confirmed": false,
+      "region": [
+        "US",
+        "International"
+      ]
+    },
+    {
+      "id": "sat-2028-05",
+      "testDate": "2028-05-06",
+      "registrationDeadline": null,
+      "lateDeadline": null,
+      "confirmed": false,
+      "region": [
+        "US",
+        "International"
+      ]
+    },
+    {
+      "id": "sat-2028-06",
+      "testDate": "2028-06-03",
+      "registrationDeadline": null,
+      "lateDeadline": null,
+      "confirmed": false,
+      "region": [
+        "US",
+        "International"
+      ]
+    }
+  ]
+}
