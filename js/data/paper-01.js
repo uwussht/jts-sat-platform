@@ -1,22 +1,19 @@
 /* ==========================================================================
-   Paper 01 — "JTS Practice Paper 1". 98 original questions, four modules,
-   written to the published Digital SAT blueprint. No explanations, no hints:
-   this is the exam, not a lesson. See js/data/papers.js.
-
+   Paper 02 — "JTS Practice Paper 2". 54 Reading & Writing questions, two modules.
+   No explanations, no hints: this is the exam, not a lesson.
    One object per question, in the order they are sat:
-     question_type  the skill (words_in_context, boundaries, quadratics, …)
+     question_type  the skill
      difficulty     easy | medium | hard
      stimulus       the passage, when there is one
      question       what is asked
-     choices        A–D (left out for a grid-in Math question)
-     answer         the letter, or for a grid-in the value or every accepted form
-   The full list of question types is in js/data/papers.js.
+     choices        A–D
+     answer         the correct letter
    ========================================================================== */
 JTS.data.addPaper({
-  id: 'jts-p1',
-  questionPrefix: 'p1',   /* question ids are p1.rw1.01, p1.m2.22 … */
-  title: 'JTS Practice Paper 1',
-  year: 2026,
+  id: 'jts-p2',
+  questionPrefix: 'p2',
+  title: 'June 2025 INT V1',
+  year: 2025,
   modules: [
     {
       key: 'rw1', section: 'rw',
@@ -24,353 +21,353 @@ JTS.data.addPaper({
         {
           "question_type": "words_in_context",
           "difficulty": "easy",
-          "stimulus": "When the city opened its first night library in 2019, critics expected it to sit empty. Instead, borrowing rose by a third within a year, and the same critics ______ the experiment in print.",
+          "stimulus": "Portable video game consoles and other small electronic devices tend to _____ batteries that can't be easily taken out and swapped for new ones. Environmental policy researcher Carl Dalhammar warns that when these internal batteries stop working, the devices are usually thrown away, becoming harmful waste.",
           "question": "Which choice completes the text with the most logical and precise word or phrase?",
           "choices": {
-            "A": "tolerated",
-            "B": "praised",
-            "C": "disputed",
-            "D": "ignored"
-          },
-          "answer": "B"
-        },
-        {
-          "question_type": "words_in_context",
-          "difficulty": "easy",
-          "stimulus": "Conservators handle seventeenth-century paper with gloved hands. Centuries of acid in the pulp leave the sheets so ______ that a careless page-turn can break a corner away.",
-          "question": "Which choice completes the text with the most logical and precise word or phrase?",
-          "choices": {
-            "A": "fragile",
-            "B": "ordinary",
-            "C": "recent",
-            "D": "costly"
+            "A": "contain",
+            "B": "prepare",
+            "C": "imagine",
+            "D": "discover"
           },
           "answer": "A"
         },
         {
           "question_type": "words_in_context",
-          "difficulty": "medium",
-          "stimulus": "<p>The following text is adapted from a 1911 account of a glacier survey.</p><p>For three summers the ice had crept forward a yard each week. Then, in the dry autumn of 1908, its advance was <u>arrested</u>, and the front stood in the same place until the snows returned.</p>",
-          "question": "As used in the text, what does the word \"arrested\" most nearly mean?",
+          "difficulty": "easy",
+          "stimulus": "A team of archaeologists examined 150 spherically shaped limestone rocks called spheroids that date back about 1.4 million years, concluding that early hominins intentionally chipped away at rocks to form these spheroids over time. The fact that their attempt to make the stones as round as possible was _____ suggests that early hominins may have been more cognitively sophisticated than previously thought.",
+          "question": "Which choice completes the text with the most logical and precise word or phrase?",
           "choices": {
-            "A": "Captured",
-            "B": "Halted",
-            "C": "Charged",
-            "D": "Seized"
+            "A": "concerning",
+            "B": "comparable",
+            "C": "sympathetic",
+            "D": "deliberate"
           },
-          "answer": "B"
+          "answer": "D"
         },
         {
           "question_type": "words_in_context",
-          "difficulty": "hard",
-          "stimulus": "<p>In the pottery of the lower valley, the heavy geometric banding of the earlier period <u>gave way to</u> thin spiral work after about 300 BCE. Nothing in the clay itself changed; only the hand that decorated it did.</p>",
-          "question": "As used in the text, what does the phrase \"gave way to\" most nearly mean?",
+          "difficulty": "easy",
+          "stimulus": "The following text is adapted from George Bernard Shaw's 1905 play Major Barbara.\n\nLADY BRITOMART: You must learn to face life seriously, Stephen. I really cannot bear the whole burden of our family affairs any longer. You must advise me: you must assume the responsibility.\nSTEPHEN: I!\nLADY BRITOMART: Yes, you, of course. You were 24 last June.",
+          "question": "As used in the text, what does the word “assume” most nearly mean?",
           "choices": {
-            "A": "Collapsed under",
-            "B": "Was replaced by",
-            "C": "Surrendered to",
-            "D": "Made room beside"
+            "A": "Infer",
+            "B": "Mimic",
+            "C": "Undertake",
+            "D": "Presuppose"
+          },
+          "answer": "C"
+        },
+        {
+          "question_type": "text_structure_purpose",
+          "difficulty": "easy",
+          "stimulus": "The following text is from Jerome K. Jerome's 1889 novel Three Men in a Boat (To Say Nothing of the Dog). The narrator and two friends are taking a boat down the River Thames in England.\n\nIn a boat, I have always noticed that it is the fixed idea of each member of the crew that he is doing everything. Harris's notion was, that it was he alone who had been working, and that both George and I had been imposing upon him. George, on the other hand, ridiculed the idea of Harris's having done anything more than eat and sleep, and had a cast-iron opinion that it was he—George himself—who had done all the labour worth speaking of.",
+          "question": "Which choice best describes the main purpose of the text?",
+          "choices": {
+            "A": "To give an overview of a particular situation that the narrator finds startling",
+            "B": "To examine how the narrator and his friends each contributed to navigating a challenge",
+            "C": "To present the narrator's generalization along with supporting examples from a specific situation",
+            "D": "To convey the narrator's confidence that he understands the role expected of him in a group"
+          },
+          "answer": "C"
+        },
+        {
+          "question_type": "text_structure_purpose",
+          "difficulty": "easy",
+          "stimulus": "Saturn is the first planet in our solar system to be discovered to have more than 100 moons orbiting around it. A team of astronomers using the Canada-France-Hawaii Telescope (CFHT) in Hawaii detected 62 undiscovered moons that were previously too small or too dim to see. Saturn now outranks Jupiter as the planet in our solar system with the most observed moons.",
+          "question": "Which choice best states the main purpose of the text?",
+          "choices": {
+            "A": "To note a new finding about the number of Saturn's moons",
+            "B": "To explain how the CFHT works",
+            "C": "To describe the atmospheric conditions of Jupiter",
+            "D": "To discuss the history of Hawaii"
+          },
+          "answer": "A"
+        },
+        {
+          "question_type": "text_structure_purpose",
+          "difficulty": "medium",
+          "stimulus": "The following text is from George Eliot's 1857 short story “The Sad Fortunes of the Rev. Amos Barton.” In the text, the narrator addresses the reader directly and alludes to a discussion among Rev. Amos Barton's neighbors.\n\nIt was happy for the Rev. Amos Barton that he did not, like us, overhear the conversation recorded in the last chapter: indeed, what mortal is there of us, who would find his satisfaction enhanced by an opportunity of comparing the picture he presents to himself of his own doings, with the picture they make on the mental retina of his neighbours? We are poor plants buoyed up by the air-vessels of our own conceit: alas for us, if we get a few pinches that empty us of that windy self-subsistence! The very capacity for good would go out of us.",
+          "question": "Which choice best states the overall structure of the text?",
+          "choices": {
+            "A": "The narrator expresses relief that a disagreement was resolved more expediently than expected and then indicates how the situation might have gone differently.",
+            "B": "The narrator comments on the fact that a character remains unaware of how he is viewed by others and then generalizes about the problem of learning others' opinions of one's own actions.",
+            "C": "The narrator summarizes an earlier event involving a specific character and then anticipates the later significance it will have for that character.",
+            "D": "The narrator implies that a character is not well liked by his neighbors and then uses an extended comparison to demonstrate why their negative opinion of him is largely justified."
           },
           "answer": "B"
         },
         {
           "question_type": "text_structure_purpose",
           "difficulty": "medium",
-          "stimulus": "<p>Urban trees cool the streets around them by more than shade alone. <u>A single mature plane tree in Seville was found to move about four hundred litres of water into the air on a July afternoon, drawing heat out of the surrounding pavement as it did so.</u> The effect falls off sharply more than ten metres from the trunk.</p>",
-          "question": "Which choice best describes the function of the underlined sentence in the text as a whole?",
-          "choices": {
-            "A": "It concedes a limitation of the study described.",
-            "B": "It offers an example that illustrates the claim made before it.",
-            "C": "It introduces a competing explanation the researchers rejected.",
-            "D": "It restates the question the study was designed to answer."
-          },
-          "answer": "B"
-        },
-        {
-          "question_type": "text_structure_purpose",
-          "difficulty": "medium",
-          "stimulus": "For most of the twentieth century, cave paintings were read as hunting magic: pictures of prey, drawn to bring prey. The reading fitted the animals but not the hands. In several caves the handprints stencilled beside the animals are small, and the proportions of the fingers suggest that many of them belonged to women and children rather than to the hunters the theory assumed.",
+          "stimulus": "Allison Q. Byrne and colleagues relied on historical DNA (hDNA)—genomic data incidentally preserved in specimens housed in collections such as those at the Smithsonian National Museum of Natural History—to investigate the evolutionary origins of a pathogen affecting amphibians. Although this approach can yield many insights about the biological past, it remains a relatively underutilized resource in part because DNA is often to some extent degraded, a situation not easily remediable under current methodological paradigms and with extant DNA extraction and analysis technologies.",
           "question": "Which choice best describes the overall structure of the text?",
           "choices": {
-            "A": "It describes a long-held belief and then presents evidence that complicates it.",
-            "B": "It defines a technical term and then traces its history.",
-            "C": "It lists several causes of an event and then ranks them.",
-            "D": "It presents a prediction and then explains why it was made."
+            "A": "It presents a scientific study that relied on a particular approach, then describes a barrier to the widespread adoption of that approach.",
+            "B": "It evaluates a research methodology used in a particular study, then explains how scientists may overcome difficulties inherent to that methodology.",
+            "C": "It summarizes the findings of a scientific study, then discusses the possibility of other researchers replicating those findings in future studies.",
+            "D": "It exemplifies a common method of genomic data analysis, then details the difficulties in adapting that method to new circumstances."
           },
           "answer": "A"
         },
         {
           "question_type": "cross_text_connections",
-          "difficulty": "hard",
-          "stimulus": "<p><b>Text 1</b></p><p>Six months after the levy on single-use bags came into force, shops in the region reported handing out 70 percent fewer of them. The levy, plainly, changed what shoppers were willing to take.</p><p><b>Text 2</b></p><p>Bag use in the region had been falling since the previous spring, when two of the largest chains moved their bags behind the counter and began asking customers whether they wanted one. By the month the levy arrived, the decline was already most of the way to the figure later credited to it.</p>",
-          "question": "Based on the texts, how would the author of Text 2 most likely respond to the claim in Text 1?",
+          "difficulty": "medium",
+          "stimulus": "Text 1\nYale University and the investment bank JPMorgan Chase are two of the many institutions offering training programs in entrepreneurship. But what results do such programs produce? In a study of college students in Sweden, researcher Ove Hansemark addressed this question and found that participants showed strong belief in their entrepreneurial capabilities after receiving entrepreneurial training.\n\nText 2\nWhile studies of entrepreneurial training typically report positive results, a close look at these studies reveals widespread methodological shortcomings. For instance, a 1988 study by Ove Hansemark found benefits of entrepreneurial education for Swedish college students, but the study used a very small sample of only 19 students, making it difficult to say whether the training actually had an effect.",
+          "question": "Based on the texts, how would the author of Text 2 most likely answer the underlined question in Text 1?",
           "choices": {
-            "A": "By agreeing that the tax worked, but arguing that its effect was temporary.",
-            "B": "By pointing out that the drop began before the tax took effect.",
-            "C": "By questioning whether bag use was measured consistently.",
-            "D": "By noting that the tax raised less revenue than expected."
+            "A": "Although the programs may seem to produce positive results, close analysis of studies of the programs shows that they produce negative results just as frequently.",
+            "B": "It is unknown what results the programs produce because studies of them are often designed in ways that do not allow for definitive conclusions.",
+            "C": "Most of the programs do not actually produce positive results even though program participants tend to regard them as beneficial.",
+            "D": "The programs tend to produce inconsistent results because they vary substantially in their methods and aims."
           },
           "answer": "B"
         },
         {
           "question_type": "central_ideas",
           "difficulty": "medium",
-          "stimulus": "Bakers trade sourdough cultures like heirlooms, and some carry names and dates going back a century. When researchers moved fifteen such cultures into one kitchen and fed them the same flour on the same schedule, the populations of bacteria in them converged within weeks. Sent home again, each drifted back towards what it had been. Whatever a culture is, it is less a lineage than a reading of the room it lives in.",
-          "question": "Which choice best states the main idea of the text?",
+          "stimulus": "The 2020 novel The Only Good Indians confirmed that Stephen Graham Jones is one of the most talented writers of horror fiction today. By featuring main characters who are Blackfeet, the Jones himself, the novel also helped to ensure that Indigenous people have a place within the horror genre. But Jones is hardly the only Indigenous voice in horror: Métis author Cherie Dimaline has also written in the genre. Her acclaimed 2019 novel Empire of Wild is set in a Métis community in southern Canada.",
+          "question": "According to the text, Stephen Graham Jones and Cherie Dimaline are similar in what way?",
           "choices": {
-            "A": "Sourdough cultures are more difficult to maintain than commercial yeast.",
-            "B": "The flavour of a sourdough loaf comes mostly from the flour it is made with.",
-            "C": "A sourdough culture reflects the place it is kept rather than the place it came from.",
-            "D": "Bakeries in different cities produce loaves of noticeably different quality."
+            "A": "Both have published fictional works featuring main characters who are Blackfeet.",
+            "B": "Both are citizens of the Blackfeet Nation.",
+            "C": "Both are Indigenous authors who have written horror fiction.",
+            "D": "Both have said that they don't like reading horror fiction even though they write it."
           },
           "answer": "C"
         },
         {
           "question_type": "central_ideas",
-          "difficulty": "easy",
-          "stimulus": "When the north wall of the old granary had to be rebuilt, the team mixed lime mortar rather than cement. Cement is stronger, and that is the problem: it is stiffer than the soft stone around it, so the stone, not the joint, takes the movement and crumbles. Lime is weak on purpose. It gives first, and it can be raked out and replaced without touching the stone at all.",
-          "question": "Which choice best states the main purpose of the text?",
-          "choices": {
-            "A": "To explain why a particular material was chosen for a repair.",
-            "B": "To argue that traditional building methods are superior to modern ones.",
-            "C": "To describe the damage an earthquake caused to a historic building.",
-            "D": "To compare the cost of two approaches to conservation."
-          },
-          "answer": "A"
-        },
-        {
-          "question_type": "evidence_textual",
           "difficulty": "medium",
-          "stimulus": "Ravens are quick with puzzle boxes, but it is not clear how much of that speed is private invention and how much is picked up from other birds. One team hypothesised that ravens learn the solution socially — by watching a bird that already has it — rather than each working it out alone.",
-          "question": "Which finding, if true, would most directly support the researchers’ hypothesis?",
+          "stimulus": "Spanning the 1920s to the 1980s, Mexican architect Luis Barragán's prolific career evolved through distinct phases. After traveling to the United States and Europe in the early 1930s and immersing himself in an international architectural discourse, Barragán began incorporating principles derived from functionalism and modernism in his work, as seen in the Chávez Peón de Ochoa House, whose unadorned geometric forms contrast with the historically inspired architecture found in the Aguilar House, one of Barragán's early projects in Guadalajara.",
+          "question": "Which choice best states the main idea of the text?",
           "choices": {
-            "A": "Ravens that had watched the box being baited solved it no faster than ravens that had not.",
-            "B": "Ravens that had watched another raven open the box solved it faster than ravens that had not.",
-            "C": "Ravens solved the box faster on their second attempt than on their first.",
-            "D": "Ravens that were hungrier attempted the box more often."
+            "A": "Barragán's designs of the Chávez Peón de Ochoa House and the Aguilar House are considered paragons of a functionalist and modernist aesthetic.",
+            "B": "A notable shift in Barragán's design aesthetic reflects the influence of his time abroad.",
+            "C": "Barragán's early work shows an initial dedication to a modernist aesthetic that he later abandoned.",
+            "D": "Barragán's design of the Aguilar House is considered more experimental than his design for the Chávez Peón de Ochoa House."
           },
           "answer": "B"
-        },
-        {
-          "question_type": "evidence_textual",
-          "difficulty": "medium",
-          "stimulus": "The following text is adapted from a short story.\n\nThe trunk had been packed for a week. Her aunt had written twice to say the room was ready. The station was a twenty-minute walk, downhill all the way. She checked the timetable again, though she had it by heart.",
-          "question": "Which quotation from the passage most effectively illustrates the claim that the narrator is reluctant to leave?",
-          "choices": {
-            "A": "\"The trunk had been packed for a week.\"",
-            "B": "\"She checked the timetable again, though she had it by heart.\"",
-            "C": "\"The station was a twenty-minute walk, downhill all the way.\"",
-            "D": "\"Her aunt had written twice to say the room was ready.\""
-          },
-          "answer": "B"
-        },
-        {
-          "question_type": "evidence_textual",
-          "difficulty": "hard",
-          "stimulus": "Members were told the structure was beyond economical repair. The bridge carried four hundred vehicles a day. The report noted that the deck had been resurfaced in 1981. An independent survey that year put the cost of repair at a third of replacement.",
-          "question": "Which quotation from the text most directly undercuts the committee’s stated reason?",
-          "choices": {
-            "A": "\"The bridge carried four hundred vehicles a day.\"",
-            "B": "\"The report noted that the deck had been resurfaced in 1981.\"",
-            "C": "\"Members were told the structure was beyond economical repair.\"",
-            "D": "\"An independent survey that year put the cost of repair at a third of replacement.\""
-          },
-          "answer": "D"
         },
         {
           "question_type": "evidence_quantitative",
           "difficulty": "medium",
-          "stimulus": "<p>The Aral Theatre publishes its programme figures each season. A visitor comparing the three years shown would notice that the theatre ______</p><table><tr><th>Year</th><th>Performances</th><th>Tickets sold</th></tr><tr><td>2021</td><td>140</td><td>21,000</td></tr><tr><td>2022</td><td>120</td><td>24,000</td></tr><tr><td>2023</td><td>155</td><td>23,250</td></tr></table>",
-          "question": "Which choice most effectively uses data from the table to complete the statement?",
+          "stimulus": "Hydroelectric Plants\n\nPlant | State | Mode | Generators in plant | Average power generation (MWh/yr) | Water source\nWoodruff | Florida | peaking | 3 | 133,864 | Lake Seminole Reservoir\nSuperior Falls | Michigan | run-of-river | 2 | 10,693 | Montreal River\nNorway | Indiana | run-of-river | 4 | 19,751 | Tippecanoe River\nWhite River | Wisconsin | run-of-river | 2 | 3,999 | White River\n\nIn 2021, Rocio Uría-Martínez, Megan M. Johnson, and Rui Shan published a report on hydroelectric power plants operating in the US as recently as 2019, and data from their report are shown in the table. Of the plants in the table, the plant with the lowest average power generated per year in 2019 was located in the state of _____.",
+          "question": "Which choice most effectively uses data from the table to complete the assertion?",
           "choices": {
-            "A": "sold the fewest tickets in the year it staged the most performances.",
-            "B": "staged fewer performances in 2022 than in 2021 but sold more tickets.",
-            "C": "sold more tickets per performance in 2021 than in any other year.",
-            "D": "increased both performances and tickets sold every year shown."
+            "A": "Wisconsin.",
+            "B": "Michigan.",
+            "C": "Florida.",
+            "D": "Indiana."
           },
-          "answer": "B"
+          "answer": "A"
+        },
+        {
+          "question_type": "evidence_textual",
+          "difficulty": "medium",
+          "stimulus": "When a company has a new product, it has to decide when to tell people about it. Companies usually announce a new product before it is released and available for purchase. Those announcements can increase consumer excitement, which can mean that more people will buy the product. But the effect fades quickly, so companies need to be careful in timing the announcement and the release of a new product.",
+          "question": "Which finding, if true, would most directly support the underlined claim?",
+          "choices": {
+            "A": "Consumers tend to prefer new products over older products.",
+            "B": "Consumers are more likely to buy a new product when they already use products from the company making the new product.",
+            "C": "Consumer surveys show low excitement for new products that were announced a long time before they were released.",
+            "D": "The kind of information a company provides about a new product helps determine how likely consumers are to buy the product."
+          },
+          "answer": "C"
+        },
+        {
+          "question_type": "evidence_quantitative",
+          "difficulty": "medium",
+          "stimulus": "Individual | Site | Sex | Total number of peering events observed | Proportion of peering events directed at permanent residents of immature orangutans' home region\n1 | Suaq | female | 17 | 0.59\n13 | Tuanan | male | 27 | 0.15\n15 | Tuanan | male | 15 | 0.00\n6 | Tuanan | female | 6 | 0.67\n\nOne way that young orangutans acquire foraging skills is through a behavior scientists call peering—closely watching older orangutans as they engage in an activity that the young have not yet mastered. Since female orangutans typically remain in the same area from youth through adulthood and males do not, Beatrice Ehmann and her colleagues hypothesized that it is more advantageous for immature females than males to devote attention to orangutans who are permanent residents of the immature individual's home region, and this should be reflected in sex-specific differences in peering behavior.",
+          "question": "Which choice best describes data from the table that support Ehmann and colleagues' hypothesis?",
+          "choices": {
+            "A": "Individual 6 and individual 1 directed a higher proportion of peering events at permanent residents of their home regions than did individual 13 and individual 15.",
+            "B": "The proportion of peering events directed at permanent residents of the immature orangutans' home regions ranged from a low of 0.00 to a high of 0.67.",
+            "C": "Individual 6 directed a higher proportion of peering events at permanent residents of its home region than did individual 1, and individual 13 directed a higher proportion of peering events at permanent residents of its home region than did individual 15.",
+            "D": "Individual 13 engaged in 27 peering events, more than either individual 6 or individual 1."
+          },
+          "answer": "A"
+        },
+        {
+          "question_type": "evidence_textual",
+          "difficulty": "hard",
+          "stimulus": "Founded in 1965 and originally established as a cultural extension of the United Farm Workers—a union representing many Mexican American agricultural workers at the time—the theater troupe El Teatro Campesino has achieved recognition as a source of inspiration for subsequent Chicano theater companies and as a contributor to the dramatic arts. In an article about the company, a theater historian posits that a significant stylistic influence on El Teatro's early performances was the audience-mediated slapstick comedy of some theater regularly popular in Mexico and the US Southwest in the 1920s and '30s.",
+          "question": "Which quotation from the article would best illustrate the theater historian's claim?",
+          "choices": {
+            "A": "“The members of the company, which in addition to founder Luis Valdez consisted entirely of nonprofessional actors, traveled into farm fields, where they, with minimal props and costumes, performed comedy in the form of brief humorous vignettes.”",
+            "B": "“The company was focused on the reality of the present situation and discovered that humor was often found in that reality; consequently, comedy became a tool to convey social critique while entertaining and inspiring audiences.”",
+            "C": "“The company relied heavily on satire, humor, and references to contemporary popular culture as well as a make-do aesthetic—often referred to as rasquache—that reflected not only the troupe's limited financial resources but also its sociopolitical message.”",
+            "D": "“The company presented actos, short comedy sketches, that often relied on exaggerated physical humor to groups of agricultural workers, whose reactions—enthusiastic cheers of appreciation and, occasionally, loud boos of disapproval—prompted performers to adjust the timing and delivery of the scenes.”"
+          },
+          "answer": "D"
         },
         {
           "question_type": "inferences",
           "difficulty": "medium",
-          "stimulus": "Seeds of the shrub had long been assumed to need the heat of a fire to germinate. In one trial, seeds warmed to fire temperatures in a dry oven germinated no more often than untreated seeds; seeds left overnight in cool smoke, with no heating at all, germinated at seven times the untreated rate. The results suggest that ______",
+          "stimulus": "In Switzerland, the white fuzzy mountain flowers known as edelweiss are widely treated as a symbol of strength and courage. Although edelweiss can thrive in extreme conditions, they aren't notably tougher or harder to reach than other mountain flowers growing in the Swiss Alps. Historian Tobias Scheidegger has shown that the popular view of the flowers originated in the mid-1800s when mountain climbing became popular in Switzerland. Mountain climbers spread the idea that the flowers grew only in steep, icy terrains that were dangerous to climb to. Scheidegger says that these claims were self-interested. He suggests that mountain climbers presented edelweiss in this way in order to _____.",
           "question": "Which choice most logically completes the text?",
           "choices": {
-            "A": "the seeds must be buried deeper than was previously thought.",
-            "B": "fire is not necessary for the seeds to germinate.",
-            "C": "smoke, and not heat, is what breaks the seeds’ dormancy.",
-            "D": "the species will disappear from areas where fires are suppressed."
+            "A": "share their observations about the unusual characteristics of edelweiss with scientists.",
+            "B": "encourage more flower enthusiasts to explore the Swiss Alps.",
+            "C": "make themselves appear brave and strong for being able to climb to difficult places where edelweiss supposedly grew.",
+            "D": "prove that edelweiss were more common in the Swiss Alps than in other mountain regions in Europe."
           },
           "answer": "C"
-        },
-        {
-          "question_type": "inferences",
-          "difficulty": "hard",
-          "stimulus": "The inscriptions run in a continuous band along the wall, breaking mid-word at three points where a block has been replaced. At each break the text resumes on the next original block exactly where it left off, and the replacement blocks are blank. It follows that ______",
-          "question": "Which choice most logically completes the text?",
-          "choices": {
-            "A": "the inscriptions were carved by more than one hand.",
-            "B": "the inscriptions were carved later than the wall itself.",
-            "C": "the wall was rebuilt at least once after the inscriptions were made.",
-            "D": "the carvers worked from a written copy rather than from memory."
-          },
-          "answer": "C"
-        },
-        {
-          "question_type": "boundaries",
-          "difficulty": "easy",
-          "stimulus": "The ferry leaves from the old ______ has been in use since the 1890s.",
-          "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
-          "choices": {
-            "A": "harbour, which",
-            "B": "harbour which",
-            "C": "harbour. Which",
-            "D": "harbour; which"
-          },
-          "answer": "A"
-        },
-        {
-          "question_type": "boundaries",
-          "difficulty": "medium",
-          "stimulus": "The orchestra plays forty concerts a ______ rehearses for almost none of them.",
-          "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
-          "choices": {
-            "A": "season, it",
-            "B": "season it",
-            "C": "season; it",
-            "D": "season and it"
-          },
-          "answer": "C"
-        },
-        {
-          "question_type": "boundaries",
-          "difficulty": "medium",
-          "stimulus": "The mill closed in ______ the last of its machinery was sold two winters later.",
-          "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
-          "choices": {
-            "A": "1947, and",
-            "B": "1947 and",
-            "C": "1947; and",
-            "D": "1947, and,"
-          },
-          "answer": "A"
-        },
-        {
-          "question_type": "boundaries",
-          "difficulty": "hard",
-          "stimulus": "The 1830 lute in the collection has never been ______ the 1912 copy beside it is played every week.",
-          "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
-          "choices": {
-            "A": "restrung;",
-            "B": "restrung,",
-            "C": "restrung:",
-            "D": "restrung"
-          },
-          "answer": "A"
         },
         {
           "question_type": "form_structure_sense",
           "difficulty": "easy",
-          "stimulus": "Each of the four samples taken from the riverbed ______ been dated twice.",
+          "stimulus": "A number of scientific phenomena have been named after nineteenth-century Czech physiologist Jan Evangelista Purkinje, including the Purkinje effect, which _____ the eye's tendency to perceive objects as blue tinted in low-light conditions.",
           "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
           "choices": {
-            "A": "have",
-            "B": "has",
-            "C": "having",
-            "D": "to have"
+            "A": "has been",
+            "B": "will have been",
+            "C": "was",
+            "D": "is"
           },
-          "answer": "B"
+          "answer": "D"
         },
         {
           "question_type": "form_structure_sense",
           "difficulty": "medium",
-          "stimulus": "The committee published ______ findings a month after the hearing ended.",
+          "stimulus": "The fibularis longus and the _____ move the fibula and humerus, respectively.",
           "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
           "choices": {
-            "A": "their",
-            "B": "its",
-            "C": "it’s",
-            "D": "there"
+            "A": "brachialis are cylindrical in shape, which are skeletal muscles, and help",
+            "B": "brachialis are cylindrical in shape and help, which are skeletal muscles,",
+            "C": "brachialis, which are skeletal muscles, are cylindrical in shape and help",
+            "D": "brachialis are cylindrical, which are skeletal muscles, in shape and help"
           },
-          "answer": "B"
+          "answer": "C"
         },
         {
-          "question_type": "form_structure_sense",
+          "question_type": "boundaries",
           "difficulty": "medium",
-          "stimulus": "Neither the curator nor the two assistants ______ told that the loan had been cancelled.",
+          "stimulus": "It was April of 1885 when Vincent van Gogh completed _____ of dozens to be featured in the upcoming exhibition, is an important part of Van Gogh's body of work.",
           "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
           "choices": {
-            "A": "was",
-            "B": "were",
-            "C": "is",
-            "D": "being"
+            "A": "Study of Two Peasants, the drawing, one",
+            "B": "Study of Two Peasants. The drawing, one",
+            "C": "Study of Two Peasants, the drawing. One",
+            "D": "Study of Two Peasants the drawing, one"
           },
           "answer": "B"
         },
         {
-          "question_type": "form_structure_sense",
-          "difficulty": "hard",
-          "stimulus": "The hill fort above the river had never been excavated before 2021. ______",
+          "question_type": "boundaries",
+          "difficulty": "medium",
+          "stimulus": "Fernando Palma Rodríguez creates robotic sculptures that combine mechanical elements with materials like feathers, soil, and seeds. The artist is from a rural farming community outside Mexico City, and he studied engineering in college. The natural and mechanical _____ highlight these two aspects of his background.",
           "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
           "choices": {
-            "A": "Having surveyed the site for three seasons, the report was written by the team.",
-            "B": "Having surveyed the site for three seasons, the team wrote the report.",
-            "C": "Having surveyed the site for three seasons, it was the team who wrote the report.",
-            "D": "The report, having surveyed the site for three seasons, was written by the team."
+            "A": "materials, that Palma Rodríguez uses in his art",
+            "B": "materials that Palma Rodríguez uses in his art",
+            "C": "materials that Palma Rodríguez uses in his art,",
+            "D": "materials, that Palma Rodríguez uses in his art,"
+          },
+          "answer": "B"
+        },
+        {
+          "question_type": "boundaries",
+          "difficulty": "medium",
+          "stimulus": "Exemplars of Stigler's law _____ there is the Argand diagram in astronomy, the Casegrain reflector, and in physics, the Fermi paradox. All the aforementioned share the trait of being named after individuals who were not their initial discoverers or inventors.",
+          "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+          "choices": {
+            "A": "abound, in mathematics,",
+            "B": "abound in mathematics:",
+            "C": "abound: in mathematics,",
+            "D": "abound in mathematics;"
           },
           "answer": "B"
         },
         {
           "question_type": "transitions",
           "difficulty": "easy",
-          "stimulus": "Most of the tools in the hoard were made of bronze. ______ the two finest, a chisel and a small saw, were iron, and they are the earliest iron objects known from the valley.",
-          "question": "Which choice completes the text with the most logical transition?",
-          "choices": {
-            "A": "For example,",
-            "B": "However,",
-            "C": "In addition,",
-            "D": "Therefore,"
-          },
-          "answer": "B"
-        },
-        {
-          "question_type": "transitions",
-          "difficulty": "medium",
-          "stimulus": "The new timetable moved the first train an hour earlier. ______ the number of passengers boarding before seven in the morning nearly doubled within a month.",
+          "stimulus": "The eruption of Rusty Geyser in Yellowstone National Park is caused by a sequence of events. First, water seeps down through narrow channels in the bedrock. _____ magma heats the water and turns it into steam. Finally, that steam builds up enough pressure in the narrow channels to force the water above it to burst out of the ground.",
           "question": "Which choice completes the text with the most logical transition?",
           "choices": {
             "A": "Similarly,",
-            "B": "Nevertheless,",
-            "C": "As a result,",
-            "D": "Meanwhile,"
+            "B": "On the contrary,",
+            "C": "First of all,",
+            "D": "Next,"
           },
-          "answer": "C"
+          "answer": "D"
+        },
+        {
+          "question_type": "transitions",
+          "difficulty": "easy",
+          "stimulus": "In the West African country of Sierra Leone, the percentage of the population living in cities rose from 40.6% to 42.9% between 2015 and 2020. _____ urbanization rates climbed across West Africa as a whole, rising 3.2 percentage points in that five-year period.",
+          "question": "Which choice completes the text with the most logical transition?",
+          "choices": {
+            "A": "Concurrently,",
+            "B": "For example,",
+            "C": "In other words,",
+            "D": "Eventually,"
+          },
+          "answer": "A"
         },
         {
           "question_type": "rhetorical_synthesis",
           "difficulty": "medium",
-          "stimulus": "<p>While researching a village co-operative, a student took these notes:</p><ul><li>2019 harvest: brought in by hand, eleven days.</li><li>2020 harvest: brought in by hand, nine days.</li><li>An early frost cut the 2020 season short.</li><li>Both years the crop was picked by the same twelve families.</li></ul><p>The student wants to emphasise the difference between the two harvests. Which choice most effectively uses the relevant information from the notes?</p>",
-          "question": "Which choice most effectively uses the notes to emphasise the difference between the two harvests?",
+          "stimulus": "While researching a topic, a student has taken the following notes:\n• Igneous rock is one of the three main types of rock.\n• It is formed when molten rock, known as magma or lava, cools.\n• Intrusive igneous rock forms when molten rock cools deep within Earth's crust.\n• Extrusive igneous rock forms when molten rock exits Earth's crust and cools on the surface.\n• Acadia National Park in Maine contains examples of intrusive igneous rock.\n• Crater Lake National Park in Oregon contains examples of extrusive igneous rock.",
+          "question": "The student wants to contrast how the igneous rock at the two national parks formed. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
           "choices": {
-            "A": "The 2019 harvest lasted eleven days, and the 2020 harvest lasted nine.",
-            "B": "Both harvests were brought in by hand, as they had been for generations.",
-            "C": "The 2019 harvest took eleven days to bring in; the 2020 harvest, hit by an early frost, took nine.",
-            "D": "Although the 2020 harvest was affected by an early frost, it was still brought in by hand over nine days."
+            "A": "Acadia National Park contains examples of intrusive igneous rock; the other type of igneous rock is called extrusive igneous rock.",
+            "B": "Acadia National Park's igneous rock formed from molten rock that cooled deep within Earth's crust, whereas Crater Lake National Park's igneous rock formed from molten rock that cooled after it exited Earth's crust.",
+            "C": "Acadia National Park and Crater Lake National Park both contain igneous rock, which is formed when molten rock cools.",
+            "D": "Two types of igneous rock, which is formed when molten rock cools, are intrusive igneous rock and extrusive igneous rock, both of which can be found in national parks."
           },
-          "answer": "C"
+          "answer": "B"
+        },
+        {
+          "question_type": "rhetorical_synthesis",
+          "difficulty": "medium",
+          "stimulus": "While researching a topic, a student has taken the following notes:\n• Morning Haiku (2010) is a book of poetry by African American poet Sonia Sanchez.\n• Each poem in the book is a sequence of haiku.\n• According to the book's publisher, Penguin Random House, the book “celebrates the gifts of life and mourns the deaths of revered African American figures.”\n• The poem “15 haiku (for Toni Morrison)” is written as a sequence of fifteen haiku.\n• The poem “7 haiku (for Ray Brown)” is written as a sequence of seven haiku.",
+          "question": "The student wants to contrast the number of haiku in each poem. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+          "choices": {
+            "A": "The poem “15 haiku (for Toni Morrison)” consists of fifteen haiku, whereas the poem “7 haiku (for Ray Brown)” consists of seven.",
+            "B": "Both “15 haiku (for Toni Morrison)” and “7 haiku (for Ray Brown)” can be found in Sanchez's 2010 collection Morning Haiku.",
+            "C": "While “15 haiku (for Toni Morrison)” is about writer Toni Morrison, “7 haiku (for Ray Brown)” is about bassist Ray Brown.",
+            "D": "The poems in Morning Haiku celebrate the lives or mourn the deaths of “revered African American figures,” according to the book's publisher, Penguin Random House."
+          },
+          "answer": "A"
+        },
+        {
+          "question_type": "rhetorical_synthesis",
+          "difficulty": "medium",
+          "stimulus": "While researching a topic, a student has taken the following notes:\n• The Japanese Ministry of the Environment made a list of 100 soundscapes of Japan.\n• Each soundscape on the list was selected for its cultural significance to Japan.\n• The sound of crickets on the banks of the Todo River is on the list.\n• The sound of water flowing over Nachi Falls is on the list.",
+          "question": "The student wants to indicate that both soundscapes are on the list. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+          "choices": {
+            "A": "Both the sound of crickets on the banks of the Todo River and the sound of water flowing over Nachi Falls are on the list.",
+            "B": "The sound of water flowing over Nachi Falls is on the list.",
+            "C": "The Japanese Ministry of the Environment made a list of 100 culturally significant soundscapes of Japan.",
+            "D": "Each soundscape on the list, including the sound of crickets on the banks of the Todo River, was selected for its cultural significance to Japan."
+          },
+          "answer": "A"
         },
         {
           "question_type": "rhetorical_synthesis",
           "difficulty": "hard",
-          "stimulus": "<p>While preparing a programme note, a student took these notes:</p><ul><li>The zhetygen is a Kazakh string instrument.</li><li>It has seven strings and rests flat on the player’s lap or on a table.</li><li>It appears in three of the field recordings made in 1932.</li><li>Scholars disagree about when it reached the steppe.</li></ul><p>The student wants to introduce the instrument to an audience that has never heard of it. Which choice most effectively uses the relevant information from the notes?</p>",
-          "question": "Which choice most effectively introduces the instrument to an audience unfamiliar with it?",
+          "stimulus": "While researching a topic, a student has taken the following notes:\n• Maya Lin is an American artist known for her memorials and works of installation art.\n• She completed the Vietnam Veterans Memorial in 1982.\n• It is a memorial sculpture consisting of two 246-foot granite walls, and it is designed to commemorate veterans of the Vietnam War.\n• She completed Untitled (Topographic Landscape) in 1997.\n• It is an installation composed of wood that fills an entire gallery room.",
+          "question": "The student wants to describe Untitled (Topographic Landscape) to a new audience. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
           "choices": {
-            "A": "The zhetygen has seven strings and is laid flat while played.",
-            "B": "The zhetygen, unlike the dombyra, is not plucked but struck.",
-            "C": "Scholars disagree about when the zhetygen reached the steppe.",
-            "D": "The zhetygen appears in three of the recordings made in 1932."
+            "A": "Artist Maya Lin is well known for her installation art, such as Untitled (Topographic Landscape) (1997), and for her memorials.",
+            "B": "Though Maya Lin's Untitled (Topographic Landscape) (1997) is not a memorial, its gallery-filling scale may call to mind the imposing Vietnam Veterans Memorial, which consists of two 246-foot granite walls.",
+            "C": "Maya Lin's Vietnam Veterans Memorial is a granite memorial sculpture that commemorates veterans of the Vietnam War, while Untitled (Topographic Landscape) is an installation artwork.",
+            "D": "Completed in 1997, Maya Lin's Untitled (Topographic Landscape) is a large-scale installation artwork composed of wood that fills an entire gallery room."
           },
-          "answer": "A"
+          "answer": "D"
+        },
+        {
+          "question_type": "rhetorical_synthesis",
+          "difficulty": "hard",
+          "stimulus": "While researching a topic, a student has taken the following notes:\n• Australian ecologist Alison Lullfitz studied the distribution of Plantago debilis, a small shrub with edible tubers.\n• Lullfitz found that yorluk plants gathered at sites across southwest Australia had very similar DNA despite differences in soil conditions.\n• Lullfitz hypothesized that humans had transported the plant throughout the region.\n• Lullfitz consulted Shandell Cummings and Lynette Knapp, members of the area's Noongar Aboriginal group.\n• Cummings and Knapp confirmed that their ancestors carried yorluk when traveling across the region.",
+          "question": "The student wants to explain Cummings and Knapp's contribution to Lullfitz's study. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+          "choices": {
+            "A": "Lullfitz found that Cummings and Knapp had information relevant to her study of Plantago debilis distribution.",
+            "B": "Cummings and Knapp confirmed that DNA sequences from the Plantago debilis plants Lullfitz had gathered were in fact very similar.",
+            "C": "Lullfitz consulted Cummings and Knapp, members of the Noongar Aboriginal group, who assisted with her study of Plantago debilis, a small shrub with edible tubers.",
+            "D": "By indicating that their ancestors transported Plantago debilis, Cummings and Knapp provided information that supported Lullfitz's hypothesis."
+          },
+          "answer": "D"
         }
       ]
     },
@@ -380,834 +377,353 @@ JTS.data.addPaper({
         {
           "question_type": "words_in_context",
           "difficulty": "medium",
-          "stimulus": "The first catalogue of the collection was printed while crates were still arriving. Its compiler called it ______, and within four years he had replaced it twice.",
+          "stimulus": "Some pieces of music might have _____ meanings—the compositions of Rosa Guraieb lend themselves to as many different interpretations as there are people to listen to them—and so as long as a listener's interpretation isn't willfully absurd or the result of inattention, it is difficult to justify the claim that the listener has misunderstood the piece.",
           "question": "Which choice completes the text with the most logical and precise word or phrase?",
           "choices": {
-            "A": "exhaustive",
-            "B": "provisional",
-            "C": "conventional",
-            "D": "lavish"
+            "A": "superficial",
+            "B": "myriad",
+            "C": "deficient",
+            "D": "untenable"
+          },
+          "answer": "B"
+        },
+        {
+          "question_type": "words_in_context",
+          "difficulty": "medium",
+          "stimulus": "The following text is adapted from Neera's 1866 novel Teresa, translated by Martha King in 1998.\n\nBeyond the [porch] extended a piece of land, with some exaggeration called a garden. In truth, it had some flower beds that at first sight confirmed the illusion, particularly at that time of year, since the pansies were in bloom with their infinite shades, with the intense velvet of their dark leaves and the luminous silk of their pale leaves.",
+          "question": "As used in the text, what does the word “confirmed” most nearly mean?",
+          "choices": {
+            "A": "Necessitated",
+            "B": "Substantiated",
+            "C": "Designated",
+            "D": "Promised"
           },
           "answer": "B"
         },
         {
           "question_type": "words_in_context",
           "difficulty": "hard",
-          "stimulus": "Later restorers meant well. By varnishing the panel to bring up its colour, they ______ the underdrawing that infrared photography would reveal only in 1994.",
+          "stimulus": "If confirmed by other researchers, a newly reported measurement of W boson's mass could _____ the dominant theory of particle physics, the standard model, as the new measurement differs significantly from the standard model's prediction of the elementary particle's mass.",
           "question": "Which choice completes the text with the most logical and precise word or phrase?",
           "choices": {
-            "A": "obscured",
-            "B": "confirmed",
-            "C": "preserved",
-            "D": "exaggerated"
+            "A": "satisfy",
+            "B": "simplify",
+            "C": "overtake",
+            "D": "undermine"
+          },
+          "answer": "D"
+        },
+        {
+          "question_type": "words_in_context",
+          "difficulty": "hard",
+          "stimulus": "Theater and film scholars often draw parallels between the lives of performers and aspects of roles they've played; however, the most insightful of these discussions, such as Linda Costanzo Cahir's consideration of resemblances between actor Vivien Leigh and the character Blanche DuBois, maintain a rigid distinction between the actor and the character, taking care never to _____ them.",
+          "question": "Which choice completes the text with the most logical and precise word or phrase?",
+          "choices": {
+            "A": "conflate",
+            "B": "epitomize",
+            "C": "lambaste",
+            "D": "overshadow"
           },
           "answer": "A"
         },
         {
           "question_type": "words_in_context",
           "difficulty": "hard",
-          "stimulus": "<p>Critics of the period praised the poet’s <u>economy</u>: a stanza of hers carries no word that another word is already doing the work of.</p>",
-          "question": "As used in the text, what does the word \"economy\" most nearly mean?",
+          "stimulus": "Some social scientists argue that while a belief in the importance of freedom and progress is key to democracy, the public's understanding of history is also central to its subsequent comprehension of a state's politics, and if an electorate is to function, historical issues cannot remain the dominion only of academics. History is too _____ to leave to historians alone.",
+          "question": "Which choice completes the text with the most logical and precise word or phrase?",
           "choices": {
-            "A": "Wealth",
-            "B": "Restraint",
-            "C": "Trade",
-            "D": "Efficiency of cost"
+            "A": "accessible",
+            "B": "complex",
+            "C": "critical",
+            "D": "respectable"
           },
-          "answer": "B"
-        },
-        {
-          "question_type": "words_in_context",
-          "difficulty": "hard",
-          "stimulus": "<p>The committee gave the proposal its <u>qualified</u> support: it approved the route but refused to fund the second station until traffic figures were repeated.</p>",
-          "question": "As used in the text, what does the word \"qualified\" most nearly mean?",
-          "choices": {
-            "A": "Certified",
-            "B": "Limited",
-            "C": "Suitable",
-            "D": "Described"
-          },
-          "answer": "B"
+          "answer": "C"
         },
         {
           "question_type": "text_structure_purpose",
           "difficulty": "hard",
-          "stimulus": "<p>A hummingbird’s wing does not flap so much as trace a figure of eight, generating lift on the upstroke as well as the down. <u>The ruby-throated hummingbird completes that figure about fifty-three times a second.</u> No other bird of comparable size holds a hover for as long.</p>",
-          "question": "Which choice best describes the function of the underlined sentence in the text as a whole?",
-          "choices": {
-            "A": "It supplies a measurement that makes the preceding comparison concrete.",
-            "B": "It raises an objection that the rest of the text answers.",
-            "C": "It shifts the discussion from one species to another.",
-            "D": "It acknowledges that the method described is no longer used."
-          },
-          "answer": "A"
-        },
-        {
-          "question_type": "text_structure_purpose",
-          "difficulty": "hard",
-          "stimulus": "Why do desert plants so often have small leaves? The usual answer is water: a small leaf loses less of it. That is true, and it is not the whole story. A small leaf also sheds heat faster, because it sits closer to the moving air around it than a broad leaf does — which is why small leaves appear on wet tropical mountains too, where water is the last thing in short supply.",
+          "stimulus": "In Muscogee, an Indigenous language from the southeastern region of what is now the United States, hafki means “white,” whereas hafkifi is used to refer to two or more white things. This phenomenon, in which an element of a root word is repeated, sometimes with modification, within another word that is related to the root word, is called reduplication. In this case, the element “fi” in hafki gets repeated in hafkifi. There are many examples of this type of reduplication in Muscogee.",
           "question": "Which choice best describes the overall structure of the text?",
           "choices": {
-            "A": "It poses a question, answers it, and then qualifies the answer.",
-            "B": "It describes a problem and then proposes a solution.",
-            "C": "It contrasts two periods and then explains what caused the change.",
-            "D": "It defines a method and then lists its applications."
+            "A": "It identifies the most frequently occurring words in Muscogee, explains why it is difficult to translate these words into English, and then provides examples of languages other than English into which those words can be translated.",
+            "B": "It explains the phenomenon of reduplication, discusses why reduplication has been controversial among scholars, and then argues that an analysis of Muscogee could help resolve that controversy.",
+            "C": "It describes the relationship between Muscogee and several other languages, raises a question about the nature of that relationship, and then answers that question.",
+            "D": "It presents some specific words in Muscogee, describes the general linguistic phenomenon exemplified by those words, and then states that this phenomenon occurs frequently in Muscogee."
           },
-          "answer": "A"
+          "answer": "D"
         },
         {
-          "question_type": "cross_text_connections",
+          "question_type": "text_structure_purpose",
           "difficulty": "hard",
-          "stimulus": "<p><b>Text 1</b></p><p>Streets that were given trees in 2016 saw reported crime fall by a fifth over the following decade, while untreed streets in the same town saw no change. Planting, it appears, makes a street safer.</p><p><b>Text 2</b></p><p>The 2016 planting was not distributed at random. Streets qualified for it by petition, and a street that can organise a petition is a street where neighbours already know one another. Whether it was the trees or the petitioners who changed the figures, the study as designed cannot say.</p>",
-          "question": "Based on the texts, the author of Text 2 would most likely characterise the conclusion in Text 1 as",
+          "stimulus": "Benjamin Prud'homme and colleagues have explored how convergent evolution—a phenomenon that occurs when the same trait evolves independently in two reproductively separate lineages—can result from a genetic mechanism shared by both lineages. Meanwhile, Cynthia C. Steiner and colleagues have investigated how convergence occurs through different genetic mechanisms. However, the relative prevalence of convergence through shared and different genetic processes is still poorly understood. This motivated biologists Delbert A. Green II and Cassandra G. Extavour to evaluate both types of convergence in a single study for their 2012 paper.",
+          "question": "Which choice best states the function of the underlined sentence in the text as a whole?",
           "choices": {
-            "A": "well supported, because the correlation is strong.",
-            "B": "premature, because an untested explanation fits the same data.",
-            "C": "mistaken, because the trend described did not occur.",
-            "D": "irrelevant, because the two towns are not comparable."
+            "A": "It introduces researchers who will be discussed in greater detail later in the text.",
+            "B": "It gives an example of how some scientists had studied a phenomenon before another study mentioned later in the text was conducted.",
+            "C": "It outlines a study that was influenced by the researchers mentioned later in the text.",
+            "D": "It clarifies a concept that is unclear in some of the studies mentioned in the text."
           },
           "answer": "B"
         },
         {
+          "question_type": "inferences",
+          "difficulty": "hard",
+          "stimulus": "The blue shark and the striped marlin are ectothermic (cold-blooded) fish, whereas the salmon shark and the Pacific bluefin tuna are regional endotherms—they retain metabolic heat resulting in body temperatures above the ambient water temperature. Unlike those of ectotherms, regional endotherms' hearts have a relatively high proportion (greater than 30%) of compact myocardial tissue, which is needed to maintain these animals' blood pressure. In a 2023 study, Haley R. Dolton and colleagues found that basking sharks—planktivorous filter-feeders that were classified as full ectotherms at the time—have hearts consisting of 47% compact myocardial tissue, thereby undermining that classification.",
+          "question": "According to the text, which choice most accurately describes the importance of the percentage of compact myocardial tissue in the basking shark's heart?",
+          "choices": {
+            "A": "It is insufficient to establish that the basking shark should be categorized as Dolton and colleagues suggest.",
+            "B": "It is higher than that of the salmon shark, a regional endotherm, despite the basking shark being a full ectotherm.",
+            "C": "It is higher than that of the Pacific bluefin tuna, a regional endotherm, which calls into question the basking shark's status as a regional endotherm.",
+            "D": "It is by itself sufficient to invalidate how the basking shark has been categorized in the past."
+          },
+          "answer": "D"
+        },
+        {
           "question_type": "central_ideas",
           "difficulty": "hard",
-          "stimulus": "The bowl has carried four labels. In 1881 it was \"Persian, ancient\". In 1912 it became \"Islamic, probably 12th century\". In 1969 a curator added a findspot and a question mark. The current label gives a kiln, a range of fifty years, and a footnote about the question mark. The bowl has not changed. Read in order, the labels are a record of what the museum believed it was able to know.",
+          "stimulus": "Philosophers note that many people have an intuitive sense that while we ought not to lie, there may be circumstances in which lying is permissible. If this intuition is correct and we lack an inviolable duty to speak truthfully, what grounds opposition to lying in the first place? Japa Pallikkathayil has advanced one answer by appealing to a duty to respect others' agential interests: the possession of false beliefs constrains agency, and thus we ought not to impede the formation of true beliefs unless doing so prevents a greater constraint on someone's agency or an otherwise impermissible end.",
           "question": "Which choice best states the main idea of the text?",
           "choices": {
-            "A": "Museums should return objects whose origins cannot be documented.",
-            "B": "The label on an object records the museum’s history as much as the object’s.",
-            "C": "Nineteenth-century collectors were careless about provenance.",
-            "D": "Catalogue entries are rewritten more often than visitors realise."
+            "A": "Pallikkathayil's argument suggests that if we have a duty to respect other people's agential interests and if possession of false beliefs constrains agency, then we have an inviolable duty to speak truthfully.",
+            "B": "Pallikkathayil's argument shows that if our intuition that circumstances may make lying permissible is correct, then it is unclear whether there are any grounds for an opposition to lying in the first place.",
+            "C": "One potential means of justifying opposition to lying is Pallikkathayil's argument that we have an obligation to respect other people's agency that entails a commitment to truthfulness except in certain circumstances.",
+            "D": "Many people have an intuitive sense that lying is permissible in some circumstances but lack a principled way to identify those circumstances, and Pallikkathayil's argument may provide a means of resolving that problem."
           },
-          "answer": "B"
-        },
-        {
-          "question_type": "central_ideas",
-          "difficulty": "medium",
-          "stimulus": "A city’s \"average commute\" is reported to the minute, and it hides more than it reports. Averages are pulled up by a long tail of very long journeys and say nothing about who makes them. Two cities with the same average can differ entirely: in one, almost everyone travels half an hour; in the other, most travel fifteen minutes and a tenth travel two hours.",
-          "question": "Which choice best states the main purpose of the text?",
-          "choices": {
-            "A": "To explain why a common measurement is misleading.",
-            "B": "To describe how a piece of equipment works.",
-            "C": "To argue for more funding for a kind of research.",
-            "D": "To compare two competing units of measurement."
-          },
-          "answer": "A"
+          "answer": "C"
         },
         {
           "question_type": "evidence_textual",
           "difficulty": "hard",
-          "stimulus": "Seedlings planted into soil carrying an established fungal network grew faster than seedlings planted into sterilised soil. The researchers concluded that the seedlings were drawing sugars from neighbouring trees through the fungi.",
-          "question": "Which finding, if true, would most directly weaken the researchers’ conclusion?",
+          "stimulus": "To detect information about water flow, fish have sensors running from the snout up down the sides of the head. Yuzo R. Yanagitsu, Otar Akanyeti, and James C. Liao conducted tests to find where the difference in pressure is greatest between two adjacent sensors because, according to the researchers, as these pressure differences increase, so does the amount of information available to the fish. Using the ratio of head width to length, they found that the greatest pressure difference is closer to the snout for narrower heads (lower ratio of width to length) and farther from the snout for wider heads (higher ratio of width to length). Based on this finding, a second team of researchers has hypothesized that the sensors where information is greatest are likely more sensitive than the rest.",
+          "question": "Which finding, if true, would most directly support the second research team's hypothesis?",
           "choices": {
-            "A": "Fungi in the plots grew more slowly in the second year than in the first.",
-            "B": "Seedlings grown in sterilised soil with added nutrients grew as well as those in fungal soil.",
-            "C": "The fungal network extended further than the researchers had mapped.",
-            "D": "Older trees in the plots carried more fungal connections than younger ones."
+            "A": "The longnose gar (Lepisosteus osseus) has a much narrower head than the devil catfish (Bagarius bagarius), and the most sensitive sensors of the longnose gar are closer to the snout than are those of the devil catfish.",
+            "B": "The longnose gar (Lepisosteus osseus) has a much narrower head than the devil catfish (Bagarius bagarius), and the most sensitive sensors for both are very close to their snouts.",
+            "C": "The longnose gar (Lepisosteus osseus) has a much narrower head than the devil catfish (Bagarius bagarius), and while the sensors nearest the snout for the longnose gar are more sensitive than the others, for the devil catfish all sensors are equally sensitive.",
+            "D": "The longnose gar (Lepisosteus osseus) has a much narrower head than the devil catfish (Bagarius bagarius), and the most sensitive sensors for the devil catfish are closer to the snout than are those for the longnose gar."
           },
-          "answer": "B"
-        },
-        {
-          "question_type": "evidence_textual",
-          "difficulty": "hard",
-          "stimulus": "The following text is adapted from an excavation report.\n\nThree of the houses had been re-roofed the year before. A loom stood strung in the second house, half a metre of cloth on it. The well was silted to within a metre of the top. No burials later than 1361 were found in the churchyard.",
-          "question": "Which quotation from the passage most effectively illustrates the claim that the village had been abandoned in haste?",
-          "choices": {
-            "A": "\"Three of the houses had been re-roofed the year before.\"",
-            "B": "\"A loom stood strung in the second house, half a metre of cloth on it.\"",
-            "C": "\"The well was silted to within a metre of the top.\"",
-            "D": "\"No burials later than 1361 were found in the churchyard.\""
-          },
-          "answer": "B"
+          "answer": "C"
         },
         {
           "question_type": "evidence_quantitative",
           "difficulty": "hard",
-          "stimulus": "<p>Rainfall totals alone do not describe a climate; how the rain arrives matters as much. Of the three stations below, the one whose figures best illustrate that point is ______</p><table><tr><th>Station</th><th>Wet days</th><th>Annual rainfall (mm)</th></tr><tr><td>A</td><td>180</td><td>620</td></tr><tr><td>B</td><td>120</td><td>700</td></tr><tr><td>C</td><td>62</td><td>940</td></tr></table>",
-          "question": "Which choice most effectively uses data from the table to complete the statement?",
+          "stimulus": "Electricity Capacity Trends (in megawatts) for Four Renewable Technologies in Indonesia (2017–2020)\n\nEnergy | 2017 | 2018 | 2019 | 2020\nGeothermal | 1,808 | 1,948 | 2,131 | 2,131\nRenewable hydropower | 5,703 | 5,773 | 5,976 | 6,141\nSolar | 97.4 | 65.5 | 155 | 185.3\nWind | 1.5 | 143.5 | 154.3 | 154.3\n\nIndonesia is trying to increase its electricity capacity (the maximum amount of electricity that can be generated) for renewable energy in order to reduce dependence on fossil fuels, which can be costly financially and environmentally. From 2017 to 2020, Indonesia's use of four renewable technologies has trended upward, but not uniformly; the electricity capacity of solar power fell from 97.4 megawatts in 2017 to 65.5 megawatts in 2018, and the electricity capacity of _____.",
+          "question": "Which choice most effectively uses data from the graph to complete the assertion?",
           "choices": {
-            "A": "Station C, where the highest rainfall coincided with the lowest number of wet days.",
-            "B": "Station A, where rain fell on the most days but totalled the least.",
-            "C": "Station B, where both figures were between those of the other two stations.",
-            "D": "Station C, where rain fell on the fewest days and totalled the least."
+            "A": "both geothermal and wind neither increased nor decreased from 2019 to 2020.",
+            "B": "both wind and solar never surpassed that of renewable hydropower throughout the four-year period.",
+            "C": "wind was much lower in 2017 than it was in 2018, 2019, or 2020.",
+            "D": "renewable hydropower was much higher than that of solar for all four years."
           },
           "answer": "A"
         },
         {
-          "question_type": "inferences",
+          "question_type": "evidence_textual",
           "difficulty": "hard",
-          "stimulus": "At four points the text breaks off and resumes several lines later. At each break the scribe left exactly the space the missing lines would have filled, ruled and unwritten, and continued in the same hand and the same ink. It can reasonably be inferred that ______",
-          "question": "Which choice most logically completes the text?",
+          "stimulus": "In a series of experiments, Julio Sevilla and Claudia Townsend showed that manipulating the space between products in store displays can influence consumers' views of those products. Participants in several of the experiments regarded the same products in the same (generic) retail settings as significantly more valuable when the product-to-space ratio was low than when it was high. But in one of the experiments, Sevilla and Townsend arranged the same jewelry with different levels of intervening space at an upscale retailer (Tiffany & Co.) and a relatively inexpensive retailer (Forever 21). The result of this experiment suggests that a store context associated with inexpensive products may moderate the effect Sevilla and Townsend observed in their other experiments.",
+          "question": "Which finding from the experiment would best support the researchers' conclusion?",
           "choices": {
-            "A": "the copyist worked from an exemplar that was already damaged.",
-            "B": "the manuscript was copied by two scribes working in turn.",
-            "C": "the missing lines were removed deliberately after copying.",
-            "D": "the manuscript is a later forgery."
+            "A": "At both Tiffany & Co. and Forever 21, participants judged jewelry spaced far apart to be less valuable than jewelry spaced close together, but the difference in perceived value was significantly greater at Tiffany & Co. than at Forever 21.",
+            "B": "When jewelry was spaced far apart, participants judged the jewelry at Tiffany & Co. to be more valuable than the jewelry at Forever 21, but when jewelry was spaced close together, participants judged the jewelry at Tiffany & Co. to be less valuable than the jewelry at Forever 21.",
+            "C": "At Tiffany & Co., participants judged jewelry spaced far apart to be substantially more valuable than jewelry spaced close together, but at Forever 21, participants judged jewelry spaced far apart to be only slightly more valuable than jewelry spaced close together.",
+            "D": "Participants judged jewelry spaced far apart at Tiffany & Co. to be similar in value to jewelry spaced far apart at Forever 21, but participants judged jewelry spaced close together at Tiffany & Co. to be more valuable than jewelry spaced close together at Forever 21."
           },
-          "answer": "A"
+          "answer": "C"
         },
         {
-          "question_type": "inferences",
+          "question_type": "evidence_textual",
           "difficulty": "hard",
-          "stimulus": "When adult starlings were captured mid-migration and released hundreds of kilometres to the east, they corrected their course and reached the usual wintering grounds. First-year birds released alongside them flew the original compass bearing and wintered in a region the species does not normally use. The results suggest that ______",
-          "question": "Which choice most logically completes the text?",
+          "stimulus": "The Clouds is a 423 BCE play by Aristophanes, originally written in ancient Greek. At the time, professional intellectuals called sophists taught paying customers a variety of subjects and sometimes engaged in what would now be described as research. Aristophanes satirizes sophists' practices and views as foolish, as seen when the character _____.",
+          "question": "Which choice most effectively uses a quotation from a translation of The Clouds to illustrate the claim?",
           "choices": {
-            "A": "the birds navigate by the stars rather than by landmarks.",
-            "B": "first-year birds inherit a direction but not a destination.",
-            "C": "the population is splitting into two migratory routes.",
-            "D": "displaced birds are unable to complete the migration."
-          },
-          "answer": "B"
-        },
-        {
-          "question_type": "boundaries",
-          "difficulty": "medium",
-          "stimulus": "______ at the foot of the Trans-Ili Alatau mountains.",
-          "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
-          "choices": {
-            "A": "Almaty, the largest city in Kazakhstan, sits",
-            "B": "Almaty the largest city in Kazakhstan sits",
-            "C": "Almaty, the largest city in Kazakhstan sits",
-            "D": "Almaty the largest city in Kazakhstan, sits"
-          },
-          "answer": "A"
-        },
-        {
-          "question_type": "boundaries",
-          "difficulty": "hard",
-          "stimulus": "The first two furnaces were rebuilt and returned to ______ the third was left as it had been found.",
-          "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
-          "choices": {
-            "A": "work, however,",
-            "B": "work; however,",
-            "C": "work however",
-            "D": "work, however"
-          },
-          "answer": "B"
-        },
-        {
-          "question_type": "boundaries",
-          "difficulty": "hard",
-          "stimulus": "The wall is built from three ______",
-          "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
-          "choices": {
-            "A": "materials: clay, straw, and dung.",
-            "B": "materials, clay, straw, and dung.",
-            "C": "materials; clay, straw, and dung.",
-            "D": "materials clay, straw and dung."
-          },
-          "answer": "A"
-        },
-        {
-          "question_type": "boundaries",
-          "difficulty": "medium",
-          "stimulus": "The observatory recorded its first spectrum in ______ the dome was still unfinished.",
-          "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
-          "choices": {
-            "A": "1902, when",
-            "B": "1902 when",
-            "C": "1902; when",
-            "D": "1902. When"
-          },
-          "answer": "A"
-        },
-        {
-          "question_type": "form_structure_sense",
-          "difficulty": "medium",
-          "stimulus": "The engineer ______ drawings survive is not named in any of the surviving contracts.",
-          "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
-          "choices": {
-            "A": "who",
-            "B": "whom",
-            "C": "which",
-            "D": "whose"
+            "A": "Strepsiades, after taking lessons from a sophist, says to his son, “Approach, that you may know more; and I will tell you a thing, by learning which you will be a man. But see that you do not teach this to any one.”",
+            "B": "Socrates, a sophist, says to a potential customer, “I wish to briefly learn from you if you are possessed of a good memory.”",
+            "C": "Strepsiades encourages his son to learn to be a sophist, saying, “If you have any concern for your father's patrimony, become one of them.”",
+            "D": "Socrates, a sophist, explains why he studies astronomy while sitting in a basket hanging a few feet off the ground, saying, “I should not have rightly discovered things celestial if I had not suspended the intellect, and mixed the thought in a subtle form with its kindred air.”"
           },
           "answer": "D"
         },
         {
-          "question_type": "form_structure_sense",
+          "question_type": "inferences",
           "difficulty": "hard",
-          "stimulus": "The number of manuscripts attributed to the workshop ______ still disputed.",
-          "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+          "stimulus": "The single origin hypothesis of iron metallurgy posits that the craft originated in Anatolia (West Asia) circa 2200–2000 BCE before diffusing to other parts of the world, including Africa. Some proponents of the hypothesis argue that iron production technologies first arrived in North Africa through Carthage, where the earliest evidence of ironworking dates to approximately 800–600 BCE, before these technologies spread to sub-Saharan Africa over the following centuries. However, excavation of multiple sites on the Adamawa plateau in Central Africa conducted by Étienne Zangato and Augustin Holl uncovered evidence of iron workshops that may have been in operation as late as 900–750 BCE in Gbabiri and as early as 2300–1900 BCE in Oboui and Gbatoro. These findings suggest that _____.",
+          "question": "Which choice most logically completes the text?",
           "choices": {
-            "A": "is",
-            "B": "are",
-            "C": "were",
-            "D": "have been"
-          },
-          "answer": "A"
-        },
-        {
-          "question_type": "form_structure_sense",
-          "difficulty": "hard",
-          "stimulus": "The rainfall recorded at the upper station is more reliable ______ the valley, where the gauge was moved twice.",
-          "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
-          "choices": {
-            "A": "than those of",
-            "B": "than",
-            "C": "then those of",
-            "D": "than that of"
+            "A": "iron production may have originated in Anatolia much earlier than the available evidence currently indicates.",
+            "B": "iron production technologies were likely transmitted from Anatolia to Central Africa via an alternate route than the one suggested by some proponents of the single origin hypothesis.",
+            "C": "iron production technologies found in Gbabiri likely derived directly from technologies transmitted from Anatolia, but those found in Oboui and Gbatoro did not.",
+            "D": "iron production may have developed independently and relatively simultaneously in Anatolia and parts of Central Africa."
           },
           "answer": "D"
         },
         {
-          "question_type": "form_structure_sense",
+          "question_type": "inferences",
           "difficulty": "hard",
-          "stimulus": "By the time the gauges were read at dawn, the river ______ almost two metres.",
+          "stimulus": "Exclusively inhabiting tropical countries such as Ghana, wild chimpanzees lack adaptations to seasonal variations in ultraviolet B (UVB) irradiance from sunlight; since UVB exposure enables vertebrates to synthesize vitamin D, Sophie Moittié and colleagues studied zoo chimpanzees in Spain and other mid-latitude countries to see how vitamin D levels are affected by the seasonal variations in UVB irradiance that occur in those locations. They found the chimpanzees' vitamin D level were significantly lower in autumn than in summer and appeared unaffected by oral supplementation of vitamin D administered by zookeepers. Moittié and colleagues point out, however, that supplementation was rare, highly varied, and poorly tracked, and therefore _____.",
+          "question": "Which choice most logically completes the text?",
+          "choices": {
+            "A": "the effect of supplemental vitamin D on zoo chimpanzees in Spain and other mid-latitude countries can more clearly be observed in summer than in autumn.",
+            "B": "the possibility that zoo chimpanzees in Spain and other mid-latitude countries would benefit from supplemental vitamin D during autumn cannot be excluded.",
+            "C": "vitamin D levels in zoo chimpanzees in Spain and other mid-latitude countries may be higher during autumn than Moittié and colleagues' data appear to indicate.",
+            "D": "differences in vitamin D supplementation likely explain none of the difference in vitamin D levels across zoo chimpanzees in Spain and other mid-latitude countries than seasonal differences in UVB irradiation do."
+          },
+          "answer": "B"
+        },
+        {
+          "question_type": "form_structure_sense",
+          "difficulty": "medium",
+          "stimulus": "Established in 1936 by African American novelist Richard Wright, _____ it would become a vital part of the creative movement known as the Chicago Black Renaissance.",
           "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
           "choices": {
-            "A": "had risen",
-            "B": "has risen",
-            "C": "rises",
-            "D": "is rising"
+            "A": "the South Side Writers Group provided a valuable forum for Chicago writers to share ideas;",
+            "B": "writers shared ideas at a valuable forum known as the South Side Writers Group in Chicago;",
+            "C": "Chicago was where the South Side Writers Group provided a valuable forum for writers to share ideas;",
+            "D": "Chicago writers in the South Side Writers Group had a valuable forum for sharing ideas;"
           },
           "answer": "A"
+        },
+        {
+          "question_type": "boundaries",
+          "difficulty": "medium",
+          "stimulus": "The 1948 founding of the American GI Forum and the 1946 Mendez v. Westminster court decision are regarded as important events in US civil rights _____ former establishing a Latino rights advocacy group and the latter legally affirming the rights of Latino students.",
+          "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+          "choices": {
+            "A": "history, the",
+            "B": "history, as the",
+            "C": "history; the",
+            "D": "history. The"
+          },
+          "answer": "A"
+        },
+        {
+          "question_type": "form_structure_sense",
+          "difficulty": "medium",
+          "stimulus": "Trisyllabic words _____ as dactyls in English metrical verse, such as “article” and “sleeper,” consist of one stressed syllable followed by two unstressed syllables.",
+          "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+          "choices": {
+            "A": "have been classified",
+            "B": "are classified",
+            "C": "can be classified",
+            "D": "classified"
+          },
+          "answer": "D"
+        },
+        {
+          "question_type": "boundaries",
+          "difficulty": "hard",
+          "stimulus": "Scheme is referred to as a compiled programming language because it typically incorporates a compiler—a tool that translates lines of code into executable commands. Compiling isn't exclusive to certain programming _____ any language can incorporate this tool.",
+          "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+          "choices": {
+            "A": "languages; however,",
+            "B": "languages, however;",
+            "C": "languages. However,",
+            "D": "languages, however"
+          },
+          "answer": "A"
+        },
+        {
+          "question_type": "boundaries",
+          "difficulty": "hard",
+          "stimulus": "Reena Esmail, an Indian American classical composer, incorporates Indian musical elements into her work. Esmail's 2013 violin and piano composition Jhula Jhule intertwines the melodies of two Indian folk _____ in TāReKiTa, a 2016 choral composition, Esmail features onomatopoeic notes imitating the sounds of the tabla, a type of Indian drum.",
+          "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+          "choices": {
+            "A": "songs, for instance,",
+            "B": "songs. For instance, while",
+            "C": "songs; for instance,",
+            "D": "songs, for instance, while"
+          },
+          "answer": "C"
+        },
+        {
+          "question_type": "form_structure_sense",
+          "difficulty": "medium",
+          "stimulus": "The Museum of Modern Art's vast collection of oil paintings, which includes James Ensor's Tribulations of Saint Anthony and Taso Kounellis's Self-Portrait as a Golf Player, _____ among its most captivating offerings.",
+          "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+          "choices": {
+            "A": "remain",
+            "B": "have remained",
+            "C": "remains",
+            "D": "have been remaining"
+          },
+          "answer": "C"
+        },
+        {
+          "question_type": "transitions",
+          "difficulty": "easy",
+          "stimulus": "The traditional process of Turkish paper marbling (ebru) generally proceeds like this: First, the artisan fills a shallow tray with a water bath solution. Next, the artisan adds inks or paints to the solution, which can then be manipulated into intricate designs. _____ the artisan slips paper in and out of the liquid, transferring the design onto the paper.",
+          "question": "Which choice completes the text with the most logical transition?",
+          "choices": {
+            "A": "Nevertheless,",
+            "B": "Therefore,",
+            "C": "Actually,",
+            "D": "Finally,"
+          },
+          "answer": "D"
         },
         {
           "question_type": "transitions",
           "difficulty": "medium",
-          "stimulus": "Cast iron is strong when squeezed and brittle when pulled, which makes it a good column and a poor beam. ______ wrought iron bends long before it breaks, and the century’s great train sheds are built of it.",
+          "stimulus": "In the early 1900s, sculptor and collector Gertrude Whitney was one of the foremost champions of avant-garde art, helping many US avant-garde artists gain publicity and exposure. _____ Whitney offered to donate more than 500 avant-garde works to be displayed at a leading New York museum, but the museum said no—so she opened her own, the Whitney Museum of American Art.",
           "question": "Which choice completes the text with the most logical transition?",
           "choices": {
-            "A": "In other words,",
-            "B": "By contrast,",
-            "C": "For instance,",
-            "D": "Consequently,"
-          },
-          "answer": "B"
-        },
-        {
-          "question_type": "transitions",
-          "difficulty": "hard",
-          "stimulus": "The technique dates every sample it is given and dates them quickly. ______ it cannot be used on anything that has been heated above 400 degrees, which rules out most of the material recovered from the kiln site.",
-          "question": "Which choice completes the text with the most logical transition?",
-          "choices": {
-            "A": "Admittedly,",
-            "B": "Likewise,",
-            "C": "In short,",
-            "D": "Instead,"
+            "A": "To this end,",
+            "B": "In other words,",
+            "C": "In contrast,",
+            "D": "Granted,"
           },
           "answer": "A"
         },
         {
           "question_type": "transitions",
           "difficulty": "hard",
-          "stimulus": "Every copy of the treaty was destroyed in the fire of 1698. ______ its terms are known almost in full, because three of the signatories described them in letters that survive.",
+          "stimulus": "The geologic principle of cross-cutting relationships states that an intrusion is younger than the rocks through which it cuts. _____ geophysicists analyzing a given rock formation can ascertain that an igneous intrusion that bisects a layer of 358.5-million-year-old Tournaisian rock but not the 303.7-million-year-old Gzhelian rock above it is younger than the former but older than the latter.",
           "question": "Which choice completes the text with the most logical transition?",
           "choices": {
-            "A": "Therefore,",
-            "B": "Nonetheless,",
-            "C": "For example,",
-            "D": "Previously,"
+            "A": "Accordingly,",
+            "B": "Moreover,",
+            "C": "To this end,",
+            "D": "That being said,"
           },
-          "answer": "B"
+          "answer": "A"
         },
         {
           "question_type": "rhetorical_synthesis",
           "difficulty": "hard",
-          "stimulus": "<p>While preparing a conference paper, a student took these notes:</p><ul><li>The hoard was found by a farmer in 1974.</li><li>It contained 412 silver coins.</li><li>38 of them were struck in Samarkand.</li><li>Samarkand is about 900 km from the findspot.</li></ul><p>The student wants to present the finding to an audience of specialists. Which choice most effectively uses the relevant information from the notes?</p>",
-          "question": "Which choice most effectively uses the notes to present the finding to an audience of specialists?",
+          "stimulus": "While researching a topic, a student has taken the following notes:\n• 1926: The US Congress gave the US Commerce Department authority to regulate safety standards in the fledgling commercial airline industry.\n• 1938: Congress transferred this authority to a new independent government agency called the Civil Aeronautics Authority (CAA).\n• 1958: Congress transferred authority from the CAA to the newly established Federal Aviation Administration (FAA).\n• The FAA's first administrator, Elwood R. Quesada, updated safety standards and technologies for the era of commercial jets.\n• The FAA remains the regulatory authority for airline safety.",
+          "question": "The student wants to specify the order in which different government entities were given the authority to regulate airline safety in the US. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
           "choices": {
-            "A": "The hoard is interesting because the coins in it come from many places.",
-            "B": "The hoard contained 412 coins, and some of them were minted a long way away.",
-            "C": "Of the 412 coins in the hoard, 38 were struck in Samarkand, 900 kilometres from the findspot.",
-            "D": "The hoard, which contained 412 coins, was found by a farmer in 1974."
+            "A": "The authority to regulate US airline safety transferred from the US Commerce Department to the CAA in 1938, then from the CAA to the FAA in 1958.",
+            "B": "The CAA had the authority to regulate safety for US airlines from 1938 until 1958, at which point authority was transferred to the US Commerce Department by Elwood R. Quesada.",
+            "C": "The FAA, CAA, and the US Commerce Department all had the authority to regulate US airline safety, but they possessed this authority at different times.",
+            "D": "The FAA has regulated airline safety since it was established by the US Congress in 1958."
           },
-          "answer": "C"
+          "answer": "A"
         },
         {
           "question_type": "rhetorical_synthesis",
           "difficulty": "hard",
-          "stimulus": "<p>While writing a review, a student took these notes:</p><ul><li>The survey was conducted in 2023.</li><li>It covered 2,000 households across four districts.</li><li>Only households with a landline telephone were contacted.</li><li>About 60 percent of households in the districts have a landline.</li></ul><p>The student wants to emphasise the limitation of the survey. Which choice most effectively uses the relevant information from the notes?</p>",
-          "question": "Which choice most effectively emphasises the limitation of the survey?",
+          "stimulus": "While researching a topic, a student has taken the following notes:\n• R. Oleksy, L. Giuggioli, and T.J. McKetterick published a study in 2017.\n• In it, the researchers found that ingestion by bats had a positive effect on the germination of Ficus grevei plant seeds.\n• Jorge E. López and C. Vaughan published a study in 2004.\n• In it, the researchers found that ingestion by bats had a neutral effect on the germination of Sema platyceps plant seeds.\n• J.M. Palmeirim, D.L. Gorchov, and S. Stoleson published a study in 1989.\n• In it, the researchers found that ingestion by bats had a negative effect on the germination of Piper friedrichsthalii plant seeds.",
+          "question": "The student wants to make a generalization about the germination of seeds ingested by bats. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
           "choices": {
-            "A": "The survey covered 2,000 households across four districts.",
-            "B": "The survey covered four districts but reached only households with a landline, about 60 percent of the total.",
-            "C": "The survey, conducted in 2023, covered four districts and 2,000 households.",
-            "D": "Households without a landline were not included in the survey of four districts."
-          },
-          "answer": "B"
-        }
-      ]
-    },
-    {
-      key: 'm1', section: 'math',
-      questions: [
-        {
-          "question_type": "linear",
-          "difficulty": "easy",
-          "question": "<p>If <i>3x</i> + 7 = 25, what is the value of <i>x</i>?</p>",
-          "choices": {
-            "A": "4",
-            "B": "6",
-            "C": "9",
-            "D": "12"
-          },
-          "answer": "B"
-        },
-        {
-          "question_type": "linear",
-          "difficulty": "easy",
-          "question": "<p>A line passes through (0, 5) and (4, 13). What is its slope?</p>",
-          "choices": {
-            "A": "2",
-            "B": "3",
-            "C": "4",
-            "D": "8"
+            "A": "Seed ingestion by bats can have varying effects on seed germination.",
+            "B": "Over the years, researchers have studied the effect that seed germination has had on ingestion by bats.",
+            "C": "As was found in the 2017 study, ingestion by bats has a negative effect on the germination of plant seeds.",
+            "D": "Bat ingestion has consistently been found to have a positive effect on seed germination."
           },
           "answer": "A"
         },
         {
-          "question_type": "linear",
-          "difficulty": "medium",
-          "question": "<p>The function <i>f</i> is defined by <i>f</i>(<i>x</i>) = 12 &minus; 4<i>x</i>. For what value of <i>x</i> does <i>f</i>(<i>x</i>) = &minus;8?</p>",
-          "choices": {
-            "A": "&minus;5",
-            "B": "1",
-            "C": "5",
-            "D": "20"
-          },
-          "answer": "C"
-        },
-        {
-          "question_type": "systems",
-          "difficulty": "medium",
-          "question": "<p>If 2<i>x</i> + <i>y</i> = 11 and <i>x</i> &minus; <i>y</i> = 1, what is the value of <i>x</i>?</p>",
-          "choices": {
-            "A": "3",
-            "B": "4",
-            "C": "5",
-            "D": "6"
-          },
-          "answer": "B"
-        },
-        {
-          "question_type": "inequalities",
-          "difficulty": "medium",
-          "question": "<p>Which of the following is equivalent to 5 &minus; 2<i>x</i> &gt; 13?</p>",
-          "choices": {
-            "A": "<i>x</i> &gt; &minus;4",
-            "B": "<i>x</i> &lt; &minus;4",
-            "C": "<i>x</i> &gt; 4",
-            "D": "<i>x</i> &lt; 4"
-          },
-          "answer": "B"
-        },
-        {
-          "question_type": "linear",
-          "difficulty": "medium",
-          "question": "<p>A taxi charges a fixed 400 tenge plus 90 tenge per kilometre. Which equation gives the cost <i>C</i>, in tenge, of a ride of <i>k</i> kilometres?</p>",
-          "choices": {
-            "A": "<i>C</i> = 400<i>k</i> + 90",
-            "B": "<i>C</i> = 90<i>k</i> + 400",
-            "C": "<i>C</i> = 490<i>k</i>",
-            "D": "<i>C</i> = 90(<i>k</i> + 400)"
-          },
-          "answer": "B"
-        },
-        {
-          "question_type": "systems",
-          "difficulty": "medium",
-          "question": "<p>If 4<i>a</i> + 3<i>b</i> = 22 and <i>a</i> = 2<i>b</i>, what is the value of <i>b</i>?</p>",
-          "answer": "2"
-        },
-        {
-          "question_type": "quadratics",
-          "difficulty": "medium",
-          "question": "<p>What are the solutions of <i>x</i><sup>2</sup> &minus; 7<i>x</i> + 12 = 0?</p>",
-          "choices": {
-            "A": "&minus;3 and &minus;4",
-            "B": "3 and 4",
-            "C": "&minus;3 and 4",
-            "D": "2 and 6"
-          },
-          "answer": "B"
-        },
-        {
-          "question_type": "quadratics",
-          "difficulty": "medium",
-          "question": "<p>The graph of <i>y</i> = (<i>x</i> &minus; 3)<sup>2</sup> &minus; 5 has its vertex at which point?</p>",
-          "choices": {
-            "A": "(&minus;3, &minus;5)",
-            "B": "(3, 5)",
-            "C": "(3, &minus;5)",
-            "D": "(&minus;3, 5)"
-          },
-          "answer": "C"
-        },
-        {
-          "question_type": "exponential",
-          "difficulty": "medium",
-          "question": "<p>A culture starts with 300 cells and doubles every 4 hours. Which function gives the number of cells after <i>t</i> hours?</p>",
-          "choices": {
-            "A": "<i>N</i>(<i>t</i>) = 300 &middot; 2<sup><i>t</i></sup>",
-            "B": "<i>N</i>(<i>t</i>) = 300 &middot; 2<sup><i>t</i>/4</sup>",
-            "C": "<i>N</i>(<i>t</i>) = 300 &middot; 4<sup><i>t</i>/2</sup>",
-            "D": "<i>N</i>(<i>t</i>) = 300 + 2<i>t</i>"
-          },
-          "answer": "B"
-        },
-        {
-          "question_type": "polynomials",
-          "difficulty": "medium",
-          "question": "<p>If <i>p</i>(<i>x</i>) = <i>x</i><sup>3</sup> &minus; 2<i>x</i> + 1, what is <i>p</i>(&minus;2)?</p>",
-          "choices": {
-            "A": "&minus;3",
-            "B": "&minus;1",
-            "C": "1",
-            "D": "5"
-          },
-          "answer": "A"
-        },
-        {
-          "question_type": "quadratics",
+          "question_type": "rhetorical_synthesis",
           "difficulty": "hard",
-          "question": "<p>The equation <i>x</i><sup>2</sup> + <i>kx</i> + 36 = 0 has exactly one solution, and <i>k</i> &gt; 0. What is the value of <i>k</i>?</p>",
-          "answer": "12"
-        },
-        {
-          "question_type": "radicals",
-          "difficulty": "medium",
-          "question": "<p>If &radic;(<i>x</i> + 7) = 5, what is the value of <i>x</i>?</p>",
+          "stimulus": "While researching a topic, a student has taken the following notes:\n• Linguists use phonemes to represent the smallest possible units of sound within a word.\n• In English, the phoneme /p/ has bilabial articulation, which means it is produced using one or both lips, such as in the word “pan.”\n• The phoneme /l/ has alveolar articulation, which means it is produced by placing the tongue against or near the roof of the mouth, such as in the word “zoo.”\n• /p/ is plosive, a term used for sounds in which air flow is at first fully blocked.\n• /l/ is fricative, a term used for sounds in which air flow is partially blocked.",
+          "question": "Which choice most effectively uses information from the given sentences to explain plosive phonemes?",
           "choices": {
-            "A": "&minus;2",
-            "B": "12",
-            "C": "18",
-            "D": "32"
+            "A": "The phoneme /l/, a unit of sound in which air flow is at first fully blocked, has labial articulation.",
+            "B": "The phoneme /p/ in the word “pan” is plosive and is produced using both lips.",
+            "C": "The linguistic term of fricative is used for units of sound in which air flow is partially blocked.",
+            "D": "In linguistics, plosive is a term used for units of sound in which air flow is at first fully blocked."
           },
-          "answer": "C"
-        },
-        {
-          "question_type": "percentages",
-          "difficulty": "easy",
-          "question": "<p>A coat priced at 24,000 tenge is reduced by 15 percent. What is the sale price, in tenge?</p>",
-          "choices": {
-            "A": "20,400",
-            "B": "20,800",
-            "C": "21,600",
-            "D": "22,400"
-          },
-          "answer": "A"
-        },
-        {
-          "question_type": "ratios",
-          "difficulty": "medium",
-          "question": "<p>A recipe uses flour and sugar in the ratio 5 : 2. If 350 g of flour is used, how many grams of sugar are needed?</p>",
-          "choices": {
-            "A": "70",
-            "B": "120",
-            "C": "140",
-            "D": "175"
-          },
-          "answer": "C"
-        },
-        {
-          "question_type": "statistics",
-          "difficulty": "medium",
-          "question": "<p>The five values 4, 9, 9, 11, 17 have mean <i>m</i> and median <i>d</i>. What is <i>m</i> &minus; <i>d</i>?</p>",
-          "choices": {
-            "A": "&minus;1",
-            "B": "0",
-            "C": "1",
-            "D": "2"
-          },
-          "answer": "C"
-        },
-        {
-          "question_type": "units",
-          "difficulty": "medium",
-          "question": "<p>A pump moves 45 litres per minute. How many litres does it move in 2 hours?</p>",
-          "choices": {
-            "A": "900",
-            "B": "2,700",
-            "C": "5,400",
-            "D": "9,000"
-          },
-          "answer": "C"
-        },
-        {
-          "question_type": "probability",
-          "difficulty": "medium",
-          "question": "<p>A box holds 8 red, 5 blue and 7 green counters. One counter is drawn at random. What is the probability that it is not blue?</p>",
-          "choices": {
-            "A": "1/4",
-            "B": "1/3",
-            "C": "3/4",
-            "D": "7/20"
-          },
-          "answer": "C"
-        },
-        {
-          "question_type": "percentages",
-          "difficulty": "medium",
-          "question": "<p>A number increased by 20 percent gives 54. What is the number?</p>",
-          "answer": "45"
-        },
-        {
-          "question_type": "triangles",
-          "difficulty": "medium",
-          "question": "<p>A right triangle has legs of length 9 and 12. What is the length of its hypotenuse?</p>",
-          "choices": {
-            "A": "13",
-            "B": "15",
-            "C": "18",
-            "D": "21"
-          },
-          "answer": "B"
-        },
-        {
-          "question_type": "circles",
-          "difficulty": "medium",
-          "question": "<p>A circle has circumference 18&pi;. What is its area?</p>",
-          "choices": {
-            "A": "9&pi;",
-            "B": "18&pi;",
-            "C": "81&pi;",
-            "D": "324&pi;"
-          },
-          "answer": "C"
-        },
-        {
-          "question_type": "area_volume",
-          "difficulty": "medium",
-          "question": "<p>A rectangular tank is 40 cm long, 25 cm wide and 30 cm deep. What is its volume, in cubic centimetres?</p>",
-          "answer": "30000"
-        }
-      ]
-    },
-    {
-      key: 'm2', section: 'math',
-      questions: [
-        {
-          "question_type": "linear",
-          "difficulty": "medium",
-          "question": "<p>The line <i>y</i> = <i>mx</i> + 4 passes through (6, 1). What is the value of <i>m</i>?</p>",
-          "choices": {
-            "A": "&minus;1/2",
-            "B": "&minus;2",
-            "C": "1/2",
-            "D": "2"
-          },
-          "answer": "A"
-        },
-        {
-          "question_type": "systems",
-          "difficulty": "hard",
-          "question": "<p>For which value of <i>c</i> does the system 3<i>x</i> &minus; <i>y</i> = 7 and 6<i>x</i> &minus; 2<i>y</i> = <i>c</i> have infinitely many solutions?</p>",
-          "choices": {
-            "A": "7",
-            "B": "14",
-            "C": "21",
-            "D": "&minus;14"
-          },
-          "answer": "B"
-        },
-        {
-          "question_type": "systems",
-          "difficulty": "hard",
-          "question": "<p>The system 2<i>x</i> + 5<i>y</i> = 9 and 4<i>x</i> + 10<i>y</i> = <i>k</i> has no solution. Which of the following cannot be the value of <i>k</i>?</p>",
-          "choices": {
-            "A": "0",
-            "B": "9",
-            "C": "18",
-            "D": "36"
-          },
-          "answer": "C"
-        },
-        {
-          "question_type": "inequalities",
-          "difficulty": "hard",
-          "question": "<p>A van carries crates weighing 34 kg each and must stay under 1,200 kg of cargo. What is the greatest number of crates it can carry?</p>",
-          "choices": {
-            "A": "33",
-            "B": "34",
-            "C": "35",
-            "D": "36"
-          },
-          "answer": "C"
-        },
-        {
-          "question_type": "absolute_value",
-          "difficulty": "hard",
-          "question": "<p>How many solutions does |2<i>x</i> &minus; 5| = 9 have, and what are they?</p>",
-          "choices": {
-            "A": "One: <i>x</i> = 7",
-            "B": "Two: <i>x</i> = 7 and <i>x</i> = &minus;2",
-            "C": "Two: <i>x</i> = 7 and <i>x</i> = 2",
-            "D": "None"
-          },
-          "answer": "B"
-        },
-        {
-          "question_type": "linear",
-          "difficulty": "hard",
-          "question": "<p>The function <i>g</i> is linear, <i>g</i>(2) = 11 and <i>g</i>(6) = 27. What is <i>g</i>(0)?</p>",
-          "answer": "3"
-        },
-        {
-          "question_type": "quadratics",
-          "difficulty": "hard",
-          "question": "<p>The parabola <i>y</i> = <i>x</i><sup>2</sup> &minus; 6<i>x</i> + 5 crosses the <i>x</i>-axis at two points. What is the distance between them?</p>",
-          "choices": {
-            "A": "2",
-            "B": "4",
-            "C": "5",
-            "D": "6"
-          },
-          "answer": "B"
-        },
-        {
-          "question_type": "quadratics",
-          "difficulty": "hard",
-          "question": "<p>If <i>x</i><sup>2</sup> + 10<i>x</i> + <i>c</i> = (<i>x</i> + 5)<sup>2</sup> &minus; 9 for all <i>x</i>, what is the value of <i>c</i>?</p>",
-          "choices": {
-            "A": "&minus;9",
-            "B": "9",
-            "C": "16",
-            "D": "25"
-          },
-          "answer": "C"
-        },
-        {
-          "question_type": "polynomials",
-          "difficulty": "hard",
-          "question": "<p>The polynomial <i>p</i>(<i>x</i>) = <i>x</i><sup>3</sup> &minus; 4<i>x</i><sup>2</sup> + <i>x</i> + 6 has <i>p</i>(3) = 0. Which of the following is a factor of <i>p</i>(<i>x</i>)?</p>",
-          "choices": {
-            "A": "<i>x</i> + 3",
-            "B": "<i>x</i> &minus; 3",
-            "C": "<i>x</i> &minus; 6",
-            "D": "3<i>x</i> &minus; 1"
-          },
-          "answer": "B"
-        },
-        {
-          "question_type": "exponential",
-          "difficulty": "hard",
-          "question": "<p>A sample of 800 g decays to 100 g in 21 years. What is its half-life, in years?</p>",
-          "choices": {
-            "A": "3",
-            "B": "5.25",
-            "C": "7",
-            "D": "10.5"
-          },
-          "answer": "C"
-        },
-        {
-          "question_type": "rational",
-          "difficulty": "hard",
-          "question": "<p>For what value of <i>x</i> is the expression (<i>x</i> + 2)/(<i>x</i><sup>2</sup> &minus; 9) undefined and the numerator non-zero?</p>",
-          "choices": {
-            "A": "<i>x</i> = &minus;2 only",
-            "B": "<i>x</i> = 3 only",
-            "C": "<i>x</i> = 3 and <i>x</i> = &minus;3",
-            "D": "<i>x</i> = 9"
-          },
-          "answer": "C"
-        },
-        {
-          "question_type": "radicals",
-          "difficulty": "hard",
-          "question": "<p>If &radic;(3<i>x</i> &minus; 2) = <i>x</i> and <i>x</i> &gt; 1, what is the value of <i>x</i>?</p>",
-          "answer": "2"
-        },
-        {
-          "question_type": "exponential",
-          "difficulty": "hard",
-          "question": "<p>If 2<sup><i>x</i></sup> = 32, what is the value of <i>x</i>?</p>",
-          "answer": "5"
-        },
-        {
-          "question_type": "statistics",
-          "difficulty": "hard",
-          "question": "<p>Seven measurements have a mean of 12. One measurement, 30, is removed. What is the mean of the remaining six?</p>",
-          "choices": {
-            "A": "9",
-            "B": "10",
-            "C": "11",
-            "D": "14"
-          },
-          "answer": "A"
-        },
-        {
-          "question_type": "percentages",
-          "difficulty": "hard",
-          "question": "<p>A price rises by 25 percent and then falls by 20 percent. Compared with the original price, the final price is</p>",
-          "choices": {
-            "A": "5 percent lower.",
-            "B": "the same.",
-            "C": "5 percent higher.",
-            "D": "4 percent higher."
-          },
-          "answer": "B"
-        },
-        {
-          "question_type": "ratios",
-          "difficulty": "hard",
-          "question": "<p>Two machines fill jars at a constant rate. Machine A fills 180 jars in 4 hours; machine B fills 150 jars in 3 hours. Working together, how many jars do they fill in 2 hours?</p>",
-          "choices": {
-            "A": "165",
-            "B": "190",
-            "C": "200",
-            "D": "230"
-          },
-          "answer": "B"
-        },
-        {
-          "question_type": "probability",
-          "difficulty": "hard",
-          "question": "<p>Of 200 students surveyed, 120 study Kazakh and 95 study German; 40 study both. How many study neither?</p>",
-          "choices": {
-            "A": "15",
-            "B": "25",
-            "C": "40",
-            "D": "65"
-          },
-          "answer": "B"
-        },
-        {
-          "question_type": "units",
-          "difficulty": "hard",
-          "question": "<p>A car uses 7.5 litres of fuel per 100 km. How many litres does it use on a 420 km journey?</p>",
-          "answer": [
-            "31.5",
-            "63/2"
-          ]
-        },
-        {
-          "question_type": "triangles",
-          "difficulty": "hard",
-          "question": "<p>Two triangles are similar. The sides of the smaller are 6, 8 and 10; the longest side of the larger is 25. What is the perimeter of the larger triangle?</p>",
-          "choices": {
-            "A": "40",
-            "B": "48",
-            "C": "60",
-            "D": "75"
-          },
-          "answer": "C"
-        },
-        {
-          "question_type": "trig_ratios",
-          "difficulty": "hard",
-          "question": "<p>In a right triangle, the angle &theta; satisfies sin &theta; = 3/5. What is cos &theta;, given that &theta; is acute?</p>",
-          "choices": {
-            "A": "3/4",
-            "B": "4/5",
-            "C": "5/4",
-            "D": "5/3"
-          },
-          "answer": "B"
-        },
-        {
-          "question_type": "circles",
-          "difficulty": "hard",
-          "question": "<p>A circle has equation (<i>x</i> &minus; 4)<sup>2</sup> + (<i>y</i> + 3)<sup>2</sup> = 49. What is its radius?</p>",
-          "answer": "7"
-        },
-        {
-          "question_type": "area_volume",
-          "difficulty": "hard",
-          "question": "<p>A cylinder has radius 5 cm and volume 200&pi; cubic centimetres. What is its height, in centimetres?</p>",
-          "answer": "8"
+          "answer": "D"
         }
       ]
     }
