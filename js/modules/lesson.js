@@ -32,6 +32,82 @@
 
   function backHref() { return '#/materials'; }
 
+  /**
+   * The written lesson, one part at a time, the way it is taught: the
+   * opening paragraph, a row of numbered steps for the parts, then the part
+   * on screen with Previous / Next. The last part leads on to the practice.
+   * The part a student reached is kept per unit in this browser, and the
+   * arrow keys turn the parts for a teacher at the board.
+   */
+  function partsViewer(teach, code) {
+    var parts = teach.parts || [];
+    var KEY = 'jts.unitPart.' + code;
+    var at = 0;
+    try { at = U.clamp(Number(window.localStorage.getItem(KEY)) || 0, 0, Math.max(0, parts.length - 1)); } catch (e) { /* first visit */ }
+
+    var el = U.el('div.lw-parts');
+    if (teach.lead) el.appendChild(U.el('div.lesson-written.lw-lead', { html: teach.lead }));
+    var steps = U.el('ol.lw-steps', { 'aria-label': t('lesson.parts') });
+    var stage = U.el('section.lw-part', { 'aria-live': 'polite' });
+    el.appendChild(steps);
+    el.appendChild(stage);
+
+    function short(title) { return title.replace(/^Part \d+\s*·\s*/, ''); }
+
+    function show(i, focus) {
+      at = U.clamp(i, 0, parts.length - 1);
+      try { window.localStorage.setItem(KEY, String(at)); } catch (e) { /* not kept */ }
+      U.clear(steps);
+      parts.forEach(function (p, k) {
+        steps.appendChild(U.el('li', null, [U.el('button.lw-step' + (k === at ? '.is-on' : k < at ? '.is-done' : ''), {
+          type: 'button', 'aria-current': k === at ? 'step' : null,
+          onclick: function () { show(k, true); }
+        }, [U.el('span.lw-step-n', { text: k < at ? '✓' : String(k + 1) }), U.el('span.lw-step-t', { text: short(p.title) })])]));
+      });
+
+      var p = parts[at];
+      U.clear(stage);
+      stage.appendChild(U.el('div.lw-part-head', null, [
+        U.el('div.lw-part-n', { text: t('lesson.partOf', { n: at + 1, total: parts.length }) }),
+        U.el('h3.lw-part-title', { text: short(p.title) }),
+        p.mins ? U.el('span.lw-part-mins', { text: '⏱ ' + p.mins }) : null
+      ]));
+      stage.appendChild(U.el('div.lesson-written', { html: p.html }));
+
+      var prev = at > 0 ? U.el('button.btn', {
+        type: 'button', text: '← ' + short(parts[at - 1].title),
+        onclick: function () { show(at - 1, true); }
+      }) : U.el('span');
+      var next = at < parts.length - 1
+        ? U.el('button.btn.btn-primary', {
+            type: 'button', text: t('lesson.nextPart', { title: short(parts[at + 1].title) }) + ' →',
+            onclick: function () { show(at + 1, true); }
+          })
+        : U.el('button.btn.btn-primary', {
+            type: 'button', text: t('lesson.toPractice') + ' ↓',
+            onclick: function () {
+              var d = document.getElementById('lesson-drill');
+              if (d) d.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          });
+      stage.appendChild(U.el('div.lw-part-nav', null, [prev, next]));
+      if (focus) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function onKey(e) {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      var tg = e.target;
+      if (tg.closest && tg.closest('input, textarea, select, [contenteditable], .wb-window, #desmos-panel, .modal')) return;
+      e.preventDefault();
+      show(at + (e.key === 'ArrowRight' ? 1 : -1), true);
+    }
+    document.addEventListener('keydown', onKey);
+
+    if (parts.length) show(at, false);
+    return { el: el, cleanup: function () { document.removeEventListener('keydown', onKey); } };
+  }
+
   /* Line icons for the tool rail, drawn in the button's text colour. */
   var ICON = {
     board: '<path d="M4 20h4l10.5-10.5a2.1 2.1 0 0 0-3-3L5 17v3z"/><path d="M13.5 8.5l3 3"/>',
@@ -198,10 +274,12 @@
           ? U.el('span.badge.badge-muted', { text: t('lesson.englishOnly') })
           : null
       ]));
+      var viewer = null;
       if (teach) {
         /* The lesson text is the school's own course document, shipped with
            the app; it is trusted markup, not anything a user typed. */
-        written.appendChild(U.el('div.lesson-written', { html: teach.lead + teach.html }));
+        viewer = partsViewer(teach, code);
+        written.appendChild(viewer.el);
       } else if (unit && unit.kind === 'hard') {
         written.appendChild(U.el('p', { text: pick(unit.lead) }));
         written.appendChild(U.el('div.notice', { text: t('lesson.challengeNote') }));
@@ -278,6 +356,7 @@
       return function () {
         document.body.classList.remove('unit-focus');
         side.cleanup.forEach(function (f) { f(); });
+        if (viewer) viewer.cleanup();
         board.closeWindow();
         if (document.fullscreenElement) document.exitFullscreen().catch(function () {});
       };

@@ -2268,3 +2268,57 @@ body.unit-focus .lesson-side { top: 16px; max-height: calc(100vh - 32px); }
 }
 :root[data-theme="dark"] .xp-verdict.is-right .xp-verdict-title,
 :root[data-theme="dark"] .xp-pill.is-right { color: #5fd0a3; }
+
+/* ---------------------------------------------------------- the lesson, part by part */
+.lw-parts { display: flex; flex-direction: column; gap: 16px; }
+.lw-lead { font-size: 16px; color: var(--ink-2); }
+.lw-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.lw-step {
+  display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px 7px 7px; cursor: pointer;
+  border: 1px solid var(--border-strong); background: var(--surface); color: var(--ink-2);
+  font: inherit; font-size: 13.5px; font-weight: 600;
+}
+.lw-step:hover { border-color: var(--brand-500); color: var(--brand-700); }
+.lw-step-n {
+  width: 24px; height: 24px; display: grid; place-items: center; flex: none;
+  font-size: 12px; font-weight: 700; border: 1px solid var(--border-strong); color: var(--muted);
+}
+.lw-step.is-done .lw-step-n { background: var(--brand-100); border-color: var(--brand-300); color: var(--brand-700); }
+.lw-step.is-on { background: var(--brand-600); border-color: var(--brand-600); color: #fff; }
+.lw-step.is-on .lw-step-n { background: #fff; border-color: #fff; color: var(--brand-700); }
+.lw-part { border: 1px solid var(--border); background: var(--surface-2); padding: 22px clamp(16px, 3vw, 32px) 18px; }
+.lw-part-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 2px solid var(--brand-600); }
+.lw-part-n { flex-basis: 100%; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--brand-700); }
+.lw-part-title { margin: 0; font-size: 24px; line-height: 1.25; }
+.lw-part-mins { font-size: 13px; color: var(--muted); }
+.lw-part .lesson-written { font-size: 17px; line-height: 1.7; }
+.lw-part .lesson-written p { margin: 0 0 14px; }
+.lw-part .lesson-written li { margin: 6px 0; }
+.lw-part .lesson-written blockquote { margin: 16px 0; padding: 14px 18px; background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--info); }
+.lw-part-nav { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); }
+/* Worked examples: the choices one per line, the working line by line. */
+.lw-opts { list-style: none !important; margin: 10px 0 0 !important; padding: 0 !important; display: grid; gap: 6px; }
+.lw-opts li { margin: 0 !important; display: flex; gap: 10px; align-items: center; padding: 6px 10px; border: 1px solid var(--border); background: var(--surface-2); }
+.lw-opts b { width: 24px; height: 24px; display: grid; place-items: center; flex: none; font-size: 12px; border: 1.5px solid var(--border-strong); }
+.lw-work { margin-top: 10px; display: flex; flex-direction: column; gap: 4px; font-variant-numeric: tabular-nums; }
+.lw-work > div { padding: 4px 10px; background: var(--surface-2); border-left: 3px solid var(--brand-300); }
+/* Tip and common-mistake boxes. */
+.lesson-written .lw-note { padding: 12px 16px; border: 1px solid; border-left-width: 4px; margin: 14px 0; }
+.lw-note.lw-tip { background: rgba(26,154,108,.08); border-color: #1a9a6c; }
+.lw-note.lw-tip > b:first-child { color: #157a56; }
+.lw-note.lw-mistake { background: rgba(196,43,48,.06); border-color: var(--danger); }
+.lw-note.lw-mistake > b:first-child { color: var(--danger); }
+.lw-note.lw-info { background: var(--info-bg); border-color: var(--info); }
+.lw-table { overflow-x: auto; margin: 12px 0; }
+.lw-part .lesson-written table { font-size: 15px; display: table; }
+.lw-part .lesson-written th { background: var(--surface); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .lw-note.lw-tip > b:first-child { color: #5fd0a3; }
+}
+:root[data-theme="dark"] .lw-note.lw-tip > b:first-child { color: #5fd0a3; }
+@media (max-width: 600px) {
+  .lw-step-t { display: none; }
+  .lw-step { padding: 5px; }
+  .lw-part-title { font-size: 20px; }
+  .lw-part .lesson-written { font-size: 16px; }
+}

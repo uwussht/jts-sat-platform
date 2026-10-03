@@ -305,9 +305,10 @@ practice test closes Month 1 and Month 2.
 - `programme-units.js` — the eight SAT domains, the Challenge block and the 36
   units, each worded once and referred to everywhere by its code.
 - `programme-teach.js` — the full written lesson for each of U1–U24. It is
-  generated from the course document ("SAT 36-Lesson Course"): edit the
-  document and regenerate with `tools/md2teach.py` rather than editing the
-  HTML by hand. English only
+  generated from the course page ("SAT 36-Lesson Course", saved as HTML),
+  split into its numbered parts: edit the course and regenerate with
+  `python tools/html2teach.py "SAT 36-Lesson Course.html" js/data/programme-teach.js`
+  rather than editing the file by hand. English only
   for now; every interface language falls back to it.
 - `lesson-questions.js` — each unit's own practice set, by unit code. So far
   U1 and U2 have 15 questions each; a unit without a set says so on its page.
