@@ -115,27 +115,78 @@
 
   /* ----------------------------------------------------------- reference sheet */
   /** The Digital SAT reference figures, as a plain HTML table (no MathJax). */
+  /**
+   * The Math reference sheet, laid out like the one in the test: each figure
+   * drawn and labelled, its formula under it, then the three facts. The
+   * figures are drawn in the text colour, so they read in either theme.
+   */
   function referenceSheet() {
-    var rows = [
-      ['Circle', 'A = &pi;r<sup>2</sup>&nbsp;&nbsp;&nbsp;C = 2&pi;r'],
-      ['Rectangle', 'A = &#8467;w'],
-      ['Triangle', 'A = <span class="frac"><span>1</span><span>2</span></span>bh'],
-      ['Pythagorean theorem', 'c<sup>2</sup> = a<sup>2</sup> + b<sup>2</sup>'],
-      ['Special right triangle 30&deg;-60&deg;-90&deg;', 'sides x, x&radic;3, 2x'],
-      ['Special right triangle 45&deg;-45&deg;-90&deg;', 'sides s, s, s&radic;2'],
-      ['Rectangular solid', 'V = &#8467;wh'],
-      ['Cylinder', 'V = &pi;r<sup>2</sup>h'],
-      ['Sphere', 'V = <span class="frac"><span>4</span><span>3</span></span>&pi;r<sup>3</sup>'],
-      ['Cone', 'V = <span class="frac"><span>1</span><span>3</span></span>&pi;r<sup>2</sup>h'],
-      ['Pyramid', 'V = <span class="frac"><span>1</span><span>3</span></span>&#8467;wh'],
-      ['Degrees in a circle', '360'],
-      ['Radians in a circle', '2&pi;'],
-      ['Angles in a triangle', '180 degrees']
+    var I = function (v) { return '<tspan font-style="italic">' + v + '</tspan>'; };
+    function svg(body) {
+      return '<svg viewBox="0 0 160 110" role="img" aria-hidden="true" class="ref-fig" ' +
+        'fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" ' +
+        'font-family="Georgia, \'Times New Roman\', serif" font-size="15">' + body + '</svg>';
+    }
+    function txt(x, y, v, extra) {
+      return '<text x="' + x + '" y="' + y + '" fill="currentColor" stroke="none" text-anchor="middle"' +
+        (extra || '') + '>' + v + '</text>';
+    }
+    var sq = function (x, y, dx, dy) {     /* the right-angle mark */
+      return '<path d="M' + x + ' ' + (y + dy) + 'h' + dx + 'v' + (-dy) + '" stroke-width="1.2"/>';
+    };
+    var frac = function (a, b) { return '<span class="frac"><span>' + a + '</span><span>' + b + '</span></span>'; };
+    var figs = [
+      { name: 'Circle', f: 'A = &pi;<i>r</i><sup>2</sup><br>C = 2&pi;<i>r</i>', d: svg(
+        '<circle cx="80" cy="55" r="45"/><circle cx="80" cy="55" r="2.6" fill="currentColor"/>' +
+        '<line x1="80" y1="55" x2="125" y2="55"/>' + txt(102, 48, I('r'))) },
+      { name: 'Rectangle', f: 'A = &#8467;<i>w</i>', d: svg(
+        '<rect x="25" y="30" width="100" height="55"/>' + txt(75, 22, I('&#8467;')) + txt(138, 62, I('w'))) },
+      { name: 'Triangle', f: 'A = ' + frac(1, 2) + '<i>bh</i>', d: svg(
+        '<path d="M15 90 L65 20 L145 90 Z"/><line x1="65" y1="20" x2="65" y2="90" stroke-dasharray="4 3" stroke-width="1.2"/>' +
+        sq(65, 80, 10, 10) + txt(74, 52, I('h')) + txt(80, 106, I('b'))) },
+      { name: 'Pythagorean theorem', f: '<i>c</i><sup>2</sup> = <i>a</i><sup>2</sup> + <i>b</i><sup>2</sup>', d: svg(
+        '<path d="M40 15 L40 90 L140 90 Z"/>' + sq(40, 80, 10, 10) +
+        txt(28, 57, I('b')) + txt(94, 46, I('c')) + txt(90, 106, I('a'))) },
+      { name: 'Special right triangle 30&deg;-60&deg;-90&deg;', f: 'sides <i>x</i>, <i>x</i>&radic;3, 2<i>x</i>', d: svg(
+        '<path d="M15 85 L135 85 L135 16 Z"/>' + sq(125, 75, 10, 10) +
+        txt(66, 44, '2' + I('x')) + txt(148, 56, I('x')) + txt(75, 104, I('x') + '&radic;3') +
+        txt(42, 80, '30&deg;', ' font-size="12"') + txt(120, 36, '60&deg;', ' font-size="12"')) },
+      { name: 'Special right triangle 45&deg;-45&deg;-90&deg;', f: 'sides <i>s</i>, <i>s</i>, <i>s</i>&radic;2', d: svg(
+        '<path d="M45 15 L45 90 L120 90 Z"/>' + sq(45, 80, 10, 10) +
+        txt(33, 57, I('s')) + txt(82, 106, I('s')) + txt(102, 46, I('s') + '&radic;2') +
+        txt(56, 34, '45&deg;', ' font-size="12"') + txt(100, 85, '45&deg;', ' font-size="12"')) },
+      { name: 'Rectangular solid', f: 'V = &#8467;<i>wh</i>', d: svg(
+        '<path d="M20 45 L105 45 L105 90 L20 90 Z"/><path d="M20 45 L45 25 L130 25 L105 45"/><path d="M130 25 L130 70 L105 90"/>' +
+        txt(62, 106, I('&#8467;')) + txt(126, 90, I('w')) + txt(142, 50, I('h'))) },
+      { name: 'Cylinder', f: 'V = &pi;<i>r</i><sup>2</sup><i>h</i>', d: svg(
+        '<ellipse cx="75" cy="22" rx="45" ry="12"/><path d="M30 22 V88"/><path d="M120 22 V88"/>' +
+        '<path d="M30 88 A45 12 0 0 0 120 88"/><path d="M30 88 A45 12 0 0 1 120 88" stroke-dasharray="4 3" stroke-width="1.1"/>' +
+        '<circle cx="75" cy="22" r="2.6" fill="currentColor"/><line x1="75" y1="22" x2="118" y2="17"/>' +
+        txt(98, 13, I('r')) + txt(137, 60, I('h'))) },
+      { name: 'Sphere', f: 'V = ' + frac(4, 3) + '&pi;<i>r</i><sup>3</sup>', d: svg(
+        '<circle cx="80" cy="55" r="45"/><path d="M35 55 A45 12 0 0 0 125 55"/>' +
+        '<path d="M35 55 A45 12 0 0 1 125 55" stroke-dasharray="4 3" stroke-width="1.1"/>' +
+        '<circle cx="80" cy="55" r="2.6" fill="currentColor"/><line x1="80" y1="55" x2="125" y2="55"/>' + txt(102, 48, I('r'))) },
+      { name: 'Cone', f: 'V = ' + frac(1, 3) + '&pi;<i>r</i><sup>2</sup><i>h</i>', d: svg(
+        '<path d="M35 85 L80 10 L125 85"/><path d="M35 85 A45 12 0 0 0 125 85"/>' +
+        '<path d="M35 85 A45 12 0 0 1 125 85" stroke-dasharray="4 3" stroke-width="1.1"/>' +
+        '<line x1="80" y1="10" x2="80" y2="85" stroke-width="1.2"/><line x1="80" y1="85" x2="125" y2="85" stroke-width="1.2"/>' +
+        sq(80, 77, 8, 8) + txt(72, 55, I('h')) + txt(103, 80, I('r'))) },
+      { name: 'Rectangular pyramid', f: 'V = ' + frac(1, 3) + '&#8467;<i>wh</i>', d: svg(
+        '<path d="M20 88 L105 88 L135 62"/><path d="M20 88 L50 62 L135 62" stroke-dasharray="4 3" stroke-width="1.1"/>' +
+        '<path d="M78 12 L20 88"/><path d="M78 12 L105 88"/><path d="M78 12 L135 62"/>' +
+        '<line x1="78" y1="12" x2="78" y2="75" stroke-dasharray="4 3" stroke-width="1.2"/>' + sq(78, 67, 8, 8) +
+        txt(70, 50, I('h')) + txt(62, 104, I('&#8467;')) + txt(130, 82, I('w'))) }
     ];
-    var html = '<table class="ref-table"><tbody>' + rows.map(function (r) {
-      return '<tr><td>' + r[0] + '</td><td>' + r[1] + '</td></tr>';
-    }).join('') + '</tbody></table>';
-    return U.el('div', { html: html });
+    var grid = '<div class="ref-grid">' + figs.map(function (g) {
+      return '<figure class="ref-item">' + g.d +
+        '<figcaption><span class="ref-formula">' + g.f + '</span><span class="ref-name">' + g.name + '</span></figcaption></figure>';
+    }).join('') + '</div>';
+    var facts = '<div class="ref-facts">' +
+      '<p>The number of degrees of arc in a circle is 360.</p>' +
+      '<p>The number of radians of arc in a circle is 2&pi;.</p>' +
+      '<p>The sum of the measures in degrees of the angles of a triangle is 180.</p></div>';
+    return U.el('div.ref-sheet', { html: grid + facts });
   }
 
   function directionsFor(section, mode) {
@@ -436,13 +487,18 @@
             }
           }).el);
         }
-        tools.appendChild(U.el('button.q-tool', {
-          type: 'button', text: t('q.directions'),
-          onclick: function () {
-            ui.modal({ title: t('q.directions'),
-              content: JTS.questionScreen.directionsFor(q().section, ses.mode) });
-          }
-        }));
+        /* Directions and the scratchpad belong to the test screens (mocks,
+           the diagnostic, papers); practice keeps its bar to what it uses. */
+        var inPractice = ses.kind === 'practice';
+        if (!inPractice) {
+          tools.appendChild(U.el('button.q-tool', {
+            type: 'button', text: t('q.directions'),
+            onclick: function () {
+              ui.modal({ title: t('q.directions'),
+                content: JTS.questionScreen.directionsFor(q().section, ses.mode) });
+            }
+          }));
+        }
 
         var hlBtn = U.el('button.q-tool', {
           type: 'button', text: t('q.highlight'), 'aria-pressed': String(!!ses.meta.highlightMode),
@@ -483,10 +539,12 @@
               ui.modal({ title: t('q.reference'), content: JTS.questionScreen.referenceSheet() });
             }
           }));
-          tools.appendChild(U.el('button.q-tool', {
-            type: 'button', text: t('q.scratchpad'), title: t('q.scratchpad'),
-            onclick: openScratchpad
-          }));
+          if (!inPractice) {
+            tools.appendChild(U.el('button.q-tool', {
+              type: 'button', text: t('q.scratchpad'), title: t('q.scratchpad'),
+              onclick: openScratchpad
+            }));
+          }
         }
 
         syncCalc();

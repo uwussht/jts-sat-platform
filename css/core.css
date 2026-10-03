@@ -2229,3 +2229,16 @@ body.unit-focus .lesson-side { top: 16px; max-height: calc(100vh - 32px); }
 @media (max-width: 600px) {
   .pomo-panel { position: fixed; top: 120px; left: 16px; right: 16px; width: auto; max-width: none; }
 }
+
+/* ---------------------------------------------------------- Math reference sheet */
+.ref-sheet { color: var(--ink); }
+.ref-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 24px; }
+.ref-item { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; }
+.ref-fig { width: 100%; max-width: 180px; height: auto; }
+.ref-item figcaption { display: flex; flex-direction: column; gap: 2px; }
+.ref-formula { font-family: Georgia, 'Times New Roman', serif; font-size: 18px; }
+.ref-name { font-size: 12px; color: var(--muted); }
+.ref-facts { margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--border); font-family: Georgia, 'Times New Roman', serif; font-size: 15px; }
+.ref-facts p { margin: 6px 0; }
+@media (max-width: 420px) { .ref-grid { gap: 14px 12px; } .ref-formula { font-size: 16px; } }
+.ref-formula .frac { font-size: .9em; vertical-align: middle; margin: 0 .1em; line-height: 1.15; }
