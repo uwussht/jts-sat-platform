@@ -150,8 +150,9 @@
         });
 
         var status = m.status || 'no-data';
+        /* A topic with too few answers to judge shows just its name. */
         var meta = status === 'no-data'
-          ? t('common.notEnoughData') + (m.needed ? ' · ' + t('mastery.needMore', { n: m.needed }) : '')
+          ? null
           : t('mastery.' + status) + ' · ' + Math.round((m.accuracy || 0) * 100) + '%';
 
         /* The whole row is the checkbox's label, so the row is what you
@@ -161,10 +162,10 @@
           U.el('span.sk-box', { 'aria-hidden': 'true' }),
           U.el('span.sk-text', null, [
             U.el('span.sk-name', { text: JTS.i18n.pickName(skill) }),
-            U.el('span.sk-meta', null, [
+            meta ? U.el('span.sk-meta', null, [
               U.el('span.sk-dot.st-' + status, { 'aria-hidden': 'true' }),
               U.el('span', { text: meta })
-            ])
+            ]) : null
           ]),
           U.el('span.sk-count', { text: t('practice.inBank', { n: n }) }),
           U.el('button.btn.btn-sm.sk-go', {
@@ -393,7 +394,7 @@
           ? t('mastery.' + m.status) + ' · ' +
             Math.round((m.accuracy || 0) * 100) + '% · ' +
             m.independent + ' ' + t('common.attempts')
-          : t('practice.needMoreData', { n: m.needed });
+          : '';
 
         var helped = m.helped
           ? t('mastery.helpedLine', { correct: m.helpedCorrect, total: m.helped })
@@ -403,7 +404,9 @@
           U.el('span.m-dot.m-' + m.status.replace('no-data', 'nodata')),
           U.el('span.name', null, [
             U.el('div', { text: JTS.i18n.pickName(skill) }),
-            U.el('div.xsmall.muted', { text: meta + (helped ? ' · ' + helped : '') })
+            meta || helped
+              ? U.el('div.xsmall.muted', { text: [meta, helped].filter(Boolean).join(' · ') })
+              : null
           ]),
           U.el('span.badge.badge-muted', {
             text: Math.round(skill.examWeight * 1000) / 10 + '%',

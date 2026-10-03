@@ -74,7 +74,7 @@ JTS.dict.ru = {
   'common.difficulty': 'Сложность', 'common.section': 'Секция', 'common.skill': 'Навык',
   'common.domain': 'Домен', 'common.status': 'Статус', 'common.date': 'Дата', 'common.source': 'Источник',
   'common.language': 'Язык', 'common.optional': 'необязательно', 'common.required': 'обязательно',
-  'common.notEnoughData': 'Недостаточно данных', 'common.selected': 'выбрано', 'common.clear': 'Очистить',
+  'common.notEnoughData': 'Пока нет ответов', 'common.selected': 'выбрано', 'common.clear': 'Очистить',
   'common.rw': 'Reading and Writing', 'common.math': 'Math', 'common.rwShort': 'R&W',
   'common.yesterday': 'Вчера', 'common.today': 'Сегодня', 'common.tomorrow': 'Завтра',
   'common.perWeek': 'в неделю', 'common.review': 'Разбор', 'common.resume': 'Продолжить',
@@ -446,7 +446,6 @@ JTS.dict.ru = {
   'practice.desmosGuide': 'Desmos Guide',
   'practice.weakTitle': 'Слабые навыки',
   'practice.weakLead': 'Ранжирование по уверенности, весу на экзамене, потенциалу роста и давности — не по проценту ошибок.',
-  'practice.needMoreData': 'Недостаточно данных — нужно ещё {n} самостоятельных попыток',
   'practice.quickDiag': 'Короткая диагностика (5 вопросов)',
   'practice.inBank': '{n} в банке',
 
@@ -646,7 +645,6 @@ JTS.dict.ru = {
   'mastery.no-data': 'Нет данных', 'mastery.learning': 'Изучается',
   'mastery.developing': 'Развивается', 'mastery.mastered': 'Освоено',
   'mastery.helpedLine': 'с помощью: {correct} из {total}',
-  'mastery.needMore': 'нужно ещё {n} самостоятельных попыток',
   'mastery.confirmPending': 'Ждёт подтверждения — нужна верная попытка минимум через 3 дня',
 
   'vocab.title': 'Словарь',

@@ -73,21 +73,20 @@
       var grid = U.el('div.heatmap');
       skills.forEach(function (sk) {
         var m = map[sk.id];
-        /* A cell states its own confidence. Without six independent attempts
-           there is no percentage to show, so it says what is missing instead
-           of printing a number nobody should trust. */
+        /* Without six independent attempts there is no percentage worth
+           showing, so the cell shows just the skill's name. */
         var meta = m.status === 'no-data'
-          ? (m.independent ? t('mastery.needMore', { n: m.needed }) : t('common.notEnoughData'))
+          ? ''
           : Math.round((m.windowAccuracy !== null ? m.windowAccuracy : m.accuracy) * 100) + '% · ' +
             m.independent + ' ' + t('common.attempts');
         grid.appendChild(U.el('button.heat-cell.m-bg-' + cls(m.status), {
           type: 'button',
-          'aria-label': JTS.i18n.pickName(sk) + ' — ' + t('mastery.' + m.status) + ', ' + meta,
+          'aria-label': JTS.i18n.pickName(sk) + ' — ' + t('mastery.' + m.status) + (meta ? ', ' + meta : ''),
           title: t('progress.clickSkill'),
           onclick: function () { JTS.practice.startTopic([sk.id], 10); }
         }, [
           U.el('span.hc-name', { text: JTS.i18n.pickName(sk) }),
-          U.el('span.hc-meta', { text: meta })
+          meta ? U.el('span.hc-meta', { text: meta }) : null
         ]));
       });
       wrap.appendChild(U.el('div.stack-sm', null, [

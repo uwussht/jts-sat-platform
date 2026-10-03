@@ -74,7 +74,7 @@ JTS.dict.en = {
   'common.difficulty': 'Difficulty', 'common.section': 'Section', 'common.skill': 'Skill',
   'common.domain': 'Domain', 'common.status': 'Status', 'common.date': 'Date', 'common.source': 'Source',
   'common.language': 'Language', 'common.optional': 'optional', 'common.required': 'required',
-  'common.notEnoughData': 'Not enough data', 'common.selected': 'selected', 'common.clear': 'Clear',
+  'common.notEnoughData': 'No answers yet', 'common.selected': 'selected', 'common.clear': 'Clear',
   'common.rw': 'Reading and Writing', 'common.math': 'Math', 'common.rwShort': 'R&W',
   'common.yesterday': 'Yesterday', 'common.today': 'Today', 'common.tomorrow': 'Tomorrow',
   'common.perWeek': 'per week', 'common.review': 'Review', 'common.resume': 'Resume',
@@ -446,7 +446,6 @@ JTS.dict.en = {
   'practice.desmosGuide': 'Desmos guide',
   'practice.weakTitle': 'Weak skills',
   'practice.weakLead': 'Ranked by confidence, exam weight, potential gain and recency — not by raw error rate.',
-  'practice.needMoreData': 'Not enough data — {n} more independent attempts needed',
   'practice.quickDiag': 'Short diagnostic (5 questions)',
   'practice.inBank': '{n} in bank',
 
@@ -646,7 +645,6 @@ JTS.dict.en = {
   'mastery.no-data': 'No data', 'mastery.learning': 'Learning',
   'mastery.developing': 'Developing', 'mastery.mastered': 'Mastered',
   'mastery.helpedLine': 'with help: {correct} of {total}',
-  'mastery.needMore': '{n} more independent attempts needed',
   'mastery.confirmPending': 'Confirmation pending — needs a correct attempt at least 3 days later',
 
   'vocab.title': 'Vocabulary',

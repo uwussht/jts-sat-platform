@@ -74,7 +74,7 @@ JTS.dict.kk = {
   'common.difficulty': 'Күрделілік', 'common.section': 'Секция', 'common.skill': 'Дағды',
   'common.domain': 'Домен', 'common.status': 'Күй', 'common.date': 'Күні', 'common.source': 'Дереккөз',
   'common.language': 'Тіл', 'common.optional': 'міндетті емес', 'common.required': 'міндетті',
-  'common.notEnoughData': 'Дерек жеткіліксіз', 'common.selected': 'таңдалды', 'common.clear': 'Тазарту',
+  'common.notEnoughData': 'Әзірге жауап жоқ', 'common.selected': 'таңдалды', 'common.clear': 'Тазарту',
   'common.rw': 'Reading and Writing', 'common.math': 'Math', 'common.rwShort': 'R&W',
   'common.yesterday': 'Кеше', 'common.today': 'Бүгін', 'common.tomorrow': 'Ертең',
   'common.perWeek': 'аптасына', 'common.review': 'Талдау', 'common.resume': 'Жалғастыру',
@@ -446,7 +446,6 @@ JTS.dict.kk = {
   'practice.desmosGuide': 'Desmos Guide',
   'practice.weakTitle': 'Әлсіз дағдылар',
   'practice.weakLead': 'Сенімділік, емтихандағы салмақ, өсу әлеуеті және жаңалық бойынша реттелген — қателер пайызы бойынша емес.',
-  'practice.needMoreData': 'Дерек жеткіліксіз — тағы {n} өз бетінше әрекет керек',
   'practice.quickDiag': 'Қысқа диагностика (5 сұрақ)',
   'practice.inBank': 'банкте {n}',
 
@@ -646,7 +645,6 @@ JTS.dict.kk = {
   'mastery.no-data': 'Дерек жоқ', 'mastery.learning': 'Үйренілуде',
   'mastery.developing': 'Дамуда', 'mastery.mastered': 'Меңгерілді',
   'mastery.helpedLine': 'көмекпен: {total} ішінен {correct}',
-  'mastery.needMore': 'тағы {n} өз бетінше әрекет керек',
   'mastery.confirmPending': 'Растауды күтуде — кемінде 3 күннен кейін дұрыс әрекет керек',
 
   'vocab.title': 'Сөздік',
