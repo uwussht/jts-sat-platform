@@ -2013,7 +2013,7 @@ table.table.xl tbody tr.is-done .xl-clip, table.table.xl tbody tr.is-done .xl-to
 /* ------------------------------------------------------------------------
    Class page: the written lesson, Desmos and the whiteboard
    ------------------------------------------------------------------------ */
-.lesson-written { line-height: 1.6; max-width: 72ch; }
+.lesson-written { line-height: 1.6; }
 .lesson-written > :first-child { margin-top: 0; }
 .lesson-written h4 {
   margin: 22px 0 6px; font-size: 16px; padding-top: 14px;
@@ -2078,41 +2078,28 @@ table.table.xl tbody tr.is-done .xl-clip, table.table.xl tbody tr.is-done .xl-to
 .wb:fullscreen .wb-stage, .wb.wb-max .wb-stage { flex: 1; aspect-ratio: auto; min-height: 0; }
 
 /* Unit page: the unit on the left, the side panel on the right. */
-.lesson-page { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 20px; align-items: start; }
+.lesson-page { display: grid; grid-template-columns: minmax(0, 1fr) 52px; gap: 16px; align-items: start; }
 .lesson-main { min-width: 0; }
+/* The tool rail: icon buttons, kept in view while the lesson scrolls. */
 .lesson-side {
   position: sticky; top: calc(var(--topbar-h) + 16px);
-  display: flex; flex-direction: column; gap: 12px;
-  max-height: calc(100vh - var(--topbar-h) - 32px); overflow-y: auto;
+  display: flex; flex-direction: column; gap: 8px;
 }
-.lesson-side-tools .btn { flex: 1 1 auto; justify-content: center; }
-.lesson-side .btn[aria-pressed="true"] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
-.lesson-parts { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; counter-reset: part; }
-.lesson-parts li { counter-increment: part; }
-.lesson-part {
-  display: flex; gap: 10px; align-items: baseline; width: 100%; text-align: left;
-  padding: 8px 10px; border: 0; background: transparent; color: var(--ink);
-  font: inherit; font-size: 14px; line-height: 1.35; cursor: pointer;
+.lesson-tool {
+  width: 52px; height: 52px; display: grid; place-items: center; cursor: pointer;
+  border: 1px solid var(--border-strong); background: var(--surface); color: var(--ink);
 }
-.lesson-part::before {
-  content: counter(part); flex: none; width: 20px; height: 20px; display: inline-grid; place-items: center;
-  font-size: 11px; font-weight: 700; border: 1px solid var(--border-strong); border-radius: 50%; color: var(--muted);
-}
-.lesson-part:hover { background: var(--bg); }
-.lesson-part[aria-current="true"] { background: var(--brand-600, #6D5AE6); color: #fff; font-weight: 600; }
-.lesson-part[aria-current="true"]::before { border-color: #fff; color: #fff; }
-/* With Desmos docked there is less room: the panel goes on top as a strip. */
+.lesson-tool:hover { border-color: var(--brand-500); color: var(--brand-700); }
+.lesson-tool[aria-pressed="true"] { background: var(--brand-600); border-color: var(--brand-600); color: #fff; }
+.lesson-tool:focus-visible { outline: 2px solid var(--brand-600); outline-offset: 2px; }
+/* With Desmos docked there is less room: the rail runs along the top. */
 body.desmos-open .lesson-page { grid-template-columns: minmax(0, 1fr); margin-right: min(560px, 92vw); max-width: none; }
-@media (max-width: 1100px) {
+body.desmos-open .lesson-side { order: -1; flex-direction: row; top: var(--topbar-h); z-index: 5; }
+@media (max-width: 700px) {
   .lesson-page { grid-template-columns: minmax(0, 1fr); }
+  .lesson-side { order: -1; flex-direction: row; top: var(--topbar-h); z-index: 5; }
+  .lesson-tool { width: 44px; height: 44px; }
 }
-@media (max-width: 1100px) {
-  .lesson-side { order: -1; position: sticky; top: var(--topbar-h); z-index: 5; max-height: none; overflow: visible; }
-  .lesson-side-parts { display: none; }
-  .lesson-side > .card { padding: 8px 12px; }
-}
-body.desmos-open .lesson-side { order: -1; top: var(--topbar-h); z-index: 5; max-height: none; overflow: visible; }
-body.desmos-open .lesson-side-parts { display: none; }
 
 /* A unit takes the whole window: the app's menu and top bar step aside. */
 body.unit-focus { --topbar-h: 0px; --header-h: 0px; }

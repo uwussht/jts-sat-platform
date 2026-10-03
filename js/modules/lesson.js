@@ -32,38 +32,53 @@
 
   function backHref() { return '#/materials'; }
 
+  /* Line icons for the tool rail, drawn in the button's text colour. */
+  var ICON = {
+    board: '<path d="M4 20h4l10.5-10.5a2.1 2.1 0 0 0-3-3L5 17v3z"/><path d="M13.5 8.5l3 3"/>',
+    desmos: '<path d="M3 21h18"/><path d="M3 21V3"/><path d="M5 18c3-9 6-12 9-9s4 4 6-5"/>',
+    full: '<path d="M4 9V4h5"/><path d="M20 9V4h-5"/><path d="M4 15v5h5"/><path d="M20 15v5h-5"/>',
+    exit: '<path d="M9 4v5H4"/><path d="M15 4v5h5"/><path d="M9 20v-5H4"/><path d="M15 20v-5h5"/>'
+  };
+  function iconBtn() {
+    var b = U.el('button.lesson-tool', { type: 'button' });
+    b.setIcon = function (name, label) {
+      b.innerHTML = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" ' +
+        'stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ICON[name] + '</svg>';
+      b.setAttribute('aria-label', label);
+      b.title = label;
+    };
+    return b;
+  }
+
   /**
-   * The side panel: the tools first, then the lesson's parts as a list that
-   * scrolls the page to them and marks the one being read. The whiteboard and
-   * Desmos open as windows of their own — moved by their title bars and
-   * resized from their corners — over the lesson, because a teacher reaching
-   * for them mid-explanation wants them beside the text, at whatever size
-   * the moment needs, not instead of it.
+   * The tool rail: small icon buttons beside the lesson. The whiteboard and
+   * Desmos open as windows of their own, moved by their title bars and
+   * resized from their corners, over the lesson, because a teacher reaching
+   * for them mid-explanation wants them beside the text, not instead of it.
    */
   function sidePanel(written, board, isMath) {
-    var side = U.el('aside.lesson-side', { 'aria-label': t('side.title') });
+    var side = U.el('aside.lesson-side', { 'aria-label': t('side.tools') });
+    side.cleanup = [];
 
-    var tools = U.el('div.row.row-wrap.lesson-side-tools');
-    var wbBtn = U.el('button.btn.btn-primary', { type: 'button', title: t('side.boardHint') });
+    var wbBtn = iconBtn();
     function syncBoard() {
-      wbBtn.textContent = '✏️ ' + t(board.isWindowOpen() ? 'side.boardClose' : 'side.board');
+      wbBtn.setIcon('board', t(board.isWindowOpen() ? 'side.boardClose' : 'side.board'));
       wbBtn.setAttribute('aria-pressed', String(board.isWindowOpen()));
     }
     wbBtn.addEventListener('click', function () {
       if (board.isWindowOpen()) board.closeWindow(); else board.openWindow();
       syncBoard();
     });
-    /* The window's own "put back" button closes it without this panel, so
-       the board says when its window opens or closes. */
+    /* The window's own Close button closes it without this rail, so the
+       board says when its window opens or closes. */
     board.addEventListener('wb:window', syncBoard);
-    side.cleanup = [];
     syncBoard();
-    tools.appendChild(wbBtn);
+    side.appendChild(wbBtn);
 
     if (isMath) {
-      var calc = U.el('button.btn', { type: 'button' });
+      var calc = iconBtn();
       var sync = function () {
-        calc.textContent = 'ƒ ' + t(JTS.desmos.isOpen() ? 'side.desmosClose' : 'side.desmos');
+        calc.setIcon('desmos', t(JTS.desmos.isOpen() ? 'side.desmosClose' : 'side.desmos'));
         calc.setAttribute('aria-pressed', String(JTS.desmos.isOpen()));
       };
       calc.addEventListener('click', function () {
@@ -78,14 +93,15 @@
         side.cleanup.push(function () { mo.disconnect(); });
       }
       sync();
-      tools.appendChild(calc);
+      side.appendChild(calc);
     }
 
     /* The unit already fills the window; this takes it to the whole screen,
        for a projector. Esc or the same button brings it back. */
-    var fsBtn = U.el('button.btn', { type: 'button' });
+    var fsBtn = iconBtn();
     function syncFs() {
-      fsBtn.textContent = '⛶ ' + t(document.fullscreenElement ? 'side.exitFullscreen' : 'side.fullscreen');
+      var on = !!document.fullscreenElement;
+      fsBtn.setIcon(on ? 'exit' : 'full', t(on ? 'side.exitFullscreen' : 'side.fullscreen'));
     }
     fsBtn.addEventListener('click', function () {
       if (document.fullscreenElement) document.exitFullscreen();
@@ -94,59 +110,7 @@
     document.addEventListener('fullscreenchange', syncFs);
     side.cleanup.push(function () { document.removeEventListener('fullscreenchange', syncFs); });
     syncFs();
-    tools.appendChild(fsBtn);
-    side.appendChild(U.el('div.card.card-sm.stack-sm', null, [
-      U.el('div.eyebrow', { text: t('side.tools') }), tools
-    ]));
-
-    /* The parts: each heading of the written lesson, then the practice set,
-       which is a part of the unit too. */
-    var targets = [];
-    U.$$('.lesson-written h4', written).forEach(function (h, i) {
-      h.id = 'part-' + (i + 1);
-      var label = h.cloneNode(true);
-      U.$$('.lw-mins', label).forEach(function (x) { x.remove(); });
-      /* The list numbers the parts itself, so "Part 3 · " is not repeated. */
-      targets.push({ el: h, text: label.textContent.trim().replace(/^Part \d+\s*·\s*/, '') });
-    });
-    targets.push({ id: 'lesson-drill', text: t('side.practice') });
-
-    var list = U.el('ol.lesson-parts');
-    var items = targets.map(function (tg) {
-      var b = U.el('button.lesson-part', {
-        type: 'button', text: tg.text,
-        onclick: function () {
-          var el = tg.el || document.getElementById(tg.id);
-          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-      list.appendChild(U.el('li', null, [b]));
-      return b;
-    });
-    side.appendChild(U.el('div.card.card-sm.stack-sm.lesson-side-parts', null, [
-      U.el('div.eyebrow', { text: t('side.title') }), list
-    ]));
-
-    /* Mark the part on screen. The page is torn down on navigation, and the
-       observer goes with the nodes it watches. */
-    if (window.IntersectionObserver) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (!e.isIntersecting) return;
-          var k = -1;
-          targets.forEach(function (tg, i) {
-            if ((tg.el || document.getElementById(tg.id)) === e.target) k = i;
-          });
-          items.forEach(function (b, i) { b.setAttribute('aria-current', i === k ? 'true' : 'false'); });
-        });
-      }, { rootMargin: '-15% 0px -70% 0px' });
-      setTimeout(function () {
-        targets.forEach(function (tg) {
-          var el = tg.el || document.getElementById(tg.id);
-          if (el) io.observe(el);
-        });
-      }, 0);
-    }
+    side.appendChild(fsBtn);
     return side;
   }
 
