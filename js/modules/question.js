@@ -561,6 +561,18 @@
 
         syncCalc();
 
+        /* A missed, checked question can be logged with the kind of mistake
+           it was; once logged, the button says which. */
+        var cur = ans();
+        if (isStudy && cur && cur.submitted && !cur.correct && JTS.studyHelp && JTS.studyHelp.logError) {
+          tools.appendChild(U.el('button.q-tool' + (cur.errorType ? '.is-logged' : ''), {
+            type: 'button',
+            text: cur.errorType ? '✓ ' + t('err.' + cur.errorType) : '⚑ ' + t('q.logError'),
+            title: t('q.logErrorHint'),
+            onclick: function () { JTS.studyHelp.logError(ses, q(), ans(), refresh); }
+          }));
+        }
+
         /* The unit's whiteboard, the same board as on the unit page, in its
            own window over the question. */
         if (unitCode && JTS.whiteboard) {
@@ -852,6 +864,7 @@
           a.errorId = err.id;
         }
         saveNow();
+        buildTopbar();
         renderQuestion();
         if (JTS.studyHelp && JTS.studyHelp.afterCheck) JTS.studyHelp.afterCheck(ses, question, a, refresh);
       }

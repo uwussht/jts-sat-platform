@@ -192,23 +192,24 @@
 
   /* ------------------------------------------------- error classification */
 
+  /**
+   * The error-log window for a missed question, opened from the top bar's
+   * "Log error" button. Nothing is pre-chosen: the student names the kind of
+   * mistake themselves.
+   */
   function classifyError(ses, question, a, refresh) {
-    var suggested = suggestErrorType(question, a);
-    var chosen = a.errorType || suggested;
-    var m;
+    var chosen = a.errorType || null;
+    var m, save;
 
     var list = U.el('div.stack-sm');
     ERROR_TYPES.forEach(function (type) {
       var input = U.el('input', { type: 'radio', name: 'errtype', checked: chosen === type || null });
-      input.addEventListener('change', function () { if (input.checked) chosen = type; });
+      input.addEventListener('change', function () {
+        if (input.checked) { chosen = type; save.disabled = false; }
+      });
       list.appendChild(U.el('label.check.check-card', null, [
         input,
-        U.el('span', null, [
-          U.el('b', { text: t('err.' + type) }),
-          type === suggested ? U.el('span.badge.badge-muted', {
-            text: t('q.suggested'), style: 'margin-left:8px'
-          }) : null
-        ])
+        U.el('span', null, [U.el('b', { text: t('err.' + type) })])
       ]));
     });
 
@@ -221,17 +222,17 @@
       ]),
       actions: [
         U.el('button.btn', {
-          type: 'button', text: t('common.skip'),
+          type: 'button', text: t('common.cancel'),
           onclick: function () { m.close(); }
         }),
-        U.el('button.btn.btn-primary', {
-          type: 'button', text: t('common.save'), 'data-autofocus': '',
+        save = U.el('button.btn.btn-primary', {
+          type: 'button', text: t('common.save'), disabled: !chosen || null,
           onclick: function () {
+            if (!chosen) return;
             a.errorType = chosen;
             if (a.attemptId) JTS.attempts.setErrorType(a.attemptId, chosen);
             S.save();
             m.close();
-            ui.toast(t('q.reviewQueued'), 'ok');
             refresh && refresh();
           }
         })
@@ -295,9 +296,13 @@
       else closePanel();
     },
 
-    /** Called right after an answer is checked in study mode. */
-    afterCheck: function (ses, question, a, refresh) {
-      if (a.correct) return;
+    /** Called right after an answer is checked in study mode. A miss goes
+        to the error log on its own; naming the kind of mistake is the
+        student's choice, from the top bar's "Log error" button. */
+    afterCheck: function () {},
+
+    /** Open the error-log window for a missed question. */
+    logError: function (ses, question, a, refresh) {
       classifyError(ses, question, a, refresh);
     },
 

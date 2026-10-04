@@ -2353,3 +2353,5 @@ body.unit-focus .lesson-side { top: 16px; max-height: calc(100vh - 32px); }
 .qf-chev { display: inline-grid; place-items: center; transition: transform .15s; }
 .qf-where:hover .qf-chev { transform: translateY(-2px); }
 @media (prefers-reduced-motion: reduce) { .qf-chev { transition: none; } }
+/* "Log error" once the mistake is logged: it shows the kind, quietly. */
+.q-tool.is-logged { border-color: var(--brand-300); color: var(--brand-700); background: var(--brand-050); }
