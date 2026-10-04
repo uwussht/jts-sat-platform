@@ -480,10 +480,10 @@
         }
 
         var tools = U.el('div.q-tools');
-        /* Practice only, in both sections: study time today and a Pomodoro.
-           A timed test has its own clock and nothing else to watch, and a
-           unit's set runs in class time. */
-        if (ses.kind === 'practice' && !unitCode && JTS.studyTimer) {
+        /* Every practice set (study mode), in both sections: study time today
+           and a Pomodoro. Mocks, the diagnostic and papers have their own
+           clock, and a unit's set runs in class time. */
+        if (isStudy && !unitCode && JTS.studyTimer) {
           tools.appendChild(JTS.studyTimer.button({
             section: function () { return q().section; },
             pending: function () {
@@ -501,7 +501,7 @@
         }
         /* Directions and the scratchpad belong to the test screens (mocks,
            the diagnostic, papers); practice keeps its bar to what it uses. */
-        var inPractice = ses.kind === 'practice';
+        var inPractice = isStudy;
         if (!inPractice) {
           tools.appendChild(U.el('button.q-tool', {
             type: 'button', text: t('q.directions'),
@@ -932,7 +932,7 @@
       }
 
       function buildFooter() {
-        if (ses.kind === 'practice') { buildPracticeFooter(); return; }
+        if (isStudy) { buildPracticeFooter(); return; }
         U.clear(footer);
         var a = ans(), question = q();
         var last = ses.index === ses.questionIds.length - 1;
