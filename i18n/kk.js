@@ -482,7 +482,6 @@ JTS.dict.kk = {
   'q.jumpTo': 'Сұраққа өту',
   'q.hint': 'Кеңес',
   'q.explanation': 'Түсіндірме',
-  'q.showFull': 'Толық шешімді көрсету',
   'q.suggested': 'Ұсынылған',
   'q.previous': 'Артқа',
   'q.questionOf': '{total} сұрақтың {n}-і',

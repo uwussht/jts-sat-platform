@@ -688,6 +688,7 @@
         if (a.submitted) feedbackHost.appendChild(renderFeedback(question, a));
 
         buildFooter();
+        if (JTS.studyHelp && JTS.studyHelp.syncPanel) JTS.studyHelp.syncPanel(ses, question, a, refresh);
       }
 
       /* Which containers a highlight may land in, rebuilt with the question. */

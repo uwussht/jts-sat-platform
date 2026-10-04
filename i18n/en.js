@@ -482,7 +482,6 @@ JTS.dict.en = {
   'q.jumpTo': 'Go to a question',
   'q.hint': 'Hint',
   'q.explanation': 'Explanation',
-  'q.showFull': 'Show the full solution',
   'q.suggested': 'Suggested',
   'q.previous': 'Previous',
   'q.questionOf': 'Question {n} of {total}',

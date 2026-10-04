@@ -259,8 +259,8 @@
             raiseHelp(a, 'hint');
             S.save();
             var hm;
-            /* The answer is never in the hint; it is one deliberate click
-               further, and that click costs the attempt its independence. */
+            /* The answer is never in the hint, and the explanation waits
+               until the answer is checked. */
             hm = ui.modal({
               title: t('q.hint') + ' ' + (i + 1) + '/' + hints.length,
               content: U.el('p', { text: text }),
@@ -268,15 +268,6 @@
                 U.el('button.btn', {
                   type: 'button', text: t('common.close'),
                   onclick: function () { hm.close(); }
-                }),
-                U.el('button.btn.btn-primary', {
-                  type: 'button', text: t('q.showFull'),
-                  onclick: function () {
-                    raiseHelp(a, 'full'); S.save();
-                    hm.close();
-                    refresh();
-                    openPanel(ses, question, a, refresh);
-                  }
                 })
               ]
             });
@@ -285,15 +276,23 @@
         }));
       }
 
-      footer.appendChild(U.el('button.btn.btn-sm', {
-        type: 'button', text: t('q.explanation'),
-        onclick: function () {
-          /* Reading the explanation before answering is what disqualifies the
-             attempt from counting as independent work. */
-          if (!a.submitted) { raiseHelp(a, 'explanation'); S.save(); refresh(); }
-          openPanel(ses, question, a, refresh);
-        }
-      }));
+      /* The explanation is there only once the answer has been checked. */
+      if (a.submitted) {
+        footer.appendChild(U.el('button.btn.btn-sm', {
+          type: 'button', text: t('q.explanation'),
+          onclick: function () { openPanel(ses, question, a, refresh); }
+        }));
+      }
+    },
+
+    /**
+     * Keep an open explanation panel with the question on screen: it follows
+     * to the next checked question, and closes on one not yet checked.
+     */
+    syncPanel: function (ses, question, a, refresh) {
+      if (!U.$('.q-side')) return;
+      if (a && a.submitted) openPanel(ses, question, a, refresh);
+      else closePanel();
     },
 
     /** Called right after an answer is checked in study mode. */

@@ -482,7 +482,6 @@ JTS.dict.ru = {
   'q.jumpTo': 'Перейти к вопросу',
   'q.hint': 'Подсказка',
   'q.explanation': 'Объяснение',
-  'q.showFull': 'Показать полное решение',
   'q.suggested': 'Предложено',
   'q.previous': 'Назад',
   'q.questionOf': 'Вопрос {n} из {total}',
