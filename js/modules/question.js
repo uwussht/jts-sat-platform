@@ -665,8 +665,10 @@
 
         /* "Question 3 of 7" rather than a numbered tile: where you are in the
            set is a sentence, and the tile was competing with the stem. */
+        /* Practice shows where it is in its bottom bar, so only the tests
+           repeat "Question N of M" here. */
         var head = U.el('div.row.q-head', null, [
-          U.el('span.q-count', {
+          isStudy ? null : U.el('span.q-count', {
             text: t('q.counter', { n: ses.index + 1, total: ses.questionIds.length })
           }),
           U.el('span.spacer'),
