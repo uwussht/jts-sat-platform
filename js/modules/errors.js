@@ -6,17 +6,16 @@
 
      the mistake  ·  which topic  ·  why it happened  ·  reviewed yet or not
 
-   The student writes every row. The platform does not put anything in here on
-   its own, and that is the point rather than a limitation: writing the mistake
-   down in your own words IS the review, and a row generated for you is a row
-   you did not think about. It also means the log covers everything — the
-   misses on paper, in Bluebook, in a lesson with a tutor — and not only the
-   fraction that happened where the software could see.
+   The student decides every row. Two ways in: a mistake written here with
+   "Add a mistake" (from paper, Bluebook, a lesson with a tutor), and a
+   practice miss the student chose to log with the question screen's
+   "Log error", which arrives with the question's opening words, its topic
+   and the reason they picked, editable like any other row.
 
-   The spaced-review machinery is a different thing and lives elsewhere. A
-   question missed inside the platform still goes into the review queue that
-   #/practice and the plan's review sessions serve back; it just does not
-   appear on this screen, because this screen is a notebook and not a report.
+   The spaced-review machinery is a different thing and lives elsewhere. Every
+   question missed inside the platform goes into the review queue that
+   #/practice and the plan's review sessions serve back; only the ones the
+   student logged appear on this screen.
 
    Reviewed is one column with one meaning: the student has been back over it.
    ========================================================================== */
@@ -59,12 +58,12 @@
   }
 
   /**
-   * One row per mistake the student has written down, newest first. Only
-   * manual entries: what the platform records for spaced review is not a
-   * notebook entry and does not belong in the student's own log.
+   * One row per mistake the student has written down, newest first: the ones
+   * added here by hand, and the practice misses they logged with "Log error".
+   * Misses they did not log stay in the review queue only.
    */
   function buildRows(state) {
-    return (state.errors || []).filter(function (e) { return e.manual; })
+    return (state.errors || []).filter(function (e) { return e.manual || e.logged; })
       .sort(function (a, b) { return b.ts - a.ts; })
       .map(function (e, i) {
         var topic = topicOf(e);
@@ -74,7 +73,8 @@
           id: e.id,
           ts: e.ts,
           date: U.fmtDate(new Date(e.ts), S.settings().uiLang),
-          section: sectionOfCode(e.topicCode),
+          section: sectionOfCode(e.topicCode) ||
+            (e.skillId && JTS.skills.get(e.skillId) ? JTS.skills.get(e.skillId).section : null),
           code: topic.code,
           topic: topic.text,
           title: e.title || '',
@@ -210,7 +210,10 @@
             okText: t('common.delete')
           }).then(function (yes) {
             if (!yes) return;
-            JTS.attempts.removeError(e.id);
+            /* A logged practice miss leaves the log but stays in the review
+               queue; a row written here is removed outright. */
+            if (e.manual) JTS.attempts.removeError(e.id);
+            else JTS.attempts.updateError(e.id, { logged: false });
             m.close();
             ui.toast(t('errors.deleted'), 'ok');
             done();

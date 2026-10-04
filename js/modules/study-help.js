@@ -192,6 +192,15 @@
 
   /* ------------------------------------------------- error classification */
 
+  /** The question's opening words, as plain text, to name it in the log. */
+  function questionExcerpt(question) {
+    /* An inert parse: no images load and nothing runs. */
+    var doc = new DOMParser().parseFromString(
+      (question.passage || '') + ' ' + (question.stem || ''), 'text/html');
+    var text = (doc.body.textContent || '').replace(/\s+/g, ' ').trim();
+    return text.length > 140 ? text.slice(0, 137).replace(/\s+\S*$/, '') + '…' : text;
+  }
+
   /**
    * The error-log window for a missed question, opened from the top bar's
    * "Log error" button. Nothing is pre-chosen: the student names the kind of
@@ -230,7 +239,15 @@
           onclick: function () {
             if (!chosen) return;
             a.errorType = chosen;
-            if (a.attemptId) JTS.attempts.setErrorType(a.attemptId, chosen);
+            if (a.attemptId) {
+              JTS.attempts.setErrorType(a.attemptId, chosen);
+              JTS.attempts.logToNotebook(a.attemptId, {
+                title: questionExcerpt(question),
+                topicCode: (ses.meta && ses.meta.lessonCode) || null,
+                topicText: JTS.skills.name(question.skillId) || '',
+                errorType: chosen
+              });
+            }
             S.save();
             m.close();
             refresh && refresh();

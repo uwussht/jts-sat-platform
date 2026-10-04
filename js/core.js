@@ -1619,6 +1619,25 @@
         s.errors = s.errors.filter(function (e) { return e.id !== id; });
       });
     },
+    /**
+     * "Log error" on a missed practice question: the review-queue entry for
+     * that attempt also becomes a row of the student's own Error log, with
+     * the question's opening words as the mistake and its topic or unit.
+     */
+    logToNotebook: function (attemptId, rec) {
+      Store.update(function (s) {
+        s.errors.forEach(function (e) {
+          if (e.attemptId !== attemptId) return;
+          e.logged = true;
+          if (!e.title) e.title = rec.title || '';
+          if (!e.topicCode && !e.topicText) {
+            e.topicCode = rec.topicCode || null;
+            e.topicText = rec.topicCode ? '' : (rec.topicText || '');
+          }
+          if (rec.errorType) e.errorType = rec.errorType;
+        });
+      });
+    },
     setErrorType: function (attemptId, errorType) {
       Store.update(function (s) {
         s.attempts.forEach(function (a) { if (a.id === attemptId) a.errorType = errorType; });

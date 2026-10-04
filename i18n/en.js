@@ -530,7 +530,7 @@ JTS.dict.en = {
   /* ------------------------------------------------------------ error log */
   'errors.title': 'Error log', 'errors.nav': 'Error log',
   'errors.eyebrow': 'Your own log, in your own words',
-  'errors.lead': 'Write down what you got wrong, which topic it belongs to and why it happened. Nothing is added here for you — the sentence you write is the review, and a row you did not type is a row you did not think about.',
+  'errors.lead': 'Write down what you got wrong, which topic it belongs to and why it happened. Mistakes you log in practice with “Log error” appear here too, and you can edit them like any other row.',
   'errors.addMistake': 'Add a mistake', 'errors.editMistake': 'Edit this mistake',
   'errors.added': 'Added to your log',
   'errors.deleteTitle': 'Delete this row?',
