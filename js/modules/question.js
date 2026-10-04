@@ -873,7 +873,60 @@
       function refresh() { buildTopbar(); renderQuestion(); }
 
       /* ------------------------------------------------------------ footer */
+      /**
+       * The practice bar: Previous on the left; in the middle how many
+       * questions are checked and which one this is (it opens the grid of
+       * the whole set); on the right the study help, Check and Next. Next
+       * moves on with or without a check, and on the last question it
+       * finishes the set.
+       */
+      function buildPracticeFooter() {
+        U.clear(footer);
+        footer.classList.add('q-footer-practice');
+        var a = ans(), question = q();
+        var total = ses.questionIds.length;
+        var last = ses.index === total - 1;
+        var checked = ses.questionIds.filter(function (id) { return ses.answers[id].submitted; }).length;
+
+        footer.appendChild(U.el('div.qf-side', null, [
+          U.el('button.btn.qf-prev', {
+            type: 'button', text: '← ' + t('q.previous'), disabled: ses.index === 0 || null,
+            onclick: function () { go(-1); }
+          })
+        ]));
+
+        footer.appendChild(U.el('div.qf-mid', null, [
+          U.el('span.qf-progress', { text: '◷ ' + t('q.progressChecked', { n: checked, total: total }) }),
+          U.el('button.qf-where', {
+            type: 'button', text: t('q.questionOf', { n: ses.index + 1, total: total }),
+            'aria-haspopup': 'dialog', onclick: openGrid
+          })
+        ]));
+
+        var right = U.el('div.qf-side.qf-right');
+        if (isStudy && JTS.studyHelp && JTS.studyHelp.footerControls) {
+          JTS.studyHelp.footerControls(right, ses, question, a, refresh);
+        }
+        if (isStudy && !a.submitted) {
+          right.appendChild(U.el('button.btn.qf-check', {
+            type: 'button', text: '✓ ' + t('q.submit'),
+            disabled: (a.selected === null || a.selected === '') || null,
+            onclick: check
+          }));
+        }
+        right.appendChild(last
+          ? U.el('button.btn.btn-primary', {
+              type: 'button', text: t('q.finish'),
+              onclick: function () { commitTime(); saveNow(); JTS.session.finish(); }
+            })
+          : U.el('button.btn.btn-primary', {
+              type: 'button', text: t('q.next') + ' →', onclick: function () { go(1); }
+            }));
+        footer.appendChild(right);
+      }
+
       function buildFooter() {
+        if (ses.kind === 'practice') { buildPracticeFooter(); return; }
         U.clear(footer);
         var a = ans(), question = q();
         var last = ses.index === ses.questionIds.length - 1;
