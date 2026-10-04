@@ -2372,3 +2372,26 @@ body.unit-focus .lesson-side { top: 16px; max-height: calc(100vh - 32px); }
 /* The passage side gets the larger share, so tables and graphs read at size. */
 .q-shell.is-practice .q-split { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); }
 @media (max-width: 900px) { .q-shell.is-practice .q-split { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------------------------------------------------------- practice: a fixed frame
+   The practice screen fills the window exactly. The top bar and the bottom
+   bar stay where they are; the question and the explanation panel each
+   scroll in their own column, so neither slides under a bar and the page
+   itself never scrolls. */
+body.unit-focus .q-shell.is-practice {
+  height: 100vh; height: 100dvh; min-height: 0; overflow: hidden;
+}
+body.unit-focus .q-shell.is-practice .q-topbar,
+body.unit-focus .q-shell.is-practice .q-footer { position: static; flex: none; }
+body.unit-focus .q-shell.is-practice .q-main { flex: 1 1 auto; min-height: 0; overflow: hidden; }
+body.unit-focus .q-shell.is-practice .q-content {
+  height: 100%; overflow-y: auto; max-width: none; margin: 0;
+  padding-inline: max(16px, calc((100% - 1240px) / 2));
+}
+body.unit-focus .q-shell.is-practice .q-content.is-single { padding-inline: max(16px, calc((100% - 860px) / 2)); }
+body.unit-focus .q-shell.is-practice .q-side {
+  position: static; max-height: none; min-height: 0; height: 100%; overflow: hidden;
+}
+@media (max-width: 1000px) {
+  body.unit-focus .q-shell.is-practice .q-side { position: fixed; inset: 0 0 0 auto; height: auto; }
+}
