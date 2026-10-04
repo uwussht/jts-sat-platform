@@ -375,7 +375,7 @@
       if (unitCode) document.body.classList.add('unit-focus');
 
       /* ------------------------------------------------------------- shell */
-      var shell = U.el('div.q-shell');
+      var shell = U.el('div.q-shell' + (isStudy ? '.is-practice' : ''));
       var topbar = U.el('div.q-topbar');
       var main = U.el('div.q-main');
       var content = U.el('div.q-content');
@@ -434,6 +434,28 @@
       /* ----------------------------------------------------------- top bar */
       function buildTopbar() {
         U.clear(topbar);
+        /* Practice keeps its exits on the left: ✕ finishes the set, the
+           back button leaves it open to continue later. */
+        if (isStudy) {
+          topbar.appendChild(closeButton());
+          if (unitCode) {
+            topbar.appendChild(U.el('button.q-tool', {
+              type: 'button', text: '← ' + t('q.backToLesson'),
+              onclick: function () {
+                commitTime(); saveNow();
+                JTS.router.go('#/materials/lesson?code=' + encodeURIComponent(unitCode));
+              }
+            }));
+          } else {
+            topbar.appendChild(U.el('button.q-tool', {
+              type: 'button', text: '← ' + t('q.backToPractice'),
+              onclick: function () {
+                commitTime(); saveNow();
+                JTS.router.go('#/practice');
+              }
+            }));
+          }
+        }
         /* A unit's tasks are worked in class with no clock on screen; the
            time on each question is still recorded for the student's stats. */
         if (!unitCode) {
@@ -469,15 +491,6 @@
         /* A unit's own set is worked in class: the way back to the
            explanation keeps the set where it is, to be continued from the
            unit page. */
-        if (unitCode) {
-          topbar.appendChild(U.el('button.q-tool', {
-            type: 'button', text: '← ' + t('q.backToLesson'),
-            onclick: function () {
-              commitTime(); saveNow();
-              JTS.router.go('#/materials/lesson?code=' + encodeURIComponent(unitCode));
-            }
-          }));
-        }
 
         var tools = U.el('div.q-tools');
         /* Every practice set (study mode), in both sections: study time today
@@ -596,9 +609,15 @@
           tools.appendChild(wbBtn);
         }
 
-        tools.appendChild(U.el('button.q-tool', {
+        if (!isStudy) tools.appendChild(closeButton());
+        topbar.appendChild(tools);
+      }
+
+      /** ✕: finish the set, after a confirmation. */
+      function closeButton() {
+        return U.el('button.q-tool.q-close', {
           type: 'button', text: '✕',
-          'aria-label': t('common.close'),
+          'aria-label': t('common.close'), title: t('q.finish'),
           onclick: function () {
             ui.confirm({ title: t('q.finish'), message: t('q.exitConfirm'),
               okText: t('common.finish'), cancelText: t('common.cancel') })
@@ -607,8 +626,7 @@
                 commitTime(); saveNow(); JTS.session.finish();
               });
           }
-        }));
-        topbar.appendChild(tools);
+        });
       }
 
       /**

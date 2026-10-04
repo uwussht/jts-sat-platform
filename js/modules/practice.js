@@ -338,6 +338,32 @@
         U.el('a.btn.btn-sm', { href: '#/desmos-guide', text: t('practice.desmosGuide') })
       ]);
 
+      /* A set left with "Back to practice" is still open: pick it up where
+         it was, or close it to start another. */
+      var open = JTS.session.current();
+      if (open && open.mode === 'study' && !(open.meta && open.meta.lessonCode)) {
+        screen.appendChild(U.el('div.card.row-between.row-wrap.practice-resume', null, [
+          U.el('div.stack-sm', null, [
+            U.el('div.eyebrow', { text: t('practice.openSet') }),
+            U.el('div.h3', { text: open.title || t('practice.title') })
+          ]),
+          U.el('div.row.row-wrap', null, [
+            U.el('button.btn', {
+              type: 'button', text: t('practice.closeSet'),
+              onclick: function () {
+                ui.confirm({ title: t('q.finish'), message: t('q.exitConfirm'),
+                  okText: t('common.finish'), cancelText: t('common.cancel') })
+                  .then(function (yes) { if (yes) JTS.session.finish(); });
+              }
+            }),
+            U.el('a.btn.btn-primary', {
+              href: '#/question',
+              text: t('lesson.continue', { n: open.index + 1, total: open.questionIds.length }) + ' →'
+            })
+          ])
+        ]));
+      }
+
       var card = U.el('div.card.stack');
       card.appendChild(U.el('h2.h2', { text: t('practice.create') }));
       card.appendChild(sectionTabs(rerender));

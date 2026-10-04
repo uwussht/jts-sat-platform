@@ -2355,3 +2355,20 @@ body.unit-focus .lesson-side { top: 16px; max-height: calc(100vh - 32px); }
 @media (prefers-reduced-motion: reduce) { .qf-chev { transition: none; } }
 /* "Log error" once the mistake is logged: it shows the kind, quietly. */
 .q-tool.is-logged { border-color: var(--brand-300); color: var(--brand-700); background: var(--brand-050); }
+
+/* ---------------------------------------------------------- practice: larger questions */
+.q-shell.is-practice .q-content { max-width: 1240px; padding-top: 24px; }
+.q-shell.is-practice .q-content.is-single { max-width: 860px; }
+.q-shell.is-practice .q-passage { font-size: 17.5px; line-height: 1.7; }
+.q-shell.is-practice .q-stem { font-size: 18px; line-height: 1.6; }
+.q-shell.is-practice .q-content.is-single .q-stem { font-size: 19.5px; }
+.q-shell.is-practice .opt { font-size: 17px; padding: 15px 18px; }
+.q-shell.is-practice .opt .key { flex-basis: 30px; width: 30px; height: 30px; font-size: 14px; }
+/* Tables, graphs and figures given as pictures use the passage's full width. */
+.q-shell.is-practice .q-passage img,
+.q-shell.is-practice .q-stem img { display: block; width: 100%; max-width: 100%; height: auto; }
+.q-shell.is-practice .q-passage table { font-size: 16px; }
+.practice-resume { border-color: var(--brand-300); background: var(--brand-050); }
+/* The passage side gets the larger share, so tables and graphs read at size. */
+.q-shell.is-practice .q-split { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); }
+@media (max-width: 900px) { .q-shell.is-practice .q-split { grid-template-columns: minmax(0, 1fr); } }
