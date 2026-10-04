@@ -91,14 +91,10 @@ JTS.data.skills = [
     name_en: 'Systems of linear equations',
     name_ru: 'Системы линейных уравнений',
     name_kk: 'Сызықтық теңдеулер жүйесі' },
-  { id: 'm.alg.inequalities', section: 'math', domain: 'm.alg', examWeight: 0.032, prerequisites: ['m.alg.linear'],
+  { id: 'm.alg.inequalities', section: 'math', domain: 'm.alg', examWeight: 0.042, prerequisites: ['m.alg.linear'],
     name_en: 'Linear inequalities',
     name_ru: 'Линейные неравенства',
     name_kk: 'Сызықтық теңсіздіктер' },
-  { id: 'm.alg.absolute-value', section: 'math', domain: 'm.alg', examWeight: 0.010, prerequisites: ['m.alg.linear'],
-    name_en: 'Absolute value',
-    name_ru: 'Модуль',
-    name_kk: 'Модуль' },
 
   /* ---------------- Advanced Math (35% of Math) */
   { id: 'm.adv.quadratics', section: 'math', domain: 'm.adv', examWeight: 0.048, prerequisites: ['m.alg.linear'],
