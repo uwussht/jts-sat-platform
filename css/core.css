@@ -2349,3 +2349,7 @@ body.unit-focus .lesson-side { top: 16px; max-height: calc(100vh - 32px); }
   .q-footer.q-footer-practice { grid-template-columns: 1fr 1fr; }
   .qf-mid { grid-column: 1 / -1; order: -1; }
 }
+.qf-where { display: inline-flex; align-items: center; gap: 10px; }
+.qf-chev { display: inline-grid; place-items: center; transition: transform .15s; }
+.qf-where:hover .qf-chev { transform: translateY(-2px); }
+@media (prefers-reduced-motion: reduce) { .qf-chev { transition: none; } }

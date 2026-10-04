@@ -897,10 +897,15 @@
 
         footer.appendChild(U.el('div.qf-mid', null, [
           U.el('span.qf-progress', { text: '◷ ' + t('q.progressChecked', { n: checked, total: total }) }),
+          /* The arrow says the button opens the list of every question. */
           U.el('button.qf-where', {
-            type: 'button', text: t('q.questionOf', { n: ses.index + 1, total: total }),
-            'aria-haspopup': 'dialog', onclick: openGrid
-          })
+            type: 'button', 'aria-haspopup': 'dialog', onclick: openGrid
+          }, [
+            U.el('span', { text: t('q.questionOf', { n: ses.index + 1, total: total }) }),
+            U.el('span.qf-chev', { 'aria-hidden': 'true', html:
+              '<svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" ' +
+              'stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 10 8 5.5 12.5 10"/></svg>' })
+          ])
         ]));
 
         var right = U.el('div.qf-side.qf-right');
