@@ -680,10 +680,7 @@
             type: 'button', 'aria-pressed': String(!!a.marked),
             text: '⚑ ' + (a.marked ? t('q.marked') : t('q.markReview')),
             onclick: function () { a.marked = !a.marked; saveNow(); renderQuestion(); }
-          }),
-          /* Naming the skill is useful while practising and is a hint while
-             being measured, so it appears in study mode only. */
-          isStudy ? U.el('span.badge.badge-muted', { text: JTS.skills.name(question.skillId) }) : null
+          })
         ]);
         content.appendChild(head);
         /* A question with no passage is a column of text and four choices, and
