@@ -439,6 +439,7 @@ JTS.dict.en = {
   'practice.mode.custom': 'Custom set',
   'practice.mode.customDesc': 'Your own filters and length',
   'practice.count': 'Number of questions',
+  'practice.countAll': 'All',
   'practice.startSession': 'Start the session',
   'practice.noQuestions': 'No questions match these filters',
   'practice.pickSkills': 'Select at least one skill',

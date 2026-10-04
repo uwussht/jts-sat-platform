@@ -439,6 +439,7 @@ JTS.dict.kk = {
   'practice.mode.custom': 'Custom Set',
   'practice.mode.customDesc': 'Өз сүзгілеріңіз бен ұзындығыңыз',
   'practice.count': 'Сұрақ саны',
+  'practice.countAll': 'Барлығы',
   'practice.startSession': 'Сессияны бастау',
   'practice.noQuestions': 'Бұл сүзгілерге сай сұрақ жоқ',
   'practice.pickSkills': 'Кемінде бір дағдыны таңдаңыз',

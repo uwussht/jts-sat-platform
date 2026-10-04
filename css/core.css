@@ -2322,3 +2322,5 @@ body.unit-focus .lesson-side { top: 16px; max-height: calc(100vh - 32px); }
   .lw-part-title { font-size: 20px; }
   .lw-part .lesson-written { font-size: 16px; }
 }
+/* A long practice set (more than 20) scrolls its numbered rail from the start. */
+.q-rail.is-long { justify-content: flex-start; }

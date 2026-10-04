@@ -439,6 +439,7 @@ JTS.dict.ru = {
   'practice.mode.custom': 'Custom Set',
   'practice.mode.customDesc': 'Свои фильтры и длина',
   'practice.count': 'Количество вопросов',
+  'practice.countAll': 'Все',
   'practice.startSession': 'Начать сессию',
   'practice.noQuestions': 'Под эти фильтры нет вопросов',
   'practice.pickSkills': 'Выберите хотя бы один навык',

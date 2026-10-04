@@ -887,7 +887,10 @@
           onclick: openGrid
         }));
 
-        var rail = U.el('div.q-rail', { role: 'group', 'aria-label': t('q.jumpTo') });
+        /* A long set starts its rail at question 1 and scrolls it so the
+           current question is in view; a short one sits centred. */
+        var rail = U.el('div.q-rail' + (ses.questionIds.length > 20 ? '.is-long' : ''),
+          { role: 'group', 'aria-label': t('q.jumpTo') });
         ses.questionIds.forEach(function (qid, i) {
           var ai = ses.answers[qid];
           var answered = ai.selected !== null && ai.selected !== '';
@@ -907,6 +910,12 @@
           }));
         });
         footer.appendChild(rail);
+        var here = rail.children[ses.index];
+        if (here && ses.questionIds.length > 20) {
+          setTimeout(function () {
+            rail.scrollLeft = here.offsetLeft - rail.offsetLeft - (rail.clientWidth - here.offsetWidth) / 2;
+          }, 0);
+        }
 
         /* Study-mode help is constructed only in study mode, so in exam and
            diagnostic mode these controls do not exist in the DOM at all. */

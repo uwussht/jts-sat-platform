@@ -25,7 +25,10 @@
     { id: 'custom',     section: null,   count: null, minutes: 0 }
   ];
   var chosenMode = 'topic';
-  var chosenCount = 10;
+  /* How many questions a set has. ALL (the default) is every question the
+     chosen topics and filters allow. */
+  var ALL = 0;
+  var chosenCount = ALL;
 
   /* ------------------------------------------------------------- selection */
 
@@ -171,7 +174,7 @@
           U.el('button.btn.btn-sm.sk-go', {
             type: 'button', text: '▶', title: t('practice.startSession'),
             'aria-label': t('practice.startSession') + ': ' + JTS.i18n.pickName(skill),
-            onclick: function (e) { e.preventDefault(); e.stopPropagation(); startTopic([skill.id], 10); }
+            onclick: function (e) { e.preventDefault(); e.stopPropagation(); startTopic([skill.id], chosenCount); }
           })
         ]));
       });
@@ -263,6 +266,24 @@
   }
 
   function startTopic(skillIds, n) {
+    if (!n) {
+      /* Every question of these topics that the filters allow: the ones not
+         seen yet first, then the rest, each group shuffled. */
+      var seen = (S.state().seenQuestionIds) || [];
+      var all = JTS.bank.query({
+        skillIds: skillIds,
+        difficulty: filters.difficulty.length ? filters.difficulty : null,
+        status: filters.status.length ? filters.status : null,
+        marked: filters.marked || null,
+        licenseStatus: filters.source
+      });
+      var seed = Date.now() % 9973;
+      var fresh = U.shuffle(all.filter(function (q) { return seen.indexOf(q.id) < 0; }), seed);
+      var old = U.shuffle(all.filter(function (q) { return seen.indexOf(q.id) >= 0; }), seed);
+      startSet(fresh.concat(old).map(function (q) { return q.id; }),
+        { title: skillIds.map(function (id) { return JTS.skills.name(id); }).join(' · ') });
+      return;
+    }
     var ids = [];
     var per = Math.max(1, Math.ceil(n / Math.max(1, skillIds.length)));
     skillIds.forEach(function (skillId) {
@@ -297,7 +318,8 @@
     }
 
     /* Custom: whatever the filters leave, shuffled, capped at the chosen size. */
-    var custom = U.shuffle(list, Date.now() % 9973).slice(0, chosenCount).map(function (q) { return q.id; });
+    var shuffled = U.shuffle(list, Date.now() % 9973);
+    var custom = (chosenCount ? shuffled.slice(0, chosenCount) : shuffled).map(function (q) { return q.id; });
     startSet(custom, { title: t('practice.mode.custom') });
   }
 
@@ -328,10 +350,11 @@
       var mode = MODES.filter(function (m) { return m.id === chosenMode; })[0];
       if (!mode.count) {
         var lenRow = U.el('div.row.row-wrap');
-        [5, 10, 20].forEach(function (n) {
+        [ALL, 5, 10, 20].forEach(function (n) {
+          var label = n ? String(n) : t('practice.countAll');
           lenRow.appendChild(U.el('button.chip', {
-            type: 'button', text: String(n), 'aria-pressed': String(chosenCount === n),
-            'aria-label': t('practice.count') + ': ' + n,
+            type: 'button', text: label, 'aria-pressed': String(chosenCount === n),
+            'aria-label': t('practice.count') + ': ' + label,
             dataset: { length: String(n) },
             onclick: function () { chosenCount = n; rerender(); }
           }));
