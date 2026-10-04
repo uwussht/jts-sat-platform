@@ -32,12 +32,9 @@
       root.appendChild(screen);
       function rerender() { JTS.router.render(); }
 
-      /* Availability changes arrive one click at a time — a confirmation per
-         click would be unusable — so they are collected and the offer to
-         rebuild is made once, when the student stops. */
-      var dirty = false, dirtyTimer = null;
+      /* A new exam date changes the plan's length, so the plan is offered a
+         rebuild. */
       function doRebuild() {
-        dirty = false;
         if (!S.state().plan) { JTS.planner.generate(); }
         else { JTS.planner.rebuild(); }
         ui.toast(t('settings.replanned'), 'ok');
@@ -50,12 +47,6 @@
           rerender();
         });
       }
-      function markDirty() {
-        dirty = true;
-        clearTimeout(dirtyTimer);
-        dirtyTimer = setTimeout(function () { if (dirty) offerRebuild(); }, 1200);
-      }
-
 
       /* --- profile --- */
       screen.appendChild(card(t('settings.account'), [
@@ -179,182 +170,6 @@
         goalWrap.appendChild(U.el('p.small.muted', { text: t('settings.goalNote') }));
       })();
       screen.appendChild(card(t('settings.goals'), [goalWrap]));
-
-      /* --- available time --- */
-      var availWrap = U.el('div.stack');
-      (function () {
-        var av = state.availability || { days: [], minutesPerSession: 45, intensity: 'standard' };
-        var dayNames = [1, 2, 3, 4, 5, 6, 7].map(function (d) { return U.dayLabel(d); });
-
-        var dayRow = U.el('div.row.row-wrap', { role: 'group', 'aria-label': t('settings.availDays') });
-        dayNames.forEach(function (name, i) {
-          var dow = i + 1;
-          var on = av.days.indexOf(dow) >= 0;
-          var chip = U.el('button.chip', {
-            type: 'button', text: name, 'aria-pressed': String(on),
-            dataset: { day: String(dow) },
-            onclick: function () {
-              var idx = av.days.indexOf(dow);
-              if (idx >= 0) av.days.splice(idx, 1); else av.days.push(dow);
-              av.days.sort();
-              chip.setAttribute('aria-pressed', String(av.days.indexOf(dow) >= 0));
-              S.update(function (st) { st.availability = av; });
-              markDirty();
-            }
-          });
-          dayRow.appendChild(chip);
-        });
-
-        var minutes = U.el('select.select', { id: 'set-minutes' });
-        [30, 45, 60, 90, 120].forEach(function (m) {
-          var o = U.el('option', { value: String(m), text: m + ' ' + t('common.minutes') });
-          if (av.minutesPerSession === m) o.selected = true;
-          minutes.appendChild(o);
-        });
-        minutes.addEventListener('change', function () {
-          av.minutesPerSession = Number(minutes.value);
-          S.update(function (st) { st.availability = av; });
-          markDirty();
-        });
-
-        var intensity = U.el('select.select', { id: 'set-intensity' });
-        ['light', 'standard', 'intensive'].forEach(function (k) {
-          var o = U.el('option', { value: k, text: t('onb.intensity.' + k) });
-          if (av.intensity === k) o.selected = true;
-          intensity.appendChild(o);
-        });
-        intensity.addEventListener('change', function () {
-          av.intensity = intensity.value;
-          S.update(function (st) { st.availability = av; });
-          markDirty();
-        });
-
-        availWrap.appendChild(ui.field(t('settings.availDays'), dayRow));
-        availWrap.appendChild(ui.field(t('settings.availMinutes'), minutes));
-        availWrap.appendChild(ui.field(t('settings.availIntensity'), intensity));
-        availWrap.appendChild(U.el('button.btn', {
-          type: 'button', text: t('settings.rebuildPlan'),
-          onclick: function () { doRebuild(); }
-        }));
-      })();
-      screen.appendChild(card(t('settings.availability'), [availWrap]));
-
-      /* --- vocabulary --- */
-      (function () {
-        var goalRow = U.el('div.row.row-wrap', { role: 'group', 'aria-label': t('settings.vocabGoal') });
-        JTS.vocab.GOALS.forEach(function (n) {
-          var chip = U.el('button.chip', {
-            type: 'button', text: String(n),
-            'aria-pressed': String(JTS.vocab.state().dailyGoal === n),
-            'aria-label': t('settings.vocabGoal') + ' ' + n,
-            dataset: { vocabGoal: String(n) },
-            onclick: function () {
-              JTS.vocab.setGoal(n);
-              U.$$('button', goalRow).forEach(function (b) {
-                b.setAttribute('aria-pressed', String(Number(b.dataset.vocabGoal) === n));
-              });
-            }
-          });
-          goalRow.appendChild(chip);
-        });
-        screen.appendChild(card(t('vocab.title'), [
-          ui.field(t('settings.vocabGoal'), goalRow),
-          U.el('a.btn', { href: '#/vocab', text: t('vocab.title') })
-        ]));
-      })();
-
-      /* --- language and theme --- */
-      var uiLang = U.el('select.select', { id: 'set-ui-lang' });
-      var exLang = U.el('select.select', { id: 'set-explain-lang' });
-      [['en', 'English'], ['ru', 'Русский'], ['kk', 'Қазақша']].forEach(function (l) {
-        var a = U.el('option', { value: l[0], text: l[1] });
-        if (JTS.i18n.lang === l[0]) a.selected = true;
-        uiLang.appendChild(a);
-        var b = U.el('option', { value: l[0], text: l[1] });
-        if (S.settings().explainLang === l[0]) b.selected = true;
-        exLang.appendChild(b);
-      });
-      uiLang.addEventListener('change', function () {
-        JTS.i18n.setLang(uiLang.value);
-        JTS.shell.renderHeader();
-        rerender();
-      });
-      exLang.addEventListener('change', function () {
-        S.update(function (s) { s.settings.explainLang = exLang.value; });
-        ui.toast(t('common.saved'), 'ok');
-      });
-
-      var theme = U.el('select.select', { id: 'set-theme' });
-      [['light', t('settings.theme.light')], ['dark', t('settings.theme.dark')]].forEach(function (o) {
-        var e = U.el('option', { value: o[0], text: o[1] });
-        if ((S.settings().theme || 'light') === o[0]) e.selected = true;
-        theme.appendChild(e);
-      });
-      theme.addEventListener('change', function () {
-        S.update(function (s) { s.settings.theme = theme.value; });
-        document.documentElement.setAttribute('data-theme', theme.value);
-      });
-
-      screen.appendChild(card(t('common.language'), [
-        U.el('div.grid.grid-2', null, [
-          ui.field(t('settings.uiLang'), uiLang),
-          ui.field(t('settings.explainLang'), exLang)
-        ]),
-        ui.field(t('settings.theme'), theme)
-      ]));
-
-      /* --- AI provider --- */
-
-      /* --- data --- */
-      var importArea = U.el('textarea.textarea', { id: 'set-import', placeholder: '{ "profile": … }', style: 'min-height:90px' });
-      screen.appendChild(card(t('common.export') + ' / ' + t('common.import'), [
-        U.el('div.row.row-wrap', null, [
-          U.el('button.btn', {
-            type: 'button', text: t('settings.exportProfile'),
-            onclick: function () {
-              U.download('jts-profile-' + U.iso(new Date()) + '.json', S.exportProfile());
-            }
-          }),
-          U.el('a.btn', { href: '#/desmos-guide', text: t('settings.desmosGuide') }),
-          U.el('a.btn', { href: 'admin.html', text: t('admin.title') })
-        ]),
-        ui.field(t('settings.importProfile'), importArea),
-        U.el('div.row.row-wrap', null, [
-          U.el('button.btn', {
-            type: 'button', text: t('common.import'),
-            onclick: function () {
-              var res = S.importProfile(importArea.value);
-              if (!res.ok) return ui.toast('Import failed: ' + res.reason, 'err');
-              JTS.shell.applyProfileSettings();
-              JTS.shell.renderHeader();
-              ui.toast(t('common.saved'), 'ok');
-              JTS.router.go('#/today');
-            }
-          }),
-          /* The screen tours are shown once and then never again, which is
-             right until someone wants them back. */
-          U.el('button.btn', {
-            type: 'button', text: t('tour.replay'),
-            onclick: function () {
-              JTS.tour.reset();
-              ui.toast(t('tour.replayDone'), 'ok');
-            }
-          }),
-          U.el('button.btn.btn-danger', {
-            type: 'button', text: t('settings.resetProfile'),
-            onclick: function () {
-              ui.confirm({ title: t('settings.resetProfile'), message: t('settings.resetConfirm'),
-                okText: t('common.delete') }).then(function (yes) {
-                if (!yes) return;
-                S.resetProfile();
-                JTS.shell.renderHeader();
-                JTS.router.go('#/onboarding');
-              });
-            }
-          })
-        ]),
-        U.el('p.hint', { text: t('settings.bankInfo', { n: JTS.bank.all().length }) })
-      ], t('settings.dataNote')));
     }
   });
 })();
