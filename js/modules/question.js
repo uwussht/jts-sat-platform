@@ -370,9 +370,9 @@
         shownAt = Date.now();
       }
 
-      /* A unit's tasks take the whole window, like the unit itself: the
-         app's sidebar and header step aside until the screen is left. */
-      if (unitCode) document.body.classList.add('unit-focus');
+      /* Practice takes the whole window, like a unit does: the app's sidebar
+         and header step aside until the screen is left. */
+      if (isStudy) document.body.classList.add('unit-focus');
 
       /* ------------------------------------------------------------- shell */
       var shell = U.el('div.q-shell' + (isStudy ? '.is-practice' : ''));
@@ -434,10 +434,10 @@
       /* ----------------------------------------------------------- top bar */
       function buildTopbar() {
         U.clear(topbar);
-        /* Practice keeps its exits on the left: ✕ finishes the set, the
-           back button leaves it open to continue later. */
+        /* Practice keeps its way out on the left: it leaves the set open to
+           continue later. A set is finished from the question list, from
+           Next on the last question, or from the Practice page. */
         if (isStudy) {
-          topbar.appendChild(closeButton());
           if (unitCode) {
             topbar.appendChild(U.el('button.q-tool', {
               type: 'button', text: '← ' + t('q.backToLesson'),
@@ -1112,7 +1112,7 @@
         if (JTS.session.current()) saveNow();
         JTS.desmos.hide();
         if (board) board.closeWindow();
-        if (unitCode) document.body.classList.remove('unit-focus');
+        if (isStudy) document.body.classList.remove('unit-focus');
       };
     }
   });
