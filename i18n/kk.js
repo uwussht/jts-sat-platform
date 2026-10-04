@@ -522,7 +522,6 @@ JTS.dict.kk = {
   'q.logError': 'Қатені жазу',
   'q.logErrorHint': 'Қатенің түрін қателер журналына сақтау',
   'q.errorTypeLead': 'Бұл қандай қате болды? Ол осы сұрақпен бірге қателер журналына сақталады.',
-  'q.noDesmosInRw': 'Reading and Writing бөлімінде калькулятор қолжетімсіз.',
 
   'err.knowledge gap': 'Білім олқылығы', 'err.misread': 'Шартты қате оқыдым',
   'err.calculation': 'Есептеу қатесі', 'err.strategy': 'Қате стратегия',

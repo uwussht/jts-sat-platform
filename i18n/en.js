@@ -522,7 +522,6 @@ JTS.dict.en = {
   'q.logError': 'Log error',
   'q.logErrorHint': 'Save what kind of mistake this was to your error log',
   'q.errorTypeLead': 'What kind of mistake was it? It is saved with this question in your error log.',
-  'q.noDesmosInRw': 'The calculator is not available in Reading and Writing.',
 
   'err.knowledge gap': 'Knowledge gap', 'err.misread': 'Misread the question',
   'err.calculation': 'Calculation slip', 'err.strategy': 'Wrong strategy',

@@ -522,7 +522,6 @@ JTS.dict.ru = {
   'q.logError': 'Записать ошибку',
   'q.logErrorHint': 'Сохранить тип ошибки в журнал ошибок',
   'q.errorTypeLead': 'Какая это была ошибка? Она сохранится с этим вопросом в журнале ошибок.',
-  'q.noDesmosInRw': 'В Reading and Writing калькулятор недоступен.',
 
   'err.knowledge gap': 'Пробел в знаниях', 'err.misread': 'Неверно прочитал условие',
   'err.calculation': 'Ошибка в вычислениях', 'err.strategy': 'Неверная стратегия',
