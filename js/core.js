@@ -2389,6 +2389,13 @@
 
   /* -------------------------------------------------------------------- boot */
   JTS.boot = function () {
+    /* Questions kept as JSON (js/data/questions/) arrive by fetch; the app
+       starts once they are in, or straight away if there are none. */
+    var load = JTS.data.loadQuestionFiles ? JTS.data.loadQuestionFiles() : Promise.resolve(0);
+    load.then(start, start);
+  };
+
+  function start() {
     Store.root();
     JTS.shell.applyProfileSettings();
     JTS.bank.reindex();
@@ -2401,6 +2408,6 @@
       console.info('[JTS] question bank OK — ' + JTS.bank.all().length + ' items');
     }
     JTS.router.start();
-  };
+  }
 
 })(window);

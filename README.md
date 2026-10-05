@@ -928,3 +928,17 @@ file with an old cached one. After changing any file in `js/`, `css/` or
     python tools/stamp_assets.py
 
 before committing.
+
+## Questions as JSON files
+
+Questions can also live in JSON files in `js/data/questions/`. Put the file
+there and list it in `js/data/questions/index.json`:
+
+    { "files": ["m-adv.json"] }
+
+A file is a list of questions, or `{ "questions": [ ... ] }`, with the same
+fields as the `.js` question files written out as plain data. `meta` and
+`calculator` are filled in when missing, and an English-only explanation is
+used in every interface language. A JSON question with the same `id` as one
+in a `.js` file replaces it. The files are read when the app starts, so the
+app must be served over http (Live Server or any local server).
