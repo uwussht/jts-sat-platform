@@ -302,14 +302,16 @@ practice test closes Month 1 and Month 2.
 
 - `programme.js` — the shape: one schedule (three units a week, 12 weeks),
   the three months, the two checkpoints and the homework.
-- `programme-units.js` — the eight SAT domains, the Challenge block and the 36
-  units, each worded once and referred to everywhere by its code.
-- `programme-teach.js` — the full written lesson for each of U1–U24. It is
-  generated from the course page ("SAT 36-Lesson Course", saved as HTML),
-  split into its numbered parts: edit the course and regenerate with
-  `python tools/html2teach.py "SAT 36-Lesson Course.html" js/data/programme-teach.js`
-  rather than editing the file by hand. English only
-  for now; every interface language falls back to it.
+- `programme-units.js` — the eight SAT domains, the Challenge block, and
+  `JTS.data.unit()`, which each unit file calls to join the course.
+- `units/U1.js` … `units/U24.js`, `units/CH1.js` … `units/CH12.js` — one file
+  per unit: its place in the course (week, position), its title and summary
+  in each language, and, for U1–U24, the full written lesson split into its
+  numbered parts. The lesson sits between `GENERATED` markers and comes from
+  the course page ("SAT 36-Lesson Course", saved as HTML): edit the course
+  and rerun `python tools/html2teach.py "SAT 36-Lesson Course.html"`, which
+  rewrites only those lines in each file. English only for now; every
+  interface language falls back to it.
 - `lesson-questions.js` — each unit's own practice set, by unit code. So far
   U1 and U2 have 15 questions each; a unit without a set says so on its page.
   These items carry `meta.kind = 'lesson'`, which keeps them inside their unit

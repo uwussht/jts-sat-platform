@@ -11,7 +11,7 @@
    schedule. The order is the same on both, so they agree; only the weeks the
    classes fall in differ, and those come from js/data/programme.js.
 
-   Loaded after js/data/programme.js.
+   Loaded after js/data/programme.js, and before js/data/units/*.js.
    ========================================================================== */
 window.JTS = window.JTS || {}; JTS.data = JTS.data || {};
 
@@ -68,211 +68,32 @@ JTS.data.programme.units = [
             kk: 'Күрделі модуль практикасы: екінші, күрделі модуль деңгейіндегі уақытпен орындалатын жинақтар, әрқайсысынан кейін қателерді талдау.' } }
 ];
 
-JTS.data.programme.lessons = [
-  /* ------------------------------------------------------- Month 1 · weeks 1–4 */
-  { code: 'U1', unit: 'v-cs', n3: 1, n2: 1, week: 1, diagnostic: true,
-    t: { en: 'Words in Context', ru: 'Слова в контексте', kk: 'Контекстегі сөздер' },
-    skills: { en: 'The four-step method, two special cases, word parts as a backup tool',
-              ru: 'Метод из четырёх шагов, два особых случая, части слова как запасной инструмент',
-              kk: 'Төрт қадамдық әдіс, екі ерекше жағдай, сөз бөліктері — қосалқы құрал' } },
-  { code: 'U2', unit: 'v-cs', n3: 2, n2: 2, week: 1,
-    t: { en: 'Text Structure and Purpose', ru: 'Структура и цель текста', kk: 'Мәтін құрылымы және мақсаты' },
-    skills: { en: 'The job-label method; purpose, structure and function questions',
-              ru: 'Метод меток-функций; вопросы о цели, структуре и функции',
-              kk: 'Қызмет-белгі әдісі; мақсат, құрылым және қызмет туралы сұрақтар' } },
-  { code: 'U3', unit: 'm-alg', n3: 3, n2: 3, week: 1,
-    t: { en: 'Linear Equations and Inequalities in One Variable',
-         ru: 'Линейные уравнения и неравенства с одной переменной',
-         kk: 'Бір айнымалысы бар сызықтық теңдеулер мен теңсіздіктер' },
-    skills: { en: 'The solving sequence, no solution and infinitely many, word problems, the Desmos shortcut',
-              ru: 'Порядок решения, нет решений и бесконечно много, текстовые задачи, приём с Desmos',
-              kk: 'Шешу реті, шешімі жоқ және шексіз көп, мәтінді есептер, Desmos тәсілі' } },
-  { code: 'U4', unit: 'v-cs', n3: 4, n2: 4, week: 2,
-    t: { en: 'Cross-Text Connections', ru: 'Связи между двумя текстами', kk: 'Екі мәтін арасындағы байланыс' },
-    skills: { en: 'The five relationships between two texts, the method, the traps',
-              ru: 'Пять типов отношений между текстами, метод, ловушки',
-              kk: 'Екі мәтін арасындағы бес қатынас, әдіс, тұзақтар' } },
-  { code: 'U5', unit: 'm-alg', n3: 5, n2: 5, week: 2,
-    t: { en: 'Linear Equations in Two Variables, Slope, and Linear Functions',
-         ru: 'Линейные уравнения с двумя переменными, наклон и линейные функции',
-         kk: 'Екі айнымалысы бар сызықтық теңдеулер, еңіс және сызықтық функциялар' },
-    skills: { en: 'Slope, points on a line, what the equation means in context, the Desmos workflow',
-              ru: 'Наклон, точки на прямой, смысл уравнения в контексте, работа в Desmos',
-              kk: 'Еңіс, түзудегі нүктелер, теңдеудің контексттегі мағынасы, Desmos-пен жұмыс' } },
-  { code: 'U6', unit: 'm-alg', n3: 6, n2: 6, week: 2,
-    t: { en: 'Systems of Linear Equations', ru: 'Системы линейных уравнений', kk: 'Сызықтық теңдеулер жүйелері' },
-    skills: { en: 'Three algebraic methods, special-answer questions, the Desmos method, word problems',
-              ru: 'Три алгебраических метода, вопросы об особых ответах, метод Desmos, текстовые задачи',
-              kk: 'Үш алгебралық әдіс, ерекше жауап сұрақтары, Desmos әдісі, мәтінді есептер' } },
-  { code: 'U7', unit: 'v-ii', n3: 7, n2: 7, week: 3,
-    t: { en: 'Central Ideas and Details', ru: 'Главная мысль и детали', kk: 'Негізгі ой және детальдар' },
-    skills: { en: 'The main idea method, the detail method, two different reading rhythms',
-              ru: 'Метод главной мысли, метод деталей, два разных ритма чтения',
-              kk: 'Негізгі ой әдісі, деталь әдісі, оқудың екі түрлі ырғағы' } },
-  { code: 'U8', unit: 'v-ii', n3: 8, n2: 8, week: 3,
-    t: { en: 'Command of Evidence: Textual', ru: 'Доказательства из текста', kk: 'Мәтіннен дәлел' },
-    skills: { en: 'Support, weaken and illustrate questions; the method and common patterns',
-              ru: 'Вопросы «подтвердить», «ослабить», «проиллюстрировать»; метод и типичные схемы',
-              kk: '«Қолдау», «әлсірету», «мысалмен көрсету» сұрақтары; әдіс және жиі үлгілер' } },
-  { code: 'U9', unit: 'm-adv', n3: 9, n2: 9, week: 3,
-    t: { en: 'Quadratics Part 1', ru: 'Квадратичные функции, часть 1', kk: 'Квадраттық функциялар, 1-бөлім' },
-    skills: { en: 'The three forms, factoring, polynomial operations, reading a graph or table, Desmos',
-              ru: 'Три формы, разложение на множители, действия с многочленами, график и таблица, Desmos',
-              kk: 'Үш түрі, көбейткішке жіктеу, көпмүшелермен амалдар, график пен кесте, Desmos' } },
-  { code: 'U10', unit: 'v-ii', n3: 10, n2: 10, week: 4,
-    t: { en: 'Command of Evidence: Quantitative', ru: 'Доказательства из данных', kk: 'Деректен дәлел' },
-    skills: { en: 'Tables and graphs as evidence; the method, the traps, a worked example',
-              ru: 'Таблицы и графики как доказательство; метод, ловушки, разобранный пример',
-              kk: 'Кестелер мен графиктер дәлел ретінде; әдіс, тұзақтар, талданған мысал' } },
-  { code: 'U11', unit: 'm-adv', n3: 11, n2: 11, week: 4,
-    t: { en: 'Quadratics Part 2', ru: 'Квадратичные функции, часть 2', kk: 'Квадраттық функциялар, 2-бөлім' },
-    skills: { en: 'The discriminant, completing the square, the vertex, nonlinear systems, Desmos for hard questions',
-              ru: 'Дискриминант, выделение полного квадрата, вершина, нелинейные системы, Desmos для сложных задач',
-              kk: 'Дискриминант, толық квадрат бөлу, төбе, сызықтық емес жүйелер, күрделі есептерге Desmos' } },
-  { code: 'U12', unit: 'm-adv', n3: 12, n2: 12, week: 4,
-    t: { en: 'Exponentials and Radicals', ru: 'Показательные функции и корни', kk: 'Көрсеткіштік функциялар және түбірлер' },
-    skills: { en: 'Percent change in the base, growth and decay, radicals, Desmos applications',
-              ru: 'Процентное изменение в основании, рост и убывание, корни, применение Desmos',
-              kk: 'Негіздегі пайыздық өзгеріс, өсу мен кему, түбірлер, Desmos қолдану' } },
+/* ------------------------------------------------------------- the units
+   Each unit and each Challenge class has its own file in js/data/units/
+   (U1.js … U24.js, CH1.js … CH12.js), loaded after this one. Every file
+   calls JTS.data.unit({...}) once with:
 
-  /* ------------------------------------------------------- Month 2 · weeks 5–8 */
-  { code: 'U13', unit: 'v-ii', n3: 13, n2: 13, week: 5,
-    t: { en: 'Inferences', ru: 'Выводы', kk: 'Қорытындылар' },
-    skills: { en: 'The method and the four ways a choice overshoots the text',
-              ru: 'Метод и четыре способа, которыми вариант выходит за рамки текста',
-              kk: 'Әдіс және нұсқаның мәтіннен асып кетуінің төрт жолы' } },
-  { code: 'U14', unit: 'v-sec', n3: 14, n2: 14, week: 5,
-    t: { en: 'Boundaries Part 1', ru: 'Границы предложений, часть 1', kk: 'Сөйлем шекаралары, 1-бөлім' },
-    skills: { en: 'The connector menu, the error catalog, the method',
-              ru: 'Меню соединителей, каталог ошибок, метод',
-              kk: 'Байланыстырғыштар мәзірі, қателер каталогы, әдіс' } },
-  { code: 'U15', unit: 'm-psda', n3: 15, n2: 15, week: 5,
-    t: { en: 'Ratios, Rates, and Percentages', ru: 'Пропорции, скорости и проценты', kk: 'Қатынастар, жылдамдықтар және пайыздар' },
-    skills: { en: 'The percent multiplier method, ratios and proportions, the Desmos angle',
-              ru: 'Метод процентного множителя, отношения и пропорции, Desmos',
-              kk: 'Пайыздық көбейткіш әдісі, қатынастар мен пропорциялар, Desmos' } },
-  { code: 'U16', unit: 'v-sec', n3: 16, n2: 16, week: 6,
-    t: { en: 'Boundaries Part 2', ru: 'Границы предложений, часть 2', kk: 'Сөйлем шекаралары, 2-бөлім' },
-    skills: { en: 'Colons, dashes and the other new tools; the trap patterns',
-              ru: 'Двоеточия, тире и другие новые инструменты; типичные ловушки',
-              kk: 'Қос нүкте, сызықша және басқа жаңа құралдар; тұзақ үлгілері' } },
-  { code: 'U17', unit: 'm-psda', n3: 17, n2: 17, week: 6,
-    t: { en: 'Statistics, Data Displays, and Probability',
-         ru: 'Статистика, представление данных и вероятность',
-         kk: 'Статистика, деректерді көрсету және ықтималдық' },
-    skills: { en: 'Centre and spread, displays, two-way tables, lines of fit, margin of error and study design',
-              ru: 'Среднее и разброс, диаграммы, таблицы сопряжённости, линии тренда, погрешность и дизайн исследования',
-              kk: 'Орта мән мен шашырау, диаграммалар, екі өлшемді кестелер, тренд сызығы, қателік және зерттеу дизайны' } },
-  { code: 'U18', unit: 'm-alg', n3: 18, n2: 18, week: 6,
-    t: { en: 'Linear Inequalities, Absolute Value, and Desmos Shading',
-         ru: 'Линейные неравенства, модуль и штриховка в Desmos',
-         kk: 'Сызықтық теңсіздіктер, модуль және Desmos-тағы бояу' },
-    skills: { en: 'Systems of inequalities, the Desmos method, inequalities in context, absolute value',
-              ru: 'Системы неравенств, метод Desmos, неравенства в контексте, модуль',
-              kk: 'Теңсіздіктер жүйесі, Desmos әдісі, контексттегі теңсіздіктер, модуль' } },
-  { code: 'U19', unit: 'v-sec', n3: 19, n2: 19, week: 7,
-    t: { en: 'Form, Structure, and Sense: Verbs, Pronouns, Modifiers, Possessives',
-         ru: 'Form, Structure, and Sense: глаголы, местоимения, определения, притяжательные',
-         kk: 'Form, Structure, and Sense: етістіктер, есімдіктер, анықтауыштар, тәуелдік' },
-    skills: { en: 'Subject–verb agreement, verb tense, pronouns, modifiers, possessives and apostrophes, one unified method',
-              ru: 'Согласование подлежащего и сказуемого, время глагола, местоимения, определения, притяжательные формы и апострофы, единый метод',
-              kk: 'Бастауыш пен баяндауыштың қиысуы, етістік шағы, есімдіктер, анықтауыштар, тәуелдік формалар мен апострофтар, бірыңғай әдіс' } },
-  { code: 'U20', unit: 'm-geo', n3: 20, n2: 20, week: 7,
-    t: { en: 'Geometry Part 1: Lines, Angles, Triangles, Area and Volume',
-         ru: 'Геометрия, часть 1: прямые, углы, треугольники, площадь и объём',
-         kk: 'Геометрия, 1-бөлім: түзулер, бұрыштар, үшбұрыштар, аудан және көлем' },
-    skills: { en: 'The reference sheet, lines and angles, similar triangles, area and scaling, volume',
-              ru: 'Справочный лист, прямые и углы, подобные треугольники, площадь и масштаб, объём',
-              kk: 'Анықтамалық парақ, түзулер мен бұрыштар, ұқсас үшбұрыштар, аудан және масштаб, көлем' } },
-  { code: 'U21', unit: 'm-adv', n3: 21, n2: 21, week: 7,
-    t: { en: 'Functions, Polynomials, and Rational Equations',
-         ru: 'Функции, многочлены и рациональные уравнения',
-         kk: 'Функциялар, көпмүшелер және рационал теңдеулер' },
-    skills: { en: 'Evaluation, composites, domain and range, transformations, polynomial zeros, rational equations',
-              ru: 'Вычисление, композиция, область определения и значений, преобразования, нули многочленов, рациональные уравнения',
-              kk: 'Мәнін есептеу, композиция, анықталу және мәндер облысы, түрлендірулер, көпмүше нөлдері, рационал теңдеулер' } },
-  { code: 'U22', unit: 'v-ei', n3: 22, n2: 22, week: 8,
-    t: { en: 'Rhetorical Synthesis', ru: 'Риторический синтез', kk: 'Риторикалық синтез' },
-    skills: { en: 'The method and the common goal types',
-              ru: 'Метод и типичные виды целей',
-              kk: 'Әдіс және мақсаттың жиі түрлері' } },
-  { code: 'U23', unit: 'v-ei', n3: 23, n2: 23, week: 8,
-    t: { en: 'Transitions', ru: 'Связки', kk: 'Байланыстырғыштар' },
-    skills: { en: 'The method and the two classic traps',
-              ru: 'Метод и две классические ловушки',
-              kk: 'Әдіс және екі классикалық тұзақ' } },
-  { code: 'U24', unit: 'm-geo', n3: 24, n2: 24, week: 8,
-    t: { en: 'Geometry Part 2: Right Triangles, Trigonometry, Circles',
-         ru: 'Геометрия, часть 2: прямоугольные треугольники, тригонометрия, окружности',
-         kk: 'Геометрия, 2-бөлім: тікбұрышты үшбұрыштар, тригонометрия, шеңберлер' },
-    skills: { en: 'Right triangles, trigonometry, circle equations, arcs, sectors and radians, circle theorems, Desmos',
-              ru: 'Прямоугольные треугольники, тригонометрия, уравнения окружности, дуги, секторы и радианы, теоремы об окружности, Desmos',
-              kk: 'Тікбұрышты үшбұрыштар, тригонометрия, шеңбер теңдеулері, доғалар, секторлар және радиандар, шеңбер теоремалары, Desmos' } }
-];
+     code, unit, n3, n2, week   where it sits in the course
+     t, skills                  its title and summary, in en / ru / kk
+     lesson (optional)          { lead, parts: [{ title, mins, html }] }, the
+                                written lesson, generated from the course page
+     drill (optional)           practice flags, e.g. { hard: true } for Challenge
 
-/* ------------------------------------------- Month 3 · Challenge 1–12 */
-(function () {
+   The order of the files does not matter: the course order comes from n3/n2. */
+JTS.data.programme.lessons = [];
+JTS.data.programme.teach = {};
+JTS.data.programme.drills = {};
+
+JTS.data.unit = function (def) {
   var P = JTS.data.programme;
-  /* [title, focus] for each Challenge class, in the order they are taken:
-     R&W and Math hard modules alternate, then two full simulations. */
-  var CH = [
-    [{ en: 'R&W Hard Module A', ru: 'R&W: сложный модуль A', kk: 'R&W: күрделі модуль A' },
-     { en: 'Baseline hard module. Focus on Words in Context and Text Structure (Classes 1–2).',
-       ru: 'Стартовый сложный модуль. Фокус: Words in Context и структура текста (уроки 1–2).',
-       kk: 'Бастапқы күрделі модуль. Назарда: Words in Context және мәтін құрылымы (1–2 сабақ).' }],
-    [{ en: 'Math Hard Module A', ru: 'Math: сложный модуль A', kk: 'Math: күрделі модуль A' },
-     { en: 'Baseline hard module. Focus on linear equations, systems and inequalities (Classes 3, 5, 6, 18).',
-       ru: 'Стартовый сложный модуль. Фокус: линейные уравнения, системы и неравенства (уроки 3, 5, 6, 18).',
-       kk: 'Бастапқы күрделі модуль. Назарда: сызықтық теңдеулер, жүйелер және теңсіздіктер (3, 5, 6, 18 сабақ).' }],
-    [{ en: 'R&W Hard Module B', ru: 'R&W: сложный модуль B', kk: 'R&W: күрделі модуль B' },
-     { en: 'Command of Evidence: textual and quantitative (Classes 8, 10).',
-       ru: 'Доказательства из текста и из данных (уроки 8, 10).',
-       kk: 'Мәтіннен және деректен дәлел (8, 10 сабақ).' }],
-    [{ en: 'Math Hard Module B', ru: 'Math: сложный модуль B', kk: 'Math: күрделі модуль B' },
-     { en: 'Advanced Math: quadratics, equivalent expressions, exponentials, radicals, functions, polynomials (Classes 9, 11, 12, 21).',
-       ru: 'Advanced Math: квадратичные, равносильные выражения, показательные, корни, функции, многочлены (уроки 9, 11, 12, 21).',
-       kk: 'Advanced Math: квадраттық, тең өрнектер, көрсеткіштік, түбірлер, функциялар, көпмүшелер (9, 11, 12, 21 сабақ).' }],
-    [{ en: 'R&W Hard Module C', ru: 'R&W: сложный модуль C', kk: 'R&W: күрделі модуль C' },
-     { en: 'Inferences, Cross-Text, Central Ideas (Classes 4, 7, 13).',
-       ru: 'Выводы, два текста, главная мысль (уроки 4, 7, 13).',
-       kk: 'Қорытындылар, екі мәтін, негізгі ой (4, 7, 13 сабақ).' }],
-    [{ en: 'Math Hard Module C', ru: 'Math: сложный модуль C', kk: 'Math: күрделі модуль C' },
-     { en: 'Ratios, percents, statistics, probability, margin of error (Classes 15, 17).',
-       ru: 'Пропорции, проценты, статистика, вероятность, погрешность (уроки 15, 17).',
-       kk: 'Қатынастар, пайыздар, статистика, ықтималдық, қателік (15, 17 сабақ).' }],
-    [{ en: 'R&W Hard Module D', ru: 'R&W: сложный модуль D', kk: 'R&W: күрделі модуль D' },
-     { en: 'Boundaries, Form/Structure/Sense, Synthesis, Transitions (Classes 14, 16, 19, 22, 23).',
-       ru: 'Границы предложений, Form/Structure/Sense, синтез, связки (уроки 14, 16, 19, 22, 23).',
-       kk: 'Сөйлем шекаралары, Form/Structure/Sense, синтез, байланыстырғыштар (14, 16, 19, 22, 23 сабақ).' }],
-    [{ en: 'Math Hard Module D', ru: 'Math: сложный модуль D', kk: 'Math: күрделі модуль D' },
-     { en: 'Geometry, circles, trigonometry (Classes 20, 24; completing the square from Class 11).',
-       ru: 'Геометрия, окружности, тригонометрия (уроки 20, 24; полный квадрат из урока 11).',
-       kk: 'Геометрия, шеңберлер, тригонометрия (20, 24 сабақ; толық квадрат — 11 сабақтан).' }],
-    [{ en: 'R&W Hard Module E', ru: 'R&W: сложный модуль E', kk: 'R&W: күрделі модуль E' },
-     { en: 'Mixed, hardest-difficulty only. Target: 30 min finish.',
-       ru: 'Смешанный, только самые сложные. Цель: уложиться в 30 минут.',
-       kk: 'Аралас, тек ең күрделілері. Мақсат: 30 минутта бітіру.' }],
-    [{ en: 'Math Hard Module E', ru: 'Math: сложный модуль E', kk: 'Math: күрделі модуль E' },
-     { en: 'Mixed, hardest-difficulty only, student-produced responses.',
-       ru: 'Смешанный, только самые сложные, задания с вводом ответа.',
-       kk: 'Аралас, тек ең күрделілері, жауабын өзі енгізетін тапсырмалар.' }],
-    [{ en: 'Full Hard Simulation I', ru: 'Полная сложная симуляция I', kk: 'Толық күрделі симуляция I' },
-     { en: 'Full adaptive test under real conditions (Bluebook).',
-       ru: 'Полный адаптивный тест в реальных условиях (Bluebook).',
-       kk: 'Нақты жағдайдағы толық адаптивті тест (Bluebook).' }],
-    [{ en: 'Full Hard Simulation II', ru: 'Полная сложная симуляция II', kk: 'Толық күрделі симуляция II' },
-     { en: 'Final simulation one week before test day.',
-       ru: 'Финальная симуляция за неделю до экзамена.',
-       kk: 'Емтиханға бір апта қалғандағы соңғы симуляция.' }]
-  ];
-  CH.forEach(function (c, k) {
-    var i = k + 1;
-    P.lessons.push({
-      code: 'CH' + i, unit: 'ch', n3: 24 + i, n2: 24 + i, week: 8 + Math.ceil(i / 3),
-      t: c[0], skills: c[1]
-    });
+  var lesson = {};
+  Object.keys(def).forEach(function (k) {
+    if (k !== 'lesson' && k !== 'drill') lesson[k] = def[k];
   });
-})();
+  P.lessons.push(lesson);
+  if (def.lesson) P.teach[def.code] = def.lesson;
+  if (def.drill) P.drills[def.code] = def.drill;
+};
 
 /* ------------------------------------------------------------------ lookups */
 (function () {

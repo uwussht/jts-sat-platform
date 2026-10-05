@@ -1,0 +1,17 @@
+/* ==========================================================================
+   Challenge 8 · Math Hard Module D
+
+   Month 3: a timed set at hard-module difficulty, then an error review.
+   It has no written lesson. Its practice questions, when there are any,
+   are listed by code in js/data/lesson-questions.js.
+   ========================================================================== */
+JTS.data.unit({
+  code: "CH8", unit: "ch", n3: 32, n2: 32, week: 11,
+  t: { en: "Math Hard Module D",
+      ru: "Math: сложный модуль D",
+      kk: "Math: күрделі модуль D" },
+  skills: { en: "Geometry, circles, trigonometry (Classes 20, 24; completing the square from Class 11).",
+           ru: "Геометрия, окружности, тригонометрия (уроки 20, 24; полный квадрат из урока 11).",
+           kk: "Геометрия, шеңберлер, тригонометрия (20, 24 сабақ; толық квадрат — 11 сабақтан)." },
+  drill: {"hard": true}
+});
