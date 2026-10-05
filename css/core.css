@@ -2429,3 +2429,76 @@ body.unit-focus .q-shell.is-practice .q-side {
 .lang-switch button { color: var(--ink-2); }
 .lang-switch button:hover { background: var(--brand-050); color: var(--brand-700); }
 .lang-switch button[aria-pressed="true"] { background: var(--brand-600); color: #fff; }
+
+/* ---------------------------------------------------------- vocabulary, new look */
+.ex-card {
+  border: 1px solid var(--border); border-radius: var(--r-lg); padding: 18px;
+  box-shadow: var(--shadow-1); transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+}
+.ex-card:hover { background: var(--surface); border-color: var(--brand-300); box-shadow: var(--shadow-2); transform: translateY(-2px); }
+.ex-icon { border-radius: var(--r-md); background: var(--brand-100); color: var(--brand-600); }
+.ex-stat { color: var(--brand-600); }
+.flash-face {
+  border: 1px solid var(--border); border-radius: var(--r-xl);
+  box-shadow: var(--shadow-2);
+}
+.flash-back { background: var(--brand-050); border-color: var(--brand-200); }
+.mg-tile { border: 1px solid var(--border); border-radius: var(--r-md); box-shadow: var(--shadow-1); }
+.mg-tile.sel { border-color: var(--brand-600); box-shadow: 0 0 0 3px var(--brand-100); }
+@media (prefers-reduced-motion: reduce) { .ex-card, .ex-card:hover { transition: none; transform: none; } }
+
+/* ---------------------------------------------------------- roadmap, new look
+   The map is a white card with a soft violet glow instead of a gridded board;
+   stops are white discs that fill with violet as they are done, the tests
+   along the way are violet too, and the course list below uses pills. */
+.rm-stage {
+  background:
+    radial-gradient(90% 60% at 50% 105%, rgba(135, 75, 248, .12), transparent 65%),
+    linear-gradient(180deg, var(--surface), var(--brand-050));
+  border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-1);
+}
+.rm-stage::before { display: none; }
+.rm-road-edge { stroke: rgba(135, 75, 248, .12); }
+.rm-road-dash { stroke: var(--brand-300); }
+.rm-pin {
+  background: var(--surface); color: var(--brand-700); border: 3px solid var(--brand-200);
+  box-shadow: 0 4px 12px rgba(53, 34, 85, .12);
+}
+.rm-done .rm-pin { background: var(--brand-600); border-color: var(--surface); color: #fff; }
+.rm-current .rm-pin { background: var(--brand-700); border-color: var(--surface); color: #fff; box-shadow: 0 0 0 6px rgba(135, 75, 248, .18); }
+.rm-gate .rm-pin, .rm-stop.rm-gate .rm-pin { background: var(--surface); color: var(--brand-700); border-color: var(--brand-400); }
+.rm-gate.rm-done .rm-pin, .rm-stop.rm-gate.rm-done .rm-pin { background: var(--brand-600); border-color: var(--surface); color: #fff; }
+.rm-gate.rm-current .rm-pin, .rm-stop.rm-gate.rm-current .rm-pin { background: var(--brand-700); border-color: var(--surface); color: #fff; }
+.rm-sel .rm-pin { box-shadow: 0 0 0 5px var(--brand-300), 0 4px 12px rgba(53, 34, 85, .12); }
+.rm-kind, .rm-gate .rm-kind { background: var(--surface); color: var(--brand-600); border-color: var(--brand-200); }
+.rm-gift {
+  background: linear-gradient(160deg, var(--brand-500), var(--brand-700)); color: #fff;
+  border-radius: var(--r-md); box-shadow: 0 6px 16px rgba(111, 49, 232, .3);
+}
+.rm-name { border-radius: var(--r-pill); background: var(--surface); box-shadow: 0 2px 8px rgba(53, 34, 85, .08); padding: 2px 8px; }
+.rm-sel .rm-name, .rm-current .rm-name { background: var(--brand-600); color: #fff; }
+.rm-panel { border-top: 1px solid var(--border); }
+.rm-panel.is-current, .rm-panel.is-done { border-top-color: var(--border); }
+.rm-panel-n { border-radius: 50%; }
+.rm-how { border-radius: var(--r-md); box-shadow: var(--shadow-1); }
+.rm-how-n { border-radius: 50%; }
+.pg-tag { border-radius: var(--r-pill); padding: 1px 8px; }
+.pg-tag.lv-hard, .pg-level.lv-hard { background: var(--brand-100); color: var(--brand-700); border-color: var(--brand-300); }
+.pg-level { border-radius: var(--r-pill); }
+.pg-n { border-radius: 50%; width: 24px; height: 24px; background: var(--brand-050); color: var(--brand-700); }
+.pg-lesson.is-gate { background: var(--brand-050); border-radius: var(--r-md); }
+.pg-lesson.is-gate .pg-n { background: var(--brand-600); }
+.pg-week-n { color: var(--brand-600); }
+.pg-zero { border-left: 0; background: var(--brand-050); }
+.pg-official {
+  border-left: 0; color: #fff;
+  background: linear-gradient(135deg, var(--brand-600), var(--brand-700));
+  box-shadow: 0 10px 28px rgba(111, 49, 232, .25);
+}
+.pg-official .eyebrow { color: rgba(255, 255, 255, .8); }
+.pg-official .muted, .pg-official p, .pg-official .small { color: rgba(255, 255, 255, .88); }
+.pg-official .badge { background: rgba(255, 255, 255, .18); color: #fff; border-color: transparent; }
+.pg-hw-item.is-weekly .pg-hw-n { background: var(--brand-600); }
+.rm-screen .notice-warn, .rm-course .notice-warn {
+  background: var(--brand-050); border-color: var(--brand-200); color: var(--ink-2); border-radius: var(--r-md);
+}
