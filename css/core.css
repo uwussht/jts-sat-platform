@@ -9,35 +9,35 @@
   /* Brand. Purple is the product's colour, not an accent on a neutral chrome:
      the header, the hero, the page ground, the eyebrows and every interactive
      state come from this one ramp. */
-  --brand-950: #120E30;
-  --brand-900: #1C1648;
-  --brand-800: #2B2270;
-  --brand-700: #4A3AB8;
-  --brand-600: #6D5AE6;      /* primary action */
-  --brand-500: #8172F0;
-  --brand-400: #A092F5;
-  --brand-300: #C0B6FA;
-  --brand-200: #DCD5FC;
-  --brand-100: #E9E4FE;
-  --brand-050: #F4F1FE;
-  --eyebrow:   #4A3AB8;      /* 7.3:1 on #FFF */
-  --eyebrow-on-dark: #C0B6FA;
-  --dark-grad-a: #1C1648;
-  --dark-grad-b: #2B2270;
+  --brand-950: #170D2E;
+  --brand-900: #221445;
+  --brand-800: #3A1F7A;
+  --brand-700: #6F31E8;      /* text and hover on light grounds */
+  --brand-600: #874BF8;      /* primary action */
+  --brand-500: #9A68FA;
+  --brand-400: #B08CFB;
+  --brand-300: #CBB5FD;
+  --brand-200: #DDD0FE;
+  --brand-100: #EDE4FF;
+  --brand-050: #F3EFFA;
+  --eyebrow:   #874BF8;
+  --eyebrow-on-dark: #CBB5FD;
+  --dark-grad-a: #221445;
+  --dark-grad-b: #3A1F7A;
 
   /* Neutrals, tinted towards the brand so nothing on screen reads as grey. */
-  --bg:        #F1EEFA;
+  --bg:        #F7F5FB;
   --surface:   #FFFFFF;
-  --surface-2: #F8F6FE;
-  --border:    #DCD5F2;
-  --border-strong: #B7ACE6;
-  --ink:       #181231;
-  --ink-2:     #3A3164;
-  --muted:     #5F5883;      /* 6.4:1 on #FFF */
+  --surface-2: #F3EFFA;
+  --border:    #E5DEEF;
+  --border-strong: #D3C7E8;
+  --ink:       #211934;
+  --ink-2:     #3D3452;
+  --muted:     #716A81;      /* 5.2:1 on #FFF */
 
   /* Semantic */
-  --ok:        #12875B;      /* 4.6:1 on #FFF */
-  --ok-bg:     #E6F6EF;
+  --ok:        #17764E;
+  --ok-bg:     #E7F5EC;
   --warn:      #96690A;      /* 4.6:1 on #FFF */
   --warn-bg:   #FDF3DF;
   --danger:    #C42B30;      /* 5.6:1 on #FFF */
@@ -51,22 +51,19 @@
   --m-developing:#EFB750;
   --m-mastered:#4FBF8B;
 
-  /* Shape & motion.
-     Every container is square. The radius tokens are kept at 0 rather than
-     deleted so a single edit here restores rounding if it is ever wanted, and
-     so no rule has to be rewritten to get there. Separation that used to come
-     from a soft corner and a soft shadow now comes from a crisp 1px border and
-     a flat surface; only overlays float. */
-  --r-sm: 0;
-  --r-md: 0;
-  --r-lg: 0;
-  --r-xl: 0;
+  /* Shape & motion: white cards with soft corners and a soft shadow, pill
+     buttons, on a pale lavender ground. */
+  --r-sm: 10px;
+  --r-md: 12px;
+  --r-lg: 18px;
+  --r-xl: 22px;
+  --r-pill: 999px;
   --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px;
   --sp-5: 24px; --sp-6: 32px; --sp-7: 48px; --sp-8: 64px;
-  --shadow-1: none;
-  --shadow-2: 0 2px 0 rgba(28,22,72,.07);
-  --shadow-3: 0 18px 48px rgba(18,14,48,.34);
-  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --shadow-1: 0 6px 22px rgba(53,34,85,.04);
+  --shadow-2: 0 8px 26px rgba(53,34,85,.08);
+  --shadow-3: 0 18px 48px rgba(33,25,52,.22);
+  --font: Manrope, "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, "Noto Sans", sans-serif;
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
   --sidebar-w: 248px;
   --topbar-h: 60px;
@@ -88,12 +85,12 @@ html[data-theme="dark"] {
   --brand-200: #3A2F6E;
   --brand-100: #2A2257;
   --brand-050: #1F1945;
-  --brand-600: #8B7BF3;
-  --brand-500: #9C8DF7;
-  --brand-700: #AD9EFF;
+  --brand-600: #9B6BFF;
+  --brand-500: #AC85FF;
+  --brand-700: #C3A6FF;
   --brand-800: #1F1945;
   --brand-900: #171232;
-  --eyebrow:   #AD9EFF;
+  --eyebrow:   #C3A6FF;
   --eyebrow-on-dark: #C0B6FA;
   --dark-grad-a: #171232;
   --dark-grad-b: #241C4E;
@@ -2395,3 +2392,40 @@ body.unit-focus .q-shell.is-practice .q-side {
 @media (max-width: 1000px) {
   body.unit-focus .q-shell.is-practice .q-side { position: fixed; inset: 0 0 0 auto; height: auto; }
 }
+
+/* ---------------------------------------------------------- the rounded look
+   Buttons, chips and tool buttons are pills; the question choices and the
+   inputs keep a soft corner. */
+.btn, .chip, .q-tool, .lw-step, .qf-where, .qf-progress, .pomo-tab, .pomo-phase,
+.lesson-tool, .xp-pill, .badge { border-radius: var(--r-pill); }
+.opt, .input, .select, .textarea, .xp-choice, .xp-verdict, .lw-part, .lw-note,
+.lw-opts li, .lw-work > div, .pomo-panel, .pomo-timer, .q-grid button { border-radius: var(--r-md); }
+.card { box-shadow: var(--shadow-1); }
+.lesson-tool { border-radius: var(--r-md); }
+
+/* ---------------------------------------------------------- light sidebar
+   The sidebar is light like the rest of the page: white, with the current
+   page as a violet pill. */
+.app-sidebar { background: var(--surface); color: var(--ink); border-right: 1px solid var(--border); }
+.sb-brand { color: var(--ink); }
+.brand-mark { border-radius: var(--r-sm); }
+.brand-text span { color: var(--brand-600); }
+.sb-goal {
+  background: var(--brand-050); color: var(--ink); border-left: 0;
+  border-radius: var(--r-md); border: 1px solid var(--border);
+}
+.sb-goal:hover { background: var(--brand-100); }
+.sb-goal-label { color: var(--brand-600); }
+.sb-goal-meta { color: var(--muted); }
+.sb-nav a { color: var(--ink-2); border-left: 0; border-radius: var(--r-pill); }
+.sb-nav a:hover { background: var(--brand-050); color: var(--brand-700); }
+.sb-nav a[aria-current="page"] { background: var(--brand-100); color: var(--brand-700); font-weight: 700; }
+.sb-user { background: var(--surface-2); border-radius: var(--r-md); }
+.sb-user-text span { color: var(--muted); }
+.sb-avatar { border-radius: 50%; }
+.icon-btn { border: 1px solid var(--border); background: var(--surface); color: var(--ink-2); border-radius: var(--r-pill); }
+.icon-btn:hover { background: var(--brand-600); border-color: var(--brand-600); color: #fff; }
+.lang-switch { border: 1px solid var(--border); border-radius: var(--r-pill); overflow: hidden; background: var(--surface); }
+.lang-switch button { color: var(--ink-2); }
+.lang-switch button:hover { background: var(--brand-050); color: var(--brand-700); }
+.lang-switch button[aria-pressed="true"] { background: var(--brand-600); color: #fff; }
