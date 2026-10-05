@@ -939,6 +939,9 @@ there and list it in `js/data/questions/index.json`:
 A file is a list of questions, or `{ "questions": [ ... ] }`, with the same
 fields as the `.js` question files written out as plain data. `meta` and
 `calculator` are filled in when missing, and an English-only explanation is
-used in every interface language. A JSON question with the same `id` as one
-in a `.js` file replaces it. The files are read when the app starts, so the
+used in every interface language. The question-bank export layout is read
+too: `stemHtml`, `choices` (`[{label, html}]`), `correctAnswer`,
+`explanationHtml`, `skill` and `domain` by name, and `difficulty` as Easy /
+Medium / Hard; skill names are matched to the topics in `skills.js`. A JSON
+question with the same `id` as one in a `.js` file replaces it. The files are read when the app starts, so the
 app must be served over http (Live Server or any local server).

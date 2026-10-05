@@ -64,6 +64,10 @@ JTS.data.jtsMeta = function (ref, overrides) {
  * A JSON question with the same id as one already loaded replaces it, so a
  * .js topic file can be moved to JSON one file at a time.
  *
+ * The question-bank export layout (stemHtml, choices [{label, html}],
+ * correctAnswer, explanationHtml, skill and domain by name, difficulty as
+ * Easy / Medium / Hard) is read too, and turned into those fields.
+ *
  * The files are fetched when the app starts (JTS.boot waits for them), which
  * needs the app served over http — Live Server or any local server.
  */
@@ -80,7 +84,86 @@ JTS.data.loadQuestionFiles = function () {
     var o = typeof v === 'string' ? { en: v } : (v || {});
     return { en: o.en || '', ru: o.ru || o.en || '', kk: o.kk || o.en || '' };
   }
+  /* ---- the question-bank export layout -------------------------------
+     { id, domain, skill, difficulty: "Easy|Medium|Hard", type: "mcq|spr",
+       stemHtml, choices: [{ label, html }], correctAnswer, explanationHtml }
+     is turned into the app's own fields. */
+  var RW_DOMAINS = ['Information and Ideas', 'Craft and Structure', 'Expression of Ideas',
+                    'Standard English Conventions'];
+  /* Skill names that are not worded exactly like a topic in skills.js. */
+  var SKILL_ALIASES = {
+    'linear equations in one variable': 'm.alg.linear',
+    'linear equations in two variables': 'm.alg.linear',
+    'linear functions': 'm.alg.linear',
+    'systems of two linear equations in two variables': 'm.alg.systems',
+    'linear inequalities in one or two variables': 'm.alg.inequalities',
+    'ratios, rates, proportional relationships, and units': 'm.psda.ratios',
+    'percentages': 'm.psda.percentages',
+    'one-variable data: distributions and measures of center and spread': 'm.psda.statistics',
+    'two-variable data: models and scatterplots': 'm.psda.statistics',
+    'probability and conditional probability': 'm.psda.probability',
+    'inference from sample statistics and margin of error': 'm.psda.statistics',
+    'evaluating statistical claims: observational studies and experiments': 'm.psda.statistics',
+    'area and volume': 'm.geo.area-volume',
+    'lines, angles, and triangles': 'm.geo.triangles',
+    'right triangles and trigonometry': 'm.geo.trig-ratios',
+    'circles': 'm.geo.circles',
+    'central ideas and details': 'rw.ii.central-ideas',
+    'command of evidence': 'rw.ii.evidence-textual',
+    'inferences': 'rw.ii.inferences',
+    'words in context': 'rw.cs.words-in-context',
+    'text structure and purpose': 'rw.cs.text-structure-purpose',
+    'cross-text connections': 'rw.cs.cross-text-connections',
+    'rhetorical synthesis': 'rw.ei.rhetorical-synthesis',
+    'transitions': 'rw.ei.transitions',
+    'boundaries': 'rw.sec.boundaries',
+    'form, structure, and sense': 'rw.sec.form-structure-sense'
+  };
+  function skillIdFor(name) {
+    var n = String(name || '').trim().toLowerCase();
+    var hit = (JTS.data.skills || []).filter(function (s) {
+      return String(s.name_en || '').toLowerCase() === n;
+    })[0];
+    return hit ? hit.id : (SKILL_ALIASES[n] || null);
+  }
+  /* "2.5, 5/2" lists accepted answers; "16,606" is one number with a
+     thousands separator. */
+  function sprAnswers(v) {
+    if (Array.isArray(v)) return v.map(String);
+    return String(v == null ? '' : v).split(/\s*;\s*|,\s+|\s+or\s+/)
+      .map(function (a) { return a.trim().replace(/^(-?\d{1,3}(?:,\d{3})+)(\.\d+)?$/, function (m) { return m.replace(/,/g, ''); }); })
+      .filter(Boolean);
+  }
+  var LEVEL = { easy: 1, medium: 2, hard: 3 };
+  function fromExport(q) {
+    var mcq = String(q.type || '').toLowerCase() !== 'spr';
+    var choices = (q.choices || []).slice().sort(function (a, b) {
+      return String(a.label).localeCompare(String(b.label));
+    });
+    var out = {
+      id: q.id,
+      skillId: q.skillId || skillIdFor(q.skill),
+      section: q.section || (RW_DOMAINS.indexOf(q.domain) >= 0 ? 'rw' : 'math'),
+      difficulty: typeof q.difficulty === 'number' ? q.difficulty
+        : (LEVEL[String(q.difficulty || '').toLowerCase()] || 2),
+      type: mcq ? 'mcq' : 'spr',
+      stem: q.stemHtml || q.stem || '',
+      explanation: q.explanationHtml || q.explanation || ''
+    };
+    if (q.passageHtml || q.passage) out.passage = q.passageHtml || q.passage;
+    if (mcq) {
+      out.options = choices.map(function (c) { return c.html != null ? c.html : c.text; });
+      out.answer = String(q.correctAnswer || q.answer || '').trim().toUpperCase();
+    } else {
+      out.answer = sprAnswers(q.correctAnswer != null ? q.correctAnswer : q.answer);
+    }
+    if (q.skill) out.sourceSkill = q.skill;
+    if (q.number != null) out.sourceNumber = q.number;
+    return out;
+  }
+
   function prepare(q, file) {
+    if (q && (q.stemHtml !== undefined || q.correctAnswer !== undefined)) q = fromExport(q);
     var out = {};
     Object.keys(q).forEach(function (k) { out[k] = q[k]; });
     out.meta = JTS.data.jtsMeta(q.id, q.meta || { source: 'JSON: ' + file });
@@ -106,8 +189,12 @@ JTS.data.loadQuestionFiles = function () {
     })).then(function (lists) {
       var all = [].concat.apply([], lists);
       if (!all.length) return 0;
-      var ids = {};
-      all.forEach(function (q) { ids[q.id] = 1; });
+      var ids = {}, repeated = [];
+      all = all.filter(function (q) {
+        if (ids[q.id]) { repeated.push(q.id); return false; }
+        ids[q.id] = 1; return true;
+      });
+      if (repeated.length) console.warn('[JTS] repeated question ids in JSON, first kept:', repeated);
       JTS.data.questions = JTS.data.questions.filter(function (q) { return !ids[q.id]; }).concat(all);
       console.info('[JTS] ' + all.length + ' questions loaded from JSON (' + files.length + ' file' + (files.length === 1 ? '' : 's') + ')');
       return all.length;
