@@ -32,6 +32,18 @@
 
   /* ------------------------------------------------------------- selection */
 
+  /** The filters other than section and topic, as bank query fields. */
+  function filterQuery(extra) {
+    var f = {
+      difficulty: filters.difficulty.length ? filters.difficulty : null,
+      status: filters.status.length ? filters.status : null,
+      marked: filters.marked || null,
+      licenseStatus: filters.source
+    };
+    Object.keys(extra || {}).forEach(function (k) { f[k] = extra[k]; });
+    return f;
+  }
+
   function pool() {
     return JTS.bank.query({
       section: filters.section,
@@ -107,7 +119,12 @@
 
   function skillAccordion(rerender) {
     var wrap = U.el('div.stack-sm.sk-groups');
-    var counts = JTS.bank.stats();
+    /* The counts follow the filters, so picking a difficulty shows at once
+       how many questions of each topic are left to practise. */
+    var counts = {};
+    JTS.bank.query(filterQuery()).forEach(function (q) {
+      counts[q.skillId] = (counts[q.skillId] || 0) + 1;
+    });
 
     JTS.skills.domains(filters.section).forEach(function (domain) {
       var skills = JTS.skills.bySection(filters.section)
@@ -270,13 +287,7 @@
       /* Every question of these topics that the filters allow: the ones not
          seen yet first, then the rest, each group shuffled. */
       var seen = (S.state().seenQuestionIds) || [];
-      var all = JTS.bank.query({
-        skillIds: skillIds,
-        difficulty: filters.difficulty.length ? filters.difficulty : null,
-        status: filters.status.length ? filters.status : null,
-        marked: filters.marked || null,
-        licenseStatus: filters.source
-      });
+      var all = JTS.bank.query(filterQuery({ skillIds: skillIds }));
       var seed = Date.now() % 9973;
       var fresh = U.shuffle(all.filter(function (q) { return seen.indexOf(q.id) < 0; }), seed);
       var old = U.shuffle(all.filter(function (q) { return seen.indexOf(q.id) >= 0; }), seed);
@@ -284,10 +295,17 @@
         { title: skillIds.map(function (id) { return JTS.skills.name(id); }).join(' · ') });
       return;
     }
+    /* A fixed size: shared out over the topics, each drawn from what the
+       filters allow, unseen questions first. */
     var ids = [];
+    var seenIds = (S.state().seenQuestionIds) || [];
     var per = Math.max(1, Math.ceil(n / Math.max(1, skillIds.length)));
+    var seedN = Date.now() % 9973;
     skillIds.forEach(function (skillId) {
-      JTS.bank.pickForSkill(skillId, per, { exclude: ids }).forEach(function (q) {
+      var avail = JTS.bank.query(filterQuery({ skillIds: [skillId] }));
+      var fresh = U.shuffle(avail.filter(function (q) { return seenIds.indexOf(q.id) < 0; }), seedN);
+      var old = U.shuffle(avail.filter(function (q) { return seenIds.indexOf(q.id) >= 0; }), seedN);
+      fresh.concat(old).slice(0, per).forEach(function (q) {
         if (ids.length < n && ids.indexOf(q.id) < 0) ids.push(q.id);
       });
     });
