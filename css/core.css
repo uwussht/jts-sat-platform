@@ -2510,3 +2510,9 @@ body.unit-focus .q-shell.is-practice .q-side {
 .rm-screen .notice-warn, .rm-course .notice-warn {
   background: var(--brand-050); border-color: var(--brand-200); color: var(--ink-2); border-radius: var(--r-md);
 }
+
+/* Equation pictures inside a sentence (class "m" in the question files) sit
+   on the line like a word; their height and baseline come from the file.
+   Stand-alone figures (class "fig") keep a line of their own. */
+img.m { display: inline-block; max-width: none; margin: 0 .08em; }
+img.fig { display: block; max-width: 100%; height: auto; margin: 8px 0 12px; }
