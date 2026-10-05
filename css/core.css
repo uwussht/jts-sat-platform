@@ -2361,9 +2361,17 @@ body.unit-focus .lesson-side { top: 16px; max-height: calc(100vh - 32px); }
 .q-shell.is-practice .q-content.is-single .q-stem { font-size: 19.5px; }
 .q-shell.is-practice .opt { font-size: 17px; padding: 15px 18px; }
 .q-shell.is-practice .opt .key { flex-basis: 30px; width: 30px; height: 30px; font-size: 14px; }
-/* Tables, graphs and figures given as pictures use the passage's full width. */
+/* Pictures never run wider than the question, and keep their own shape.
+   Equations set inside a sentence carry their own height, and their width
+   follows from it. Only stand-alone figures (tables, graphs, diagrams)
+   are widened to the full column. */
 .q-shell.is-practice .q-passage img,
-.q-shell.is-practice .q-stem img { display: block; width: 100%; max-width: 100%; height: auto; }
+.q-shell.is-practice .q-stem img,
+.q-shell.is-practice .opt-text img { max-width: 100%; width: auto; }
+.q-shell.is-practice .sat-source-visual img,
+.q-shell.is-practice img.sat-question-visual,
+.q-shell.is-practice .q-passage > img:only-child,
+.q-shell.is-practice .q-passage > p > img:only-child { display: block; width: 100%; height: auto; }
 .q-shell.is-practice .q-passage table { font-size: 16px; }
 .practice-resume { border-color: var(--brand-300); background: var(--brand-050); }
 /* The passage side gets the larger share, so tables and graphs read at size. */
