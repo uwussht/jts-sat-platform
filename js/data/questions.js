@@ -61,6 +61,13 @@ JTS.data.skillIdAliases = {
 JTS.data.canonSkill = function (q) {
   var to = q && JTS.data.skillIdAliases[q.skillId];
   if (to) { q.sourceSkillId = q.skillId; q.skillId = to; }
+  /* A grid-in answer written "2,112" is the number 2112: the comma is a
+     thousands separator, and a student cannot type one into the grid. */
+  if (q && q.type === 'spr' && q.answer != null) {
+    q.answer = [].concat(q.answer).map(function (a) {
+      return /^-?\d{1,3}(,\d{3})+(\.\d+)?$/.test(String(a).trim()) ? String(a).trim().replace(/,/g, '') : a;
+    });
+  }
   return q;
 };
 
