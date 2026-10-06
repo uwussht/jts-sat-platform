@@ -28,9 +28,45 @@ window.JTS = window.JTS || {}; JTS.data = JTS.data || {};
 
 JTS.data.questions = JTS.data.questions || [];
 
+/**
+ * Skill ids other files use for a topic in js/data/skills.js. A question
+ * filed under one of these is moved to the topic it names; without this it
+ * matches no topic and never shows in Practice.
+ *   - the College Board skill split of Problem-Solving and Data Analysis,
+ *     which skills.js keeps as one "statistics" topic;
+ *   - the long "math.*" / "rw.eoi.*" ids used by the lesson questions.
+ */
+JTS.data.skillIdAliases = {
+  'm.psda.onevar': 'm.psda.statistics',
+  'm.psda.twovar': 'm.psda.statistics',
+  'm.psda.inference': 'm.psda.statistics',
+  'm.psda.claims': 'm.psda.statistics',
+  'math.alg.linear-equations': 'm.alg.linear',
+  'math.alg.linear-functions': 'm.alg.linear',
+  'math.alg.systems': 'm.alg.systems',
+  'math.alg.inequalities-absolute-value': 'm.alg.inequalities',
+  'math.adv.quadratics': 'm.adv.nonlinear',
+  'math.adv.exponentials-radicals': 'm.adv.functions',
+  'math.adv.functions-polynomials-rational': 'm.adv.expressions',
+  'math.psda.ratios-rates-percentages': 'm.psda.ratios',
+  'math.psda.statistics-probability': 'm.psda.statistics',
+  'math.geo.lines-triangles-area-volume': 'm.geo.triangles',
+  'math.geo.right-triangles-trigonometry-circles': 'm.geo.trig-ratios',
+  'rw.ii.central-ideas-details': 'rw.ii.central-ideas',
+  'rw.ii.command-evidence-textual': 'rw.ii.evidence-textual',
+  'rw.ii.command-evidence-quantitative': 'rw.ii.evidence-quantitative',
+  'rw.eoi.rhetorical-synthesis': 'rw.ei.rhetorical-synthesis',
+  'rw.eoi.transitions': 'rw.ei.transitions'
+};
+JTS.data.canonSkill = function (q) {
+  var to = q && JTS.data.skillIdAliases[q.skillId];
+  if (to) { q.sourceSkillId = q.skillId; q.skillId = to; }
+  return q;
+};
+
 /** Domain files call this so load order stays flexible. */
 JTS.data.addQuestions = function (list) {
-  JTS.data.questions = JTS.data.questions.concat(list);
+  JTS.data.questions = JTS.data.questions.concat(list.map(JTS.data.canonSkill));
 };
 
 /** Shared meta block — keeps 300 records from repeating the same seven fields. */
@@ -167,6 +203,7 @@ JTS.data.loadQuestionFiles = function () {
     var out = {};
     Object.keys(q).forEach(function (k) { out[k] = q[k]; });
     out.meta = JTS.data.jtsMeta(q.id, q.meta || { source: 'JSON: ' + file });
+    JTS.data.canonSkill(out);
     if (typeof out.calculator !== 'boolean') out.calculator = out.section === 'math';
     if (out.explanation) out.explanation = lang(out.explanation);
     if (out.distractors) {

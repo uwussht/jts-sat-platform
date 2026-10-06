@@ -70,6 +70,11 @@ JTS.data.papers = JTS.data.papers || [];
 JTS.data.paperQuestion = function (q, paperId, moduleKey, n, section) {
   if (!q.question_type) return q;
   var slug = String(q.question_type).trim().toLowerCase().replace(/_/g, '-');
+  /* Advanced Math is three topics now and absolute value sits in
+     inequalities; the older question types still name the old topics. */
+  slug = { 'quadratics': 'nonlinear', 'radicals': 'nonlinear', 'exponential': 'functions',
+           'polynomials': 'expressions', 'rational': 'expressions',
+           'absolute-value': 'inequalities' }[slug] || slug;
   var prefix = section === 'math' ? 'm.' : 'rw.';
   var skill = (JTS.data.skills || []).filter(function (s) {
     return s.id.indexOf(prefix) === 0 && s.id.split('.').pop() === slug;
@@ -113,6 +118,11 @@ JTS.data.paperQuestion = function (q, paperId, moduleKey, n, section) {
  * disagree with the exam about how long a module is.
  */
 JTS.data.addPaper = function (paper) {
+  if (JTS.data.papers.some(function (p) { return p.id === paper.id; })) {
+    console.error('[JTS] two papers use the id "' + paper.id + '" — the second ("' +
+      paper.title + '") is skipped. Give each paper its own id and questionPrefix.');
+    return;
+  }
   var modules = paper.modules.map(function (m) {
     m.questions = m.questions.map(function (q, i) {
       return JTS.data.paperQuestion(q, paper.questionPrefix || paper.id, m.key, i + 1, m.section);
