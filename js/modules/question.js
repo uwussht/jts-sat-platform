@@ -776,6 +776,29 @@
       /* Same gesture with a finger. */
       document.addEventListener('touchend', onMouseUp);
 
+      /* Pictures used as answer choices. Many were scanned at about three
+         times text size and carry an inline size of their own ("max-height:
+         180px !important"), so a one-digit answer filled the whole choice.
+         The inline size is dropped and each picture is sized once it loads:
+         a scanned answer (a number or an expression) is shrunk to about a
+         line of text, a graph or table is held to a modest height, and a
+         small equation picture keeps its own size. */
+      function fitChoiceImages(span) {
+        Array.prototype.forEach.call(span.querySelectorAll('img'), function (img) {
+          var scanned = !!img.closest('.sat-natural-option, .sat-display-math');
+          img.removeAttribute('style');
+          img.classList.add('opt-img');
+          function size() {
+            var h = img.naturalHeight;
+            if (!h) return;
+            if (scanned) img.style.height = Math.max(22, Math.round(h * 0.3)) + 'px';
+            else if (h > 140) img.style.maxHeight = '220px';
+          }
+          if (img.complete) size(); else img.addEventListener('load', size);
+        });
+        return span;
+      }
+
       function renderOptions(question, a) {
         var list = U.el('div.opt-list', { role: 'group', 'aria-label': t('common.correct') });
         question.options.forEach(function (text, i) {
@@ -793,7 +816,7 @@
             onclick: function () { select(key); }
           }, [
             U.el('span.key', { text: key }),
-            U.el('span.opt-text', { html: text })
+            fitChoiceImages(U.el('span.opt-text', { html: text }))
           ]);
           btn.appendChild(U.el('span.opt-strike' + (struck ? '.is-struck' : ''), {
             role: 'button', tabindex: '0',

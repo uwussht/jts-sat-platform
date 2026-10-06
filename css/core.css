@@ -2565,3 +2565,9 @@ img.fig { display: block; max-width: 100%; height: auto; margin: 8px 0 12px; }
 .xp-tag { color: var(--danger); }
 .xp-reason { color: var(--ink-2); line-height: 1.6; }
 .xp-text { line-height: 1.7; }
+
+/* Answer-choice pictures: sized by fitChoiceImages() in question.js; here
+   they only keep their shape and sit on the line beside the letter. */
+.opt-text .fig.sat-natural-option, .opt-text .fig.sat-display-math, .opt-text .figw { margin: 0; }
+.opt-text img.opt-img { width: auto; max-width: 100%; height: auto; margin: 0; object-fit: contain; vertical-align: middle; }
+.opt-text img.opt-img.fig { display: block; }
