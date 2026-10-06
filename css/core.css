@@ -2516,3 +2516,52 @@ body.unit-focus .q-shell.is-practice .q-side {
    Stand-alone figures (class "fig") keep a line of their own. */
 img.m { display: inline-block; max-width: none; margin: 0 .08em; }
 img.fig { display: block; max-width: 100%; height: auto; margin: 8px 0 12px; }
+
+/* ---------------------------------------------------------- explanation panel, white
+   A white sheet beside the question: a quiet header, the verdict as a
+   tinted card, numbered steps in violet circles, and the answer choices as
+   soft cards, the right one green and the student's own pick red. */
+.q-side {
+  background: var(--surface); border-left: 1px solid var(--border);
+  box-shadow: -10px 0 30px rgba(53, 34, 85, .06);
+}
+.q-side > .q-topbar {
+  background: var(--surface); border-bottom: 1px solid var(--border);
+  padding: 14px 22px; min-height: 62px;
+}
+.q-side > .q-topbar strong { font-size: 17px; font-weight: 800; letter-spacing: -.01em; }
+.q-side > .q-topbar .btn { border-radius: var(--r-pill); }
+.q-side-body { padding: 20px 22px 32px; }
+
+.xp { gap: 22px; }
+.xp-verdict { border: 0; border-radius: var(--r-lg); padding: 16px 18px; gap: 10px; background: var(--surface-2); }
+.xp-verdict.is-wrong { background: var(--danger-bg); }
+.xp-verdict.is-right { background: var(--ok-bg); }
+.xp-verdict-title { font-size: 18px; font-weight: 800; }
+.xp-pill { border-radius: var(--r-pill); background: var(--surface); padding: 5px 12px; border-width: 1px; }
+
+.xp-h {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 12px; font-weight: 800; letter-spacing: .08em; color: var(--brand-600);
+}
+.xp-h::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+.xp-steps { gap: 12px; }
+.xp-steps li { padding-left: 38px; line-height: 1.65; }
+.xp-steps li::before {
+  width: 26px; height: 26px; border-radius: 50%; top: 0;
+  background: var(--brand-100); color: var(--brand-700); font-weight: 800;
+}
+
+.xp-choice {
+  border: 1px solid var(--border); border-radius: var(--r-md);
+  background: var(--surface); padding: 12px 14px; box-shadow: var(--shadow-1);
+}
+.xp-choice.is-right { background: var(--ok-bg); border-color: transparent; box-shadow: none; }
+.xp-choice.is-mine { background: var(--danger-bg); border-color: transparent; box-shadow: none; }
+.xp-key { border-radius: 50%; border-width: 1.5px; }
+.xp-choice.is-right .xp-key { background: var(--ok); border-color: var(--ok); }
+.xp-choice.is-mine .xp-key { background: var(--danger); border-color: var(--danger); color: #fff; }
+.xp-tag { color: var(--danger); }
+.xp-reason { color: var(--ink-2); line-height: 1.6; }
+.xp-text { line-height: 1.7; }
