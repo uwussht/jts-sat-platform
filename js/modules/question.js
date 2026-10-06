@@ -339,6 +339,21 @@
     render: function (root) {
       var ses = JTS.session.current();
       if (!ses) { JTS.router.go('#/today'); return; }
+      /* A set opened before a question file was removed can name questions
+         that no longer exist: they are dropped, and a set left with none is
+         closed rather than drawing an empty screen. */
+      var present = ses.questionIds.filter(function (id) { return !!JTS.bank.get(id); });
+      if (present.length !== ses.questionIds.length) {
+        var at = ses.questionIds[ses.index];
+        ses.questionIds = present;
+        ses.index = Math.max(0, present.indexOf(at));
+        S.save();
+      }
+      if (!present.length) {
+        ui.toast(t('practice.noQuestions'), 'err');
+        JTS.session.abandon();
+        return;
+      }
 
       var isStudy = ses.mode === 'study';
       /* Set when the questions are a unit's own practice set. */
