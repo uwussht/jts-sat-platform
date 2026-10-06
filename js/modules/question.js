@@ -782,8 +782,11 @@
          The inline size is dropped and each picture is sized once it loads:
          a scanned answer (a number or an expression) is shrunk to about a
          line of text, a graph or table is held to a modest height, and a
-         small equation picture keeps its own size. */
-      function fitChoiceImages(span) {
+         small equation picture keeps its own size. Problem-Solving and Data
+         Analysis answers are set a little smaller again. */
+      function fitChoiceImages(span, question) {
+        var psda = /^m\.psda\./.test(question.skillId || '');
+        var scale = psda ? 0.24 : 0.3, cap = psda ? 180 : 220;
         Array.prototype.forEach.call(span.querySelectorAll('img'), function (img) {
           var scanned = !!img.closest('.sat-natural-option, .sat-display-math');
           img.removeAttribute('style');
@@ -791,8 +794,8 @@
           function size() {
             var h = img.naturalHeight;
             if (!h) return;
-            if (scanned) img.style.height = Math.max(22, Math.round(h * 0.3)) + 'px';
-            else if (h > 140) img.style.maxHeight = '220px';
+            if (scanned) img.style.height = Math.max(20, Math.round(h * scale)) + 'px';
+            else if (h > 140) img.style.maxHeight = cap + 'px';
           }
           if (img.complete) size(); else img.addEventListener('load', size);
         });
@@ -816,7 +819,7 @@
             onclick: function () { select(key); }
           }, [
             U.el('span.key', { text: key }),
-            fitChoiceImages(U.el('span.opt-text', { html: text }))
+            fitChoiceImages(U.el('span.opt-text', { html: text }), question)
           ]);
           btn.appendChild(U.el('span.opt-strike' + (struck ? '.is-struck' : ''), {
             role: 'button', tabindex: '0',
