@@ -148,12 +148,6 @@
       testsAfter(ph.id);
     });
 
-    wrap.appendChild(U.el('div.notice.notice-warn', null, [
-      U.el('div.stack-sm', null, [
-        U.el('div', null, [U.el('b', { text: t('prog.gatesTitle') })]),
-        U.el('div.small', { text: pick(P.gateRule) })
-      ])
-    ]));
     return wrap;
   }
 

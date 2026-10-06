@@ -372,7 +372,6 @@ JTS.dict.ru = {
   'prog.lead': '36 юнитов за три месяца: 24 юнита по материалу всех восьми доменов SAT, затем Challenge 1–12 на уровне сложного модуля, с полным practice test каждые выходные.',
   'prog.officialTest': 'Официальный practice test',
   'prog.lessonRange': 'юниты {from}–{to}',
-  'prog.gatesTitle': 'Гейты пропускать нельзя',
   'prog.hwTitle': 'После каждого урока',
   'prog.log.date': 'Дата',
   'prog.log.source': 'Откуда',

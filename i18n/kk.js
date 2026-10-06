@@ -372,7 +372,6 @@ JTS.dict.kk = {
   'prog.lead': 'Үш айда 36 юнит: SAT-тың сегіз доменінің бәрі бойынша 24 юнит, содан кейін күрделі модуль деңгейіндегі Challenge 1–12, әр демалыс сайын толық practice test.',
   'prog.officialTest': 'Ресми practice test',
   'prog.lessonRange': '{from}–{to} юниттер',
-  'prog.gatesTitle': 'Гейттерді өткізіп жіберуге болмайды',
   'prog.hwTitle': 'Әр сабақтан кейін',
   'prog.log.date': 'Күні',
   'prog.log.source': 'Қайдан',

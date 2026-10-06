@@ -372,7 +372,6 @@ JTS.dict.en = {
   'prog.lead': '36 units in three months: 24 content units across the eight SAT domains, then Challenge 1–12 at hard-module difficulty, with a full practice test every weekend.',
   'prog.officialTest': 'Official practice test',
   'prog.lessonRange': 'units {from}–{to}',
-  'prog.gatesTitle': 'The gates are not optional',
   'prog.hwTitle': 'After every lesson',
   'prog.log.date': 'Date',
   'prog.log.source': 'Where from',
