@@ -889,8 +889,10 @@ excludes them for the same reason.
 author to remember it: a paper item that grows an `explanation`, `distractors`,
 `hints` or `methods` fails the bank.
 
-Adding one: write the questions in a file like `js/data/paper-01.js` and call
-`JTS.data.addPaper` with the four modules in exam order. Minutes come from
+Adding one: put a JSON file in `js/data/papers/` and list it in
+`js/data/papers/index.json`; the format is described above
+`JTS.data.loadPaperFiles` in `js/data/papers.js`. (`JTS.data.addPaper` with the
+four modules in exam order still works from a .js file.) Minutes come from
 `JTS.config.examStructure`, so a paper cannot disagree with the exam about how
 long a module is.
 

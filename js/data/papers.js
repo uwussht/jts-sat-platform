@@ -161,3 +161,129 @@ JTS.papers = {
     return q && q.meta && q.meta.kind === 'paper' ? this.get(q.meta.paperId) : null;
   }
 };
+
+/* ------------------------------------------------------- papers kept as JSON
+   js/data/papers/index.json lists the files: { "files": ["bluebook-4.json"] }.
+   A file is one paper:
+
+     { "id": "bluebook-4",                 kept once students have sat it
+       "title": "Bluebook Practice Test 4",
+       "year": 2024,                       optional
+       "assetBase": "assets/sat/bb4/",     optional: prefixed to picture paths
+       "questions": [ … ] }
+
+   Each question says its section and module, and the four modules are built
+   from them in exam order (R&W 1, R&W 2, Math 1, Math 2):
+
+     { "id": "rw-m1-01", "section": "rw" | "math", "module": 1 | 2,
+       "type": "mcq" | "spr",
+       "stemHtml": "<p>…</p>" or "<img src=\"rw-m1-01.png\">",
+       "choices": [ { "label": "A", "html": "…" }, … ],   mcq; may be left out
+                                                         when the picture shows them
+       "correctAnswer": "B" | "12",
+       "acceptedAnswers": ["3.5", "7/2"] }                spr, optional
+
+   "modules": [{ "key": "rw1", "section": "rw", "questions": [ … ] }, …] in
+   the format of addPaper above is read as well. A paper carries no
+   explanations, so any in the file are left out. */
+JTS.data.loadPaperFiles = function () {
+  var base = 'js/data/papers/';
+  function get(path) {
+    return fetch(base + path, { cache: 'no-cache' }).then(function (r) {
+      if (!r.ok) throw new Error(path + ': HTTP ' + r.status);
+      return r.json();
+    });
+  }
+  function sectionOf(v) {
+    var k = String(v || '').toLowerCase().replace(/[^a-z]/g, '');
+    return k === 'math' || k === 'mathematics' ? 'math' : 'rw';
+  }
+  function rebase(html, prefix) {
+    if (!prefix) return html;
+    return String(html || '').replace(/(<img\b[^>]*\bsrc=")(?!assets\/|https?:|data:|\/)([^"]+)"/gi,
+      function (m, head, src) { return head + prefix + src + '"'; });
+  }
+  function answers(q) {
+    var list = [].concat(q.correctAnswer != null ? q.correctAnswer : q.answer)
+      .concat(q.acceptedAnswers || []);
+    var out = [];
+    list.forEach(function (v) {
+      String(v == null ? '' : v).split(/\s*;\s*/).forEach(function (a) {
+        a = a.trim();
+        if (a && out.indexOf(a) < 0) out.push(a);
+      });
+    });
+    return out;
+  }
+  /* One question in the picture/export layout, as the bank stores it. */
+  function convert(q, prefix) {
+    if (q.question_type) return q;
+    var mcq = String(q.type || 'mcq').toLowerCase() !== 'spr';
+    var out = { id: String(q.id), stem: rebase(q.stemHtml || q.stem || '', prefix),
+                type: mcq ? 'mcq' : 'spr' };
+    if (q.passageHtml || q.passage) out.passage = rebase(q.passageHtml || q.passage, prefix);
+    if (mcq) {
+      var ch = q.choices || q.options || null, opts = ['', '', '', ''];
+      if (Array.isArray(ch)) {
+        ch.forEach(function (c, i) {
+          if (c && typeof c === 'object') opts['ABCD'.indexOf(String(c.label).toUpperCase())] = c.html || c.text || '';
+          else opts[i] = c;
+        });
+      } else if (ch && typeof ch === 'object') {
+        opts = ['A', 'B', 'C', 'D'].map(function (k) { return ch[k] || ''; });
+      }
+      out.options = opts.map(function (o) { return rebase(o || '', prefix); });
+      out.answer = String(q.correctAnswer || q.answer || '').trim().toUpperCase();
+    } else {
+      out.answer = answers(q);
+    }
+    if (typeof q.difficulty === 'number') out.difficulty = q.difficulty;
+    else if (q.difficulty) out.difficulty = { easy: 1, medium: 2, hard: 3 }[String(q.difficulty).toLowerCase()] || 2;
+    if (q.skillId) out.skillId = q.skillId;
+    return out;
+  }
+  var ORDER = [['rw', 1, 'rw1'], ['rw', 2, 'rw2'], ['math', 1, 'm1'], ['math', 2, 'm2']];
+
+  return get('index.json').then(function (idx) {
+    var files = (idx && idx.files) || [];
+    return Promise.all(files.map(function (f) {
+      return get(f).then(function (d) {
+        var modules = d.modules;
+        if (!modules) {
+          modules = ORDER.map(function (o) {
+            return { key: o[2], section: o[0], questions: (d.questions || []).filter(function (q) {
+              return sectionOf(q.section) === o[0] && Number(q.module) === o[1];
+            }) };
+          }).filter(function (m) { return m.questions.length; });
+        }
+        if (JTS.data.papers.some(function (p) { return p.id === d.id; })) {
+          console.error('[JTS] paper id used twice: ' + d.id + ' (' + f + ')');
+          return 0;
+        }
+        JTS.data.addPaper({
+          id: d.id || f.replace(/\.json$/, ''), questionPrefix: d.id || f.replace(/\.json$/, ''),
+          title: d.title || f, year: d.year || null, note: d.note || null,
+          modules: modules.map(function (m) {
+            return { key: m.key, section: sectionOf(m.section), questions: m.questions.map(function (q) {
+              var c = convert(q, d.assetBase);
+              /* A question id only has to be unique inside its paper. */
+              if (c.id && !c.question_type) c.id = (d.id || f) + '.' + c.id;
+              return c;
+            }) };
+          })
+        });
+        return 1;
+      }).catch(function (e) {
+        console.error('[JTS] paper file not loaded — ' + e.message);
+        return 0;
+      });
+    })).then(function (ns) {
+      var n = ns.reduce(function (a, b) { return a + b; }, 0);
+      if (n) console.info('[JTS] ' + n + ' paper' + (n === 1 ? '' : 's') + ' loaded from JSON');
+      return n;
+    });
+  }).catch(function (e) {
+    console.warn('[JTS] no JSON papers loaded — ' + e.message);
+    return 0;
+  });
+};

@@ -1256,7 +1256,7 @@
         if (['rw', 'math'].indexOf(q.section) < 0) bad('bad section');
         /* A class's own question may have no topic (a Challenge set mixes
            them); a named topic still has to exist. */
-        var topicless = q.skillId == null && q.meta && q.meta.kind === 'lesson';
+        var topicless = q.skillId == null && q.meta && (q.meta.kind === 'lesson' || q.meta.kind === 'paper');
         if (!topicless && !JTS.skills.get(q.skillId)) bad('unknown skillId ' + q.skillId);
         if ([1, 2, 3].indexOf(q.difficulty) < 0) bad('difficulty must be 1|2|3');
         if (['mcq', 'spr'].indexOf(q.type) < 0) bad('bad type');
@@ -2390,7 +2390,9 @@
     var load = Promise.all([
       JTS.data.loadQuestionFiles ? JTS.data.loadQuestionFiles() : 0,
       /* Written lessons kept as JSON (js/data/lessons/) the same way. */
-      JTS.data.loadLessonFiles ? JTS.data.loadLessonFiles() : 0
+      JTS.data.loadLessonFiles ? JTS.data.loadLessonFiles() : 0,
+      /* and past papers (js/data/papers/). */
+      JTS.data.loadPaperFiles ? JTS.data.loadPaperFiles() : 0
     ]);
     load.then(start, start);
   };
