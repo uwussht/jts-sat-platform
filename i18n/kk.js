@@ -394,6 +394,7 @@ JTS.dict.kk = {
   'plan.rebuilt': 'Жоспар қайта құрылды: {n} өткізілген сабақ алынды',
   'plan.move': 'Ауыстыру',
   'plan.moveTo': 'Басқа күнге ауыстыру',
+  'plan.practice': 'Практика',
   'plan.markDone': 'Орындалды деп белгілеу',
   'plan.markSkipped': 'Өткізілді деп белгілеу',
   'plan.status.planned': 'Жоспарланған', 'plan.status.done': 'Орындалды',

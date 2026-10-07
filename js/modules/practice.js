@@ -331,6 +331,18 @@
     title: 'nav.practice',
     render: function (root) {
       if (!S.state()) { JTS.router.go('#/auth'); return; }
+      /* #/practice?skills=a,b (from the plan) opens topic practice with those
+         topics ticked; the address is then put back to #/practice so later
+         changes to the selection are not overwritten. */
+      var asked = (JTS.router.parse().query.skills || '').split(',').filter(function (id) {
+        return !!JTS.skills.get(id);
+      });
+      if (asked.length) {
+        filters.section = JTS.skills.get(asked[0]).section;
+        filters.skillIds = asked.filter(function (id) { return JTS.skills.get(id).section === filters.section; });
+        chosenMode = 'topic';
+        try { history.replaceState(null, '', '#/practice'); } catch (e) {}
+      }
       var screen = U.el('div.container.screen.stack');
       root.appendChild(screen);
       function rerender() { JTS.router.render(); }

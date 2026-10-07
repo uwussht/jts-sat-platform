@@ -394,6 +394,7 @@ JTS.dict.ru = {
   'plan.rebuilt': 'План пересобран: снято {n} пропущенных занятий',
   'plan.move': 'Перенести',
   'plan.moveTo': 'Перенести на дату',
+  'plan.practice': 'Практика',
   'plan.markDone': 'Отметить выполненным',
   'plan.markSkipped': 'Отметить пропущенным',
   'plan.status.planned': 'Запланировано', 'plan.status.done': 'Выполнено',

@@ -100,6 +100,36 @@ JTS.data.unit = function (def) {
   if (def.drill) P.drills[def.code] = def.drill;
 };
 
+/* ------------------------------------------------- each unit's practice topics
+   The Practice-page topics a unit is practised under: the plan's Practice
+   button opens Practice with these selected. A Challenge class has none. */
+JTS.data.programme.unitSkills = {
+  U1: ['rw.cs.words-in-context'],
+  U2: ['rw.cs.text-structure-purpose'],
+  U3: ['m.alg.linear'],
+  U4: ['rw.cs.cross-text-connections'],
+  U5: ['m.alg.linear'],
+  U6: ['m.alg.systems'],
+  U7: ['rw.ii.central-ideas'],
+  U8: ['rw.ii.evidence-textual'],
+  U9: ['m.adv.nonlinear'],
+  U10: ['rw.ii.evidence-quantitative'],
+  U11: ['m.adv.nonlinear', 'm.adv.functions'],
+  U12: ['m.adv.functions', 'm.adv.expressions'],
+  U13: ['rw.ii.inferences'],
+  U14: ['rw.sec.boundaries'],
+  U15: ['m.psda.ratios', 'm.psda.percentages'],
+  U16: ['rw.sec.boundaries'],
+  U17: ['m.psda.statistics', 'm.psda.probability'],
+  U18: ['m.alg.inequalities'],
+  U19: ['rw.sec.form-structure-sense'],
+  U20: ['m.geo.triangles', 'm.geo.area-volume'],
+  U21: ['m.adv.functions', 'm.adv.expressions', 'm.adv.nonlinear'],
+  U22: ['rw.ei.rhetorical-synthesis'],
+  U23: ['rw.ei.transitions'],
+  U24: ['m.geo.trig-ratios', 'm.geo.circles']
+};
+
 /* ------------------------------------------------------------------ lookups */
 (function () {
   var P = JTS.data.programme;

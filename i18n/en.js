@@ -394,6 +394,7 @@ JTS.dict.en = {
   'plan.rebuilt': 'Plan rebuilt: {n} missed sessions dropped',
   'plan.move': 'Move',
   'plan.moveTo': 'Move to date',
+  'plan.practice': 'Practice',
   'plan.markDone': 'Mark as done',
   'plan.markSkipped': 'Mark as skipped',
   'plan.status.planned': 'Planned', 'plan.status.done': 'Done',

@@ -338,7 +338,7 @@
           }) }),
           U.el('button.btn.btn-sm', {
             type: 'button', text: t('common.open'),
-            onclick: function () { m.close(); lessonModal(lesson, rerender); }
+            onclick: function () { m.close(); lessonModal(lesson); }
           })
         ]),
         detail
@@ -347,60 +347,39 @@
     m = ui.modal({ title: U.fmtDate(U.parseISO(iso), S.settings().uiLang), content: body, wide: true });
   }
 
-  function lessonModal(lesson, rerender) {
+  /**
+   * A planned day: which unit it is, which month of the course, and one way
+   * on — Practice, opened on that unit's topics (or, for a Challenge class,
+   * on the class itself, which has no single topic).
+   */
+  function lessonModal(lesson) {
     var m;
-    var skills = lesson.skillIds.map(function (id) { return JTS.skills.name(id); });
-    var dateInput = U.el('input.input', { type: 'date', value: lesson.date });
+    var P = JTS.data.programme;
+    var pw = JTS.programme ? JTS.programme.perWeek() : 3;
+    var n = JTS.programme ? JTS.programme.numberOf(lesson) : null;
+    var slot = n ? P.order(pw).filter(function (x) { return x.n === n; })[0] : null;
+    var unit = slot ? slot.lessons[0] : null;
+    var phase = n ? P.phaseOf(n, pw) : null;
+    function pick(o) { return JTS.i18n.pick(o, S.settings().uiLang); }
 
-    function act(fn) { return function () { fn(); m.close(); rerender(); }; }
+    var skills = unit && P.unitSkills ? (P.unitSkills[unit.code] || []) : [];
+    var href = skills.length ? '#/practice?skills=' + skills.join(',')
+      : unit ? '#/materials/lesson?code=' + unit.code : '#/practice';
 
     m = ui.modal({
       title: U.fmtDate(lesson.date),
-      content: U.el('div.stack', null, [
-        U.el('div.stack-sm', null, [
-          U.el('div.stat-label', { text: t('today.lessonGoal') }),
-          U.el('div', { text: t('plan.goalFor', { skills: skills.join(', ') }) })
-        ]),
-        U.el('div.row.row-wrap', null, lesson.actions.map(function (a) {
-          return U.el('span.badge', { text: t('plan.action.' + a) });
-        }).concat([
-          U.el('span.badge.badge-muted', { text: t('today.expected', { n: lesson.expectedMinutes }) }),
-          U.el('span.badge' + (lesson.status === 'done' ? '.badge-ok' : '.badge-muted'),
-               { text: t('plan.status.' + lesson.status) })
-        ])),
-        lesson.movedFrom
-          ? U.el('div.small.muted', { text: t('plan.move') + ': ' + U.fmtDate(lesson.movedFrom) })
-          : null,
-        /* The programme's half of the day: which of the 48 lessons this is,
-           the topics it covers, and the homework that follows it. */
-        (function () {
-          if (!JTS.programme) return null;
-          var n = JTS.programme.numberOf(lesson);
-          return n ? JTS.programme.lessonDetail(n) : null;
-        })(),
-        ui.field(t('plan.moveTo'), dateInput)
+      content: U.el('div.stack-sm.plan-day', null, [
+        unit ? U.el('div.row.row-wrap.plan-day-unit', null, [
+          JTS.programme.codeChip(unit),
+          U.el('b', { text: t('prog.lessonNo', { n: n }) + ' · ' + pick(unit.t) })
+        ]) : U.el('div', { text: t('plan.goalFor', {
+          skills: lesson.skillIds.map(function (id) { return JTS.skills.name(id); }).join(', ') }) }),
+        phase ? U.el('div.row', null, [U.el('span.badge.badge-muted', { text: pick(phase.name) })]) : null
       ]),
       actions: [
-        U.el('button.btn', {
-          type: 'button', text: t('plan.markSkipped'),
-          onclick: act(function () { JTS.planner.setStatus(lesson.id, 'skipped'); })
-        }),
-        U.el('button.btn', {
-          type: 'button', text: t('plan.markDone'),
-          onclick: act(function () { JTS.planner.setStatus(lesson.id, 'done'); })
-        }),
-        U.el('button.btn', {
-          type: 'button', text: t('plan.move'),
-          onclick: act(function () {
-            if (dateInput.value) JTS.planner.move(lesson.id, dateInput.value);
-          })
-        }),
-        U.el('button.btn.btn-primary', {
-          type: 'button', text: t('today.startLesson'),
-          onclick: function () {
-            m.close();
-            if (!JTS.planner.startLesson(lesson.id)) ui.toast(t('practice.noQuestions'), 'err');
-          }
+        U.el('a.btn.btn-primary', {
+          href: href, text: t('plan.practice'),
+          onclick: function () { m.close(); }
         })
       ]
     });
