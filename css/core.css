@@ -2723,3 +2723,6 @@ body.unit-focus .q-shell.is-practice.is-challenge .q-content.is-single.has-wide-
   max-width: 1440px; padding-inline: max(16px, calc((100% - 1400px) / 2));
 }
 .q-shell.is-challenge .q-content.has-wide-math .q-stem img.is-wide { width: auto !important; max-width: 100% !important; }
+/* The two full simulations are screenshots of whole questions: their
+   pictures are shown at their own size, not held to text size. */
+.q-shell.is-full-sim .q-stem img { max-width: 100% !important; width: auto !important; }

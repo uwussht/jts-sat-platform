@@ -395,7 +395,8 @@
 
       /* ------------------------------------------------------------- shell */
       var shell = U.el('div.q-shell' + (isStudy ? '.is-practice' : '') +
-        (/^CH/.test(unitCode || '') ? '.is-challenge' : ''));
+        (/^CH/.test(unitCode || '') ? '.is-challenge' : '') +
+        (/^CH1[12]$/.test(unitCode || '') ? '.is-full-sim' : ''));
       var topbar = U.el('div.q-topbar');
       var main = U.el('div.q-main');
       var content = U.el('div.q-content');
