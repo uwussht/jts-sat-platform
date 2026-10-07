@@ -2571,3 +2571,8 @@ img.fig { display: block; max-width: 100%; height: auto; margin: 8px 0 12px; }
 .opt-text .fig.sat-natural-option, .opt-text .fig.sat-display-math, .opt-text .figw { margin: 0; }
 .opt-text img.opt-img { width: auto; max-width: 100%; height: auto; margin: 0; object-fit: contain; vertical-align: middle; }
 .opt-text img.opt-img.fig { display: block; }
+
+/* Weekly practice test card (js/modules/weekly-test.js) */
+.wt-past { gap: 6px; }
+.wt-chip { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: var(--r-pill);
+  background: var(--brand-050); color: var(--brand-700); border: 1px solid var(--brand-100, var(--border)); }

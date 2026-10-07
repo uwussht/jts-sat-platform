@@ -262,6 +262,11 @@
          the review queue and the next checkpoint — each has a screen of its
          own, and repeating them here made the one screen opened every morning
          the longest in the product. */
+      /* The fifteen-question weekly test, then the week's full mock. */
+      if (JTS.weeklyTest) {
+        var wt = JTS.weeklyTest.card();
+        if (wt) screen.appendChild(wt);
+      }
       var wk = weeklyCard(state);
       if (wk) screen.appendChild(wk);
       screen.appendChild(targetsCard(state));
