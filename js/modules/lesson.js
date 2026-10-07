@@ -39,6 +39,29 @@
    * The part a student reached is kept per unit in this browser, and the
    * arrow keys turn the parts for a teacher at the board.
    */
+  /**
+   * A worked example written as <span class="choices">line<br>line</span>
+   * is shown one step per line, each in its own row, instead of running the
+   * equations and arrows together on one line.
+   */
+  function stepsInColumns(root) {
+    Array.prototype.forEach.call(root.querySelectorAll('span.choices'), function (span) {
+      var work = U.el('div.lw-work');
+      var row = U.el('div');
+      Array.prototype.slice.call(span.childNodes).forEach(function (n) {
+        if (n.nodeName === 'BR') {
+          if (row.textContent.trim() || row.querySelector('math,img')) work.appendChild(row);
+          row = U.el('div');
+        } else {
+          row.appendChild(n);
+        }
+      });
+      if (row.textContent.trim() || row.querySelector('math,img')) work.appendChild(row);
+      span.parentNode.replaceChild(work, span);
+    });
+    return root;
+  }
+
   function partsViewer(teach, code) {
     var parts = teach.parts || [];
     var KEY = 'jts.unitPart.' + code;
@@ -72,7 +95,7 @@
         U.el('h3.lw-part-title', { text: short(p.title) }),
         p.mins ? U.el('span.lw-part-mins', { text: '⏱ ' + p.mins }) : null
       ]));
-      stage.appendChild(U.el('div.lesson-written', { html: p.html }));
+      stage.appendChild(stepsInColumns(U.el('div.lesson-written', { html: p.html })));
 
       var prev = at > 0 ? U.el('button.btn', {
         type: 'button', text: '← ' + short(parts[at - 1].title),
