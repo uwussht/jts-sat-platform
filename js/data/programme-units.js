@@ -85,9 +85,13 @@ JTS.data.programme.lessons = [];
 JTS.data.programme.teach = {};
 JTS.data.programme.drills = {};
 
+/* Other spellings of a unit id that unit files use. */
+var UNIT_ALIASES = { 'v-eoi': 'v-ei' };
+
 JTS.data.unit = function (def) {
   var P = JTS.data.programme;
   var lesson = {};
+  if (UNIT_ALIASES[def.unit]) def.unit = UNIT_ALIASES[def.unit];
   Object.keys(def).forEach(function (k) {
     if (k !== 'lesson' && k !== 'drill') lesson[k] = def[k];
   });
