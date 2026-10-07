@@ -98,6 +98,8 @@ JTS.data.jtsMeta = function (ref, overrides) {
  * Questions kept as JSON files.
  *
  * js/data/questions/index.json lists them: { "files": ["m-adv.json", ...] },
+ * or, per file, { "file": "x.json", "lessonCode": "CH11", "assetBase": "assets/sat/" }
+ * to give every question of the file one class and a folder for its pictures,
  * each path relative to js/data/questions/. A file is either a list of
  * questions or { "questions": [ ... ] }. Each question has the same fields
  * as the ones in the .js files (id, skillId, section, difficulty, type,
@@ -187,6 +189,14 @@ JTS.data.loadQuestionFiles = function () {
       .filter(Boolean);
   }
   var LEVEL = { easy: 1, medium: 2, hard: 3 };
+  /* "reading-writing", "Reading and Writing", "R&W" … are all 'rw'. */
+  function sectionOf(v) {
+    if (!v) return null;
+    var k = String(v).toLowerCase().replace(/[^a-z]/g, '');
+    if (k === 'math' || k === 'mathematics') return 'math';
+    if (k === 'rw' || k.indexOf('reading') === 0 || k === 'verbal') return 'rw';
+    return v;
+  }
   function fromExport(q) {
     var mcq = String(q.type || '').toLowerCase() !== 'spr';
     var choices = (q.choices || []).slice().sort(function (a, b) {
@@ -195,7 +205,7 @@ JTS.data.loadQuestionFiles = function () {
     var out = {
       id: q.id,
       skillId: q.skillId || skillIdFor(q.skill),
-      section: q.section || (RW_DOMAINS.indexOf(q.domain) >= 0 ? 'rw' : 'math'),
+      section: sectionOf(q.section) || (RW_DOMAINS.indexOf(q.domain) >= 0 ? 'rw' : 'math'),
       difficulty: typeof q.difficulty === 'number' ? q.difficulty
         : (LEVEL[String(q.difficulty || '').toLowerCase()] || 2),
       type: mcq ? 'mcq' : 'spr',
@@ -257,12 +267,42 @@ JTS.data.loadQuestionFiles = function () {
     }
     return out;
   }
+  /* Picture paths written relative to some other folder: prefix them,
+     leaving full addresses, data: pictures and assets/ paths alone. */
+  function rebase(html, base) {
+    return String(html || '').replace(/(<img[^>]*src=")(?!assets\/|https?:|data:|\/)([^"]+)"/gi,
+      function (m, head, src) { return head + base + src + '"'; });
+  }
+
   return get('index.json').then(function (idx) {
     var files = (idx && idx.files) || [];
-    return Promise.all(files.map(function (f) {
+    return Promise.all(files.map(function (entry) {
+      /* An entry is a file name, or { file, lessonCode, assetBase } to put
+         a whole file into one class and to fix where its pictures are
+         without editing the file itself. */
+      var opt = typeof entry === 'string' ? { file: entry } : (entry || {});
+      var f = opt.file;
       return get(f).then(function (data) {
         var list = Array.isArray(data) ? data : (data && data.questions) || [];
-        return list.map(function (q) { return prepare(q, f); });
+        return list.map(function (q) {
+          if (opt.lessonCode && !q.lessonCode) {
+            var c = {}; Object.keys(q).forEach(function (k) { c[k] = q[k]; });
+            c.lessonCode = opt.lessonCode; q = c;
+          }
+          var out = prepare(q, f);
+          if (opt.assetBase) {
+            ['stem', 'passage', 'explanation'].forEach(function (k) {
+              if (typeof out[k] === 'string') out[k] = rebase(out[k], opt.assetBase);
+            });
+            if (out.explanation && typeof out.explanation === 'object') {
+              Object.keys(out.explanation).forEach(function (l) {
+                out.explanation[l] = rebase(out.explanation[l], opt.assetBase);
+              });
+            }
+            if (out.options) out.options = out.options.map(function (o) { return rebase(o, opt.assetBase); });
+          }
+          return out;
+        });
       }).catch(function (e) {
         console.error('[JTS] question file not loaded — ' + e.message);
         return [];
