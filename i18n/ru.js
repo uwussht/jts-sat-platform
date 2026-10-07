@@ -225,7 +225,6 @@ JTS.dict.ru = {
   'today.resumeSession': 'Есть незавершённая сессия',
 
   'plan.provisional': 'Предварительный план — дата экзамена не задана',
-  'plan.phases': 'Фазы подготовки',
   'weekly.title': 'Еженедельный тест',
   'weekly.skipped': 'Без ответа',
   'weekly.youTyped': 'Ваш ответ: {a}',

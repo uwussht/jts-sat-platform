@@ -225,7 +225,6 @@ JTS.dict.kk = {
   'today.resumeSession': 'Аяқталмаған сессия бар',
 
   'plan.provisional': 'Алдын ала жоспар — емтихан күні қойылмаған',
-  'plan.phases': 'Дайындық фазалары',
   'weekly.title': 'Апталық тест',
   'weekly.skipped': 'Жауап жоқ',
   'weekly.youTyped': 'Сіздің жауабыңыз: {a}',

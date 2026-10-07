@@ -225,7 +225,6 @@ JTS.dict.en = {
   'today.resumeSession': 'You have an unfinished session',
 
   'plan.provisional': 'Provisional plan — no exam date set',
-  'plan.phases': 'Preparation phases',
   'weekly.title': 'Weekly practice test',
   'weekly.skipped': 'Not answered',
   'weekly.youTyped': 'Your answer: {a}',

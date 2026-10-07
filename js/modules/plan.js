@@ -1,9 +1,8 @@
 /* ==========================================================================
    Screen: My plan (#/plan)
 
-   Three things live here: the phase track (what stage of preparation this is),
-   the week grid (what happens on which day) and the month calendar (where the
-   whole thing is going). The week and the month are two views of one plan, not
+   Two things live here: the week grid (what happens on which day) and the
+   month calendar (where the whole thing is going). The week and the month are two views of one plan, not
    two plans — both read JTS.planner.allLessons().
 
    The rule that shapes this screen is that missed sessions are NOT carried
@@ -16,21 +15,6 @@
   var U = JTS.util, t = JTS.t, ui = JTS.ui, S = JTS.store;
 
   var STATUS_CLASS = { planned: '', done: 'done', skipped: 'skipped', moved: 'moved' };
-
-  function phaseTrack(state) {
-    var current = JTS.planner.currentPhase();
-    var track = U.el('div.phase-track', { role: 'list' });
-    JTS.planner.phases.forEach(function (p) {
-      track.appendChild(U.el('div' + (p.id < current ? '.done' : p.id === current ? '.current' : ''), {
-        role: 'listitem', text: t('plan.phase.' + p.key),
-        title: t('today.phase', { n: p.id, name: t('plan.phase.' + p.key) })
-      }));
-    });
-    return U.el('div.card.stack-sm', null, [
-      U.el('div.eyebrow', { text: t('plan.phases') }),
-      track
-    ]);
-  }
 
   /* --------------------------------------------------------------- events */
 
@@ -511,8 +495,6 @@
       if (state.plan.provisional) {
         screen.appendChild(U.el('div.notice.notice-warn', { text: t('plan.provisional') }));
       }
-
-      screen.appendChild(phaseTrack(state));
 
       var done = JTS.planner.allLessons().filter(function (l) { return l.status === 'done'; }).length;
       var total = JTS.planner.allLessons().length;
