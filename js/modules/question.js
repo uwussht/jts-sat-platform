@@ -776,19 +776,28 @@
       /* Same gesture with a finger. */
       document.addEventListener('touchend', onMouseUp);
 
-      /* Pictures used as answer choices. Many were scanned at about three
-         times text size and carry an inline size of their own ("max-height:
-         180px !important"), so a one-digit answer filled the whole choice.
-         The inline size is dropped and each picture is sized once it loads:
-         a scanned answer (a number or an expression) is shrunk to about a
-         line of text, a graph or table is held to a modest height, and a
-         small equation picture keeps its own size. Problem-Solving and Data
-         Analysis answers are set a little smaller again. */
+      /* Pictures used as answer choices.
+         - An equation set as a line of text (img.m) already carries a
+           height in em that matches the text; it keeps it.
+         - A scanned answer (a number or an expression) was saved at about
+           three times text size with a fixed size of its own ("max-height:
+           180px !important"); that size is dropped and the picture is
+           shrunk to about a line of text once it loads.
+         - A graph or table is held to a modest height.
+         Problem-Solving and Data Analysis and Geometry answers are set a
+         little smaller again. */
       function fitChoiceImages(span, question) {
-        var psda = /^m\.psda\./.test(question.skillId || '');
-        var scale = psda ? 0.24 : 0.3, cap = psda ? 180 : 220;
+        var small = /^m\.(psda|geo)\./.test(question.skillId || '');
+        var scale = small ? 0.24 : 0.3, cap = small ? 180 : 220;
         Array.prototype.forEach.call(span.querySelectorAll('img'), function (img) {
           var scanned = !!img.closest('.sat-natural-option, .sat-display-math');
+          if (img.classList.contains('m') && !scanned) {
+            if (small) {
+              img.style.setProperty('height', '1.3em', 'important');
+              img.style.setProperty('max-height', '1.3em', 'important');
+            }
+            return;
+          }
           img.removeAttribute('style');
           img.classList.add('opt-img');
           function size() {
