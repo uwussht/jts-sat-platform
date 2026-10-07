@@ -98,7 +98,7 @@ JTS.data.jtsMeta = function (ref, overrides) {
  * Questions kept as JSON files.
  *
  * js/data/questions/index.json lists them: { "files": ["m-adv.json", ...] },
- * or, per file, { "file": "x.json", "lessonCode": "CH11", "assetBase": "assets/sat/" }
+ * or, per file, { "file": "x.json", "lessonCode": "CH11", "assetBase": "assets/sat/", "idPrefix": "ch11-" }
  * to give every question of the file one class and a folder for its pictures,
  * each path relative to js/data/questions/. A file is either a list of
  * questions or { "questions": [ ... ] }. Each question has the same fields
@@ -277,17 +277,21 @@ JTS.data.loadQuestionFiles = function () {
   return get('index.json').then(function (idx) {
     var files = (idx && idx.files) || [];
     return Promise.all(files.map(function (entry) {
-      /* An entry is a file name, or { file, lessonCode, assetBase } to put
-         a whole file into one class and to fix where its pictures are
-         without editing the file itself. */
+      /* An entry is a file name, or { file, lessonCode, assetBase, idPrefix }
+         to put a whole file into one class, fix where its pictures are and
+         keep its question ids apart from another file's, without editing
+         the file itself. */
       var opt = typeof entry === 'string' ? { file: entry } : (entry || {});
       var f = opt.file;
       return get(f).then(function (data) {
         var list = Array.isArray(data) ? data : (data && data.questions) || [];
         return list.map(function (q) {
-          if (opt.lessonCode && !q.lessonCode) {
+          if ((opt.lessonCode && !q.lessonCode) || opt.idPrefix) {
             var c = {}; Object.keys(q).forEach(function (k) { c[k] = q[k]; });
-            c.lessonCode = opt.lessonCode; q = c;
+            if (opt.lessonCode && !q.lessonCode) c.lessonCode = opt.lessonCode;
+            /* Two files numbered the same way (rw-m1-01 …) stay apart. */
+            if (opt.idPrefix) c.id = opt.idPrefix + q.id;
+            q = c;
           }
           var out = prepare(q, f);
           if (opt.assetBase) {
