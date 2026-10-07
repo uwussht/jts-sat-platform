@@ -270,7 +270,7 @@ JTS.data.loadQuestionFiles = function () {
   /* Picture paths written relative to some other folder: prefix them,
      leaving full addresses, data: pictures and assets/ paths alone. */
   function rebase(html, base) {
-    return String(html || '').replace(/(<img[^>]*src=")(?!assets\/|https?:|data:|\/)([^"]+)"/gi,
+    return String(html || '').replace(/(<img\b[^>]*\bsrc=")(?!assets\/|https?:|data:|\/)([^"]+)"/gi,
       function (m, head, src) { return head + base + src + '"'; });
   }
 
