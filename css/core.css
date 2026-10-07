@@ -2688,3 +2688,12 @@ img.fig { display: block; max-width: 100%; height: auto; margin: 8px 0 12px; }
 .q-nav { display: flex; gap: 8px; flex: none; margin-left: auto; }
 .q-nav .btn { min-width: 88px; }
 @media (max-width: 760px) { .q-footer > .q-rail { flex: 1 1 100%; } }
+
+/* Mock tests: the last paper, analysed */
+.pa-tiles { gap: 12px; }
+.pa-tile { border: 1px solid var(--border); border-radius: var(--r-md); padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; }
+.pa-tile.is-total { background: var(--brand-050); border-color: var(--brand-300, var(--border)); }
+.pa-big { font-size: 26px; font-weight: 800; letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
+.pa-mod { border: 1px solid var(--border); border-radius: var(--r-md); padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; }
+.pa-mod-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.pa-chips { gap: 6px; }

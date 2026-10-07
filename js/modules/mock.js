@@ -348,6 +348,9 @@
       if (!r.complete || !r.total) return null;
       var band = r.route === 'harder' ? 400 : 200;
       var mid = Math.round((band + (r.correct / r.total) * 400) / 10) * 10;
+      /* A paper does not route: its second module is fixed, so the raw
+         share is read across the whole 200-800 scale. */
+      if (run.paperId) mid = Math.round((200 + (r.correct / r.total) * 600) / 10) * 10;
       return {
         low: U.clamp(mid - 40, 200, 800),
         high: U.clamp(mid + 40, 200, 800),
@@ -562,22 +565,115 @@
         U.el('button.btn.btn-primary', {
           type: 'button', text: t('paper.sit'), disabled: !!active,
           onclick: function () {
-            ui.confirm({
-              title: paper.title,
-              message: t('paper.confirm'),
-              okText: t('paper.sit')
-            }).then(function (yes) {
-              if (!yes) return;
-              JTS.fullWindow.enter();
-              var run = JTS.mock.create({ timed: true, paperId: paper.id });
-              JTS.mock.startModule(run.id);
-            });
+            JTS.fullWindow.enter();
+            var run = JTS.mock.create({ timed: true, paperId: paper.id });
+            JTS.mock.startModule(run.id);
           }
         })
       ]));
     });
     card.appendChild(list);
     if (active) card.appendChild(U.el('div.xsmall.muted', { text: t('mock.oneAtATime') }));
+    return card;
+  }
+
+  /* ------------------------------------------- the last paper, analysed */
+
+  /**
+   * Under the papers: the paper the student sat last, read back — the two
+   * section scores, each module, how many were wrong or left blank, the
+   * pace against the exam's, and the slowest questions. The full review is
+   * one press away.
+   */
+  function paperAnalysis() {
+    var runs = JTS.mock.finished().filter(function (r) { return r.paperId; });
+    if (!runs.length) return null;
+    var run = runs[runs.length - 1];
+    var paper = JTS.papers.get(run.paperId);
+    var lang = S.settings().uiLang;
+    var PACE = { rw: 32 * 60 / 27, math: 35 * 60 / 22 };   /* seconds a question */
+
+    var card = U.el('div.card.stack', { id: 'paper-analysis' });
+    card.appendChild(U.el('div.stack-sm', null, [
+      U.el('div.eyebrow', { text: t('paper.analysis') }),
+      U.el('h2.h2', { text: paper ? paper.title : run.paperId }),
+      U.el('div.small.muted', { text: U.fmtDate(new Date(run.finishedAt), lang) +
+        (runs.length > 1 ? ' · ' + t('paper.attemptN', { n: runs.length }) : '') })
+    ]));
+
+    /* The two sections and the total. */
+    var tot = JTS.mock.totalEstimate(run);
+    var tiles = U.el('div.grid.grid-3.pa-tiles');
+    ['rw', 'math'].forEach(function (sec) {
+      var r = JTS.mock.raw(run, sec), est = JTS.mock.estimate(run, sec);
+      tiles.appendChild(U.el('div.pa-tile', null, [
+        U.el('div.stat-label', { text: t('common.' + sec) }),
+        U.el('div.pa-big', { text: r.correct + ' / ' + r.total }),
+        U.el('div.small.muted', { text: est ? t('mock.estimate') + ' ' + est.low + '–' + est.high : '' })
+      ]));
+    });
+    tiles.appendChild(U.el('div.pa-tile.is-total', null, [
+      U.el('div.stat-label', { text: t('common.total') }),
+      U.el('div.pa-big', { text: tot ? tot.low + '–' + tot.high : '—' }),
+      U.el('div.small.muted', { text: t('paper.estimateNote') })
+    ]));
+    card.appendChild(tiles);
+
+    /* Each module: right, wrong, blank, and the pace. */
+    var rows = U.el('div.stack-sm');
+    var slow = [];
+    run.modules.forEach(function (m) {
+      var sum = m.sessionId ? JTS.session.summary(m.sessionId) : null;
+      if (!sum) return;
+      var right = 0, wrong = 0, blank = 0, ms = 0;
+      var no = m.key.slice(-1);
+      sum.questionIds.forEach(function (qid, i) {
+        var a = sum.answers[qid] || {};
+        var given = a.selected !== null && a.selected !== undefined && a.selected !== '';
+        if (!given) blank++; else if (a.correct) right++; else wrong++;
+        ms += a.timeMs || 0;
+        slow.push({ label: t(m.section === 'math' ? 'common.math' : 'common.rwShort') + ' ' + no +
+          ' · ' + t('paper.qNo', { n: i + 1 }), ms: a.timeMs || 0, right: !!a.correct });
+      });
+      var n = sum.questionIds.length;
+      var avg = n ? Math.round(ms / n / 1000) : 0;
+      var pace = PACE[m.section] || 80;
+      rows.appendChild(U.el('div.pa-mod', null, [
+        U.el('div.pa-mod-head', null, [
+          U.el('b', { text: t('common.' + m.section) + ' · ' + t('lesson.module', { n: no }) }),
+          U.el('span.small.muted', { text: right + ' / ' + n })
+        ]),
+        JTS.ui.bar(right, n || 1, 'bar-ok'),
+        U.el('div.row.row-wrap.pa-chips', null, [
+          U.el('span.badge.badge-ok', { text: t('common.correct') + ' ' + right }),
+          U.el('span.badge.badge-danger', { text: t('common.incorrect') + ' ' + wrong }),
+          blank ? U.el('span.badge.badge-muted', { text: t('paper.blank', { n: blank }) }) : null,
+          U.el('span.badge' + (avg > pace * 1.1 ? '.badge-warn' : '.badge-muted'), {
+            text: t('paper.avgTime', { s: avg, pace: Math.round(pace) })
+          })
+        ])
+      ]));
+    });
+    card.appendChild(U.el('div.stack-sm', null, [U.el('div.stat-label', { text: t('paper.byModule') }), rows]));
+
+    /* Where the time went. */
+    slow.sort(function (a, b) { return b.ms - a.ms; });
+    var top = slow.filter(function (x) { return x.ms > 0; }).slice(0, 5);
+    if (top.length) {
+      card.appendChild(U.el('div.stack-sm', null, [
+        U.el('div.stat-label', { text: t('paper.slowest') }),
+        U.el('div.row.row-wrap', null, top.map(function (x) {
+          return U.el('span.badge' + (x.right ? '.badge-muted' : '.badge-danger'), {
+            text: x.label + ' — ' + U.fmtLongTime(x.ms)
+          });
+        }))
+      ]));
+    }
+
+    card.appendChild(U.el('div.row.row-wrap', null, [
+      U.el('a.btn.btn-primary', { href: '#/mocks/review?run=' + run.id, text: t('mock.reviewQuestions') }),
+      U.el('a.btn', { href: '#/mocks/result?run=' + run.id, text: t('mock.openResult') })
+    ]));
     return card;
   }
 
@@ -635,6 +731,8 @@
 
         var papers = paperCard(rerender);
         if (papers) screen.appendChild(papers);
+        var last = paperAnalysis();
+        if (last) screen.appendChild(last);
 
         /* The page is for sitting a test. The list of finished ones and the
            trajectory both live on #/progress, which is the screen that answers
