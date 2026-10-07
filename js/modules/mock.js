@@ -549,12 +549,13 @@
       return card;
     }
 
-    var list = U.el('div.stack-sm');
+    /* The papers side by side, one tile each. */
+    var list = U.el('div.pp-grid');
     papers.forEach(function (paper) {
       var sat = JTS.mock.all().filter(function (r) {
         return r.paperId === paper.id && r.status === 'finished';
       }).length;
-      list.appendChild(U.el('div.card.card-sm.row-between.row-wrap', null, [
+      list.appendChild(U.el('div.pp-tile', null, [
         U.el('div.stack-sm', null, [
           U.el('div', null, [U.el('b', { text: paper.title })]),
           U.el('div.xsmall.muted', {

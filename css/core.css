@@ -2710,3 +2710,9 @@ img.fig { display: block; max-width: 100%; height: auto; margin: 8px 0 12px; }
 .rt-score { text-align: right; align-items: flex-end; }
 .rt-body { border-top: 1px solid var(--border); padding: 16px; }
 .rt-body[hidden] { display: none; }
+
+/* Past papers: tiles in a row, wrapping onto the next line */
+.pp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+.pp-tile { border: 1px solid var(--border); border-radius: var(--r-lg); padding: 16px; display: flex; flex-direction: column; justify-content: space-between; gap: 14px; background: var(--surface); }
+.pp-tile:hover { border-color: var(--brand-300, var(--border-strong)); }
+.pp-tile .btn { align-self: flex-start; }

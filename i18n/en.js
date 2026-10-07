@@ -385,7 +385,7 @@ JTS.dict.en = {
   'paper.noHelp': 'No explanations and no hints — here or in the review afterwards. The review shows what you picked and what was right. Bring what you want explained to Practice.',
   'paper.modules': '{n} questions · 4 modules',
   'paper.satTimes': 'sat {n}×',
-  'paper.sit': 'Sit this paper',
+  'paper.sit': 'Start',
   'paper.recent': 'Recent tests',
   'paper.estimateNote': 'Internal estimate, not an official score',
   'paper.byModule': 'By module',
