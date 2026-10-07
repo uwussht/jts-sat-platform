@@ -1,1 +1,5 @@
-{ "files": [] }
+{
+  "files": [
+    {"file": "jts-1.json", "assetBase": "assets/sat/paper 1/"}
+  ]
+}
