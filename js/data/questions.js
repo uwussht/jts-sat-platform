@@ -205,6 +205,9 @@ JTS.data.loadQuestionFiles = function () {
     if (q.passageHtml || q.passage) out.passage = q.passageHtml || q.passage;
     if (mcq) {
       out.options = choices.map(function (c) { return c.html != null ? c.html : c.text; });
+      /* A question whose picture already shows its four choices may list
+         none: the student then answers with the letter buttons alone. */
+      if (!out.options.length) out.options = ['', '', '', ''];
       out.answer = String(q.correctAnswer || q.answer || '').trim().toUpperCase();
     } else {
       out.answer = sprAnswers(q.correctAnswer != null ? q.correctAnswer : q.answer);
