@@ -223,6 +223,10 @@ JTS.data.loadQuestionFiles = function () {
       out.answer = String(q.correctAnswer || q.answer || '').trim().toUpperCase();
     } else {
       out.answer = sprAnswers(q.correctAnswer != null ? q.correctAnswer : q.answer);
+      /* Other accepted forms of the same answer ("3.5" beside "7/2"). */
+      sprAnswers(q.acceptedAnswers || []).forEach(function (a) {
+        if (out.answer.indexOf(a) < 0) out.answer.push(a);
+      });
     }
     if (q.skill) out.sourceSkill = q.skill;
     if (q.number != null) out.sourceNumber = q.number;
@@ -324,11 +328,14 @@ JTS.data.loadQuestionFiles = function () {
       });
       if (repeated.length) console.warn('[JTS] repeated question ids in JSON, first kept:', repeated);
       JTS.data.questions = JTS.data.questions.filter(function (q) { return !ids[q.id]; }).concat(all);
+      /* A class given questions in JSON takes those as its whole set: they
+         replace any set written for it in js/data/lesson-questions.js. */
       var sets = JTS.data.lessonQuestions = JTS.data.lessonQuestions || {};
+      var fromJson = {};
       all.forEach(function (q) {
         var code = q.meta.kind === 'lesson' && q.meta.lessonCode;
         if (!code) return;
-        sets[code] = sets[code] || [];
+        if (!fromJson[code]) { fromJson[code] = 1; sets[code] = []; }
         if (sets[code].indexOf(q.id) < 0) sets[code].push(q.id);
       });
       console.info('[JTS] ' + all.length + ' questions loaded from JSON (' + files.length + ' file' + (files.length === 1 ? '' : 's') + ')');

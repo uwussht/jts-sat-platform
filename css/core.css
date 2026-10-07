@@ -2671,3 +2671,6 @@ img.fig { display: block; max-width: 100%; height: auto; margin: 8px 0 12px; }
 .lw-module { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .lw-module > .stack-sm { flex: 1 1 260px; min-width: 0; }
 .lw-module.is-done { border-color: var(--ok); }
+
+/* A passage set inside a question (JSON tasks): set off from the question. */
+.lw-passage { background: var(--surface-2); border-left: 3px solid var(--brand-300, var(--border)); border-radius: var(--r-md); padding: 12px 14px; margin-bottom: 12px; }
