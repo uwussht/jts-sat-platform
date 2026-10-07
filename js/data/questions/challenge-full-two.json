@@ -259,22 +259,22 @@
       "choices": [
         {
           "label": "A",
-          "html": "It identifies the specific ways in which the Lindy Hop is similar to the contemporary dance styles discussed in the text."
+          "html": "It provides context that informs the text's claim about why the peoples of Patagonia chose Cueva Huenul 1 as a culturally significant site."
         },
         {
           "label": "B",
-          "html": "It identifies the motivation for The Jazz Continuum's choreographic approach that is described earlier in the text."
+          "html": "It explains the environmental circumstances that account for the rarity of rock art dating to the same period as the motif discussed in the text."
         },
         {
           "label": "C",
-          "html": "It provides evidence for the text's claim that the Lindy Hop has had a greater cultural impact than the other dances featured in The Jazz Continuum have had."
+          "html": "It identifies a consideration that factored into an interpretation of the rock art at Cueva Huenul 1 that is presented in the text."
         },
         {
           "label": "D",
-          "html": "It addresses the reasons why the historical connections between the dance styles mentioned earlier in the text have been generally overlooked."
+          "html": "It emphasizes the historical conditions that explain why production of the painted motif described in the text abruptly ceased after 3,000 years of continued use."
         }
       ],
-      "correctAnswer": "B",
+      "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/rw-m1-09.png"
       ],
@@ -972,22 +972,22 @@
       "choices": [
         {
           "label": "A",
-          "html": "amenable"
+          "html": "stipulated"
         },
         {
           "label": "B",
-          "html": "unresponsive"
+          "html": "cited"
         },
         {
           "label": "C",
-          "html": "pertinent"
+          "html": "ascribed"
         },
         {
           "label": "D",
-          "html": "detrimental"
+          "html": "convened"
         }
       ],
-      "correctAnswer": "A",
+      "correctAnswer": "D",
       "assetPaths": [
         "challenge-full-two/rw-m2-05.png"
       ],
@@ -1623,19 +1623,19 @@
       "choices": [
         {
           "label": "A",
-          "html": "Nakatsu discovered that the kingfisher's beak structure eliminated sonic booms, and the redesign improved the train's transition between tunnel and open-air environments."
+          "html": "The researchers used an artificial deep neural network, which spontaneously developed neurons that responded to music but not to other auditory stimuli."
         },
         {
           "label": "B",
-          "html": "Nakatsu's observation of kingfishers diving into water showed how the bird's beak structure could help the train eliminate sonic booms."
+          "html": "By training an artificial deep neural network, the researchers aimed to establish that the brain's ability to process natural sounds arises as a by-product of processing music."
         },
         {
           "label": "C",
-          "html": "By redesigning the train's nose to imitate the kingfisher's gradually widening beak shape, engineers improved the train's transition between tunnels and open air, eliminating sonic booms."
+          "html": "Using an artificial deep neural network, the researchers sought to explore the relationship between the brain's ability to process natural sounds and its ability to process music."
         },
         {
           "label": "D",
-          "html": "The shape of the kingfisher's beak inspired engineers to reshape the train nose into one that gradually widens, allowing the train to move smoothly between air and water."
+          "html": "In their study, the researchers evaluated whether an artificial deep neural network could model how the brain processes auditory information."
         }
       ],
       "correctAnswer": "C",

@@ -1,0 +1,2880 @@
+{
+  "questionCount": 98,
+  "questions": [
+    {
+      "id": "rw-m1-01",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-01.png\" alt=\"Question 1\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "apprehend"
+        },
+        {
+          "label": "B",
+          "html": "magnify"
+        },
+        {
+          "label": "C",
+          "html": "rectify"
+        },
+        {
+          "label": "D",
+          "html": "counteract"
+        }
+      ],
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-01.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-02",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-02.png\" alt=\"Question 2\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "helps with"
+        },
+        {
+          "label": "B",
+          "html": "varies from"
+        },
+        {
+          "label": "C",
+          "html": "argues with"
+        },
+        {
+          "label": "D",
+          "html": "reacts to"
+        }
+      ],
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-02.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-03",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 3,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-03.png\" alt=\"Question 3\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "forecast"
+        },
+        {
+          "label": "B",
+          "html": "monitor"
+        },
+        {
+          "label": "C",
+          "html": "avoid"
+        },
+        {
+          "label": "D",
+          "html": "exchange"
+        }
+      ],
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-03.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-04",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 4,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-04.png\" alt=\"Question 4\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "complains"
+        },
+        {
+          "label": "B",
+          "html": "denotes"
+        },
+        {
+          "label": "C",
+          "html": "discovers"
+        },
+        {
+          "label": "D",
+          "html": "renounces"
+        }
+      ],
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-04.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-05",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 5,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-05.png\" alt=\"Question 5\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "To demonstrate Celestine's unhappiness in the workplace"
+        },
+        {
+          "label": "B",
+          "html": "To portray Celestine's excitement about her daughter"
+        },
+        {
+          "label": "C",
+          "html": "To show that Celestine enjoys imagining her daughter's future life"
+        },
+        {
+          "label": "D",
+          "html": "To consider how Celestine's coworkers feel about her daughter"
+        }
+      ],
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-05.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-06",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 6,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-06.png\" alt=\"Question 6\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It introduces the history of an organization honoring Black journalists, then suggests how that organization might recruit more members."
+        },
+        {
+          "label": "B",
+          "html": "It mentions a specific achievement in Black journalistic history, then describes an organization dedicated to upholding that history."
+        },
+        {
+          "label": "C",
+          "html": "It summarizes a theory about journalism, then explains how a journalistic practice has changed over time."
+        },
+        {
+          "label": "D",
+          "html": "It describes the career of a well-known figure in Black journalism, then compares that career to one of a figure who is lesser known."
+        }
+      ],
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-06.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-07",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 7,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-07.png\" alt=\"Question 7\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It refers to a novel that has several different published and unpublished versions, identifies characteristics that have led critics to prefer one version to others, and tells how translators justified their choice to bring one particular version of the novel into another language."
+        },
+        {
+          "label": "B",
+          "html": "It mentions a novel whose quality critics do not agree on, discusses obstacles that make it difficult to determine what the best version of that novel might be, and offers a reason why some critics find a translation of the novel to be superior to the original."
+        },
+        {
+          "label": "C",
+          "html": "It describes a novel whose critical reputation has declined over time, explains the cause of that decline, and reports the effort of translators to rehabilitate a work they believe has been unjustly ignored."
+        },
+        {
+          "label": "D",
+          "html": "It notes a novel's critical reception, addresses the complicated history of the novel's development, and suggests how that history informed the work of the novel's English translators."
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-07.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-08",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 8,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-08.png\" alt=\"Question 8\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It is unlikely to be widely used because it can be applied only under special conditions."
+        },
+        {
+          "label": "B",
+          "html": "It can likely improve the energy consumption of certain mechanical systems but not of hydroelectric generators."
+        },
+        {
+          "label": "C",
+          "html": "It is unlikely to reduce wear in mechanical systems that have multiple moving parts."
+        },
+        {
+          "label": "D",
+          "html": "It can likely be used to reduce energy consumption and wear in hydroelectric generators and other common mechanical systems."
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-08.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-09",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 9,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-09.png\" alt=\"Question 9\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It can explain why some species act in accordance with cost-benefit trade-offs and others do not."
+        },
+        {
+          "label": "B",
+          "html": "It may be weakened by the finding that the costs and benefits associated with a particular ecological circumstance vary by species."
+        },
+        {
+          "label": "C",
+          "html": "It tends to allow for a better understanding of the benefits of ecological circumstances than the costs of those circumstances."
+        },
+        {
+          "label": "D",
+          "html": "It can account for observations of different species responding differently to similar ecological circumstances."
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-09.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-10",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 10,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-10.png\" alt=\"Question 10\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "\"I prefer riding buses instead of taking trains because buses travel to more locations.\""
+        },
+        {
+          "label": "B",
+          "html": "\"I have traveled on high-speed rail lines in Switzerland but not in Uzbekistan.\""
+        },
+        {
+          "label": "C",
+          "html": "\"I think high-speed rail is wonderful. The United States needs to build more high-speed rail lines.\""
+        },
+        {
+          "label": "D",
+          "html": "\"I believe that the United States has enough high-speed rail lines. It should invest in airports instead.\""
+        }
+      ],
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-10.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-11",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 11,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-11.png\" alt=\"Question 11\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Belgium reported 13 damaging fungus species but only 11 damaging insect species."
+        },
+        {
+          "label": "B",
+          "html": "Italy reported 57 damaging fungus species, whereas Denmark reported 33 damaging insect species."
+        },
+        {
+          "label": "C",
+          "html": "Italy reported 57 damaging fungus species, which is more than either Denmark or Belgium reported."
+        },
+        {
+          "label": "D",
+          "html": "Denmark and Belgium reported 12 and 4 damaging fungus species, respectively, which is far fewer than Italy reported."
+        }
+      ],
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-11.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-12",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 12,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-12.png\" alt=\"Question 12\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "\"I will now stop writing about myself and family and tribe customs, and tell about the wars, and the causes of the wars. I will jump over about six years.\""
+        },
+        {
+          "label": "B",
+          "html": "\"Now, my dear reader, there is no word so endearing as the word father, and that is why [my people] call all good people father or mother.\""
+        },
+        {
+          "label": "C",
+          "html": "\"But how can I describe the scene that followed? Some of you, dear readers, can imagine.\""
+        },
+        {
+          "label": "D",
+          "html": "\"During the time my grandfather was away in California, where he [stayed] till after the Mexican war, there was a girl-baby born in our family.\""
+        }
+      ],
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-12.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-13",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 13,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-13.png\" alt=\"Question 13\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "humans' responses to pupil size in other people may extend to dogs, as participants responded more positively to images of dogs whose iris colors were likely to make their pupils appear large than they did to images of dogs whose iris colors were unlikely to have that effect."
+        },
+        {
+          "label": "B",
+          "html": "differences in dogs' pupil size may elicit a stronger response in humans than differences in people's pupil size do, as participants' responses to the images when dogs' pupils were actually large were indistinguishable from participants' responses when dogs' pupils only appeared to be large due to iris color."
+        },
+        {
+          "label": "C",
+          "html": "iris color in domestic dogs may be an adaptation to elicit positive responses from humans, as participants responded more negatively to images of dogs whose iris colors can make pupils appear large than they did to images of dogs without such iris colors."
+        },
+        {
+          "label": "D",
+          "html": "humans may not be as sensitive to pupil size in dogs as they are to pupil size in other people, as participants' responses to the images show no relationship to differences in the shade of dogs' irises that could affect how large the dogs' pupils appear to be."
+        }
+      ],
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-13.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-14",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 14,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-14.png\" alt=\"Question 14\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "social learning and resource fluctuations may both play a role in dietary mix among females, at least temporarily, though genetic factors appear to make a significant contribution as well."
+        },
+        {
+          "label": "B",
+          "html": "growing dissimilarity between mothers and their daughters with regard to dietary mix may reflect changes in the resources available in maternal habitats, though social learning could also contribute to the trend."
+        },
+        {
+          "label": "C",
+          "html": "female dietary mix is best understood as changeable and contingent on fluctuating environmental conditions rather than as the result of social learning or genetic factors."
+        },
+        {
+          "label": "D",
+          "html": "dietary mix among females may reflect a social learning effect that eventually diminishes, though environmental constraints cannot be ruled out as a contributing factor."
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-14.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-15",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 15,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-15.png\" alt=\"Question 15\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "non-native birds, such as the hwamei, will also be at risk of extinction if they lose access to lapalapa trees."
+        },
+        {
+          "label": "B",
+          "html": "hwameis and other non-native birds play an important role that used to be filled by birds that were native to Oahu."
+        },
+        {
+          "label": "C",
+          "html": "non-native birds, such as the hwamei, now spread more seeds from the lapalapa tree than birds native to Oahu did in the past."
+        },
+        {
+          "label": "D",
+          "html": "populations of hwameis and other non-native birds will probably soon experience rapid growth."
+        }
+      ],
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-15.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-16",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 16,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-16.png\" alt=\"Question 16\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "having overseen"
+        },
+        {
+          "label": "B",
+          "html": "oversees"
+        },
+        {
+          "label": "C",
+          "html": "overseeing"
+        },
+        {
+          "label": "D",
+          "html": "to oversee"
+        }
+      ],
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-16.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-17",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 17,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-17.png\" alt=\"Question 17\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "had been written"
+        },
+        {
+          "label": "B",
+          "html": "was written"
+        },
+        {
+          "label": "C",
+          "html": "is written"
+        },
+        {
+          "label": "D",
+          "html": "written"
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-17.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-18",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 18,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-18.png\" alt=\"Question 18\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "STS-69, the"
+        },
+        {
+          "label": "B",
+          "html": "STS-69, and the"
+        },
+        {
+          "label": "C",
+          "html": "STS-69 the"
+        },
+        {
+          "label": "D",
+          "html": "STS-69. The"
+        }
+      ],
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-18.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-19",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 19,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-19.png\" alt=\"Question 19\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "languages,"
+        },
+        {
+          "label": "B",
+          "html": "languages; such as"
+        },
+        {
+          "label": "C",
+          "html": "languages, such as"
+        },
+        {
+          "label": "D",
+          "html": "languages;"
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-19.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-20",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 20,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-20.png\" alt=\"Question 20\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Earth, at 313 light-years away,"
+        },
+        {
+          "label": "B",
+          "html": "Earth: at 313 light-years away,"
+        },
+        {
+          "label": "C",
+          "html": "Earth at 313 light-years away,"
+        },
+        {
+          "label": "D",
+          "html": "Earth at 313 light-years away:"
+        }
+      ],
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-20.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-21",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 21,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-21.png\" alt=\"Question 21\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "By doing so,"
+        },
+        {
+          "label": "B",
+          "html": "Second,"
+        },
+        {
+          "label": "C",
+          "html": "In particular,"
+        },
+        {
+          "label": "D",
+          "html": "By contrast,"
+        }
+      ],
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-21.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-22",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 22,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-22.png\" alt=\"Question 22\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "For example,"
+        },
+        {
+          "label": "B",
+          "html": "Conversely,"
+        },
+        {
+          "label": "C",
+          "html": "Rather,"
+        },
+        {
+          "label": "D",
+          "html": "Moreover,"
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-22.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-23",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 23,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-23.png\" alt=\"Question 23\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "In a notable exception to this rule,"
+        },
+        {
+          "label": "B",
+          "html": "Summarizing this principle,"
+        },
+        {
+          "label": "C",
+          "html": "By this definition,"
+        },
+        {
+          "label": "D",
+          "html": "Though it is grown from the earth,"
+        }
+      ],
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-23.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-24",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 24,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-24.png\" alt=\"Question 24\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The year was 2021, and the copyrights to <i>Harmonium</i> and <i>The Secret of Chimneys</i> had finally expired."
+        },
+        {
+          "label": "B",
+          "html": "<i>Harmonium</i>, a poetry collection by Wallace Stevens, and <i>The Secret of Chimneys</i>, a novel by Agatha Christie, are both in the public domain."
+        },
+        {
+          "label": "C",
+          "html": "Though they once were copyrighted works, <i>Harmonium</i> and <i>The Secret of Chimneys</i> are now in the public domain."
+        },
+        {
+          "label": "D",
+          "html": "<i>Harmonium</i>, a poetry collection by Wallace Stevens, entered the public domain in 2019, with Agatha Christie's novel <i>The Secret of Chimneys</i> following in 2021."
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-24.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-25",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 25,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-25.png\" alt=\"Question 25\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Shanawdithit's maps are part of a broader tradition of Indigenous cartography that, according to Pearce, ranges from \"Hawaiian performative cartographies to Navajo verbal maps and sand paintings.\""
+        },
+        {
+          "label": "B",
+          "html": "According to Pearce, Indigenous cartography, such as Shanawdithit's maps of Beothuk Lake, emphasizes \"experienced space, or place,\" with a variety of approaches that reflect the diversity of Indigenous cultures."
+        },
+        {
+          "label": "C",
+          "html": "Shanawdithit mapped Beothuk Lake through significant encounters that occurred there, an approach that Pearce describes as \"depicting space as universal [and] homogenized.\""
+        },
+        {
+          "label": "D",
+          "html": "By depicting experiences of the Beothuk that occurred around Beothuk Lake, Shanawdithit's maps reflect Indigenous cartography's emphasis on \"experienced space, or place\" rather than the landscape alone."
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-25.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-26",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 26,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-26.png\" alt=\"Question 26\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "In 2009, Charles P. Thacker won the A.M. Turing Award for creating the first modern personal computer."
+        },
+        {
+          "label": "B",
+          "html": "The A.M. Turing Award is given for \"major contributions of lasting importance to computing.\""
+        },
+        {
+          "label": "C",
+          "html": "It was in 2009 that Charles P. Thacker won the A.M. Turing Award."
+        },
+        {
+          "label": "D",
+          "html": "The A.M. Turing Award is named for groundbreaking British mathematician Alan Turing."
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-26.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-27",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 27,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m1-27.png\" alt=\"Question 27\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Bernard Malamud's first published work of fiction appeared in 1943."
+        },
+        {
+          "label": "B",
+          "html": "Acclaimed writer Bernard Malamud's first published work of fiction was a short story."
+        },
+        {
+          "label": "C",
+          "html": "Bernard Malamud's first published short story was called \"Benefit Performance.\""
+        },
+        {
+          "label": "D",
+          "html": "In 1943, a short story by Bernard Malamud appeared in <i>Threshold</i>."
+        }
+      ],
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-four/rw-m1-27.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-01",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-01.png\" alt=\"Question 1\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Expansive"
+        },
+        {
+          "label": "B",
+          "html": "Unyielding"
+        },
+        {
+          "label": "C",
+          "html": "Conspicuous"
+        },
+        {
+          "label": "D",
+          "html": "Insolent"
+        }
+      ],
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-01.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-02",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-02.png\" alt=\"Question 2\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "analysis"
+        },
+        {
+          "label": "B",
+          "html": "diffusion"
+        },
+        {
+          "label": "C",
+          "html": "designation"
+        },
+        {
+          "label": "D",
+          "html": "synthesis"
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-02.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-03",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 3,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-03.png\" alt=\"Question 3\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "extemporaneous"
+        },
+        {
+          "label": "B",
+          "html": "meticulous"
+        },
+        {
+          "label": "C",
+          "html": "inconspicuous"
+        },
+        {
+          "label": "D",
+          "html": "inevitable"
+        }
+      ],
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-03.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-04",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 4,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-04.png\" alt=\"Question 4\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "unequivocal"
+        },
+        {
+          "label": "B",
+          "html": "untenable"
+        },
+        {
+          "label": "C",
+          "html": "inconsolable"
+        },
+        {
+          "label": "D",
+          "html": "unanticipated"
+        }
+      ],
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-04.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-05",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 5,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-05.png\" alt=\"Question 5\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "To illustrate how the discussion of the HM earlier in the text can improve historians' understanding of the FA"
+        },
+        {
+          "label": "B",
+          "html": "To emphasize the ubiquity of hand-copied collections like the FA and the HM in medieval England"
+        },
+        {
+          "label": "C",
+          "html": "To suggest that the FA is a poor point of comparison for a collection like the HM"
+        },
+        {
+          "label": "D",
+          "html": "To provide context for the text's suggestion that the HM is an outlier among collections of its time"
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-05.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-06",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 6,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-06.png\" alt=\"Question 6\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Did the participants that Jones and colleagues included in the study share any characteristics or life circumstances?"
+        },
+        {
+          "label": "B",
+          "html": "Did Jones and colleagues compare Polish college students who received the training with a group of successful entrepreneurs who did not receive the training?"
+        },
+        {
+          "label": "C",
+          "html": "Did Jones and colleagues measure any attributes of the participants in the study after they had received the training?"
+        },
+        {
+          "label": "D",
+          "html": "How many Polish college students did Jones and colleagues include in the study?"
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-06.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-07",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 7,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-07.png\" alt=\"Question 7\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "While recommender systems can affect consumer behavior toward suggested products, those effects are not uniform in nature and strength across product categories."
+        },
+        {
+          "label": "B",
+          "html": "While recommender systems cause consumers to spend more time viewing utilitarian items such as diapers, recommender systems' positive effect on purchase rates is likely limited to hedonic items such as glass figurines."
+        },
+        {
+          "label": "C",
+          "html": "By proposing the most useful options to consumers, recommender systems boost the online visibility of utilitarian items that otherwise tend to be overlooked."
+        },
+        {
+          "label": "D",
+          "html": "By directing customers toward specific product categories on a retailer's website, recommender systems may limit the variety of items seen by online shoppers."
+        }
+      ],
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-07.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-08",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 8,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-08.png\" alt=\"Question 8\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "120 for Class VIII."
+        },
+        {
+          "label": "B",
+          "html": "50 for Class VIII."
+        },
+        {
+          "label": "C",
+          "html": "50 for Class VII."
+        },
+        {
+          "label": "D",
+          "html": "140 for Class VI."
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-08.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-09",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 9,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-09.png\" alt=\"Question 9\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Under the assumption that density is more salient than preferences, the US 2 and CI 2 proportions are approximately 0.65 and 0.85, respectively, significantly higher than the values predicted under the other assumption and thus farther than those predictions from the measured values."
+        },
+        {
+          "label": "B",
+          "html": "Under the assumption that preferences are more salient than density, the two-location patterns (US 2 and CI 2) were predicted to be most frequent in the data even though neither proportion was projected to exceed 0.5, well below the proportion predicted under the other assumption."
+        },
+        {
+          "label": "C",
+          "html": "Under the assumption that preferences are more salient than density, the US 2 and CI 2 proportions were predicted to be in the range of 0.3 to 0.5, placing them farther from the measured values than were those predicted under the other assumption."
+        },
+        {
+          "label": "D",
+          "html": "Under the assumption that preferences are more salient than density, the US 2 and CI 2 proportions were predicted to be approximately 0.45 and 0.35, respectively, both below the measured values, whereas under the other assumption, the model overestimated the proportion for US 2 and overestimated that for CI 2."
+        }
+      ],
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-09.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-10",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 10,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-10.png\" alt=\"Question 10\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "helicopter surveying underestimates the density of cougars."
+        },
+        {
+          "label": "B",
+          "html": "regular camera trapping underestimates the density of cougars."
+        },
+        {
+          "label": "C",
+          "html": "regular camera trapping is impractical outside of Argentina."
+        },
+        {
+          "label": "D",
+          "html": "helicopter surveying is more common in Utah than the use of regular camera trapping is."
+        }
+      ],
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-10.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-11",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 11,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-11.png\" alt=\"Question 11\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The association between green space and fine particulate matter levels is moderately negative overall but becomes slightly negative and sometimes positive when consideration is limited to busy streets with tree cover heavy enough to hinder ventilation."
+        },
+        {
+          "label": "B",
+          "html": "There is a predictable relationship between a location's typical climate conditions and the efficacy of green spaces in that location, but anomalous local weather events have an outsized effect on deposition and dispersion of fine particulate matter."
+        },
+        {
+          "label": "C",
+          "html": "Ambient levels of fine particulate matter are comparable across locations with comparable local infrastructure (e.g., typical building shape) but vary considerably depending on the predominant type of vegetation present."
+        },
+        {
+          "label": "D",
+          "html": "The association between levels of fine particulate matter and green space is strongly negative for locations containing or in close proximity to major cities but becomes insignificant for more rural locations."
+        }
+      ],
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-11.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-12",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 12,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-12.png\" alt=\"Question 12\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "the seeds' social networks include a high proportion of people who share characteristics with the seeds."
+        },
+        {
+          "label": "B",
+          "html": "the seeds' social networks tend to be somewhat smaller than the networks of people who do not live in rural areas."
+        },
+        {
+          "label": "C",
+          "html": "the characteristics that made the seeds desirable for inclusion in the proposed study may be unknown to some members of the seeds' social networks."
+        },
+        {
+          "label": "D",
+          "html": "most seeds' social networks include some people who do not know one another and who share few characteristics."
+        }
+      ],
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-12.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-13",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 13,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-13.png\" alt=\"Question 13\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "personal taste has little influence on whether odors are perceived as pleasant or unpleasant."
+        },
+        {
+          "label": "B",
+          "html": "culture significantly influences whether a person perceives an odor as pleasant or unpleasant."
+        },
+        {
+          "label": "C",
+          "html": "a person who perceives certain odors as pleasant will likely perceive the odors as roughly equal in pleasantness."
+        },
+        {
+          "label": "D",
+          "html": "people agree in their perception of odors as pleasant or unpleasant regardless of where they live."
+        }
+      ],
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-13.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-14",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 14,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-14.png\" alt=\"Question 14\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "demonstrate that differences in plants' flavor chemistry result from differences in the level of glucosinolates regardless of the soil's organic content."
+        },
+        {
+          "label": "B",
+          "html": "disentangle the influence of microbial communities on soil's organic content from their influence on glucosinolate content in the plants."
+        },
+        {
+          "label": "C",
+          "html": "re-create the conditions of studies conducted in the wild that found links between soil microbial communities and levels of 3-methylthiopropyl in mustard plants."
+        },
+        {
+          "label": "D",
+          "html": "distinguish variations in glucosinolates due to differences in microbial communities from those that in a natural setting may be due to differences in soil's organic content."
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-14.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-15",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 15,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-15.png\" alt=\"Question 15\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "institutions may need to provide medical students with exposure to larger numbers of artworks than have been used in previous studies."
+        },
+        {
+          "label": "B",
+          "html": "researchers must prove that scientific training alone is insufficient for developing clinical skills."
+        },
+        {
+          "label": "C",
+          "html": "medical schools should highlight more student testimonials about how arts education benefits their clinical abilities."
+        },
+        {
+          "label": "D",
+          "html": "larger-scale, multi-institutional research studies tracking outcomes for medical students over longer periods are needed."
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-15.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-16",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 16,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-16.png\" alt=\"Question 16\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "to begin"
+        },
+        {
+          "label": "B",
+          "html": "having begun"
+        },
+        {
+          "label": "C",
+          "html": "beginning"
+        },
+        {
+          "label": "D",
+          "html": "began"
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-16.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-17",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 17,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-17.png\" alt=\"Question 17\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "supernova, the"
+        },
+        {
+          "label": "B",
+          "html": "supernova. The"
+        },
+        {
+          "label": "C",
+          "html": "supernova: the"
+        },
+        {
+          "label": "D",
+          "html": "supernova—the"
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-17.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-18",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 18,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-18.png\" alt=\"Question 18\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "day by,"
+        },
+        {
+          "label": "B",
+          "html": "day; by"
+        },
+        {
+          "label": "C",
+          "html": "day by"
+        },
+        {
+          "label": "D",
+          "html": "day. By"
+        }
+      ],
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-18.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-19",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 19,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-19.png\" alt=\"Question 19\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "focuses"
+        },
+        {
+          "label": "B",
+          "html": "would be focusing"
+        },
+        {
+          "label": "C",
+          "html": "focusing"
+        },
+        {
+          "label": "D",
+          "html": "would focus"
+        }
+      ],
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-19.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-20",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 20,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-20.png\" alt=\"Question 20\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "is paving"
+        },
+        {
+          "label": "B",
+          "html": "are paving"
+        },
+        {
+          "label": "C",
+          "html": "have paved"
+        },
+        {
+          "label": "D",
+          "html": "paving"
+        }
+      ],
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-20.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-21",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 21,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-21.png\" alt=\"Question 21\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "1720"
+        },
+        {
+          "label": "B",
+          "html": "1720:"
+        },
+        {
+          "label": "C",
+          "html": "1720 and"
+        },
+        {
+          "label": "D",
+          "html": "1720,"
+        }
+      ],
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-21.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-22",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 22,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-22.png\" alt=\"Question 22\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "By comparison,"
+        },
+        {
+          "label": "B",
+          "html": "Similarly,"
+        },
+        {
+          "label": "C",
+          "html": "Ultimately,"
+        },
+        {
+          "label": "D",
+          "html": "In addition,"
+        }
+      ],
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-22.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-23",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 23,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-23.png\" alt=\"Question 23\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "By contrast,"
+        },
+        {
+          "label": "B",
+          "html": "Accordingly,"
+        },
+        {
+          "label": "C",
+          "html": "Regardless,"
+        },
+        {
+          "label": "D",
+          "html": "In addition,"
+        }
+      ],
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-23.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-24",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 24,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-24.png\" alt=\"Question 24\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "In response,"
+        },
+        {
+          "label": "B",
+          "html": "Indeed,"
+        },
+        {
+          "label": "C",
+          "html": "Instead,"
+        },
+        {
+          "label": "D",
+          "html": "In addition,"
+        }
+      ],
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-24.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-25",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 25,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-25.png\" alt=\"Question 25\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "for instance,"
+        },
+        {
+          "label": "B",
+          "html": "though,"
+        },
+        {
+          "label": "C",
+          "html": "moreover,"
+        },
+        {
+          "label": "D",
+          "html": "likewise,"
+        }
+      ],
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-25.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-26",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 26,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-26.png\" alt=\"Question 26\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "According to Champ and Freeman, the inefficiencies of barter economies become apparent when goods are traded between parties without the use of money."
+        },
+        {
+          "label": "B",
+          "html": "Champ and Freeman argue that inefficient barter economies can become monetary economies if a good becomes a unit of exchange."
+        },
+        {
+          "label": "C",
+          "html": "In a barter economy, Champ and Freeman contend, goods are traded directly between parties without the use of money, leading to inefficiency."
+        },
+        {
+          "label": "D",
+          "html": "The precise alignment of desires that barter economies require, Champ and Freeman contend, makes them inefficient."
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-26.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-27",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 27,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/rw-m2-27.png\" alt=\"Question 27\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Countries like San Marino and Papua New Guinea use symbols on their flags; examples include landforms and animals."
+        },
+        {
+          "label": "B",
+          "html": "Vexillologists study flags, like those of San Marino and Papua New Guinea."
+        },
+        {
+          "label": "C",
+          "html": "Many countries feature symbols on their flags, such as animals, plants, or landforms, and the study of these designs is known as vexillology."
+        },
+        {
+          "label": "D",
+          "html": "San Marino includes a landform on its flag, whereas Papua New Guinea's flag includes an animal."
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/rw-m2-27.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-01",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m1-01.png\" alt=\"Question 1\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "16"
+        },
+        {
+          "label": "B",
+          "html": "13"
+        },
+        {
+          "label": "C",
+          "html": "48"
+        },
+        {
+          "label": "D",
+          "html": "19"
+        }
+      ],
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-four/math-m1-01.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-02",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m1-02.png\" alt=\"Question 2\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "180"
+        },
+        {
+          "label": "B",
+          "html": "77"
+        },
+        {
+          "label": "C",
+          "html": "167"
+        },
+        {
+          "label": "D",
+          "html": "90"
+        }
+      ],
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-four/math-m1-02.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-03",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 3,
+      "type": "spr",
+      "stemHtml": "<img src=\"challenge-full-four/math-m1-03.png\" alt=\"Question 3\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "110",
+      "assetPaths": [
+        "challenge-full-four/math-m1-03.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-04",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 4,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m1-04.png\" alt=\"Question 4\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "51.2"
+        },
+        {
+          "label": "B",
+          "html": "19.2"
+        },
+        {
+          "label": "C",
+          "html": "35.2"
+        },
+        {
+          "label": "D",
+          "html": "22.4"
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/math-m1-04.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-05",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 5,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m1-05.png\" alt=\"Question 5\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "14"
+        },
+        {
+          "label": "B",
+          "html": "0"
+        },
+        {
+          "label": "C",
+          "html": "9"
+        },
+        {
+          "label": "D",
+          "html": "4"
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/math-m1-05.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-06",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 6,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m1-06.png\" alt=\"Question 6\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "2"
+        },
+        {
+          "label": "B",
+          "html": "4"
+        },
+        {
+          "label": "C",
+          "html": "19"
+        },
+        {
+          "label": "D",
+          "html": "30"
+        }
+      ],
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-four/math-m1-06.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-07",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 7,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m1-07.png\" alt=\"Question 7\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "576"
+        },
+        {
+          "label": "B",
+          "html": "36"
+        },
+        {
+          "label": "C",
+          "html": "4"
+        },
+        {
+          "label": "D",
+          "html": "144"
+        }
+      ],
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-four/math-m1-07.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-08",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 8,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m1-08.png\" alt=\"Question 8\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"challenge-full-four/math-m1-08-A.png\" alt=\"Choice A\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"challenge-full-four/math-m1-08-B.png\" alt=\"Choice B\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"challenge-full-four/math-m1-08-C.png\" alt=\"Choice C\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"challenge-full-four/math-m1-08-D.png\" alt=\"Choice D\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        }
+      ],
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-four/math-m1-08.png",
+        "challenge-full-four/math-m1-08-A.png",
+        "challenge-full-four/math-m1-08-B.png",
+        "challenge-full-four/math-m1-08-C.png",
+        "challenge-full-four/math-m1-08-D.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-09",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 9,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m1-09.png\" alt=\"Question 9\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<i>OP</i> = 8"
+        },
+        {
+          "label": "B",
+          "html": "The measure of angle <i>T</i> is 50°."
+        },
+        {
+          "label": "C",
+          "html": "The measure of angle <i>R</i> is 100°."
+        },
+        {
+          "label": "D",
+          "html": "<i>OP</i> = 32"
+        }
+      ],
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-four/math-m1-09.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-10",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 10,
+      "type": "spr",
+      "stemHtml": "<img src=\"challenge-full-four/math-m1-10.png\" alt=\"Question 10\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "5/9",
+      "acceptedAnswers": [
+        "5/9",
+        ".5555",
+        "0.5555",
+        ".5556",
+        "0.5556",
+        "0.555",
+        "0.556"
+      ],
+      "assetPaths": [
+        "challenge-full-four/math-m1-10.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-11",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 11,
+      "type": "spr",
+      "stemHtml": "<img src=\"challenge-full-four/math-m1-11.png\" alt=\"Question 11\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "6",
+      "assetPaths": [
+        "challenge-full-four/math-m1-11.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-12",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 12,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m1-12.png\" alt=\"Question 12\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<i>x</i> + 5"
+        },
+        {
+          "label": "B",
+          "html": "<i>x</i> + 3"
+        },
+        {
+          "label": "C",
+          "html": "<i>x</i> − 3"
+        },
+        {
+          "label": "D",
+          "html": "<i>x</i> − 4"
+        }
+      ],
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-four/math-m1-12.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-13",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 13,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m1-13.png\" alt=\"Question 13\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"challenge-full-four/math-m1-13-A.png\" alt=\"Choice A\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"challenge-full-four/math-m1-13-B.png\" alt=\"Choice B\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"challenge-full-four/math-m1-13-C.png\" alt=\"Choice C\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"challenge-full-four/math-m1-13-D.png\" alt=\"Choice D\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        }
+      ],
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-four/math-m1-13.png",
+        "challenge-full-four/math-m1-13-A.png",
+        "challenge-full-four/math-m1-13-B.png",
+        "challenge-full-four/math-m1-13-C.png",
+        "challenge-full-four/math-m1-13-D.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-14",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 14,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m1-14.png\" alt=\"Question 14\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Exactly one"
+        },
+        {
+          "label": "B",
+          "html": "Infinitely many"
+        },
+        {
+          "label": "C",
+          "html": "Exactly two"
+        },
+        {
+          "label": "D",
+          "html": "Zero"
+        }
+      ],
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-four/math-m1-14.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-15",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 15,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m1-15.png\" alt=\"Question 15\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "34<i>p</i> − <i>c</i> = 7"
+        },
+        {
+          "label": "B",
+          "html": "34<i>c</i> − <i>p</i> = 7"
+        },
+        {
+          "label": "C",
+          "html": "34<i>p</i> − <i>c</i> = −7"
+        },
+        {
+          "label": "D",
+          "html": "34<i>c</i> − <i>p</i> = −7"
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/math-m1-15.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-16",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 16,
+      "type": "spr",
+      "stemHtml": "<img src=\"challenge-full-four/math-m1-16.png\" alt=\"Question 16\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "8",
+      "assetPaths": [
+        "challenge-full-four/math-m1-16.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-17",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 17,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m1-17.png\" alt=\"Question 17\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The region where <i>x</i> &gt; 0 and <i>y</i> &gt; 0"
+        },
+        {
+          "label": "B",
+          "html": "The region where <i>x</i> &lt; 0 and <i>y</i> &lt; 0"
+        },
+        {
+          "label": "C",
+          "html": "The region where <i>x</i> &lt; 0 and <i>y</i> &gt; 0"
+        },
+        {
+          "label": "D",
+          "html": "The region where <i>x</i> &gt; 0 and <i>y</i> &lt; 0"
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/math-m1-17.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-18",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 18,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m1-18.png\" alt=\"Question 18\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "2"
+        },
+        {
+          "label": "B",
+          "html": "5"
+        },
+        {
+          "label": "C",
+          "html": "9"
+        },
+        {
+          "label": "D",
+          "html": "7"
+        }
+      ],
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-four/math-m1-18.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-19",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 19,
+      "type": "spr",
+      "stemHtml": "<img src=\"challenge-full-four/math-m1-19.png\" alt=\"Question 19\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "285",
+      "assetPaths": [
+        "challenge-full-four/math-m1-19.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-20",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 20,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m1-20.png\" alt=\"Question 20\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"challenge-full-four/math-m1-20-A.png\" alt=\"Choice A\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"challenge-full-four/math-m1-20-B.png\" alt=\"Choice B\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"challenge-full-four/math-m1-20-C.png\" alt=\"Choice C\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"challenge-full-four/math-m1-20-D.png\" alt=\"Choice D\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        }
+      ],
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-four/math-m1-20.png",
+        "challenge-full-four/math-m1-20-A.png",
+        "challenge-full-four/math-m1-20-B.png",
+        "challenge-full-four/math-m1-20-C.png",
+        "challenge-full-four/math-m1-20-D.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-21",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 21,
+      "type": "spr",
+      "stemHtml": "<img src=\"challenge-full-four/math-m1-21.png\" alt=\"Question 21\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "364",
+      "assetPaths": [
+        "challenge-full-four/math-m1-21.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-22",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 22,
+      "type": "spr",
+      "stemHtml": "<img src=\"challenge-full-four/math-m1-22.png\" alt=\"Question 22\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "-15",
+      "assetPaths": [
+        "challenge-full-four/math-m1-22.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-01",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m2-01.png\" alt=\"Question 1\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "−7<i>x</i><sup>6</sup> + 2<i>x</i><sup>3</sup> + 4<i>x</i> + 1"
+        },
+        {
+          "label": "B",
+          "html": "−5<i>x</i><sup>9</sup> − 10<i>x</i> − 9"
+        },
+        {
+          "label": "C",
+          "html": "−7<i>x</i><sup>6</sup> + 2<i>x</i><sup>3</sup> − 10<i>x</i> + 9"
+        },
+        {
+          "label": "D",
+          "html": "−5<i>x</i><sup>9</sup> − 4<i>x</i> + 1"
+        }
+      ],
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-four/math-m2-01.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-02",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m2-02.png\" alt=\"Question 2\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"challenge-full-four/math-m2-02-A.png\" alt=\"Choice A\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"challenge-full-four/math-m2-02-B.png\" alt=\"Choice B\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"challenge-full-four/math-m2-02-C.png\" alt=\"Choice C\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"challenge-full-four/math-m2-02-D.png\" alt=\"Choice D\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/math-m2-02.png",
+        "challenge-full-four/math-m2-02-A.png",
+        "challenge-full-four/math-m2-02-B.png",
+        "challenge-full-four/math-m2-02-C.png",
+        "challenge-full-four/math-m2-02-D.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-03",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 3,
+      "type": "spr",
+      "stemHtml": "<img src=\"challenge-full-four/math-m2-03.png\" alt=\"Question 3\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "5",
+      "assetPaths": [
+        "challenge-full-four/math-m2-03.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-04",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 4,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m2-04.png\" alt=\"Question 4\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<i>y</i> = 10<i>x</i> + 32"
+        },
+        {
+          "label": "B",
+          "html": "<i>y</i> = 10<i>x</i>"
+        },
+        {
+          "label": "C",
+          "html": "<i>y</i> = 32<i>x</i> + 10"
+        },
+        {
+          "label": "D",
+          "html": "<i>y</i> = 32<i>x</i>"
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/math-m2-04.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-05",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 5,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m2-05.png\" alt=\"Question 5\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"challenge-full-four/math-m2-05-A.png\" alt=\"Choice A\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"challenge-full-four/math-m2-05-B.png\" alt=\"Choice B\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"challenge-full-four/math-m2-05-C.png\" alt=\"Choice C\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"challenge-full-four/math-m2-05-D.png\" alt=\"Choice D\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        }
+      ],
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-four/math-m2-05.png",
+        "challenge-full-four/math-m2-05-A.png",
+        "challenge-full-four/math-m2-05-B.png",
+        "challenge-full-four/math-m2-05-C.png",
+        "challenge-full-four/math-m2-05-D.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-06",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 6,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m2-06.png\" alt=\"Question 6\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "554"
+        },
+        {
+          "label": "B",
+          "html": "−42"
+        },
+        {
+          "label": "C",
+          "html": "550"
+        },
+        {
+          "label": "D",
+          "html": "138"
+        }
+      ],
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-four/math-m2-06.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-07",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 7,
+      "type": "spr",
+      "stemHtml": "<img src=\"challenge-full-four/math-m2-07.png\" alt=\"Question 7\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "10000",
+      "assetPaths": [
+        "challenge-full-four/math-m2-07.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-08",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 8,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m2-08.png\" alt=\"Question 8\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"challenge-full-four/math-m2-08-A.png\" alt=\"Choice A\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"challenge-full-four/math-m2-08-B.png\" alt=\"Choice B\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"challenge-full-four/math-m2-08-C.png\" alt=\"Choice C\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"challenge-full-four/math-m2-08-D.png\" alt=\"Choice D\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/math-m2-08.png",
+        "challenge-full-four/math-m2-08-A.png",
+        "challenge-full-four/math-m2-08-B.png",
+        "challenge-full-four/math-m2-08-C.png",
+        "challenge-full-four/math-m2-08-D.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-09",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 9,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m2-09.png\" alt=\"Question 9\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "(<i>x</i> − 2)<sup>2</sup> + (<i>y</i> − 3)<sup>2</sup> = 625"
+        },
+        {
+          "label": "B",
+          "html": "(<i>x</i> − 2)<sup>2</sup> + (<i>y</i> − 3)<sup>2</sup> = 50"
+        },
+        {
+          "label": "C",
+          "html": "(<i>x</i> − 2)<sup>2</sup> + (<i>y</i> − 3)<sup>2</sup> = 250"
+        },
+        {
+          "label": "D",
+          "html": "(<i>x</i> − 2)<sup>2</sup> + (<i>y</i> − 3)<sup>2</sup> = 100"
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/math-m2-09.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-10",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 10,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m2-10.png\" alt=\"Question 10\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "19,208"
+        },
+        {
+          "label": "B",
+          "html": "98"
+        },
+        {
+          "label": "C",
+          "html": "392"
+        },
+        {
+          "label": "D",
+          "html": "9,604"
+        }
+      ],
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-four/math-m2-10.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-11",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 11,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m2-11.png\" alt=\"Question 11\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"challenge-full-four/math-m2-11-A.png\" alt=\"Choice A\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"challenge-full-four/math-m2-11-B.png\" alt=\"Choice B\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"challenge-full-four/math-m2-11-C.png\" alt=\"Choice C\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"challenge-full-four/math-m2-11-D.png\" alt=\"Choice D\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        }
+      ],
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-four/math-m2-11.png",
+        "challenge-full-four/math-m2-11-A.png",
+        "challenge-full-four/math-m2-11-B.png",
+        "challenge-full-four/math-m2-11-C.png",
+        "challenge-full-four/math-m2-11-D.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-12",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 12,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m2-12.png\" alt=\"Question 12\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<i>v</i> = 5<i>t</i>"
+        },
+        {
+          "label": "B",
+          "html": "<i>v</i> = 0.25<i>t</i> + 28"
+        },
+        {
+          "label": "C",
+          "html": "<i>v</i> = 0.01<i>t</i> + 28"
+        },
+        {
+          "label": "D",
+          "html": "<i>v</i> = 0.05<i>t</i> + 28"
+        }
+      ],
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-four/math-m2-12.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-13",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 13,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m2-13.png\" alt=\"Question 13\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The 50 students who were able to correctly identify the pureed food sample while wearing nose plugs"
+        },
+        {
+          "label": "B",
+          "html": "All students from the high school"
+        },
+        {
+          "label": "C",
+          "html": "The 125 students who participated in the experiment"
+        },
+        {
+          "label": "D",
+          "html": "All students from high schools in Ohio"
+        }
+      ],
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-four/math-m2-13.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-14",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 14,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m2-14.png\" alt=\"Question 14\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"challenge-full-four/math-m2-14-A.png\" alt=\"Choice A\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"challenge-full-four/math-m2-14-B.png\" alt=\"Choice B\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"challenge-full-four/math-m2-14-C.png\" alt=\"Choice C\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"challenge-full-four/math-m2-14-D.png\" alt=\"Choice D\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        }
+      ],
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-four/math-m2-14.png",
+        "challenge-full-four/math-m2-14-A.png",
+        "challenge-full-four/math-m2-14-B.png",
+        "challenge-full-four/math-m2-14-C.png",
+        "challenge-full-four/math-m2-14-D.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-15",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 15,
+      "type": "spr",
+      "stemHtml": "<img src=\"challenge-full-four/math-m2-15.png\" alt=\"Question 15\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "190",
+      "assetPaths": [
+        "challenge-full-four/math-m2-15.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-16",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 16,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m2-16.png\" alt=\"Question 16\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<i>r</i> &gt; 0 and <i>t</i> &gt; 0"
+        },
+        {
+          "label": "B",
+          "html": "<i>r</i> &gt; 0 and <i>t</i> &lt; 0"
+        },
+        {
+          "label": "C",
+          "html": "<i>r</i> &lt; 0 and <i>t</i> &gt; 0"
+        },
+        {
+          "label": "D",
+          "html": "<i>r</i> &lt; 0 and <i>t</i> &lt; 0"
+        }
+      ],
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-four/math-m2-16.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-17",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 17,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m2-17.png\" alt=\"Question 17\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"challenge-full-four/math-m2-17-A.png\" alt=\"Choice A\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"challenge-full-four/math-m2-17-B.png\" alt=\"Choice B\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"challenge-full-four/math-m2-17-C.png\" alt=\"Choice C\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"challenge-full-four/math-m2-17-D.png\" alt=\"Choice D\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        }
+      ],
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-four/math-m2-17.png",
+        "challenge-full-four/math-m2-17-A.png",
+        "challenge-full-four/math-m2-17-B.png",
+        "challenge-full-four/math-m2-17-C.png",
+        "challenge-full-four/math-m2-17-D.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-18",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 18,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m2-18.png\" alt=\"Question 18\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"challenge-full-four/math-m2-18-A.png\" alt=\"Choice A\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"challenge-full-four/math-m2-18-B.png\" alt=\"Choice B\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"challenge-full-four/math-m2-18-C.png\" alt=\"Choice C\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"challenge-full-four/math-m2-18-D.png\" alt=\"Choice D\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        }
+      ],
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-four/math-m2-18.png",
+        "challenge-full-four/math-m2-18-A.png",
+        "challenge-full-four/math-m2-18-B.png",
+        "challenge-full-four/math-m2-18-C.png",
+        "challenge-full-four/math-m2-18-D.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-19",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 19,
+      "type": "spr",
+      "stemHtml": "<img src=\"challenge-full-four/math-m2-19.png\" alt=\"Question 19\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "39",
+      "assetPaths": [
+        "challenge-full-four/math-m2-19.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-20",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 20,
+      "type": "spr",
+      "stemHtml": "<img src=\"challenge-full-four/math-m2-20.png\" alt=\"Question 20\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "40/3",
+      "acceptedAnswers": [
+        "40/3",
+        "13.33"
+      ],
+      "assetPaths": [
+        "challenge-full-four/math-m2-20.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-21",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 21,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m2-21.png\" alt=\"Question 21\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "10.39"
+        },
+        {
+          "label": "B",
+          "html": "0.97"
+        },
+        {
+          "label": "C",
+          "html": "0.29"
+        },
+        {
+          "label": "D",
+          "html": "17.66"
+        }
+      ],
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-four/math-m2-21.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-22",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 22,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-four/math-m2-22.png\" alt=\"Question 22\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "−2 and 2"
+        },
+        {
+          "label": "B",
+          "html": "7 and 13"
+        },
+        {
+          "label": "C",
+          "html": "−6 and −4"
+        },
+        {
+          "label": "D",
+          "html": "2 and 6"
+        }
+      ],
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-four/math-m2-22.png"
+      ],
+      "explanationHtml": ""
+    }
+  ]
+}
