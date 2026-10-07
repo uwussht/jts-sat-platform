@@ -219,6 +219,9 @@ JTS.data.loadQuestionFiles = function () {
 
   function prepare(q, file) {
     var noLevel = q && q.difficulty == null;
+    /* Read before the export layout is converted, which keeps only the
+       fields it knows. */
+    var code = q && (q.lessonCode || (q.meta && q.meta.lessonCode));
     if (q && (q.stemHtml !== undefined || q.correctAnswer !== undefined)) q = fromExport(q);
     var out = {};
     Object.keys(q).forEach(function (k) { out[k] = q[k]; });
@@ -226,7 +229,6 @@ JTS.data.loadQuestionFiles = function () {
     JTS.data.canonSkill(out);
     /* "lessonCode": "CH2" makes the question one of that class's own
        practice questions (the set on its page), not a Practice-page one. */
-    var code = q.lessonCode || (q.meta && q.meta.lessonCode);
     if (code) {
       out.meta.kind = 'lesson';
       out.meta.lessonCode = code;
