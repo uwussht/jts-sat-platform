@@ -6,7 +6,7 @@
    are listed by code in js/data/lesson-questions.js.
    ========================================================================== */
 JTS.data.unit({
-  code: "CH7", unit: "ch", n3: 31, n2: 31, week: 11,
+  code: "CH7", unit: "ch", section: "rw", n3: 31, n2: 31, week: 11,
   t: { en: "R&W Hard Module D",
       ru: "R&W: сложный модуль D",
       kk: "R&W: күрделі модуль D" },

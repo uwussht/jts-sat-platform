@@ -204,7 +204,9 @@ JTS.data.loadQuestionFiles = function () {
     };
     if (q.passageHtml || q.passage) out.passage = q.passageHtml || q.passage;
     if (mcq) {
-      out.options = choices.map(function (c) { return c.html != null ? c.html : c.text; });
+      out.options = choices.length
+        ? choices.map(function (c) { return c.html != null ? c.html : c.text; })
+        : (Array.isArray(q.options) ? q.options.slice() : []);
       /* A question whose picture already shows its four choices may list
          none: the student then answers with the letter buttons alone. */
       if (!out.options.length) out.options = ['', '', '', ''];
@@ -222,6 +224,7 @@ JTS.data.loadQuestionFiles = function () {
     /* Read before the export layout is converted, which keeps only the
        fields it knows. */
     var code = q && (q.lessonCode || (q.meta && q.meta.lessonCode));
+    var ownSection = q && (q.section || q.domain);
     if (q && (q.stemHtml !== undefined || q.correctAnswer !== undefined)) q = fromExport(q);
     var out = {};
     Object.keys(q).forEach(function (k) { out[k] = q[k]; });
@@ -237,6 +240,13 @@ JTS.data.loadQuestionFiles = function () {
          its questions need neither a difficulty nor a skill. */
       if (/^CH/i.test(code) && noLevel) out.difficulty = 3;
       if (!out.skillId) out.skillId = null;
+      /* With no section of its own, a class's question takes its class's:
+         a verbal Challenge (CH1, CH3 …) is Reading and Writing. */
+      var cls = JTS.data.programme && JTS.data.programme.byCode(code);
+      if (!ownSection && cls && cls.section) {
+        out.section = cls.section;
+        out.calculator = cls.section === 'math';
+      }
     }
     if (typeof out.calculator !== 'boolean') out.calculator = out.section === 'math';
     if (out.explanation) out.explanation = lang(out.explanation);

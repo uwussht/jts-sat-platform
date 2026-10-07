@@ -74,6 +74,7 @@ JTS.data.programme.units = [
    calls JTS.data.unit({...}) once with:
 
      code, unit, n3, n2, week   where it sits in the course
+     section (Challenge only)   'rw' or 'math': the section its questions are in
      t, skills                  its title and summary, in en / ru / kk
      lesson (optional)          { lead, parts: [{ title, mins, html }] }, the
                                 written lesson, generated from the course page
