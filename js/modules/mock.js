@@ -894,11 +894,18 @@
   JTS.router.register('#/mocks/result', {
     title: 'mock.resultTitle',
     render: function (root, route) {
+      /* The paper is over: the sidebar and the window come back here, since
+         the run screen hands straight on to this one when the last module
+         ends. */
+      if (JTS.fullWindow) JTS.fullWindow.leave();
       var run = runFrom(route);
       if (!run || run.status !== 'finished') { JTS.router.go('#/mocks'); return; }
 
       var screen = U.el('div.container.screen.stack-lg');
       root.appendChild(screen);
+      screen.appendChild(U.el('div.row', null, [
+        U.el('a.btn.btn-sm', { href: '#/mocks', text: '← ' + t('nav.mocks') })
+      ]));
 
       screen.appendChild(U.el('div.stack-sm', null, [
         U.el('div.row.row-wrap', null, [
