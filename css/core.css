@@ -2599,3 +2599,6 @@ img.fig { display: block; max-width: 100%; height: auto; margin: 8px 0 12px; }
 /* Challenge classes: each question is one picture; shown a little smaller
    than the column so it reads at text size. */
 .q-shell.is-challenge .q-stem img { max-width: min(100%, 600px) !important; width: auto !important; height: auto !important; }
+
+/* A completed unit: its box is filled and ticked. */
+.mat-unit.is-done .mat-state { background: var(--ok); border-color: var(--ok); color: #fff; font-weight: 800; }
