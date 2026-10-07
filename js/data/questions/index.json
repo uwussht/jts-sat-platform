@@ -11,7 +11,6 @@
     "challenge-math.json",
     "chellenge_verbal.json",
     {"file": "challenge-full-two.json", "lessonCode": "CH11", "assetBase": "assets/sat/"},
-    {"file": "challenge-full-three.json", "lessonCode": "CH12", "assetBase": "assets/sat/", "idPrefix": "ch12-"},
     "U01-words-in-context.json",
     "U02-text-structure-and-purpose.json",
     "U03-linear-equations-and-inequalities-in-one-variable.json",
@@ -35,6 +34,7 @@
     "U21-functions-polynomials-and-rational-equations.json",
     "U22-rhetorical-synthesis.json",
     "U23-transitions.json",
-    "U24-geometry-part-2.json"
+    "U24-geometry-part-2.json",
+    {"file": "challenge-full-four.json", "lessonCode": "CH12", "assetBase": "assets/sat/", "idPrefix": "ch12f4-"}
   ]
 }
