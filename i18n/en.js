@@ -415,8 +415,6 @@ JTS.dict.en = {
   'practice.resetFilters': 'Reset filters',
   'practice.answeredStatus': 'Answered status',
   'practice.marked': 'Marked for review',
-  'practice.sourceFilter': 'Source',
-  'practice.src.original': 'JTS Original', 'practice.src.licensed': 'Licensed', 'practice.src.all': 'All',
   'practice.counter': '{answered} of {total} answered',
   'practice.totalTime': 'Total time {time}',
   'practice.mode': 'Session type',

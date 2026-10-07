@@ -38,7 +38,7 @@
       difficulty: filters.difficulty.length ? filters.difficulty : null,
       status: filters.status.length ? filters.status : null,
       marked: filters.marked || null,
-      licenseStatus: filters.source
+      licenseStatus: 'all'
     };
     Object.keys(extra || {}).forEach(function (k) { f[k] = extra[k]; });
     return f;
@@ -51,7 +51,7 @@
       difficulty: filters.difficulty.length ? filters.difficulty : null,
       status: filters.status.length ? filters.status : null,
       marked: filters.marked || null,
-      licenseStatus: filters.source
+      licenseStatus: 'all'
     });
   }
 
@@ -238,13 +238,6 @@
         var i = filters.status.indexOf(v);
         if (i >= 0) filters.status.splice(i, 1); else filters.status.push(v);
       }));
-
-    row.appendChild(chipRow(t('practice.sourceFilter'),
-      [{ value: 'all', label: t('practice.src.all') },
-       { value: 'original', label: t('practice.src.original') },
-       { value: 'licensed', label: t('practice.src.licensed') }],
-      function (v) { return filters.source === v; },
-      function (v) { filters.source = v; }));
 
     row.appendChild(U.el('div.row.row-wrap', null, [
       U.el('button.chip', {

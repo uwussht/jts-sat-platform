@@ -415,8 +415,6 @@ JTS.dict.ru = {
   'practice.resetFilters': 'Сбросить фильтры',
   'practice.answeredStatus': 'Статус ответа',
   'practice.marked': 'Отмеченные',
-  'practice.sourceFilter': 'Источник',
-  'practice.src.original': 'JTS Original', 'practice.src.licensed': 'Лицензированные', 'practice.src.all': 'Все',
   'practice.counter': 'Отвечено {answered} из {total}',
   'practice.totalTime': 'Общее время {time}',
   'practice.mode': 'Тип сессии',

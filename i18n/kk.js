@@ -415,8 +415,6 @@ JTS.dict.kk = {
   'practice.resetFilters': 'Сүзгілерді тазалау',
   'practice.answeredStatus': 'Жауап күйі',
   'practice.marked': 'Белгіленгендер',
-  'practice.sourceFilter': 'Дереккөз',
-  'practice.src.original': 'JTS Original', 'practice.src.licensed': 'Лицензиялық', 'practice.src.all': 'Барлығы',
   'practice.counter': '{total} ішінен {answered} жауап берілді',
   'practice.totalTime': 'Жалпы уақыт {time}',
   'practice.mode': 'Сессия түрі',
