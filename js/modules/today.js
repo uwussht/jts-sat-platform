@@ -110,61 +110,6 @@
     return { el: el, stop: function () { clearInterval(id); } };
   }
 
-  /* ------------------------------------------------- this week's full test */
-
-  /**
-   * The programme sets one full practice test a week, from week one. This card
-   * is that test and nothing else: which week's it is, whether the two
-   * sections are behind you, and how long is left to sit it.
-   */
-  function weeklyCard(state) {
-    if (!JTS.mock) return null;
-    var monday = U.weekStart(U.today());
-    var sunday = U.addDays(monday, 6);
-    var from = monday.getTime(), to = sunday.getTime() + DAY - 1;
-
-    var runs = JTS.mock.all().filter(function (r) {
-      var at = r.finishedAt || r.startedAt;
-      return at >= from && at <= to;
-    });
-    var run = runs[runs.length - 1] || null;
-
-    function sectionDone(sec) {
-      if (!run) return false;
-      var mods = run.modules.filter(function (m) { return m.section === sec; });
-      return mods.length > 0 && mods.every(function (m) { return m.correct !== null; });
-    }
-    var v = sectionDone('rw'), m = sectionDone('math');
-    var doneN = (v ? 1 : 0) + (m ? 1 : 0);
-    var past = Date.now() > to;
-    var status = doneN === 2 ? 'done' : past ? 'late' : 'open';
-
-    var head = U.el('div.stack-sm', null, [
-      U.el('div.eyebrow', { text: t('today.weekly.title') }),
-      U.el('div.h3', {
-        text: t('today.weekly.set', {
-          from: U.fmtDate(monday, S.settings().uiLang),
-          to: U.fmtDate(sunday, S.settings().uiLang)
-        })
-      }),
-      U.el('div.wk-status.is-' + status, { text: t('today.weekly.' + status) }),
-      U.el('div.small.muted', {
-        text: t('today.weekly.until', {
-          when: U.fmtDate(sunday, S.settings().uiLang)
-        }) + ' · ' + t('today.weekly.progress', { done: doneN, total: 2 })
-      }),
-      U.el('div.row.wk-chips', null, [
-        U.el('span.wk-chip' + (v ? '.is-done' : ''), { text: (v ? '●' : '○') + ' ' + t('today.weekly.v') }),
-        U.el('span.wk-chip' + (m ? '.is-done' : ''), { text: (m ? '●' : '○') + ' ' + t('today.weekly.m') })
-      ])
-    ]);
-
-    return U.el('a.card.wk-card', { href: '#/mocks', id: 'today-weekly' }, [
-      head,
-      U.el('span.wk-go', { text: '❯', 'aria-hidden': 'true' })
-    ]);
-  }
-
   /* --------------------------------------------------------- your targets */
 
   /**
@@ -262,13 +207,12 @@
          the review queue and the next checkpoint — each has a screen of its
          own, and repeating them here made the one screen opened every morning
          the longest in the product. */
-      /* The fifteen-question weekly test, then the week's full mock. */
+      /* The fifteen-question weekly test. The full mock has its own page
+         (Mock tests) and is no longer repeated here. */
       if (JTS.weeklyTest) {
         var wt = JTS.weeklyTest.card();
         if (wt) screen.appendChild(wt);
       }
-      var wk = weeklyCard(state);
-      if (wk) screen.appendChild(wk);
       screen.appendChild(targetsCard(state));
 
       /* The clock ticks once a second; the router calls this when the screen
