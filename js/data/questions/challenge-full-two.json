@@ -1,0 +1,1279 @@
+{
+  "questionCount": 98,
+  "questions": [
+    {
+      "id": "rw-m1-01",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-01.png\" alt=\"Question 1\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-01.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-02",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-02.png\" alt=\"Question 2\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-02.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-03",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 3,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-03.png\" alt=\"Question 3\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-03.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-04",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 4,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-04.png\" alt=\"Question 4\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-04.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-05",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 5,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-05.png\" alt=\"Question 5\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-05.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-06",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 6,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-06.png\" alt=\"Question 6\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-06.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-07",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 7,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-07.png\" alt=\"Question 7\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-07.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-08",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 8,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-08.png\" alt=\"Question 8\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-08.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-09",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 9,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-09.png\" alt=\"Question 9\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-09.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-10",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 10,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-10.png\" alt=\"Question 10\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-10.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-11",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 11,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-11.png\" alt=\"Question 11\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-11.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-12",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 12,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-12.png\" alt=\"Question 12\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-12.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-13",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 13,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-13.png\" alt=\"Question 13\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-13.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-14",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 14,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-14.png\" alt=\"Question 14\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-14.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-15",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 15,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-15.png\" alt=\"Question 15\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-15.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-16",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 16,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-16.png\" alt=\"Question 16\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-16.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-17",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 17,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-17.png\" alt=\"Question 17\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-17.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-18",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 18,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-18.png\" alt=\"Question 18\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-18.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-19",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 19,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-19.png\" alt=\"Question 19\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-19.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-20",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 20,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-20.png\" alt=\"Question 20\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-20.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-21",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 21,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-21.png\" alt=\"Question 21\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-21.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-22",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 22,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-22.png\" alt=\"Question 22\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-22.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-23",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 23,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-23.png\" alt=\"Question 23\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-23.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-24",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 24,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-24.png\" alt=\"Question 24\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-24.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-25",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 25,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-25.png\" alt=\"Question 25\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-25.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-26",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 26,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-26.png\" alt=\"Question 26\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-26.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m1-27",
+      "section": "reading-writing",
+      "module": 1,
+      "questionNumber": 27,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m1-27.png\" alt=\"Question 27\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/rw-m1-27.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-01",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-01.png\" alt=\"Question 1\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-01.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-02",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-02.png\" alt=\"Question 2\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-02.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-03",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 3,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-03.png\" alt=\"Question 3\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-03.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-04",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 4,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-04.png\" alt=\"Question 4\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-04.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-05",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 5,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-05.png\" alt=\"Question 5\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-05.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-06",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 6,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-06.png\" alt=\"Question 6\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-06.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-07",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 7,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-07.png\" alt=\"Question 7\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-07.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-08",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 8,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-08.png\" alt=\"Question 8\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-08.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-09",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 9,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-09.png\" alt=\"Question 9\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-09.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-10",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 10,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-10.png\" alt=\"Question 10\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-10.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-11",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 11,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-11.png\" alt=\"Question 11\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-11.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-12",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 12,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-12.png\" alt=\"Question 12\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-12.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-13",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 13,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-13.png\" alt=\"Question 13\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-13.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-14",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 14,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-14.png\" alt=\"Question 14\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-14.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-15",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 15,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-15.png\" alt=\"Question 15\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-15.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-16",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 16,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-16.png\" alt=\"Question 16\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-16.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-17",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 17,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-17.png\" alt=\"Question 17\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-17.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-18",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 18,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-18.png\" alt=\"Question 18\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-18.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-19",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 19,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-19.png\" alt=\"Question 19\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-19.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-20",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 20,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-20.png\" alt=\"Question 20\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-20.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-21",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 21,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-21.png\" alt=\"Question 21\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-21.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-22",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 22,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-22.png\" alt=\"Question 22\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-22.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-23",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 23,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-23.png\" alt=\"Question 23\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-23.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-24",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 24,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-24.png\" alt=\"Question 24\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-24.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-25",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 25,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-25.png\" alt=\"Question 25\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-25.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-26",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 26,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-26.png\" alt=\"Question 26\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-26.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "rw-m2-27",
+      "section": "reading-writing",
+      "module": 2,
+      "questionNumber": 27,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/rw-m2-27.png\" alt=\"Question 27\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/rw-m2-27.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-01",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 1,
+      "type": "spr",
+      "stemHtml": "<img src=\"challenge-full-two/math-m1-01.png\" alt=\"Question 1\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "72",
+      "assetPaths": [
+        "challenge-full-two/math-m1-01.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-02",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m1-02.png\" alt=\"Question 2\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-two/math-m1-02.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-03",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 3,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m1-03.png\" alt=\"Question 3\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/math-m1-03.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-04",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 4,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m1-04.png\" alt=\"Question 4\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/math-m1-04.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-05",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 5,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m1-05.png\" alt=\"Question 5\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/math-m1-05.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-06",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 6,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m1-06.png\" alt=\"Question 6\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/math-m1-06.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-07",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 7,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m1-07.png\" alt=\"Question 7\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/math-m1-07.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-08",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 8,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m1-08.png\" alt=\"Question 8\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-two/math-m1-08.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-09",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 9,
+      "type": "spr",
+      "stemHtml": "<img src=\"challenge-full-two/math-m1-09.png\" alt=\"Question 9\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "252",
+      "assetPaths": [
+        "challenge-full-two/math-m1-09.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-10",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 10,
+      "type": "spr",
+      "stemHtml": "<img src=\"challenge-full-two/math-m1-10.png\" alt=\"Question 10\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "31500",
+      "assetPaths": [
+        "challenge-full-two/math-m1-10.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-11",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 11,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m1-11.png\" alt=\"Question 11\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/math-m1-11.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-12",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 12,
+      "type": "spr",
+      "stemHtml": "<img src=\"challenge-full-two/math-m1-12.png\" alt=\"Question 12\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "18",
+      "assetPaths": [
+        "challenge-full-two/math-m1-12.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-13",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 13,
+      "type": "spr",
+      "stemHtml": "<img src=\"challenge-full-two/math-m1-13.png\" alt=\"Question 13\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "580.6",
+      "assetPaths": [
+        "challenge-full-two/math-m1-13.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-14",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 14,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m1-14.png\" alt=\"Question 14\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-two/math-m1-14.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-15",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 15,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m1-15.png\" alt=\"Question 15\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/math-m1-15.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-16",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 16,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m1-16.png\" alt=\"Question 16\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/math-m1-16.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-17",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 17,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m1-17.png\" alt=\"Question 17\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/math-m1-17.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-18",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 18,
+      "type": "spr",
+      "stemHtml": "<img src=\"challenge-full-two/math-m1-18.png\" alt=\"Question 18\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "84",
+      "assetPaths": [
+        "challenge-full-two/math-m1-18.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-19",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 19,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m1-19.png\" alt=\"Question 19\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-two/math-m1-19.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-20",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 20,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m1-20.png\" alt=\"Question 20\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-two/math-m1-20.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-21",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 21,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m1-21.png\" alt=\"Question 21\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/math-m1-21.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m1-22",
+      "section": "math",
+      "module": 1,
+      "questionNumber": 22,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m1-22.png\" alt=\"Question 22\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/math-m1-22.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-01",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m2-01.png\" alt=\"Question 1\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/math-m2-01.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-02",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m2-02.png\" alt=\"Question 2\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-two/math-m2-02.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-03",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 3,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m2-03.png\" alt=\"Question 3\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/math-m2-03.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-04",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 4,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m2-04.png\" alt=\"Question 4\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/math-m2-04.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-05",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 5,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m2-05.png\" alt=\"Question 5\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/math-m2-05.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-06",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 6,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m2-06.png\" alt=\"Question 6\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/math-m2-06.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-07",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 7,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m2-07.png\" alt=\"Question 7\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-two/math-m2-07.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-08",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 8,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m2-08.png\" alt=\"Question 8\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/math-m2-08.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-09",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 9,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m2-09.png\" alt=\"Question 9\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/math-m2-09.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-10",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 10,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m2-10.png\" alt=\"Question 10\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-two/math-m2-10.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-11",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 11,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m2-11.png\" alt=\"Question 11\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/math-m2-11.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-12",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 12,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m2-12.png\" alt=\"Question 12\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/math-m2-12.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-13",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 13,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m2-13.png\" alt=\"Question 13\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "D",
+      "assetPaths": [
+        "challenge-full-two/math-m2-13.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-14",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 14,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m2-14.png\" alt=\"Question 14\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/math-m2-14.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-15",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 15,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m2-15.png\" alt=\"Question 15\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-two/math-m2-15.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-16",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 16,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m2-16.png\" alt=\"Question 16\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-two/math-m2-16.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-17",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 17,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m2-17.png\" alt=\"Question 17\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/math-m2-17.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-18",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 18,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m2-18.png\" alt=\"Question 18\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "C",
+      "assetPaths": [
+        "challenge-full-two/math-m2-18.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-19",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 19,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m2-19.png\" alt=\"Question 19\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "A",
+      "assetPaths": [
+        "challenge-full-two/math-m2-19.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-20",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 20,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m2-20.png\" alt=\"Question 20\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-two/math-m2-20.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-21",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 21,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m2-21.png\" alt=\"Question 21\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-two/math-m2-21.png"
+      ],
+      "explanationHtml": ""
+    },
+    {
+      "id": "math-m2-22",
+      "section": "math",
+      "module": 2,
+      "questionNumber": 22,
+      "type": "mcq",
+      "stemHtml": "<img src=\"challenge-full-two/math-m2-22.png\" alt=\"Question 22\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "correctAnswer": "B",
+      "assetPaths": [
+        "challenge-full-two/math-m2-22.png"
+      ],
+      "explanationHtml": ""
+    }
+  ]
+}

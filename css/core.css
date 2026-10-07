@@ -129,6 +129,69 @@ a { color: var(--brand-600); text-decoration: none; }
 a:hover { text-decoration: underline; }
 [hidden] { display: none !important; }
 
+/* SAT Math: keep text + inline math on the same line */
+.sat-source-render .sat-source-line {
+  display: inline;
+}
+
+.sat-source-render .sat-source-line + .sat-source-line::before {
+  content: " ";
+}
+
+.sat-question-text {
+  display: block;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.question-text img {
+  width: auto !important;
+  height: 1.5em !important;
+  vertical-align: middle;
+}
+
+.answer-option img {
+  width: auto !important;
+  max-width: 300px !important;
+  max-height: 110px !important;
+}
+
+.question-visual img,
+img.question-visual {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+}
+
+.sat-question-text .sat-inline-math {
+  display: inline-block !important;
+  vertical-align: -0.22em;
+  margin: 0 0.08em;
+}
+
+/* Small math images must behave like characters inside a sentence */
+.sat-inline-math,
+.sat-source-render img.m {
+  display: inline-block !important;
+  width: auto;
+  max-width: none;
+  vertical-align: -0.22em;
+  margin: 0 0.08em;
+}
+
+/* Don't let wrappers force line breaks */
+.sat-source-render p {
+  display: inline;
+  margin: 0;
+}
+
+.sat-display-math,
+.sat-question-visual,
+.sat-source-render .fig {
+  display: block !important;
+  margin: 10px 0 16px;
+}
+
 :focus-visible {
   outline: 2px solid var(--brand-600);
   outline-offset: 2px;

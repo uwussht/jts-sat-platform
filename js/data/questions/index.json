@@ -1,3 +1,16 @@
 {
-  "files": []
+  "files": [
+    "questions-m-adv.json",
+    "questions-m-alg.json",
+    "questions-m-psda.json",
+    "questions-m-geo.json",
+    "rw_ii_questions.json",
+    "rw_cs_questions.json",
+    "rw_ei_questions.json",
+    "rw_sec_questions.json",
+    "challenge-math.json",
+    "chellenge_verbal.json",
+    {"file": "challenge-full-two.json", "lessonCode": "CH11", "assetBase": "assets/sat/"},
+    {"file": "challenge-full-three.json", "lessonCode": "CH12", "assetBase": "assets/sat/", "idPrefix": "ch12-"}
+  ]
 }
