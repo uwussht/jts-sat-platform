@@ -1261,7 +1261,10 @@
         if (!q.id) return problems.push({ id: '(none)', message: 'missing id' });
         if (ids[q.id]) bad('duplicate id'); else ids[q.id] = 1;
         if (['rw', 'math'].indexOf(q.section) < 0) bad('bad section');
-        if (!JTS.skills.get(q.skillId)) bad('unknown skillId ' + q.skillId);
+        /* A class's own question may have no topic (a Challenge set mixes
+           them); a named topic still has to exist. */
+        var topicless = q.skillId == null && q.meta && q.meta.kind === 'lesson';
+        if (!topicless && !JTS.skills.get(q.skillId)) bad('unknown skillId ' + q.skillId);
         if ([1, 2, 3].indexOf(q.difficulty) < 0) bad('difficulty must be 1|2|3');
         if (['mcq', 'spr'].indexOf(q.type) < 0) bad('bad type');
         var isPaper = !!(q.meta && q.meta.kind === 'paper');

@@ -107,6 +107,8 @@ JTS.data.jtsMeta = function (ref, overrides) {
  * A question with "lessonCode": "CH2" (or "U5") belongs to that class: it
  * is added, in file order, to the practice set on the class's page and kept
  * out of the Practice page. One file can hold the questions of many classes.
+ * Such a question may leave out "skill" (it then counts towards no topic),
+ * and a Challenge question may leave out "difficulty" (it is hard).
  *
  * A JSON question with the same id as one already loaded replaces it, so a
  * .js topic file can be moved to JSON one file at a time.
@@ -210,6 +212,7 @@ JTS.data.loadQuestionFiles = function () {
   }
 
   function prepare(q, file) {
+    var noLevel = q && q.difficulty == null;
     if (q && (q.stemHtml !== undefined || q.correctAnswer !== undefined)) q = fromExport(q);
     var out = {};
     Object.keys(q).forEach(function (k) { out[k] = q[k]; });
@@ -222,6 +225,10 @@ JTS.data.loadQuestionFiles = function () {
       out.meta.kind = 'lesson';
       out.meta.lessonCode = code;
       delete out.lessonCode;
+      /* A Challenge class is hard-module practice with no single topic:
+         its questions need neither a difficulty nor a skill. */
+      if (/^CH/i.test(code) && noLevel) out.difficulty = 3;
+      if (!out.skillId) out.skillId = null;
     }
     if (typeof out.calculator !== 'boolean') out.calculator = out.section === 'math';
     if (out.explanation) out.explanation = lang(out.explanation);
