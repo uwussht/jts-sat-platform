@@ -870,6 +870,11 @@
           if (input.value && !v.ok) { err.textContent = t('q.spr.err.' + v.code); err.hidden = false; }
           else err.hidden = true;
           input.setAttribute('aria-invalid', String(!!input.value && !v.ok));
+          /* The footer is drawn once per question; typing only changes the
+             answer, so Check is switched on here as soon as there is one. */
+          Array.prototype.forEach.call(footer.querySelectorAll('.qf-check'), function (b) {
+            b.disabled = !input.value;
+          });
           save();
         });
 
