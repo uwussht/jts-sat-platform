@@ -496,16 +496,6 @@
         screen.appendChild(U.el('div.notice.notice-warn', { text: t('plan.provisional') }));
       }
 
-      var done = JTS.planner.allLessons().filter(function (l) { return l.status === 'done'; }).length;
-      var total = JTS.planner.allLessons().length;
-
-      screen.appendChild(U.el('div.card.stack-sm', null, [
-        ui.bar(done, total || 1, 'bar-ok'),
-        U.el('div.small.muted', {
-          text: done + ' / ' + total + ' · ' + t('plan.status.done')
-        })
-      ]));
-
       /* The month, the week and the list are three views of the same lessons,
          and the switch between them sits in the calendar's own toolbar rather
          than above it — on a calendar that control belongs next to the month
