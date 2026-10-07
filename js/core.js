@@ -2387,7 +2387,11 @@
   JTS.boot = function () {
     /* Questions kept as JSON (js/data/questions/) arrive by fetch; the app
        starts once they are in, or straight away if there are none. */
-    var load = JTS.data.loadQuestionFiles ? JTS.data.loadQuestionFiles() : Promise.resolve(0);
+    var load = Promise.all([
+      JTS.data.loadQuestionFiles ? JTS.data.loadQuestionFiles() : 0,
+      /* Written lessons kept as JSON (js/data/lessons/) the same way. */
+      JTS.data.loadLessonFiles ? JTS.data.loadLessonFiles() : 0
+    ]);
     load.then(start, start);
   };
 

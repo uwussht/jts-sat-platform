@@ -945,3 +945,18 @@ too: `stemHtml`, `choices` (`[{label, html}]`), `correctAnswer`,
 Medium / Hard; skill names are matched to the topics in `skills.js`. A JSON
 question with the same `id` as one in a `.js` file replaces it. The files are read when the app starts, so the
 app must be served over http (Live Server or any local server).
+
+## Lessons as JSON files
+
+A unit's written lesson can live in `js/data/lessons/` instead of its
+`js/data/units/U<n>.js` file. List the files in `js/data/lessons/index.json`
+(`{ "files": ["U1.json"] }`); each file holds one lesson or a list of them:
+
+```json
+{ "code": "U1",
+  "lead": "<p>Opening paragraph</p>",
+  "parts": [ { "title": "Part 1 · Reading the blank", "mins": "10 min", "html": "<p>…</p>" } ] }
+```
+
+A JSON lesson replaces the one in the unit file. A unit's practice tasks go
+in a question file in `js/data/questions/` with `"lessonCode": "U1"`.

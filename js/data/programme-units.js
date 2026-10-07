@@ -100,6 +100,53 @@ JTS.data.unit = function (def) {
   if (def.drill) P.drills[def.code] = def.drill;
 };
 
+/* ------------------------------------------------------ lessons kept as JSON
+   js/data/lessons/index.json lists files: { "files": ["U1.json", ...] }.
+   A file holds one lesson or a list of them:
+
+     { "code": "U1",
+       "lead": "<p>The opening paragraph</p>",          optional
+       "parts": [ { "title": "Part 1 · Reading the blank",
+                    "mins": "10 min",                     optional
+                    "html": "<p>…</p>" }, … ] }
+
+   A lesson from JSON replaces the one written in the unit's .js file, so a
+   unit can be moved to JSON one at a time. Fetched at start-up, like the
+   question files. */
+JTS.data.loadLessonFiles = function () {
+  var base = 'js/data/lessons/';
+  function get(path) {
+    return fetch(base + path, { cache: 'no-cache' }).then(function (r) {
+      if (!r.ok) throw new Error(path + ': HTTP ' + r.status);
+      return r.json();
+    });
+  }
+  return get('index.json').then(function (idx) {
+    var files = (idx && idx.files) || [];
+    return Promise.all(files.map(function (f) {
+      return get(f).catch(function (e) {
+        console.error('[JTS] lesson file not loaded — ' + e.message);
+        return [];
+      });
+    })).then(function (lists) {
+      var n = 0;
+      [].concat.apply([], lists.map(function (d) { return Array.isArray(d) ? d : (d && d.lessons) || [d]; }))
+        .forEach(function (l) {
+          if (!l || !l.code || !Array.isArray(l.parts)) return;
+          JTS.data.programme.teach[l.code] = { lead: l.lead || '', parts: l.parts.map(function (p) {
+            return { title: p.title || '', mins: p.mins || '', html: p.html || '' };
+          }) };
+          n++;
+        });
+      if (n) console.info('[JTS] ' + n + ' lesson' + (n === 1 ? '' : 's') + ' loaded from JSON');
+      return n;
+    });
+  }).catch(function (e) {
+    console.warn('[JTS] no JSON lessons loaded — ' + e.message);
+    return 0;
+  });
+};
+
 /* ------------------------------------------------- each unit's practice topics
    The Practice-page topics a unit is practised under: the plan's Practice
    button opens Practice with these selected. A Challenge class has none. */
