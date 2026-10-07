@@ -10,8 +10,5 @@ JTS.data.unit({
   t: { en: "R&W Hard Module C",
       ru: "R&W: сложный модуль C",
       kk: "R&W: күрделі модуль C" },
-  skills: { en: "Inferences, Cross-Text, Central Ideas (Classes 4, 7, 13).",
-           ru: "Выводы, два текста, главная мысль (уроки 4, 7, 13).",
-           kk: "Қорытындылар, екі мәтін, негізгі ой (4, 7, 13 сабақ)." },
   drill: {"hard": true}
 });

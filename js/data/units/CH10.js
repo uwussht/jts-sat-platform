@@ -10,8 +10,5 @@ JTS.data.unit({
   t: { en: "Math Hard Module E",
       ru: "Math: сложный модуль E",
       kk: "Math: күрделі модуль E" },
-  skills: { en: "Mixed, hardest-difficulty only, student-produced responses.",
-           ru: "Смешанный, только самые сложные, задания с вводом ответа.",
-           kk: "Аралас, тек ең күрделілері, жауабын өзі енгізетін тапсырмалар." },
   drill: {"hard": true}
 });

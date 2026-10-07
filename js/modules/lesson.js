@@ -260,10 +260,11 @@
           drill.hard ? U.el('span.badge.badge-warn', { text: t('lesson.hard') }) : null
         ]),
         U.el('div.h2', { text: pick(lesson.t) }),
-        U.el('div.stack-sm', null, [
+        /* A Challenge class mixes every topic, so it has no summary. */
+        lesson.skills ? U.el('div.stack-sm', null, [
           U.el('div.stat-label', { text: t('lesson.mustDo') }),
           U.el('p', { text: pick(lesson.skills) })
-        ])
+        ]) : null
       ]));
 
       /* --------------------------------------------------- the lesson */

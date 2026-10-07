@@ -10,8 +10,5 @@ JTS.data.unit({
   t: { en: "R&W Hard Module A",
       ru: "R&W: сложный модуль A",
       kk: "R&W: күрделі модуль A" },
-  skills: { en: "Baseline hard module. Focus on Words in Context and Text Structure (Classes 1–2).",
-           ru: "Стартовый сложный модуль. Фокус: Words in Context и структура текста (уроки 1–2).",
-           kk: "Бастапқы күрделі модуль. Назарда: Words in Context және мәтін құрылымы (1–2 сабақ)." },
   drill: {"hard": true}
 });

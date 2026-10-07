@@ -10,8 +10,5 @@ JTS.data.unit({
   t: { en: "Math Hard Module C",
       ru: "Math: сложный модуль C",
       kk: "Math: күрделі модуль C" },
-  skills: { en: "Ratios, percents, statistics, probability, margin of error (Classes 15, 17).",
-           ru: "Пропорции, проценты, статистика, вероятность, погрешность (уроки 15, 17).",
-           kk: "Қатынастар, пайыздар, статистика, ықтималдық, қателік (15, 17 сабақ)." },
   drill: {"hard": true}
 });

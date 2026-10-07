@@ -10,8 +10,5 @@ JTS.data.unit({
   t: { en: "R&W Hard Module E",
       ru: "R&W: сложный модуль E",
       kk: "R&W: күрделі модуль E" },
-  skills: { en: "Mixed, hardest-difficulty only. Target: 30 min finish.",
-           ru: "Смешанный, только самые сложные. Цель: уложиться в 30 минут.",
-           kk: "Аралас, тек ең күрделілері. Мақсат: 30 минутта бітіру." },
   drill: {"hard": true}
 });

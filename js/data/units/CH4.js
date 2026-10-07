@@ -10,8 +10,5 @@ JTS.data.unit({
   t: { en: "Math Hard Module B",
       ru: "Math: сложный модуль B",
       kk: "Math: күрделі модуль B" },
-  skills: { en: "Advanced Math: quadratics, equivalent expressions, exponentials, radicals, functions, polynomials (Classes 9, 11, 12, 21).",
-           ru: "Advanced Math: квадратичные, равносильные выражения, показательные, корни, функции, многочлены (уроки 9, 11, 12, 21).",
-           kk: "Advanced Math: квадраттық, тең өрнектер, көрсеткіштік, түбірлер, функциялар, көпмүшелер (9, 11, 12, 21 сабақ)." },
   drill: {"hard": true}
 });

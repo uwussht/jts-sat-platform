@@ -10,8 +10,5 @@ JTS.data.unit({
   t: { en: "Full Hard Simulation I",
       ru: "Полная сложная симуляция I",
       kk: "Толық күрделі симуляция I" },
-  skills: { en: "Full adaptive test under real conditions (Bluebook).",
-           ru: "Полный адаптивный тест в реальных условиях (Bluebook).",
-           kk: "Нақты жағдайдағы толық адаптивті тест (Bluebook)." },
   drill: {"hard": true}
 });

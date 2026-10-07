@@ -10,8 +10,5 @@ JTS.data.unit({
   t: { en: "R&W Hard Module D",
       ru: "R&W: сложный модуль D",
       kk: "R&W: күрделі модуль D" },
-  skills: { en: "Boundaries, Form/Structure/Sense, Synthesis, Transitions (Classes 14, 16, 19, 22, 23).",
-           ru: "Границы предложений, Form/Structure/Sense, синтез, связки (уроки 14, 16, 19, 22, 23).",
-           kk: "Сөйлем шекаралары, Form/Structure/Sense, синтез, байланыстырғыштар (14, 16, 19, 22, 23 сабақ)." },
   drill: {"hard": true}
 });

@@ -10,8 +10,5 @@ JTS.data.unit({
   t: { en: "R&W Hard Module B",
       ru: "R&W: сложный модуль B",
       kk: "R&W: күрделі модуль B" },
-  skills: { en: "Command of Evidence: textual and quantitative (Classes 8, 10).",
-           ru: "Доказательства из текста и из данных (уроки 8, 10).",
-           kk: "Мәтіннен және деректен дәлел (8, 10 сабақ)." },
   drill: {"hard": true}
 });

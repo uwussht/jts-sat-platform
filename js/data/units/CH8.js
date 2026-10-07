@@ -10,8 +10,5 @@ JTS.data.unit({
   t: { en: "Math Hard Module D",
       ru: "Math: сложный модуль D",
       kk: "Math: күрделі модуль D" },
-  skills: { en: "Geometry, circles, trigonometry (Classes 20, 24; completing the square from Class 11).",
-           ru: "Геометрия, окружности, тригонометрия (уроки 20, 24; полный квадрат из урока 11).",
-           kk: "Геометрия, шеңберлер, тригонометрия (20, 24 сабақ; толық квадрат — 11 сабақтан)." },
   drill: {"hard": true}
 });

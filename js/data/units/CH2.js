@@ -10,8 +10,5 @@ JTS.data.unit({
   t: { en: "Math Hard Module A",
       ru: "Math: сложный модуль A",
       kk: "Math: күрделі модуль A" },
-  skills: { en: "Baseline hard module. Focus on linear equations, systems and inequalities (Classes 3, 5, 6, 18).",
-           ru: "Стартовый сложный модуль. Фокус: линейные уравнения, системы и неравенства (уроки 3, 5, 6, 18).",
-           kk: "Бастапқы күрделі модуль. Назарда: сызықтық теңдеулер, жүйелер және теңсіздіктер (3, 5, 6, 18 сабақ)." },
   drill: {"hard": true}
 });

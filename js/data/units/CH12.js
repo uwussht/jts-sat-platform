@@ -10,8 +10,5 @@ JTS.data.unit({
   t: { en: "Full Hard Simulation II",
       ru: "Полная сложная симуляция II",
       kk: "Толық күрделі симуляция II" },
-  skills: { en: "Final simulation one week before test day.",
-           ru: "Финальная симуляция за неделю до экзамена.",
-           kk: "Емтиханға бір апта қалғандағы соңғы симуляция." },
   drill: {"hard": true}
 });

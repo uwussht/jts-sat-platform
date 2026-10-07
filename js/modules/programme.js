@@ -62,7 +62,7 @@
         codeChip(l),
         U.el('b', { text: lessonName(l) })
       ]));
-      if (opts.skills) {
+      if (opts.skills && l.skills) {
         body.appendChild(U.el('div.pg-topic-text', { text: pick(l.skills) }));
       }
     });
@@ -453,7 +453,7 @@
         codeChip(l),
         U.el('span', null, [
           U.el('b', { text: lessonName(l) }),
-          U.el('span.small.muted', { text: ' — ' + pick(l.skills) })
+          l.skills ? U.el('span.small.muted', { text: ' — ' + pick(l.skills) }) : null
         ])
       ]));
     });
