@@ -2716,3 +2716,10 @@ img.fig { display: block; max-width: 100%; height: auto; margin: 8px 0 12px; }
 .pp-tile { border: 1px solid var(--border); border-radius: var(--r-lg); padding: 16px; display: flex; flex-direction: column; justify-content: space-between; gap: 14px; background: var(--surface); }
 .pp-tile:hover { border-color: var(--brand-300, var(--border-strong)); }
 .pp-tile .btn { align-self: flex-start; }
+
+/* Challenge Math pictured as one wide line: shown at full size. */
+.q-shell.is-challenge .q-content.has-wide-math,
+body.unit-focus .q-shell.is-practice.is-challenge .q-content.is-single.has-wide-math {
+  max-width: 1440px; padding-inline: max(16px, calc((100% - 1400px) / 2));
+}
+.q-shell.is-challenge .q-content.has-wide-math .q-stem img.is-wide { width: auto !important; max-width: 100% !important; }

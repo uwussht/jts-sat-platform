@@ -404,7 +404,13 @@
          full width to be readable. */
       content.addEventListener('load', function (e) {
         var img = e.target;
-        if (img && img.tagName === 'IMG' && img.naturalWidth > 1100) img.classList.add('is-wide');
+        if (img && img.tagName === 'IMG' && img.naturalWidth > 1100) {
+          img.classList.add('is-wide');
+          /* A Math question pictured as one long line reads too small in the
+             usual column, so the column widens to show it at full size. */
+          var cur = q();
+          if (cur && cur.section === 'math' && img.closest('.q-stem')) content.classList.add('has-wide-math');
+        }
       }, true);
       var footer = U.el('div.q-footer');
       main.appendChild(content);
@@ -675,6 +681,7 @@
         var question = q();
         var a = ans();
         U.clear(content);
+        content.classList.remove('has-wide-math');
         hlTargets.length = 0;
 
         if (ses.paused) {
