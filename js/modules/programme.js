@@ -153,10 +153,30 @@
 
   /* --------------------------------------------------------------- units */
 
-  /** How far the student has got, as a lesson number. */
+  /**
+   * A unit is complete once every question of its practice set has been
+   * checked, in any of its sessions. A unit with no set yet cannot be.
+   */
+  function isComplete(code) {
+    var ids = lessonSet(code);
+    if (!ids.length) return false;
+    var byQ = lessonAnswers(code, ids);
+    return ids.every(function (id) { return byQ[id] && byQ[id].submitted; });
+  }
+
+  /** How many units of the course are complete: the ticks, and the bar. */
   function doneCount() {
-    if (!JTS.planner || !JTS.planner.allLessons) return 0;
-    return JTS.planner.allLessons().filter(function (l) { return l.status === 'done'; }).length;
+    var pw = perWeek();
+    return P.lessons.filter(function (l) {
+      return P.numberOn(l, pw) && isComplete(l.code);
+    }).length;
+  }
+
+  /** The course number of the first unit not yet complete. */
+  function nextNumber(pw) {
+    var open = P.lessons.filter(function (l) { return P.numberOn(l, pw) && !isComplete(l.code); })
+      .map(function (l) { return P.numberOn(l, pw); });
+    return open.length ? Math.min.apply(null, open) : null;
   }
 
   /** done | current | ahead, for a lesson number on this student's schedule. */
@@ -194,7 +214,8 @@
     var pw = opts.perWeek || perWeek();
     var done = opts.done === undefined ? doneCount() : opts.done;
     var n = P.numberOn(lesson, pw);
-    var st = stateOfNumber(n, done);
+    var st = isComplete(lesson.code) ? 'done'
+      : n && n === (opts.next === undefined ? nextNumber(pw) : opts.next) ? 'current' : 'ahead';
     var unit = P.unitById(lesson.unit);
     var count = JTS.programme.lessonSet ? JTS.programme.lessonSet(lesson.code).length : 0;
 
@@ -226,8 +247,9 @@
     var pw = opts.perWeek || perWeek();
     var done = opts.done === undefined ? doneCount() : opts.done;
     var box = U.el('div.mat-units');
+    var next = nextNumber(pw);
     lessonsOfSection(section, pw).forEach(function (l, i) {
-      box.appendChild(unitCard(l, { perWeek: pw, done: done, index: i + 1 }));
+      box.appendChild(unitCard(l, { perWeek: pw, done: done, next: next, index: i + 1 }));
     });
     return box;
   }
@@ -507,6 +529,7 @@
     lessonsOfSection: lessonsOfSection,
     lessonCount: lessonCount,
     doneCount: doneCount,
+    isComplete: isComplete,
     errorLogCard: errorLogCard
   };
 })();
