@@ -1,0 +1,422 @@
+[
+  {
+    "id": "u1-01",
+    "lessonCode": "U1",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Artist Marilyn Dingle’s intricate, coiled baskets are ______ sweetgrass and palmetto palm. Following a Gullah technique that originated in West Africa, Dingle skillfully winds a thin palm frond around a bunch of sweetgrass with the help of a “sewing bone” to create the basket’s signature look that no factory can reproduce.</div><p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "indicated by"
+      },
+      {
+        "label": "B",
+        "html": "handmade from"
+      },
+      {
+        "label": "C",
+        "html": "represented by"
+      },
+      {
+        "label": "D",
+        "html": "collected with"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b> because it most logically completes the text’s discussion of Marilyn Dingle’s baskets. In this context, to say that Dingle’s baskets are “handmade from” particular plants means that Dingle creates baskets herself using those plants but without using machines. The text says that Dingle “skillfully winds” parts of palmetto palm plants around sweetgrass plants to make baskets with an appearance that “no factory can reproduce.” This context suggests that Dingle’s baskets are handmade from sweetgrass and palmetto palm.</p><p><b>Choice A is incorrect</b> because the text describes how Dingle uses sweetgrass and palmetto palm to create her baskets, not how her baskets are “indicated by,” or signified by, sweetgrass and palmetto palm.</p><p><b>Choice C is incorrect</b>. Although Dingle’s baskets are described as being made using sweetgrass and palm, there’s nothing in the text to suggest that the baskets are “represented by,” or exemplified or portrayed by, sweetgrass and palmetto palm. Instead, the focus of the text is on Dingle’s use of sweetgrass and palmetto palm and the impossibility of replicating the appearance of her baskets using machines.</p><p><b>Choice D is incorrect</b> because there’s nothing in the text to suggest that Dingle’s baskets are “collected with,” or brought together in a group with, sweetgrass and palmetto palm. Instead, the text describes how Dingle uses those plants to make her baskets.</p>"
+  },
+  {
+    "id": "u1-02",
+    "lessonCode": "U1",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">The invention in 1958 of the integrated circuit (or microchip) radically altered the semiconductor industry. In fact, some historians argue that it fundamentally ______ the industry by enabling it to take advantage of mass production methods for the first time.</div><p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "overwhelmed"
+      },
+      {
+        "label": "B",
+        "html": "bypassed"
+      },
+      {
+        "label": "C",
+        "html": "obstructed"
+      },
+      {
+        "label": "D",
+        "html": "transformed"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b> because it most logically completes the text’s discussion of the invention of the integrated circuit. As used in this context, \"transformed\" means substantially changed in some way. The text states that the invention radically altered the semiconductor industry, with some historians claiming that it had a fundamental effect on the industry by allowing for mass production for the first time. This context conveys that the invention of the integrated circuit transformed the semiconductor industry.</p><p><b>Choice A is incorrect</b>. Although the text indicates that the invention of the integrated circuit significantly affected (\"radically altered\") the semiconductor industry, it doesn’t indicate that the invention \"overwhelmed\" the industry, which in this context would mean that it overcame the industry such that the industry struggled or was defeated. Instead, the text conveys that the invention’s effect was positive, since it allowed the semiconductor industry to begin making use of mass production methods.</p><p><b>Choice B is incorrect</b> because it wouldn’t make sense in context to say that the invention of the integrated circuit \"bypassed\" the semiconductor industry, which would mean it intentionally avoided the industry. The text indicates that the invention directly affected the semiconductor industry, since it made it possible for the industry to begin engaging in mass production methods.</p><p><b>Choice C is incorrect</b> because the text doesn’t indicate that the invention of the integrated circuit \"obstructed\" the semiconductor industry, which would mean that it blocked or hindered the industry in some way. Instead, the text indicates that the invention’s effect was positive, since it made it possible for the semiconductor industry to begin engaging in mass production methods.</p>"
+  },
+  {
+    "id": "u1-03",
+    "lessonCode": "U1",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Botanist Al Kovaleski has pointed out that maple trees already thrive in a wide variety of climates and thus may ______ changes in climate better than some other tree species do. The alterations maples may undergo in response to a changing climate are likely to be relatively small and easily achieved.</div><p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "relocate from"
+      },
+      {
+        "label": "B",
+        "html": "refer to"
+      },
+      {
+        "label": "C",
+        "html": "originate from"
+      },
+      {
+        "label": "D",
+        "html": "adapt to"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b> because it most logically completes the text’s discussion of how maple trees may respond to changes in climate. As used in this context, \"adapt to\" means to adjust to new conditions. The text first notes that maple trees already thrive in a wide variety of climates and then goes on to say that alterations maples may undergo are likely to be relatively small and easily achieved. This context supports the idea that maple trees will more easily adjust or adapt to a changing climate.</p><p><b>Choice A is incorrect</b>. Although the text discusses how maple trees adjust to change, the trees do not \"relocate from,\" or physically move from one place to another.</p><p><b>Choice B is incorrect</b> because \"refer to\" means to mention or allude to something, and the trees are not doing either of these actions.</p><p><b>Choice C is incorrect</b> because the text is discussing how maple trees may respond to changes in climate, not where they \"originate from,\" or came from originally.</p>"
+  },
+  {
+    "id": "u1-04",
+    "lessonCode": "U1",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Science fiction has long served as a ______ real-world technological advancements. Indeed, from Jules Verne’s 1865 novel <i>From the Earth to the Moon</i> inspiring developments in aerospace engineering to the television show <i>Star Trek</i> sparking the design of the ancestor of today’s smartphones, these narratives have spurred many actual innovations.</div><p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "constraint to"
+      },
+      {
+        "label": "B",
+        "html": "sponsor of"
+      },
+      {
+        "label": "C",
+        "html": "catalyst of"
+      },
+      {
+        "label": "D",
+        "html": "diversion from"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b> because it most logically completes the text’s discussion of science fiction’s relationship to real-world technological advancements. In this context, “catalyst of” means something that prompts the development of. The text indicates that science fiction narratives have “spurred many actual innovations,” giving as examples Verne’s From the Earth to the Moon “inspiring” aerospace engineering developments and Star Trek “sparking” the design of early analogues of smartphones. Thus, this context supports the idea that science fiction has prompted the development of, or served as a catalyst of, real-world technological advancements.</p><p><b>Choice A is incorrect</b> because saying that science fiction has served as a “constraint to,” or limitation on, real-world technological advancements would contradict the text, which indicates that science fiction has inspired technological innovation rather than inhibited it.</p><p><b>Choice B is incorrect</b> because describing science fiction as a “sponsor of,” or an entity who takes on responsibility for, real-world technological advancements wouldn’t make sense in context. A sponsor provides material support for an undertaking, often by providing funds for the undertaking or by overseeing its management, but the text describes science fiction as inspiring or sparking ideas for innovation, not as financially backing technological development or taking direct responsibility for overseeing it.</p><p><b>Choice D is incorrect</b> because in this context, a “diversion from” would mean either a distraction from or a deviation from, which contradicts the text’s examples of science fiction inspiring real-world technological advancements. It therefore wouldn’t make sense to say that science fiction has distracted people from such advancements or that the innovations science fiction depicts deviate from actual innovations.</p>"
+  },
+  {
+    "id": "u1-05",
+    "lessonCode": "U1",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">At the turn of the twentieth century, Black residents of Richmond, Virginia, had few formal options for banking and other financial services. To ______ this situation, Maggie Lena Walker chartered the St. Luke Penny Savings Bank in 1903. The bank went on to provide home loans and savings opportunities to thousands of Black families over the following decades.</div><p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "prolong"
+      },
+      {
+        "label": "B",
+        "html": "rectify"
+      },
+      {
+        "label": "C",
+        "html": "retain"
+      },
+      {
+        "label": "D",
+        "html": "highlight"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b> because it most logically completes the text’s discussion of how Maggie Lena Walker addressed the lack of financial services available to Black residents in Richmond, Virginia, at the turn of the twentieth century. In this context, \"rectify\" means to correct or remedy something undesirable. The text indicates that by chartering the St. Luke Penny Savings Bank in 1903, Walker took action to provide local Black residents with greater access to financial services like home loans and savings opportunities. This context supports the idea that she aimed to rectify the undesirable situation affecting these residents.</p><p><b>Choice A is incorrect</b> because in this context, \"prolong\" would mean to lengthen something in time. The text indicates that at the turn of the twentieth century, Black residents in Richmond, Virginia, were faced with a lack of formal banking options. The text then states that Walker founded a new bank that provided these residents with financial services. Therefore, instead of prolonging the situation, she took steps to rectify, or correct, it.</p><p><b>Choice C is incorrect</b> because in this context, \"retain\" would mean to continue to have or to keep something. According to the text, at the turn of the twentieth century, Black residents in Richmond, Virginia, had few formal banking options, and Walker chartered a new institution to provide these residents with expanded financial services; therefore, she took steps to rectify, not retain, the situation.</p><p><b>Choice D is incorrect</b> because in this context, \"highlight\" would mean to emphasize or call attention to something, but the text indicates that Walker took concrete steps beyond merely drawing attention to the situation Black residents were facing in Richmond, Virginia, at the turn of the twentieth century. According to the text, Walker worked to rectify, or correct, the lack of formal banking options that were available to these residents by establishing a bank that provided them with home loans and savings opportunities.</p>"
+  },
+  {
+    "id": "u1-06",
+    "lessonCode": "U1",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">During a 2014 archaeological dig in Spain, Vicente Lull and his team uncovered the skeleton of a woman from El Algar, an Early Bronze Age society, buried with valuable objects signaling a high position of power. This finding may persuade researchers who have argued that Bronze Age societies were ruled by men to ______ that women may have also held leadership roles.</div><p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "waive"
+      },
+      {
+        "label": "B",
+        "html": "concede"
+      },
+      {
+        "label": "C",
+        "html": "refute"
+      },
+      {
+        "label": "D",
+        "html": "require"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b> because it most logically completes the text’s discussion of the significance of the 2014 archaeological finding at El Algar.</p><ul><li>In this context, “concede” means to admit something is true after first resisting that admission.</li><li>The text indicates that some researchers believe “Bronze Age societies were ruled by men.”</li><li>But the Bronze Age burial of a woman at El Algar included “valuable objects signaling a high position of power,” which would raise the possibility that “women may have also held leadership roles.”</li><li>Thus, the text is calling into question the notion that only men were leaders in these societies and speculating that people holding this view may reconsider their opinion.</li></ul><p><b>Choice A is incorrect</b> because “waive” means to refrain from insisting that something, such as a right or a requirement, be observed; the word isn’t used, however, in contexts where someone acknowledges that an opinion they hold may be invalid, as is the case in the text.</p><p><b>Choice C is incorrect</b>. According to the text, the finding from the El Algar burial site undermines the view that Bronze Age societies were exclusively ruled by men. However, “refute” means to demonstrate that something is false and would not make sense in context. Lull and team’s finding supports the view that women may have also held leadership roles, not that they did not participate in such roles.</p><p><b>Choice D is incorrect</b> because in this context, “require” means to demand or specify as mandatory. However, it would not make sense for contemporary researchers to demand that Bronze Age “women may have also held leadership roles.”</p>"
+  },
+  {
+    "id": "u1-07",
+    "lessonCode": "U1",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Although science fiction was dominated mostly by white male authors when Octavia Butler, a Black woman, began writing, she did not view the genre as ______: Butler broke into the field with the publication of several short stories and her 1976 novel <i>Patternmaster</i>, and she later became the first science fiction writer to win a prestigious MacArthur Fellowship.</div><p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "legitimate"
+      },
+      {
+        "label": "B",
+        "html": "impenetrable"
+      },
+      {
+        "label": "C",
+        "html": "compelling"
+      },
+      {
+        "label": "D",
+        "html": "indecipherable"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b> because it most logically completes the discussion of Octavia Butler’s career. In this context, “impenetrable” means impossible to enter. The text indicates that the field of science fiction was dominated by white males when Butler, a Black woman, started writing, but she published several science fiction short stories and a novel and later won a prestigious award; that is, Butler pursued science fiction writing and had success. This context suggests that Butler didn’t view the genre as impossible to enter.</p><p><b>Choice A is incorrect</b>. In this context, “legitimate” would mean genuinely good or valid. Nothing in the text suggests that Butler didn’t think the science fiction genre was good or valid; in fact, it indicates that she pursued and made a successful career of publishing work in that field.</p><p><b>Choice C is incorrect</b>. In this context, “compelling” would mean attracting or demanding attention. The text indicates that Butler chose to write science fiction, so it wouldn’t make sense to say that she didn’t see the field as drawing her attention.</p><p><b>Choice D is incorrect</b>. To say that Butler didn’t consider science fiction “indecipherable,” or impossible to understand, would suggest that Butler did understand it. However, the text doesn’t address Butler’s ability to interpret works in the genre; rather, it focuses on Butler’s successful pursuit of writing science fiction.</p>"
+  },
+  {
+    "id": "u1-08",
+    "lessonCode": "U1",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">The work of molecular biophysicist Enrique M. De La Cruz is known for ______ traditional boundaries between academic disciplines. The university laboratory that De La Cruz runs includes engineers, biologists, chemists, and physicists, and the research the lab produces makes use of insights and techniques from all those fields.</div><p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "epitomizing"
+      },
+      {
+        "label": "B",
+        "html": "transcending"
+      },
+      {
+        "label": "C",
+        "html": "anticipating"
+      },
+      {
+        "label": "D",
+        "html": "reinforcing"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. Based on the text, we’re looking for a word that means something similar to \"mak[ing] use of insights and techniques from all those fields.\" \"Transcending\" means \"going beyond,\" so \"transcending traditional boundaries\" would mean crossing into all those various fields of research, which is exactly the meaning we want.</p><p><b>Choice A is incorrect</b>. This isn’t a logical word choice. Based on the text, we’re looking for a word that means something similar to \"mak[ing] use of insights and techniques from all those fields.\" To \"epitomize\" means to \"be a perfect example of,\" so \"epitomizing traditional boundaries\" would mean the opposite of what we want: keeping the fields of research separate.</p><p><b>Choice C is incorrect</b>. This isn’t a logical word choice. Based on the text, we’re looking for a word that means something similar to \"mak[ing] use of insights and techniques from all those fields.\" \"Anticipating\" means \"expecting\" or \"waiting for,\" and would result in a confusing sentence with an unclear meaning.</p><p><b>Choice D is incorrect</b>. This isn’t a logical word choice. Based on the text, we’re looking for a word that means something similar to \"mak[ing] use of insights and techniques from all those fields.\" \"Reinforcing traditional boundaries\" would mean the opposite: keeping the fields of research separate.</p>"
+  },
+  {
+    "id": "u1-09",
+    "lessonCode": "U1",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Rejecting the premise that the literary magazine <i>Ebony and Topaz</i> (1927) should present a unified vision of Black American identity, editor Charles S. Johnson fostered his contributors’ diverse perspectives by promoting their authorial autonomy. Johnson’s self-effacement diverged from the editorial stances of W.E.B. Du Bois and Alain Locke, whose decisions for their publications were more ______.</div><p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "proficient"
+      },
+      {
+        "label": "B",
+        "html": "dogmatic"
+      },
+      {
+        "label": "C",
+        "html": "ambiguous"
+      },
+      {
+        "label": "D",
+        "html": "unpretentious"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. A person who is \"dogmatic\" believes strongly that their principles and opinions are true. Because Du Bois and Locke are implied to have one \"unified vision\" of Black American identity that they prioritize over the \"diverse perspectives\" of different writers, they can be described as dogmatic.</p><p><b>Choice A is incorrect</b>. \"Proficient\" means \"skilled.\" Du Bois and Locke are contrasted with Johnson, but nothing in the text suggests that Johnson was not skilled at making editorial decisions. Based on the text, the three editors just have different styles; they’re not necessarily more or less skilled.</p><p><b>Choice C is incorrect</b>. \"Ambiguous\" means \"unclear\" or \"open to multiple interpretations.\" However, it’s actually Johnson who encouraged multiple interpretations (\"diverse perspectives\"). Since Du Bois and Locke are said to \"diverge\" from Johnson, we can assume that the views they published were not ambiguous, but instead clear and firm (a \"unified vision\").</p><p><b>Choice D is incorrect</b>. \"Unpretentious\" means \"not trying to impress others with greater skill or importance than is actually possessed.\" Du Bois and Locke are contrasted with Johnson, but nothing in the text suggests that Johnson is pretentious (trying to impress others).</p>"
+  },
+  {
+    "id": "u1-10",
+    "lessonCode": "U1",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Some economic historians ______ that late nineteenth- and early twentieth-century households in the United States experienced an economy of scale when it came to food purchases—they assumed that large households spent less on food per person than did small households. Economist Trevon Logan showed, however, that a close look at the available data disproves this supposition.</div><p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "surmised"
+      },
+      {
+        "label": "B",
+        "html": "contrived"
+      },
+      {
+        "label": "C",
+        "html": "questioned"
+      },
+      {
+        "label": "D",
+        "html": "regretted"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b> because it most logically completes the text’s discussion of late nineteenth- and early twentieth-century household food purchases. In this context, “surmised” means formed an idea or assumption with little evidence. The text explains that certain economic historians “assumed” that large and small households spent different amounts on food per person, but that another economist found this supposition to be false based on evidence from available data. This context suggests that the economic historians made an incorrect assumption without enough consideration of evidence.</p><p><b>Choice B is incorrect</b>. In this context, “contrived” would mean brought about or created through trickery. Nothing in the text suggests that the economic historians were deliberately trying to trick people with a claim about food purchasing behaviors in late nineteenth- and early twentieth-century households; the text simply suggests that they made an assumption about those behaviors that another historian believes isn’t supported by the available data.</p><p><b>Choice C is incorrect</b> because the text indicates that it’s Logan and not the economic historians who “questioned,” or doubted, the assumption that large and small households in the late nineteenth and early twentieth centuries spent different amounts on food per person; the economic historians are the ones who made that assumption to begin with.</p><p><b>Choice D is incorrect</b> because nothing in the text suggests that some economic historians “regretted,” or felt sad or remorseful about, the food purchasing behaviors of late nineteenth- and early twentieth-century households. The text focuses on the idea that the economic historians made an assumption about those behaviors that may not be supported by available data, not on the historians’ emotional response to what households did in the past.</p>"
+  },
+  {
+    "id": "u1-11",
+    "lessonCode": "U1",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Economist Marco Castillo and colleagues showed that nuisance costs—the time and effort people must spend to make donations—reduce charitable giving. Charities can mitigate this effect by compensating donors for nuisance costs, but those costs, though variable, are largely ______ donation size, so charities that compensate donors will likely favor attracting a few large donors over many small donors.</div><p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "supplemental to"
+      },
+      {
+        "label": "B",
+        "html": "predictive of"
+      },
+      {
+        "label": "C",
+        "html": "independent of"
+      },
+      {
+        "label": "D",
+        "html": "subsumed in"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b>. We’re told that charities that pay donors back for nuisance costs will attract a few large donors instead of many small donors. This suggests that nuisance costs are not linked to donation size.</p><p><b>Choice A is incorrect</b>. This doesn’t fit the logic of the text. If nuisance costs are supplemental to (meaning in addition to) donation size, that wouldn’t result in charities that compensate donors for those costs attracting a few large donors over many small donors.</p><p><b>Choice B is incorrect</b>. This doesn’t fit the logic of the text. If nuisance costs can predict donation size, that wouldn’t necessarily result in charities that compensate donors for those costs attracting a few large donors over many small donors.</p><p><b>Choice D is incorrect</b>. This doesn’t fit the logic of the text. If nuisance costs are subsumed in (meaning included in) donation size, that wouldn’t result in charities that compensate donors for those costs attracting a few large donors over many small donors.</p>"
+  },
+  {
+    "id": "u1-12",
+    "lessonCode": "U1",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">The results of randomized clinical trials testing the efficacy of common medical interventions sometimes fail to ______ conclusions that practitioners reach based on their real-world observations of patients. While there are several possible reasons for this, one is that practitioners may overlook confounding variables that account for the results they attribute to the interventions in question.</div><p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "circumvent"
+      },
+      {
+        "label": "B",
+        "html": "corroborate"
+      },
+      {
+        "label": "C",
+        "html": "disseminate"
+      },
+      {
+        "label": "D",
+        "html": "implement"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b> because it most logically completes the text’s discussion of a relationship between the results of randomized clinical tests of how effective common medical interventions are and the conclusions practitioners reach about such interventions in real-world settings.</p><ul><li>In this context, \"corroborate\" means confirm or support with evidence.</li><li>The text indicates that one possible explanation for the relationship being discussed is that practitioners may overlook confounding variables—that is, additional factors other than the medical interventions being investigated that affect the observed outcomes.</li><li>This means that practitioners may assume that an outcome is the direct result of a medical intervention when it is actually the result of a combination of factors.</li><li>Clinical trials take steps to rule out factors other than the one being studied, so if those extra factors are actually having an effect on real-world outcomes, the trials are likely to produce conclusions different from those practitioners reach in their real-world observations.</li><li>In other words, clinical trials may fail to corroborate practitioners’ conclusions.</li></ul><p><b>Choice A is incorrect</b> because it wouldn’t make sense to say that the results of clinical trials could \"circumvent,\" or find a way around or bypass, conclusions practitioners reach in real-world scenarios with patients; it’s possible that researchers conducting the trials might avoid engaging with practitioners’ conclusions, but findings from a study can’t choose to get around something.</p><p><b>Choice C is incorrect</b> because it wouldn’t make sense to say that the results of clinical trials could \"disseminate,\" or spread widely, conclusions practitioners reach in real-world scenarios with patients; the researchers conducting the trials might choose to draw attention to practitioners’ conclusions, but findings from a study can’t spread anything.</p><p><b>Choice D is incorrect</b> because it wouldn’t make sense to say that the results of clinical trials could \"implement,\" or put into effect, conclusions practitioners reach in real-world scenarios with patients; the researchers conducting the trials might consider practitioners’ conclusions, but findings from a study can’t put anything into effect.</p>"
+  },
+  {
+    "id": "u1-13",
+    "lessonCode": "U1",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Businesses typically try to promote themselves, but research by Michael Luca, Abhishek Nagaraj, and Gauri Subramani suggests that some do not ______ their marketing. The researchers studied restaurants in Texas and found that those listed on a popular review website (which can be done at no cost) had revenue increases of 5 percent on average, but 33 percent of restaurants studied never listed on the site.</div><p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "adorn"
+      },
+      {
+        "label": "B",
+        "html": "optimize"
+      },
+      {
+        "label": "C",
+        "html": "endorse"
+      },
+      {
+        "label": "D",
+        "html": "counteract"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b> because it most logically completes the text’s discussion of business marketing practices. In this context, \"optimize\" means make the most effective possible use of available opportunities. The text indicates that though businesses typically try to promote themselves, they don’t always make use of effective tools for doing so, pointing to research showing that 33 percent of restaurants failed to use a free listing service that increased revenue by 5 percent on average for restaurants that did use the service. The text therefore suggests that by foregoing a free and effective marketing tool, some businesses aren’t making the best use of, or optimizing, marketing opportunities.</p><p><b>Choice A is incorrect</b> because in this context, \"adorn\" would mean decorate or enhance the appearance of, and there’s nothing in the text to suggest that by failing to use a free and effective promotional tool, some businesses aren’t enhancing the appearance of their own marketing. The example in the text illustrates that some businesses aren’t utilizing an effective marketing opportunity, not that they aren’t improving the appearance of their marketing.</p><p><b>Choice C is incorrect</b> because in this context, \"endorse\" would mean openly approve or recommend, and the text’s discussion of the fact that some businesses have overlooked an effective marketing tool doesn’t support the idea that those businesses therefore don’t approve of their own marketing.</p><p><b>Choice D is incorrect</b> because in this context, saying that businesses don’t \"counteract\" their marketing would suggest that they don’t actively undermine it or make it ineffective. The text begins by stating that businesses typically try to promote themselves but then continues to imply that some businesses fail to take advantage of good opportunities to do so, citing the example of businesses that failed to use a free and effective marketing tool. Though it’s possible that those businesses that did use the site therefore didn’t unintentionally counteract their own marketing, the first sentence conveys that the text’s focus is on things that some businesses do and that some businesses don’t do when trying to promote themselves, and it wouldn’t make sense to say that any businesses would actively try to undermine their own marketing in pursuit of that goal.</p>"
+  },
+  {
+    "id": "u1-14",
+    "lessonCode": "U1",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">One popular theory of the origin of the Moon, the “big whack,” posits that a protoplanet called Theia collided with Earth, flinging debris into orbit that eventually coalesced into the Moon. Until recently, Theia was ______, but researcher Qian Yuan and colleagues now claim to have identified pieces of the protoplanet in the lowermost section of Earth’s mantle.</div><p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "desultory"
+      },
+      {
+        "label": "B",
+        "html": "spurious"
+      },
+      {
+        "label": "C",
+        "html": "veritable"
+      },
+      {
+        "label": "D",
+        "html": "notional"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b> because it most logically completes the text’s discussion of Theia and the origin of the Moon.</p><ul><li>In this context, \"notional\" means theoretical or only an idea.</li><li>The text indicates that although something was once true of Theia, the protoplanet one theory holds collided with Earth and created debris that became the Moon, researchers now claim to have identified pieces of it deep in Earth’s mantle.</li><li>In other words, having direct evidence of Theia is a new development.</li><li>This context suggests that before evidence was found, Theia was only theoretical—that is, that it was notional.</li></ul><p><b>Choice A is incorrect</b> because the text doesn’t suggest that Theia, a protoplanet, was \"desultory,\" which in this context would mean moving away from the matter at hand; indeed, the text focuses on the \"big whack\" theory of the origin of the Moon and indicates that Theia is a central part of that theory.</p><p><b>Choice B is incorrect</b> because the text makes the point that something was true of Theia until recently and suggests that this has changed now that researchers believe they have found pieces of the protoplanet deep in Earth’s mantle. It wouldn’t make sense to say that Theia was actually \"spurious,\" or false, until researchers found direct evidence of the protoplanet. (Although Theia’s existence might not have been certain, it would not have been false simply because there was no evidence of it.)</p><p><b>Choice C is incorrect</b> because the text makes the point that something was true of Theia until recently and suggests that this has changed now that researchers believe they have found pieces of the protoplanet deep in Earth’s mantle. It wouldn’t make sense to say that Theia was \"veritable,\" or real, before researchers found direct evidence of its existence: the evidence would instead confirm that Theia was real.</p>"
+  },
+  {
+    "id": "u1-15",
+    "lessonCode": "U1",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Before the Mariner 2 mission completed a successful flyby of Venus in 1962, astronomers’ ideas about the planet were little more than ______. Venus’s atmosphere is so thick that Earth-based observations had yielded very little information about the planet.</div><p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "summations"
+      },
+      {
+        "label": "B",
+        "html": "conjectures"
+      },
+      {
+        "label": "C",
+        "html": "conclusions"
+      },
+      {
+        "label": "D",
+        "html": "exemplifications"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b> because it most logically completes the text’s discussion of pre-Mariner 2 ideas about Venus.</p><ul><li>In this context, “conjectures” means guesses or inferences formed without sufficient evidence.</li><li>The text indicates that before the successful 1962 flyby, Earth-based observations of Venus had produced “very little information” because of the planet’s thick atmosphere.</li><li>The limited scope of astronomers’ earlier knowledge of Venus is also emphasized by the text’s description of their ideas as being “little more than” something before the flyby.</li><li>This context conveys that before Mariner 2 flew close to Venus, astronomers lacked the evidence needed for their ideas about the planet to be much more than conjectures, or guesses.</li></ul><p><b>Choice A is incorrect</b>. In this context, “summations” would be final conclusions reached by putting all information together. Because the text emphasizes that very little information about Venus was available before the 1962 flyby, it wouldn’t make sense to describe astronomers’ pre-Mariner 2 ideas about Venus as summations; the text suggests that astronomers didn’t have enough information to draw solid conclusions about Venus.</p><p><b>Choice C is incorrect</b>. In this context, “conclusions” would be reasoned final judgments or outcomes. Because the text emphasizes that very little information about Venus was available before the 1962 flyby, it wouldn’t make sense to describe astronomers’ pre-Mariner 2 ideas about Venus as conclusions; the text suggests that astronomers didn’t have what they would have needed to make informed judgments about Venus.</p><p><b>Choice D is incorrect</b> because it wouldn’t make sense to describe astronomers’ pre-Mariner 2 ideas about Venus as “exemplifications,” or examples that illustrate something; people’s ideas about a subject are the ideas themselves, not illustrations. Further, the text emphasizes that the astronomers had little information before 1962, suggesting they didn’t have much to work with to form examples.</p>"
+  }
+]

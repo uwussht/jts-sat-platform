@@ -1,0 +1,422 @@
+[
+  {
+    "id": "u19-01",
+    "lessonCode": "U19",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">The radiation that ______ during the decay of radioactive atomic nuclei is known as gamma radiation.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "occurs"
+      },
+      {
+        "label": "B",
+        "html": "have occurred"
+      },
+      {
+        "label": "C",
+        "html": "occur"
+      },
+      {
+        "label": "D",
+        "html": "are occurring"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. The convention being tested is subject-verb agreement. The singular verb \"occurs\" agrees in number with the singular subject \"radiation.\"</p><p><b>Choice B is incorrect</b> because the plural verb \"have occurred\" doesn’t agree in number with the singular subject \"radiation.\"</p><p><b>Choice C is incorrect</b> because the plural verb \"occur\" doesn’t agree in number with the singular subject \"radiation.\"</p><p><b>Choice D is incorrect</b> because the plural verb \"are occurring\" doesn’t agree in number with the singular subject \"radiation.\"</p>"
+  },
+  {
+    "id": "u19-02",
+    "lessonCode": "U19",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">In recent years, economists around the world have created new tools that quantify the overall well-being of a country’s citizens. Economists in India, for example, use an Ease of Living Index. This tool ______ economic potential, sustainability, and citizens’ quality of life.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "measures"
+      },
+      {
+        "label": "B",
+        "html": "had measured"
+      },
+      {
+        "label": "C",
+        "html": "would have measured"
+      },
+      {
+        "label": "D",
+        "html": "will have been measuring"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. The previous sentence tells us how economists in India \"use\" a certain tool, while this sentence describes general facts about that tool. To express general facts (and also to match the simple present tense of \"use\"), we should use the simple present tense form \"measures.\"</p><p><b>Choice B is incorrect</b>. This choice uses the past perfect tense, but the previous sentence tells us that the tool is currently used to measure things, so the past tense doesn’t make sense for this verb.</p><p><b>Choice C is incorrect</b>. This choice uses the future perfect conditional tense, but the previous sentence tells us that the tool is currently used to measure things, so the future tense doesn’t make sense for this verb.</p><p><b>Choice D is incorrect</b>. This choice uses the future perfect continuous tense, but the previous sentence tells us that the tool is currently used to measure things, so the future tense doesn’t make sense for this verb.</p>"
+  },
+  {
+    "id": "u19-03",
+    "lessonCode": "U19",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">What is the correct pronunciation of Kiribati? In the Gilbertese language spoken by residents of the island nation, the letter combination -ti makes the -s sound; as a result, the country’s name ______ pronounced “Kiribas.”</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "are"
+      },
+      {
+        "label": "B",
+        "html": "have been"
+      },
+      {
+        "label": "C",
+        "html": "are being"
+      },
+      {
+        "label": "D",
+        "html": "is"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. The convention being tested is subject-verb agreement. The singular verb \"is\" agrees in number with the singular subject \"the country’s name.\"</p><p><b>Choice A is incorrect</b> because the plural verb \"are\" doesn’t agree in number with the singular subject \"the country’s name.\"</p><p><b>Choice B is incorrect</b> because the plural verb \"have been\" doesn’t agree in number with the singular subject \"the country’s name.\"</p><p><b>Choice C is incorrect</b> because the plural verb \"are being\" doesn’t agree in number with the singular subject \"the country’s name.\"</p>"
+  },
+  {
+    "id": "u19-04",
+    "lessonCode": "U19",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">In her 1983 book <i>The Managed Heart: Commercialization of Human Feeling</i>, sociologist Arlie Russell Hochschild first explored at length her conception of a “sociology of emotions”—the idea that the various cultural and ideological frameworks a person has internalized (class, gender, political affiliation, etc.) ______ each emotional reaction that person has within a situation.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "underlies"
+      },
+      {
+        "label": "B",
+        "html": "is underlying"
+      },
+      {
+        "label": "C",
+        "html": "underlie"
+      },
+      {
+        "label": "D",
+        "html": "has been underlying"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b>. The convention being tested is subject-verb agreement. The plural verb \"underlie\" agrees in number with the plural subject \"frameworks.\"</p><p><b>Choice A is incorrect</b> because the singular verb \"underlies\" doesn’t agree in number with the plural subject \"frameworks.\"</p><p><b>Choice B is incorrect</b> because the singular verb \"is underlying\" doesn’t agree in number with the plural subject \"frameworks.\"</p><p><b>Choice D is incorrect</b> because the singular verb \"has been underlying\" doesn’t agree in number with the plural subject \"frameworks.\"</p>"
+  },
+  {
+    "id": "u19-05",
+    "lessonCode": "U19",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Despite being cheap, versatile, and easy to produce, ______ they are made from nonrenewable petroleum, and most do not biodegrade in landfills.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "there are two problems associated with commercial plastics:"
+      },
+      {
+        "label": "B",
+        "html": "two problems are associated with commercial plastics:"
+      },
+      {
+        "label": "C",
+        "html": "commercial plastics’ two associated problems are that"
+      },
+      {
+        "label": "D",
+        "html": "commercial plastics have two associated problems:"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. The convention being tested is subject-modifier placement. This choice ensures that the modifying phrase “despite being cheap, versatile, and easy to produce” appears immediately before the noun it modifies, “commercial plastics,” clearly establishing that the commercial plastics—and not another noun in the sentence—are being described as cheap, versatile, and easy to produce.</p><p><b>Choice A is incorrect</b> because it results in a dangling modifier. The placement of the function word “there” immediately after the modifying phrase illogically and confusingly suggests that “there” is cheap, versatile, and easy to produce.</p><p><b>Choice B is incorrect</b> because it results in a dangling modifier. The placement of the noun “two problems” immediately after the modifying phrase illogically suggests that the “problems” are cheap, versatile, and easy to produce.</p><p><b>Choice C is incorrect</b> because it results in a dangling modifier. The placement of the noun phrase “commercial plastics’ two associated problems” immediately after the modifying phrase illogically suggests that the “problems” are cheap, versatile, and easy to produce.</p>"
+  },
+  {
+    "id": "u19-06",
+    "lessonCode": "U19",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">On April 5, 1977, Kitty Cone and 150 other disability rights activists entered a San Francisco federal building. After pleading for years—to no effect—for the passage of key antidiscrimination legislation, ______ until their demands were addressed. Finally, on April 28, the legislation was signed.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "pressure on lawmakers increased when the activists staged a sit-in protest"
+      },
+      {
+        "label": "B",
+        "html": "a sit-in protest staged by the activists increased pressure on lawmakers"
+      },
+      {
+        "label": "C",
+        "html": "lawmakers came under increased pressure when the activists staged a sit-in protest"
+      },
+      {
+        "label": "D",
+        "html": "the activists increased pressure on lawmakers by staging a sit-in protest"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. The convention being tested is subject-modifier placement. This choice makes the noun phrase “the activists” the subject of the sentence and places it immediately after the modifying phrase “after...legislation.” In doing so, this choice clearly establishes that the activists—and not another noun in the sentence—were pleading for the passage of antidiscrimination legislation.</p><p><b>Choice A is incorrect</b> because it results in a dangling modifier. The placement of the noun phrase “pressure on lawmakers” immediately after the modifying phrase illogically suggests that the “pressure” was pleading for the passage of antidiscrimination legislation.</p><p><b>Choice B is incorrect</b> because it results in a dangling modifier. The placement of the noun phrase “a sit-in protest” immediately after the modifying phrase illogically suggests that the “protest” was pleading for the passage of antidiscrimination legislation.</p><p><b>Choice C is incorrect</b> because it results in a dangling modifier. The placement of the noun phrase “lawmakers” immediately after the modifying phrase suggests that “lawmakers” were pleading for the passage of antidiscrimination legislation. While it’s possible for lawmakers to plead for the passage of legislation, the context strongly suggests that it’s the activists who pleaded for years for the passage of antidiscrimination legislation.</p>"
+  },
+  {
+    "id": "u19-07",
+    "lessonCode": "U19",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">French philosopher René Descartes doubted whether he could prove his own existence. Eventually, he found proof in his famous phrase “I think, therefore I am.” The ______ complexity: only those who exist would be able to ponder their existence.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "phrases’ simplicity masks its"
+      },
+      {
+        "label": "B",
+        "html": "phrases simplicity masks their"
+      },
+      {
+        "label": "C",
+        "html": "phrase’s simplicity masks their"
+      },
+      {
+        "label": "D",
+        "html": "phrase’s simplicity masks its"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. The conventions being tested are the use of possessive nouns and the use of possessive determiners. The singular possessive noun \"phrase’s\" correctly indicates that there is only one simple phrase. The singular possessive determiner \"its\" agrees in number with the singular possessive noun \"phrase’s,\" reinforcing the idea that there is only one simple yet complex phrase.</p><p><b>Choice A is incorrect</b> because the context requires the singular possessive noun \"phrase’s,\" not the plural possessive noun \"phrases’.\"</p><p><b>Choice B is incorrect</b> because the context requires the singular possessive noun \"phrase’s\" and the corresponding singular possessive determiner \"its,\" not the plural noun \"phrases\" and the corresponding plural possessive determiner \"their.\"</p><p><b>Choice C is incorrect</b> because the context requires the singular possessive determiner \"its,\" not the plural possessive determiner \"their.\"</p>"
+  },
+  {
+    "id": "u19-08",
+    "lessonCode": "U19",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Entomologists Yash Sondhi and Samuel Fabian have tried to explain why moths fly erratically around light sources at night. Knowing that flying insects keep their backs pointed toward sunlight during the day, ______</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "the researchers theorize that moths, mistaking nighttime lights for the Sun, continually try to reorient their bodies while flying near such lights."
+      },
+      {
+        "label": "B",
+        "html": "the researchers’ theory is that moths mistake nighttime lights for the Sun, continually trying to reorient their bodies while flying near such lights."
+      },
+      {
+        "label": "C",
+        "html": "moths mistake nighttime lights for the Sun and continually try to reorient their bodies while flying near such lights, the researchers theorize."
+      },
+      {
+        "label": "D",
+        "html": "moths continually try to reorient their bodies while flying near nighttime lights, the researchers theorize, mistaking such lights for the Sun."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. The convention being tested is subject-modifier placement. This choice makes the noun phrase \"the researchers\" the subject of the sentence and places it immediately after the modifying phrase \"knowing...day.\" In doing so, this choice clearly establishes that the researchers—and not another noun in the sentence—know that flying insects keep their backs pointed toward sunlight during the day.</p><p><b>Choice B is incorrect</b> because it results in a dangling modifier. The placement of the noun phrase \"the researchers’ theory\" immediately after the modifying phrase illogically suggests that the researchers’ theory knows that flying insects keep their backs pointed toward sunlight during the day.</p><p><b>Choice C is incorrect</b> because it results in a dangling modifier. The placement of the noun \"moths\" immediately after the modifying phrase illogically suggests that moths know that flying insects keep their backs pointed toward sunlight during the day.</p><p><b>Choice D is incorrect</b> because it results in a dangling modifier. The placement of the noun \"moths\" immediately after the modifying phrase illogically suggests that moths know that flying insects keep their backs pointed toward sunlight during the day.</p>"
+  },
+  {
+    "id": "u19-09",
+    "lessonCode": "U19",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><i>Rabinal Achí</i> is a precolonial Maya dance drama performed annually in Rabinal, a town in the Guatemalan highlands. Based on events that occurred when Rabinal was a city-state ruled by a king, ______ had once been an ally of the king but was later captured while leading an invading force against him.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<i>Rabinal Achí</i> tells the story of K’iche’ Achí, a military leader who"
+      },
+      {
+        "label": "B",
+        "html": "K’iche’ Achí, the military leader in the story of <i>Rabinal Achí</i>,"
+      },
+      {
+        "label": "C",
+        "html": "the military leader whose story is told in <i>Rabinal Achí</i>, K’iche’ Achí,"
+      },
+      {
+        "label": "D",
+        "html": "there was a military leader, K’iche’ Achí, who in <i>Rabinal Achí</i>"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. The modifier “Based on events...by a king,” is describing the drama “Rabinal Achí.” Modifiers need to be next to the subjects they describe, so “Rabinal Achí” needs to be the first word after the comma.</p><p><b>Choice B is incorrect</b>. This doesn’t complete the text in a way that conforms to the conventions of Standard English. The modifier “Based on events...by a king,” is describing the drama “Rabinal Achí.” Modifiers need to be next to the subjects they describe, so “Rabinal Achí” needs to be the first word after the comma.</p><p><b>Choice C is incorrect</b>. This doesn’t complete the text in a way that conforms to the conventions of Standard English. The modifier “Based on events...by a king,” is describing the drama “Rabinal Achí.” Modifiers need to be next to the subjects they describe, so “Rabinal Achí” needs to be the first word after the comma.</p><p><b>Choice D is incorrect</b>. This doesn’t complete the text in a way that conforms to the conventions of Standard English. The modifier “Based on events...by a king,” is describing the drama “Rabinal Achí.” Modifiers need to be next to the subjects they describe, so “Rabinal Achí” needs to be the first word after the comma.</p>"
+  },
+  {
+    "id": "u19-10",
+    "lessonCode": "U19",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">During the American Civil War, Thomas Morris Chester braved the front lines as a war correspondent for the <i>Philadelphia Press</i>. Amplifying the voices and experiences of Black soldiers ______ of particular importance to Chester, who later became an activist and lawyer during the postwar Reconstruction period.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "were"
+      },
+      {
+        "label": "B",
+        "html": "have been"
+      },
+      {
+        "label": "C",
+        "html": "are"
+      },
+      {
+        "label": "D",
+        "html": "was"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. The convention being tested is subject-verb agreement. The singular verb \"was\" agrees in number with the singular subject \"amplifying.\" Gerunds such as \"amplifying\" are always singular.</p><p><b>Choice A is incorrect</b> because the plural verb \"were\" doesn’t agree in number with the singular subject \"amplifying.\"</p><p><b>Choice B is incorrect</b> because the plural verb \"have been\" doesn’t agree in number with the singular subject \"amplifying.\"</p><p><b>Choice C is incorrect</b> because the plural verb \"are\" doesn’t agree in number with the singular subject \"amplifying.\"</p>"
+  },
+  {
+    "id": "u19-11",
+    "lessonCode": "U19",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">In 1903, environmentalist John Muir guided President Theodore Roosevelt on a scenic, sprawling trip through California’s Yosemite Valley. Upon returning from the three-day excursion, Roosevelt ______ to conserve the nation’s wilderness areas, a vow he upheld for his remaining six years in office.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "is vowing"
+      },
+      {
+        "label": "B",
+        "html": "vowed"
+      },
+      {
+        "label": "C",
+        "html": "will vow"
+      },
+      {
+        "label": "D",
+        "html": "vows"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. The convention being tested is the use of verbs to express tense in a sentence. In this choice, the past tense verb “vowed” is consistent with the other past tense verbs (“guided” and “upheld”) used to narrate the events surrounding President Roosevelt’s decision to conserve the nation’s wilderness areas.</p><p><b>Choice A is incorrect</b> because the present progressive tense verb “is vowing” isn’t consistent with the past tense verbs used to narrate the events surrounding President Roosevelt’s decision to conserve the nation’s wilderness areas.</p><p><b>Choice C is incorrect</b> because the future tense verb “will vow” isn’t consistent with the past tense verbs used to narrate the events surrounding President Roosevelt’s decision to conserve the nation’s wilderness areas.</p><p><b>Choice D is incorrect</b> because the simple present tense verb “vows” isn’t consistent with the past tense verbs used to narrate the events surrounding President Roosevelt’s decision to conserve the nation’s wilderness areas.</p>"
+  },
+  {
+    "id": "u19-12",
+    "lessonCode": "U19",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Professional American football player Fred Cox invented one of the world’s most popular toys. In the 1970s, he came up with the idea for the Nerf football, which ______ of the harder and heavier regulation football.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "were a smaller, foam version"
+      },
+      {
+        "label": "B",
+        "html": "are smaller, foam versions"
+      },
+      {
+        "label": "C",
+        "html": "were smaller, foam versions"
+      },
+      {
+        "label": "D",
+        "html": "is a smaller, foam version"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. The convention being tested is subject-verb agreement and agreement between nouns. The singular verb “is” and the singular noun “version” both agree in number with the relative pronoun “which.” In this context, “which” functions as a singular subject because it refers to the singular noun “the Nerf football.”</p><p><b>Choice A is incorrect</b> because the plural verb “were” doesn’t agree in number with the singular noun phrase “the Nerf football” that it’s modifying.</p><p><b>Choice B is incorrect</b> because the plural verb “are” and the plural noun “versions” don’t agree in number with the singular noun phrase “the Nerf football” that they’re modifying.</p><p><b>Choice C is incorrect</b> because the plural verb “were” and the plural noun “versions” don’t agree in number with the singular noun phrase “the Nerf football” that they’re modifying.</p>"
+  },
+  {
+    "id": "u19-13",
+    "lessonCode": "U19",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">The Herfindahl-Hirschman Index (HHI), a commonly used measure of competition between companies in a particular market, ranges from a score of zero to 10,000 points. Compared with that of a highly concentrated market—that is, a market controlled by very few companies—______</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "a market that is less concentrated will have a much lower HHI score."
+      },
+      {
+        "label": "B",
+        "html": "the HHI score of a less concentrated market will be much lower."
+      },
+      {
+        "label": "C",
+        "html": "when a market is less concentrated, its HHI score will be much lower."
+      },
+      {
+        "label": "D",
+        "html": "a less concentrated market will have an HHI score that is much lower."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. The convention being tested is subject-modifier placement. This choice makes the noun phrase \"the HHI...market\" the subject of the sentence and places it immediately after the modifying phrase \"compared...market.\" In doing so, this choice clearly establishes that the HHI score of a less concentrated market—and not another noun in the sentence—is being compared with the HHI score of a highly concentrated market.</p><p><b>Choice A is incorrect</b> because it results in a dangling modifier. The placement of \"a market that is less concentrated\" immediately after the modifying phrase illogically suggests that a market is being compared with an HHI score.</p><p><b>Choice C is incorrect</b> because it results in a confusing, illogical sentence. The placement of the modifier \"when a market is less concentrated\" after \"a highly concentrated market\" is contradictory. Furthermore, it’s ambiguous what \"its\" is referring to in \"its HHI score,\" resulting in an illogical comparison.</p><p><b>Choice D is incorrect</b> because it results in a dangling modifier. The placement of \"a less concentrated market\" immediately after the modifying phrase illogically suggests that a market is being compared with an HHI score.</p>"
+  },
+  {
+    "id": "u19-14",
+    "lessonCode": "U19",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">In January 1776, Thomas Paine published <i>Common Sense</i>, an appeal for freedom from the British monarchy that famously helped ignite the desire for independence among the American colonists. After the colonies achieved their independence, Paine moved to Paris, where the provocative ______ would contribute to another revolution—the French Revolution.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "authors political writings"
+      },
+      {
+        "label": "B",
+        "html": "author’s political writings"
+      },
+      {
+        "label": "C",
+        "html": "author’s political writing’s"
+      },
+      {
+        "label": "D",
+        "html": "authors’ political writings’"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. The conventions being tested are the use of plural and possessive nouns. The singular possessive noun \"author’s\" correctly indicates that the political writings are those of Thomas Paine, and the plural noun \"writings\" correctly indicates that multiple works by Paine are being discussed.</p><p><b>Choice A is incorrect</b> because the context requires the singular possessive noun \"author’s,\" not the plural noun \"authors.\"</p><p><b>Choice C is incorrect</b> because the context requires the plural noun \"writings,\" not the singular possessive noun \"writing’s.\"</p><p><b>Choice D is incorrect</b> because the context requires the singular possessive noun \"author’s\" and the plural noun \"writings,\" not the plural possessive nouns \"authors’\" and \"writings’.\"</p>"
+  },
+  {
+    "id": "u19-15",
+    "lessonCode": "U19",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Zydeco music originated in the French Creole community of southwest Louisiana. One instrument that gives zydeco its unique sound is the vest frottoir. The vest frottoir ______ a wearable washboard that is played by rubbing spoons or bottle openers against it.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "have been"
+      },
+      {
+        "label": "B",
+        "html": "is"
+      },
+      {
+        "label": "C",
+        "html": "were"
+      },
+      {
+        "label": "D",
+        "html": "are"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. The convention being tested is subject-verb agreement. The singular verb \"is\" agrees in number with the singular subject \"vest frottoir.\"</p><p><b>Choice A is incorrect</b> because the plural verb \"have been\" doesn’t agree in number with the singular subject \"vest frottoir.\"</p><p><b>Choice C is incorrect</b> because the plural verb \"were\" doesn’t agree in number with the singular subject \"vest frottoir.\"</p><p><b>Choice D is incorrect</b> because the plural verb \"are\" doesn’t agree in number with the singular subject \"vest frottoir.\"</p>"
+  }
+]

@@ -1,0 +1,422 @@
+[
+  {
+    "id": "u13-01",
+    "lessonCode": "U13",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">The practice of logging (cutting down trees for commercial and other uses) is often thought to be at odds with forest conservation (the work of preserving forests). However, a massive study in forest management and preservation spanning 700,000 hectares in Oregon’s Malheur National Forest calls that view into question. So far, results of the study suggest that forest plots that have undergone limited logging (the careful removal of a controlled number of trees) may be more robust than plots that haven’t been logged at all. These results, in turn, suggest that ______</div><p>Which choice most logically completes the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "logging may be useful for maintaining healthy forests, provided it is limited."
+      },
+      {
+        "label": "B",
+        "html": "other forest management strategies are more effective than limited logging."
+      },
+      {
+        "label": "C",
+        "html": "as time passes, it will be difficult to know whether limited logging has any benefits."
+      },
+      {
+        "label": "D",
+        "html": "the best way to support forest health may be to leave large forests entirely untouched."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b> because it most logically completes the text’s discussion of the potential effects of logging on forest conservation. The text begins by stating that logging practices are often thought of as being contrary to forest conservation efforts. Then, the text presents the results of a research study examining the effect of limited logging practices on specific forest plots, finding that the plots with limited logging may be \"more robust\" (healthier) than the plots that hadn’t been logged at all. Given these results, it follows that logging may be a useful practice for maintaining healthy forests if it is practiced in a limited way.</p><p><b>Choice B is incorrect</b> because the study referenced in the text only provides information on limited logging as a potential forest management strategy. There is no information in the text about how other forest management strategies support forest conservation efforts. Therefore, the text does not support the assertion that other forest management strategies are more successful than limited logging.</p><p><b>Choice C is incorrect</b> because the text presents a research study with findings that specific plots of forest with limited logging may be more robust than the forest plots that were not logged. Rather than suggesting that it is hard to know whether limited logging might be beneficial, the text suggests that the practice could be useful in forest conservation efforts.</p><p><b>Choice D is incorrect</b>. The text discusses the results of a research study that compares the health of forest plots with limited logging to forest plots that were not logged. It does not take a position on the best way to support forest health but rather presents a research study with findings that question conventionally held thoughts regarding the practice of logging.</p>"
+  },
+  {
+    "id": "u13-02",
+    "lessonCode": "U13",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Some businesses believe that when employees are interrupted while doing their work, they experience a decrease in energy and productivity. However, a team led by Harshad Puranik, who studies management, has found that interruptions by colleagues can have a social component that increases employees’ sense of belonging, resulting in greater job satisfaction that benefits employees and employers. Therefore, businesses should recognize that ______</div><p>Which choice most logically completes the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "the interpersonal benefits of some interruptions in the workplace may offset the perceived negative effects."
+      },
+      {
+        "label": "B",
+        "html": "in order to maximize productivity, employers should be willing to interrupt employees frequently throughout the day."
+      },
+      {
+        "label": "C",
+        "html": "most employees avoid interrupting colleagues because they don’t appreciate being interrupted themselves."
+      },
+      {
+        "label": "D",
+        "html": "in order to cultivate an ideal workplace environment, interruptions of work should be discouraged."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b> because it most logically completes the text’s discussion of potential benefits of interruptions in the workplace. The text indicates that a common belief in business is that interruptions to working employees decrease energy and productivity levels. However, the text goes on to explain that a research team led by Harshad Puranik has found that there could be a social benefit to these interruptions. Since the team found that workplace interruptions can increase employees’ sense of belonging and job satisfaction, it follows that the interpersonal benefits of some interruptions can offset the perceived negative effects.</p><p><b>Choice B is incorrect</b>. Although the text presents research findings that suggest some workplace interruptions can have a positive effect on employee job satisfaction, no further information is presented to suggest at what frequency these interruptions are ideal. Furthermore, the text doesn’t tie workplace interruptions to increased productivity, but rather links it to social benefits such as sense of belonging.</p><p><b>Choice C is incorrect</b> because the text doesn’t address employees’ motives for choosing not to interrupt their colleagues. The text presents research findings that suggest that there are some positive interpersonal effects of workplace interruptions that can increase employee job satisfaction.</p><p><b>Choice D is incorrect</b> because asking businesses to discourage workplace interruptions doesn’t follow from the team’s research about the benefits of workplace interruptions, nor does the text describe an ideal work environment. Instead, the text presents research suggesting that there may be positive aspects to workplace interruptions that haven’t previously been considered.</p>"
+  },
+  {
+    "id": "u13-03",
+    "lessonCode": "U13",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Some geologists have proposed designating the period from 1950 to the present as a new geological epoch (the Anthropocene) characterized by human impact on Earth, but they have struggled to identify reliable stratigraphic markers of the epoch’s onset. Inta Dimante-Deimantovica and a research team investigated whether the initial appearance of primary microplastics—invented and mass-produced for industrial and other purposes, beginning around the middle of the twentieth century—in sedimentary layers could serve this role. The researchers analyzed European lake sediment profiles from the late eighteenth century to the present. Microplastics were present in all layers, likely because certain microplastic shapes enabled rapid downward migration. The researchers therefore concluded that ______</div><p>Which choice most logically completes the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "the lowest sedimentary layer in which microplastics are found cannot be treated as indicative of the chronological beginning of the Anthropocene."
+      },
+      {
+        "label": "B",
+        "html": "the presence of microplastics in sediment dating to the late eighteenth century casts doubt on the appropriateness of designating 1950 as the onset of the Anthropocene."
+      },
+      {
+        "label": "C",
+        "html": "microplastics are not prevalent enough in sediment to serve as a reliable sign of the human impact characteristic of the Anthropocene."
+      },
+      {
+        "label": "D",
+        "html": "using the earliest presence of microplastics as a stratigraphic marker of the beginning of the Anthropocene is likely to be viable in some locations but is not viable in Europe."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b> because it most logically completes the text’s discussion of microplastics as a proposed stratigraphic marker for the onset of the Anthropocene. The text indicates that although primary microplastics (used for industrial and other purposes) were invented and mass-produced beginning only around the mid-twentieth century, researchers found microplastics throughout European lake sediment profiles dating from the late eighteenth century to the present. According to the text, microplastics were in all layers of sediment likely because microplastics of certain shapes can rapidly migrate downward—that is, they can move into sedimentary layers that predate their manufacture. Since it can’t be assumed that the date of a layer in which microplastics are found indicates when the microplastics were first deposited, it follows that the lowest sedimentary layer containing microplastics can’t be treated as indicative of the chronological beginning of the Anthropocene.</p><p><b>Choice B is incorrect</b>. The text explains that microplastics appeared in layers of sediment long predating 1950 likely because certain shapes allowed them to rapidly migrate downward—that is, the particles physically moved into older layers. This finding doesn’t cast doubt on the appropriateness of considering 1950 as the onset of the Anthropocene; it doesn’t suggest a flaw in thinking that humans’ impact on Earth shifted around 1950 but simply suggests that the position of microplastics in sediment isn’t useful as an indicator of such a shift.</p><p><b>Choice C is incorrect</b> because the issue presented in the text isn’t a lack of prevalence of microplastics (and though no quantity is indicated, microplastics were found across all the layers) but rather the inability to determine when microplastics were originally deposited, since the particles can migrate rapidly into older sediment layers.</p><p><b>Choice D is incorrect</b> because the text indicates that the likely cause of microplastics being present in all layers of the sediment profiles is a property of microplastic particles themselves (certain shapes allowing them to rapidly move downward into older layers), not a characteristic of European lake sediment or anything else specific to Europe. There’s no reason to think the issue of particle migration wouldn’t occur in other locations.</p>"
+  },
+  {
+    "id": "u13-04",
+    "lessonCode": "U13",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">One aspect of in-person shopping that online shopping can’t replicate is the opportunity to touch a product before buying it. Does this difference matter? In an experiment, researchers asked one group of participants to touch a mug and a toy, while another group was prohibited from touching the two items. The participants were then asked how much money they’d pay for the items. People who got to touch the items were willing to pay much more money for them than were people who weren’t allowed to touch the items. This finding suggests that ______</div><p>Which choice most logically completes the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "people who mainly shop online probably spend more money every month than people who mainly shop in person do."
+      },
+      {
+        "label": "B",
+        "html": "in-person shopping may make products seem more valuable than they seem if only viewed online."
+      },
+      {
+        "label": "C",
+        "html": "retailers with in-person and online stores should charge the same price for a given product in both places."
+      },
+      {
+        "label": "D",
+        "html": "online retailers may be able to raise the prices they charge for products that are only available online."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. The text tells us that “people who got to touch the items were willing to pay much more money for them than people who weren’t allowed to touch” them. This suggests that being able to interact with a product in person may make it seem more valuable to a shopper.</p><p><b>Choice A is incorrect</b>. The text doesn’t discuss how much people spend each month, so there’s not much basis for this claim. Furthermore, since being able to touch a product tends to make people “willing to pay much more money” for it, we might predict that an online shopper would be willing to spend less on the same purchases as an in-person shopper.</p><p><b>Choice C is incorrect</b>. The text doesn’t discuss what retailers “should charge,” so there’s not much basis for this claim. Furthermore, the study in the text suggests that in-person stores may actually be able to charge more for a given product, since shoppers can touch it.</p><p><b>Choice D is incorrect</b>. The text doesn’t discuss products that are only available online, so there’s not much basis for this claim. Furthermore, products only available online would still have the problem of shoppers not being able to touch them, and the study suggests that this lowers the prices shoppers are willing to pay.</p>"
+  },
+  {
+    "id": "u13-05",
+    "lessonCode": "U13",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">A social species, chickens will cry out to one another in warning if they sense a hawk or other predator nearby. But if alone, a chicken will remain silent so as not to attract the predator’s attention. Sonja Hillemacher decided to use this behavior to determine whether individual chickens possess a capacity to recognize themselves visually when reflected in a mirror (a common standard for animal intelligence). In the first condition of her study, the subject could see its reflection, but no other chickens were present. In a second condition, another chicken was visible to the subject. Hillemacher presented an image of a hawk to the subject in both conditions, reasoning that if chickens lacked a capacity for visual self-recognition, then ______</div><p>Which choice most logically completes the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "neither study condition would elicit an audible response from the subject."
+      },
+      {
+        "label": "B",
+        "html": "the subject likely would cry out a warning in both study conditions."
+      },
+      {
+        "label": "C",
+        "html": "only the first study condition would elicit an audible response from the subject."
+      },
+      {
+        "label": "D",
+        "html": "the subject would fail to distinguish its reflection from the image of the hawk."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b> because it most logically completes the text’s discussion of Hillemacher’s study of visual self-recognition in chickens. According to the text, when a predator is nearby, chickens cry out in warning if another chicken is present but remain silent if alone to avoid attracting the predator’s attention. The text explains that Hillemacher set up one condition in which a subject was alone and could see its reflection in a mirror and another condition in which the subject could see another chicken, and then presented an image of a hawk (a predator). It follows that if chickens aren’t capable of recognizing themselves visually in a mirror, the subject likely would cry out a warning in both conditions; in the first condition because it would perceive its reflection as another chicken—that is, it would think another chicken is present—and in the second condition because it would see that another chicken is actually present.</p><p><b>Choice A is incorrect</b> because the text suggests that regardless of chickens’ ability to visually recognize themselves in mirrors, the subject in the second condition would cry out a warning because another chicken is actually present. Further, if chickens do lack visual self-recognition, the subject in the first condition likely would also cry out because it would think its reflection is another chicken.</p><p><b>Choice C is incorrect</b>. The text does suggest that if chickens lack the ability to visually recognize themselves in mirrors, the subject would cry out a warning in the first condition because it would think its reflection is another chicken. However, the text also indicates that regardless of their capacity of self-recognition, chickens cry out a warning when other chickens are present, and another chicken is present in the second condition. Therefore, both conditions—not just the first one—likely would elicit an audible response from the subject.</p><p><b>Choice D is incorrect</b> because the text indicates that the study was focused on determining whether chickens recognize themselves visually in a mirror or instead perceive their reflections as other chickens; there’s no suggestion that a lack of self-recognition would cause a chicken to confuse its reflection with the image of a hawk.</p>"
+  },
+  {
+    "id": "u13-06",
+    "lessonCode": "U13",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">North American gray wolves usually have mixed gray and white fur, but some members of the species have a version of a gene, or gene variant, that gives them a mostly black coat instead. Sarah Cubaynes and her team studied twelve populations of North American gray wolves. They found that the black-furred wolves are more common in areas where outbreaks of distemper virus happen regularly. The team also discovered that the black-furred wolves are more likely to be immune to distemper than the gray-furred wolves are. Taken together, these findings suggest that ______</div><p>Which choice most logically completes the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "North American gray wolves experience more outbreaks of distemper virus than other wolf species do."
+      },
+      {
+        "label": "B",
+        "html": "the gene variant that results in black fur may be linked to immunity to the distemper virus."
+      },
+      {
+        "label": "C",
+        "html": "the average life span of gray wolves is likely to increase over time because of a particular gene variant."
+      },
+      {
+        "label": "D",
+        "html": "gray-furred wolves will soon replace black-furred wolves across North America."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. The text tells us that the black-furred wolves are more common in areas with regular outbreaks of distemper virus and are more likely to be immune to distemper than the gray-furred wolves. This suggests that the gene variant that results in black fur may be linked to immunity to the distemper virus.</p><p><b>Choice A is incorrect</b>. The text never compares North American gray wolves to other wolf species—in fact, it never discusses other wolf species at all, so there’s no basis for this inference.</p><p><b>Choice C is incorrect</b>. The life span of gray wolves is never mentioned in this text, so we have no basis for this inference.</p><p><b>Choice D is incorrect</b>. This is too extreme. The text says that \"black-furred wolves are more likely to be immune to distemper than the gray-furred wolves,\" but that alone doesn’t mean that black-furred wolves will replace gray-furred wolves across North America.</p>"
+  },
+  {
+    "id": "u13-07",
+    "lessonCode": "U13",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">In the 1950s and ’60s, plant breeders created shorter varieties of wheat and rice plants with improved yields. Kelly Gillespie, Rex Bernardo, and other plant specialists are building on that work by exploring the development of shorter corn varieties. Greater height can allow individual plants to produce more ears of corn. However, greater height also makes the stalks more likely to snap or be uprooted in strong winds before the corn can be harvested. Because of this trade-off, some plant specialists suggest that shorter corn varieties will actually ______</div><p>Which choice most logically completes the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "help improve yields of harvested corn by being more likely to survive in severe winds."
+      },
+      {
+        "label": "B",
+        "html": "be more likely to be uprooted due to the weight of the corn on the stalks."
+      },
+      {
+        "label": "C",
+        "html": "require more land for planting than short varieties of wheat and rice typically do."
+      },
+      {
+        "label": "D",
+        "html": "begin developing more ears of corn on each plant than the tallest variety of corn currently does."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b> because it presents the conclusion that most logically completes the text’s discussion about a trade-off in growing shorter varieties of corn.</p><ul><li>The text explains that plant specialists are working to develop shorter corn varieties in an effort to improve yields.</li><li>The text points out that although greater height in corn plants can lead to more ears of corn per plant, it also makes the stalks more likely to be damaged by strong winds before there is a chance to harvest the corn.</li><li>This presents a clear trade-off between potential yield (taller plants producing more ears per plant) and harvest reliability (shorter plants surviving until harvest time).</li><li>Given this information, it is reasonable to infer that shorter corn varieties, while possibly producing fewer ears per plant, would be more likely to survive until harvest time.</li><li>This survival advantage would result in improved yields of harvested corn because more plants would remain intact, thus offsetting the potential reduction in ears per shorter plant.</li></ul><p><b>Choice B is incorrect</b>. According to the text, greater height makes cornstalks vulnerable to snapping or being uprooted in strong winds, implying that taller plants—not shorter ones—have greater stability problems. The text provides no basis for inferring that shorter corn varieties would be more likely to be uprooted due to corn weight; in fact, the text suggests the opposite relationship between height and stability.</p><p><b>Choice C is incorrect</b> because the text doesn’t provide information about the land requirements of either shorter corn varieties or shorter wheat and rice varieties, much less make any comparisons. The text mentions that plant breeders in the 1950s and ’60s created shorter varieties of wheat and rice with improved yields and that researchers are now exploring shorter corn varieties, but it doesn’t compare land-use requirements of these crops.</p><p><b>Choice D is incorrect</b> because the idea that shorter cornstalks would yield more ears of corn would contradict the relationship between height and corn production described in the text. The text explicitly states that greater height allows individual plants to produce more ears of corn, which suggests that shorter varieties would produce fewer ears per plant, not more. The text therefore provides no basis for concluding that shorter varieties would begin developing more ears than the taller varieties currently do.</p>"
+  },
+  {
+    "id": "u13-08",
+    "lessonCode": "U13",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Researchers Eugeni Vidal-Tortosa and Robin Lovelace looked at the relationship between street lighting in a city and people’s willingness to ride a bicycle. Their results suggest that poor street lighting can deter new or inexperienced cyclists from riding in a city but has little effect on experienced cyclists. Therefore, increasing the number of streetlights in a city could potentially ______</div><p>Which choice most logically completes the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "decrease the number of new or inexperienced cyclists riding in the city."
+      },
+      {
+        "label": "B",
+        "html": "increase the number of experienced cyclists riding in the city."
+      },
+      {
+        "label": "C",
+        "html": "decrease the number of experienced cyclists riding in the city."
+      },
+      {
+        "label": "D",
+        "html": "increase the number of new or inexperienced cyclists riding in the city."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b> because it most logically completes the text’s discussion of the relationship between street lighting and people’s cycling behavior. According to the text, Eugeni Vidal-Tortosa and Robin Lovelace found that poor street lighting deters new or inexperienced cyclists from riding their bikes in a city but has little effect on experienced cyclists. This finding establishes a causal relationship between street lighting and the willingness of new or inexperienced cyclists to ride a bicycle in the city: if poor lighting discourages new or inexperienced cyclists from riding, then improving lighting conditions by increasing the number of streetlights would logically remove this deterrent, potentially leading to an increase in the number of new or inexperienced cyclists willing to ride in the city.</p><p><b>Choice A is incorrect</b> because it contradicts the logical relationship established in the text. If poor street lighting deters new or inexperienced cyclists from riding in the city, then increasing the number of streetlights (improving lighting conditions) would be expected to encourage more of these cyclists to ride, not decrease their numbers.</p><p><b>Choice B is incorrect</b> because the text explicitly states that street lighting didn’t have an effect on experienced cyclists. If lighting conditions don’t significantly influence experienced cyclists’ decisions to ride, then increasing the number of streetlights wouldn’t necessarily increase the number of experienced cyclists riding in the city.</p><p><b>Choice C is incorrect</b>. The text indicates that street lighting didn’t affect experienced cyclists, so increasing the number of streetlights wouldn’t decrease the participation of these cyclists. Instead, their numbers would be expected to remain about the same.</p>"
+  },
+  {
+    "id": "u13-09",
+    "lessonCode": "U13",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Individuals with visual impairments who want to experience a solar eclipse may be able to make use of a device that converts light into sound. The device is made up of a microcontroller board and a light sensor that measures the brightness of light shining onto the device. It also has a component called a MIDI, which allows the device to play different sounds. The device plays a high-pitched flute sound in bright light, a neutral-pitched clarinet sound in mid-range light, and a soft clicking sound in low light. After a solar eclipse starts, the sun becomes more covered and the amount of light slowly reduces. Therefore, during a solar eclipse the device will ______</div><p>Which choice most logically completes the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "play a flute sound, then a clarinet sound, and then a clicking sound."
+      },
+      {
+        "label": "B",
+        "html": "play a clicking sound, then a flute sound, and then a clarinet sound."
+      },
+      {
+        "label": "C",
+        "html": "start with fast clarinet sounds that become steadily slower."
+      },
+      {
+        "label": "D",
+        "html": "start with a soft flute sound that becomes steadily louder."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b> because it most logically completes the text’s discussion of a device that converts light into sound during a solar eclipse. The text states that the device plays different sounds based on the amount of light shining on it, producing a high-pitched flute sound in bright light, a neutral-pitched clarinet sound in mid-range light, and a soft clicking sound in low light. The text also indicates that during a solar eclipse, the sun becomes more covered and the amount of light slowly reduces from full brightness. Thus, because the eclipse begins with full sunlight that progressively decreases, the device would first play a flute sound (bright light), then a clarinet sound (mid-range light), and then a clicking sound (low light).</p><p><b>Choice B is incorrect</b>. Based on the text’s description of the sounds the device makes, if the device played clicking sounds, then a flute sound, and then a clarinet sound, the light would have to be going from low to bright to mid-range. But the text indicates that when a solar eclipse starts, the light is bright and then slowly reduces, meaning it would go from bright to mid-range light and then to low light. And even as the sun begins to be less covered again, which isn’t discussed in the text, there’s no reason to think the light would jump from low to bright and then back to mid-range.</p><p><b>Choice C is incorrect</b> because the text indicates only that the device plays a distinct sound (flute, clarinet, or clicking) for each of the three levels of brightness, not that it varies the speed of any of those sounds.</p><p><b>Choice D is incorrect</b> because the text indicates only that the device plays a distinct sound (flute, clarinet, or clicking) for each of the three levels of brightness, not that it varies the volume of any of those sounds.</p>"
+  },
+  {
+    "id": "u13-10",
+    "lessonCode": "U13",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Across brown bears—omnivores with high dietary plasticity—there is wide variety in dietary mix, which may reflect genetics, local resource availability, or social learning (cubs stay with their mothers for two years or more). Evaluating these possibilities, Anne Hertel et al. analyzed 30 years of data on trophic position (indicative of dietary mix) for female brown bears. After separation, daughters, who tended to settle near their mothers, occupied the same trophic positions as their mothers for two years, but the correlation disappeared by year five. Trophic correlation with unrelated individuals in similar habitats was modest, while habitat-independent correlation with nonmaternal relatives (e.g., cousins) was no different than with unrelated individuals. These findings suggest that ______</div><p>Which choice most logically completes the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "growing dissimilarity between mothers and their daughters with regard to dietary mix may reflect changes in the resources available in maternal habitats, though social learning could also contribute to the trend."
+      },
+      {
+        "label": "B",
+        "html": "dietary mix among females may reflect a social learning effect that eventually diminishes, though environmental constraints cannot be ruled out as a contributing factor."
+      },
+      {
+        "label": "C",
+        "html": "female dietary mix is best understood as changeable and contingent on fluctuating environmental conditions rather than as the result of social learning or genetic factors."
+      },
+      {
+        "label": "D",
+        "html": "social learning and resource fluctuations may both play a role in dietary mix among females, at least temporarily, though genetic factors appear to make a significant contribution as well."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b> because it most logically completes the text’s discussion of Hertel et al.’s study of dietary mix variation among female brown bears.</p><ul><li>According to the text, the researchers evaluated genetics, local resource availability, and social learning as factors in female brown bears’ trophic position, or position in the food web.</li><li>According to the text, daughters tended to settle near their mothers after separating and held the same trophic positions as the mothers for two years, but no longer did by the fifth year—a temporary similarity that may reflect a socially learned behavior that faded over time after separation.</li><li>Additionally, the text states that the degree of similarity in trophic position between nonmaternal relatives (e.g., cousins) was the same as that between unrelated individuals, suggesting that genetics don’t significantly influence dietary mix, and the text also states that there was modest similarity in the trophic positions of unrelated individuals in similar habitats, suggesting that environmental conditions (which would include resource availability) may have some influence on dietary mix.</li><li>Taken together, the findings suggest that while environmental constraints can’t be ruled out as a contributing factor, dietary mix among female brown bears may reflect a social learning effect that eventually diminishes.</li></ul><p><b>Choice A is incorrect</b> because the text notes that daughters tended to settle near their mothers after separating—that is, that they often didn’t leave the maternal habitat. Therefore, changes in resource availability in the mothers’ habitats would likely have affected the daughters similarly instead of causing their dietary mix to differ from that of their mothers. Further, the form of social learning addressed by the text is that between mothers and daughters; although the daughters no longer held the same trophic position as their mothers five years after separating from them, the text doesn’t address the possibility that the daughters’ divergence from the dietary behaviors of their mothers is the result of learning from other bears or suggest that the daughters even interacted with other adult bears in a substantive way.</p><p><b>Choice C is incorrect</b>. Instead of suggesting that environmental conditions are the most important factor in dietary mix variation and that social learning isn’t a factor, the findings discussed in the text suggest that environmental conditions may have some effect (since there was modest similarity in dietary mix between unrelated bears in similar habitats, or similar environmental conditions) and that social learning may be a factor (since daughters held the same trophic positions as their mothers for two years after separating but not for five years, which may reflect daughters maintaining dietary behaviors they learned from their mothers but changing their behaviors over time).</p><p><b>Choice D is incorrect</b> because the findings presented in the text argue against, not for, genetics as a significant factor in variation in dietary mix. The text indicates that independent of their habitats, the degree of similarity in dietary mix between nonmaternal relatives, like cousins, was the same as that between unrelated individuals. This means that genetic relatedness didn’t have a detectable effect on dietary mix independent of shared habitat.</p>"
+  },
+  {
+    "id": "u13-11",
+    "lessonCode": "U13",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Scholars are increasingly exploring the communication and preservation of ecological knowledge through Indigenous songs (e.g., Sakha songs about local ecosystems and those of the Kaluli people about rainforest sounds). In one study, ethnobiologist Dana Lepofsky et al. received insight from Kwaxsistalla Wathl’thla, a song keeper for the Kwakwaka’wakw people in Canada, into songs referencing the people’s use of terraced gardens in intertidal zones along the Pacific Northwest coast for the cultivation of clams for consumption. Archaeological evidence of significant increases in clam size and abundance in that area concurrent with the documented past implementation of the method described in the songs supports the conclusion that ______</div><p>Which choice most logically completes the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "the practice used by ancestors of modern Kwakwaka’wakw people not only effectively maintained a food source but also promoted its robustness."
+      },
+      {
+        "label": "B",
+        "html": "non-Indigenous people around the Pacific Northwest coast adopted the practice developed by the Kwakwaka’wakw people after observing its efficacy."
+      },
+      {
+        "label": "C",
+        "html": "there is greater corroboration in the archaeological record of ecological practices described in Kwakwaka’wakw songs than of those described in Sakha and Kaluli songs."
+      },
+      {
+        "label": "D",
+        "html": "although contemporary Kwakwaka’wakw people have a deep understanding of and appreciation for the fishing and farming practices used by their ancestors, they no longer implement those methods."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b> because it most logically completes the text’s discussion of the use of songs by the Kwakwaka’wakw people to record and communicate ecological knowledge. The text indicates that some songs of the Kwakwaka’wakw people of Canada’s Pacific Northwest region document how the people used terraced gardens in intertidal zones to cultivate clams for food. The text also explains that archaeological evidence shows increases in \"clam size and abundance\" that occurred along with the implementation of this cultivation method, suggesting the method’s efficacy in not just supporting clam yields but also improving them. It follows, then, that the use of intertidal terraced gardens, as described in the songs, allowed the ancestors of modern Kwakwaka’wakw people to maintain clams as a food source and to cultivate larger and more numerous clams.</p><p><b>Choice B is incorrect</b> because the text doesn’t mention anything about cultivation practices among non-Indigenous people in the Pacific Northwest coastal region. Though the text conveys that archaeological evidence suggests that the clam cultivation practice mentioned in Kwakwaka’wakw people’s songs was efficacious when implemented, it gives no indication that people other than the Kwakwaka’wakw adopted that practice.</p><p><b>Choice C is incorrect</b> because the text provides no information about the archaeological record as it pertains to Sakha and Kaluli songs and doesn’t suggest that there is less corroboration of practices described in those songs than there is of the clam cultivation practice described in Kwakwaka’wakw songs. The Sakha and Kaluli songs are mentioned early in the text only as examples of Indigenous songs that contain ecological knowledge.</p><p><b>Choice D is incorrect</b> because archaeological evidence that clam size and abundance both increased when Kwakwaka’wakw ancestors implemented intertidal terraced gardens provides information only about the past use of that method and doesn’t suggest anything about present practices. The text indicates that knowledge of a past clam cultivation method is maintained in Kwakwaka’wakw songs but doesn’t indicate whether modern Kwakwaka’wakw people use that or other fishing and farming practices used by their ancestors.</p>"
+  },
+  {
+    "id": "u13-12",
+    "lessonCode": "U13",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Even with the widespread adoption of personal computers, many authors still choose to write and revise their novels by hand and only then transcribe the final version on a computer. It may be tempting to speculate about how a novel written this way would be affected if it had been exclusively typed instead, but each novel is a unique entity resulting from a specific set of circumstances. Therefore, ______</div><p>Which choice most logically completes the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "in order to increase their efficiency, authors who currently write their novels largely by hand should instead work only on a computer."
+      },
+      {
+        "label": "B",
+        "html": "authors who do most of their drafting and revising by hand likely have more success than those who work entirely on a computer."
+      },
+      {
+        "label": "C",
+        "html": "novels written by hand take less time to produce, on average, than novels written on a computer do."
+      },
+      {
+        "label": "D",
+        "html": "there is no way to reasonably evaluate how a work would be different if it had been written by other means."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b> because it presents the conclusion that most logically follows from the text’s discussion of the means authors use to write and revise their novels. After stating that many authors still choose to draft novels by hand even though computers are now widely used, the text acknowledges the speculation that the opposite choice—using only a computer—would have had an effect on such novels. However, the text then points out that every novel is the singular result of a combination of the particular conditions surrounding its creation. This suggests that it isn’t possible to determine the effect of any single condition (such as the means of writing) on its own; thus, there would be no way to reasonably evaluate how a novel would have turned out differently if it had been written by other means.</p><p><b>Choice A is incorrect</b> because the text doesn’t suggest that it’s more efficient to write a novel on a computer than to write it by hand; it doesn’t address efficiency at all. Therefore, it isn’t logical to conclude that authors who currently choose to write novels largely by hand should instead work only on a computer to increase their efficiency.</p><p><b>Choice B is incorrect</b> because the text doesn’t suggest anything about how successful authors are, regardless of the means by which they choose to write; therefore, it isn’t logical to conclude that authors who write largely by hand are likely to be more successful than those who work only on a computer.</p><p><b>Choice C is incorrect</b> because the text makes no mention of the time it takes to produce a novel, regardless of the means by which it’s written; therefore, it isn’t logical to conclude that novels written by hand take less time on average to produce than those written on a computer do.</p>"
+  },
+  {
+    "id": "u13-13",
+    "lessonCode": "U13",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Volunteering, or giving time for a community service for free, is a valuable form of civic engagement because helping in a community is also good for society as a whole. In a survey of youths in the United States, most young people said that they believe volunteering is a way to help people on an individual level. Meanwhile, only 6% of the youths said that they think volunteering is a way to help fix problems in society overall. These replies suggest that ______</div><p>Which choice most logically completes the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "many young people think they can volunteer only within their own communities."
+      },
+      {
+        "label": "B",
+        "html": "volunteering may be even more helpful than many young people think it is."
+      },
+      {
+        "label": "C",
+        "html": "volunteering can help society overall more than it can help individual people."
+      },
+      {
+        "label": "D",
+        "html": "many young people may not know how to find ways to volunteer their time."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b> because it most logically completes the text’s discussion of volunteering. The text asserts that volunteering benefits both the community in which one volunteers and society as a whole. It then states that in a survey of young people, a majority of respondents said that volunteering helps individuals, but only 6% of respondents said that volunteering helps society as a whole. If volunteering does in fact help society as a whole, as the text says, but only 6% of young people believe it does, then it’s reasonable to conclude that volunteering is more helpful than many young people think it is.</p><p><b>Choice A is incorrect</b> because the text discusses young people’s beliefs about the benefits of volunteering, not where young people believe they are able to volunteer. Nothing in the text suggests that many young people believe they are only able to volunteer in their own communities.</p><p><b>Choice C is incorrect</b>. Although the text indicates that volunteering is beneficial for society as a whole, nothing in the text suggests that volunteering can benefit society more than it can benefit individual people. The text doesn’t compare the benefits to society with the benefits to individuals.</p><p><b>Choice D is incorrect</b> because the text discusses young people’s beliefs about the benefits of volunteering, not how to find volunteering opportunities. There’s nothing in the text to suggest that many young people don’t know how to volunteer.</p>"
+  },
+  {
+    "id": "u13-14",
+    "lessonCode": "U13",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Tides can deposit large quantities of dead vegetation within a salt marsh, smothering healthy plants and leaving a salt panne—a depression devoid of plants that tends to trap standing water—in the marsh’s interior. Ecologist Kathryn Beheshti and colleagues found that burrowing crabs living within these pannes improve drainage by loosening the soil, leading the pannes to shrink as marsh plants move back in. At salt marsh edges, however, crab-induced soil loosening can promote marsh loss by accelerating erosion, suggesting that the burrowing action of crabs ______</div><p>Which choice most logically completes the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "can be beneficial to marshes with small pannes but can be harmful to marshes with large pannes."
+      },
+      {
+        "label": "B",
+        "html": "may promote increases in marsh plants or decreases in marsh plants, depending on the crabs’ location."
+      },
+      {
+        "label": "C",
+        "html": "tends to be more heavily concentrated in areas of marsh interiors with standing water than at marsh edges."
+      },
+      {
+        "label": "D",
+        "html": "varies in intensity depending on the size of the panne relative to the size of the surrounding marsh."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. The text says that crab burrowing in the pannes enables plants to grow there again. It also says that crab burrowing at the edges of the marsh speeds up marsh loss. This suggests that burrowing crabs can either help or hurt marshes, depending on where they’re located.</p><p><b>Choice A is incorrect</b>. This inference isn’t supported. The text never discusses pannes of different sizes.</p><p><b>Choice C is incorrect</b>. This inference isn’t supported. The text never suggests that crabs do more burrowing in the pannes (the areas with standing water) than they do at the edges. Rather, the text says that the burrowing that happens in the pannes is beneficial, while the burrowing that happens at the edges is harmful.</p><p><b>Choice D is incorrect</b>. This inference isn’t supported. The text never discusses the intensity of crab burrowing, nor does it discuss the size of the panne relative to the size of the marsh.</p>"
+  },
+  {
+    "id": "u13-15",
+    "lessonCode": "U13",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Violins made by Antonio Stradivari and other craftspeople in the sixteenth to eighteenth centuries in Cremona, Italy, produce a sound that is considered superior to that of modern stringed instruments. Some experts have claimed that the type of wood used to create Cremonese violins is responsible for their prized sound, but modern and Cremonese violins are made of the same kinds of wood: maple and spruce. New analysis, however, has revealed unique indications that the wood in the older violins was chemically treated by the makers, leading researchers to suggest that ______</div><p>Which choice most logically completes the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Cremonese violins probably were not considered superior to other instruments at the time they were made."
+      },
+      {
+        "label": "B",
+        "html": "the sound quality of Cremonese violins results in part from a method the craftspeople used to alter the wood."
+      },
+      {
+        "label": "C",
+        "html": "if modern violins were made of a wood other than maple or spruce, they likely would sound as good as Cremonese violins."
+      },
+      {
+        "label": "D",
+        "html": "the current process of making violins is the same process that was used centuries ago by Cremonese craftspeople."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b> because it most logically completes the text’s discussion of the sound quality of Cremonese and modern violins. The text states that violins made in Cremona in the sixteenth to eighteenth centuries sound superior to modern violins. It then indicates that some experts attribute the difference to different woods being used to make these violins, but both Cremonese and modern violins are made of the same woods (maple and spruce); thus this cannot account for the difference. The text then says that recent analysis suggests the wood in Cremonese violins was chemically treated by the craftspeople who made them, thereby providing an alternate explanation for the sound differences: the chemical alteration that is present in the Cremonese violins but absent from the modern ones.</p><p><b>Choice A is incorrect</b> because the text does not discuss how the sound quality of Cremonese violins compares with the sound quality of other instruments made during the sixteenth to eighteenth centuries. Instead it focuses on how the sound of the Cremonese violins compares with that of modern violins.</p><p><b>Choice C is incorrect</b>. The text states that there are differences in sound quality between the Cremonese and modern violins, and that both types of violin are made with maple or spruce. Thus the type of wood alone does not determine a violin’s sound quality. Furthermore, even if the type of wood alone could account for differences in sound quality, the text makes no mention of other woods, so there is no basis to judge how modern violins would sound if they were made using woods besides maple and spruce.</p><p><b>Choice D is incorrect</b> because the text states that there is evidence that Cremonese craftspeople chemically treated the wood used in Cremonese violins. This evidence is attributed to “new analysis,” which strongly suggests that this process was unknown to modern violin makers before that analysis. If the chemical treatment was unknown until recently, the manufacturing process for modern violins must differ with respect to the previously unknown practice of chemically treating the wood.</p>"
+  }
+]

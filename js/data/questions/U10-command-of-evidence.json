@@ -1,0 +1,422 @@
+[
+  {
+    "id": "u10-01",
+    "lessonCode": "U10",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><div class=\"tablewrap\"><table><caption>Sample of Food Items from Gemini Mission Menus</caption><thead><tr><th>Food item</th><th>Day</th><th>Meal</th></tr></thead><tbody><tr><th scope=\"row\">Sugar cookie cubes</th><td>1</td><td>B</td></tr><tr><th scope=\"row\">Chicken and vegetables</th><td>2</td><td>B</td></tr><tr><th scope=\"row\">Shrimp cocktail</th><td>4</td><td>C</td></tr><tr><th scope=\"row\">Hot cocoa</th><td>3</td><td>A</td></tr></tbody></table></div>To make sure they got the nutrition they needed while in space, the astronauts of NASA’s Gemini missions were given menus for three meals a day (meals A, B, and C) on a four-day rotating schedule. Looking at the sample of food items from these menus, a student notes that on day 1, the menu included ______</div><p>Which choice most effectively uses data from the table to complete the statement?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "shrimp cocktail for meal B."
+      },
+      {
+        "label": "B",
+        "html": "hot cocoa for meal C."
+      },
+      {
+        "label": "C",
+        "html": "sugar cookie cubes for meal B."
+      },
+      {
+        "label": "D",
+        "html": "chicken and vegetables for meal A."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b> because it most effectively uses data from the table to complete the statement. The table shows that on day 1, the menu for NASA’s Gemini missions included sugar cookie cubes for meal B.</p><p><b>Choice A is incorrect</b> because according to the table, shrimp cocktail was served on day 4, not day 1; moreover, the item was served for meal C, not meal B, as this choice claims.</p><p><b>Choice B is incorrect</b> because according to the table, hot cocoa was served on day 3, not on day 1; moreover, the item was served for meal A, not for meal C, as this choice claims.</p><p><b>Choice D is incorrect</b> because according to the table, chicken and vegetables were served on day 2, not on day 1; moreover, the item was served for meal B, not for meal A, as this choice claims.</p>"
+  },
+  {
+    "id": "u10-02",
+    "lessonCode": "U10",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><div class=\"tablewrap\"><table><caption>Pyramids in Egypt and the Americas</caption><thead><tr><th>Pyramid</th><th>Country</th><th>Height (meters)</th><th>Age (years before present)</th></tr></thead><tbody><tr><th scope=\"row\">The Great Pyramid</th><td>Mexico</td><td>33</td><td>2,050 to 2,400</td></tr><tr><th scope=\"row\">The Pyramid of Djoser</th><td>Egypt</td><td>60</td><td>4,600 to 4,700</td></tr><tr><th scope=\"row\">The Pyramid of Sahure</th><td>Egypt</td><td>47</td><td>4,400 to 4,500</td></tr><tr><th scope=\"row\">El Castillo</th><td>Belize</td><td>40</td><td>1,100 to 1,400</td></tr></tbody></table></div>A student is writing an essay about four pyramids for a history class and wants to note how long ago each pyramid was built and how tall each pyramid is. Consulting the table, the student finds that el Castillo was built 1,100 to 1,400 years ago and is ______</div><p>Which choice most effectively uses data from the table to complete the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "33 meters tall."
+      },
+      {
+        "label": "B",
+        "html": "47 meters tall."
+      },
+      {
+        "label": "C",
+        "html": "40 meters tall."
+      },
+      {
+        "label": "D",
+        "html": "60 meters tall."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b> because it most effectively uses data from the table to complete the text about the el Castillo pyramid. The table presents information for the location, height, and age of four pyramids, and the task is to use the data from the table to complete the text by choosing the correct height for el Castillo, which the table shows is 40 meters.</p><p><b>Choice A is incorrect</b> because, according to the table, el Castillo is 40 meters tall, not 33 meters, which is the height of the Great Pyramid in Mexico.</p><p><b>Choice B is incorrect</b> because, according to the table, el Castillo is 40 meters tall, not 47 meters, which is the height of the Pyramid of Sahure in Egypt.</p><p><b>Choice D is incorrect</b> because, according to the table, el Castillo is 40 meters tall, not 60 meters, which is the height of the Pyramid of Djoser in Egypt.</p>"
+  },
+  {
+    "id": "u10-03",
+    "lessonCode": "U10",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><div class=\"tablewrap\"><table><caption>Average Temperatures in July in Four Locations in the Navajo Nation</caption><thead><tr><th>Location</th><th>Average highest temperature (Fahrenheit)</th><th>Average lowest temperature (Fahrenheit)</th></tr></thead><tbody><tr><th scope=\"row\">Teec Nos Pos</th><td>94°</td><td>65°</td></tr><tr><th scope=\"row\">Cameron</th><td>99°</td><td>65°</td></tr><tr><th scope=\"row\">Ramah</th><td>83°</td><td>50°</td></tr><tr><th scope=\"row\">Tuba City</th><td>83°</td><td>50°</td></tr></tbody></table></div>The Navajo Nation has the largest land area of any tribal nation in the United States: over 27,000 square miles in the Southwest. Because this area is so huge and its communities are located at various elevations, the people of the Navajo Nation can experience different climate conditions depending on where they live. For example, in July, ______</div><p>Which choice most effectively uses data from the table to complete the statement?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "the lowest temperature for both Cameron and Teec Nos Pos was 65°."
+      },
+      {
+        "label": "B",
+        "html": "Tuba City’s average highest temperature was 94°, while Teec Nos Pos’s was 93°."
+      },
+      {
+        "label": "C",
+        "html": "Ramah’s average highest temperature was 83°, while Cameron’s was 99°."
+      },
+      {
+        "label": "D",
+        "html": "the lowest temperature for both Ramah and Tuba City was 50°."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b> because it effectively uses data from the table to complete the statement, providing an example of how the people of the Navajo Nation can experience different climate conditions depending on where they live. The table shows the average highest temperatures and average lowest temperatures in four locations in the Navajo Nation in July. According to the table, Ramah’s average highest temperature for July was 83°, whereas Cameron’s average highest temperature was much higher, at 99°. This difference illustrates the statement that the people of the Navajo Nation can experience different climate conditions depending on where they live.</p><p><b>Choice A is incorrect</b> because it states that Cameron and Teec Nos Pos had the same average lowest temperature (65°) for July, which suggests a similarity in climate conditions in those locations rather than a difference.</p><p><b>Choice B is incorrect</b> because it misrepresents the data from the table, which shows that the average highest temperature in July for Tuba City was 83°, not 94°, and for Teec Nos Pos it was 94°, not 93°. Even if the cited data accurately reflected the data in the table, the similarity between the two values for average highest temperature would suggest that people in the two locations likely experience similar climate conditions, not different climate conditions.</p><p><b>Choice D is incorrect</b> because it states that Ramah and Tuba City had the same average lowest temperature (50°) for July, which suggests a similarity in climate conditions in those locations rather than a difference.</p>"
+  },
+  {
+    "id": "u10-04",
+    "lessonCode": "U10",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><div class=\"figcap\">Percentage of Participants Who Mentioned Factors</div><svg viewBox=\"0 0 260 184\" role=\"img\" aria-label=\"Bar graph of the percentage of participants who mentioned convenience, costs and established behaviors\" fill=\"none\" stroke=\"currentColor\"><line x1=\"46\" y1=\"150.0\" x2=\"250\" y2=\"150.0\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"134.5\" x2=\"250\" y2=\"134.5\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"119.0\" x2=\"250\" y2=\"119.0\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"103.5\" x2=\"250\" y2=\"103.5\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"88.0\" x2=\"250\" y2=\"88.0\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"72.5\" x2=\"250\" y2=\"72.5\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"57.0\" x2=\"250\" y2=\"57.0\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"41.5\" x2=\"250\" y2=\"41.5\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"26.0\" x2=\"250\" y2=\"26.0\" stroke-opacity=\".2\"/><rect x=\"69.0\" y=\"44.6\" width=\"22.0\" height=\"105.4\" fill=\"currentColor\" fill-opacity=\".35\" stroke-width=\"1\"/><rect x=\"137.0\" y=\"71.0\" width=\"22.0\" height=\"79.0\" fill=\"currentColor\" fill-opacity=\".35\" stroke-width=\"1\"/><rect x=\"205.0\" y=\"35.3\" width=\"22.0\" height=\"114.7\" fill=\"currentColor\" fill-opacity=\".35\" stroke-width=\"1\"/><line x1=\"46\" y1=\"150\" x2=\"250\" y2=\"150\" stroke-width=\"1.5\"/><g fill=\"currentColor\" stroke=\"none\" font-size=\"9\" font-family=\"sans-serif\"><text x=\"41\" y=\"153.0\" text-anchor=\"end\">0</text><text x=\"41\" y=\"137.5\" text-anchor=\"end\">10</text><text x=\"41\" y=\"122.0\" text-anchor=\"end\">20</text><text x=\"41\" y=\"106.5\" text-anchor=\"end\">30</text><text x=\"41\" y=\"91.0\" text-anchor=\"end\">40</text><text x=\"41\" y=\"75.5\" text-anchor=\"end\">50</text><text x=\"41\" y=\"60.0\" text-anchor=\"end\">60</text><text x=\"41\" y=\"44.5\" text-anchor=\"end\">70</text><text x=\"41\" y=\"29.0\" text-anchor=\"end\">80</text><text x=\"80.0\" y=\"161\" text-anchor=\"middle\">convenience</text><text x=\"148.0\" y=\"161\" text-anchor=\"middle\">costs</text><text x=\"216.0\" y=\"161\" text-anchor=\"middle\">established</text><text x=\"216.0\" y=\"171\" text-anchor=\"middle\">behaviors</text><text transform=\"translate(9,88.0) rotate(-90)\" text-anchor=\"middle\">Percent</text></g></svg>Researcher Judith Hilton and her team interviewed 55 people about which factors would make them switch from using single-use plastic containers to reusable containers. The graph shows three of the factors mentioned in the interviews and the percentage of participants who mentioned them.</div><p>According to the graph, about what percentage of participants mentioned costs in the interviews?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "10%"
+      },
+      {
+        "label": "B",
+        "html": "95%"
+      },
+      {
+        "label": "C",
+        "html": "25%"
+      },
+      {
+        "label": "D",
+        "html": "50%"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b> because it states the percentage of participants who mentioned costs in the interviews conducted by Judith Hilton and her team. The text states that Hilton and her team interviewed participants about factors that would encourage them to switch from single-use plastic containers to reusable containers. The graph presents three factors mentioned in the interviews (convenience, costs, and established behaviors) and the percentage of participants who mentioned each one. The graph shows that about 50% of participants mentioned costs as a factor.</p><p><b>Choice A is incorrect</b> because the graph shows that about 50% of participants, not 10%, mentioned costs as a factor.</p><p><b>Choice B is incorrect</b> because the graph shows that about 50% of participants, not 95%, mentioned costs as a factor.</p><p><b>Choice C is incorrect</b> because the graph shows that about 50% of participants, not 25%, mentioned costs as a factor.</p>"
+  },
+  {
+    "id": "u10-05",
+    "lessonCode": "U10",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><div class=\"tablewrap\"><table><caption>Four Studies of Food Choices in Various Contexts</caption><thead><tr><th>Location</th><th>Food choices related to…</th><th>Study population</th><th>Number of participants</th></tr></thead><tbody><tr><th scope=\"row\">Canada</th><td>sports</td><td>adults</td><td>17</td></tr><tr><th scope=\"row\">United States</th><td>school</td><td>children</td><td>44</td></tr><tr><th scope=\"row\">India</th><td>community</td><td>adolescents and adults</td><td>94</td></tr><tr><th scope=\"row\">Ghana and Kenya</th><td>food shops</td><td>adolescents</td><td>142</td></tr></tbody></table></div>The table shows information from four studies about food choices people make in different contexts. According to the table, the study with the smallest number of participants involved only adults, and the study with the greatest number of participants involved ______</div><p>Which choice most effectively uses data from the table to complete the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "only children."
+      },
+      {
+        "label": "B",
+        "html": "both adolescents and adults."
+      },
+      {
+        "label": "C",
+        "html": "only adolescents."
+      },
+      {
+        "label": "D",
+        "html": "only adults."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b> because it most effectively uses data from the table to complete the text’s comparison of the studies about food choices. The table shows information from four studies about food choices, including each study’s location, the context of the food choices examined, the study population, and the number of participants. According to the table, the study with the greatest number of participants (142) was conducted in Ghana and Kenya and involved only adolescents.</p><p><b>Choice A is incorrect</b> because the table indicates that the study that involved only children was conducted in the United States and had 44 participants—not the greatest number of participants. According to the table, the study with the greatest number of participants (142) involved only adolescents.</p><p><b>Choice B is incorrect</b> because the table indicates that the study population that consisted of both adolescents and adults was the India study, which had 94 participants—not the greatest number of participants. According to the table, the study with the greatest number of participants (142) involved only adolescents.</p><p><b>Choice D is incorrect</b> because, according to the table and the text, the study that involved only adults was conducted in Canada and had 17 participants—the smallest, not the greatest, number of participants in the table.</p>"
+  },
+  {
+    "id": "u10-06",
+    "lessonCode": "U10",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><div class=\"figcap\">Monthly Hours of Sunshine from April to September in Anchorage and Fairbanks, Alaska</div><svg viewBox=\"0 0 260 214\" role=\"img\" aria-label=\"Line graph of monthly hours of sunshine in Anchorage and Fairbanks from April to September\" fill=\"none\" stroke=\"currentColor\"><line x1=\"46\" y1=\"150.0\" x2=\"246\" y2=\"150.0\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"132.0\" x2=\"246\" y2=\"132.0\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"114.0\" x2=\"246\" y2=\"114.0\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"96.0\" x2=\"246\" y2=\"96.0\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"78.0\" x2=\"246\" y2=\"78.0\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"60.0\" x2=\"246\" y2=\"60.0\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"42.0\" x2=\"246\" y2=\"42.0\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"24.0\" x2=\"246\" y2=\"24.0\" stroke-opacity=\".2\"/><line x1=\"62.0\" y1=\"150\" x2=\"62.0\" y2=\"24.0\" stroke-opacity=\".2\"/><line x1=\"95.6\" y1=\"150\" x2=\"95.6\" y2=\"24.0\" stroke-opacity=\".2\"/><line x1=\"129.2\" y1=\"150\" x2=\"129.2\" y2=\"24.0\" stroke-opacity=\".2\"/><line x1=\"162.8\" y1=\"150\" x2=\"162.8\" y2=\"24.0\" stroke-opacity=\".2\"/><line x1=\"196.4\" y1=\"150\" x2=\"196.4\" y2=\"24.0\" stroke-opacity=\".2\"/><line x1=\"230.0\" y1=\"150\" x2=\"230.0\" y2=\"24.0\" stroke-opacity=\".2\"/><polyline points=\"62.0,58.9 95.6,53.5 129.2,46.3 162.8,58.2 196.4,83.8 230.0,103.9\" stroke-width=\"2\"/><polyline points=\"62.0,41.3 95.6,35.2 129.2,29.4 162.8,51.4 196.4,91.0 230.0,106.1\" stroke-width=\"2\" stroke-dasharray=\"5 3\"/><path d=\"M62.0 54.9 l4 7 h-8 z\" fill=\"currentColor\"/><path d=\"M95.6 49.5 l4 7 h-8 z\" fill=\"currentColor\"/><path d=\"M129.2 42.3 l4 7 h-8 z\" fill=\"currentColor\"/><path d=\"M162.8 54.2 l4 7 h-8 z\" fill=\"currentColor\"/><path d=\"M196.4 79.8 l4 7 h-8 z\" fill=\"currentColor\"/><path d=\"M230.0 99.9 l4 7 h-8 z\" fill=\"currentColor\"/><rect x=\"59.0\" y=\"38.3\" width=\"6\" height=\"6\" fill=\"var(--bg)\" stroke-width=\"1.5\"/><rect x=\"92.6\" y=\"32.2\" width=\"6\" height=\"6\" fill=\"var(--bg)\" stroke-width=\"1.5\"/><rect x=\"126.2\" y=\"26.4\" width=\"6\" height=\"6\" fill=\"var(--bg)\" stroke-width=\"1.5\"/><rect x=\"159.8\" y=\"48.4\" width=\"6\" height=\"6\" fill=\"var(--bg)\" stroke-width=\"1.5\"/><rect x=\"193.4\" y=\"88.0\" width=\"6\" height=\"6\" fill=\"var(--bg)\" stroke-width=\"1.5\"/><rect x=\"227.0\" y=\"103.1\" width=\"6\" height=\"6\" fill=\"var(--bg)\" stroke-width=\"1.5\"/><line x1=\"46\" y1=\"150\" x2=\"246\" y2=\"150\" stroke-width=\"1.5\"/><line x1=\"46\" y1=\"188\" x2=\"72\" y2=\"188\" stroke-width=\"2\"/><path d=\"M59 184 l4 7 h-8 z\" fill=\"currentColor\"/><line x1=\"46\" y1=\"202\" x2=\"72\" y2=\"202\" stroke-width=\"2\" stroke-dasharray=\"5 3\"/><rect x=\"56\" y=\"199\" width=\"6\" height=\"6\" fill=\"var(--bg)\" stroke-width=\"1.5\"/><g fill=\"currentColor\" stroke=\"none\" font-size=\"9\" font-family=\"sans-serif\"><text x=\"41\" y=\"153.0\" text-anchor=\"end\">0</text><text x=\"41\" y=\"135.0\" text-anchor=\"end\">50</text><text x=\"41\" y=\"117.0\" text-anchor=\"end\">100</text><text x=\"41\" y=\"99.0\" text-anchor=\"end\">150</text><text x=\"41\" y=\"81.0\" text-anchor=\"end\">200</text><text x=\"41\" y=\"63.0\" text-anchor=\"end\">250</text><text x=\"41\" y=\"45.0\" text-anchor=\"end\">300</text><text x=\"41\" y=\"27.0\" text-anchor=\"end\">350</text><text x=\"62.0\" y=\"161\" text-anchor=\"middle\">April</text><text x=\"95.6\" y=\"161\" text-anchor=\"middle\">May</text><text x=\"129.2\" y=\"161\" text-anchor=\"middle\">June</text><text x=\"162.8\" y=\"161\" text-anchor=\"middle\">July</text><text x=\"196.4\" y=\"161\" text-anchor=\"middle\">Aug.</text><text x=\"230.0\" y=\"161\" text-anchor=\"middle\">Sept.</text><text transform=\"translate(9,87.0) rotate(-90)\" text-anchor=\"middle\">Hours of sunshine</text><text x=\"146.0\" y=\"174\" text-anchor=\"middle\">Month</text><text x=\"78\" y=\"191\">Anchorage</text><text x=\"78\" y=\"205\">Fairbanks</text></g></svg>A student is researching monthly hours of sunshine in different cities in Alaska. When comparing trends in Anchorage and Fairbanks, the student concludes that the two cities show a similar pattern in the monthly hours of sunshine from April to September.</div><p>Which choice best describes data from the graph that support the student’s conclusion?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "The monthly hours of sunshine in both Anchorage and Fairbanks hold steady in June and July before beginning to decline in August."
+      },
+      {
+        "label": "B",
+        "html": "The monthly hours of sunshine in both Anchorage and Fairbanks increase from April to June and then decrease from June to September."
+      },
+      {
+        "label": "C",
+        "html": "Anchorage and Fairbanks both have less than 200 monthly hours of sunshine from April to September."
+      },
+      {
+        "label": "D",
+        "html": "Anchorage and Fairbanks both have more than 300 monthly hours of sunshine from April to June and less than 200 hours from July to September."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b> because it best describes data from the graph that support the student’s conclusion about weather patterns in Anchorage and Fairbanks. According to the graph, the amount of sunshine increases in both cities from April to June: in Anchorage, the number of monthly hours increases from about 250 to just under 300, and in Fairbanks the number of monthly hours increases from about 300 to just under 350. Also according to the graph, the amount of sunshine decreases in both cities from June to September: in Anchorage the number of monthly hours decreases from just under 300 to about 125, and in Fairbanks the number of monthly hours decreases from just under 350 to about 125. Thus, the monthly hours of sunshine in both cities follow a similar pattern, increasing from April to June and then decreasing from June to September.</p><p><b>Choice A is incorrect</b> because, according to the graph, the monthly hours of sunshine in both Anchorage and Fairbanks decrease from June to July. They don’t hold steady. In June there are slightly less than 300 hours of sunshine in Anchorage and slightly less than 350 hours in Fairbanks. Then, in July there are approximately 250 hours of sunshine in both cities.</p><p><b>Choice C is incorrect</b> because the graph shows that Anchorage and Fairbanks have less than 200 monthly hours of sunshine only in August and September. For the rest of the months represented in the graph, both cities have more than 200 monthly hours of sunshine.</p><p><b>Choice D is incorrect</b> because, according to the graph, Anchorage doesn’t have more than 300 monthly hours of sunshine from April to June. In addition, both cities have more than 200 hours of sunshine in July, although the amount of sunshine does decrease to less than 200 monthly hours in August and September.</p>"
+  },
+  {
+    "id": "u10-07",
+    "lessonCode": "U10",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><div class=\"tablewrap\"><table><caption>Partial List of Candidate Species for De-extinction</caption><thead><tr><th>Common name</th><th>Scientific name</th><th>Became extinct</th></tr></thead><tbody><tr><th scope=\"row\">Huia</th><td><i>Heteralocha acutirostris</i></td><td>1907</td></tr><tr><th scope=\"row\">Caribbean monk seal</th><td><i>Monachus tropicalis</i></td><td>1952</td></tr><tr><th scope=\"row\">Passenger pigeon</th><td><i>Ectopistes migratorius</i></td><td>1914</td></tr><tr><th scope=\"row\">Saber-toothed cat</th><td><i>Smilodon</i></td><td>11,000 years before present</td></tr><tr><th scope=\"row\">Woolly mammoth</th><td><i>Mammuthus primigenius</i></td><td>6,400 years before present</td></tr></tbody></table></div>The passage of time is among the many obstacles faced by scientists who are pursuing de-extinction efforts—that is, efforts to use breeding or a mixture of cloning and genetic engineering to bring back extinct species. Specifically, researchers are concerned that the longer a species has been extinct, the less likely it is that a suitable habitat still exists for that species. Among candidate species for de-extinction, this problem would be especially concerning for the ______</div><p>Which choice most effectively uses data from the table to complete the statement?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "passenger pigeon (<i>Ectopistes migratorius</i>), which became extinct only a few years after the huia (<i>Heteralocha acutirostris</i>)."
+      },
+      {
+        "label": "B",
+        "html": "saber-toothed cat (<i>Smilodon</i>), which became extinct 11,000 years ago."
+      },
+      {
+        "label": "C",
+        "html": "woolly mammoth (<i>Mammuthus primigenius</i>), which became extinct several thousand years before the saber-toothed cat (<i>Smilodon</i>)."
+      },
+      {
+        "label": "D",
+        "html": "Caribbean monk seal (<i>Monachus tropicalis</i>), which became extinct in 1952."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b> because it uses data from the table to complete the statement regarding a species for which the problem of finding a suitable habitat would be especially concerning.</p><ul><li>For each candidate species, the table lists its common name, scientific name, and when the species became extinct.</li><li>The text explains that scientists pursuing de-extinction for the candidate species also consider the length of time that has passed since the species’ extinction, noting that the longer the animal has been extinct, the less likely it is that a suitable habitat would exist for the species today.</li><li>The possibility of not having a suitable habitat would be especially concerning for the candidate species for which the most time has passed since its extinction.</li><li>According to the table this species would be the saber-toothed cat, which became extinct 11,000 years before present.</li></ul><p><b>Choice A is incorrect</b> because it compares the time since the extinction of the passenger pigeon to the time since the extinction of the huia instead of citing the species listed in the table that has been extinct the longest (the saber-toothed cat). The text indicates that the longer a species has been extinct, the lower the chances are that a suitable habitat exists for it today. Neither the table nor the text supports the claim that the passenger pigeon is especially vulnerable to this problem.</p><p><b>Choice C is incorrect</b> because the text states that the longer a species has been extinct, the less likely it is that there would be a suitable habitat available for the species today. So, the problem would be especially concerning for the saber-toothed cat, which became extinct several thousand years before the woolly mammoth did—not the other way around.</p><p><b>Choice D is incorrect</b> because the text states that the longer a species has been extinct, the lower the chances are that a suitable habitat would be available for that species today. According to the table, the Caribbean monk seal became extinct in 1952, which is the most recent extinction listed for a candidate species in the table.</p>"
+  },
+  {
+    "id": "u10-08",
+    "lessonCode": "U10",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><div class=\"figcap\">Suggestions for Improving a University</div><svg viewBox=\"0 0 260 184\" role=\"img\" aria-label=\"Bar graph of the number of suggestions coded as additive, neither additive nor subtractive, subtractive, and invalid\" fill=\"none\" stroke=\"currentColor\"><line x1=\"46\" y1=\"150.0\" x2=\"250\" y2=\"150.0\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"129.3\" x2=\"250\" y2=\"129.3\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"108.7\" x2=\"250\" y2=\"108.7\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"88.0\" x2=\"250\" y2=\"88.0\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"67.3\" x2=\"250\" y2=\"67.3\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"46.7\" x2=\"250\" y2=\"46.7\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"26.0\" x2=\"250\" y2=\"26.0\" stroke-opacity=\".2\"/><rect x=\"60.5\" y=\"30.1\" width=\"22.0\" height=\"119.9\" fill=\"currentColor\" fill-opacity=\".35\" stroke-width=\"1\"/><rect x=\"111.5\" y=\"113.8\" width=\"22.0\" height=\"36.2\" fill=\"currentColor\" fill-opacity=\".35\" stroke-width=\"1\"/><rect x=\"162.5\" y=\"135.5\" width=\"22.0\" height=\"14.5\" fill=\"currentColor\" fill-opacity=\".35\" stroke-width=\"1\"/><rect x=\"213.5\" y=\"72.9\" width=\"22.0\" height=\"77.1\" fill=\"currentColor\" fill-opacity=\".35\" stroke-width=\"1\"/><line x1=\"46\" y1=\"150\" x2=\"250\" y2=\"150\" stroke-width=\"1.5\"/><g fill=\"currentColor\" stroke=\"none\" font-size=\"9\" font-family=\"sans-serif\"><text x=\"41\" y=\"153.0\" text-anchor=\"end\">0</text><text x=\"41\" y=\"132.3\" text-anchor=\"end\">100</text><text x=\"41\" y=\"111.7\" text-anchor=\"end\">200</text><text x=\"41\" y=\"91.0\" text-anchor=\"end\">300</text><text x=\"41\" y=\"70.3\" text-anchor=\"end\">400</text><text x=\"41\" y=\"49.7\" text-anchor=\"end\">500</text><text x=\"41\" y=\"29.0\" text-anchor=\"end\">600</text><text x=\"71.5\" y=\"161\" text-anchor=\"middle\">additive</text><text x=\"122.5\" y=\"161\" text-anchor=\"middle\">neither</text><text x=\"122.5\" y=\"171\" text-anchor=\"middle\">additive nor</text><text x=\"122.5\" y=\"181\" text-anchor=\"middle\">subtractive</text><text x=\"173.5\" y=\"161\" text-anchor=\"middle\">subtractive</text><text x=\"224.5\" y=\"161\" text-anchor=\"middle\">invalid</text><text transform=\"translate(9,88.0) rotate(-90)\" text-anchor=\"middle\">Number of suggestions</text></g></svg>Gabrielle Adams and colleagues reviewed suggestions for improving a university that had been submitted to the university’s president. They coded each suggestion as additive (the idea suggested adding something new to the university), subtractive (the idea suggested removing something from the university), neither additive nor subtractive, or invalid (the idea was not comprehensible). The data illustrated people’s tendency to overlook the possibility of removing things to achieve improvements: ______</div><p>Which choice most effectively uses data in the graph to complete the statement?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "around 175 suggestions were coded as neither additive nor subtractive, whereas around 575 suggestions were coded as additive."
+      },
+      {
+        "label": "B",
+        "html": "more than 350 suggestions were coded as invalid, whereas fewer than 100 suggestions were coded as subtractive."
+      },
+      {
+        "label": "C",
+        "html": "fewer than 100 suggestions were coded as subtractive, whereas more than 550 suggestions were coded as additive."
+      },
+      {
+        "label": "D",
+        "html": "around 575 suggestions were coded as additive, whereas around 175 suggestions were coded as subtractive."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b>. This choice shows that people suggested removing things to achieve improvements a lot less often than they suggested adding things, which supports the claim that people tend not to think of removing things as a likely way to improve the university.</p><p><b>Choice A is incorrect</b>. This choice doesn’t support the claim. We are looking to prove that people suggested subtractive means of achieving improvements less often than other means, but this choice doesn’t address how often people made subtractive suggestions.</p><p><b>Choice B is incorrect</b>. This choice doesn’t support the claim. Invalid responses were incomprehensible, so we can’t compare what they were suggesting to what was being suggested in subtractive responses.</p><p><b>Choice D is incorrect</b>. This choice misreads the graph. Fewer than 100 suggestions were coded as subtractive. 175 is the approximate number of suggestions coded as “neither additive or subtractive.”</p>"
+  },
+  {
+    "id": "u10-09",
+    "lessonCode": "U10",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><div class=\"tablewrap\"><table><caption>Guilds in French Cities in the Late Eighteenth Century</caption><thead><tr><th>City</th><th>Date</th><th>Inhabitants</th><th>Number of guilds</th><th>Inhabitants per guild</th></tr></thead><tbody><tr><th scope=\"row\">Paris</th><td>1766</td><td>600,000</td><td>133</td><td>4,511</td></tr><tr><th scope=\"row\">Bordeaux</th><td>1762</td><td>80,000</td><td>49</td><td>1,633</td></tr><tr><th scope=\"row\">Rouen</th><td>1775</td><td>74,000</td><td>112</td><td>661</td></tr><tr><th scope=\"row\">Lyon</th><td>1789</td><td>143,000</td><td>72</td><td>1,986</td></tr></tbody></table></div>Guilds—local associations of artisans and merchants in the same industry—were widespread in France from the medieval period until the late eighteenth century. But guilds were much more numerous relative to the population in some cities than in others: for example, ______</div><p>Which choice most effectively uses data from the table to complete the statement?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "there were 49 guilds in Bordeaux but 72 guilds in Lyon despite the two cities having nearly equal numbers of inhabitants."
+      },
+      {
+        "label": "B",
+        "html": "Lyon had far fewer inhabitants than Paris did but had many more guilds."
+      },
+      {
+        "label": "C",
+        "html": "there was one guild for every 661 inhabitants in Rouen but one guild for every 4,511 inhabitants in Paris."
+      },
+      {
+        "label": "D",
+        "html": "Paris had 133 guilds and 600,000 inhabitants, or one guild for every 4,511 inhabitants."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b>. The claim we’re trying to prove is that guilds were much more numerous relative to population in some cities than others. This choice describes the guilds per number of inhabitants in two cities (Rouen and Paris), showing significant differences between guilds relative to population in these cities.</p><p><b>Choice A is incorrect</b>. This choice misreads the table. Bordeaux had 80,000 inhabitants, according to the table, while Lyon had 143,000, so it isn’t correct to say that they had \"nearly equal numbers of inhabitants.\" Lyon had almost twice as many inhabitants.</p><p><b>Choice B is incorrect</b>. This choice misreads the table. Although Lyon did have fewer inhabitants than Paris, it didn’t have more guilds—Paris had 133 guilds versus Lyon’s 72.</p><p><b>Choice D is incorrect</b>. This choice doesn’t support the claim. To show that guilds were more numerous relative to population in some cities than others, we would need to compare at least two cities, and this choice only mentions one.</p>"
+  },
+  {
+    "id": "u10-10",
+    "lessonCode": "U10",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><div class=\"tablewrap\"><table><caption>Nucleobase Concentrations from Murchison Meteorite and Soil Samples in Parts per Billion</caption><thead><tr><th>Nucleobase</th><th>Murchison meteorite sample 1</th><th>Murchison meteorite sample 2</th><th>Murchison soil sample</th></tr></thead><tbody><tr><th scope=\"row\">Isoguanine</th><td>0.5</td><td>0.04</td><td>not detected</td></tr><tr><th scope=\"row\">Purine</th><td>0.2</td><td>0.02</td><td>not detected</td></tr><tr><th scope=\"row\">Xanthine</th><td>39</td><td>3</td><td>1</td></tr><tr><th scope=\"row\">Adenine</th><td>15</td><td>1</td><td>40</td></tr><tr><th scope=\"row\">Hypoxanthine</th><td>24</td><td>1</td><td>2</td></tr></tbody></table></div>Employing high-performance liquid chromatography—a process that uses pressurized water to separate material into its component molecules—astrochemist Yashiro Oba and colleagues analyzed two samples of the Murchison meteorite that landed in Australia as well as soil from the landing zone of the meteorite to determine the concentrations of various organic molecules. By comparing the relative concentrations of types of molecules known as nucleobases in the Murchison meteorite with those in the soil, the team concluded that there is evidence that the nucleobases in the Murchison meteorite formed in space and are not the result of contamination on Earth.</div><p>Which choice best describes data from the table that support the team’s conclusion?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Isoguanine and purine were detected in both meteorite samples but not in the soil sample."
+      },
+      {
+        "label": "B",
+        "html": "Adenine and xanthine were detected in both of the meteorite samples and in the soil sample."
+      },
+      {
+        "label": "C",
+        "html": "Hypoxanthine and purine were detected in both the Murchison meteorite sample 2 and in the soil sample."
+      },
+      {
+        "label": "D",
+        "html": "Isoguanine and hypoxanthine were detected in the Murchison meteorite sample 1 but not in sample 2."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. The researchers concluded that the meteorite’s nucleobases weren’t the result of soil contamination. Presence of nucleobases in the meteorite and not in soil provides evidence that those nucleobases likely didn’t come from the soil.</p><p><b>Choice B is incorrect</b>. This choice doesn’t justify the conclusion. The researchers concluded that the meteorite’s nucleobases weren’t the result of soil contamination. If the nucleobases are present in both the soil and meteorite, then it’s possible that these nucleobases came from the soil.</p><p><b>Choice C is incorrect</b>. This choice misreads the table. Purine was not detected in the soil sample.</p><p><b>Choice D is incorrect</b>. This choice misreads the table. Both isoguanine and hypoxanthine were detected in both Murchison meteorite samples.</p>"
+  },
+  {
+    "id": "u10-11",
+    "lessonCode": "U10",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><div class=\"figcap\">Characteristics of the Banks of the Provo River Downstream of the Jordanelle Dam</div><svg viewBox=\"0 0 260 232\" role=\"img\" aria-label=\"Bar graph of grass cover, bare soil and forest cover in 1987, 1993 and 2006\" fill=\"none\" stroke=\"currentColor\"><line x1=\"58\" y1=\"170.0\" x2=\"248\" y2=\"170.0\" stroke-opacity=\".2\"/><line x1=\"58\" y1=\"150.0\" x2=\"248\" y2=\"150.0\" stroke-opacity=\".2\"/><line x1=\"58\" y1=\"130.0\" x2=\"248\" y2=\"130.0\" stroke-opacity=\".2\"/><line x1=\"58\" y1=\"110.0\" x2=\"248\" y2=\"110.0\" stroke-opacity=\".2\"/><line x1=\"58\" y1=\"90.0\" x2=\"248\" y2=\"90.0\" stroke-opacity=\".2\"/><line x1=\"58\" y1=\"70.0\" x2=\"248\" y2=\"70.0\" stroke-opacity=\".2\"/><line x1=\"58\" y1=\"50.0\" x2=\"248\" y2=\"50.0\" stroke-opacity=\".2\"/><line x1=\"58\" y1=\"30.0\" x2=\"248\" y2=\"30.0\" stroke-opacity=\".2\"/><rect x=\"72\" y=\"113.0\" width=\"14\" height=\"57.0\" fill=\"currentColor\" fill-opacity=\".5\" stroke-width=\"1\"/><rect x=\"86\" y=\"105.0\" width=\"14\" height=\"65.0\" fill=\"currentColor\" fill-opacity=\".15\" stroke-width=\"1\"/><rect x=\"100\" y=\"95.0\" width=\"14\" height=\"75.0\" fill=\"currentColor\" fill-opacity=\"1\" stroke-width=\"1\"/><rect x=\"132\" y=\"75.0\" width=\"14\" height=\"95.0\" fill=\"currentColor\" fill-opacity=\".5\" stroke-width=\"1\"/><rect x=\"146\" y=\"154.0\" width=\"14\" height=\"16.0\" fill=\"currentColor\" fill-opacity=\".15\" stroke-width=\"1\"/><rect x=\"160\" y=\"112.0\" width=\"14\" height=\"58.0\" fill=\"currentColor\" fill-opacity=\"1\" stroke-width=\"1\"/><rect x=\"192\" y=\"40.0\" width=\"14\" height=\"130.0\" fill=\"currentColor\" fill-opacity=\".5\" stroke-width=\"1\"/><rect x=\"206\" y=\"135.0\" width=\"14\" height=\"35.0\" fill=\"currentColor\" fill-opacity=\".15\" stroke-width=\"1\"/><rect x=\"220\" y=\"125.0\" width=\"14\" height=\"45.0\" fill=\"currentColor\" fill-opacity=\"1\" stroke-width=\"1\"/><line x1=\"58\" y1=\"170\" x2=\"248\" y2=\"170\" stroke-width=\"1.5\"/><rect x=\"38\" y=\"208\" width=\"10\" height=\"10\" fill=\"currentColor\" fill-opacity=\".5\" stroke-width=\"1\"/><rect x=\"114\" y=\"208\" width=\"10\" height=\"10\" fill=\"currentColor\" fill-opacity=\".15\" stroke-width=\"1\"/><rect x=\"190\" y=\"208\" width=\"10\" height=\"10\" fill=\"currentColor\" fill-opacity=\"1\" stroke-width=\"1\"/><g fill=\"currentColor\" stroke=\"none\" font-size=\"9\" font-family=\"sans-serif\"><text x=\"53\" y=\"173.0\" text-anchor=\"end\">0</text><text x=\"53\" y=\"153.0\" text-anchor=\"end\">20,000</text><text x=\"53\" y=\"133.0\" text-anchor=\"end\">40,000</text><text x=\"53\" y=\"113.0\" text-anchor=\"end\">60,000</text><text x=\"53\" y=\"93.0\" text-anchor=\"end\">80,000</text><text x=\"53\" y=\"73.0\" text-anchor=\"end\">100,000</text><text x=\"53\" y=\"53.0\" text-anchor=\"end\">120,000</text><text x=\"53\" y=\"33.0\" text-anchor=\"end\">140,000</text><text x=\"93\" y=\"182\" text-anchor=\"middle\">1987</text><text x=\"153\" y=\"182\" text-anchor=\"middle\">1993</text><text x=\"213\" y=\"182\" text-anchor=\"middle\">2006</text><text x=\"153.0\" y=\"195\" text-anchor=\"middle\">Year</text><text transform=\"translate(10,100.0) rotate(-90)\" text-anchor=\"middle\">Area (square meters)</text><text x=\"52\" y=\"217\">grass cover</text><text x=\"128\" y=\"217\">bare soil</text><text x=\"204\" y=\"217\">forest cover</text></g></svg>The Jordanelle Dam was built on the Provo River in Utah in 1992. Earth scientist Adriana E. Martinez and colleagues tracked changes to the environment on the banks of the river downstream of the dam, including how much grass and forest cover were present. They concluded that the dam changed the flow of the river in ways that benefited grass plants but didn’t benefit trees.</div><p>Which choice best describes data from the graph that support Martinez and colleagues’ conclusion?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "The lowest amount of grass cover was approximately 58,000 square meters, and the highest amount of forest cover was approximately 75,000 square meters."
+      },
+      {
+        "label": "B",
+        "html": "There was more grass cover than forest cover in 1987, and this difference increased dramatically in 1993 and again in 2006."
+      },
+      {
+        "label": "C",
+        "html": "There was less grass cover than bare soil in 1987 but more grass cover than bare soil in 1993 and 2006, whereas there was more forest cover than bare soil in all three years."
+      },
+      {
+        "label": "D",
+        "html": "Grass cover increased from 1987 to 1993 and from 1993 to 2006, whereas forest cover decreased in those periods."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b> because it describes data from the graph that support Martinez and colleagues’ conclusion that the Jordanelle Dam led to changes that benefited grass plants but not trees.</p><ul><li>The graph shows characteristics of the banks of the Provo River downstream of the Jordanelle Dam in three different years—1987, 1993, and 2006.</li><li>Specifically, the graph shows the amount of grass cover, bare soil, and forest cover in those years.</li><li>The text indicates that the Jordanelle Dam was built in 1992, meaning that the data from the graph for 1987 reflect conditions before the dam was built, whereas the data for 1993 and 2006 reflect conditions after the dam was built.</li><li>The data show that grass cover increased substantially from 1987 to 1993 and again from 1993 to 2006.</li><li>The data also show that forest cover declined over those periods.</li><li>Together, these data support Martinez and colleagues’ conclusion that the dam was beneficial for grass plants but not for trees—grass cover increased significantly after the dam was built, while forest cover declined.</li></ul><p><b>Choice A is incorrect</b>. Although it is true that, in the graph, the lowest value for grass cover is approximately 58,000 square meters and the highest value for forest cover is approximately 75,000 square meters, both values are from 1987, before the Jordanelle Dam was built in 1992. Therefore, this information alone cannot support Martinez and colleagues’ conclusion about changes in grass and tree cover following the construction of the dam.</p><p><b>Choice B is incorrect</b> because it presents an inaccurate description of data from the graph. The graph shows that there was more forest cover than grass cover in 1987, not that there was more grass cover than forest cover that year.</p><p><b>Choice C is incorrect</b> because, while it accurately reflects data from the graph when it compares grass cover and forest cover to bare soil, these data alone cannot support Martinez and colleagues’ conclusion that the dam led to changes that benefited grass plants but not trees. An increase in grass cover relative to bare soil following the construction of the dam might indicate that the dam benefited grass plants, but the fact that there was more forest cover than bare soil in all three years doesn’t indicate that the dam failed to benefit trees.</p>"
+  },
+  {
+    "id": "u10-12",
+    "lessonCode": "U10",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><div class=\"tablewrap\"><table><caption>Land Area Covered by Native Flowering Plants at a Site in Antarctica</caption><thead><tr><th>Species</th><th>Area covered in 2009 (in square meters)</th><th>Area covered in 2018 (in square meters)</th><th>Percent increase in area covered from 2009 to 2018</th></tr></thead><tbody><tr><th scope=\"row\"><i>Deschampsia antarctica</i></th><td>1,230</td><td>1,576</td><td>28%</td></tr><tr><th scope=\"row\"><i>Colobanthus quitensis</i></th><td>6.9</td><td>10.7</td><td>55%</td></tr></tbody></table></div>The only flowering plant species native to Antarctica, <i>Colobanthus quitensis</i> and <i>Deschampsia antarctica</i> grow in places where the earth remains free of ice for much of the year. Botanist Niccoletta Cannone wondered how the warming of Antarctica’s climate in recent years had affected these species, so she visited a site in Antarctica, first in 2009 and later in 2018, to count the number of plants growing there. Cannone found that the area of land covered by the two species had significantly expanded during the nine-year period. While both species likely benefited from warming temperatures, <i>Colobanthus quitensis</i> ______</div><p>Which choice most effectively uses data from the table to complete the comparison?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "suppressed the growth of <i>Deschampsia antarctica</i>, which covered a smaller area of land in 2018 than it had in 2009."
+      },
+      {
+        "label": "B",
+        "html": "saw a greater expansion than <i>Deschampsia antarctica</i> did, increasing the area of land it covered by more than half."
+      },
+      {
+        "label": "C",
+        "html": "showed a greater increase in the average size of individual plants than <i>Deschampsia antarctica</i> did."
+      },
+      {
+        "label": "D",
+        "html": "covered land newly freed from ice at a rate 55% faster than that of <i>Deschampsia antarctica</i>."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b> because it most effectively uses data from the table to complete the comparison of how Colobanthus quitensis benefited from warming temperatures with how Deschampsia antarctica benefited from them. The table shows the land area covered by these two plant species at a site in Antarctica. According to the table, Colobanthus quitensis increased the area it covered by 55% from 2009 to 2018, whereas Deschampsia antarctica increased the area it covered by 28% during the same period. It therefore follows that Colobanthus quitensis saw a greater expansion than Deschampsia antarctica did and that Colobanthus quitensis increased the area of land it covered by more than half.</p><p><b>Choice A is incorrect</b> because according to the table, Deschampsia antarctica covered 1,230 square meters of land in 2009 and 1,576 square meters of land in 2018. Deschampsia antarctica therefore covered a larger, not a smaller, area of land in 2018 than in 2009. Moreover, there’s no information in the text or the table that suggests that one species of the plant suppressed the other.</p><p><b>Choice C is incorrect</b> because it inaccurately describes the data in the table. The table shows the land area covered by Colobanthus quitensis and Deschampsia antarctica and the percent increase in area covered by the two species from 2009 to 2018, not the average size of individual plants belonging to the two species. The data in the table therefore can’t be used to make a comparison of the increase in individual plants’ average size.</p><p><b>Choice D is incorrect</b> because the table shows the land area covered by Colobanthus quitensis and Deschampsia antarctica and the percent increase in area covered by the two species from 2009 to 2018, not the rate at which the species increased the area they covered. Moreover, there’s nothing in the table or the text that suggests that the areas covered by the two species were newly freed from ice.</p>"
+  },
+  {
+    "id": "u10-13",
+    "lessonCode": "U10",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><div class=\"figcap\">Municipalities’ Responses to Inquiries about Potential Incentives for Firm</div><svg viewBox=\"0 0 260 222\" role=\"img\" aria-label=\"Bar graph of municipalities by response type, for announcements before and after the election\" fill=\"none\" stroke=\"currentColor\"><line x1=\"52\" y1=\"160.0\" x2=\"248\" y2=\"160.0\" stroke-opacity=\".2\"/><line x1=\"52\" y1=\"150.0\" x2=\"248\" y2=\"150.0\" stroke-opacity=\".2\"/><line x1=\"52\" y1=\"140.0\" x2=\"248\" y2=\"140.0\" stroke-opacity=\".2\"/><line x1=\"52\" y1=\"130.0\" x2=\"248\" y2=\"130.0\" stroke-opacity=\".2\"/><line x1=\"52\" y1=\"120.0\" x2=\"248\" y2=\"120.0\" stroke-opacity=\".2\"/><line x1=\"52\" y1=\"110.0\" x2=\"248\" y2=\"110.0\" stroke-opacity=\".2\"/><line x1=\"52\" y1=\"100.0\" x2=\"248\" y2=\"100.0\" stroke-opacity=\".2\"/><line x1=\"52\" y1=\"90.0\" x2=\"248\" y2=\"90.0\" stroke-opacity=\".2\"/><line x1=\"52\" y1=\"80.0\" x2=\"248\" y2=\"80.0\" stroke-opacity=\".2\"/><line x1=\"52\" y1=\"70.0\" x2=\"248\" y2=\"70.0\" stroke-opacity=\".2\"/><line x1=\"52\" y1=\"60.0\" x2=\"248\" y2=\"60.0\" stroke-opacity=\".2\"/><line x1=\"52\" y1=\"50.0\" x2=\"248\" y2=\"50.0\" stroke-opacity=\".2\"/><line x1=\"52\" y1=\"40.0\" x2=\"248\" y2=\"40.0\" stroke-opacity=\".2\"/><line x1=\"52\" y1=\"30.0\" x2=\"248\" y2=\"30.0\" stroke-opacity=\".2\"/><rect x=\"68\" y=\"35.0\" width=\"18\" height=\"125.0\" fill=\"currentColor\" fill-opacity=\".3\" stroke-width=\"1\"/><rect x=\"86\" y=\"35.5\" width=\"18\" height=\"124.5\" fill=\"currentColor\" fill-opacity=\".85\" stroke-width=\"1\"/><rect x=\"130\" y=\"139.5\" width=\"18\" height=\"20.5\" fill=\"currentColor\" fill-opacity=\".3\" stroke-width=\"1\"/><rect x=\"148\" y=\"139.7\" width=\"18\" height=\"20.3\" fill=\"currentColor\" fill-opacity=\".85\" stroke-width=\"1\"/><rect x=\"192\" y=\"147.5\" width=\"18\" height=\"12.5\" fill=\"currentColor\" fill-opacity=\".3\" stroke-width=\"1\"/><rect x=\"210\" y=\"147.8\" width=\"18\" height=\"12.2\" fill=\"currentColor\" fill-opacity=\".85\" stroke-width=\"1\"/><line x1=\"52\" y1=\"160\" x2=\"248\" y2=\"160\" stroke-width=\"1.5\"/><rect x=\"52\" y=\"192\" width=\"10\" height=\"10\" fill=\"currentColor\" fill-opacity=\".3\" stroke-width=\"1\"/><rect x=\"52\" y=\"206\" width=\"10\" height=\"10\" fill=\"currentColor\" fill-opacity=\".85\" stroke-width=\"1\"/><g fill=\"currentColor\" stroke=\"none\" font-size=\"9\" font-family=\"sans-serif\"><text x=\"47\" y=\"163.0\" text-anchor=\"end\">0</text><text x=\"47\" y=\"143.0\" text-anchor=\"end\">200</text><text x=\"47\" y=\"123.0\" text-anchor=\"end\">400</text><text x=\"47\" y=\"103.0\" text-anchor=\"end\">600</text><text x=\"47\" y=\"83.0\" text-anchor=\"end\">800</text><text x=\"47\" y=\"63.0\" text-anchor=\"end\">1,000</text><text x=\"47\" y=\"43.0\" text-anchor=\"end\">1,200</text><text x=\"47\" y=\"33.0\" text-anchor=\"end\">1,300</text><text x=\"86\" y=\"172\" text-anchor=\"middle\">no response</text><text x=\"148\" y=\"172\" text-anchor=\"middle\">responded</text><text x=\"148\" y=\"182\" text-anchor=\"middle\">to inquiry</text><text x=\"210\" y=\"172\" text-anchor=\"middle\">offered</text><text x=\"210\" y=\"182\" text-anchor=\"middle\">incentive</text><text transform=\"translate(9,95.0) rotate(-90)\" text-anchor=\"middle\">Number of municipalities</text><text x=\"66\" y=\"201\">announcement before election</text><text x=\"66\" y=\"215\">announcement after election</text></g></svg>In the United States, firms often seek incentives from municipal governments to expand to those municipalities. A team of political scientists hypothesized that municipalities are much more likely to respond to firms and offer incentives if expansions can be announced in time to benefit local elected officials than if they can’t. The team contacted officials in thousands of municipalities, inquiring about incentives for a firm looking to expand and indicating that the firm would announce its expansion on a date either just before or just after the next election.</div><p>Which choice best describes data from the graph that weaken the team’s hypothesis?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "A large majority of the municipalities that received an inquiry mentioning plans for an announcement before the next election didn’t respond to the inquiry."
+      },
+      {
+        "label": "B",
+        "html": "The proportion of municipalities that responded to the inquiry or offered incentives didn’t substantially differ across the announcement timing conditions."
+      },
+      {
+        "label": "C",
+        "html": "Only around half the municipalities that responded to inquiries mentioning plans for an announcement before the next election offered incentives."
+      },
+      {
+        "label": "D",
+        "html": "Of the municipalities that received an inquiry mentioning plans for an announcement date after the next election, more than 1,200 didn’t respond and only around 100 offered incentives."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>.</p><ul><li>The text explains that firms in the United States often look to municipal governments (local governing bodies) for incentives to expand the firms into those areas.</li><li>The text then indicates that a team of political scientists hypothesized that those governing bodies are much more likely to respond and offer incentives when the expansion (if there’s going to be one) can be announced before an election, since announcing a firm coming to their area can benefit local elected officials.</li><li>However, the graph—which presents the results of the political scientists’ inquiries to municipalities about incentives for a firm in two timing scenarios—shows that the proportion of municipalities that responded to the inquiry or offered incentives didn’t substantially differ based on timing.</li><li>According to the graph, about 200 municipalities responded to the inquiry and about 100 offered an incentive when the announcement could be made before an election (represented by the gray bars) and about 200 municipalities responded to the inquiry and about 100 offered an incentive when the announcement would be made after an election (represented by the black bars).</li><li>These data weaken the team’s hypothesis by demonstrating that municipalities are not much more likely to respond and offer incentives when the timing means they could announce an expansion before an election.</li></ul><p><b>Choice A is incorrect</b>. Although the graph does show that a large number of municipalities didn’t respond to inquiries in the scenario in which an expansion announcement could be made before an election (represented by the gray bars), the text indicates that the team hypothesized that there would be a substantial difference in municipalities’ actions based on timing, and information about only one timing scenario doesn’t reveal anything about whether such a difference occurred.</p><p><b>Choice C is incorrect</b>. The graph does show that in the scenario in which an expansion announcement could be made before an election (represented by the gray bars), about 200 municipalities responded to inquiries and about 100 offered an incentive, but the text indicates that the team hypothesized that there would be a substantial difference in municipalities’ actions based on timing, and information about only one timing scenario doesn’t reveal anything about whether such a difference occurred.</p><p><b>Choice D is incorrect</b>. Although this choice accurately describes data from the graph for the scenario in which an expansion announcement would be made after an election (represented by the black bars), the text indicates that the team hypothesized that there would be a substantial difference in municipalities’ actions based on timing, and information about only one timing scenario doesn’t reveal anything about whether such a difference occurred.</p>"
+  },
+  {
+    "id": "u10-14",
+    "lessonCode": "U10",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><div class=\"tablewrap\"><table><caption>Employment by Sector in France and the United States, 1800–2012 (% of total employment)</caption><thead><tr><th>Year</th><th>Agriculture in France</th><th>Manufacturing in France</th><th>Services in France</th><th>Agriculture in US</th><th>Manufacturing in US</th><th>Services in US</th></tr></thead><tbody><tr><th scope=\"row\">1800</th><td>64</td><td>22</td><td>14</td><td>68</td><td>18</td><td>13</td></tr><tr><th scope=\"row\">1900</th><td>43</td><td>29</td><td>28</td><td>41</td><td>28</td><td>31</td></tr><tr><th scope=\"row\">1950</th><td>32</td><td>33</td><td>35</td><td>14</td><td>33</td><td>53</td></tr><tr><th scope=\"row\">2012</th><td>3</td><td>21</td><td>76</td><td>2</td><td>18</td><td>80</td></tr></tbody></table></div>Rows in table may not add up to 100 due to rounding.<br><br>Over the past two hundred years, the percentage of the population employed in the agricultural sector has declined in both France and the United States, while employment in the service sector (which includes jobs in retail, consulting, real estate, etc.) has risen. However, this transition happened at very different rates in the two countries. This can be seen most clearly by comparing the employment by sector in both countries in ______</div><p>Which choice most effectively uses data from the table to complete the statement?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "1900 with the employment by sector in 1950."
+      },
+      {
+        "label": "B",
+        "html": "1800 with the employment by sector in 2012."
+      },
+      {
+        "label": "C",
+        "html": "1900 with the employment by sector in 2012."
+      },
+      {
+        "label": "D",
+        "html": "1800 with the employment by sector in 1900."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b> because it presents data from the table that most effectively complete the statement about the rates at which employment shifted in France and the United States.</p><ul><li>The text states that over the last two hundred years employment in the agricultural sector has declined while employment in the service sector has risen in both France and the US, and the data from the table reflect these trends.</li><li>The text asserts, however, that the transition from agriculture to services “happened at very different rates in the two countries.”</li><li>This assertion is best supported by a comparison of data from 1900 and 1950: the table shows that in those years, employment in agriculture went from 43% to 32% in France (a decline of 11 percentage points) and from 41% to 14% in the US (a decline of 27 percentage points), and that employment in services went from 28% to 35% in France (an increase of 7 percentage points) and from 31% to 53% in the US (an increase of 22 percentage points).</li><li>In other words, the rate of change was greater in the US than in France for both sectors.</li></ul><p><b>Choice B is incorrect</b> because comparing the data for 1800 and 2012 would suggest a similar rate of change in the two countries, not very different rates: employment in agriculture went from 64% in 1800 to 3% in 2012 in France, which is close to the change from 68% in 1800 to 2% in 2012 in the US, while employment in services went from 14% in 1800 to 76% in 2012 in France, which is close to the change from 13% in 1800 to 80% in 2012 in the US.</p><p><b>Choice C is incorrect</b> because comparing the data for 1900 and 2012 would suggest a similar rate of change in the two countries rather than very different rates: employment in agriculture went from 43% in 1900 to 3% in 2012 in France, which is close to the change from 41% in 1900 to 2% in 2012 in the US, while employment in services went from 28% in 1900 to 76% in 2012 in France, which is close to the change from 31% in 1900 to 80% in 2012 in the US.</p><p><b>Choice D is incorrect</b> because comparing the data for 1800 and 1900 would suggest a similar rate of change in the two countries, not very different rates: employment in agriculture went from 64% in 1800 to 43% in 1900 in France, which is fairly close to the change from 68% in 1800 to 41% in 1900 in the US, while employment in services went from 14% in 1800 to 28% in 1900 in France, which is close to the change from 13% in 1800 to 31% in 1900 in the US.</p>"
+  },
+  {
+    "id": "u10-15",
+    "lessonCode": "U10",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><div class=\"figcap\">Percentage of ULE Attributed to Population Growth and GDP per Capita Growth in Two World Regions</div><svg viewBox=\"0 0 260 224\" role=\"img\" aria-label=\"Bar graph of the percentage of urban land expansion attributed to urban population growth and to GDP per capita growth in two regions and two periods\" fill=\"none\" stroke=\"currentColor\"><line x1=\"46\" y1=\"150.0\" x2=\"250\" y2=\"150.0\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"136.2\" x2=\"250\" y2=\"136.2\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"122.4\" x2=\"250\" y2=\"122.4\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"108.7\" x2=\"250\" y2=\"108.7\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"94.9\" x2=\"250\" y2=\"94.9\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"81.1\" x2=\"250\" y2=\"81.1\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"67.3\" x2=\"250\" y2=\"67.3\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"53.6\" x2=\"250\" y2=\"53.6\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"39.8\" x2=\"250\" y2=\"39.8\" stroke-opacity=\".2\"/><line x1=\"46\" y1=\"26.0\" x2=\"250\" y2=\"26.0\" stroke-opacity=\".2\"/><rect x=\"52.0\" y=\"63.2\" width=\"19.5\" height=\"86.8\" fill=\"currentColor\" fill-opacity=\".35\" stroke-width=\"1\"/><rect x=\"71.5\" y=\"97.6\" width=\"19.5\" height=\"52.4\" fill=\"currentColor\" fill-opacity=\".9\" stroke-width=\"1\"/><rect x=\"103.0\" y=\"48.0\" width=\"19.5\" height=\"102.0\" fill=\"currentColor\" fill-opacity=\".35\" stroke-width=\"1\"/><rect x=\"122.5\" y=\"114.2\" width=\"19.5\" height=\"35.8\" fill=\"currentColor\" fill-opacity=\".9\" stroke-width=\"1\"/><rect x=\"154.0\" y=\"28.8\" width=\"19.5\" height=\"121.2\" fill=\"currentColor\" fill-opacity=\".35\" stroke-width=\"1\"/><rect x=\"173.5\" y=\"133.5\" width=\"19.5\" height=\"16.5\" fill=\"currentColor\" fill-opacity=\".9\" stroke-width=\"1\"/><rect x=\"205.0\" y=\"79.7\" width=\"19.5\" height=\"70.3\" fill=\"currentColor\" fill-opacity=\".35\" stroke-width=\"1\"/><rect x=\"224.5\" y=\"82.5\" width=\"19.5\" height=\"67.5\" fill=\"currentColor\" fill-opacity=\".9\" stroke-width=\"1\"/><line x1=\"46\" y1=\"150\" x2=\"250\" y2=\"150\" stroke-width=\"1.5\"/><rect x=\"46\" y=\"188\" width=\"10\" height=\"10\" fill=\"currentColor\" fill-opacity=\".35\" stroke-width=\"1\"/><rect x=\"46\" y=\"202\" width=\"10\" height=\"10\" fill=\"currentColor\" fill-opacity=\".9\" stroke-width=\"1\"/><g fill=\"currentColor\" stroke=\"none\" font-size=\"9\" font-family=\"sans-serif\"><text x=\"41\" y=\"153.0\" text-anchor=\"end\">0</text><text x=\"41\" y=\"139.2\" text-anchor=\"end\">10</text><text x=\"41\" y=\"125.4\" text-anchor=\"end\">20</text><text x=\"41\" y=\"111.7\" text-anchor=\"end\">30</text><text x=\"41\" y=\"97.9\" text-anchor=\"end\">40</text><text x=\"41\" y=\"84.1\" text-anchor=\"end\">50</text><text x=\"41\" y=\"70.3\" text-anchor=\"end\">60</text><text x=\"41\" y=\"56.6\" text-anchor=\"end\">70</text><text x=\"41\" y=\"42.8\" text-anchor=\"end\">80</text><text x=\"41\" y=\"29.0\" text-anchor=\"end\">90</text><text x=\"71.5\" y=\"161\" text-anchor=\"middle\">Region 1</text><text x=\"71.5\" y=\"171\" text-anchor=\"middle\">1970–2000</text><text x=\"122.5\" y=\"161\" text-anchor=\"middle\">Region 1</text><text x=\"122.5\" y=\"171\" text-anchor=\"middle\">2000–2014</text><text x=\"173.5\" y=\"161\" text-anchor=\"middle\">Region 2</text><text x=\"173.5\" y=\"171\" text-anchor=\"middle\">1970–2000</text><text x=\"224.5\" y=\"161\" text-anchor=\"middle\">Region 2</text><text x=\"224.5\" y=\"171\" text-anchor=\"middle\">2000–2014</text><text transform=\"translate(9,88.0) rotate(-90)\" text-anchor=\"middle\">Percentage attribution</text><text x=\"148.0\" y=\"183\" text-anchor=\"middle\">Region, by time period</text><text x=\"60\" y=\"197\">urban population growth</text><text x=\"60\" y=\"211\">GDP per capita growth</text></g></svg>In a study of urban physical expansion, Richa Mahtta et al. conducted a meta-analysis of more than 300 cities worldwide to determine whether urban land expansion (ULE) was more strongly influenced by urban population growth or by growth in gross domestic product (GDP) per capita, a measure of economic activity. Because efficient national government is necessary to provide urban services and infrastructure that attract economic investment, Mahtta et al. propose that absent other factors, the importance of GDP per capita growth to ULE would likely increase relative to the importance of population growth as governments become more efficient. If true, this suggests the possibility that ______</div><p>Which choice most effectively uses data from the graph to complete the statement?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "national governments of countries in Region 1 experienced declines in efficiency in the period from 2000 to 2014, relative to the period from 1970 to 2000."
+      },
+      {
+        "label": "B",
+        "html": "countries in Region 1 experienced a slower rate of economic growth in the period from 2000 to 2014 than countries in Region 2 did, despite increasing national government efficiency in Region 1."
+      },
+      {
+        "label": "C",
+        "html": "national governments of most countries in Region 2 became more efficient in the period from 2000 to 2014 than they had been in the period from 1970 to 2000, but those of several countries in this region did not."
+      },
+      {
+        "label": "D",
+        "html": "national governments of countries in Region 1 and in Region 2 generally became more efficient in the period from 2000 to 2014 than they had been in the period from 1970 to 2000, but at different rates."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b> because it most effectively uses data from the graph to complete the statement about Mahtta et al.’s proposal regarding factors that affect urban land expansion (ULE).</p><ul><li>According to the text, ULE is influenced by urban population growth and by gross domestic product (GDP) growth per capita.</li><li>Reasoning that efficient national governments provide urban services and infrastructure needed to attract economic investment, Mahtta et al. suggest that, as governments become more efficient at providing urban services and infrastructure, GDP growth per capita will account for more ULE and urban population growth will account for less.</li><li>But according to the graph, Region 1 saw an increase in the percentage attributed to urban population growth from 1970–2000 (between 60 and 65%) to 2000–2014 (between 70 and 75%) and a decrease in the percentage attributed to GDP growth per capita from 1970–2000 (between 35 and 40%) to 2000–2014 (about 25%).</li><li>Because the percentage attributed to GDP growth per capita decreased (the opposite of what Mahtta et al. claimed would happen if the governments had become more efficient), the data suggest that the governments of Region 1 became less efficient at providing urban services and infrastructure over that period.</li></ul><p><b>Choice B is incorrect</b>. Neither the graph nor the text gives the regions’ relative levels of economic growth or what effect Mahtta et al. would expect such growth to have. Furthermore, Mahtta et al.’s proposal suggests that Region 1’s decline in the percentage of ULE attributed to GDP growth per capita from 1970–2000 (between 35 and 40%) to 2000–2014 (about 25%) would suggest decreasing, not increasing, government efficiency over this time.</p><p><b>Choice C is incorrect</b>. Neither the text nor the graph provides information about the relative efficiencies of different governments in Region 2.</p><p><b>Choice D is incorrect</b>. Mahtta et al.’s proposal suggests that more efficient governments will have a higher percentage of their ULE driven by GDP growth per capita and a lower percentage driven by urban population growth. For Region 2, the percentage of ULE attributed to GDP growth per capita increased from 1970–2000 (between 10 and 15%) to 2000–2014 (between 45 and 50%), but the opposite is true for Region 1, which saw the percentage of ULE attributed to GDP growth per capita decline over the same period. Thus, whereas the data suggest governments in Region 2 became more efficient, the data for Region 1 suggest that those governments became less efficient, not more.</p>"
+  }
+]

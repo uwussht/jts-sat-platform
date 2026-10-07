@@ -1,0 +1,422 @@
+[
+  {
+    "id": "u4-01",
+    "lessonCode": "U4",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">The following text is from Jane Austen’s 1811 novel <i>Sense and Sensibility</i>. Elinor lives with her younger sisters and her mother, Mrs. Dashwood.<br><br>Elinor, this eldest daughter, whose advice was so effectual, possessed a strength of understanding, and coolness of judgment, which qualified her, though only nineteen, to be the counsellor of her mother, and enabled her frequently to counteract, to the advantage of them all, that eagerness of mind in Mrs. Dashwood which must generally have led to imprudence. She had an excellent heart;—her disposition was affectionate, and her feelings were strong; but she knew how to govern them: it was a knowledge which her mother had yet to learn; and which one of her sisters had resolved never to be taught.</div><p>According to the text, what is true about Elinor?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Elinor often argues with her mother but fails to change her mind."
+      },
+      {
+        "label": "B",
+        "html": "Elinor can be overly sensitive with regard to family matters."
+      },
+      {
+        "label": "C",
+        "html": "Elinor thinks her mother is a bad role model."
+      },
+      {
+        "label": "D",
+        "html": "Elinor is remarkably mature for her age."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b> because it provides a detail about Elinor that is established in the text. The text indicates that although Elinor is “only nineteen,” she gives good advice and exhibits such a high level of understanding and judgment that she serves as “the counsellor of her mother.” Thus, Elinor is mature beyond her years.</p><p><b>Choice A is incorrect</b> because it isn’t supported by the text: although the text says that Elinor advises her mother and often counteracts her mother’s impulses, there’s no mention of Elinor arguing with her mother or failing to change her mother’s mind.</p><p><b>Choice B is incorrect</b> because it isn’t supported by the text: although the text mentions that Elinor has strong feelings, it doesn’t indicate that she’s excessively sensitive when it comes to family issues.</p><p><b>Choice C is incorrect</b> because it isn’t supported by the text: there’s no mention of what Elinor thinks about her mother and no suggestion that she thinks her mother is a bad role model. Because she’s described as having “an excellent heart,” Elinor likely doesn’t think ill of her mother.</p>"
+  },
+  {
+    "id": "u4-02",
+    "lessonCode": "U4",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">When fashion designer Lloyd Henri Kiva New opened his store in Scottsdale, Arizona, in 1945, he quickly became known for creating delicately crafted leather goods, like belts and hats. He was perhaps most renowned for his colorful handbags, which he made by hand using a long and painstaking process. As he gained more customers, New began using sewing machines and other tools to help him produce bags more efficiently, though he continued to handcraft the crucial details that made each bag unique.</div><p>Based on the text, what would have been the most likely consequence if New had not begun using sewing machines?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "He would have been unable to ensure that each bag included unique, handcrafted details."
+      },
+      {
+        "label": "B",
+        "html": "He would have struggled to meet the increasing demand for his bags."
+      },
+      {
+        "label": "C",
+        "html": "He would have had to individually design each bag he produced."
+      },
+      {
+        "label": "D",
+        "html": "He would not have been able to generate as much interest in his bags."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b> because it presents the most likely consequence if New had not begun using sewing machines. The text states that New gained new customers and that sewing machines allowed him to make bags more efficiently, or in less time than he could when sewing by hand. It’s reasonable to conclude that if New hadn’t reduced the time it took to make each bag by starting to use sewing machines, it would have been hard for him to keep up with the increased demand.</p><p><b>Choice A is incorrect</b> because the text indicates that New added unique, handcrafted details to his bags before he started using sewing machines and continued to do so after he started using them.</p><p><b>Choice C is incorrect</b> because the text doesn’t suggest that individually designing each bag would have been a consequence of not using sewing machines, since New was already designing unique details for each bag before he started using sewing machines and continued to do so after he started using them.</p><p><b>Choice D is incorrect</b> because the text indicates that people were already interested in New’s bags before he started using sewing machines. Rather than allowing New to generate more interest in his bags, sewing machines helped New keep up with the interest that had already grown.</p>"
+  },
+  {
+    "id": "u4-03",
+    "lessonCode": "U4",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Ruth Asawa was an accomplished artist who worked in many art forms, including her unique tied-wire sculptures, but she was dedicated to more than the creation of art. Asawa also wanted to bring art to children in her hometown of San Francisco, California. To that end, in 1968 she cofounded the Alvarado School Arts Workshop, which brought works of art and artists into public schools, and in 1982 she helped found a San Francisco public arts high school, which was later named after her.</div><p>Which choice best states the main idea of the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Asawa inspired many other artists to share their work with students in public schools."
+      },
+      {
+        "label": "B",
+        "html": "Asawa’s unique sculptures were appreciated more by local art communities than they were nationwide."
+      },
+      {
+        "label": "C",
+        "html": "Asawa’s interest in art education prompted her to create art programs for students in San Francisco."
+      },
+      {
+        "label": "D",
+        "html": "Asawa left a promising career as a sculptor to work as an art teacher in San Francisco schools."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b> because it most accurately states the main idea of the text. The text begins by establishing Ruth Asawa as an artist who worked in several art forms but emphasizes that she was interested in art for reasons other than her desire to create it. The text mentions two ways in which Asawa brought art to children through public schools: cofounding the Alvarado School Arts Workshop in 1968 and helping found a public arts high school in 1982. Thus, the main idea is that Asawa’s interest in art education motivated her to establish arts programs for students in San Francisco.</p><p><b>Choice A is incorrect</b> because the text doesn’t mention Asawa inspiring other artists to share their work with students. While the text does note that the Alvarado School Arts Workshop brought works of art and artists into public schools, it doesn’t state that Asawa motivated these artists.</p><p><b>Choice B is incorrect</b> because the text makes no comparison between local and national appreciation of Asawa’s sculptures. While the text does mention that Asawa created unique tied-wire sculptures and was connected to San Francisco, it does not contrast her local and national critical receptions.</p><p><b>Choice D is incorrect</b>. Although the text emphasizes Asawa’s educational initiatives, it doesn’t state or imply that she abandoned her career as a sculptor to work as an art teacher. Instead, the text portrays her educational work as a complement to her career as a successful artist.</p>"
+  },
+  {
+    "id": "u4-04",
+    "lessonCode": "U4",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">The following text is adapted from Johanna Spyri’s 1881 novel <i>Heidi</i> (translated by Elisabeth Stork in 1915). Eight-year-old Heidi and her friend’s grandmother are looking at some illustrated books.<br><br>Heidi had come and was looking with wondering eyes at the splendid pictures in the large books, that Grandmama was showing her. Suddenly she screamed aloud, for there on the picture she saw a peaceful flock grazing on a green pasture. In the middle a shepherd was standing, leaning on his crook. The setting sun was shedding a golden light over everything. With glowing eyes Heidi devoured the scene.</div><p>Which choice best states the main idea of the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Heidi is upset until she sees a serene image of a pasture in one of Grandmama’s books."
+      },
+      {
+        "label": "B",
+        "html": "Heidi is delighted and fascinated by an image she sees in one of Grandmama’s books."
+      },
+      {
+        "label": "C",
+        "html": "Heidi is initially frightened by an image in one of Grandmama’s books but quickly comes to appreciate its beauty."
+      },
+      {
+        "label": "D",
+        "html": "Heidi is inspecting an image in one of Grandmama’s books because she has never seen a shepherd with his sheep before."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b> because it most effectively states the main idea of the text, which is that Heidi is delighted and fascinated by an image she sees in one of Grandmama’s books.</p><ul><li>In the text, Heidi screams upon first seeing the picture of the green pasture.</li><li>In another context, such a reaction might suggest fear, but here the reaction is followed by descriptions of an image that’s peaceful rather than scary.</li><li>The text goes on to describe Heidi’s eyes as “glowing” and states that she “devoured the scene,” suggesting that the image delights and fascinates her so much that she wants to examine every detail.</li><li>Together, these descriptions suggest that Heidi is thrilled and intrigued by the image in the book.</li></ul><p><b>Choice A is incorrect</b> because there’s nothing in the text to suggest that Heidi is upset before seeing the peaceful image of the green pasture. Before Heidi sees that image, the text describes her as “looking with wondering eyes at the splendid pictures” in the book, suggesting that Heidi is intrigued, not that she’s unhappy.</p><p><b>Choice C is incorrect</b>. Although Heidi screams upon first seeing the image, the text’s description of the image and Heidi’s other reactions to it suggest that she is screaming with delight, not fear. The text describes the images in the book as “splendid” and the particular image that causes her to scream as peaceful rather than frightening. It also describes Heidi’s eyes as “glowing” and states that she “devoured the scene,” suggesting that the image of the green pasture delights and fascinates her so much that she wants to examine every detail.</p><p><b>Choice D is incorrect</b> because it’s unclear from the text whether Heidi has ever seen a shepherd with his sheep before. The text merely suggests that she is delighted and fascinated by the image of the shepherd and his sheep.</p>"
+  },
+  {
+    "id": "u4-05",
+    "lessonCode": "U4",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">The following text is adapted from Edgar Allan Poe’s 1849 story “Landor’s Cottage.”<br><br>During a pedestrian trip last summer, through one or two of the river counties of New York, I found myself, as the day declined, somewhat embarrassed about the road I was pursuing. The land undulated very remarkably; and my path, for the last hour, had wound about and about so confusedly, in its effort to keep in the valleys, that I no longer knew in what direction lay the sweet village of B——, where I had determined to stop for the night.</div><p>Which choice best states the main idea of the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "The narrator remembers a trip he took and admits to getting lost."
+      },
+      {
+        "label": "B",
+        "html": "The narrator recalls fond memories of a journey that he took through some beautiful river counties."
+      },
+      {
+        "label": "C",
+        "html": "The narrator describes what he saw during a long trip through a frequently visited location."
+      },
+      {
+        "label": "D",
+        "html": "The narrator explains the difficulties he encountered on a trip and how he overcame them."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. The narrator is “embarrassed” about the route he took, which ends up leaving him lost and confused about how to get to his destination for the evening.</p><p><b>Choice B is incorrect</b>. This choice doesn’t match the passage. The narrator is embarrassed, rather than fond, and he doesn’t describe the beauty of the place.</p><p><b>Choice C is incorrect</b>. This choice doesn’t match the passage. We don’t know from this excerpt whether or not the narrator has visited this part of New York multiple times.</p><p><b>Choice D is incorrect</b>. This choice doesn’t match the passage. The narrator doesn’t explain how he overcame being lost in this excerpt.</p>"
+  },
+  {
+    "id": "u4-06",
+    "lessonCode": "U4",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">A common assumption among art historians is that the invention of photography in the mid-nineteenth century displaced the painted portrait in the public consciousness. The diminishing popularity of the portrait miniature, which coincided with the rise of photography, seems to support this claim. However, photography’s impact on the portrait miniature may be overstated. Although records from art exhibitions in the Netherlands from 1820 to 1892 show a decrease in the number of both full-sized and miniature portraits submitted, this trend was established before the invention of photography.</div><p>Based on the text, what can be concluded about the diminishing popularity of the portrait miniature in the nineteenth century?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Factors other than the rise of photography may be more directly responsible for the portrait miniature’s decline."
+      },
+      {
+        "label": "B",
+        "html": "Although portrait miniatures became less common than photographs, they were widely regarded as having more artistic merit."
+      },
+      {
+        "label": "C",
+        "html": "The popularity of the portrait miniature likely persisted for longer than art historians have assumed."
+      },
+      {
+        "label": "D",
+        "html": "As demand for portrait miniatures decreased, portrait artists likely shifted their creative focus to photography."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. The text says that the impact of photography on the portrait miniature might be \"overstated,\" as some records show a decrease in the number of portrait miniatures before the invention of photography. From this, we can conclude that factors other than the rise of photography may be more directly responsible for the portrait miniature’s decline.</p><p><b>Choice B is incorrect</b>. The text never discusses the \"artistic merit\" of either art form.</p><p><b>Choice C is incorrect</b>. The text never suggests that the portrait miniature was popular for longer than historians thought—if anything, it suggests that the portrait miniature started losing its popularity earlier than historians thought.</p><p><b>Choice D is incorrect</b>. The text never suggests that portrait painters shifted to become photographers.</p>"
+  },
+  {
+    "id": "u4-07",
+    "lessonCode": "U4",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Believing that living in an impractical space can heighten awareness and even improve health, conceptual artists Madeline Gins and Shusaku Arakawa designed an apartment building in Japan to be more fanciful than functional. A kitchen counter is chest-high on one side and knee-high on the other; a ceiling has a door to nowhere. The effect is disorienting but invigorating: after four years there, filmmaker Nobu Yamaoka reported significant health benefits.</div><p>Which choice best states the main idea of the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Although inhabiting a home surrounded by fanciful features such as those designed by Gins and Arakawa can be rejuvenating, it is unsustainable."
+      },
+      {
+        "label": "B",
+        "html": "Designing disorienting spaces like those in the Gins and Arakawa building is the most effective way to create a physically stimulating environment."
+      },
+      {
+        "label": "C",
+        "html": "As a filmmaker, Yamaoka has long supported the designs of conceptual artists such as Gins and Arakawa."
+      },
+      {
+        "label": "D",
+        "html": "Although impractical, the design of the apartment building by Gins and Arakawa may improve the well-being of the building’s residents."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b> because it most accurately states the main idea of the text. According to the text, conceptual artists Gins and Arakawa have designed an apartment building that is disorienting because of several unconventional elements, such as uneven kitchen counters and “a door to nowhere.” The text goes on to suggest that there may be benefits to this kind of design because filmmaker Yamaoka lived in the apartment building for four years and reported health benefits. Thus, although the design is impractical, it may improve the well-being of the apartment building’s residents.</p><p><b>Choice A is incorrect</b>. Although the text mentions that Yamaoka lived in the apartment for four years, it doesn’t address how long someone can beneficially live in a home surrounded by fanciful features or whether doing so can be sustained.</p><p><b>Choice B is incorrect</b>. Although the text mentions the potential benefits of living in a home with disorienting design features, it doesn’t suggest that this is the most effective method to create a physically stimulating environment.</p><p><b>Choice C is incorrect</b> because the text refers to Yamaoka to support the claim that Gins and Arakawa’s apartment building design may be beneficial, but the text doesn’t indicate that Yamaoka supports the designs of other conceptual artists.</p>"
+  },
+  {
+    "id": "u4-08",
+    "lessonCode": "U4",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">During the World War II era, some Mexican American women adopted a striking new look called <i>pachuca</i> style. They wore altered men’s jackets or zoot suits (wide-legged, long-coated suits) and dramatic makeup, and they combed their hair into high, rounded shapes. Some people criticized <i>pachuca</i> style, saying it was dangerous and women should dress traditionally. But historians see things differently. They see <i>pachuca</i> style as a form of rebellion against the era’s rigid social expectations for women. They say that it showed a desire for self-expression and freedom on the part of women who adopted the style.</div><p>According to the text, how do historians view <i>pachuca</i> style?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "They think that <i>pachuca</i> style was such a popular trend that it continues to influence fashion in the United States to the present day."
+      },
+      {
+        "label": "B",
+        "html": "They think that <i>pachuca</i> style was a way for some Mexican American women to express themselves and resist strict social expectations."
+      },
+      {
+        "label": "C",
+        "html": "They think that <i>pachuca</i> style was celebrated because it enabled some Mexican American women to show their support for the United States during World War II."
+      },
+      {
+        "label": "D",
+        "html": "They think that <i>pachuca</i> style was similar to other fashion trends that different groups of women adopted in the same period."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b> because it presents a statement about how historians view pachuca style that is supported by the text. The text first describes the distinctive pachuca style of dress adopted by some Mexican American women during World War II, saying that some criticized it and asserted that women should dress traditionally. The text then goes on to contrast this position with that of historians, who \"see things differently\": according to these historians, the pachuca style showed a wish for freedom and self-expression, and it acted as a kind of rebellion against what society expected of women at the time. Therefore, according to the text, historians think that the pachuca style was a way for Mexican women to express themselves and resist strict social expectations.</p><p><b>Choice A is incorrect</b> because the text explicitly describes the pachuca style as a distinctive look adopted during the World War II era. It does not indicate that the pachuca style influences fashion in the United States in the present day.</p><p><b>Choice C is incorrect</b> because the text does not indicate that Mexican American women wore the pachuca style to show support for the United States during World War II; rather, the style was a means of self-expression and rebellion against social expectations.</p><p><b>Choice D is incorrect</b> because the text does not compare the pachuca style to other fashion trends: the pachuca style is the only style mentioned.</p>"
+  },
+  {
+    "id": "u4-09",
+    "lessonCode": "U4",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Utah is home to Pando, a colony of about 47,000 quaking aspen trees that all share a single root system. Pando is one of the largest single organisms by mass on Earth, but ecologists are worried that its growth is declining in part because of grazing by animals. The ecologists say that strong fences could prevent deer from eating young trees and help Pando start thriving again.</div><p>According to the text, why are ecologists worried about Pando?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "It isn’t growing at the same rate it used to."
+      },
+      {
+        "label": "B",
+        "html": "It isn’t producing young trees anymore."
+      },
+      {
+        "label": "C",
+        "html": "It can’t grow into new areas because it is blocked by fences."
+      },
+      {
+        "label": "D",
+        "html": "Its root system can’t support many more new trees."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b> because it presents an explanation that is directly stated in the text for why ecologists are worried about Pando. The text states that Pando is a colony of about 47,000 quaking aspen trees that represents one of the largest organisms on Earth. According to the text, ecologists are worried that Pando’s growth is declining, partly because animals are feeding on the trees. In other words, the ecologists are worried that Pando isn’t growing at the same rate it used to.</p><p><b>Choice B is incorrect</b>. Rather than indicating that Pando isn’t producing young trees anymore, the text reveals that Pando is indeed producing young trees, stating that those trees can be protected from grazing deer by strong fences.</p><p><b>Choice C is incorrect</b> because the text states that fences can be used to prevent deer from eating Pando’s young trees, not that Pando itself can’t grow in new areas because it’s blocked by fences.</p><p><b>Choice D is incorrect</b> because the text offers no evidence that Pando’s root system is incapable of supporting new trees or is otherwise a cause of worry for ecologists.</p>"
+  },
+  {
+    "id": "u4-10",
+    "lessonCode": "U4",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Biologists have predicted that birds’ feather structures vary with habitat temperature, but this hadn’t been tested in mountain environments. Ornithologist Sahas Barve studied feathers from 249 songbird species inhabiting different elevations—and thus experiencing different temperatures—in the Himalayan Mountains. He found that feathers of high-elevation species not only have a greater proportion of warming downy sections to flat and smooth sections than do feathers of low-elevation species, but high-elevation species’ feathers also tend to be longer, providing a thicker layer of insulation.</div><p>Which choice best states the main idea of the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Barve’s investigation shows that some species of Himalayan songbirds have evolved feathers that better regulate body temperature than do the feathers of other species, contradicting previous predictions."
+      },
+      {
+        "label": "B",
+        "html": "Barve found an association between habitat temperature and feather structure among Himalayan songbirds, lending new support to a general prediction."
+      },
+      {
+        "label": "C",
+        "html": "Barve discovered that songbirds have adapted to their environment by growing feathers without flat and smooth sections, complicating an earlier hypothesis."
+      },
+      {
+        "label": "D",
+        "html": "The results of Barve’s study suggest that the ability of birds to withstand cold temperatures is determined more strongly by feather length than feather structure, challenging an established belief."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b> because it most accurately states the main idea of the text.</p><ul><li>The first sentence of the text introduces the prediction that the structures of birds’ feathers vary with habitat temperature and notes that this prediction hadn’t been tested in mountain environments.</li><li>The rest of the text focuses on a study by Barve, an ornithologist.</li><li>The text indicates that Barve studied feathers of 249 songbird species in habitats at different elevations—and, therefore, different temperatures (as the text establishes that elevation affects temperature)—in the Himalayan Mountains.</li><li>The text then explains that Barve found that compared to feathers of low-elevation species, feathers of high-elevation species have a greater proportion of warming sections and are of a length that provides more insulation—in other words, feather structure varies with elevation-driven temperature differences.</li><li>Thus, the main idea of the text is that Barve found an association between habitat temperature and feather structure among Himalayan songbirds and that this finding supports a general prediction that hadn’t previously been tested in mountain environments.</li></ul><p><b>Choice A is incorrect</b> because the text specifically focuses on Barve’s finding of a relationship between feather structure and elevation—which corresponds to temperature differences—and not on the broader claim that some birds have feathers better suited to regulating body temperature than others, without reference to a consistent pattern. Moreover, Barve’s finding supports the prediction presented in the text (that feather structures vary with habitat temperature), and there’s no indication that it contradicts any other predictions.</p><p><b>Choice C is incorrect</b> because the text doesn’t indicate that Barve found that songbird species have adapted to their environment by growing feathers without flat and smooth sections; his finding of different proportions of such sections in feathers depending on elevation suggests that they do have flat and smooth sections. Moreover, Barve’s finding supports the prediction presented in the text (that feather structures vary with habitat temperature), and there’s no indication that it complicates any other earlier hypothesis.</p><p><b>Choice D is incorrect</b> because the text doesn’t mention a comparison of the effects of feather structure and feather length; in fact, the text suggests that length is part of feather structure, since Barve’s finding concerning structure addresses proportions of warming downy sections and insulation-providing length. Moreover, the text doesn’t refer to an established belief, presenting instead a prediction that hadn’t been tested in mountain environments before Barve conducted his study.</p>"
+  },
+  {
+    "id": "u4-11",
+    "lessonCode": "U4",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">The most recent iteration of the immersive theater experience <i>Sleep No More</i>, which premiered in New York City in 2011, transforms its performance space—a five-story warehouse—into a 1930s-era hotel. Audience members, who wander through the labyrinthine venue at their own pace and follow the actors as they play out simultaneous, interweaving narrative loops, confront the impossibility of experiencing the production in its entirety. The play’s refusal of narrative coherence thus hinges on the sense of spatial fragmentation that the venue’s immense and intricate layout generates.</div><p>What does the text most strongly suggest about <i>Sleep No More</i>’s use of its performance space?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "The choice of a New York City venue likely enabled the play’s creators to experiment with the use of theatrical space in a way that venues from earlier productions could not."
+      },
+      {
+        "label": "B",
+        "html": "Audience members likely find the experience of the play disappointing because they generally cannot make their way through the entire venue."
+      },
+      {
+        "label": "C",
+        "html": "The production’s dependence on a particular performance environment would likely make it difficult to reproduce exactly in a different theatrical space."
+      },
+      {
+        "label": "D",
+        "html": "Audience members who navigate the space according to a recommended itinerary will likely have a better grasp of the play’s narrative than audience members who depart from that itinerary."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b>. The text says that the production’s use of its large, winding space has a very specific effect on the audience. Given that the space itself is so important to creating this effect, it would be difficult to reproduce the production in a different space.</p><p><b>Choice A is incorrect</b>. The fact that the venue is in New York City isn’t connected to the experimental nature of the performance. It’s the size of the venue, not its location in New York, that affects the theatrical experience.</p><p><b>Choice B is incorrect</b>. The text never suggests that audience members are disappointed because they can’t see the entire production. In fact, it suggests that that’s an important part of the experience.</p><p><b>Choice D is incorrect</b>. The text doesn’t mention a recommended itinerary for audience members.</p>"
+  },
+  {
+    "id": "u4-12",
+    "lessonCode": "U4",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">To understand how temperature change affects microorganism-mediated cycling of soil nutrients in alpine ecosystems, Eva Kaštovská et al. collected plant-soil cores in the Tatra Mountains at elevations around 2,100 meters and transplanted them to elevations of 1,700–1,800 meters, where the mean air temperature was warmer by 2°C. Microorganism-mediated nutrient cycling was accelerated in the transplanted cores; crucially, microorganism community composition was unchanged, allowing Kaštovská et al. to attribute the acceleration to temperature-induced increases in microorganism activity.</div><p>It can most reasonably be inferred from the text that the finding about the microorganism community composition was important for which reason?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "It provided preliminary evidence that microorganism-mediated nutrient cycling was accelerated in the transplanted cores."
+      },
+      {
+        "label": "B",
+        "html": "It suggested that temperature-induced changes in microorganism activity may be occurring at increasingly high elevations."
+      },
+      {
+        "label": "C",
+        "html": "It ruled out a potential alternative explanation for the acceleration in microorganism-mediated nutrient cycling."
+      },
+      {
+        "label": "D",
+        "html": "It clarified that microorganism activity levels in the plant-soil cores varied depending on which microorganisms comprised the community."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b> because it accurately describes why the finding about the microorganism community composition was important. The text describes an experiment by Eva Kaštovská and her team in which they collected plant-soil cores at one elevation and transplanted them to sites at a lower elevation, where the mean air temperature was warmer. Kaštovská and her team observed that microorganism-mediated nutrient cycling was accelerated in the transplanted cores and that \"crucially, microorganism community composition was unchanged,\" which allowed the team to attribute the acceleration to changes in microorganism activity brought about by the difference in temperature. This strongly implies that the team wouldn’t have been able to make that attribution otherwise, meaning that a change in microorganism composition represented another possible explanation for the acceleration that had to be ruled out.</p><p><b>Choice A is incorrect</b>. Although the text says microorganism-mediated cycling of soil nutrients increased in the transplanted cores, this is unrelated to what’s important about the finding that the microorganism composition didn’t change—that it allowed the team to attribute the change in activity solely to the change in temperature.</p><p><b>Choice B is incorrect</b>. Although the text compares activity in one core at two different elevations, the text doesn’t address changes in activity at various elevations over time.</p><p><b>Choice D is incorrect</b>. Although different microorganisms likely exhibit different levels of activity, the text indicates that there was no change in microorganism composition, and there is nothing in the text about different microorganisms having different activity levels.</p>"
+  },
+  {
+    "id": "u4-13",
+    "lessonCode": "U4",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Many literary theorists distinguish between <i>fabula</i>, a narrative’s content, and <i>syuzhet</i>, a narrative’s arrangement and presentation of events. In the film <i>The Godfather Part II</i>, the <i>fabula</i> is the story of the Corleone family, and the <i>syuzhet</i> is the presentation of the story as it alternates between two timelines in 1901 and 1958. But literary theorist Mikhail Bakhtin maintained that <i>fabula</i> and <i>syuzhet</i> are insufficient to completely describe a narrative—he held that systematic categorizations of artistic phenomena discount the subtle way in which meaning is created by interactions between the artist, the work, and the audience.</div><p>Which choice best states the main idea of the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Literary theorist Mikhail Bakhtin argued that there are important characteristics of narratives that are not fully encompassed by two concepts that other theorists have used to analyze narratives."
+      },
+      {
+        "label": "B",
+        "html": "Literary theorist Mikhail Bakhtin claimed that meaning is not inherent in a narrative but is created when an audience encounters a narrative so that narratives are interpreted differently by different people."
+      },
+      {
+        "label": "C",
+        "html": "The storytelling methods used in <i>The Godfather Part II</i> may seem unusually complicated, but they can be easily understood when two concepts from literary theory are utilized."
+      },
+      {
+        "label": "D",
+        "html": "Narratives that are told out of chronological order are more difficult for audiences to understand than are narratives presented chronologically."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b> because it most accurately states the main idea of the text. The text begins by explaining that many literary theorists rely on the concepts of fabula (a narrative’s content) and syuzhet (a narrative’s arrangement and presentation of events) and illustrates these concepts by explaining how they can be applied to the film The Godfather Part II. The text then discusses how Mikhail Bakhtin, a literary theorist, argued that fabula and syuzhet can’t fully describe a narrative, since systematic categorizations such as these fail to account for all the ways in which interactions between the artist, the work, and the audience produce meaning. Thus, the main idea is that Bakhtin argued that there are important characteristics of narratives that are not fully encompassed by two concepts that other theorists have used to analyze narratives.</p><p><b>Choice B is incorrect</b> because according to the text, Mikhail Bakhtin believed that meaning was created through the interactions of the artist, narrative, and audience, not simply through the interaction between the audience and narrative; moreover, the text doesn’t address whether Bakhtin focused on the ways in which different people interpret narratives differently.</p><p><b>Choice C is incorrect</b>. Although the text implies that the storytelling methods used in The Godfather Part II are complicated, it discusses the film only to illustrate how the concepts of fabula and syuzhet may be applied to a narrative. The film’s storytelling methods aren’t the primary focus of the text.</p><p><b>Choice D is incorrect</b>. The text discusses The Godfather Part II, whose narrative doesn’t adhere to a single chronological order, only to illustrate the concepts of fabula (a narrative’s content) and syuzhet (a narrative’s arrangement and presentation of events). The primary focus of this text isn’t the structure of this film or of other narratives that are told out of chronological order; moreover, the text doesn’t consider whether such structures make it harder for audiences to understand narratives.</p>"
+  },
+  {
+    "id": "u4-14",
+    "lessonCode": "U4",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Paleontologists searching for signs of ancient life have found many fossilized specimens of prehistoric human ancestors, including several from the Pleistocene era discovered in a geological formation in the Minatogawa quarry in Japan. However, to study the emergence of the earliest multicellular organisms to appear on Earth, researchers must turn elsewhere, such as to the Ediacaran geological formation at Mistaken Point in Canada. A UNESCO World Heritage Site, the 146-hectare reserve contains more than 10,000 fossils that together document a critical moment in evolutionary history.</div><p>What does the text indicate about the geological formation at Mistaken Point?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "It holds a greater number of fossils but from a smaller variety of species than the formation in the Minatogawa quarry does."
+      },
+      {
+        "label": "B",
+        "html": "It has provided evidence that the earliest human species may have emerged before the Pleistocene era."
+      },
+      {
+        "label": "C",
+        "html": "It is widely considered by paleontologists to be the most valuable source of information about prehistoric life forms."
+      },
+      {
+        "label": "D",
+        "html": "It contains specimens from an older time period than those found in the formation in the Minatogawa quarry."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. The text says that the formation at Mistaken Point contains fossils of “the earliest multicellular organisms,” which implies that these fossils are from an older time period than the fossils of “prehistoric human ancestors” found in the Minatogawa quarry.</p><p><b>Choice A is incorrect</b>. The text says that the formation at Mistake Point contains “more than 10,000 fossils,” but it doesn’t compare this number to the number of fossils in the Minatogawa quarry. It also doesn’t say anything about the variety of species in either formation.</p><p><b>Choice B is incorrect</b>. The text says that the formation at Mistaken Point contains fossils of “the earliest multicellular organisms,” but it never says that the site contains early human fossils too. Rather, the early human fossils mentioned in the text were found in the formation at Minatogawa quarry.</p><p><b>Choice C is incorrect</b>. The text says that the fossils at Mistaken Point “document a critical moment in evolutionary history,” but it never says that Mistaken Point is the most valuable source of information about prehistoric life forms.</p>"
+  },
+  {
+    "id": "u4-15",
+    "lessonCode": "U4",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">The following text is adapted from María Cristina Mena’s 1914 short story “The Vine-Leaf.”<br><br>It is a saying in the capital of Mexico that Dr. Malsufrido carries more family secrets under his hat than any archbishop.<br><br>The doctor’s hat is, appropriately enough, uncommonly capacious, rising very high, and sinking so low that it seems to be supported by his ears and eyebrows, and it has a furry look, as if it had been brushed the wrong way, which is perhaps what happens to it if it is ever brushed at all. When the doctor takes it off, the family secrets do not fly out like a flock of parrots, but remain nicely bottled up beneath a dome of old and highly polished ivory.</div><p>Based on the text, how do people in the capital of Mexico most likely regard Dr. Malsufrido?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Many have come to tolerate him despite his disheveled appearance."
+      },
+      {
+        "label": "B",
+        "html": "Few feel concerned that he will divulge their confidences."
+      },
+      {
+        "label": "C",
+        "html": "Some dislike how freely he discusses his own family."
+      },
+      {
+        "label": "D",
+        "html": "Most would be unimpressed by him were it not for his professional expertise."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. The text describes a saying in the capital that Malsufrido keeps more secrets than an archbishop. It also says that when he takes off his hat, “the family secrets do not fly out… but remain nicely bottled up,” suggesting that he will not betray his confidences.</p><p><b>Choice A is incorrect</b>. This choice doesn’t reflect the text. While his hat is large and appears to have been brushed in the wrong direction, Dr. Malsufrido does not seem to be regarded as ill-dressed or disheveled.</p><p><b>Choice C is incorrect</b>. This choice is the opposite of what the text says. The secrets of families (his and others’) remain “bottled up” in his head.</p><p><b>Choice D is incorrect</b>. This choice isn’t supported by the text. His professional expertise is not discussed in the passage.</p>"
+  }
+]

@@ -1,0 +1,422 @@
+[
+  {
+    "id": "u22-01",
+    "lessonCode": "U22",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">While researching a topic, a student has taken the following notes:<ul style=\"margin:8px 0 0;padding-left:20px\"><li>As engineered structures, many bird nests are uniquely flexible yet cohesive.</li><li>A research team led by Yashraj Bhosale wanted to better understand the mechanics behind these structural properties.</li><li>Bhosale’s team used laboratory models that simulated the arrangement of flexible sticks into nest-like structures.</li><li>The researchers analyzed the points where sticks touched one another.</li><li>When pressure was applied to the model nests, the number of contact points between the sticks increased, making the structures stiffer.</li></ul></div><p>The student wants to present the primary aim of the research study. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Bhosale’s team wanted to better understand the mechanics behind bird nests’ uniquely flexible yet cohesive structural properties."
+      },
+      {
+        "label": "B",
+        "html": "The researchers used laboratory models that simulated the arrangement of flexible sticks and analyzed the points where sticks touched one another."
+      },
+      {
+        "label": "C",
+        "html": "After analyzing the points where sticks touched, the researchers found that the structures became stiffer when pressure was applied."
+      },
+      {
+        "label": "D",
+        "html": "As analyzed by Bhosale’s team, bird nests are uniquely flexible yet cohesive engineered structures."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. It describes the reason Bhosale’s team wanted to study the structures of bird nests—that is to say, the study’s primary aim.</p><p><b>Choice B is incorrect</b>. This choice doesn’t present the primary aim of the research study. It describes how the study worked, but not why it was done.</p><p><b>Choice C is incorrect</b>. This choice doesn’t present the primary aim of the research study. It describes a result of the experiment, but not why it was carried out.</p><p><b>Choice D is incorrect</b>. This choice doesn’t present the primary aim of the research study.</p>"
+  },
+  {
+    "id": "u22-02",
+    "lessonCode": "U22",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">While researching a topic, a student has taken the following notes:<ul style=\"margin:8px 0 0;padding-left:20px\"><li>The <i>Atlantic Monthly</i> magazine was first published in 1857.</li><li>The magazine focused on politics, art, and literature.</li><li>In 2019, historian Cathryn Halverson published the book <i>Faraway Women and the “Atlantic Monthly”</i>.</li><li>Its subject is female authors whose autobiographies appeared in the magazine in the early 1900s.</li><li>One of the authors discussed is Juanita Harrison.</li></ul></div><p>The student wants to introduce Cathryn Halverson’s book to an audience already familiar with the <i>Atlantic Monthly</i>. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Cathryn Halverson’s <i>Faraway Women and the “Atlantic Monthly”</i> discusses female authors whose autobiographies appeared in the magazine in the early 1900s."
+      },
+      {
+        "label": "B",
+        "html": "A magazine called the <i>Atlantic Monthly</i>, referred to in Cathryn Halverson’s book title, was first published in 1857."
+      },
+      {
+        "label": "C",
+        "html": "<i>Faraway Women and the “Atlantic Monthly”</i> features contributors to the <i>Atlantic Monthly</i>, first published in 1857 as a magazine focusing on politics, art, and literature."
+      },
+      {
+        "label": "D",
+        "html": "An author discussed by Cathryn Halverson is Juanita Harrison, whose autobiography appeared in the <i>Atlantic Monthly</i> in the early 1900s."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. The sentence effectively introduces Cathryn Halverson’s book to an audience already familiar with the <i>Atlantic Monthly</i>, noting the title of Halverson’s book and describing its content without providing background information about the <i>Atlantic Monthly</i>.</p><p><b>Choice B is incorrect</b>. The sentence introduces the <i>Atlantic Monthly</i> and mentions that it’s referred to in Cathryn Halverson’s book title; it doesn’t effectively introduce Halverson’s book.</p><p><b>Choice C is incorrect</b>. The sentence assumes that the audience is unfamiliar with the <i>Atlantic Monthly</i>, providing background information about the magazine; it doesn’t effectively introduce Halverson’s book to an audience already familiar with the <i>Atlantic Monthly</i>.</p><p><b>Choice D is incorrect</b>. While the sentence assumes that the audience is familiar with the <i>Atlantic Monthly</i>, it doesn’t effectively introduce Cathryn Halverson’s book.</p>"
+  },
+  {
+    "id": "u22-03",
+    "lessonCode": "U22",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">While researching a topic, a student has taken the following notes:<ul style=\"margin:8px 0 0;padding-left:20px\"><li>The Haber-Bosch process is an industrial process used to manufacture ammonia (NH<sub>3</sub>).</li><li>It was invented by chemists Fritz Haber and Carl Bosch in 1910.</li><li>The process’s primary reaction combines nitrogen (N<sub>2</sub>) from the air with hydrogen (H<sub>2</sub>).</li><li>It requires an iron catalyst and high temperatures and pressures.</li><li>Most of the ammonia produced by this process is used in fertilizers.</li></ul></div><p>The student wants to provide an overview of the Haber-Bosch process. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "The Haber-Bosch process needs nitrogen, hydrogen, and an iron catalyst."
+      },
+      {
+        "label": "B",
+        "html": "The Haber-Bosch process uses an iron catalyst along with high temperatures and pressures to manufacture ammonia from nitrogen and hydrogen."
+      },
+      {
+        "label": "C",
+        "html": "Chemists Fritz Haber and Carl Bosch invented an industrial process to manufacture ammonia to be used in fertilizers."
+      },
+      {
+        "label": "D",
+        "html": "In 1910, chemists Fritz Haber and Carl Bosch invented the Haber-Bosch process, which requires high temperatures and pressures."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. The sentence provides an overview of the Haber-Bosch process, explaining that it uses an iron catalyst, high temperatures, and high pressures to manufacture ammonia from nitrogen and hydrogen.</p><p><b>Choice A is incorrect</b>. While the sentence identifies some of the process’s required components (nitrogen, hydrogen, and an iron catalyst), the overview is incomplete; it doesn’t explain what the process does (produces ammonia) or mention the conditions needed for it to function (high temperatures and pressures).</p><p><b>Choice C is incorrect</b>. While the sentence indicates who invented the process (Fritz Haber and Carl Bosch) and that it produces ammonia, the overview is incomplete; it doesn’t mention any of the necessary ingredients or conditions.</p><p><b>Choice D is incorrect</b>. While the sentence mentions the inventors of the process along with the required conditions (high temperatures and pressures), it doesn’t explain that the process produces ammonia or indicate what components are needed.</p>"
+  },
+  {
+    "id": "u22-04",
+    "lessonCode": "U22",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">While researching a topic, a student has taken the following notes:<ul style=\"margin:8px 0 0;padding-left:20px\"><li>Organisms release cellular material into their environment by shedding substances such as hair or skin.</li><li>The DNA in these substances is known as environmental DNA, or eDNA.</li><li>Researchers collect and analyze eDNA to detect the presence of species that are difficult to observe.</li><li>Geneticist Sara Oyler-McCance’s research team analyzed eDNA in water samples from the Florida Everglades to detect invasive constrictor snake species in the area.</li><li>The study determined a 91% probability of detecting Burmese python eDNA in a given location.</li></ul></div><p>The student wants to present the study to an audience already familiar with environmental DNA. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Sara Oyler-McCance’s researchers analyzed eDNA in water samples from the Florida Everglades for evidence of invasive constrictor snakes, which are difficult to observe."
+      },
+      {
+        "label": "B",
+        "html": "An analysis of eDNA can detect the presence of invasive species that are difficult to observe, such as constrictor snakes."
+      },
+      {
+        "label": "C",
+        "html": "Researchers found Burmese python eDNA, or environmental DNA, in water samples; eDNA is the DNA in released cellular materials, such as shed skin cells."
+      },
+      {
+        "label": "D",
+        "html": "Sara Oyler-McCance’s researchers analyzed environmental DNA (eDNA)—that is, DNA from cellular materials released by organisms—in water samples from the Florida Everglades."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. This choice presents the study in a way that assumes the audience is already familiar with eDNA.</p><p><b>Choice B is incorrect</b>. This choice doesn’t present the study. It only states a general fact about eDNA analysis.</p><p><b>Choice C is incorrect</b>. This choice isn’t suited for an audience already familiar with eDNA. A familiar audience wouldn’t need to have the term defined or explained.</p><p><b>Choice D is incorrect</b>. This choice isn’t suited for an audience already familiar with eDNA. A familiar audience wouldn’t need to have the term defined or explained. It also doesn’t present the study.</p>"
+  },
+  {
+    "id": "u22-05",
+    "lessonCode": "U22",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">While researching a topic, a student has taken the following notes:<ul style=\"margin:8px 0 0;padding-left:20px\"><li>Sam Maloof (1916–2009) was an American woodworker and furniture designer.</li><li>He was the son of Lebanese immigrants.</li><li>He received a “genius grant” from the John D. and Catherine T. MacArthur Foundation in 1985.</li><li>The Museum of Fine Arts in Boston, Massachusetts, owns a rocking chair that Maloof made from walnut wood.</li><li>The armrests and the seat of the chair are sleek and contoured, and the back consists of seven spindle-like slats.</li></ul></div><p>The student wants to describe the rocking chair to an audience unfamiliar with Sam Maloof. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "With its sleek, contoured armrests and seat, the walnut rocking chair in Boston’s Museum of Fine Arts is just one piece of furniture created by American woodworker Sam Maloof."
+      },
+      {
+        "label": "B",
+        "html": "Sam Maloof was born in 1916 and died in 2009, and during his life, he made a chair that you can see if you visit the Museum of Fine Arts in Boston."
+      },
+      {
+        "label": "C",
+        "html": "Furniture designer Sam Maloof was a recipient of one of the John D. and Catherine T. MacArthur Foundation’s “genius grants.”"
+      },
+      {
+        "label": "D",
+        "html": "The rocking chair is made from walnut, and it has been shaped such that its armrests and seat are sleek and contoured."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. The sentence effectively describes the rocking chair to an audience unfamiliar with Sam Maloof, noting its sleek, contoured armrests and seat and explaining that Sam Maloof (the walnut chair’s creator) was an American woodworker.</p><p><b>Choice B is incorrect</b>. While the sentence explains who Sam Maloof was and mentions a chair, it doesn’t describe the chair.</p><p><b>Choice C is incorrect</b>. While the sentence explains who Sam Maloof was, it doesn’t describe the rocking chair.</p><p><b>Choice D is incorrect</b>. While the sentence describes the rocking chair, it doesn’t explain who Sam Maloof was.</p>"
+  },
+  {
+    "id": "u22-06",
+    "lessonCode": "U22",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">While researching a topic, a student has taken the following notes:<ul style=\"margin:8px 0 0;padding-left:20px\"><li>Species belonging to the Orchidaceae (orchid) family can be found in both tropical and temperate environments.</li><li>Orchidaceae species diversity has not been well studied in temperate forests, such as those in Oaxaca, Mexico.</li><li>Arelee Estefanía Muñoz-Hernández led a study to determine how many different Orchidaceae species are present in the forests of Oaxaca.</li><li>Muñoz-Hernández and her team collected orchids each month for a year at a site in Oaxaca.</li><li>Seventy-four Orchidaceae species were present at the site.</li></ul></div><p>The student wants to present the study and its findings. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "A study led by Arelee Estefanía Muñoz-Hernández identified a total of 74 Orchidaceae species in the temperate forests of Oaxaca, Mexico."
+      },
+      {
+        "label": "B",
+        "html": "There are orchids in many environments, but there are 74 Orchidaceae species in Oaxaca, Mexico."
+      },
+      {
+        "label": "C",
+        "html": "Oaxaca, Mexico, is home to temperate forests containing 74 Orchidaceae species."
+      },
+      {
+        "label": "D",
+        "html": "Arelee Estefanía Muñoz-Hernández and her team wanted to know how many different Orchidaceae species are present in the forests of Oaxaca, Mexico, so they conducted a study to collect orchids."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. This choice most effectively presents the study and its findings. It opens with the study and names its lead researcher, then tells us its finding: that they identified 74 Orchidaceae species in the temperate forests of Oaxaca, Mexico.</p><p><b>Choice B is incorrect</b>. This choice doesn’t include the study’s findings, so it fails to achieve the goal. It doesn’t mention that there was a study at all.</p><p><b>Choice C is incorrect</b>. This choice doesn’t present the study, so it fails to achieve the goal. It doesn’t mention that there was a study at all.</p><p><b>Choice D is incorrect</b>. This choice doesn’t include the study’s findings, so it fails to achieve the goal.</p>"
+  },
+  {
+    "id": "u22-07",
+    "lessonCode": "U22",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">While researching a topic, a student has taken the following notes:<ul style=\"margin:8px 0 0;padding-left:20px\"><li>Leaders of the Province of Guatemala proclaimed independence for Central America from the Spanish Empire on September 15, 1821.</li><li>The accompanying Declaration of Independence was written by Honduran scholar and politician José Cecilio del Valle.</li><li>The 1812 Spanish Constitution had provided some degree of independence for Central America, but it was repealed by the Spanish king in 1814.</li><li>Valle, a loyal advisor to the Spanish Empire’s administrators in Central America, had long opposed independence.</li><li>He changed his mind after Colonel Rafael del Riego’s 1820 revolt, which demanded the return of rights lost in 1814.</li></ul></div><p>The student wants to place the 1821 Declaration of Independence in the context of Valle’s changing political beliefs. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Colonel Riego’s revolt was the inspiration that Valle, a long-standing opponent of Central American independence, needed to change his political beliefs."
+      },
+      {
+        "label": "B",
+        "html": "Long an opponent of Central American independence, Valle changed his mind after an 1820 revolt and wrote the 1821 declaration."
+      },
+      {
+        "label": "C",
+        "html": "A change in Valle’s political beliefs that occurred when the Spanish king repealed the 1812 constitution led to Valle writing Central America’s Declaration of Independence."
+      },
+      {
+        "label": "D",
+        "html": "The writing of Central America’s Declaration of Independence may not have happened were it not for Colonel Riego’s 1820 revolt."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. The sentence places the Declaration of Independence in the context of Valle’s changing political beliefs, noting that Valle was long an opponent of Central American independence but changed his mind after an 1820 revolt and then wrote the Declaration of Independence in 1821.</p><p><b>Choice A is incorrect</b>. The sentence states that Valle’s political beliefs changed after Riego’s revolt but doesn’t indicate how these changed beliefs provide context for the 1821 Declaration of Independence.</p><p><b>Choice C is incorrect</b> because it misrepresents information from the notes. Valle’s political beliefs changed after Riego’s 1820 revolt, not when the Spanish king repealed the 1812 constitution.</p><p><b>Choice D is incorrect</b>. While the sentence indicates a relationship between Colonel Riego’s 1820 revolt and Central America’s Declaration of Independence, it doesn’t mention Valle’s changing political beliefs.</p>"
+  },
+  {
+    "id": "u22-08",
+    "lessonCode": "U22",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">While researching a topic, a student has taken the following notes:<ul style=\"margin:8px 0 0;padding-left:20px\"><li>Two opposing theories of vision divided scholars for many centuries.</li><li>The ancient Greek mathematician Euclid (circa 300 BCE) supported the extramission theory.</li><li>This theory held that the eyes emit a form of radiation that illuminates objects in its range.</li><li>The ancient Greek philosopher Aristotle (384–322 BCE) supported the intromission theory.</li><li>This theory held that objects emit a form of radiation that reaches the eyes.</li><li>In the eleventh century, Arab mathematician Ibn al-Haytham (965–1040 CE) largely settled the debate with the first conclusive experiments supporting intromission.</li></ul></div><p>The student wants to provide a historical overview of the two theories. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Scholars were divided between the extramission and intromission theories of vision until Ibn al-Haytham’s eleventh-century experiments largely settled the debate in support of intromission."
+      },
+      {
+        "label": "B",
+        "html": "Through two opposing theories of vision—extramission and intromission—Euclid, Aristotle, and Ibn al-Haytham held that a form of radiation is emitted either from objects or from the eyes."
+      },
+      {
+        "label": "C",
+        "html": "While Ibn al-Haytham largely settled the debate in the eleventh century, Aristotle supported the theory of intromission centuries before."
+      },
+      {
+        "label": "D",
+        "html": "Before the eleventh century, the ancient Greek philosopher Aristotle supported the intromission theory, which held that objects emit a form of radiation that reaches the eyes."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. The sentence provides a historical overview of the two theories, noting that scholars were divided between them before Ibn al-Haytham’s experiments supporting intromission largely settled the debate in the eleventh century.</p><p><b>Choice B is incorrect</b>. While the sentence identifies the two theories and the scholars that supported them, it doesn’t provide a historical overview of the theories.</p><p><b>Choice C is incorrect</b>. While the sentence indicates Aristotle supported intromission theory centuries before Ibn al-Haytham settled the debate, it doesn’t mention extramission theory or provide a historical overview of both theories.</p><p><b>Choice D is incorrect</b>. The sentence provides information about intromission theory but doesn’t mention extramission theory or provide a historical overview of both theories.</p>"
+  },
+  {
+    "id": "u22-09",
+    "lessonCode": "U22",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">While researching a topic, a student has taken the following notes:<ul style=\"margin:8px 0 0;padding-left:20px\"><li>John Carver was one of the 41 signatories of the Mayflower Compact.</li><li>The Mayflower Compact was a legal agreement among the pilgrims that immigrated to Plymouth Colony.</li><li>It was created in 1620 to establish a common government.</li><li>It states that the pilgrims who signed it wanted to “plant the first colony in the northern parts of Virginia” under King James.</li><li>Carver became the first governor of Plymouth Colony.</li></ul></div><p>The student wants to specify the reason the Mayflower Compact was created. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Stating that its signatories wanted to “plant the first colony in the northern parts of Virginia,” the Mayflower Compact was a legal agreement among the pilgrims that immigrated to Plymouth Colony."
+      },
+      {
+        "label": "B",
+        "html": "Created in 1620, the Mayflower Compact states that the pilgrims wanted to “plant the first colony in the northern parts of Virginia.”"
+      },
+      {
+        "label": "C",
+        "html": "The Mayflower Compact was created to establish a common government among the pilgrims that immigrated to Plymouth Colony."
+      },
+      {
+        "label": "D",
+        "html": "The Mayflower Compact had 41 signatories, including John Carver, the first governor of Plymouth Colony."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b>. The sentence specifies the reason the Mayflower Compact was created, noting that it was created to establish a common government among the pilgrims that immigrated to Plymouth Colony.</p><p><b>Choice A is incorrect</b>. While the sentence provides background information about the Mayflower Compact and notes the signatories’ goal for the colony, it doesn’t specify why the compact was created.</p><p><b>Choice B is incorrect</b>. While the sentence provides background information about the Mayflower Compact and notes the signatories’ goal for the colony, it doesn’t specify why the compact was created.</p><p><b>Choice D is incorrect</b>. The sentence specifies the number of pilgrims that signed the Mayflower Compact; it doesn’t specify the reason the compact was created.</p>"
+  },
+  {
+    "id": "u22-10",
+    "lessonCode": "U22",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">While researching a topic, a student has taken the following notes:<ul style=\"margin:8px 0 0;padding-left:20px\"><li>Jordan Bennett is a Mi’Kmaq visual artist.</li><li>The Mi’Kmaq are a First Nations people in North America.</li><li>Bennett’s paintings pay homage to traditional Mi’Kmaq craftsmanship and have been displayed in over 75 exhibitions.</li><li>His 2017 exhibition <i>Wije’wi</i> was held at the Grenfell Art Gallery.</li><li>His 2018 exhibition <i>Ketu’elmita’jik</i> was held at the Art Gallery of Nova Scotia.</li></ul></div><p>The student wants to emphasize the order in which two of Jordan Bennett’s exhibitions were held. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Jordan Bennett’s 2017 exhibition <i>Wije’wi</i> was followed a year later by his exhibition <i>Ketu’elmita’jik</i>."
+      },
+      {
+        "label": "B",
+        "html": "Jordan Bennett’s paintings, some of which appeared in 2017 and 2018 exhibitions, pay homage to traditional Mi’Kmaq craftsmanship."
+      },
+      {
+        "label": "C",
+        "html": "Mi’Kmaq visual artist Jordan Bennett has displayed his work in over 75 exhibitions, including <i>Wije’wi</i> and <i>Ketu’elmita’jik</i>."
+      },
+      {
+        "label": "D",
+        "html": "Jordan Bennett’s 2018 exhibition <i>Ketu’elmita’jik</i> was held at the Art Gallery of Nova Scotia; another was held at the Grenfell Art Gallery."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. The sentence emphasizes the order in which two of Jordan Bennett’s exhibitions were held, indicating that <i>Wije’wi</i> took place in 2017 and <i>Ketu’elmita’jik</i> took place a year later (2018).</p><p><b>Choice B is incorrect</b>. While the sentence mentions that exhibitions of Jordan Bennett’s paintings took place in 2017 and 2018, it doesn’t identify the exhibitions or emphasize the order in which they were held.</p><p><b>Choice C is incorrect</b>. While the sentence mentions two of Jordan Bennett’s exhibitions, it doesn’t indicate the order in which they were held.</p><p><b>Choice D is incorrect</b>. While the sentence mentions two of Jordan Bennett’s exhibitions and specifies when one of them was held, it doesn’t state when the exhibition at the Grenfell Art Gallery occurred. Thus, the order in which the two exhibitions were held isn’t clearly established in the sentence.</p>"
+  },
+  {
+    "id": "u22-11",
+    "lessonCode": "U22",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">While researching a topic, a student has taken the following notes:<ul style=\"margin:8px 0 0;padding-left:20px\"><li>Crown shyness is a phenomenon in which the tops (crowns) of neighboring trees grow close together but don’t overlap.</li><li>To explain how this happens, Australian forester M.R. Jacobs proposes the mutual abrasion theory.</li><li>According to Jacobs’s theory, when trees brush against one another, branches break off.</li><li>Malaysian scholar Francis S.P. Ng posits the mutual shade avoidance theory.</li><li>According to Ng’s theory, when tree branches detect shade from nearby trees’ branches, they stop growing.</li></ul></div><p>The student wants to compare the causes of crown shyness proposed in the two theories. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "While Jacobs proposes that crown shyness is caused by neighboring tree branches brushing against one another, Ng posits that it occurs when branches detect shade from nearby trees’ branches."
+      },
+      {
+        "label": "B",
+        "html": "Both Jacobs and Ng have proposed theories to explain what causes crown shyness."
+      },
+      {
+        "label": "C",
+        "html": "Ng posits the mutual shade avoidance theory, whereas Jacobs proposes an alternative theory."
+      },
+      {
+        "label": "D",
+        "html": "Jacobs’s mutual abrasion theory proposes that when neighboring trees brush against one another, branches break off, resulting in a phenomenon in which the tops of trees grow close together but don’t overlap."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. The sentence compares the two proposed causes of crown shyness, noting the theories’ differences: Jacobs cites branches brushing against one another as the cause, while Ng cites branches detecting shade from other branches as the cause.</p><p><b>Choice B is incorrect</b>. The sentence merely identifies the existence of two theories for crown shyness; it doesn’t compare the causes proposed by each theory.</p><p><b>Choice C is incorrect</b>. The sentence merely indicates that there are two different theories for crown shyness; it doesn’t compare the causes proposed by each theory.</p><p><b>Choice D is incorrect</b>. The sentence merely explains one theory for crown shyness; it doesn’t compare two theories.</p>"
+  },
+  {
+    "id": "u22-12",
+    "lessonCode": "U22",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">While researching a topic, a student has taken the following notes:<ul style=\"margin:8px 0 0;padding-left:20px\"><li>A 2024 study analyzed the facial expressions of wolves and domestic dogs.</li><li>In the study, facial expressions were coded under 46 different facial actions.</li><li>The “ears rotator” facial action is seen in wolves.</li><li>Dog breeds with erect (wolf-like) ears can produce the “ears rotator” facial action.</li><li>Dog breeds with flopped or semi-flopped (non-wolf-like) ears cannot produce the “ears rotator” facial action.</li></ul></div><p>The student wants to compare dog breeds with wolf-like ears to dog breeds with non-wolf-like ears. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "In a 2024 study, dog breeds with non-wolf-like ears were able to produce the same facial movements that wolves could."
+      },
+      {
+        "label": "B",
+        "html": "One difference between dog breeds with wolf-like ears and dog breeds without them is that wolf-like breeds cannot produce the “ears rotator” facial action."
+      },
+      {
+        "label": "C",
+        "html": "Non-wolf-like ears are flopped or semi-flopped, but wolf-like ears are different: they are erect and can produce the “ears rotator” facial action."
+      },
+      {
+        "label": "D",
+        "html": "Like wolves, dog breeds with erect ears can produce the “ears rotator” facial action, while those with flopped or semi-flopped ears cannot."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. The sentence compares dog breeds with wolf-like (erect) and non-wolf-like (flopped or semi-flopped) ears, noting that breeds with erect ears are able to produce the same “ears rotator” facial action as wolves, while breeds with flopped or semi-flopped ears cannot.</p><p><b>Choice A is incorrect</b>. The sentence compares dog breeds with non-wolf-like ears to wolves, not to other dog breeds. It also misrepresents information from the notes: breeds with non-wolf-like ears cannot produce the “ears rotator” facial action.</p><p><b>Choice B is incorrect</b>. While the sentence appears to compare dog breeds with wolf-like and non-wolf-like ears, it misrepresents information from the notes: breeds with wolf-like ears can produce the “ears rotator” facial action.</p><p><b>Choice C is incorrect</b>. While the sentence compares the physical characteristics of the two ear types, it doesn’t compare the dog breeds that have these ear types.</p>"
+  },
+  {
+    "id": "u22-13",
+    "lessonCode": "U22",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">While researching a topic, a student has taken the following notes:<ul style=\"margin:8px 0 0;padding-left:20px\"><li>The Seikan Tunnel is a rail tunnel in Japan.</li><li>It connects the island of Honshu to the island of Hokkaido.</li><li>It is roughly 33 miles long.</li><li>The Channel Tunnel is a rail tunnel in Europe.</li><li>It connects Folkestone, England, to Coquelles, France.</li><li>It is about 31 miles long.</li></ul></div><p>The student wants to compare the lengths of the two rail tunnels. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Some of the world’s rail tunnels, including one tunnel that extends from Folkestone, England, to Coquelles, France, are longer than 30 miles."
+      },
+      {
+        "label": "B",
+        "html": "The Seikan Tunnel is roughly 33 miles long, while the slightly shorter Channel Tunnel is about 31 miles long."
+      },
+      {
+        "label": "C",
+        "html": "The Seikan Tunnel, which is roughly 33 miles long, connects the Japanese islands of Honshu and Hokkaido."
+      },
+      {
+        "label": "D",
+        "html": "Both the Seikan Tunnel, which is located in Japan, and the Channel Tunnel, which is located in Europe, are examples of rail tunnels."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. The sentence compares the lengths of the two rail tunnels, noting that the Channel Tunnel (about 31 miles long) is slightly shorter than the Seikan Tunnel (roughly 33 miles long).</p><p><b>Choice A is incorrect</b>. The sentence makes a generalization about the length of some rail tunnels; it doesn’t compare the lengths of the two rail tunnels.</p><p><b>Choice C is incorrect</b>. The sentence describes a single rail tunnel; it doesn’t compare the lengths of the two rail tunnels.</p><p><b>Choice D is incorrect</b>. While the sentence mentions the two rail tunnels, it doesn’t compare their lengths.</p>"
+  },
+  {
+    "id": "u22-14",
+    "lessonCode": "U22",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">While researching a topic, a student has taken the following notes:<ul style=\"margin:8px 0 0;padding-left:20px\"><li>Malapportionment is the over- or underrepresentation (relative to population size) of electoral districts in a governing body.</li><li>It is a common feature of representative governments.</li><li>There are 169 seats in Norway’s supreme legislature (the Storting).</li><li>Seats are distributed by a formula that awards 1 point per resident and 1.8 points per unit of land.</li><li>Less populated rural districts with large tracts of land receive a disproportionate number of seats compared to smaller but more populated urban districts.</li></ul></div><p>The student wants to refute a claim that malapportionment in the Storting favors small urban districts. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Less populated rural districts are disproportionally underrepresented in the Storting, creating an unfair advantage for smaller but more populated urban districts."
+      },
+      {
+        "label": "B",
+        "html": "It’s untrue that malapportionment in the 169-seat Storting favors small urban districts; rather, the formula for distributing seats overrepresents more populated districts."
+      },
+      {
+        "label": "C",
+        "html": "A common feature of representative governments, malapportionment occurs when electoral districts are over- or underrepresented."
+      },
+      {
+        "label": "D",
+        "html": "Awarding more points per unit of land than points per resident, the formula for distributing Storting seats overrepresents less populated rural districts with large tracts of land."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. By noting that the formula for distributing Storting seats overrepresents less populated rural districts, the sentence effectively refutes a claim that malapportionment in the Storting favors small urban districts.</p><p><b>Choice A is incorrect</b> because the sentence claims that malapportionment in the Storting favors small urban districts; it doesn’t refute such a claim. Moreover, it misrepresents information in the notes. According to the notes, the formula for distributing seats overrepresents less populated, not more populated, districts.</p><p><b>Choice B is incorrect</b>. While the sentence appears to refute a claim that malapportionment in the Storting favors small urban districts, it misrepresents information in the notes. According to the notes, the formula for distributing seats overrepresents less populated, not more populated, districts.</p><p><b>Choice C is incorrect</b>. The sentence explains what malapportionment is but doesn’t address malapportionment in the Storting specifically.</p>"
+  },
+  {
+    "id": "u22-15",
+    "lessonCode": "U22",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">While researching a topic, a student has taken the following notes:<ul style=\"margin:8px 0 0;padding-left:20px\"><li>Pterosaurs were flying reptiles that existed millions of years ago.</li><li>In a 2021 study, Anusuya Chinsamy-Turan analyzed fragments of pterosaur jawbones located in the Sahara Desert.</li><li>She was initially unsure if the bones belonged to juvenile or adult pterosaurs.</li><li>She used advanced microscope techniques to determine that the bones had few growth lines relative to the bones of fully grown pterosaurs.</li><li>She concluded that the bones belonged to juveniles.</li></ul></div><p>The student wants to present the study and its findings. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "In 2021, Chinsamy-Turan studied pterosaur jawbones and was initially unsure if the bones belonged to juveniles or adults."
+      },
+      {
+        "label": "B",
+        "html": "Pterosaur jawbones located in the Sahara Desert were the focus of a 2021 study."
+      },
+      {
+        "label": "C",
+        "html": "In a 2021 study, Chinsamy-Turan used advanced microscope techniques to analyze the jawbones of pterosaurs, flying reptiles that existed millions of years ago."
+      },
+      {
+        "label": "D",
+        "html": "In a 2021 study, Chinsamy-Turan determined that pterosaur jawbones located in the Sahara Desert had few growth lines relative to the bones of fully grown pterosaurs and thus belonged to juveniles."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. The sentence presents both the study and its findings, noting the study’s date and the researcher’s name as well as describing what the researcher determined about the jawbones and how she determined it.</p><p><b>Choice A is incorrect</b>. While the sentence describes the study and the researcher’s initial assessment, it doesn’t present the study’s findings.</p><p><b>Choice B is incorrect</b>. While the sentence describes the study and its focus, it doesn’t present the study’s findings or the name of the researcher who conducted it.</p><p><b>Choice C is incorrect</b>. While the sentence mentions the study’s methodology and provides information about pterosaurs, it doesn’t present the study’s findings.</p>"
+  }
+]

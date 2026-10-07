@@ -1,0 +1,389 @@
+[
+  {
+    "id": "u9-01",
+    "lessonCode": "U9",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>Which expression is equivalent to 100<i>x</i><sup>2</sup> + 2,600?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "100(26<i>x</i><sup>2</sup>)"
+      },
+      {
+        "label": "B",
+        "html": "100(<i>x</i><sup>2</sup> + 26)"
+      },
+      {
+        "label": "C",
+        "html": "2,600(100<i>x</i><sup>2</sup>)"
+      },
+      {
+        "label": "D",
+        "html": "2,600(100<i>x</i><sup>2</sup> + 1)"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>. Each term in the given expression, 100<i>x</i><sup>2</sup> + 2,600, has a common factor of 100. Therefore, the expression can be rewritten as 100(<i>x</i><sup>2</sup>) + 100(26), or 100(<i>x</i><sup>2</sup> + 26).</p><p><b>Choice A is incorrect</b>. This expression is equivalent to 2,600<i>x</i><sup>2</sup>, not 100<i>x</i><sup>2</sup> + 2,600.</p><p><b>Choice C is incorrect</b>. This expression is equivalent to 260,000<i>x</i><sup>2</sup>, not 100<i>x</i><sup>2</sup> + 2,600.</p><p><b>Choice D is incorrect</b>. This expression is equivalent to 260,000<i>x</i><sup>2</sup> + 2,600, not 100<i>x</i><sup>2</sup> + 2,600.</p>"
+  },
+  {
+    "id": "u9-02",
+    "lessonCode": "U9",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">4<i>a</i><sup>2</sup> + 20<i>ab</i> + 25<i>b</i><sup>2</sup></div><p>Which of the following is a factor of the polynomial above?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<i>a</i> + <i>b</i>"
+      },
+      {
+        "label": "B",
+        "html": "2<i>a</i> + 5<i>b</i>"
+      },
+      {
+        "label": "C",
+        "html": "4<i>a</i> + 5<i>b</i>"
+      },
+      {
+        "label": "D",
+        "html": "4<i>a</i> + 25<i>b</i>"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>. The first and last terms of the polynomial are both squares such that 4<i>a</i><sup>2</sup> = (2<i>a</i>)<sup>2</sup> and 25<i>b</i><sup>2</sup> = (5<i>b</i>)<sup>2</sup>. The second term is twice the product of the square root of the first and last terms: 20<i>ab</i> = 2(2<i>a</i>)(5<i>b</i>). Therefore, the polynomial is the square of a binomial such that 4<i>a</i><sup>2</sup> + 20<i>ab</i> + 25<i>b</i><sup>2</sup> = (2<i>a</i> + 5<i>b</i>)<sup>2</sup>, and (2<i>a</i> + 5<i>b</i>) is a factor.</p><p><b>Choice A is incorrect</b> and may be the result of incorrectly factoring the polynomial.</p><p><b>Choice C is incorrect</b> and may be the result of dividing the second and third terms of the polynomial by their greatest common factor.</p><p><b>Choice D is incorrect</b> and may be the result of not factoring the coefficients.</p>"
+  },
+  {
+    "id": "u9-03",
+    "lessonCode": "U9",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>If <i>p</i> = 3<i>x</i> + 4 and <i>v</i> = <i>x</i> + 5, which of the following is equivalent to <i>pv</i> − 2<i>p</i> + <i>v</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "3<i>x</i><sup>2</sup> + 12<i>x</i> + 7"
+      },
+      {
+        "label": "B",
+        "html": "3<i>x</i><sup>2</sup> + 14<i>x</i> + 17"
+      },
+      {
+        "label": "C",
+        "html": "3<i>x</i><sup>2</sup> + 19<i>x</i> + 20"
+      },
+      {
+        "label": "D",
+        "html": "3<i>x</i><sup>2</sup> + 26<i>x</i> + 33"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>.</p><ul><li>It’s given that <i>p</i> = 3<i>x</i> + 4 and <i>v</i> = <i>x</i> + 5.</li><li>Substituting the values for <i>p</i> and <i>v</i> into the expression <i>pv</i> − 2<i>p</i> + <i>v</i> yields (3<i>x</i> + 4)(<i>x</i> + 5) − 2(3<i>x</i> + 4) + <i>x</i> + 5.</li><li>Multiplying the terms (3<i>x</i> + 4)(<i>x</i> + 5) yields 3<i>x</i><sup>2</sup> + 4<i>x</i> + 15<i>x</i> + 20.</li><li>Using the distributive property to rewrite −2(3<i>x</i> + 4) yields −6<i>x</i> − 8.</li><li>Therefore, the entire expression can be represented as 3<i>x</i><sup>2</sup> + 4<i>x</i> + 15<i>x</i> + 20 − 6<i>x</i> − 8 + <i>x</i> + 5.</li><li>Combining like terms yields 3<i>x</i><sup>2</sup> + 14<i>x</i> + 17.</li></ul><p><b>Choice A is incorrect</b> and may result from subtracting, instead of adding, the term <i>x</i> + 5.</p><p><b>Choice C is incorrect</b>. This is the result of multiplying the terms (3<i>x</i> + 4)(<i>x</i> + 5).</p><p><b>Choice D is incorrect</b> and may result from distributing 2, instead of −2, to the term 3<i>x</i> + 4.</p>"
+  },
+  {
+    "id": "u9-04",
+    "lessonCode": "U9",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>v</i> = −<i>w</i>/(150<i>x</i>)</div><p>The given equation relates the distinct positive numbers <i>v</i>, <i>w</i>, and <i>x</i>. Which equation correctly expresses <i>w</i> in terms of <i>v</i> and <i>x</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<i>w</i> = −150<i>vx</i>"
+      },
+      {
+        "label": "B",
+        "html": "<i>w</i> = −150<i>v</i>/<i>x</i>"
+      },
+      {
+        "label": "C",
+        "html": "<i>w</i> = −<i>x</i>/(150<i>v</i>)"
+      },
+      {
+        "label": "D",
+        "html": "<i>w</i> = <i>v</i> + 150<i>x</i>"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>. It’s given that <i>x</i> is positive. Therefore, multiplying each side of the given equation by −150<i>x</i> yields −150<i>xv</i> = <i>w</i>, which is equivalent to <i>w</i> = −150<i>vx</i>. Thus, the equation <i>w</i> = −150<i>vx</i> correctly expresses <i>w</i> in terms of <i>v</i> and <i>x</i>.</p><p><b>Choice B is incorrect</b>. This equation is equivalent to <i>v</i> = −<i>wx</i>/150.</p><p><b>Choice C is incorrect</b>. This equation is equivalent to <i>v</i> = −<i>x</i>/(150<i>w</i>).</p><p><b>Choice D is incorrect</b>. This equation is equivalent to <i>v</i> = <i>w</i> − 150<i>x</i>.</p>"
+  },
+  {
+    "id": "u9-05",
+    "lessonCode": "U9",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>x</i><sup>2</sup> − <i>x</i> − 1 = 0</div><p>What values satisfy the equation above?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<i>x</i> = 1 and <i>x</i> = 2"
+      },
+      {
+        "label": "B",
+        "html": "<i>x</i> = −1/2 and <i>x</i> = 3/2"
+      },
+      {
+        "label": "C",
+        "html": "<i>x</i> = (1 + √5)/2 and <i>x</i> = (1 − √5)/2"
+      },
+      {
+        "label": "D",
+        "html": "<i>x</i> = (−1 + √5)/2 and <i>x</i> = (−1 − √5)/2"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>. Using the quadratic formula to solve the given expression yields <i>x</i> = (−(−1) ± √((−1)<sup>2</sup> − (4)(1)(−1))) / ((2)(1)) = (1 ± √5)/2. Therefore, <i>x</i> = (1 + √5)/2 and <i>x</i> = (1 − √5)/2 satisfy the given equation.</p><p><b>Choices A and B are incorrect</b> and may result from incorrectly factoring or incorrectly applying the quadratic formula.</p><p><b>Choice D is incorrect</b> and may result from a sign error.</p>"
+  },
+  {
+    "id": "u9-06",
+    "lessonCode": "U9",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>y</i> = 0.25<i>x</i><sup>2</sup> − 7.5<i>x</i> + 90.25<br><br>The equation gives the estimated stock price <i>y</i>, in dollars, for a certain company <i>x</i> days after a new product launched, where 0 ≤ <i>x</i> ≤ 20.</div><p>Which statement is the best interpretation of (<i>x</i>, <i>y</i>) = (1, 83) in this context?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "The company's estimated stock price increased $83 every day after the new product launched."
+      },
+      {
+        "label": "B",
+        "html": "The company's estimated stock price increased $1 every 83 days after the new product launched."
+      },
+      {
+        "label": "C",
+        "html": "1 day after the new product launched, the company's estimated stock price is $83."
+      },
+      {
+        "label": "D",
+        "html": "83 days after the new product launched, the company's estimated stock price is $1."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>. In the given equation, <i>x</i> represents the number of days after a new product launched, where 0 ≤ <i>x</i> ≤ 20, and <i>y</i> represents the estimated stock price, in dollars, for a certain company. Therefore, the best interpretation of (<i>x</i>, <i>y</i>) = (1, 83) in this context is that 1 day after the new product launched, the company's estimated stock price is $83.</p><p><b>Choice A is incorrect</b> and may result from conceptual errors.</p><p><b>Choice B is incorrect</b> and may result from conceptual errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual errors.</p>"
+  },
+  {
+    "id": "u9-07",
+    "lessonCode": "U9",
+    "type": "spr",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">(7532 + 100<i>y</i><sup>2</sup>) + 10(10<i>y</i><sup>2</sup> − 110)</div><p>The expression above can be written in the form <i>a</i><i>y</i><sup>2</sup> + <i>b</i>, where <i>a</i> and <i>b</i> are constants. What is the value of <i>a</i> + <i>b</i>?</p>",
+    "choices": [],
+    "correctAnswer": "6632",
+    "acceptedAnswers": [
+      "6632",
+      "6,632"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 6632</b>. Applying the distributive property to the expression yields (7532 + 100<i>y</i><sup>2</sup>) + (100<i>y</i><sup>2</sup> − 1100). Then adding together 7532 + 100<i>y</i><sup>2</sup> and 100<i>y</i><sup>2</sup> − 1100 and collecting like terms results in 200<i>y</i><sup>2</sup> + 6432. This is written in the form <i>a</i><i>y</i><sup>2</sup> + <i>b</i>, where <i>a</i> = 200 and <i>b</i> = 6432. Therefore <i>a</i> + <i>b</i> = 200 + 6432 = 6632.</p>"
+  },
+  {
+    "id": "u9-08",
+    "lessonCode": "U9",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>Square P has a side length of <i>x</i> inches. Square Q has a perimeter that is 176 inches greater than the perimeter of square P. The function <i>f</i> gives the area of square Q, in square inches. Which of the following defines <i>f</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<i>f</i>(<i>x</i>) = (<i>x</i> + 44)<sup>2</sup>"
+      },
+      {
+        "label": "B",
+        "html": "<i>f</i>(<i>x</i>) = (<i>x</i> + 176)<sup>2</sup>"
+      },
+      {
+        "label": "C",
+        "html": "<i>f</i>(<i>x</i>) = (176<i>x</i> + 44)<sup>2</sup>"
+      },
+      {
+        "label": "D",
+        "html": "<i>f</i>(<i>x</i>) = (176<i>x</i> + 176)<sup>2</sup>"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>.</p><ul><li>Let <i>x</i> represent the side length, in inches, of square P. It follows that the perimeter of square P is 4<i>x</i> inches.</li><li>It's given that square Q has a perimeter that is 176 inches greater than the perimeter of square P. Thus, the perimeter of square Q is 176 inches greater than 4<i>x</i> inches, or 4<i>x</i> + 176 inches.</li><li>Since the perimeter of a square is 4 times the side length of the square, each side length of Q is (4<i>x</i> + 176)/4, or <i>x</i> + 44 inches.</li><li>Since the area of a square is calculated by multiplying the length of two sides, the area of square Q is (<i>x</i> + 44)(<i>x</i> + 44), or (<i>x</i> + 44)<sup>2</sup> square inches.</li><li>It follows that function <i>f</i> is defined by <i>f</i>(<i>x</i>) = (<i>x</i> + 44)<sup>2</sup>.</li></ul><p><b>Choice B is incorrect</b>. This function represents a square with side lengths (<i>x</i> + 176) inches.</p><p><b>Choice C is incorrect</b>. This function represents a square with side lengths (176<i>x</i> + 44) inches.</p><p><b>Choice D is incorrect</b>. This function represents a square with side lengths (176<i>x</i> + 176) inches.</p>"
+  },
+  {
+    "id": "u9-09",
+    "lessonCode": "U9",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>The expression (1/3)<i>x</i><sup>2</sup> − 2 can be rewritten as (1/3)(<i>x</i> − <i>k</i>)(<i>x</i> + <i>k</i>), where <i>k</i> is a positive constant. What is the value of <i>k</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "2"
+      },
+      {
+        "label": "B",
+        "html": "6"
+      },
+      {
+        "label": "C",
+        "html": "√2"
+      },
+      {
+        "label": "D",
+        "html": "√6"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>. Factoring out the coefficient 1/3, the given expression can be rewritten as (1/3)(<i>x</i><sup>2</sup> − 6). The expression <i>x</i><sup>2</sup> − 6 can be approached as a difference of squares and rewritten as (<i>x</i> − √6)(<i>x</i> + √6). Therefore, <i>k</i> must be √6.</p><p><b>Choice A is incorrect</b>. If <i>k</i> were 2, then the expression given would be rewritten as (1/3)(<i>x</i> − 2)(<i>x</i> + 2), which is equivalent to (1/3)<i>x</i><sup>2</sup> − 4/3, not (1/3)<i>x</i><sup>2</sup> − 2.</p><p><b>Choice B is incorrect</b>. This may result from incorrectly factoring the expression and finding (<i>x</i> − 6)(<i>x</i> + 6) as the factored form of the expression.</p><p><b>Choice C is incorrect</b>. This may result from incorrectly distributing the 1/3 and rewriting the expression as (1/3)(<i>x</i><sup>2</sup> − 2).</p>"
+  },
+  {
+    "id": "u9-10",
+    "lessonCode": "U9",
+    "type": "spr",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">0.36<i>x</i><sup>2</sup> + 0.63<i>x</i> + 1.17</div><p>The given expression can be rewritten as <i>a</i>(4<i>x</i><sup>2</sup> + 7<i>x</i> + 13), where <i>a</i> is a constant. What is the value of <i>a</i>?</p>",
+    "choices": [],
+    "correctAnswer": ".09",
+    "acceptedAnswers": [
+      ".09",
+      "0.09",
+      "9/100"
+    ],
+    "explanationHtml": "<p>The correct answer is .09.</p><ul><li>It's given that the expression 0.36<i>x</i><sup>2</sup> + 0.63<i>x</i> + 1.17 can be rewritten as <i>a</i>(4<i>x</i><sup>2</sup> + 7<i>x</i> + 13).</li><li>Applying the distributive property to the expression <i>a</i>(4<i>x</i><sup>2</sup> + 7<i>x</i> + 13) yields 4<i>a</i><i>x</i><sup>2</sup> + 7<i>a</i><i>x</i> + 13<i>a</i>.</li><li>Therefore, 0.36<i>x</i><sup>2</sup> + 0.63<i>x</i> + 1.17 can be rewritten as 4<i>a</i><i>x</i><sup>2</sup> + 7<i>a</i><i>x</i> + 13<i>a</i>.</li><li>It follows that in the expressions 0.36<i>x</i><sup>2</sup> + 0.63<i>x</i> + 1.17 and 4<i>a</i><i>x</i><sup>2</sup> + 7<i>a</i><i>x</i> + 13<i>a</i>, the coefficients of <i>x</i><sup>2</sup> are equivalent, the coefficients of <i>x</i> are equivalent, and the constant terms are equivalent.</li><li>Therefore, 0.36 = 4<i>a</i>, 0.63 = 7<i>a</i>, and 1.17 = 13<i>a</i>.</li><li>Solving any of these equations for <i>a</i> yields the value of <i>a</i>.</li><li>Dividing both sides of the equation 0.36 = 4<i>a</i> by 4 yields 0.09 = <i>a</i>.</li><li>Therefore, the value of <i>a</i> is 0.09.</li><li>Note that .09 and 9/100 are examples of ways to enter a correct answer.</li></ul>"
+  },
+  {
+    "id": "u9-11",
+    "lessonCode": "U9",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>D</i> = <i>T</i> − (9/25)(100 − <i>H</i>)<br><br>The formula above can be used to approximate the dew point <i>D</i>, in degrees Fahrenheit, given the temperature <i>T</i>, in degrees Fahrenheit, and the relative humidity of <i>H</i> percent, where <i>H</i> > 50.</div><p>Which of the following expresses the relative humidity in terms of the temperature and the dew point?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<i>H</i> = (25/9)(<i>D</i> − <i>T</i>) + 100"
+      },
+      {
+        "label": "B",
+        "html": "<i>H</i> = (25/9)(<i>D</i> − <i>T</i>) − 100"
+      },
+      {
+        "label": "C",
+        "html": "<i>H</i> = (25/9)(<i>D</i> + <i>T</i>) + 100"
+      },
+      {
+        "label": "D",
+        "html": "<i>H</i> = (25/9)(<i>D</i> + <i>T</i>) − 100"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>.</p><ul><li>It’s given that <i>D</i> = <i>T</i> − (9/25)(100 − <i>H</i>).</li><li>Solving this formula for <i>H</i> expresses the relative humidity in terms of the temperature and the dew point.</li><li>Subtracting <i>T</i> from both sides of this equation yields <i>D</i> − <i>T</i> = −(9/25)(100 − <i>H</i>).</li><li>Multiplying both sides by −25/9 yields −(25/9)(<i>D</i> − <i>T</i>) = 100 − <i>H</i>.</li><li>Subtracting 100 from both sides yields −(25/9)(<i>D</i> − <i>T</i>) − 100 = −<i>H</i>.</li><li>Multiplying both sides by −1 results in the formula (25/9)(<i>D</i> − <i>T</i>) + 100 = <i>H</i>.</li></ul><p><b>Choices B, C, and D are incorrect</b> and may result from errors made when rewriting the given formula.</p>"
+  },
+  {
+    "id": "u9-12",
+    "lessonCode": "U9",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>In the expression 3(2<i>x</i><sup>2</sup> + <i>px</i> + 8) − 16<i>x</i>(<i>p</i> + 4), <i>p</i> is a constant. This expression is equivalent to the expression 6<i>x</i><sup>2</sup> − 155<i>x</i> + 24. What is the value of <i>p</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "−3"
+      },
+      {
+        "label": "B",
+        "html": "7"
+      },
+      {
+        "label": "C",
+        "html": "13"
+      },
+      {
+        "label": "D",
+        "html": "155"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>.</p><ul><li>Using the distributive property, the first given expression can be rewritten as 6<i>x</i><sup>2</sup> + 3<i>px</i> + 24 − 16<i>px</i> − 64<i>x</i> + 24, and then rewritten as 6<i>x</i><sup>2</sup> + (3<i>p</i> − 16<i>p</i> − 64)<i>x</i> + 24.</li><li>Since the expression 6<i>x</i><sup>2</sup> + (3<i>p</i> − 16<i>p</i> − 64)<i>x</i> + 24 is equivalent to 6<i>x</i><sup>2</sup> − 155<i>x</i> + 24, the coefficients of the <i>x</i> terms from each expression are equivalent to each other; thus 3<i>p</i> − 16<i>p</i> − 64 = −155.</li><li>Combining like terms gives −13<i>p</i> − 64 = −155.</li><li>Adding 64 to both sides of the equation gives −13<i>p</i> = −71.</li><li>Dividing both sides of the equation by −13 yields <i>p</i> = 7.</li></ul><p><b>Choice A is incorrect</b>. If <i>p</i> = −3, then the first expression would be equivalent to 6<i>x</i><sup>2</sup> − 25<i>x</i> + 24.</p><p><b>Choice C is incorrect</b>. If <i>p</i> = 13, then the first expression would be equivalent to 6<i>x</i><sup>2</sup> − 233<i>x</i> + 24.</p><p><b>Choice D is incorrect</b>. If <i>p</i> = 155, then the first expression would be equivalent to 6<i>x</i><sup>2</sup> − 2,079<i>x</i> + 24.</p>"
+  },
+  {
+    "id": "u9-13",
+    "lessonCode": "U9",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>The function <i>f</i> is defined by <i>f</i>(<i>x</i>) = <i>a</i><i>x</i><sup>2</sup> + <i>bx</i> + <i>c</i>, where <i>a</i>, <i>b</i>, and <i>c</i> are constants. The graph of <i>y</i> = <i>f</i>(<i>x</i>) in the <i>xy</i>-plane passes through the points (7, 0) and (−3, 0). If <i>a</i> is an integer greater than 1, which of the following could be the value of <i>a</i> + <i>b</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "−6"
+      },
+      {
+        "label": "B",
+        "html": "−3"
+      },
+      {
+        "label": "C",
+        "html": "4"
+      },
+      {
+        "label": "D",
+        "html": "5"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>.</p><ul><li>It's given that the graph of <i>y</i> = <i>f</i>(<i>x</i>) in the <i>xy</i>-plane passes through the points (7, 0) and (−3, 0).</li><li>It follows that when the value of <i>x</i> is either 7 or −3, the value of <i>f</i>(<i>x</i>) is 0.</li><li>It's also given that the function <i>f</i> is defined by <i>f</i>(<i>x</i>) = <i>a</i><i>x</i><sup>2</sup> + <i>bx</i> + <i>c</i>, where <i>a</i>, <i>b</i>, and <i>c</i> are constants.</li><li>It follows that the function <i>f</i> is a quadratic function and, therefore, may be written in factored form as <i>f</i>(<i>x</i>) = <i>a</i>(<i>x</i> − <i>u</i>)(<i>x</i> − <i>v</i>), where the value of <i>f</i>(<i>x</i>) is 0 when <i>x</i> is either <i>u</i> or <i>v</i>.</li><li>Since the value of <i>f</i>(<i>x</i>) is 0 when the value of <i>x</i> is either 7 or −3, and the value of <i>f</i>(<i>x</i>) is 0 when the value of <i>x</i> is either <i>u</i> or <i>v</i>, it follows that <i>u</i> and <i>v</i> are equal to 7 and −3.</li><li>Substituting 7 for <i>u</i> and −3 for <i>v</i> in the equation <i>f</i>(<i>x</i>) = <i>a</i>(<i>x</i> − <i>u</i>)(<i>x</i> − <i>v</i>) yields <i>f</i>(<i>x</i>) = <i>a</i>(<i>x</i> − 7)(<i>x</i> − (−3)), or <i>f</i>(<i>x</i>) = <i>a</i>(<i>x</i> − 7)(<i>x</i> + 3).</li><li>Distributing the right-hand side of this equation yields <i>f</i>(<i>x</i>) = <i>a</i>(<i>x</i><sup>2</sup> − 7<i>x</i> + 3<i>x</i> − 21), or <i>f</i>(<i>x</i>) = <i>a</i><i>x</i><sup>2</sup> − 4<i>a</i><i>x</i> − 21<i>a</i>.</li><li>Since it's given that <i>f</i>(<i>x</i>) = <i>a</i><i>x</i><sup>2</sup> + <i>bx</i> + <i>c</i>, it follows that <i>b</i> = −4<i>a</i>.</li><li>Adding <i>a</i> to each side of this equation yields <i>a</i> + <i>b</i> = −3<i>a</i>.</li><li>Since <i>a</i> + <i>b</i> = −3<i>a</i>, if <i>a</i> is an integer, the value of <i>a</i> + <i>b</i> must be a multiple of 3.</li><li>If <i>a</i> is an integer greater than 1, it follows that <i>a</i> ≥ 2.</li><li>Therefore, −3<i>a</i> ≤ −3(2).</li><li>It follows that the value of <i>a</i> + <i>b</i> is less than or equal to −3(2), or −6.</li><li>Of the given choices, only −6 is a multiple of 3 that's less than or equal to −6.</li></ul><p><b>Choice B is incorrect</b>. This is the value of <i>a</i> + <i>b</i> if <i>a</i> is equal to, not greater than, 1.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u9-14",
+    "lessonCode": "U9",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>x</i> − 29 = (<i>x</i> − <i>a</i>)(<i>x</i> − 29)</div><p>Which of the following are solutions to the given equation, where <i>a</i> is a constant and <i>a</i> > 30?<br>I. <i>a</i><br>II. <i>a</i> + 1<br>III. 29</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "I and II only"
+      },
+      {
+        "label": "B",
+        "html": "I and III only"
+      },
+      {
+        "label": "C",
+        "html": "II and III only"
+      },
+      {
+        "label": "D",
+        "html": "I, II, and III"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>.</p><ul><li>Subtracting the expression (<i>x</i> − 29) from both sides of the given equation yields 0 = (<i>x</i> − <i>a</i>)(<i>x</i> − 29) − (<i>x</i> − 29), which can be rewritten as 0 = (<i>x</i> − <i>a</i>)(<i>x</i> − 29) + (−1)(<i>x</i> − 29).</li><li>Since the two terms on the right-hand side of this equation have a common factor of (<i>x</i> − 29), it can be rewritten as 0 = (<i>x</i> − 29)(<i>x</i> − <i>a</i> + (−1)), or 0 = (<i>x</i> − 29)(<i>x</i> − <i>a</i> − 1).</li><li>Since <i>x</i> − <i>a</i> − 1 is equivalent to <i>x</i> − (<i>a</i> + 1), the equation 0 = (<i>x</i> − 29)(<i>x</i> − <i>a</i> − 1) can be rewritten as 0 = (<i>x</i> − 29)(<i>x</i> − (<i>a</i> + 1)).</li><li>By the zero product property, it follows that <i>x</i> − 29 = 0 or <i>x</i> − (<i>a</i> + 1) = 0.</li><li>Adding 29 to both sides of the equation <i>x</i> − 29 = 0 yields <i>x</i> = 29.</li><li>Adding <i>a</i> + 1 to both sides of the equation <i>x</i> − (<i>a</i> + 1) = 0 yields <i>x</i> = <i>a</i> + 1.</li><li>Therefore, the two solutions to the given equation are 29 and <i>a</i> + 1.</li><li>Thus, only <i>a</i> + 1 and 29, not <i>a</i>, are solutions to the given equation.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u9-15",
+    "lessonCode": "U9",
+    "type": "spr",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">64<i>x</i><sup>2</sup> − (16<i>a</i> + 4<i>b</i>)<i>x</i> + <i>ab</i> = 0</div><p>In the given equation, <i>a</i> and <i>b</i> are positive constants. The sum of the solutions to the given equation is <i>k</i>(4<i>a</i> + <i>b</i>), where <i>k</i> is a constant. What is the value of <i>k</i>?</p>",
+    "choices": [],
+    "correctAnswer": "1/16",
+    "acceptedAnswers": [
+      "1/16",
+      ".0625",
+      "0.0625",
+      "0.062",
+      "0.063",
+      ".062",
+      ".063"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 1/16</b>.</p><ul><li>Let <i>p</i> and <i>q</i> represent the solutions to the given equation.</li><li>Then, the given equation can be rewritten as 64(<i>x</i> − <i>p</i>)(<i>x</i> − <i>q</i>) = 0, or 64<i>x</i><sup>2</sup> − 64(<i>p</i> + <i>q</i>) + <i>pq</i> = 0.</li><li>Since this equation is equivalent to the given equation, it follows that −(16<i>a</i> + 4<i>b</i>) = −64(<i>p</i> + <i>q</i>).</li><li>Dividing both sides of this equation by −64 yields (16<i>a</i> + 4<i>b</i>)/64 = <i>p</i> + <i>q</i>, or (1/16)(4<i>a</i> + <i>b</i>) = <i>p</i> + <i>q</i>.</li><li>Therefore, the sum of the solutions to the given equation, <i>p</i> + <i>q</i>, is equal to (1/16)(4<i>a</i> + <i>b</i>).</li><li>Since it's given that the sum of the solutions to the given equation is <i>k</i>(4<i>a</i> + <i>b</i>), where <i>k</i> is a constant, it follows that <i>k</i> = 1/16.</li><li>Note that 1/16, .0625, 0.062, and 0.063 are examples of ways to enter a correct answer.</li></ul><p><b>Alternate approach</b>: The given equation can be rewritten as 64<i>x</i><sup>2</sup> − 4(4<i>a</i> + <i>b</i>)<i>x</i> + <i>ab</i> = 0, where <i>a</i> and <i>b</i> are positive constants.</p><ul><li>Dividing both sides of this equation by 4 yields 16<i>x</i><sup>2</sup> − (4<i>a</i> + <i>b</i>)<i>x</i> + <i>ab</i>/4 = 0.</li><li>The solutions for a quadratic equation in the form <i>Ax</i><sup>2</sup> + <i>Bx</i> + <i>C</i> = 0, where <i>A</i>, <i>B</i>, and <i>C</i> are constants, can be calculated using the quadratic formula, <i>x</i> = (−<i>B</i> + √(<i>B</i><sup>2</sup> − 4<i>AC</i>))/(2<i>A</i>) and <i>x</i> = (−<i>B</i> − √(<i>B</i><sup>2</sup> − 4<i>AC</i>))/(2<i>A</i>).</li><li>It follows that the sum of the solutions to a quadratic equation in the form <i>Ax</i><sup>2</sup> + <i>Bx</i> + <i>C</i> = 0 is (−<i>B</i> + √(<i>B</i><sup>2</sup> − 4<i>AC</i>))/(2<i>A</i>) + (−<i>B</i> − √(<i>B</i><sup>2</sup> − 4<i>AC</i>))/(2<i>A</i>), which can be rewritten as (−<i>B</i> − <i>B</i> + √(<i>B</i><sup>2</sup> − 4<i>AC</i>) − √(<i>B</i><sup>2</sup> − 4<i>AC</i>))/(2<i>A</i>), which is equivalent to −2<i>B</i>/(2<i>A</i>), or −<i>B</i>/<i>A</i>.</li><li>In the equation 16<i>x</i><sup>2</sup> − (4<i>a</i> + <i>b</i>)<i>x</i> + <i>ab</i>/4 = 0, <i>A</i> = 16, <i>B</i> = −(4<i>a</i> + <i>b</i>), and <i>C</i> = <i>ab</i>/4.</li><li>Substituting 16 for <i>A</i> and −(4<i>a</i> + <i>b</i>) for <i>B</i> in −<i>B</i>/<i>A</i> yields −(−(4<i>a</i> + <i>b</i>))/16, which can be rewritten as (1/16)(4<i>a</i> + <i>b</i>).</li><li>Thus, the sum of the solutions to the given equation is (1/16)(4<i>a</i> + <i>b</i>).</li><li>Since it's given that the sum of the solutions to the given equation is <i>k</i>(4<i>a</i> + <i>b</i>), where <i>k</i> is a constant, it follows that <i>k</i> = 1/16.</li></ul>"
+  }
+]

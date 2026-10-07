@@ -1,0 +1,326 @@
+[
+  {
+    "id": "u20-01",
+    "lessonCode": "U20",
+    "type": "spr",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 360 245\" role=\"img\" aria-label=\"Triangle figure: points D, E and A lie on a horizontal line; C lies on segment DB; segments BE and CA cross; the angle AEB is marked x degrees.\" style=\"max-width:360px;width:100%;height:auto;display:block;margin:0 auto 12px\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" font-family=\"inherit\" font-size=\"14\"><line x1=\"30\" y1=\"215\" x2=\"330\" y2=\"25\"/><line x1=\"30\" y1=\"215\" x2=\"330\" y2=\"215\"/><line x1=\"330\" y1=\"25\" x2=\"240\" y2=\"215\"/><line x1=\"180\" y1=\"120\" x2=\"330\" y2=\"215\"/><text x=\"22\" y=\"231\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">D</text><text x=\"236\" y=\"233\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">E</text><text x=\"338\" y=\"231\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">A</text><text x=\"340\" y=\"21\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">B</text><text x=\"170\" y=\"114\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">C</text><text x=\"262\" y=\"209\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\"><tspan font-style=\"italic\">x</tspan>°</text></svg><div class=\"figcap\" style=\"text-align:center;margin:-4px 0 10px\">Note: Figure not drawn to scale.</div></div><p>In the figure, <i>AC</i> = <i>CD</i>. The measure of angle <i>EBC</i> is 45°, and the measure of angle <i>ACD</i> is 104°. What is the value of <i>x</i>?</p>",
+    "choices": [],
+    "correctAnswer": "83",
+    "acceptedAnswers": [
+      "83"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 83</b>.</p><ul><li>It's given that in the figure, <i>AC</i> = <i>CD</i>.</li><li>Thus, triangle <i>ACD</i> is an isosceles triangle and the measure of angle <i>CDA</i> is equal to the measure of angle <i>CAD</i>.</li><li>The sum of the measures of the interior angles of a triangle is 180°.</li><li>Thus, the sum of the measures of the interior angles of triangle <i>ACD</i> is 180°.</li><li>It's given that the measure of angle <i>ACD</i> is 104°.</li><li>It follows that the sum of the measures of angles <i>CDA</i> and <i>CAD</i> is (180 − 104)°, or 76°.</li><li>Since the measure of angle <i>CDA</i> is equal to the measure of angle <i>CAD</i>, the measure of angle <i>CDA</i> is half of 76°, or 38°.</li><li>The sum of the measures of the interior angles of triangle <i>BDE</i> is 180°.</li><li>It's given that the measure of angle <i>EBC</i> is 45°.</li><li>Since the measure of angle <i>BDE</i>, which is the same angle as angle <i>CDA</i>, is 38°, it follows that the measure of angle <i>DEB</i> is (180 − 45 − 38)°, or 97°.</li><li>Since angle <i>DEB</i> and angle <i>AEB</i> form a straight line, the sum of the measures of these angles is 180°.</li><li>It's given in the figure that the measure of angle <i>AEB</i> is <i>x</i>°.</li><li>It follows that 97 + <i>x</i> = 180.</li><li>Subtracting 97 from both sides of this equation yields <i>x</i> = 83.</li></ul>"
+  },
+  {
+    "id": "u20-02",
+    "lessonCode": "U20",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>Triangles <i>EFG</i> and <i>JKL</i> are congruent, where <i>E</i>, <i>F</i>, and <i>G</i> correspond to <i>J</i>, <i>K</i>, and <i>L</i>, respectively. The measure of angle <i>E</i> is 45° and the measure of angle <i>F</i> is 20°. What is the measure of angle <i>J</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "20°"
+      },
+      {
+        "label": "B",
+        "html": "45°"
+      },
+      {
+        "label": "C",
+        "html": "135°"
+      },
+      {
+        "label": "D",
+        "html": "160°"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>. It's given that triangles <i>EFG</i> and <i>JKL</i> are congruent such that angle <i>E</i> corresponds to angle <i>J</i>. Corresponding angles of congruent triangles are congruent, so angle <i>E</i> and angle <i>J</i> must be congruent. Therefore, if the measure of angle <i>E</i> is 45°, then the measure of angle <i>J</i> is also 45°.</p><p><b>Choice A is incorrect</b>. This is the measure of angle <i>K</i>, not angle <i>J</i>.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u20-03",
+    "lessonCode": "U20",
+    "type": "spr",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 440 205\" role=\"img\" aria-label=\"Points P, Q, R, S, T and V lie in that order on a horizontal line. X is below the line, joined to Q and S. U is below the line, joined to R and T. Segment RU crosses segment SX at W.\" style=\"max-width:440px;width:100%;height:auto;display:block;margin:0 auto 12px\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" font-family=\"inherit\" font-size=\"14\"><line x1=\"20\" y1=\"30\" x2=\"420\" y2=\"30\"/><line x1=\"62\" y1=\"30\" x2=\"114\" y2=\"112\"/><line x1=\"114\" y1=\"112\" x2=\"276\" y2=\"30\"/><line x1=\"106\" y1=\"30\" x2=\"276\" y2=\"175\"/><line x1=\"384\" y1=\"30\" x2=\"276\" y2=\"175\"/><text x=\"20\" y=\"22\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">P</text><text x=\"62\" y=\"22\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">Q</text><text x=\"106\" y=\"22\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">R</text><text x=\"276\" y=\"22\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">S</text><text x=\"384\" y=\"22\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">T</text><text x=\"420\" y=\"22\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">V</text><text x=\"110\" y=\"130\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">X</text><text x=\"276\" y=\"193\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">U</text><text x=\"170\" y=\"104\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">W</text></svg><div class=\"figcap\" style=\"text-align:center;margin:-4px 0 10px\">Note: Figure not drawn to scale.</div></div><p>In the figure shown, points <i>Q</i>, <i>R</i>, <i>S</i>, and <i>T</i> lie on line segment <i>PV</i>, and line segment <i>RU</i> intersects line segment <i>SX</i> at point <i>W</i>. The measure of ∠<i>SQX</i> is 48°, the measure of ∠<i>SXQ</i> is 86°, the measure of ∠<i>SWU</i> is 85°, and the measure of ∠<i>VTU</i> is 162°. What is the measure, in degrees, of ∠<i>TUR</i>?</p>",
+    "choices": [],
+    "correctAnswer": "123",
+    "acceptedAnswers": [
+      "123"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 123</b>.</p><ul><li>The triangle angle sum theorem states that the sum of the measures of the interior angles of a triangle is 180 degrees.</li><li>It's given that the measure of ∠<i>SQX</i> is 48° and the measure of ∠<i>SXQ</i> is 86°.</li><li>Since points <i>S</i>, <i>Q</i>, and <i>X</i> form a triangle, it follows from the triangle angle sum theorem that the measure, in degrees, of ∠<i>QSX</i> is 180 − 48 − 86, or 46.</li><li>It's also given that the measure of ∠<i>SWU</i> is 85°.</li><li>Since ∠<i>SWU</i> and ∠<i>SWR</i> are supplementary angles, the sum of their measures is 180 degrees.</li><li>It follows that the measure, in degrees, of ∠<i>SWR</i> is 180 − 85, or 95.</li><li>Since points <i>R</i>, <i>S</i>, and <i>W</i> form a triangle, and ∠<i>RSW</i> is the same angle as ∠<i>QSX</i>, it follows from the triangle angle sum theorem that the measure, in degrees, of ∠<i>WRS</i> is 180 − 46 − 95, or 39.</li><li>It's given that the measure of ∠<i>VTU</i> is 162°.</li><li>Since ∠<i>VTU</i> and ∠<i>STU</i> are supplementary angles, the sum of their measures is 180 degrees.</li><li>It follows that the measure, in degrees, of ∠<i>STU</i> is 180 − 162, or 18.</li><li>Since points <i>R</i>, <i>T</i>, and <i>U</i> form a triangle, and ∠<i>URT</i> is the same angle as ∠<i>WRS</i>, it follows from the triangle angle sum theorem that the measure, in degrees, of ∠<i>TUR</i> is 180 − 39 − 18, or 123.</li></ul>"
+  },
+  {
+    "id": "u20-04",
+    "lessonCode": "U20",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 345 195\" role=\"img\" aria-label=\"Segments AE and DB cross at C, forming triangles ABC and CDE. Angle A is marked y degrees, angle D is marked z degrees, and angle DCE is marked x degrees.\" style=\"max-width:345px;width:100%;height:auto;display:block;margin:0 auto 12px\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" font-family=\"inherit\" font-size=\"14\"><line x1=\"95\" y1=\"25\" x2=\"250\" y2=\"167\"/><line x1=\"310\" y1=\"32\" x2=\"35\" y2=\"160\"/><line x1=\"95\" y1=\"25\" x2=\"35\" y2=\"160\"/><line x1=\"310\" y1=\"32\" x2=\"250\" y2=\"167\"/><text x=\"93\" y=\"18\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">A</text><text x=\"25\" y=\"174\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">B</text><text x=\"318\" y=\"27\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">D</text><text x=\"250\" y=\"185\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">E</text><text x=\"173\" y=\"86\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">C</text><text x=\"99\" y=\"55\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\"><tspan font-style=\"italic\">y</tspan>°</text><text x=\"282\" y=\"56\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\"><tspan font-style=\"italic\">z</tspan>°</text><text x=\"201\" y=\"104\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\"><tspan font-style=\"italic\">x</tspan>°</text></svg><div class=\"figcap\" style=\"text-align:center;margin:-4px 0 10px\">Note: Figure not drawn to scale.</div></div><p>In the figure, line segment <i>AE</i> intersects line segment <i>DB</i> at point <i>C</i> and line segment <i>AB</i> is parallel to line segment <i>DE</i>, creating triangles <i>ABC</i> and <i>CDE</i>. If <i>x</i> = 63 and <i>y</i> = 2<i>x</i> − 47, what is the value of <i>z</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "38"
+      },
+      {
+        "label": "B",
+        "html": "47"
+      },
+      {
+        "label": "C",
+        "html": "63"
+      },
+      {
+        "label": "D",
+        "html": "79"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>.</p><ul><li>It’s given that <i>AE</i> intersects <i>DB</i> at point <i>C</i> and that <i>AB</i> is parallel to <i>DE</i>, creating triangles <i>ABC</i> and <i>CDE</i>.</li><li>Since <i>AB</i> is parallel to <i>DE</i>, angles <i>BAC</i> and <i>DEC</i> are opposite interior angles and are congruent.</li><li>It follows that the measure of angle <i>DEC</i> is <i>y</i>°.</li><li>This means the three interior angles of triangle <i>CDE</i> have measures of <i>x</i>°, <i>z</i>°, and <i>y</i>°, respectively.</li><li>It’s given that <i>x</i> = 63 and <i>y</i> = 2<i>x</i> − 47.</li><li>Substituting 63 for <i>x</i> in the equation <i>y</i> = 2<i>x</i> − 47 yields <i>y</i> = 2(63) − 47, or <i>y</i> = 79.</li><li>Therefore, the three interior angles of triangle <i>CDE</i> have measures 63°, <i>z</i>°, and 79°, respectively.</li><li>The sum of the interior angles of a triangle is 180°.</li><li>Therefore, 63 + <i>z</i> + 79 = 180, or <i>z</i> + 142 = 180.</li><li>Subtracting 142 from both sides of this equation yields <i>z</i> = 38.</li><li>Therefore, the value of <i>z</i> is 38.</li></ul><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b>. This is the value of <i>x</i>, not <i>z</i>.</p><p><b>Choice D is incorrect</b>. This is the value of <i>y</i>, not <i>z</i>.</p>"
+  },
+  {
+    "id": "u20-05",
+    "lessonCode": "U20",
+    "type": "spr",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">Intersecting lines <i>r</i>, <i>s</i>, and <i>t</i> are shown below.<svg viewBox=\"0 0 330 180\" role=\"img\" aria-label=\"Lines r, s and t intersect to form a triangle. Line s is vertical. The angle between s and t above the triangle is 106 degrees, the angle of the triangle between r and t is 23 degrees, and the angle marked x degrees is outside the triangle, between s and r.\" style=\"max-width:330px;width:100%;height:auto;display:block;margin:0 auto 12px\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" font-family=\"inherit\" font-size=\"14\"><line x1=\"60\" y1=\"15\" x2=\"60\" y2=\"165\"/><line x1=\"25\" y1=\"40\" x2=\"310\" y2=\"121.7\"/><line x1=\"25\" y1=\"134.3\" x2=\"310\" y2=\"99.3\"/><text x=\"60\" y=\"11\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">s</text><text x=\"320\" y=\"98\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">r</text><text x=\"320\" y=\"130\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">t</text><text x=\"84\" y=\"44\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">106°</text><text x=\"183\" y=\"103\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">23°</text><text x=\"40\" y=\"124\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\"><tspan font-style=\"italic\">x</tspan>°</text></svg></div><p>What is the value of <i>x</i>?</p>",
+    "choices": [],
+    "correctAnswer": "97",
+    "acceptedAnswers": [
+      "97"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 97</b>. The intersecting lines form a triangle, and the angle with measure of <i>x</i>° is an exterior angle of this triangle. The measure of an exterior angle of a triangle is equal to the sum of the measures of the two nonadjacent interior angles of the triangle. One of these angles has measure of 23° and the other, which is supplementary to the angle with measure 106°, has measure of 180° − 106° = 74°. Therefore, the value of <i>x</i> is 23 + 74 = 97.</p>"
+  },
+  {
+    "id": "u20-06",
+    "lessonCode": "U20",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>The sum of the measures of two angles in a triangle is 64°. What is the measure of the third angle?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "26°"
+      },
+      {
+        "label": "B",
+        "html": "52°"
+      },
+      {
+        "label": "C",
+        "html": "116°"
+      },
+      {
+        "label": "D",
+        "html": "128°"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>. It’s given that the sum of the measures of two angles in a triangle is 64°. The sum of the measures of all three angles in a triangle is 180°. It follows that the measure of the third angle is the difference between 180° and 64°, or 180 − 64, which is 116°. Therefore, the measure of the third angle is 116°.</p><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u20-07",
+    "lessonCode": "U20",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 330 290\" role=\"img\" aria-label=\"Parallel horizontal lines m and n are crossed by line t. The angle below line m and to the left of t is 170 degrees. The angle below line n and to the left of t is marked w degrees.\" style=\"max-width:330px;width:100%;height:auto;display:block;margin:0 auto 12px\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" font-family=\"inherit\" font-size=\"14\"><line x1=\"30\" y1=\"95\" x2=\"290\" y2=\"95\"/><line x1=\"30\" y1=\"180\" x2=\"290\" y2=\"180\"/><line x1=\"40\" y1=\"20\" x2=\"290\" y2=\"270\"/><text x=\"34\" y=\"14\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">t</text><text x=\"304\" y=\"99\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">m</text><text x=\"304\" y=\"184\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">n</text><text x=\"92\" y=\"114\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">170°</text><text x=\"182\" y=\"200\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\"><tspan font-style=\"italic\">w</tspan>°</text></svg><div class=\"figcap\" style=\"text-align:center;margin:-4px 0 10px\">Note: Figure not drawn to scale.</div></div><p>In the figure, line <i>m</i> is parallel to line <i>n</i>. What is the value of <i>w</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "17"
+      },
+      {
+        "label": "B",
+        "html": "30"
+      },
+      {
+        "label": "C",
+        "html": "70"
+      },
+      {
+        "label": "D",
+        "html": "170"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>.</p><ul><li>It's given that lines <i>m</i> and <i>n</i> are parallel.</li><li>Since line <i>t</i> intersects both lines <i>m</i> and <i>n</i>, it's a transversal.</li><li>The angles in the figure marked as 170° and <i>w</i>° are on the same side of the transversal, where one is an interior angle with line <i>m</i> as a side, and the other is an exterior angle with line <i>n</i> as a side.</li><li>Thus, the marked angles are corresponding angles.</li><li>When two parallel lines are intersected by a transversal, corresponding angles are congruent and, therefore, have equal measure.</li><li>It follows that <i>w</i>° = 170°.</li><li>Therefore, the value of <i>w</i> is 170.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u20-08",
+    "lessonCode": "U20",
+    "type": "spr",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 295 180\" role=\"img\" aria-label=\"Segments MQ and NR cross at P. N is joined to M, Q is joined to R, and M is joined to R. Angle Q is 70 degrees and angle QPR is 60 degrees.\" style=\"max-width:295px;width:100%;height:auto;display:block;margin:0 auto 12px\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" font-family=\"inherit\" font-size=\"14\"><line x1=\"25\" y1=\"150\" x2=\"240\" y2=\"25\"/><line x1=\"60\" y1=\"25\" x2=\"265\" y2=\"150\"/><line x1=\"60\" y1=\"25\" x2=\"25\" y2=\"150\"/><line x1=\"240\" y1=\"25\" x2=\"265\" y2=\"150\"/><line x1=\"25\" y1=\"150\" x2=\"265\" y2=\"150\"/><text x=\"56\" y=\"18\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">N</text><text x=\"244\" y=\"18\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">Q</text><text x=\"13\" y=\"160\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">M</text><text x=\"277\" y=\"160\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">R</text><text x=\"151\" y=\"68.5\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">P</text><text x=\"226\" y=\"51\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">70°</text><text x=\"185\" y=\"88.5\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">60°</text></svg></div><p>In the figure above, line segments <i>MQ</i> and <i>NR</i> intersect at point <i>P</i>, <i>NP</i> = <i>QP</i>, and <i>MP</i> = <i>PR</i>. What is the measure, in degrees, of ∠<i>QMR</i>? (Disregard the degree symbol when gridding your answer.)</p>",
+    "choices": [],
+    "correctAnswer": "30",
+    "acceptedAnswers": [
+      "30"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 30</b>.</p><ul><li>It is given that the measure of ∠<i>QPR</i> is 60°.</li><li>Angle <i>MPR</i> and ∠<i>QPR</i> are collinear and therefore are supplementary angles.</li><li>This means that the sum of the two angle measures is 180°, and so the measure of ∠<i>MPR</i> is 120°.</li><li>The sum of the angles in a triangle is 180°.</li><li>Subtracting the measure of ∠<i>MPR</i> from 180° yields the sum of the other angles in the triangle <i>MPR</i>.</li><li>Since 180 − 120 = 60, the sum of the measures of ∠<i>QMR</i> and ∠<i>NRM</i> is 60°.</li><li>It is given that <i>MP</i> = <i>PR</i>, so it follows that triangle <i>MPR</i> is isosceles.</li><li>Therefore ∠<i>QMR</i> and ∠<i>NRM</i> must be congruent.</li><li>Since the sum of the measure of these two angles is 60°, it follows that the measure of each angle is 30°.</li></ul><p>An alternate approach would be to use the exterior angle theorem, noting that the measure of ∠<i>QPR</i> is equal to the sum of the measures of ∠<i>QMR</i> and ∠<i>NRM</i>. Since both angles are equal, each of them has a measure of 30°.</p>"
+  },
+  {
+    "id": "u20-09",
+    "lessonCode": "U20",
+    "type": "spr",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>The length of each edge of a box is 29 inches. Each side of the box is in the shape of a square. The box does not have a lid. What is the exterior surface area, in square inches, of this box without a lid?</p>",
+    "choices": [],
+    "correctAnswer": "4205",
+    "acceptedAnswers": [
+      "4205",
+      "4,205"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 4,205</b>.</p><ul><li>The exterior surface area of a figure is the sum of the areas of all its faces.</li><li>It's given that the box does not have a lid and that each side of the box is in the shape of a square.</li><li>Therefore, the box consists of 5 congruent square faces.</li><li>It's also given that the length of each edge is 29 inches.</li><li>Let <i>s</i> represent the length of an edge of a square.</li><li>It follows that the area of a square is equal to <i>s</i><sup>2</sup>.</li><li>Therefore, the area of each of the 5 square faces is equal to 29<sup>2</sup>, or 841, square inches.</li><li>Since the box consists of 5 congruent square faces, it follows that the sum of the areas of all its faces, or the exterior surface area of this box without a lid, is 5(841), or 4,205, square inches.</li></ul>"
+  },
+  {
+    "id": "u20-10",
+    "lessonCode": "U20",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>A right circular cylinder has a volume of 45π. If the height of the cylinder is 5, what is the radius of the cylinder?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "3"
+      },
+      {
+        "label": "B",
+        "html": "4.5"
+      },
+      {
+        "label": "C",
+        "html": "9"
+      },
+      {
+        "label": "D",
+        "html": "40"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>.</p><ul><li>The volume of a right circular cylinder with a radius of <i>r</i> is the product of the area of the base, π<i>r</i><sup>2</sup>, and the height, <i>h</i>.</li><li>The volume of the right circular cylinder described is 45π and its height is 5.</li><li>If the radius is <i>r</i>, it follows that 45π = π(<i>r</i>)<sup>2</sup>(5).</li><li>Dividing both sides of this equation by 5π yields 9 = <i>r</i><sup>2</sup>.</li><li>Taking the square root of both sides yields <i>r</i> = 3 or <i>r</i> = −3.</li><li>Since <i>r</i> represents the radius, the value must be positive.</li><li>Therefore, the radius is 3.</li></ul><p><b>Choice B is incorrect</b> and may result from finding that the square of the radius is 9, but then from dividing 9 by 2, rather than taking the square root of 9.</p><p><b>Choice C is incorrect</b>. This represents the square of the radius.</p><p><b>Choice D is incorrect</b> and may result from solving the equation 45π = π(<i>r</i>)<sup>2</sup>(5) for <i>r</i><sup>2</sup>, not <i>r</i>, by dividing by π on both sides and then by subtracting, not dividing, 5 from both sides.</p>"
+  },
+  {
+    "id": "u20-11",
+    "lessonCode": "U20",
+    "type": "spr",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>Square A has side lengths that are 166 times the side lengths of square B. The area of square A is <i>k</i> times the area of square B. What is the value of <i>k</i>?</p>",
+    "choices": [],
+    "correctAnswer": "27556",
+    "acceptedAnswers": [
+      "27556",
+      "27,556"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 27,556</b>.</p><ul><li>The area of a square is <i>s</i><sup>2</sup>, where <i>s</i> is the side length of the square.</li><li>Let <i>x</i> represent the length of each side of square B. Substituting <i>x</i> for <i>s</i> in <i>s</i><sup>2</sup> yields <i>x</i><sup>2</sup>.</li><li>It follows that the area of square B is <i>x</i><sup>2</sup>.</li><li>It’s given that square A has side lengths that are 166 times the side lengths of square B. Since <i>x</i> represents the length of each side of square B, the length of each side of square A can be represented by the expression 166<i>x</i>.</li><li>It follows that the area of square A is (166<i>x</i>)<sup>2</sup>, or 27,556<i>x</i><sup>2</sup>.</li><li>It’s given that the area of square A is <i>k</i> times the area of square B. Since the area of square A is equal to 27,556<i>x</i><sup>2</sup>, and the area of square B is equal to <i>x</i><sup>2</sup>, an equation representing the given statement is 27,556<i>x</i><sup>2</sup> = <i>kx</i><sup>2</sup>.</li><li>Since <i>x</i> represents the length of each side of square B, the value of <i>x</i> must be positive.</li><li>Therefore, the value of <i>x</i><sup>2</sup> is also positive, so it does not equal 0.</li><li>Dividing by <i>x</i><sup>2</sup> on both sides of the equation 27,556<i>x</i><sup>2</sup> = <i>kx</i><sup>2</sup> yields 27,556 = <i>k</i>.</li><li>Therefore, the value of <i>k</i> is 27,556.</li></ul>"
+  },
+  {
+    "id": "u20-12",
+    "lessonCode": "U20",
+    "type": "spr",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>A right square prism has a height of 14 units. The volume of the prism is 2,016 cubic units. What is the length, in units, of an edge of the base?</p>",
+    "choices": [],
+    "correctAnswer": "12",
+    "acceptedAnswers": [
+      "12"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 12</b>.</p><ul><li>The volume, <i>V</i>, of a right square prism can be calculated using the formula <i>V</i> = <i>s</i><sup>2</sup><i>h</i>, where <i>s</i> represents the length of an edge of the base and <i>h</i> represents the height of the prism.</li><li>It’s given that the volume of the prism is 2,016 cubic units and the height is 14 units.</li><li>Substituting 2,016 for <i>V</i> and 14 for <i>h</i> in the formula <i>V</i> = <i>s</i><sup>2</sup><i>h</i> yields 2,016 = (<i>s</i><sup>2</sup>)(14).</li><li>Dividing both sides of this equation by 14 yields 144 = <i>s</i><sup>2</sup>.</li><li>Taking the square root of both sides of this equation yields two solutions: −12 = <i>s</i> and 12 = <i>s</i>.</li><li>The length can't be negative, so 12 = <i>s</i>.</li><li>Therefore, the length, in units, of an edge of the base is 12.</li></ul>"
+  },
+  {
+    "id": "u20-13",
+    "lessonCode": "U20",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>Square X has a side length of 12 centimeters. The perimeter of square Y is 2 times the perimeter of square X. What is the length, in centimeters, of one side of square Y?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "6"
+      },
+      {
+        "label": "B",
+        "html": "10"
+      },
+      {
+        "label": "C",
+        "html": "14"
+      },
+      {
+        "label": "D",
+        "html": "24"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>.</p><ul><li>The perimeter, <i>P</i>, of a square can be found using the formula <i>P</i> = 4<i>s</i>, where <i>s</i> is the length of each side of the square.</li><li>It's given that square X has a side length of 12 centimeters.</li><li>Substituting 12 for <i>s</i> in the formula for the perimeter of a square yields <i>P</i> = 4(12), or <i>P</i> = 48.</li><li>Therefore, the perimeter of square X is 48 centimeters.</li><li>It’s also given that the perimeter of square Y is 2 times the perimeter of square X. Therefore, the perimeter of square Y is 2(48), or 96, centimeters.</li><li>Substituting 96 for <i>P</i> in the formula <i>P</i> = 4<i>s</i> gives 96 = 4<i>s</i>.</li><li>Dividing both sides of this equation by 4 gives 24 = <i>s</i>.</li><li>Therefore, the length of one side of square Y is 24 centimeters.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u20-14",
+    "lessonCode": "U20",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>The circumference of the base of a right circular cylinder is 20π meters, and the height of the cylinder is 6 meters. What is the volume, in cubic meters, of the cylinder?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "60π"
+      },
+      {
+        "label": "B",
+        "html": "120π"
+      },
+      {
+        "label": "C",
+        "html": "600π"
+      },
+      {
+        "label": "D",
+        "html": "2,400π"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>.</p><ul><li>The volume, <i>V</i>, of a right circular cylinder is given by the formula <i>V</i> = π<i>r</i><sup>2</sup><i>h</i>, where <i>r</i> is the radius of the base of the cylinder and <i>h</i> is the height of the cylinder.</li><li>It’s given that a right circular cylinder has a height of 6 meters.</li><li>Therefore, <i>h</i> = 6.</li><li>It's also given that the right circular cylinder has a base with a circumference of 20π meters.</li><li>The circumference, <i>C</i>, of a circle is given by <i>C</i> = 2π<i>r</i>, where <i>r</i> is the radius of the circle.</li><li>Substituting 20π for <i>C</i> in the formula <i>C</i> = 2π<i>r</i> yields 20π = 2π<i>r</i>.</li><li>Dividing each side of this equation by 2π yields 10 = <i>r</i>.</li><li>Substituting 10 for <i>r</i> and 6 for <i>h</i> in the formula <i>V</i> = π<i>r</i><sup>2</sup><i>h</i> yields <i>V</i> = π(10)<sup>2</sup>(6), or <i>V</i> = 600π.</li><li>Therefore, the volume, in cubic meters, of the cylinder is 600π.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b>. This is the lateral surface area, not the volume, of the cylinder.</p><p><b>Choice D is incorrect</b>. This is the result of using the diameter, not the radius, for the value of <i>r</i> in the formula <i>V</i> = π<i>r</i><sup>2</sup><i>h</i>.</p>"
+  },
+  {
+    "id": "u20-15",
+    "lessonCode": "U20",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">The table gives the areas and perimeters of two similar rectangles, where <i>n</i> is a constant.<div class=\"tablewrap\"><table><thead><tr><th></th><th>Area (square inches)</th><th>Perimeter (inches)</th></tr></thead><tbody><tr><th scope=\"row\">Rectangle A</th><td>630</td><td>210</td></tr><tr><th scope=\"row\">Rectangle B</th><td>2,520</td><td><i>n</i></td></tr></tbody></table></div></div><p>What is the value of <i>n</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "2,100"
+      },
+      {
+        "label": "B",
+        "html": "1,680"
+      },
+      {
+        "label": "C",
+        "html": "840"
+      },
+      {
+        "label": "D",
+        "html": "420"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>.</p><ul><li>It’s given that rectangle A and rectangle B are similar.</li><li>Therefore, there is a positive constant <i>k</i> such that the length of each side of rectangle B is <i>k</i> times the length of the corresponding side of rectangle A and the area of rectangle B is <i>k</i><sup>2</sup> times the area of rectangle A. It’s also given that the area of rectangle A is 630 square inches and that the area of rectangle B is 2,520 square inches.</li><li>It follows that 2,520 = 630<i>k</i><sup>2</sup>.</li><li>Dividing both sides of this equation by 630 yields 4 = <i>k</i><sup>2</sup>, or <i>k</i><sup>2</sup> = 4.</li><li>Taking the positive square root of each side of this equation yields <i>k</i> = 2.</li><li>Therefore, the length of each side of rectangle B is 2 times the length of the corresponding side of rectangle A. It follows that the perimeter of rectangle B is 2 times the perimeter of rectangle A. Since the perimeter of rectangle A is 210 inches, the perimeter of rectangle B is 2(210), or 420, inches.</li><li>Therefore, <i>n</i> = 420.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b> and may result from using the area scale factor instead of the side length scale factor.</p>"
+  }
+]

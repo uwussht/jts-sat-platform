@@ -1,0 +1,422 @@
+[
+  {
+    "id": "u16-01",
+    "lessonCode": "U16",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Generations of mystery and horror ______ have been influenced by the dark, gothic stories of celebrated American author Edgar Allan Poe (1809–1849).</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "writers"
+      },
+      {
+        "label": "B",
+        "html": "writers,"
+      },
+      {
+        "label": "C",
+        "html": "writers—"
+      },
+      {
+        "label": "D",
+        "html": "writers;"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. The convention being tested is punctuation between a subject and a verb. When, as in this case, a subject (“Generations of mystery and horror writers”) is immediately followed by a verb (“have been influenced”), no punctuation is needed.</p><p><b>Choice B is incorrect</b> because no punctuation is needed between the subject and the verb.</p><p><b>Choice C is incorrect</b> because no punctuation is needed between the subject and the verb.</p><p><b>Choice D is incorrect</b> because no punctuation is needed between the subject and the verb.</p>"
+  },
+  {
+    "id": "u16-02",
+    "lessonCode": "U16",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">A recent study tracked the number of bee species present in twenty-seven New York apple orchards over a ten-year period. ______ found that when wild growth near an orchard was cleared, the number of different bee species visiting the orchard decreased.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Entomologist Heather Grab:"
+      },
+      {
+        "label": "B",
+        "html": "Entomologist, Heather Grab,"
+      },
+      {
+        "label": "C",
+        "html": "Entomologist Heather Grab"
+      },
+      {
+        "label": "D",
+        "html": "Entomologist Heather Grab,"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b>. The convention being tested is punctuation use between a name and title and between a subject and a verb. No punctuation is needed between the proper noun “Heather Grab” and “entomologist,” the title that describes Grab. Additionally, no punctuation is needed between the sentence’s subject (“Entomologist Heather Grab”) and the main verb (“found”) that indicates what Grab did.</p><p><b>Choice A is incorrect</b> because no punctuation is needed between the subject and the verb.</p><p><b>Choice B is incorrect</b> because no punctuation is needed. Setting the entomologist’s name off with commas suggests that it could be removed without affecting the coherence of the sentence, which isn’t the case.</p><p><b>Choice D is incorrect</b> because no punctuation is needed between the subject and the verb.</p>"
+  },
+  {
+    "id": "u16-03",
+    "lessonCode": "U16",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">The haiku-like poems of Tomas Tranströmer, which present nature- and dream-influenced images in crisp, spare language, have earned the Swedish poet praise from leading contemporary ______ them Nigerian American essayist and novelist Teju Cole, who has written that Tranströmer’s works “contain a luminous simplicity.”</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "writers. Among"
+      },
+      {
+        "label": "B",
+        "html": "writers among"
+      },
+      {
+        "label": "C",
+        "html": "writers; among"
+      },
+      {
+        "label": "D",
+        "html": "writers, among"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. The convention being tested is punctuation use between a main clause and a supplementary phrase. This choice correctly uses a comma to mark the boundary between the main clause (“The haiku-like…writers”) and the supplementary phrase (“among…Cole”) that specifies a contemporary writer who has praised Tomas Tranströmer’s haiku-like poems.</p><p><b>Choice A is incorrect</b> because it results in a rhetorically unacceptable sentence fragment beginning with “among.”</p><p><b>Choice B is incorrect</b> because it fails to mark the boundary between the main clause and the supplementary phrase with appropriate punctuation.</p><p><b>Choice C is incorrect</b> because a semicolon can’t be used in this way to join the main clause (“The haiku-like…writers”) and the supplementary phrase (“among…Cole”).</p>"
+  },
+  {
+    "id": "u16-04",
+    "lessonCode": "U16",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Roughly 300 nights a year, when the cold air descending from the Andes Mountains meets the warm air rising from Venezuela’s coastal Lake Maracaibo, the result is a spectacular lightning storm, its strikes so bright, so localized, and so ______ that it has become known as “Maracaibo’s Lighthouse.”</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "dependable:"
+      },
+      {
+        "label": "B",
+        "html": "dependable;"
+      },
+      {
+        "label": "C",
+        "html": "dependable"
+      },
+      {
+        "label": "D",
+        "html": "dependable,"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b>. The convention being tested is the punctuation of an integrated relative clause. No punctuation is needed before the relative clause beginning with \"that\" because the content of the relative clause (\"that...Lighthouse\") is integral to the meaning of the coordinated adjectival phrase (\"so bright, so localized, and so dependable\") that it modifies.</p><p><b>Choice A is incorrect</b> because no punctuation is needed between the coordinated adjectival phrase (\"so bright...dependable\") and the integrated relative clause that modifies it.</p><p><b>Choice B is incorrect</b> because no punctuation is needed between the coordinated adjectival phrase (\"so bright...dependable\") and the integrated relative clause that modifies it.</p><p><b>Choice D is incorrect</b> because no punctuation is needed between the coordinated adjectival phrase (\"so bright...dependable\") and the integrated relative clause that modifies it.</p>"
+  },
+  {
+    "id": "u16-05",
+    "lessonCode": "U16",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Key-value pairs are an important aspect of JavaScript Object Notation (JSON), an electronic file format for storing and transmitting data. Keys function as labels, while values contain the actual information. In a JSON file storing data about fire belly ______ instance, you could encounter a key such as “species” with the associated value of “<i>Cynops orientalis</i>.”</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "newts. For"
+      },
+      {
+        "label": "B",
+        "html": "newts, for"
+      },
+      {
+        "label": "C",
+        "html": "newts: for"
+      },
+      {
+        "label": "D",
+        "html": "newts; for"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. The convention being tested is the use of punctuation within a sentence. The comma after “newts” pairs with the comma after “instance” to separate the supplementary element “for instance” from the rest of the sentence. The supplementary element appears between the prepositional phrase (“In…newts”) and the main clause of the sentence (“you…orientalis”) and signals that the sentence is presenting an example of how keys and values function in JSON files.</p><p><b>Choice A is incorrect</b> because it results in a sentence fragment (“In a JSON file storing data about fire belly newts”).</p><p><b>Choice C is incorrect</b> because a colon can’t be paired with a comma in this way to separate the supplementary element “for instance” from the rest of the sentence.</p><p><b>Choice D is incorrect</b> because a semicolon can’t be paired with a comma in this way to separate the supplementary element “for instance” from the rest of the sentence.</p>"
+  },
+  {
+    "id": "u16-06",
+    "lessonCode": "U16",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">In a 2023 study, researchers documented a fascinating behavior in the aquatic plant <i>Elodea densa</i>. When exposed to low levels of light, the plant’s ______ the cellular organs that generate energy from light—reshuffled to form a tightly packed, glass-like surface ideal for collecting more light.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "chloroplasts"
+      },
+      {
+        "label": "B",
+        "html": "chloroplasts;"
+      },
+      {
+        "label": "C",
+        "html": "chloroplasts,"
+      },
+      {
+        "label": "D",
+        "html": "chloroplasts—"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. The convention being tested is the punctuation of a supplementary element within a sentence. The dash after \"chloroplasts\" pairs with the dash after \"from light\" to separate the supplementary element \"the cellular organs that generate energy from light\" from the rest of the sentence. This supplementary element functions to define the term \"chloroplasts,\" and the pair of dashes indicates that this element could be removed without affecting the grammatical coherence of the sentence.</p><p><b>Choice A is incorrect</b> because it fails to use appropriate punctuation to separate the supplementary element from the rest of the sentence.</p><p><b>Choice B is incorrect</b> because a semicolon can’t be paired with a dash in this way to separate the supplementary element from the rest of the sentence.</p><p><b>Choice C is incorrect</b> because a comma can’t be paired with a dash in this way to separate the supplementary element from the rest of the sentence.</p>"
+  },
+  {
+    "id": "u16-07",
+    "lessonCode": "U16",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">A study led by scientist Rebecca Kirby at the University of Wisconsin–Madison found that black bears that eat human food before hibernation have increased levels of a rare carbon isotope, ______ due to the higher <sup>13</sup>C levels in corn and cane sugar. Bears with these elevated levels were also found to have much shorter hibernation periods on average.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "carbon-13, (<sup>13</sup>C)"
+      },
+      {
+        "label": "B",
+        "html": "carbon-13 (<sup>13</sup>C)"
+      },
+      {
+        "label": "C",
+        "html": "carbon-13, (<sup>13</sup>C),"
+      },
+      {
+        "label": "D",
+        "html": "carbon-13 (<sup>13</sup>C),"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. The convention being tested is the punctuation of a supplementary element within a sentence. The comma after “(<sup>13</sup>C)” pairs with the comma after “isotope” to separate the supplementary element “carbon-13 (<sup>13</sup>C)” from the rest of the sentence. This supplementary element defines the “rare carbon isotope,” and the pair of commas indicates that this element could be removed without affecting the grammatical coherence of the sentence.</p><p><b>Choice A is incorrect</b> because it fails to use appropriate punctuation to separate the supplementary element “carbon-13 (<sup>13</sup>C)” from the rest of the sentence.</p><p><b>Choice B is incorrect</b> because it fails to use appropriate punctuation to separate the supplementary element “carbon-13 (<sup>13</sup>C)” from the rest of the sentence.</p><p><b>Choice C is incorrect</b> because it fails to use appropriate punctuation to separate the supplementary element “carbon-13 (<sup>13</sup>C)” from the rest of the sentence. The comma after “carbon-13” isn’t necessary because the parentheses around “<sup>13</sup>C” already separate this element from the rest of the sentence.</p>"
+  },
+  {
+    "id": "u16-08",
+    "lessonCode": "U16",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">In biology, many initially disordered systems will naturally move toward greater order according to the principle of self-organization, a conceptual framework for pattern ______ biologists believe can be used to explain a range of organic phenomena, from population dynamics to the sociality of bees and ants.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "formation, that some"
+      },
+      {
+        "label": "B",
+        "html": "formation. Some"
+      },
+      {
+        "label": "C",
+        "html": "formation that some"
+      },
+      {
+        "label": "D",
+        "html": "formation; some"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b>. The convention being tested is the use and punctuation of an integrated relative clause. In this choice, the relative pronoun “that” is used to create an integrated relative clause that modifies the preceding noun phrase “a conceptual framework for pattern formation.” No punctuation is necessary between the noun phrase and the relative clause because the relative clause is supplying essential information about the framework.</p><p><b>Choice A is incorrect</b> because no punctuation is needed between the noun phrase (“a conceptual…formation”) and the integrated relative clause beginning with “that.”</p><p><b>Choice B is incorrect</b> because it results in a confusing and ungrammatical sentence.</p><p><b>Choice D is incorrect</b> because it results in an ungrammatical sentence. A semicolon is used to join two main clauses or items in a complex series, and what follows “formation” is neither of these.</p>"
+  },
+  {
+    "id": "u16-09",
+    "lessonCode": "U16",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">In 1986, conceptual artist Sophie Calle asked twenty-three people, all of whom had been born without sight, to describe “their image of beauty” in rich detail. Calle paired excerpts of these conversations with photographs—both of interviewees and the items they ______ to powerful effect in her exhibition <i>The Blind</i>.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "described, from hair to grass to sculptures"
+      },
+      {
+        "label": "B",
+        "html": "described, from hair to grass to sculptures—"
+      },
+      {
+        "label": "C",
+        "html": "described—from hair to grass to sculptures,"
+      },
+      {
+        "label": "D",
+        "html": "described: from hair to grass to sculptures"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>.</p><ul><li>The convention being tested is the punctuation of supplementary elements within a sentence.</li><li>The comma after \"described\" separates the first supplementary element (\"both of interviewees and the items they described\") from the second supplementary element (\"from hair to grass to sculptures\").</li><li>Furthermore, the dash after \"sculptures\" pairs with the dash after \"photographs\" to separate these two supplementary elements from the rest of the sentence.</li><li>The pair of dashes, which operate at a higher organizing level than the comma, indicates that the elements between the dashes function together—in this case, the second supplement (\"from…sculptures\") describes the range of items mentioned in the first supplement—and could be removed without affecting the grammatical coherence of the sentence.</li></ul><p><b>Choice A is incorrect</b> because it fails to appropriately punctuate the supplementary elements in the sentence. A dash is needed after \"sculptures\" to separate the supplementary elements (\"both…sculptures\") from the rest of the sentence.</p><p><b>Choice C is incorrect</b> because it fails to appropriately punctuate the supplementary elements in the sentence. The two supplementary elements \"both…described\" and \"from…sculptures\" function together to describe the photographs, and placing a dash between them would make this relationship less clear, suggesting that the supplement \"both...described\" is a standalone element that could be removed without affecting the grammatical coherence of the sentence, which isn’t the case.</p><p><b>Choice D is incorrect</b> because it fails to appropriately punctuate the supplementary elements in the sentence. A colon isn’t conventionally used in this way to separate a supplementary element (\"from hair to grass to sculptures\") from the noun phrase it is modifying (\"items they described\"). Additionally, a dash is needed after \"sculptures\" to separate the supplementary elements (\"both…sculptures\") from the rest of the sentence.</p>"
+  },
+  {
+    "id": "u16-10",
+    "lessonCode": "U16",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">The 1977 play <i>And the Soul Shall Dance</i> depicts two Japanese American farming families in Depression-era Southern California. Critics have noted the way pioneering ______ compares the experiences of <i>issei</i> (Japanese nationals who emigrated to America) and <i>nisei</i> (their American-born children).</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "playwright, Wakako Yamauchi,"
+      },
+      {
+        "label": "B",
+        "html": "playwright, Wakako Yamauchi"
+      },
+      {
+        "label": "C",
+        "html": "playwright Wakako Yamauchi,"
+      },
+      {
+        "label": "D",
+        "html": "playwright Wakako Yamauchi"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. The convention being tested is the use of punctuation between titles and proper nouns. No punctuation is needed to set off the proper noun \"Wakako Yamauchi\" from the title that describes Yamauchi, \"pioneering playwright.\" Because \"Wakako Yamauchi\" is essential information identifying the \"pioneering playwright,\" no punctuation is necessary.</p><p><b>Choice A is incorrect</b> because no punctuation is needed before or after the proper noun \"Wakako Yamauchi.\" Setting the playwright’s name off with commas suggests that it could be removed without affecting the coherence of the sentence, which isn’t the case.</p><p><b>Choice B is incorrect</b> because no punctuation is needed between the title \"pioneering playwright\" and the proper noun \"Wakako Yamauchi.\"</p><p><b>Choice C is incorrect</b> because no punctuation is needed between the proper noun \"Wakako Yamauchi\" and the verb \"compares.\"</p>"
+  },
+  {
+    "id": "u16-11",
+    "lessonCode": "U16",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Within Earth’s biomes, there are four main types of desert: arid, semiarid, coastal, and cold. The roughly ______ is classified as an arid desert.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "200,000 km<sup>2</sup> Puntland Desert,"
+      },
+      {
+        "label": "B",
+        "html": "200,000 km<sup>2</sup>, Puntland Desert"
+      },
+      {
+        "label": "C",
+        "html": "200,000 km<sup>2</sup> Puntland Desert"
+      },
+      {
+        "label": "D",
+        "html": "200,000 km<sup>2</sup>, Puntland Desert,"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b>. The convention being tested is the use of punctuation between a modifier and a noun and also between a subject and a verb. No punctuation is needed when, as in this case, a modifying phrase (“roughly 200,000 km<sup>2</sup>”) precedes the noun phrase it modifies (“Puntland Desert”) to form the subject of the sentence. Additionally, no punctuation is needed between the subject (“The roughly...Desert”) and the main verb (“is classified”).</p><p><b>Choice A is incorrect</b> because no punctuation is needed between the subject and the main verb.</p><p><b>Choice B is incorrect</b> because no punctuation is needed between the modifier and the noun phrase.</p><p><b>Choice D is incorrect</b> because no punctuation is needed between the modifier and the noun phrase, nor is it needed between the subject and the main verb.</p>"
+  },
+  {
+    "id": "u16-12",
+    "lessonCode": "U16",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">With some 16,000 in attendance, the Second World Black and African Festival of Arts and ______ or FESTAC ’77, as the event was more commonly known—became the largest pan-African event on record. FESTAC drew people from around the world to Lagos, Nigeria, for a monthlong celebration of Black and African art, scholarship, and activism.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Culture:"
+      },
+      {
+        "label": "B",
+        "html": "Culture—"
+      },
+      {
+        "label": "C",
+        "html": "Culture,"
+      },
+      {
+        "label": "D",
+        "html": "Culture"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. The text uses a dash to introduce a nonessential element that explains the acronym FESTAC. The dash matches the dash that comes after “known,” ending the descriptive aside.</p><p><b>Choice A is incorrect</b>. A colon can only come after an independent clause, which isn’t the case here.</p><p><b>Choice C is incorrect</b>. While punctuation is required to set off “or FESTAC…known” from the rest of the sentence, nonessential elements must be separated from the sentence with matching punctuation. Since a dash appears on the other side of the element, we can’t use a comma here.</p><p><b>Choice D is incorrect</b>. The descriptive aside “or FESTAC…known” is a nonessential element that must be separated with punctuation from the rest of the sentence. This choice fails to add the necessary punctuation before the nonessential element.</p>"
+  },
+  {
+    "id": "u16-13",
+    "lessonCode": "U16",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">The element carbon has the highest melting point ______ all the elements on the periodic table—3,500 degrees Celsius.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "of"
+      },
+      {
+        "label": "B",
+        "html": "of—"
+      },
+      {
+        "label": "C",
+        "html": "of,"
+      },
+      {
+        "label": "D",
+        "html": "of:"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. The convention being tested is punctuation use between a preposition and its complement. No punctuation is needed between the preposition \"of\" and its complement \"all the elements on the periodic table.\" The complement completes the meaning of the preposition in the phrase \"the highest melting point of all the elements on the periodic table,\" and using punctuation to separate the complement from the preposition results in an ungrammatical sentence.</p><p><b>Choice B is incorrect</b> because no punctuation is needed between the preposition and its complement.</p><p><b>Choice C is incorrect</b> because no punctuation is needed between the preposition and its complement.</p><p><b>Choice D is incorrect</b> because no punctuation is needed between the preposition and its complement.</p>"
+  },
+  {
+    "id": "u16-14",
+    "lessonCode": "U16",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Using natural debris, such as dried ______ such as plastic bags; and more traditional art supplies, such as tree glue, Ghanaian artist Ed Franklin Gavua creates his striking Yiiiiikakaii African masks, which he hopes can help viewers rethink how waste is used in their communities.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "leaves, man-made trash:"
+      },
+      {
+        "label": "B",
+        "html": "leaves; man-made trash,"
+      },
+      {
+        "label": "C",
+        "html": "leaves, man-made trash,"
+      },
+      {
+        "label": "D",
+        "html": "leaves; man-made trash;"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. The convention being tested is the punctuation of elements in a complex series. It’s conventional to use a semicolon to separate items in a complex series with internal punctuation, and in this choice, the semicolon after \"leaves\" is conventionally used to separate the first item (\"natural debris, such as dried leaves\") and the second item (\"man-made trash, such as plastic bags\") in the series of materials used by Gavua. Further, the comma after \"trash\" correctly separates the noun phrase \"man-made trash\" from the supplementary phrase (\"such as plastic bags\") that describes it.</p><p><b>Choice A is incorrect</b> because a comma after \"leaves\" doesn’t match the semicolon used later to separate the second and third items in the series (\"man-made...bags\" and \"and...glue\"). Additionally, it’s not conventional to use a colon in this way to separate a supplementary phrase (\"such as plastic bags\") from the noun phrase it modifies (\"man-made trash\").</p><p><b>Choice C is incorrect</b> because a comma after \"leaves\" doesn’t match the semicolon used later to separate the second and third items in the series (\"man-made...bags\" and \"and...glue\").</p><p><b>Choice D is incorrect</b> because it’s not conventional to use a semicolon in this way to separate a supplementary phrase (\"such as plastic bags\") from the noun phrase it modifies (\"man-made trash\").</p>"
+  },
+  {
+    "id": "u16-15",
+    "lessonCode": "U16",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">The short story “Rogue Enchantments” by Isabel Ibañez appears in <i>Reclaim the</i> ______ anthology of fantasy and science fiction written by authors of Latin American descent.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<i>Stars</i>. An"
+      },
+      {
+        "label": "B",
+        "html": "<i>Stars</i>, while an"
+      },
+      {
+        "label": "C",
+        "html": "<i>Stars</i> an"
+      },
+      {
+        "label": "D",
+        "html": "<i>Stars</i>, an"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. The convention being tested is the use of punctuation within a sentence. This choice correctly uses a comma to mark the boundary between the main clause (\"The short...<i>Stars</i>\") and the supplementary element (\"an anthology...descent\") that provides additional information about what <i>Reclaim the Stars</i> is.</p><p><b>Choice A is incorrect</b> because it results in a rhetorically unacceptable sentence fragment beginning with \"an anthology.\"</p><p><b>Choice B is incorrect</b>. Joining the main clause and the following supplementary element with the conjunction \"while\" results in a confusing and ungrammatical sentence.</p><p><b>Choice C is incorrect</b> because it fails to mark the boundary between the main clause and the supplementary element with appropriate punctuation.</p>"
+  }
+]

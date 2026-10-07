@@ -1,0 +1,383 @@
+[
+  {
+    "id": "u21-01",
+    "lessonCode": "U21",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>The function <i>f</i>(<i>x</i>) is defined as 19 more than 4 times a number <i>x</i>. If <i>y</i> = <i>f</i>(<i>x</i>) is graphed in the <i>xy</i>-plane, what is the best interpretation of the <i>x</i>-intercept?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "When <i>f</i>(<i>x</i>) = 0, the number is −19/4."
+      },
+      {
+        "label": "B",
+        "html": "When the number is 0, <i>f</i>(<i>x</i>) = 19."
+      },
+      {
+        "label": "C",
+        "html": "The value of <i>f</i>(<i>x</i>) increases by 1 for each increase of 4 in the value of the number."
+      },
+      {
+        "label": "D",
+        "html": "For each increase of 1 in the value of the number, <i>f</i>(<i>x</i>) increases by 4."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>.</p><ul><li>It’s given that the function <i>f</i>(<i>x</i>) is defined as 19 more than 4 times a number <i>x</i>.</li><li>This can be represented by the equation <i>f</i>(<i>x</i>) = 4<i>x</i> + 19.</li><li>The <i>x</i>-intercept of the graph of <i>y</i> = <i>f</i>(<i>x</i>) in the <i>xy</i>-plane is the point where the graph intersects the <i>x</i>-axis, or the point on the graph where the value of <i>f</i>(<i>x</i>) is equal to 0.</li><li>Substituting 0 for <i>f</i>(<i>x</i>) in the equation <i>f</i>(<i>x</i>) = 4<i>x</i> + 19 yields 0 = 4<i>x</i> + 19.</li><li>Subtracting 19 from each side of this equation yields −19 = 4<i>x</i>.</li><li>Dividing each side of this equation by 4 yields <i>x</i> = −19/4.</li><li>Therefore, when <i>f</i>(<i>x</i>) = 0, the number is −19/4.</li></ul><p><b>Choice B is incorrect</b>. This is the best interpretation of the <i>y</i>-intercept, not the <i>x</i>-intercept, of the graph of the function.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b>. This is the best interpretation of the slope, not the <i>x</i>-intercept, of the graph of the function.</p>"
+  },
+  {
+    "id": "u21-02",
+    "lessonCode": "U21",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>An object hangs from a spring. The formula <i>ℓ</i> = 30 + 2<i>w</i> relates the length <i>ℓ</i>, in centimeters, of the spring to the weight <i>w</i>, in newtons, of the object. Which of the following describes the meaning of the 2 in this context?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "The length, in centimeters, of the spring with no weight attached"
+      },
+      {
+        "label": "B",
+        "html": "The weight, in newtons, of an object that will stretch the spring 30 centimeters"
+      },
+      {
+        "label": "C",
+        "html": "The increase in the weight, in newtons, of the object for each one-centimeter increase in the length of the spring"
+      },
+      {
+        "label": "D",
+        "html": "The increase in the length, in centimeters, of the spring for each one-newton increase in the weight of the object"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>. The value 2 is multiplied by <i>w</i>, the weight of the object. When the weight is 0, the length is 30 + 2(0) = 30 centimeters. If the weight increases by <i>w</i> newtons, the length increases by 2<i>w</i> centimeters, or 2 centimeters for each one-newton increase in weight.</p><p><b>Choice A is incorrect</b> because this describes the value 30.</p><p><b>Choice B is incorrect</b> because 30 represents the length of the spring before it has been stretched.</p><p><b>Choice C is incorrect</b> because this describes the value <i>w</i>.</p>"
+  },
+  {
+    "id": "u21-03",
+    "lessonCode": "U21",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>f</i>(<i>x</i>) = <i>x</i><sup>3</sup> + 3<i>x</i><sup>2</sup> − 6<i>x</i> − 1</div><p>For the function <i>f</i> defined above, what is the value of <i>f</i>(−1)?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "−11"
+      },
+      {
+        "label": "B",
+        "html": "−7"
+      },
+      {
+        "label": "C",
+        "html": "7"
+      },
+      {
+        "label": "D",
+        "html": "11"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>. Substituting −1 for <i>x</i> in the given function <i>f</i> gives <i>f</i>(−1) = (−1)<sup>3</sup> + 3(−1)<sup>2</sup> − 6(−1) − 1, which simplifies to <i>f</i>(−1) = −1 + 3(1) − 6(−1) − 1. This further simplifies to <i>f</i>(−1) = −1 + 3 + 6 − 1, or <i>f</i>(−1) = 7.</p><p><b>Choice A is incorrect</b> and may result from correctly substituting −1 for <i>x</i> in the function but incorrectly simplifying the resulting expression to <i>f</i>(−1) = −1 − 3 − 6 − 1, or −11.</p><p><b>Choice B is incorrect</b> and may result from arithmetic errors.</p><p><b>Choice D is incorrect</b> and may result from correctly substituting −1 for <i>x</i> in the function but incorrectly simplifying the expression to <i>f</i>(−1) = 1 + 3 + 6 + 1, or 11.</p>"
+  },
+  {
+    "id": "u21-04",
+    "lessonCode": "U21",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>The equation (<i>x</i><sup>2</sup> + 6<i>x</i> − 7)/(<i>x</i> + 7) = <i>ax</i> + <i>d</i> is true for all <i>x</i> ≠ −7, where <i>a</i> and <i>d</i> are integers. What is the value of <i>a</i> + <i>d</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "−6"
+      },
+      {
+        "label": "B",
+        "html": "−1"
+      },
+      {
+        "label": "C",
+        "html": "0"
+      },
+      {
+        "label": "D",
+        "html": "1"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>.</p><ul><li>Since the expression <i>x</i><sup>2</sup> + 6<i>x</i> − 7 can be factored as (<i>x</i> + 7)(<i>x</i> − 1), the given equation can be rewritten as (<i>x</i> + 7)(<i>x</i> − 1)/(<i>x</i> + 7) = <i>ax</i> + <i>d</i>.</li><li>Since <i>x</i> ≠ −7, <i>x</i> + 7 is also not equal to 0, so both the numerator and denominator of (<i>x</i> + 7)(<i>x</i> − 1)/(<i>x</i> + 7) can be divided by <i>x</i> + 7.</li><li>This gives <i>x</i> − 1 = <i>ax</i> + <i>d</i>.</li><li>Equating the coefficient of <i>x</i> on each side of the equation gives <i>a</i> = 1.</li><li>Equating the constant terms gives <i>d</i> = −1.</li><li>The sum is 1 + (−1) = 0.</li></ul><p><b>Choice A is incorrect</b> and may result from incorrectly simplifying the equation.</p><p><b>Choices B and D are incorrect</b>. They are the values of <i>d</i> and <i>a</i>, respectively, not <i>a</i> + <i>d</i>.</p>"
+  },
+  {
+    "id": "u21-05",
+    "lessonCode": "U21",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>Function <i>f</i> is defined by <i>f</i>(<i>x</i>) = (<i>x</i> + 6)(<i>x</i> + 5)(<i>x</i> + 1). Function <i>g</i> is defined by <i>g</i>(<i>x</i>) = <i>f</i>(<i>x</i> − 1). The graph of <i>y</i> = <i>g</i>(<i>x</i>) in the <i>xy</i>-plane has <i>x</i>-intercepts at (<i>a</i>, 0), (<i>b</i>, 0), and (<i>c</i>, 0), where <i>a</i>, <i>b</i>, and <i>c</i> are distinct constants. What is the value of <i>a</i> + <i>b</i> + <i>c</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "−15"
+      },
+      {
+        "label": "B",
+        "html": "−9"
+      },
+      {
+        "label": "C",
+        "html": "11"
+      },
+      {
+        "label": "D",
+        "html": "15"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>.</p><ul><li>It's given that <i>g</i>(<i>x</i>) = <i>f</i>(<i>x</i> − 1).</li><li>Since <i>f</i>(<i>x</i>) = (<i>x</i> + 6)(<i>x</i> + 5)(<i>x</i> + 1), it follows that <i>f</i>(<i>x</i> − 1) = (<i>x</i> − 1 + 6)(<i>x</i> − 1 + 5)(<i>x</i> − 1 + 1).</li><li>Combining like terms yields <i>f</i>(<i>x</i> − 1) = (<i>x</i> + 5)(<i>x</i> + 4)(<i>x</i>).</li><li>Therefore, <i>g</i>(<i>x</i>) = <i>x</i>(<i>x</i> + 5)(<i>x</i> + 4).</li><li>The <i>x</i>-intercepts of a graph in the <i>xy</i>-plane are the points where <i>y</i> = 0.</li><li>The <i>x</i>-coordinates of the <i>x</i>-intercepts of the graph of <i>y</i> = <i>g</i>(<i>x</i>) in the <i>xy</i>-plane can be found by solving the equation 0 = <i>x</i>(<i>x</i> + 5)(<i>x</i> + 4).</li><li>Applying the zero product property to this equation yields three equations: <i>x</i> = 0, <i>x</i> + 5 = 0, and <i>x</i> + 4 = 0.</li><li>Solving each of these equations for <i>x</i> yields <i>x</i> = 0, <i>x</i> = −5, and <i>x</i> = −4, respectively.</li><li>Therefore, the <i>x</i>-intercepts of the graph of <i>y</i> = <i>g</i>(<i>x</i>) are (0, 0), (−5, 0), and (−4, 0).</li><li>It follows that the values of <i>a</i>, <i>b</i>, and <i>c</i> are 0, −5, and −4.</li><li>Thus, the value of <i>a</i> + <i>b</i> + <i>c</i> is 0 + (−5) + (−4), which is equal to −9.</li></ul><p><b>Choice A is incorrect</b>. This is the value of <i>a</i> + <i>b</i> + <i>c</i> if <i>g</i>(<i>x</i>) = <i>f</i>(<i>x</i> + 1).</p><p><b>Choice C is incorrect</b>. This is the value of <i>a</i> + <i>b</i> + <i>c</i> − 1 if <i>g</i>(<i>x</i>) = (<i>x</i> − 6)(<i>x</i> − 5)(<i>x</i> − 1).</p><p><b>Choice D is incorrect</b>. This is the value of <i>a</i> + <i>b</i> + <i>c</i> if <i>f</i>(<i>x</i>) = (<i>x</i> − 6)(<i>x</i> − 5)(<i>x</i> − 1).</p>"
+  },
+  {
+    "id": "u21-06",
+    "lessonCode": "U21",
+    "type": "spr",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>What is an <i>x</i>-coordinate of an <i>x</i>-intercept of the graph of <i>y</i> = 3(<i>x</i> − 14)(<i>x</i> + 5)(<i>x</i> + 4) in the <i>xy</i>-plane?</p>",
+    "choices": [],
+    "correctAnswer": "14",
+    "acceptedAnswers": [
+      "14",
+      "-5",
+      "-4"
+    ],
+    "explanationHtml": "<p><b>The correct answer is either 14, −5, or −4</b>.</p><ul><li>The <i>x</i>-intercepts of a graph in the <i>xy</i>-plane are the points at which the graph intersects the <i>x</i>-axis, or when the value of <i>y</i> is 0.</li><li>Substituting 0 for <i>y</i> in the given equation yields 0 = 3(<i>x</i> − 14)(<i>x</i> + 5)(<i>x</i> + 4).</li><li>Dividing both sides of this equation by 3 yields 0 = (<i>x</i> − 14)(<i>x</i> + 5)(<i>x</i> + 4).</li><li>Applying the zero product property to this equation yields three equations: <i>x</i> − 14 = 0, <i>x</i> + 5 = 0, and <i>x</i> + 4 = 0.</li><li>Adding 14 to both sides of the equation <i>x</i> − 14 = 0 yields <i>x</i> = 14, subtracting 5 from both sides of the equation <i>x</i> + 5 = 0 yields <i>x</i> = −5, and subtracting 4 from both sides of the equation <i>x</i> + 4 = 0 yields <i>x</i> = −4.</li><li>Therefore, the <i>x</i>-coordinates of the <i>x</i>-intercepts of the graph of the given equation are 14, −5, and −4.</li><li>Note that 14, -5, and -4 are examples of ways to enter a correct answer.</li></ul>"
+  },
+  {
+    "id": "u21-07",
+    "lessonCode": "U21",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 390 300\" role=\"img\" aria-label=\"Graph of a cubic function in the xy-plane that crosses the x-axis three times\" style=\"max-width:390px;width:100%;height:auto;display:block;margin:0 auto 12px\" fill=\"none\" stroke=\"currentColor\" font-family=\"inherit\" font-size=\"11\"><line x1=\"30\" y1=\"20\" x2=\"30\" y2=\"280\" stroke-opacity=\".18\"/><line x1=\"50\" y1=\"20\" x2=\"50\" y2=\"280\" stroke-opacity=\".18\"/><line x1=\"70\" y1=\"20\" x2=\"70\" y2=\"280\" stroke-opacity=\".18\"/><line x1=\"90\" y1=\"20\" x2=\"90\" y2=\"280\" stroke-opacity=\".18\"/><line x1=\"110\" y1=\"20\" x2=\"110\" y2=\"280\" stroke-opacity=\".18\"/><line x1=\"130\" y1=\"20\" x2=\"130\" y2=\"280\" stroke-opacity=\".18\"/><line x1=\"150\" y1=\"20\" x2=\"150\" y2=\"280\" stroke-opacity=\".18\"/><line x1=\"170\" y1=\"20\" x2=\"170\" y2=\"280\" stroke-opacity=\".18\"/><line x1=\"190\" y1=\"20\" x2=\"190\" y2=\"280\" stroke-opacity=\".18\"/><line x1=\"210\" y1=\"20\" x2=\"210\" y2=\"280\" stroke-opacity=\".18\"/><line x1=\"230\" y1=\"20\" x2=\"230\" y2=\"280\" stroke-opacity=\".18\"/><line x1=\"250\" y1=\"20\" x2=\"250\" y2=\"280\" stroke-opacity=\".18\"/><line x1=\"270\" y1=\"20\" x2=\"270\" y2=\"280\" stroke-opacity=\".18\"/><line x1=\"290\" y1=\"20\" x2=\"290\" y2=\"280\" stroke-opacity=\".18\"/><line x1=\"310\" y1=\"20\" x2=\"310\" y2=\"280\" stroke-opacity=\".18\"/><line x1=\"330\" y1=\"20\" x2=\"330\" y2=\"280\" stroke-opacity=\".18\"/><line x1=\"350\" y1=\"20\" x2=\"350\" y2=\"280\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"280\" x2=\"350\" y2=\"280\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"260\" x2=\"350\" y2=\"260\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"240\" x2=\"350\" y2=\"240\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"220\" x2=\"350\" y2=\"220\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"200\" x2=\"350\" y2=\"200\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"180\" x2=\"350\" y2=\"180\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"160\" x2=\"350\" y2=\"160\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"140\" x2=\"350\" y2=\"140\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"120\" x2=\"350\" y2=\"120\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"100\" x2=\"350\" y2=\"100\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"80\" x2=\"350\" y2=\"80\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"60\" x2=\"350\" y2=\"60\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"40\" x2=\"350\" y2=\"40\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"20\" x2=\"350\" y2=\"20\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"120\" x2=\"362\" y2=\"120\" stroke-width=\"1.4\"/><line x1=\"190\" y1=\"280\" x2=\"190\" y2=\"10\" stroke-width=\"1.4\"/><text x=\"30\" y=\"133\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">−8</text><text x=\"70\" y=\"133\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">−6</text><text x=\"110\" y=\"133\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">−4</text><text x=\"150\" y=\"133\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">−2</text><text x=\"230\" y=\"133\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">2</text><text x=\"270\" y=\"133\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">4</text><text x=\"310\" y=\"133\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">6</text><text x=\"350\" y=\"133\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">8</text><text x=\"185\" y=\"284\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">−16</text><text x=\"185\" y=\"264\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">−14</text><text x=\"185\" y=\"244\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">−12</text><text x=\"185\" y=\"224\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">−10</text><text x=\"185\" y=\"204\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">−8</text><text x=\"185\" y=\"184\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">−6</text><text x=\"185\" y=\"164\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">−4</text><text x=\"185\" y=\"144\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">−2</text><text x=\"185\" y=\"104\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">2</text><text x=\"185\" y=\"84\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">4</text><text x=\"185\" y=\"64\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">6</text><text x=\"185\" y=\"44\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">8</text><text x=\"185\" y=\"24\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">10</text><text x=\"368\" y=\"124\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">x</text><text x=\"196\" y=\"14\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">y</text><text x=\"194\" y=\"133\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">O</text><polyline points=\"166.0,32.6 168.0,45.9 170.0,58.5 172.0,70.4 174.0,81.6 176.0,92.2 178.0,102.1 180.0,111.3 182.0,120.0 184.0,128.1 186.0,135.5 188.0,142.4 190.0,148.8 192.0,154.6 194.0,159.9 196.0,164.7 198.0,169.0 200.0,172.8 202.0,176.1 204.0,179.0 206.0,181.4 208.0,183.5 210.0,185.1 212.0,186.3 214.0,187.2 216.0,187.7 218.0,187.9 220.0,187.7 222.0,187.2 224.0,186.4 226.0,185.3 228.0,184.0 230.0,182.4 232.0,180.6 234.0,178.5 236.0,176.2 238.0,173.8 240.0,171.1 242.0,168.3 244.0,165.3 246.0,162.2 248.0,159.0 250.0,155.7 252.0,152.3 254.0,148.8 256.0,145.3 258.0,141.7 260.0,138.0 262.0,134.4 264.0,130.8 266.0,127.1 268.0,123.5 270.0,120.0 272.0,116.5 274.0,113.1 276.0,109.8 278.0,106.6 280.0,103.5 282.0,100.5 284.0,97.7 286.0,95.0 288.0,92.6 290.0,90.3 292.0,88.2 294.0,86.4 296.0,84.8 298.0,83.5 300.0,82.4 302.0,81.6 304.0,81.1 306.0,80.9 308.0,81.1 310.0,81.6 312.0,82.5 314.0,83.7 316.0,85.3 318.0,87.4 320.0,89.8 322.0,92.7 324.0,96.0 326.0,99.8 328.0,104.1 330.0,108.9 332.0,114.2 334.0,120.0 336.0,126.4 338.0,133.3 340.0,140.7 342.0,148.8 344.0,157.5 346.0,166.7 348.0,176.6 350.0,187.2\" stroke-width=\"2.2\" stroke-linejoin=\"round\"/></svg></div><p>The graph of <i>y</i> = <i>f</i>(<i>x</i>) is shown, where the function <i>f</i> is defined by <i>f</i>(<i>x</i>) = <i>ax</i><sup>3</sup> + <i>bx</i><sup>2</sup> + <i>cx</i> + <i>d</i> and <i>a</i>, <i>b</i>, <i>c</i>, and <i>d</i> are constants. For how many values of <i>x</i> does <i>f</i>(<i>x</i>) = 0?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "One"
+      },
+      {
+        "label": "B",
+        "html": "Two"
+      },
+      {
+        "label": "C",
+        "html": "Three"
+      },
+      {
+        "label": "D",
+        "html": "Four"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>. If a value of <i>x</i> satisfies <i>f</i>(<i>x</i>) = 0, the graph of <i>y</i> = <i>f</i>(<i>x</i>) will contain a point (<i>x</i>, 0) and thus touch the <i>x</i>-axis. Since there are 3 points at which this graph touches the <i>x</i>-axis, there are 3 values of <i>x</i> for which <i>f</i>(<i>x</i>) = 0.</p><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u21-08",
+    "lessonCode": "U21",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 410 300\" role=\"img\" aria-label=\"Graph of y = g(x): it crosses the x-axis at x = −2 and touches the x-axis at x = 1 and x = 3\" style=\"max-width:410px;width:100%;height:auto;display:block;margin:0 auto 12px\" fill=\"none\" stroke=\"currentColor\" font-family=\"inherit\" font-size=\"11\"><line x1=\"30\" y1=\"24\" x2=\"30\" y2=\"284\" stroke-opacity=\".18\"/><line x1=\"64\" y1=\"24\" x2=\"64\" y2=\"284\" stroke-opacity=\".18\"/><line x1=\"98\" y1=\"24\" x2=\"98\" y2=\"284\" stroke-opacity=\".18\"/><line x1=\"132\" y1=\"24\" x2=\"132\" y2=\"284\" stroke-opacity=\".18\"/><line x1=\"166\" y1=\"24\" x2=\"166\" y2=\"284\" stroke-opacity=\".18\"/><line x1=\"200\" y1=\"24\" x2=\"200\" y2=\"284\" stroke-opacity=\".18\"/><line x1=\"234\" y1=\"24\" x2=\"234\" y2=\"284\" stroke-opacity=\".18\"/><line x1=\"268\" y1=\"24\" x2=\"268\" y2=\"284\" stroke-opacity=\".18\"/><line x1=\"302\" y1=\"24\" x2=\"302\" y2=\"284\" stroke-opacity=\".18\"/><line x1=\"336\" y1=\"24\" x2=\"336\" y2=\"284\" stroke-opacity=\".18\"/><line x1=\"370\" y1=\"24\" x2=\"370\" y2=\"284\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"284\" x2=\"370\" y2=\"284\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"258\" x2=\"370\" y2=\"258\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"232\" x2=\"370\" y2=\"232\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"206\" x2=\"370\" y2=\"206\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"180\" x2=\"370\" y2=\"180\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"154\" x2=\"370\" y2=\"154\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"128\" x2=\"370\" y2=\"128\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"102\" x2=\"370\" y2=\"102\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"76\" x2=\"370\" y2=\"76\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"50\" x2=\"370\" y2=\"50\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"24\" x2=\"370\" y2=\"24\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"154\" x2=\"384\" y2=\"154\" stroke-width=\"1.4\"/><line x1=\"200\" y1=\"284\" x2=\"200\" y2=\"14\" stroke-width=\"1.4\"/><text x=\"30\" y=\"167\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">−5</text><text x=\"64\" y=\"167\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">−4</text><text x=\"98\" y=\"167\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">−3</text><text x=\"132\" y=\"167\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">−2</text><text x=\"166\" y=\"167\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">−1</text><text x=\"234\" y=\"167\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">1</text><text x=\"268\" y=\"167\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">2</text><text x=\"302\" y=\"167\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">3</text><text x=\"336\" y=\"167\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">4</text><text x=\"370\" y=\"167\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">5</text><text x=\"195\" y=\"288\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">−10</text><text x=\"195\" y=\"262\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">−8</text><text x=\"195\" y=\"236\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">−6</text><text x=\"195\" y=\"210\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">−4</text><text x=\"195\" y=\"184\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">−2</text><text x=\"195\" y=\"132\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">2</text><text x=\"195\" y=\"106\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">4</text><text x=\"195\" y=\"80\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">6</text><text x=\"195\" y=\"54\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">8</text><text x=\"195\" y=\"28\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">10</text><text x=\"390\" y=\"158\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">x</text><text x=\"206\" y=\"18\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">y</text><text x=\"204\" y=\"167\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">O</text><polyline points=\"121.8,273.3 123.2,253.4 124.5,234.8 125.9,217.5 127.2,201.4 128.6,186.5 130.0,172.7 131.3,160.0 132.7,148.3 134.0,137.5 135.4,127.7 136.8,118.8 138.1,110.8 139.5,103.5 140.8,97.0 142.2,91.2 143.6,86.1 144.9,81.6 146.3,77.8 147.6,74.5 149.0,71.7 150.4,69.5 151.7,67.7 153.1,66.4 154.4,65.5 155.8,65.0 157.2,64.8 158.5,65.0 159.9,65.5 161.2,66.2 162.6,67.3 164.0,68.5 165.3,70.0 166.7,71.7 168.0,73.5 169.4,75.5 170.8,77.6 172.1,79.9 173.5,82.2 174.8,84.6 176.2,87.1 177.6,89.7 178.9,92.3 180.3,94.9 181.6,97.6 183.0,100.3 184.4,102.9 185.7,105.6 187.1,108.2 188.4,110.8 189.8,113.3 191.2,115.8 192.5,118.3 193.9,120.7 195.2,123.0 196.6,125.3 198.0,127.5 199.3,129.6 200.7,131.6 202.0,133.5 203.4,135.4 204.8,137.2 206.1,138.8 207.5,140.4 208.8,141.9 210.2,143.3 211.6,144.6 212.9,145.8 214.3,147.0 215.6,148.0 217.0,148.9 218.4,149.8 219.7,150.5 221.1,151.2 222.4,151.8 223.8,152.3 225.2,152.8 226.5,153.1 227.9,153.4 229.2,153.7 230.6,153.8 232.0,153.9 233.3,154.0 234.7,154.0 236.0,153.9 237.4,153.9 238.8,153.7 240.1,153.6 241.5,153.4 242.8,153.1 244.2,152.9 245.6,152.6 246.9,152.3 248.3,152.0 249.6,151.7 251.0,151.4 252.4,151.1 253.7,150.8 255.1,150.6 256.4,150.3 257.8,150.0 259.2,149.8 260.5,149.6 261.9,149.4 263.2,149.2 264.6,149.0 266.0,148.9 267.3,148.8 268.7,148.8 270.0,148.8 271.4,148.8 272.8,148.8 274.1,148.9 275.5,149.0 276.8,149.2 278.2,149.4 279.6,149.6 280.9,149.8 282.3,150.1 283.6,150.4 285.0,150.7 286.4,151.0 287.7,151.4 289.1,151.7 290.4,152.1 291.8,152.4 293.2,152.7 294.5,153.0 295.9,153.3 297.2,153.6 298.6,153.8 300.0,153.9 301.3,154.0 302.7,154.0 304.0,153.9 305.4,153.7 306.8,153.4 308.1,153.0 309.5,152.4 310.8,151.6 312.2,150.7 313.6,149.6 314.9,148.3 316.3,146.7 317.6,144.9 319.0,142.8 320.4,140.5 321.7,137.8 323.1,134.7 324.4,131.3 325.8,127.5 327.2,123.3 328.5,118.7 329.9,113.5 331.2,107.9 332.6,101.8 334.0,95.0 335.3,87.7 336.7,79.7 338.0,71.1 339.4,61.8 340.8,51.7 342.1,40.9 343.5,29.2\" stroke-width=\"2.2\" stroke-linejoin=\"round\"/></svg></div><p>The graph of <i>y</i> = <i>g</i>(<i>x</i>) is shown. If <i>g</i>(<i>x</i> + 28) = (1/10)(<i>x</i> − <i>a</i>)<sup>2</sup>(<i>x</i> − <i>b</i>)<sup>2</sup>(<i>x</i> − <i>c</i>), where <i>a</i>, <i>b</i>, and <i>c</i> are constants, which of the following could be the value of <i>b</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "31"
+      },
+      {
+        "label": "B",
+        "html": "3"
+      },
+      {
+        "label": "C",
+        "html": "−2"
+      },
+      {
+        "label": "D",
+        "html": "−25"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>.</p><ul><li>Substituting <i>b</i> for <i>x</i> in the given equation yields <i>g</i>(<i>b</i> + 28) = (1/10)(<i>b</i> − <i>a</i>)<sup>2</sup>(<i>b</i> − <i>b</i>)<sup>2</sup>(<i>b</i> − <i>c</i>), which is equivalent to <i>g</i>(<i>b</i> + 28) = (1/10)(<i>b</i> − <i>a</i>)<sup>2</sup>(0)<sup>2</sup>(<i>b</i> − <i>c</i>), or <i>g</i>(<i>b</i> + 28) = 0.</li><li>It follows that when <i>x</i> = <i>b</i> + 28, <i>g</i>(<i>x</i>) = 0.</li><li>There are three points where the graph of <i>y</i> = <i>g</i>(<i>x</i>) intersects the <i>x</i>-axis: (−2, 0), (1, 0), and (3, 0).</li><li>Therefore, <i>g</i>(−2) = 0, <i>g</i>(1) = 0, and <i>g</i>(3) = 0.</li><li>It follows that either <i>b</i> + 28 = −2, <i>b</i> + 28 = 1, or <i>b</i> + 28 = 3.</li><li>Subtracting 28 from each side of the equation <i>b</i> + 28 = −2 yields <i>b</i> = −30.</li><li>Subtracting 28 from each side of the equation <i>b</i> + 28 = 1 yields <i>b</i> = −27.</li><li>Subtracting 28 from each side of the equation <i>b</i> + 28 = 3 yields <i>b</i> = −25.</li><li>Thus, the value of <i>b</i> must be either −30, −27, or −25.</li><li>Of these values, only −25 is given as a choice.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b>. This would be a possible value of <i>b</i> if the graph shown was the graph of <i>y</i> = <i>g</i>(<i>x</i> + 28), not <i>y</i> = <i>g</i>(<i>x</i>).</p><p><b>Choice C is incorrect</b>. This would be the value of <i>c</i>, not the value of <i>b</i>, if the graph shown was the graph of <i>y</i> = <i>g</i>(<i>x</i> + 28), not <i>y</i> = <i>g</i>(<i>x</i>).</p>"
+  },
+  {
+    "id": "u21-09",
+    "lessonCode": "U21",
+    "type": "spr",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>f</i>(<i>x</i>) = (<i>x</i> − 1)(<i>x</i> + 3)(<i>x</i> − 2)</div><p>In the <i>xy</i>-plane, when the graph of the function <i>f</i>, where <i>y</i> = <i>f</i>(<i>x</i>), is shifted up 6 units, the resulting graph is defined by the function <i>g</i>. If the graph of <i>y</i> = <i>g</i>(<i>x</i>) crosses through the point (4, <i>b</i>), where <i>b</i> is a constant, what is the value of <i>b</i>?</p>",
+    "choices": [],
+    "correctAnswer": "48",
+    "acceptedAnswers": [
+      "48"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 48</b>.</p><ul><li>It's given that in the <i>xy</i>-plane, when the graph of the function <i>f</i>, where <i>y</i> = <i>f</i>(<i>x</i>), is shifted up 6 units, the resulting graph is defined by the function <i>g</i>.</li><li>Therefore, function <i>g</i> can be defined by the equation <i>g</i>(<i>x</i>) = <i>f</i>(<i>x</i>) + 6.</li><li>It's given that <i>f</i>(<i>x</i>) = (<i>x</i> − 1)(<i>x</i> + 3)(<i>x</i> − 2).</li><li>Substituting (<i>x</i> − 1)(<i>x</i> + 3)(<i>x</i> − 2) for <i>f</i>(<i>x</i>) in the equation <i>g</i>(<i>x</i>) = <i>f</i>(<i>x</i>) + 6 yields <i>g</i>(<i>x</i>) = (<i>x</i> − 1)(<i>x</i> + 3)(<i>x</i> − 2) + 6.</li><li>For the point (4, <i>b</i>), the value of <i>x</i> is 4.</li><li>Substituting 4 for <i>x</i> in the equation <i>g</i>(<i>x</i>) = (<i>x</i> − 1)(<i>x</i> + 3)(<i>x</i> − 2) + 6 yields <i>g</i>(4) = (4 − 1)(4 + 3)(4 − 2) + 6, or <i>g</i>(4) = 48.</li><li>It follows that the graph of <i>y</i> = <i>g</i>(<i>x</i>) crosses through the point (4, 48).</li><li>Therefore, the value of <i>b</i> is 48.</li></ul>"
+  },
+  {
+    "id": "u21-10",
+    "lessonCode": "U21",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>Which of the following is equivalent to (1 − <i>p</i>)(1 + <i>p</i> + <i>p</i><sup>2</sup> + <i>p</i><sup>3</sup> + <i>p</i><sup>4</sup> + <i>p</i><sup>5</sup> + <i>p</i><sup>6</sup>)?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "1 − <i>p</i><sup>8</sup>"
+      },
+      {
+        "label": "B",
+        "html": "1 − <i>p</i><sup>7</sup>"
+      },
+      {
+        "label": "C",
+        "html": "1 − <i>p</i><sup>6</sup>"
+      },
+      {
+        "label": "D",
+        "html": "1 − <i>p</i><sup>5</sup>"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>. Multiplying (1 − <i>p</i>) by each term of the polynomial within the second pair of parentheses gives (1 − <i>p</i>)1 = 1 − <i>p</i>; (1 − <i>p</i>)<i>p</i> = <i>p</i> − <i>p</i><sup>2</sup>; (1 − <i>p</i>)<i>p</i><sup>2</sup> = <i>p</i><sup>2</sup> − <i>p</i><sup>3</sup>; (1 − <i>p</i>)<i>p</i><sup>3</sup> = <i>p</i><sup>3</sup> − <i>p</i><sup>4</sup>; (1 − <i>p</i>)<i>p</i><sup>4</sup> = <i>p</i><sup>4</sup> − <i>p</i><sup>5</sup>; (1 − <i>p</i>)<i>p</i><sup>5</sup> = <i>p</i><sup>5</sup> − <i>p</i><sup>6</sup>; and (1 − <i>p</i>)<i>p</i><sup>6</sup> = <i>p</i><sup>6</sup> − <i>p</i><sup>7</sup>. Adding these seven expressions together and combining like terms gives 1 + (<i>p</i> − <i>p</i>) + (<i>p</i><sup>2</sup> − <i>p</i><sup>2</sup>) + (<i>p</i><sup>3</sup> − <i>p</i><sup>3</sup>) + (<i>p</i><sup>4</sup> − <i>p</i><sup>4</sup>) + (<i>p</i><sup>5</sup> − <i>p</i><sup>5</sup>) + (<i>p</i><sup>6</sup> − <i>p</i><sup>6</sup>) − <i>p</i><sup>7</sup>, which can be simplified to 1 − <i>p</i><sup>7</sup>.</p><p><b>Choices A, C, and D are incorrect</b> and may result from incorrectly identifying the highest power of <i>p</i> in the expressions or incorrectly combining like terms.</p>"
+  },
+  {
+    "id": "u21-11",
+    "lessonCode": "U21",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>f</i>(<i>x</i>) = <i>x</i><sup>2</sup> + <i>bx</i><br><i>g</i>(<i>x</i>) = 9<i>x</i><sup>2</sup> − 27<i>x</i></div><p>Functions <i>f</i> and <i>g</i> are given, and in function <i>f</i>, <i>b</i> is a constant. If <i>f</i>(<i>x</i>) · <i>g</i>(<i>x</i>) = 9<i>x</i><sup>4</sup> − 26<i>x</i><sup>3</sup> − 3<i>x</i><sup>2</sup>, what is the value of <i>b</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "−26"
+      },
+      {
+        "label": "B",
+        "html": "−26/9"
+      },
+      {
+        "label": "C",
+        "html": "1/9"
+      },
+      {
+        "label": "D",
+        "html": "9"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>.</p><ul><li>Multiplying the given functions <i>f</i> and <i>g</i> yields <i>f</i>(<i>x</i>) · <i>g</i>(<i>x</i>) = (<i>x</i><sup>2</sup> + <i>bx</i>)(9<i>x</i><sup>2</sup> − 27<i>x</i>).</li><li>Applying the distributive property to the right-hand side of this equation yields <i>f</i>(<i>x</i>) · <i>g</i>(<i>x</i>) = (<i>x</i><sup>2</sup>)(9<i>x</i><sup>2</sup> − 27<i>x</i>) + (<i>bx</i>)(9<i>x</i><sup>2</sup> − 27<i>x</i>).</li><li>Applying the distributive property once again to the right-hand side of this equation yields <i>f</i>(<i>x</i>) · <i>g</i>(<i>x</i>) = (<i>x</i><sup>2</sup>)(9<i>x</i><sup>2</sup>) − (<i>x</i><sup>2</sup>)(27<i>x</i>) + (<i>bx</i>)(9<i>x</i><sup>2</sup>) − (<i>bx</i>)(27<i>x</i>), which is equivalent to <i>f</i>(<i>x</i>) · <i>g</i>(<i>x</i>) = 9<i>x</i><sup>4</sup> − 27<i>x</i><sup>3</sup> + 9<i>bx</i><sup>3</sup> − 27<i>bx</i><sup>2</sup>.</li><li>Factoring out <i>x</i><sup>3</sup> from the second and third terms yields <i>f</i>(<i>x</i>) · <i>g</i>(<i>x</i>) = 9<i>x</i><sup>4</sup> + (−27 + 9<i>b</i>)<i>x</i><sup>3</sup> − 27<i>bx</i><sup>2</sup>.</li><li>Since the left-hand sides of <i>f</i>(<i>x</i>) · <i>g</i>(<i>x</i>) = 9<i>x</i><sup>4</sup> + (−27 + 9<i>b</i>)<i>x</i><sup>3</sup> − 27<i>bx</i><sup>2</sup> and <i>f</i>(<i>x</i>) · <i>g</i>(<i>x</i>) = 9<i>x</i><sup>4</sup> − 26<i>x</i><sup>3</sup> − 3<i>x</i><sup>2</sup> are equal, it follows that (−27 + 9<i>b</i>)<i>x</i><sup>3</sup> = −26<i>x</i><sup>3</sup>, or −27 + 9<i>b</i> = −26, and −27<i>bx</i><sup>2</sup> = −3<i>x</i><sup>2</sup>, or −27<i>b</i> = −3.</li><li>Adding 27 to each side of −27 + 9<i>b</i> = −26 yields 9<i>b</i> = 1.</li><li>Dividing each side of this equation by 9 yields <i>b</i> = 1/9.</li><li>Similarly, dividing each side of −27<i>b</i> = −3 by −27 yields <i>b</i> = 1/9.</li><li>Therefore, the value of <i>b</i> is 1/9.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u21-12",
+    "lessonCode": "U21",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">((1/2)<i>x</i> + 3) − ((2/3)<i>x</i> − 5)</div><p>Which of the following is equivalent to the expression above?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "−(1/6)<i>x</i> + 8"
+      },
+      {
+        "label": "B",
+        "html": "−(1/6)<i>x</i> − 2"
+      },
+      {
+        "label": "C",
+        "html": "−(1/3)<i>x</i><sup>2</sup> + (1/2)<i>x</i> + 15"
+      },
+      {
+        "label": "D",
+        "html": "−(1/3)<i>x</i><sup>2</sup> − (9/2)<i>x</i> − 15"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>. By distributing the minus sign through the expression ((2/3)<i>x</i> − 5), the given expression can be rewritten as ((1/2)<i>x</i> + 3) − (2/3)<i>x</i> + 5, which is equivalent to (1/2)<i>x</i> − (2/3)<i>x</i> + 3 + 5. Combining like terms gives (1/2 − 2/3)<i>x</i> + (3 + 5), or −(1/6)<i>x</i> + 8.</p><p><b>Choice B is incorrect</b> and may be the result of failing to distribute the minus sign appropriately through the second term and simplifying the expression (1/2)<i>x</i> + 3 − (2/3)<i>x</i> − 5.</p><p><b>Choice C is incorrect</b> and may be the result of multiplying the expressions ((1/2)<i>x</i> + 3) and (−(2/3)<i>x</i> + 5).</p><p><b>Choice D is incorrect</b> and may be the result of multiplying the expressions ((1/2)<i>x</i> + 3) and (−(2/3)<i>x</i> − 5).</p>"
+  },
+  {
+    "id": "u21-13",
+    "lessonCode": "U21",
+    "type": "spr",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>The expression 6<i>x</i><sup>4</sup> + 31<i>x</i><sup>2</sup> + 35 can be rewritten as (3<i>x</i><sup>2</sup> + <i>a</i>)(2<i>x</i><sup>2</sup> + <i>b</i>), where <i>a</i> and <i>b</i> are positive integers, or as (3<i>x</i><sup>2</sup> + <i>c</i>)(2<i>x</i><sup>2</sup> + <i>d</i>), where <i>c</i> and <i>d</i> are positive nonintegers. What is the value of <i>a</i> + <i>c</i>?</p>",
+    "choices": [],
+    "correctAnswer": "15.5",
+    "acceptedAnswers": [
+      "15.5",
+      "31/2"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 15</b>.5.</p><ul><li>It’s given that 6<i>x</i><sup>4</sup> + 31<i>x</i><sup>2</sup> + 35 can be rewritten as (3<i>x</i><sup>2</sup> + <i>a</i>)(2<i>x</i><sup>2</sup> + <i>b</i>), where <i>a</i> and <i>b</i> are positive integers.</li><li>The expression (3<i>x</i><sup>2</sup> + <i>a</i>)(2<i>x</i><sup>2</sup> + <i>b</i>) can be rewritten as 6<i>x</i><sup>4</sup> + 3<i>bx</i><sup>2</sup> + 2<i>ax</i><sup>2</sup> + <i>ab</i>, or 6<i>x</i><sup>4</sup> + (3<i>b</i> + 2<i>a</i>)<i>x</i><sup>2</sup> + <i>ab</i>.</li><li>Therefore, the expression 6<i>x</i><sup>4</sup> + (3<i>b</i> + 2<i>a</i>)<i>x</i><sup>2</sup> + <i>ab</i> is equivalent to 6<i>x</i><sup>4</sup> + 31<i>x</i><sup>2</sup> + 35.</li><li>It follows that 3<i>b</i> + 2<i>a</i> = 31 and <i>ab</i> = 35.</li><li>Since <i>a</i> and <i>b</i> are positive integers and <i>ab</i> = 35, the possible values of <i>a</i> and <i>b</i> are 1 and 35, 5 and 7, 7 and 5, and 35 and 1, respectively.</li><li>Of these options, the only pair that satisfies the equation 3<i>b</i> + 2<i>a</i> = 31 is <i>a</i> = 5 and <i>b</i> = 7, since 3(7) + 2(5) = 31.</li><li>It’s also given that 6<i>x</i><sup>4</sup> + 31<i>x</i><sup>2</sup> + 35 can be rewritten as (3<i>x</i><sup>2</sup> + <i>c</i>)(2<i>x</i><sup>2</sup> + <i>d</i>), where <i>c</i> and <i>d</i> are positive nonintegers.</li><li>The expression (3<i>x</i><sup>2</sup> + <i>c</i>)(2<i>x</i><sup>2</sup> + <i>d</i>) can be rewritten as 6<i>x</i><sup>4</sup> + 3<i>dx</i><sup>2</sup> + 2<i>cx</i><sup>2</sup> + <i>cd</i>, or 6<i>x</i><sup>4</sup> + (3<i>d</i> + 2<i>c</i>)<i>x</i><sup>2</sup> + <i>cd</i>.</li><li>Therefore, the expression 6<i>x</i><sup>4</sup> + (3<i>d</i> + 2<i>c</i>)<i>x</i><sup>2</sup> + <i>cd</i> is equivalent to 6<i>x</i><sup>4</sup> + 31<i>x</i><sup>2</sup> + 35.</li><li>It follows that 3<i>d</i> + 2<i>c</i> = 31 and <i>cd</i> = 35.</li><li>Since it's given that <i>c</i> and <i>d</i> are positive nonintegers, it follows that <i>c</i> and <i>d</i> are not zero.</li><li>Thus, dividing both sides of the equation <i>cd</i> = 35 by <i>c</i> yields <i>d</i> = 35/<i>c</i>.</li><li>Substituting 35/<i>c</i> for <i>d</i> in the equation 3<i>d</i> + 2<i>c</i> = 31 yields 3(35/<i>c</i>) + 2<i>c</i> = 31, or 105/<i>c</i> + 2<i>c</i> = 31.</li><li>Multiplying both sides of this equation by <i>c</i> yields <i>c</i>(105/<i>c</i> + 2<i>c</i>) = <i>c</i>(31), or 105 + 2<i>c</i><sup>2</sup> = 31<i>c</i>.</li><li>Subtracting 31<i>c</i> from both sides of this equation yields 105 + 2<i>c</i><sup>2</sup> − 31<i>c</i> = 0, or 2<i>c</i><sup>2</sup> − 31<i>c</i> + 105 = 0.</li><li>This equation can be rewritten as 2<i>c</i><sup>2</sup> − 10<i>c</i> − 21<i>c</i> + 105 = 0.</li><li>Since the first two terms of the expression 2<i>c</i><sup>2</sup> − 10<i>c</i> − 21<i>c</i> + 105 have a common factor of 2<i>c</i> and the last two terms of the expression 2<i>c</i><sup>2</sup> − 10<i>c</i> − 21<i>c</i> + 105 have a common factor of 21, the expression 2<i>c</i><sup>2</sup> − 10<i>c</i> − 21<i>c</i> + 105 can be rewritten as 2<i>c</i>(<i>c</i> − 5) − 21(<i>c</i> − 5).</li><li>Since each term of this expression has a common factor of (<i>c</i> − 5), the expression 2<i>c</i>(<i>c</i> − 5) − 21(<i>c</i> − 5) can be rewritten as (<i>c</i> − 5)(2<i>c</i> − 21).</li><li>Thus, the equation 2<i>c</i><sup>2</sup> − 31<i>c</i> + 105 = 0 can be rewritten as (<i>c</i> − 5)(2<i>c</i> − 21) = 0.</li><li>It follows that <i>c</i> = 5 or <i>c</i> = 21/2.</li><li>Since <i>c</i> is a positive noninteger, it follows that <i>c</i> = 21/2, or <i>c</i> = 10.5.</li><li>Substituting 5 for <i>a</i> and 10.5 for <i>c</i> into the expression <i>a</i> + <i>c</i> yields 5 + 10.5, or 15.5.</li><li>Therefore, the value of <i>a</i> + <i>c</i> is 15.5.</li><li>Note that 15.5 and 31/2 are examples of ways to enter a correct answer.</li></ul><p><b>Alternate approach</b>: The correct answer is 15.5.</p><ul><li>It’s given that 6<i>x</i><sup>4</sup> + 31<i>x</i><sup>2</sup> + 35 can be rewritten as (3<i>x</i><sup>2</sup> + <i>a</i>)(2<i>x</i><sup>2</sup> + <i>b</i>), where <i>a</i> and <i>b</i> are positive integers.</li><li>The expression (3<i>x</i><sup>2</sup> + <i>a</i>)(2<i>x</i><sup>2</sup> + <i>b</i>) can be rewritten as 6<i>x</i><sup>4</sup> + 3<i>bx</i><sup>2</sup> + 2<i>ax</i><sup>2</sup> + <i>ab</i>, or 6<i>x</i><sup>4</sup> + (3<i>b</i> + 2<i>a</i>)<i>x</i><sup>2</sup> + <i>ab</i>.</li><li>Therefore, the expression 6<i>x</i><sup>4</sup> + (3<i>b</i> + 2<i>a</i>)<i>x</i><sup>2</sup> + <i>ab</i> is equivalent to 6<i>x</i><sup>4</sup> + 31<i>x</i><sup>2</sup> + 35.</li><li>It follows that 3<i>b</i> + 2<i>a</i> = 31 and <i>ab</i> = 35.</li><li>Since it's given that <i>a</i> and <i>b</i> are positive integers, it follows that <i>a</i> and <i>b</i> are not zero.</li><li>Thus, dividing both sides of the equation <i>ab</i> = 35 by <i>a</i> yields <i>b</i> = 35/<i>a</i>.</li><li>Substituting 35/<i>a</i> for <i>b</i> in the equation 3<i>b</i> + 2<i>a</i> = 31 yields 3(35/<i>a</i>) + 2<i>a</i> = 31, or 105/<i>a</i> + 2<i>a</i> = 31.</li><li>Multiplying both sides of this equation by <i>a</i> yields 105 + 2<i>a</i><sup>2</sup> = 31<i>a</i>.</li><li>Subtracting 31<i>a</i> from both sides of this equation yields 2<i>a</i><sup>2</sup> − 31<i>a</i> + 105 = 0.</li><li>This equation can be rewritten as 2<i>a</i><sup>2</sup> − 10<i>a</i> − 21<i>a</i> + 105 = 0.</li><li>Since the first two terms of the expression 2<i>a</i><sup>2</sup> − 10<i>a</i> − 21<i>a</i> + 105 have a common factor of 2<i>a</i> and the last two terms of the expression 2<i>a</i><sup>2</sup> − 10<i>a</i> − 21<i>a</i> + 105 have a common factor of 21, the expression 2<i>a</i><sup>2</sup> − 10<i>a</i> − 21<i>a</i> + 105 can be rewritten as 2<i>a</i>(<i>a</i> − 5) − 21(<i>a</i> − 5).</li><li>Since each term of this expression has a common factor of (<i>a</i> − 5), the expression 2<i>a</i>(<i>a</i> − 5) − 21(<i>a</i> − 5) can be rewritten as (<i>a</i> − 5)(2<i>a</i> − 21).</li><li>Thus, the equation 2<i>a</i><sup>2</sup> − 31<i>a</i> + 105 = 0 can be rewritten as (<i>a</i> − 5)(2<i>a</i> − 21) = 0.</li><li>It follows that <i>a</i> = 5 or <i>a</i> = 21/2.</li><li>Since <i>a</i> is a positive integer, it follows that <i>a</i> = 5.</li><li>It’s also given that 6<i>x</i><sup>4</sup> + 31<i>x</i><sup>2</sup> + 35 can be rewritten as (3<i>x</i><sup>2</sup> + <i>c</i>)(2<i>x</i><sup>2</sup> + <i>d</i>), where <i>c</i> and <i>d</i> are positive nonintegers.</li><li>The expression (3<i>x</i><sup>2</sup> + <i>c</i>)(2<i>x</i><sup>2</sup> + <i>d</i>) can be rewritten as 6<i>x</i><sup>4</sup> + 3<i>dx</i><sup>2</sup> + 2<i>cx</i><sup>2</sup> + <i>cd</i>, or 6<i>x</i><sup>4</sup> + (3<i>d</i> + 2<i>c</i>)<i>x</i><sup>2</sup> + <i>cd</i>.</li><li>Therefore, the expression 6<i>x</i><sup>4</sup> + (3<i>d</i> + 2<i>c</i>)<i>x</i><sup>2</sup> + <i>cd</i> is equivalent to 6<i>x</i><sup>4</sup> + 31<i>x</i><sup>2</sup> + 35.</li><li>It follows that 3<i>d</i> + 2<i>c</i> = 31 and <i>cd</i> = 35.</li><li>Since it's given that <i>c</i> and <i>d</i> are positive nonintegers, it follows that <i>c</i> and <i>d</i> are not zero.</li><li>Thus, dividing both sides of the equation <i>cd</i> = 35 by <i>c</i> yields <i>d</i> = 35/<i>c</i>.</li><li>Substituting 35/<i>c</i> for <i>d</i> in the equation 3<i>d</i> + 2<i>c</i> = 31 yields 3(35/<i>c</i>) + 2<i>c</i> = 31, or 105/<i>c</i> + 2<i>c</i> = 31.</li><li>Multiplying both sides of this equation by <i>c</i> yields 105 + 2<i>c</i><sup>2</sup> = 31<i>c</i>.</li><li>Subtracting 31<i>c</i> from both sides of this equation yields 2<i>c</i><sup>2</sup> − 31<i>c</i> + 105 = 0.</li><li>Since the equations 2<i>a</i><sup>2</sup> − 31<i>a</i> + 105 = 0 and 2<i>c</i><sup>2</sup> − 31<i>c</i> + 105 = 0 represent the same equation, it follows that <i>a</i> is equal to <i>c</i>.</li><li>Therefore, <i>c</i> = 5 or <i>c</i> = 21/2.</li><li>Since <i>c</i> is a positive noninteger, it follows that <i>c</i> = 21/2, or <i>c</i> = 10.5.</li><li>Substituting 5 for <i>a</i> and 10.5 for <i>c</i> in the expression <i>a</i> + <i>c</i> yields 5 + 10.5, or 15.5.</li><li>Therefore, the value of <i>a</i> + <i>c</i> is 15.5.</li><li>Note that 15.5 and 31/2 are examples of ways to enter a correct answer.</li></ul>"
+  },
+  {
+    "id": "u21-14",
+    "lessonCode": "U21",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>Which of the following is equivalent to (<i>a</i> + <i>b</i>/2)<sup>2</sup>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<i>a</i><sup>2</sup> + <i>b</i><sup>2</sup>/2"
+      },
+      {
+        "label": "B",
+        "html": "<i>a</i><sup>2</sup> + <i>b</i><sup>2</sup>/4"
+      },
+      {
+        "label": "C",
+        "html": "<i>a</i><sup>2</sup> + <i>ab</i>/2 + <i>b</i><sup>2</sup>/2"
+      },
+      {
+        "label": "D",
+        "html": "<i>a</i><sup>2</sup> + <i>ab</i> + <i>b</i><sup>2</sup>/4"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>. The expression (<i>a</i> + <i>b</i>/2)<sup>2</sup> can be rewritten as (<i>a</i> + <i>b</i>/2)(<i>a</i> + <i>b</i>/2). Using the distributive property, the expression yields (<i>a</i> + <i>b</i>/2)(<i>a</i> + <i>b</i>/2) = <i>a</i><sup>2</sup> + <i>ab</i>/2 + <i>ab</i>/2 + <i>b</i><sup>2</sup>/4. Combining like terms gives <i>a</i><sup>2</sup> + <i>ab</i> + <i>b</i><sup>2</sup>/4.</p><p><b>Choices A, B, and C are incorrect</b> and may result from errors using the distributive property on the given expression or combining like terms.</p>"
+  },
+  {
+    "id": "u21-15",
+    "lessonCode": "U21",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>Which expression is equivalent to (<i>y</i> + 12)/(<i>x</i> − 8) + <i>y</i>(<i>x</i> − 8)/(<i>x</i><sup>2</sup><i>y</i> − 8<i>xy</i>)?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "(<i>xy</i> + <i>y</i> + 4)/(<i>x</i><sup>3</sup><i>y</i> − 16<i>x</i><sup>2</sup><i>y</i> + 64<i>xy</i>)"
+      },
+      {
+        "label": "B",
+        "html": "(<i>xy</i> + 9<i>y</i> + 12)/(<i>x</i><sup>2</sup><i>y</i> − 8<i>xy</i> + <i>x</i> − 8)"
+      },
+      {
+        "label": "C",
+        "html": "(<i>xy</i><sup>2</sup> + 13<i>xy</i> − 8<i>y</i>)/(<i>x</i><sup>2</sup><i>y</i> − 8<i>xy</i>)"
+      },
+      {
+        "label": "D",
+        "html": "(<i>xy</i><sup>2</sup> + 13<i>xy</i> − 8<i>y</i>)/(<i>x</i><sup>3</sup><i>y</i> − 16<i>x</i><sup>2</sup><i>y</i> + 64<i>xy</i>)"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>.</p><ul><li>Factoring the denominator in the second term of the given expression gives (<i>y</i> + 12)/(<i>x</i> − 8) + <i>y</i>(<i>x</i> − 8)/(<i>xy</i>(<i>x</i> − 8)).</li><li>This expression can be rewritten with common denominators by multiplying the first term by <i>xy</i>/<i>xy</i>, giving <i>xy</i>(<i>y</i> + 12)/(<i>xy</i>(<i>x</i> − 8)) + <i>y</i>(<i>x</i> − 8)/(<i>xy</i>(<i>x</i> − 8)).</li><li>Adding these two terms yields (<i>xy</i>(<i>y</i> + 12) + <i>y</i>(<i>x</i> − 8))/(<i>xy</i>(<i>x</i> − 8)).</li><li>Using the distributive property to rewrite this expression gives (<i>xy</i><sup>2</sup> + 12<i>xy</i> + <i>xy</i> − 8<i>y</i>)/(<i>x</i><sup>2</sup><i>y</i> − 8<i>xy</i>).</li><li>Combining the like terms in the numerator of this expression gives (<i>xy</i><sup>2</sup> + 13<i>xy</i> − 8<i>y</i>)/(<i>x</i><sup>2</sup><i>y</i> − 8<i>xy</i>).</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  }
+]

@@ -1,0 +1,380 @@
+[
+  {
+    "id": "u6-01",
+    "lessonCode": "U6",
+    "type": "spr",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>x</i> + <i>y</i> = 125<br><i>x</i> + <i>y</i> + <i>y</i> = 155</div><p>The solution to the given system of equations is (<i>x</i>, <i>y</i>). What is the value of <i>y</i>?</p>",
+    "choices": [],
+    "correctAnswer": "30",
+    "acceptedAnswers": [
+      "30"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 30</b>. It’s given that <i>x</i> + <i>y</i> = 125. Substituting 125 for <i>x</i> + <i>y</i> in the second equation of the given system yields 125 + <i>y</i> = 155. Subtracting 125 from both sides of this equation yields <i>y</i> = 30. Therefore, the value of <i>y</i> is 30.</p>"
+  },
+  {
+    "id": "u6-02",
+    "lessonCode": "U6",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">Hiro and Sofia purchased shirts and pants from a store. The price of each shirt purchased was the same and the price of each pair of pants purchased was the same. Hiro purchased 4 shirts and 2 pairs of pants for $86, and Sofia purchased 3 shirts and 5 pairs of pants for $166.</div><p>Which of the following systems of linear equations represents the situation, if <i>x</i> represents the price, in dollars, of each shirt and <i>y</i> represents the price, in dollars, of each pair of pants?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "4<i>x</i> + 2<i>y</i> = 86<br>3<i>x</i> + 5<i>y</i> = 166"
+      },
+      {
+        "label": "B",
+        "html": "4<i>x</i> + 3<i>y</i> = 86<br>2<i>x</i> + 5<i>y</i> = 166"
+      },
+      {
+        "label": "C",
+        "html": "4<i>x</i> + 2<i>y</i> = 166<br>3<i>x</i> + 5<i>y</i> = 86"
+      },
+      {
+        "label": "D",
+        "html": "4<i>x</i> + 3<i>y</i> = 166<br>2<i>x</i> + 5<i>y</i> = 86"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>.</p><ul><li>Hiro purchased 4 shirts and each shirt cost <i>x</i> dollars, so he spent a total of 4<i>x</i> dollars on shirts.</li><li>Likewise, Hiro purchased 2 pairs of pants, and each pair of pants cost <i>y</i> dollars, so he spent a total of 2<i>y</i> dollars on pants.</li><li>Therefore, the total amount that Hiro spent was 4<i>x</i> + 2<i>y</i>.</li><li>Since Hiro spent $86 in total, this can be modeled by the equation 4<i>x</i> + 2<i>y</i> = 86.</li><li>Using the same reasoning, Sofia bought 3 shirts at <i>x</i> dollars each and 5 pairs of pants at <i>y</i> dollars each, so she spent a total of 3<i>x</i> + 5<i>y</i> dollars on shirts and pants.</li><li>Since Sofia spent $166 in total, this can be modeled by the equation 3<i>x</i> + 5<i>y</i> = 166.</li></ul><p><b>Choice B is incorrect</b> and may be the result of switching the number of shirts Sofia purchased with the number of pairs of pants Hiro purchased.</p><p><b>Choice C is incorrect</b> and may be the result of switching the total price each person paid.</p><p><b>Choice D is incorrect</b> and may be the result of switching the total price each person paid as well as switching the number of shirts Sofia purchased with the number of pairs of pants Hiro purchased.</p>"
+  },
+  {
+    "id": "u6-03",
+    "lessonCode": "U6",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">5<i>x</i> = 15<br>−4<i>x</i> + <i>y</i> = −2</div><p>The solution to the given system of equations is (<i>x</i>, <i>y</i>). What is the value of <i>x</i> + <i>y</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "−17"
+      },
+      {
+        "label": "B",
+        "html": "−13"
+      },
+      {
+        "label": "C",
+        "html": "13"
+      },
+      {
+        "label": "D",
+        "html": "17"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>. Adding the second equation of the given system to the first equation yields 5<i>x</i> + (−4<i>x</i> + <i>y</i>) = 15 + (−2), which is equivalent to <i>x</i> + <i>y</i> = 13. So the value of <i>x</i> + <i>y</i> is 13.</p><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b>. This is the value of −(<i>x</i> + <i>y</i>).</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u6-04",
+    "lessonCode": "U6",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 260 260\" role=\"img\" aria-label=\"Graph of two lines: the horizontal line y = 3 and a steep line through (1, 0) and (2, 3)\" fill=\"none\" stroke=\"currentColor\"><line x1=\"22\" y1=\"238\" x2=\"22\" y2=\"22\" stroke-opacity=\".18\"/><line x1=\"22\" y1=\"238\" x2=\"238\" y2=\"238\" stroke-opacity=\".18\"/><line x1=\"40\" y1=\"238\" x2=\"40\" y2=\"22\" stroke-opacity=\".18\"/><line x1=\"22\" y1=\"220\" x2=\"238\" y2=\"220\" stroke-opacity=\".18\"/><line x1=\"58\" y1=\"238\" x2=\"58\" y2=\"22\" stroke-opacity=\".18\"/><line x1=\"22\" y1=\"202\" x2=\"238\" y2=\"202\" stroke-opacity=\".18\"/><line x1=\"76\" y1=\"238\" x2=\"76\" y2=\"22\" stroke-opacity=\".18\"/><line x1=\"22\" y1=\"184\" x2=\"238\" y2=\"184\" stroke-opacity=\".18\"/><line x1=\"94\" y1=\"238\" x2=\"94\" y2=\"22\" stroke-opacity=\".18\"/><line x1=\"22\" y1=\"166\" x2=\"238\" y2=\"166\" stroke-opacity=\".18\"/><line x1=\"112\" y1=\"238\" x2=\"112\" y2=\"22\" stroke-opacity=\".18\"/><line x1=\"22\" y1=\"148\" x2=\"238\" y2=\"148\" stroke-opacity=\".18\"/><line x1=\"130\" y1=\"238\" x2=\"130\" y2=\"22\" stroke-opacity=\".18\"/><line x1=\"22\" y1=\"130\" x2=\"238\" y2=\"130\" stroke-opacity=\".18\"/><line x1=\"148\" y1=\"238\" x2=\"148\" y2=\"22\" stroke-opacity=\".18\"/><line x1=\"22\" y1=\"112\" x2=\"238\" y2=\"112\" stroke-opacity=\".18\"/><line x1=\"166\" y1=\"238\" x2=\"166\" y2=\"22\" stroke-opacity=\".18\"/><line x1=\"22\" y1=\"94\" x2=\"238\" y2=\"94\" stroke-opacity=\".18\"/><line x1=\"184\" y1=\"238\" x2=\"184\" y2=\"22\" stroke-opacity=\".18\"/><line x1=\"22\" y1=\"76\" x2=\"238\" y2=\"76\" stroke-opacity=\".18\"/><line x1=\"202\" y1=\"238\" x2=\"202\" y2=\"22\" stroke-opacity=\".18\"/><line x1=\"22\" y1=\"58\" x2=\"238\" y2=\"58\" stroke-opacity=\".18\"/><line x1=\"220\" y1=\"238\" x2=\"220\" y2=\"22\" stroke-opacity=\".18\"/><line x1=\"22\" y1=\"40\" x2=\"238\" y2=\"40\" stroke-opacity=\".18\"/><line x1=\"238\" y1=\"238\" x2=\"238\" y2=\"22\" stroke-opacity=\".18\"/><line x1=\"22\" y1=\"22\" x2=\"238\" y2=\"22\" stroke-opacity=\".18\"/><line x1=\"13.0\" y1=\"130\" x2=\"248.8\" y2=\"130\" stroke-width=\"1.5\"/><line x1=\"130\" y1=\"247.0\" x2=\"130\" y2=\"11.200000000000003\" stroke-width=\"1.5\"/><line x1=\"22\" y1=\"76\" x2=\"238\" y2=\"76\" stroke-width=\"2.2\"/><line x1=\"112\" y1=\"238\" x2=\"184\" y2=\"22\" stroke-width=\"2.2\"/><g fill=\"currentColor\" stroke=\"none\" font-size=\"9\" font-family=\"sans-serif\"><text x=\"22\" y=\"141\" text-anchor=\"middle\">−6</text><text x=\"126\" y=\"241\" text-anchor=\"end\">−6</text><text x=\"58\" y=\"141\" text-anchor=\"middle\">−4</text><text x=\"126\" y=\"205\" text-anchor=\"end\">−4</text><text x=\"94\" y=\"141\" text-anchor=\"middle\">−2</text><text x=\"126\" y=\"169\" text-anchor=\"end\">−2</text><text x=\"166\" y=\"141\" text-anchor=\"middle\">2</text><text x=\"126\" y=\"97\" text-anchor=\"end\">2</text><text x=\"202\" y=\"141\" text-anchor=\"middle\">4</text><text x=\"126\" y=\"61\" text-anchor=\"end\">4</text><text x=\"238\" y=\"141\" text-anchor=\"middle\">6</text><text x=\"126\" y=\"25\" text-anchor=\"end\">6</text><text x=\"126\" y=\"141\" text-anchor=\"end\">O</text><text x=\"250.60000000000002\" y=\"134\" font-style=\"italic\">x</text><text x=\"134\" y=\"13.200000000000003\" font-style=\"italic\">y</text></g></svg>The graph of a system of linear equations is shown.</div><p>What is the solution (<i>x</i>, <i>y</i>) to the system?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "(0, 3)"
+      },
+      {
+        "label": "B",
+        "html": "(1, 3)"
+      },
+      {
+        "label": "C",
+        "html": "(2, 3)"
+      },
+      {
+        "label": "D",
+        "html": "(3, 3)"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>. The solution to this system of linear equations is represented by the point that lies on both lines shown, or the point of intersection of the two lines. According to the graph, the point of intersection occurs when <i>x</i> = 2 and <i>y</i> = 3, or at the point (2, 3). Therefore, the solution (<i>x</i>, <i>y</i>) to the system is (2, 3).</p><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u6-05",
+    "lessonCode": "U6",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>y</i> = 12<i>x</i> − 20<br><i>y</i> = 28</div><p>What is the solution (<i>x</i>, <i>y</i>) to the given system of equations?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "(4, 28)"
+      },
+      {
+        "label": "B",
+        "html": "(20, 28)"
+      },
+      {
+        "label": "C",
+        "html": "(28, 4)"
+      },
+      {
+        "label": "D",
+        "html": "(28, 20)"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>. The second equation in the given system is <i>y</i> = 28. Substituting 28 for <i>y</i> in the first equation in the given system yields 28 = 12<i>x</i> − 20. Adding 20 to both sides of this equation yields 48 = 12<i>x</i>. Dividing both sides of this equation by 12 yields 4 = <i>x</i>. Therefore, the solution (<i>x</i>, <i>y</i>) to the given system of equations is (4, 28).</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b>. This is the solution (<i>y</i>, <i>x</i>), not (<i>x</i>, <i>y</i>), to the given system of equations.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u6-06",
+    "lessonCode": "U6",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>y</i> − 6 = (4/5)(<i>x</i> + 5)<br><i>y</i> − <i>v</i> = (4/5)(<i>x</i> + 10)</div><p>In the given system of equations, <i>v</i> is a constant. The system has infinitely many solutions. What is the value of <i>v</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "0"
+      },
+      {
+        "label": "B",
+        "html": "2"
+      },
+      {
+        "label": "C",
+        "html": "4"
+      },
+      {
+        "label": "D",
+        "html": "12"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>.</p><ul><li>It's given that the system has infinitely many solutions.</li><li>A system of two linear equations has infinitely many solutions when the two linear equations are equivalent.</li><li>Adding 6 to both sides of <i>y</i> − 6 = (4/5)(<i>x</i> + 5) yields <i>y</i> = (4/5)(<i>x</i> + 5) + 6.</li><li>Applying the distributive property to this equation yields <i>y</i> = (4/5)<i>x</i> + 20/5 + 6, or <i>y</i> = (4/5)<i>x</i> + 10.</li><li>Adding <i>v</i> to both sides of <i>y</i> − <i>v</i> = (4/5)(<i>x</i> + 10) yields <i>y</i> = (4/5)(<i>x</i> + 10) + <i>v</i>.</li><li>Applying the distributive property to this equation yields <i>y</i> = (4/5)<i>x</i> + 40/5 + <i>v</i>, or <i>y</i> = (4/5)<i>x</i> + 8 + <i>v</i>.</li><li>For the equations <i>y</i> = (4/5)<i>x</i> + 10 and <i>y</i> = (4/5)<i>x</i> + 8 + <i>v</i> to be equivalent, it follows that 10 = 8 + <i>v</i>.</li><li>Subtracting 8 from both sides of this equation yields 2 = <i>v</i>.</li><li>Therefore, the value of <i>v</i> is 2.</li></ul><p><b>Choice A is incorrect</b>. If <i>v</i> = 0, the system of equations would have no solution, not infinitely many solutions.</p><p><b>Choice C is incorrect</b>. If <i>v</i> = 4, the system of equations would have no solution, not infinitely many solutions.</p><p><b>Choice D is incorrect</b>. If <i>v</i> = 12, the system of equations would have no solution, not infinitely many solutions.</p>"
+  },
+  {
+    "id": "u6-07",
+    "lessonCode": "U6",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>A company that provides whale-watching tours takes groups of 21 people at a time. The company’s revenue is 80 dollars per adult and 60 dollars per child. If the company’s revenue for one group consisting of adults and children was 1,440 dollars, how many people in the group were children?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "3"
+      },
+      {
+        "label": "B",
+        "html": "9"
+      },
+      {
+        "label": "C",
+        "html": "12"
+      },
+      {
+        "label": "D",
+        "html": "18"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>.</p><ul><li>Let <i>x</i> represent the number of children in a whale-watching tour group.</li><li>Let <i>y</i> represent the number of adults in this group.</li><li>Because it's given that 21 people are in a group and the group consists of adults and children, it must be true that <i>x</i> + <i>y</i> = 21.</li><li>Since the company's revenue is 60 dollars per child, the total revenue from <i>x</i> children in this group was 60<i>x</i> dollars.</li><li>Since the company's revenue is 80 dollars per adult, the total revenue from <i>y</i> adults in this group was 80<i>y</i> dollars.</li><li>Because it's given that the total revenue for this group was 1,440 dollars, it must be true that 60<i>x</i> + 80<i>y</i> = 1,440.</li><li>The equations <i>x</i> + <i>y</i> = 21 and 60<i>x</i> + 80<i>y</i> = 1,440 form a linear system of equations that can be solved to find the value of <i>x</i>, which represents the number of children in the group, using the elimination method.</li><li>Multiplying both sides of the equation <i>x</i> + <i>y</i> = 21 by 80 yields 80<i>x</i> + 80<i>y</i> = 1,680.</li><li>Subtracting 60<i>x</i> + 80<i>y</i> = 1,440 from 80<i>x</i> + 80<i>y</i> = 1,680 yields (80<i>x</i> + 80<i>y</i>) − (60<i>x</i> + 80<i>y</i>) = 1,680 − 1,440, which is equivalent to 80<i>x</i> − 60<i>x</i> + 80<i>y</i> − 80<i>y</i> = 240, or 20<i>x</i> = 240.</li><li>Dividing both sides of this equation by 20 yields <i>x</i> = 12.</li><li>Therefore, 12 people in the group were children.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b>. This is the number of adults in the group, not the number of children in the group.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u6-08",
+    "lessonCode": "U6",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>At how many points do the graphs of the equations <i>y</i> = <i>x</i> + 20 and <i>y</i> = 8<i>x</i> intersect in the <i>xy</i>-plane?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "0"
+      },
+      {
+        "label": "B",
+        "html": "1"
+      },
+      {
+        "label": "C",
+        "html": "2"
+      },
+      {
+        "label": "D",
+        "html": "8"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>.</p><ul><li>Each given equation is written in slope-intercept form, <i>y</i> = <i>mx</i> + <i>b</i>, where <i>m</i> is the slope and (0, <i>b</i>) is the <i>y</i>-intercept of the graph of the equation in the <i>xy</i>-plane.</li><li>The graphs of two lines that have different slopes will intersect at exactly one point.</li><li>The graph of the first equation is a line with slope 1.</li><li>The graph of the second equation is a line with slope 8.</li><li>Since the graphs are lines with different slopes, they will intersect at exactly one point.</li></ul><p><b>Choice A is incorrect</b> because two graphs of linear equations have 0 intersection points only if they are parallel and therefore have the same slope.</p><p><b>Choice C is incorrect</b> because two graphs of linear equations in the <i>xy</i>-plane can have only 0, 1, or infinitely many points of intersection.</p><p><b>Choice D is incorrect</b> because two graphs of linear equations in the <i>xy</i>-plane can have only 0, 1, or infinitely many points of intersection.</p>"
+  },
+  {
+    "id": "u6-09",
+    "lessonCode": "U6",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>A group of 202 people went on an overnight camping trip, taking 60 tents with them. Some of the tents held 2 people each, and the rest held 4 people each. Assuming all the tents were filled to capacity and every person got to sleep in a tent, exactly how many of the tents were 2-person tents?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "30"
+      },
+      {
+        "label": "B",
+        "html": "20"
+      },
+      {
+        "label": "C",
+        "html": "19"
+      },
+      {
+        "label": "D",
+        "html": "18"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>.</p><ul><li>Let <i>x</i> represent the number of 2-person tents and let <i>y</i> represent the number of 4-person tents.</li><li>It is given that the total number of tents was 60 and the total number of people in the group was 202.</li><li>This situation can be expressed as a system of two equations, <i>x</i> + <i>y</i> = 60 and 2<i>x</i> + 4<i>y</i> = 202.</li><li>The first equation can be rewritten as <i>y</i> = −<i>x</i> + 60.</li><li>Substituting −<i>x</i> + 60 for <i>y</i> in the equation 2<i>x</i> + 4<i>y</i> = 202 yields 2<i>x</i> + 4(−<i>x</i> + 60) = 202.</li><li>Distributing and combining like terms gives −2<i>x</i> + 240 = 202.</li><li>Subtracting 240 from both sides of −2<i>x</i> + 240 = 202 and then dividing both sides by −2 gives <i>x</i> = 19.</li><li>Therefore, the number of 2-person tents is 19.</li></ul><p><b>Alternate approach</b>: If each of the 60 tents held 4 people, the total number of people that could be accommodated in tents would be 240. However, the actual number of people who slept in tents was 202. The difference of 38 accounts for the 2-person tents. Since each of these tents holds 2 people fewer than a 4-person tent, 38/2 = 19 gives the number of 2-person tents.</p><p><b>Choice A is incorrect</b>. This choice may result from assuming exactly half of the tents hold 2 people. If that were true, then the total number of people who slept in tents would be 2(30) + 4(30) = 180; however, the total number of people who slept in tents was 202, not 180.</p><p><b>Choice B is incorrect</b>. If 20 tents were 2-person tents, then the remaining 40 tents would be 4-person tents. Since all the tents were filled to capacity, the total number of people who slept in tents would be 2(20) + 4(40) = 40 + 160 = 200; however, the total number of people who slept in tents was 202, not 200.</p><p><b>Choice D is incorrect</b>. If 18 tents were 2-person tents, then the remaining 42 tents would be 4-person tents. Since all the tents were filled to capacity, the total number of people who slept in tents would be 2(18) + 4(42) = 36 + 168 = 204; however, the total number of people who slept in tents was 202, not 204.</p>"
+  },
+  {
+    "id": "u6-10",
+    "lessonCode": "U6",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>Two customers purchased the same kind of bread and eggs at a store. The first customer paid 12.45 dollars for 1 loaf of bread and 2 dozen eggs. The second customer paid 19.42 dollars for 4 loaves of bread and 1 dozen eggs. What is the cost, in dollars, of 1 dozen eggs?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "3.77"
+      },
+      {
+        "label": "B",
+        "html": "3.88"
+      },
+      {
+        "label": "C",
+        "html": "4.15"
+      },
+      {
+        "label": "D",
+        "html": "4.34"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>.</p><ul><li>Let <i>l</i> represent the cost, in dollars, of 1 loaf of bread, and let <i>d</i> represent the cost, in dollars, of 1 dozen eggs.</li><li>It’s given that the first customer paid 12.45 dollars for 1 loaf of bread and 2 dozen eggs.</li><li>Therefore, the first customer’s purchase can be represented by the equation <i>l</i> + 2<i>d</i> = 12.45.</li><li>It’s also given that the second customer paid 19.42 dollars for 4 loaves of bread and 1 dozen eggs.</li><li>Therefore, the second customer’s purchase can be represented by the equation 4<i>l</i> + <i>d</i> = 19.42.</li><li>The equations <i>l</i> + 2<i>d</i> = 12.45 and 4<i>l</i> + <i>d</i> = 19.42 form a system of linear equations, which can be solved by elimination to find the value of <i>d</i>.</li><li>Multiplying the first equation in the system by −4 yields −4<i>l</i> − 8<i>d</i> = −49.8.</li><li>Adding −4<i>l</i> − 8<i>d</i> = −49.8 to the second equation, 4<i>l</i> + <i>d</i> = 19.42, yields (−4<i>l</i> + 4<i>l</i>) + (−8<i>d</i> + <i>d</i>) = (−49.8 + 19.42), which is equivalent to −7<i>d</i> = −30.38.</li><li>Dividing both sides of this equation by −7 yields <i>d</i> = 4.34.</li><li>Therefore, the cost, in dollars, of 1 dozen eggs is 4.34.</li></ul><p><b>Choice A is incorrect</b>. This is the cost, in dollars, of 1 loaf of bread.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u6-11",
+    "lessonCode": "U6",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 260 250\" role=\"img\" aria-label=\"Graph of two lines that cross at (8, 0): one passes through (3, 4) and the other through (3, 2)\" fill=\"none\" stroke=\"currentColor\"><line x1=\"20\" y1=\"236\" x2=\"20\" y2=\"44\" stroke-opacity=\".18\"/><line x1=\"20\" y1=\"236\" x2=\"212\" y2=\"236\" stroke-opacity=\".18\"/><line x1=\"36\" y1=\"236\" x2=\"36\" y2=\"44\" stroke-opacity=\".18\"/><line x1=\"20\" y1=\"220\" x2=\"212\" y2=\"220\" stroke-opacity=\".18\"/><line x1=\"52\" y1=\"236\" x2=\"52\" y2=\"44\" stroke-opacity=\".18\"/><line x1=\"20\" y1=\"204\" x2=\"212\" y2=\"204\" stroke-opacity=\".18\"/><line x1=\"68\" y1=\"236\" x2=\"68\" y2=\"44\" stroke-opacity=\".18\"/><line x1=\"20\" y1=\"188\" x2=\"212\" y2=\"188\" stroke-opacity=\".18\"/><line x1=\"84\" y1=\"236\" x2=\"84\" y2=\"44\" stroke-opacity=\".18\"/><line x1=\"20\" y1=\"172\" x2=\"212\" y2=\"172\" stroke-opacity=\".18\"/><line x1=\"100\" y1=\"236\" x2=\"100\" y2=\"44\" stroke-opacity=\".18\"/><line x1=\"20\" y1=\"156\" x2=\"212\" y2=\"156\" stroke-opacity=\".18\"/><line x1=\"116\" y1=\"236\" x2=\"116\" y2=\"44\" stroke-opacity=\".18\"/><line x1=\"20\" y1=\"140\" x2=\"212\" y2=\"140\" stroke-opacity=\".18\"/><line x1=\"132\" y1=\"236\" x2=\"132\" y2=\"44\" stroke-opacity=\".18\"/><line x1=\"20\" y1=\"124\" x2=\"212\" y2=\"124\" stroke-opacity=\".18\"/><line x1=\"148\" y1=\"236\" x2=\"148\" y2=\"44\" stroke-opacity=\".18\"/><line x1=\"20\" y1=\"108\" x2=\"212\" y2=\"108\" stroke-opacity=\".18\"/><line x1=\"164\" y1=\"236\" x2=\"164\" y2=\"44\" stroke-opacity=\".18\"/><line x1=\"20\" y1=\"92\" x2=\"212\" y2=\"92\" stroke-opacity=\".18\"/><line x1=\"180\" y1=\"236\" x2=\"180\" y2=\"44\" stroke-opacity=\".18\"/><line x1=\"20\" y1=\"76\" x2=\"212\" y2=\"76\" stroke-opacity=\".18\"/><line x1=\"196\" y1=\"236\" x2=\"196\" y2=\"44\" stroke-opacity=\".18\"/><line x1=\"20\" y1=\"60\" x2=\"212\" y2=\"60\" stroke-opacity=\".18\"/><line x1=\"212\" y1=\"236\" x2=\"212\" y2=\"44\" stroke-opacity=\".18\"/><line x1=\"20\" y1=\"44\" x2=\"212\" y2=\"44\" stroke-opacity=\".18\"/><line x1=\"15.200000000000003\" y1=\"204\" x2=\"221.6\" y2=\"204\" stroke-width=\"1.5\"/><line x1=\"52\" y1=\"240.8\" x2=\"52\" y2=\"34.400000000000006\" stroke-width=\"1.5\"/><line x1=\"20\" y1=\"76.0\" x2=\"212\" y2=\"229.6\" stroke-width=\"2.2\"/><line x1=\"20\" y1=\"140.0\" x2=\"212\" y2=\"216.8\" stroke-width=\"2.2\"/><g fill=\"currentColor\" stroke=\"none\" font-size=\"9\" font-family=\"sans-serif\"><text x=\"20\" y=\"215\" text-anchor=\"middle\">−2</text><text x=\"48\" y=\"239\" text-anchor=\"end\">−2</text><text x=\"84\" y=\"215\" text-anchor=\"middle\">2</text><text x=\"48\" y=\"175\" text-anchor=\"end\">2</text><text x=\"116\" y=\"215\" text-anchor=\"middle\">4</text><text x=\"48\" y=\"143\" text-anchor=\"end\">4</text><text x=\"148\" y=\"215\" text-anchor=\"middle\">6</text><text x=\"48\" y=\"111\" text-anchor=\"end\">6</text><text x=\"180\" y=\"215\" text-anchor=\"middle\">8</text><text x=\"48\" y=\"79\" text-anchor=\"end\">8</text><text x=\"212\" y=\"215\" text-anchor=\"middle\">10</text><text x=\"48\" y=\"47\" text-anchor=\"end\">10</text><text x=\"48\" y=\"215\" text-anchor=\"end\">O</text><text x=\"223.2\" y=\"208\" font-style=\"italic\">x</text><text x=\"56\" y=\"36.400000000000006\" font-style=\"italic\">y</text></g></svg></div><p>What system of linear equations is represented by the lines shown?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "8<i>x</i> + 4<i>y</i> = 32<br>−10<i>x</i> − 4<i>y</i> = −64"
+      },
+      {
+        "label": "B",
+        "html": "8<i>x</i> − 4<i>y</i> = 32<br>−10<i>x</i> + 4<i>y</i> = −64"
+      },
+      {
+        "label": "C",
+        "html": "4<i>x</i> − 10<i>y</i> = 32<br>−8<i>x</i> + 10<i>y</i> = −64"
+      },
+      {
+        "label": "D",
+        "html": "4<i>x</i> + 10<i>y</i> = 32<br>−8<i>x</i> − 10<i>y</i> = −64"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>.</p><ul><li>A line in the <i>xy</i>-plane that passes through the points (<i>x</i>₁, <i>y</i>₁) and (<i>x</i>₂, <i>y</i>₂) has slope <i>m</i>, where <i>m</i> = (<i>y</i>₂ − <i>y</i>₁)/(<i>x</i>₂ − <i>x</i>₁), and can be defined by an equation of the form <i>y</i> − <i>y</i>₁ = <i>m</i>(<i>x</i> − <i>x</i>₁).</li><li>One of the lines shown in the graph passes through the points (8, 0) and (3, 4).</li><li>Substituting 8 for <i>x</i>₁, 0 for <i>y</i>₁, 3 for <i>x</i>₂, and 4 for <i>y</i>₂ in the equation <i>m</i> = (<i>y</i>₂ − <i>y</i>₁)/(<i>x</i>₂ − <i>x</i>₁) yields <i>m</i> = (4 − 0)/(3 − 8), or <i>m</i> = −4/5.</li><li>Substituting −4/5 for <i>m</i>, 8 for <i>x</i>₁, and 0 for <i>y</i>₁ in the equation <i>y</i> − <i>y</i>₁ = <i>m</i>(<i>x</i> − <i>x</i>₁) yields <i>y</i> − 0 = −(4/5)(<i>x</i> − 8), which is equivalent to <i>y</i> = −(4/5)<i>x</i> + 32/5.</li><li>Adding (4/5)<i>x</i> to both sides of this equation yields (4/5)<i>x</i> + <i>y</i> = 32/5.</li><li>Multiplying both sides of this equation by −10 yields −8<i>x</i> − 10<i>y</i> = −64.</li><li>Therefore, an equation of this line is −8<i>x</i> − 10<i>y</i> = −64.</li><li>Similarly, the other line shown in the graph passes through the points (8, 0) and (3, 2).</li><li>Substituting 8 for <i>x</i>₁, 0 for <i>y</i>₁, 3 for <i>x</i>₂, and 2 for <i>y</i>₂ in the equation <i>m</i> = (<i>y</i>₂ − <i>y</i>₁)/(<i>x</i>₂ − <i>x</i>₁) yields <i>m</i> = (2 − 0)/(3 − 8), or <i>m</i> = −2/5.</li><li>Substituting −2/5 for <i>m</i>, 8 for <i>x</i>₁, and 0 for <i>y</i>₁ in the equation <i>y</i> − <i>y</i>₁ = <i>m</i>(<i>x</i> − <i>x</i>₁) yields <i>y</i> − 0 = −(2/5)(<i>x</i> − 8), which is equivalent to <i>y</i> = −(2/5)<i>x</i> + 16/5.</li><li>Adding (2/5)<i>x</i> to both sides of this equation yields (2/5)<i>x</i> + <i>y</i> = 16/5.</li><li>Multiplying both sides of this equation by 10 yields 4<i>x</i> + 10<i>y</i> = 32.</li><li>Therefore, an equation of this line is 4<i>x</i> + 10<i>y</i> = 32.</li><li>So, the system of linear equations represented by the lines shown is 4<i>x</i> + 10<i>y</i> = 32 and −8<i>x</i> − 10<i>y</i> = −64.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u6-12",
+    "lessonCode": "U6",
+    "type": "spr",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">2(8<i>x</i>) + 4(7<i>y</i>) = 12<br>−2(8<i>x</i>) + 4(7<i>y</i>) = 12</div><p>The solution to the given system of equations is (<i>x</i>, <i>y</i>). What is the value of 8<i>x</i> + 7<i>y</i>?</p>",
+    "choices": [],
+    "correctAnswer": "3",
+    "acceptedAnswers": [
+      "3"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 3</b>.</p><ul><li>Adding the second equation to the first equation in the given system of equations yields (2(8<i>x</i>) − 2(8<i>x</i>)) + (4(7<i>y</i>) + 4(7<i>y</i>)) = 12 + 12, or 8(7<i>y</i>) = 24.</li><li>Dividing both sides of this equation by 8 yields 7<i>y</i> = 3.</li><li>Substituting 3 for 7<i>y</i> in the first equation, 2(8<i>x</i>) + 4(7<i>y</i>) = 12, yields 2(8<i>x</i>) + 4(3) = 12, or 2(8<i>x</i>) + 12 = 12.</li><li>Subtracting 12 from both sides of this equation yields 2(8<i>x</i>) = 0.</li><li>Dividing both sides of this equation by 2 yields 8<i>x</i> = 0.</li><li>Substituting 0 for 8<i>x</i> and 3 for 7<i>y</i> in the expression 8<i>x</i> + 7<i>y</i> yields 0 + 3, or 3.</li><li>Therefore, the value of 8<i>x</i> + 7<i>y</i> is 3.</li></ul>"
+  },
+  {
+    "id": "u6-13",
+    "lessonCode": "U6",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">3<i>x</i> = 36<i>y</i> − 45<br><br>One of the two equations in a system of linear equations is given. The system has no solution.</div><p>Which equation could be the second equation in this system?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<i>x</i> = 4<i>y</i>"
+      },
+      {
+        "label": "B",
+        "html": "(1/3)<i>x</i> = 4<i>y</i>"
+      },
+      {
+        "label": "C",
+        "html": "<i>x</i> = 12<i>y</i> − 15"
+      },
+      {
+        "label": "D",
+        "html": "(1/3)<i>x</i> = 12<i>y</i> − 15"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>.</p><ul><li>A system of two linear equations in two variables, <i>x</i> and <i>y</i>, has no solution when the lines in the <i>xy</i>-plane representing the equations are parallel and distinct.</li><li>Two lines are parallel and distinct if their slopes are the same and their <i>y</i>-intercepts are different.</li><li>The slope of the graph of the given equation, 3<i>x</i> = 36<i>y</i> − 45, in the <i>xy</i>-plane can be found by rewriting the equation in the form <i>y</i> = <i>mx</i> + <i>b</i>, where <i>m</i> is the slope of the graph and (0, <i>b</i>) is the <i>y</i>-intercept.</li><li>Adding 45 to each side of the given equation yields 3<i>x</i> + 45 = 36<i>y</i>.</li><li>Dividing each side of this equation by 36 yields (1/12)<i>x</i> + 5/4 = <i>y</i>, or <i>y</i> = (1/12)<i>x</i> + 5/4.</li><li>It follows that the slope of the graph of the given equation is 1/12 and the <i>y</i>-intercept is (0, 5/4).</li><li>Therefore, the graph of the second equation in the system must also have a slope of 1/12, but must not have a <i>y</i>-intercept of (0, 5/4).</li><li>Multiplying each side of the equation given in choice B by 1/4 yields (1/12)<i>x</i> = <i>y</i>, or <i>y</i> = (1/12)<i>x</i>.</li><li>It follows that the graph representing the equation in choice B has a slope of 1/12 and a <i>y</i>-intercept of (0, 0).</li><li>Since the slopes of the graphs of the two equations are equal and the <i>y</i>-intercepts of the graphs of the two equations are different, the equation in choice B could be the second equation in the system.</li></ul><p><b>Choice A is incorrect</b>. This equation can be rewritten as <i>y</i> = (1/4)<i>x</i>. It follows that the graph of this equation has a slope of 1/4, so the system consisting of this equation and the given equation has exactly one solution, rather than no solution.</p><p><b>Choice C is incorrect</b>. This equation can be rewritten as <i>y</i> = (1/12)<i>x</i> + 5/4. It follows that the graph of this equation has a slope of 1/12 and a <i>y</i>-intercept of (0, 5/4), so the system consisting of this equation and the given equation has infinitely many solutions, rather than no solution.</p><p><b>Choice D is incorrect</b>. This equation can be rewritten as <i>y</i> = (1/36)<i>x</i> + 5/4. It follows that the graph of this equation has a slope of 1/36, so the system consisting of this equation and the given equation has exactly one solution, rather than no solution.</p>"
+  },
+  {
+    "id": "u6-14",
+    "lessonCode": "U6",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 260 244\" role=\"img\" aria-label=\"Graph of line h, which passes through (−6, 0) and (0, −9)\" fill=\"none\" stroke=\"currentColor\"><line x1=\"30\" y1=\"26\" x2=\"30\" y2=\"218\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"218\" x2=\"222\" y2=\"218\" stroke-opacity=\".18\"/><line x1=\"46\" y1=\"26\" x2=\"46\" y2=\"218\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"202\" x2=\"222\" y2=\"202\" stroke-opacity=\".18\"/><line x1=\"62\" y1=\"26\" x2=\"62\" y2=\"218\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"186\" x2=\"222\" y2=\"186\" stroke-opacity=\".18\"/><line x1=\"78\" y1=\"26\" x2=\"78\" y2=\"218\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"170\" x2=\"222\" y2=\"170\" stroke-opacity=\".18\"/><line x1=\"94\" y1=\"26\" x2=\"94\" y2=\"218\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"154\" x2=\"222\" y2=\"154\" stroke-opacity=\".18\"/><line x1=\"110\" y1=\"26\" x2=\"110\" y2=\"218\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"138\" x2=\"222\" y2=\"138\" stroke-opacity=\".18\"/><line x1=\"126\" y1=\"26\" x2=\"126\" y2=\"218\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"122\" x2=\"222\" y2=\"122\" stroke-opacity=\".18\"/><line x1=\"142\" y1=\"26\" x2=\"142\" y2=\"218\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"106\" x2=\"222\" y2=\"106\" stroke-opacity=\".18\"/><line x1=\"158\" y1=\"26\" x2=\"158\" y2=\"218\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"90\" x2=\"222\" y2=\"90\" stroke-opacity=\".18\"/><line x1=\"174\" y1=\"26\" x2=\"174\" y2=\"218\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"74\" x2=\"222\" y2=\"74\" stroke-opacity=\".18\"/><line x1=\"190\" y1=\"26\" x2=\"190\" y2=\"218\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"58\" x2=\"222\" y2=\"58\" stroke-opacity=\".18\"/><line x1=\"206\" y1=\"26\" x2=\"206\" y2=\"218\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"42\" x2=\"222\" y2=\"42\" stroke-opacity=\".18\"/><line x1=\"222\" y1=\"26\" x2=\"222\" y2=\"218\" stroke-opacity=\".18\"/><line x1=\"30\" y1=\"26\" x2=\"222\" y2=\"26\" stroke-opacity=\".18\"/><line x1=\"23.599999999999994\" y1=\"26\" x2=\"233.2\" y2=\"26\" stroke-width=\"1.5\"/><line x1=\"222\" y1=\"14.8\" x2=\"222\" y2=\"224.4\" stroke-width=\"1.5\"/><line x1=\"122.8\" y1=\"21.2\" x2=\"226.8\" y2=\"177.2\" stroke-width=\"2.2\"/><circle cx=\"126\" cy=\"26\" r=\"3.5\" fill=\"currentColor\"/><circle cx=\"222\" cy=\"170\" r=\"3.5\" fill=\"currentColor\"/><g fill=\"currentColor\" stroke=\"none\" font-size=\"9\" font-family=\"sans-serif\"><text x=\"30\" y=\"21\" text-anchor=\"middle\">−12</text><text x=\"227\" y=\"221\">−12</text><text x=\"62\" y=\"21\" text-anchor=\"middle\">−10</text><text x=\"227\" y=\"189\">−10</text><text x=\"94\" y=\"21\" text-anchor=\"middle\">−8</text><text x=\"227\" y=\"157\">−8</text><text x=\"126\" y=\"21\" text-anchor=\"middle\">−6</text><text x=\"227\" y=\"125\">−6</text><text x=\"158\" y=\"21\" text-anchor=\"middle\">−4</text><text x=\"227\" y=\"93\">−4</text><text x=\"190\" y=\"21\" text-anchor=\"middle\">−2</text><text x=\"227\" y=\"61\">−2</text><text x=\"227\" y=\"21\">O</text><text x=\"236.4\" y=\"30\" font-style=\"italic\">x</text><text x=\"219\" y=\"11.6\" font-style=\"italic\" text-anchor=\"end\">y</text></g></svg>The graph of line <i>h</i> is shown in the <i>xy</i>-plane. Line <i>k</i> (not shown) is defined by <i>sx</i> + 48<i>y</i> = <i>t</i>, where <i>s</i> and <i>t</i> are constants. If line <i>k</i> is graphed in this <i>xy</i>-plane, the result is a graph of two linear equations. This system of two linear equations has no solution.</div><p>Which of the following is <b>NOT</b> a possible value of <i>t</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "−432"
+      },
+      {
+        "label": "B",
+        "html": "−9"
+      },
+      {
+        "label": "C",
+        "html": "72"
+      },
+      {
+        "label": "D",
+        "html": "288"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>.</p><ul><li>It's given that if line <i>k</i> is graphed in the <i>xy</i>-plane with line <i>h</i>, the result is the graph of a system of two linear equations that has no solution.</li><li>It follows that line <i>h</i> and line <i>k</i> don't intersect.</li><li>This means that line <i>k</i> and line <i>h</i> have the same slope and different <i>y</i>-intercepts.</li><li>The graph shows that the <i>y</i>-intercept of line <i>h</i> is (0, −9).</li><li>The <i>y</i>-coordinate of the <i>y</i>-intercept of line <i>k</i> is the value of <i>y</i> when <i>x</i> = 0 in the equation defining line <i>k</i>.</li><li>Substituting 0 for <i>x</i> in the equation <i>sx</i> + 48<i>y</i> = <i>t</i> yields <i>s</i>(0) + 48<i>y</i> = <i>t</i>, or 48<i>y</i> = <i>t</i>.</li><li>Dividing both sides of this equation by 48 yields <i>y</i> = <i>t</i>/48.</li><li>Therefore, the <i>y</i>-coordinate of the <i>y</i>-intercept of line <i>k</i> is <i>t</i>/48, so the <i>y</i>-intercept of line <i>k</i> is (0, <i>t</i>/48).</li><li>Since line <i>k</i> and line <i>h</i> have different <i>y</i>-intercepts, <i>t</i>/48 can't be equal to −9.</li><li>It follows that <i>t</i> can't be equal to −9(48), or −432.</li><li>Thus, −432 isn't a possible value of <i>t</i>.</li></ul><p><b>Choice B is incorrect</b>. This isn't a possible value of the <i>y</i>-coordinate of the <i>y</i>-intercept of line <i>k</i>, but it is a possible value of <i>t</i>.</p><p><b>Choice C is incorrect</b>. This is the value of <i>s</i>, not a value of <i>t</i> that isn't possible.</p><p><b>Choice D is incorrect</b>. If <i>t</i> = 288, then the <i>y</i>-intercept of line <i>k</i> is (0, 288/48), or (0, 6), which is different from the <i>y</i>-intercept of line <i>h</i>, (0, −9). Therefore, 288 is a possible value of <i>t</i>.</p>"
+  },
+  {
+    "id": "u6-15",
+    "lessonCode": "U6",
+    "type": "spr",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">(3/2)<i>y</i> − (1/4)<i>x</i> = 2/3 − (3/2)y<br>(1/2)<i>x</i> + 3/2 = <i>py</i> + 9/2</div><p>In the given system of equations, <i>p</i> is a constant. If the system has no solution, what is the value of <i>p</i>?</p>",
+    "choices": [],
+    "correctAnswer": "6",
+    "acceptedAnswers": [
+      "6"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 6</b>.</p><ul><li>A system of two linear equations in two variables, <i>x</i> and <i>y</i>, has no solution if the lines represented by the equations in the <i>xy</i>-plane are parallel and distinct.</li><li>Lines represented by equations in standard form, A<i>x</i> + B<i>y</i> = C and D<i>x</i> + E<i>y</i> = F, are parallel if the coefficients for <i>x</i> and <i>y</i> in one equation are proportional to the corresponding coefficients in the other equation, meaning D/A = E/B; and the lines are distinct if the constants are not proportional, meaning F/C is not equal to D/A or E/B.</li><li>The first equation in the given system is (3/2)<i>y</i> − (1/4)<i>x</i> = 2/3 − (3/2)<i>y</i>.</li><li>Multiplying each side of this equation by 12 yields 18<i>y</i> − 3<i>x</i> = 8 − 18<i>y</i>.</li><li>Adding 18<i>y</i> to each side of this equation yields 36<i>y</i> − 3<i>x</i> = 8, or −3<i>x</i> + 36<i>y</i> = 8.</li><li>The second equation in the given system is (1/2)<i>x</i> + 3/2 = <i>py</i> + 9/2.</li><li>Multiplying each side of this equation by 2 yields <i>x</i> + 3 = 2<i>py</i> + 9.</li><li>Subtracting 2<i>py</i> from each side of this equation yields <i>x</i> + 3 − 2<i>py</i> = 9.</li><li>Subtracting 3 from each side of this equation yields <i>x</i> − 2<i>py</i> = 6.</li><li>Therefore, the two equations in the given system, written in standard form, are −3<i>x</i> + 36<i>y</i> = 8 and <i>x</i> − 2<i>py</i> = 6.</li><li>As previously stated, if this system has no solution, the lines represented by the equations in the <i>xy</i>-plane are parallel and distinct, meaning the proportion 1/(−3) = −2<i>p</i>/36, or −1/3 = −<i>p</i>/18, is true and the proportion 6/8 = 1/(−3) is not true.</li><li>The proportion 6/8 = 1/(−3) is not true.</li><li>Multiplying each side of the true proportion, −1/3 = −<i>p</i>/18, by −18 yields 6 = <i>p</i>.</li><li>Therefore, if the system has no solution, then the value of <i>p</i> is 6.</li></ul>"
+  }
+]

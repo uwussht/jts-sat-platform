@@ -1,0 +1,355 @@
+[
+  {
+    "id": "u17-01",
+    "lessonCode": "U17",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 390 144\" role=\"img\" aria-label=\"Box plots of the masses of two groups of gazelles. Group 1: minimum 21, first quartile 22, median 25, third quartile 26, maximum 28. Group 2: minimum 22, first quartile 23, median 24, third quartile 25, maximum 28.\" style=\"max-width:390px;width:100%;height:auto;display:block;margin:0 auto 12px\" fill=\"none\" stroke=\"currentColor\" font-family=\"inherit\" font-size=\"11\"><text x=\"80\" y=\"28\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">Group 1</text><line x1=\"112\" y1=\"24\" x2=\"134\" y2=\"24\"/><line x1=\"222\" y1=\"24\" x2=\"266\" y2=\"24\"/><line x1=\"112\" y1=\"17\" x2=\"112\" y2=\"31\"/><line x1=\"266\" y1=\"17\" x2=\"266\" y2=\"31\"/><rect x=\"134\" y=\"15\" width=\"88\" height=\"18\" stroke-width=\"1.6\"/><line x1=\"200\" y1=\"15\" x2=\"200\" y2=\"33\" stroke-width=\"1.6\"/><text x=\"80\" y=\"62\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">Group 2</text><line x1=\"134\" y1=\"58\" x2=\"156\" y2=\"58\"/><line x1=\"200\" y1=\"58\" x2=\"266\" y2=\"58\"/><line x1=\"134\" y1=\"51\" x2=\"134\" y2=\"65\"/><line x1=\"266\" y1=\"51\" x2=\"266\" y2=\"65\"/><rect x=\"156\" y=\"49\" width=\"44\" height=\"18\" stroke-width=\"1.6\"/><line x1=\"178\" y1=\"49\" x2=\"178\" y2=\"67\" stroke-width=\"1.6\"/><line x1=\"79.0\" y1=\"96\" x2=\"365.0\" y2=\"96\"/><line x1=\"90\" y1=\"91\" x2=\"90\" y2=\"101\"/><text x=\"90\" y=\"116\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">20</text><line x1=\"112\" y1=\"91\" x2=\"112\" y2=\"101\"/><line x1=\"134\" y1=\"91\" x2=\"134\" y2=\"101\"/><text x=\"134\" y=\"116\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">22</text><line x1=\"156\" y1=\"91\" x2=\"156\" y2=\"101\"/><line x1=\"178\" y1=\"91\" x2=\"178\" y2=\"101\"/><text x=\"178\" y=\"116\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">24</text><line x1=\"200\" y1=\"91\" x2=\"200\" y2=\"101\"/><line x1=\"222\" y1=\"91\" x2=\"222\" y2=\"101\"/><text x=\"222\" y=\"116\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">26</text><line x1=\"244\" y1=\"91\" x2=\"244\" y2=\"101\"/><line x1=\"266\" y1=\"91\" x2=\"266\" y2=\"101\"/><text x=\"266\" y=\"116\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">28</text><line x1=\"288\" y1=\"91\" x2=\"288\" y2=\"101\"/><line x1=\"310\" y1=\"91\" x2=\"310\" y2=\"101\"/><text x=\"310\" y=\"116\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">30</text><line x1=\"332\" y1=\"91\" x2=\"332\" y2=\"101\"/><line x1=\"354\" y1=\"91\" x2=\"354\" y2=\"101\"/><text x=\"354\" y=\"116\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">32</text><text x=\"222\" y=\"136\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">Mass (kilograms)</text></svg></div><p>The box plots summarize the masses, in kilograms, of two groups of gazelles. Based on the box plots, which of the following statements must be true?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "The mean mass of group 1 is greater than the mean mass of group 2."
+      },
+      {
+        "label": "B",
+        "html": "The mean mass of group 1 is less than the mean mass of group 2."
+      },
+      {
+        "label": "C",
+        "html": "The median mass of group 1 is greater than the median mass of group 2."
+      },
+      {
+        "label": "D",
+        "html": "The median mass of group 1 is less than the median mass of group 2."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>. The median of a data set represented in a box plot is represented by the vertical line within the box. It follows that the median mass of the gazelles in group 1 is 25 kilograms, and the median mass of the gazelles in group 2 is 24 kilograms. Since 25 kilograms is greater than 24 kilograms, the median mass of group 1 is greater than the median mass of group 2.</p><p><b>Choice A is incorrect</b>. The mean mass of each of the two groups cannot be determined from the box plots.</p><p><b>Choice B is incorrect</b>. The mean mass of each of the two groups cannot be determined from the box plots.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u17-02",
+    "lessonCode": "U17",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 370 232\" role=\"img\" aria-label=\"Histogram of number of points. 30 to 40: frequency 4. 40 to 50: frequency 7. 50 to 60: frequency 27. 60 to 70: frequency 12.\" style=\"max-width:370px;width:100%;height:auto;display:block;margin:0 auto 12px\" fill=\"none\" stroke=\"currentColor\" font-family=\"inherit\" font-size=\"11\"><line x1=\"60\" y1=\"190.0\" x2=\"348\" y2=\"190.0\" stroke-opacity=\"1\"/><text x=\"54\" y=\"194.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">0</text><line x1=\"60\" y1=\"162.5\" x2=\"348\" y2=\"162.5\" stroke-opacity=\"0.25\"/><text x=\"54\" y=\"166.5\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">5</text><line x1=\"60\" y1=\"135.0\" x2=\"348\" y2=\"135.0\" stroke-opacity=\"0.25\"/><text x=\"54\" y=\"139.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">10</text><line x1=\"60\" y1=\"107.5\" x2=\"348\" y2=\"107.5\" stroke-opacity=\"0.25\"/><text x=\"54\" y=\"111.5\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">15</text><line x1=\"60\" y1=\"80.0\" x2=\"348\" y2=\"80.0\" stroke-opacity=\"0.25\"/><text x=\"54\" y=\"84.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">20</text><line x1=\"60\" y1=\"52.5\" x2=\"348\" y2=\"52.5\" stroke-opacity=\"0.25\"/><text x=\"54\" y=\"56.5\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">25</text><line x1=\"60\" y1=\"25.0\" x2=\"348\" y2=\"25.0\" stroke-opacity=\"0.25\"/><text x=\"54\" y=\"29.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">30</text><rect x=\"180\" y=\"168.0\" width=\"40\" height=\"22.0\" fill=\"currentColor\" fill-opacity=\".3\" stroke-width=\"1.3\"/><rect x=\"220\" y=\"151.5\" width=\"40\" height=\"38.5\" fill=\"currentColor\" fill-opacity=\".3\" stroke-width=\"1.3\"/><rect x=\"260\" y=\"41.5\" width=\"40\" height=\"148.5\" fill=\"currentColor\" fill-opacity=\".3\" stroke-width=\"1.3\"/><rect x=\"300\" y=\"124.0\" width=\"40\" height=\"66.0\" fill=\"currentColor\" fill-opacity=\".3\" stroke-width=\"1.3\"/><line x1=\"60\" y1=\"190\" x2=\"60\" y2=\"195\"/><text x=\"60\" y=\"208\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">0</text><line x1=\"100\" y1=\"190\" x2=\"100\" y2=\"195\"/><text x=\"100\" y=\"208\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">10</text><line x1=\"140\" y1=\"190\" x2=\"140\" y2=\"195\"/><text x=\"140\" y=\"208\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">20</text><line x1=\"180\" y1=\"190\" x2=\"180\" y2=\"195\"/><text x=\"180\" y=\"208\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">30</text><line x1=\"220\" y1=\"190\" x2=\"220\" y2=\"195\"/><text x=\"220\" y=\"208\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">40</text><line x1=\"260\" y1=\"190\" x2=\"260\" y2=\"195\"/><text x=\"260\" y=\"208\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">50</text><line x1=\"300\" y1=\"190\" x2=\"300\" y2=\"195\"/><text x=\"300\" y=\"208\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">60</text><line x1=\"340\" y1=\"190\" x2=\"340\" y2=\"195\"/><text x=\"340\" y=\"208\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">70</text><line x1=\"60\" y1=\"190\" x2=\"60\" y2=\"25.0\"/><text x=\"200\" y=\"226\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">Number of points</text><text transform=\"translate(18,108) rotate(-90)\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">Frequency</text></svg></div><p>The histogram summarizes data set A, which represents the number of points per player earned by 50 players of a game. A new player earns 18 points playing the game, and this number of points is added to data set A to create data set B with 51 values. Which of the following must be true?<br>I. The median number of points per player for data set B is less than the median number of points per player for data set A.<br>II. The mean number of points per player for data set B is less than the mean number of points per player for data set A.</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "I only"
+      },
+      {
+        "label": "B",
+        "html": "II only"
+      },
+      {
+        "label": "C",
+        "html": "I and II"
+      },
+      {
+        "label": "D",
+        "html": "Neither I nor II"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>.</p><ul><li>The mean of a data set is the sum of the values divided by the number of values.</li><li>It's given that a new player earns 18 points playing the game, and this number of points is added to data set A to create data set B with 51 values.</li><li>The histogram shows that all the values in data set A are greater than 18.</li><li>Since the additional number of points, 18, is less than any of the values in the original data set, the mean number of points per player for data set B is less than the mean number of points per player for data set A. The median of a data set with 50 values is between the 25th and 26th values when the values are listed in ascending order.</li><li>The median of a data set with 51 values is the 26th value when the values are listed in ascending order.</li><li>Therefore, the median of data set B is the 26th value in data set B, which is the 25th value in data set A. The histogram shows that the 25th and 26th values in data set A are both between 50 and 60 points.</li><li>Therefore, the 25th and 26th values in data set A could be equal, in which case the median of data set A would be equal to both the 25th and 26th values in data set A. Then, the median number of points per player for data set A would be equal to the median number of points per player for data set B. Therefore, only statement II must be true.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u17-03",
+    "lessonCode": "U17",
+    "type": "spr",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">Data set A consists of 10 positive integers less than 60. The list shown gives 9 of the integers from data set A.<div style=\"text-align:center;margin:8px 0\">43, 45, 44, 43, 38, 39, 40, 46, 40</div></div><p>The mean of these 9 integers is 42. If the mean of data set A is an integer that is greater than 42, what is the value of the largest integer from data set A?</p>",
+    "choices": [],
+    "correctAnswer": "52",
+    "acceptedAnswers": [
+      "52"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 52</b>.</p><ul><li>The mean of a data set is calculated by dividing the sum of the data values by the number of values.</li><li>It’s given that data set A consists of 10 values, 9 of which are shown.</li><li>Let <i>x</i> represent the 10th data value in data set A, which isn’t shown.</li><li>The mean of data set A can be found using the expression (43 + 45 + 44 + 43 + 38 + 39 + 40 + 46 + 40 + <i>x</i>)/10, or (378 + <i>x</i>)/10.</li><li>It’s given that the mean of the 9 values shown is 42 and that the mean of all 10 numbers is greater than 42.</li><li>Consequently, the 10th data value, <i>x</i>, is larger than 42.</li><li>It’s also given that the data values in data set A are positive integers less than 60.</li><li>Thus, 42 &lt; <i>x</i> &lt; 60.</li><li>Finally, it’s given that the mean of data set A is an integer.</li><li>This means that the sum of the 10 data values, 378 + <i>x</i>, is divisible by 10.</li><li>Thus, 378 + <i>x</i> must have a ones digit of 0.</li><li>It follows that <i>x</i> must have a ones digit of 2.</li><li>Since 42 &lt; <i>x</i> &lt; 60 and <i>x</i> has a ones digit of 2, the only possible value of <i>x</i> is 52.</li><li>Since 52 is larger than any of the integers shown, the largest integer from data set A is 52.</li></ul>"
+  },
+  {
+    "id": "u17-04",
+    "lessonCode": "U17",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 390 275\" role=\"img\" aria-label=\"Scatterplot with a line of best fit that slopes downward from about (0, 12.2) to about (5.3, 6). The data point at x = 1 has a y-coordinate of 12; the line passes through about (1, 11).\" style=\"max-width:390px;width:100%;height:auto;display:block;margin:0 auto 12px\" fill=\"none\" stroke=\"currentColor\" font-family=\"inherit\" font-size=\"11\"><line x1=\"50\" y1=\"15.599999999999987\" x2=\"50\" y2=\"246\" stroke-opacity=\"1\"/><text x=\"50\" y=\"261\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">0</text><line x1=\"100\" y1=\"15.599999999999987\" x2=\"100\" y2=\"246\" stroke-opacity=\"0.2\"/><text x=\"100\" y=\"261\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">1</text><line x1=\"150\" y1=\"15.599999999999987\" x2=\"150\" y2=\"246\" stroke-opacity=\"0.2\"/><text x=\"150\" y=\"261\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">2</text><line x1=\"200\" y1=\"15.599999999999987\" x2=\"200\" y2=\"246\" stroke-opacity=\"0.2\"/><text x=\"200\" y=\"261\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">3</text><line x1=\"250\" y1=\"15.599999999999987\" x2=\"250\" y2=\"246\" stroke-opacity=\"0.2\"/><text x=\"250\" y=\"261\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">4</text><line x1=\"300\" y1=\"15.599999999999987\" x2=\"300\" y2=\"246\" stroke-opacity=\"0.2\"/><text x=\"300\" y=\"261\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">5</text><line x1=\"350\" y1=\"15.599999999999987\" x2=\"350\" y2=\"246\" stroke-opacity=\"0.2\"/><text x=\"350\" y=\"261\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">6</text><line x1=\"50\" y1=\"246\" x2=\"360.0\" y2=\"246\" stroke-opacity=\"1\"/><text x=\"43\" y=\"250\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">6</text><line x1=\"50\" y1=\"210\" x2=\"360.0\" y2=\"210\" stroke-opacity=\"0.2\"/><text x=\"43\" y=\"214\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">7</text><line x1=\"50\" y1=\"174\" x2=\"360.0\" y2=\"174\" stroke-opacity=\"0.2\"/><text x=\"43\" y=\"178\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">8</text><line x1=\"50\" y1=\"138\" x2=\"360.0\" y2=\"138\" stroke-opacity=\"0.2\"/><text x=\"43\" y=\"142\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">9</text><line x1=\"50\" y1=\"102\" x2=\"360.0\" y2=\"102\" stroke-opacity=\"0.2\"/><text x=\"43\" y=\"106\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">10</text><line x1=\"50\" y1=\"66\" x2=\"360.0\" y2=\"66\" stroke-opacity=\"0.2\"/><text x=\"43\" y=\"70\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">11</text><line x1=\"50\" y1=\"30\" x2=\"360.0\" y2=\"30\" stroke-opacity=\"0.2\"/><text x=\"43\" y=\"34\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">12</text><circle cx=\"50\" cy=\"30\" r=\"3.2\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"100\" cy=\"30\" r=\"3.2\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"87.5\" cy=\"66\" r=\"3.2\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"125.0\" cy=\"93.0\" r=\"3.2\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"150\" cy=\"102\" r=\"3.2\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"162.5\" cy=\"129.0\" r=\"3.2\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"200\" cy=\"138\" r=\"3.2\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"225.0\" cy=\"174\" r=\"3.2\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"237.5\" cy=\"165.0\" r=\"3.2\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"250\" cy=\"210\" r=\"3.2\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"300\" cy=\"235.20000000000002\" r=\"3.2\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"50\" y1=\"24.599999999999987\" x2=\"317.5\" y2=\"246\" stroke-width=\"1.8\"/><text x=\"366.0\" y=\"250\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">x</text><text x=\"47\" y=\"9.599999999999987\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">y</text></svg></div><p>The scatterplot shows the relationship between two variables, <i>x</i> and <i>y</i>. A line of best fit for the data is also shown. Which of the following is closest to the difference between the <i>y</i>-coordinate of the data point with <i>x</i> = 1 and the <i>y</i>-value predicted by the line of best fit at <i>x</i> = 1?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "1"
+      },
+      {
+        "label": "B",
+        "html": "2"
+      },
+      {
+        "label": "C",
+        "html": "5"
+      },
+      {
+        "label": "D",
+        "html": "12"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>. The data point with <i>x</i> = 1 has a <i>y</i>-coordinate of 12. The <i>y</i>-value predicted by the line of best fit at <i>x</i> = 1 is approximately 11. The difference between the <i>y</i>-coordinate of the data point and the <i>y</i>-value predicted by the line of best fit at <i>x</i> = 1 is 12 − 11, or 1.</p><p><b>Choices B and C are incorrect</b> and may result from incorrectly reading the scatterplot.</p><p><b>Choice D is incorrect</b>. This is the <i>y</i>-coordinate of the data point at <i>x</i> = 1.</p>"
+  },
+  {
+    "id": "u17-05",
+    "lessonCode": "U17",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 390 285\" role=\"img\" aria-label=\"Scatterplot with a decreasing exponential model curve that starts at about (0, 126) and falls to about (14, 9).\" style=\"max-width:390px;width:100%;height:auto;display:block;margin:0 auto 12px\" fill=\"none\" stroke=\"currentColor\" font-family=\"inherit\" font-size=\"11\"><line x1=\"50\" y1=\"20.0\" x2=\"50\" y2=\"260.0\" stroke-opacity=\"1\"/><line x1=\"72\" y1=\"20.0\" x2=\"72\" y2=\"260.0\" stroke-opacity=\"0.2\"/><line x1=\"94\" y1=\"20.0\" x2=\"94\" y2=\"260.0\" stroke-opacity=\"0.2\"/><text x=\"94\" y=\"275.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">2</text><line x1=\"116\" y1=\"20.0\" x2=\"116\" y2=\"260.0\" stroke-opacity=\"0.2\"/><line x1=\"138\" y1=\"20.0\" x2=\"138\" y2=\"260.0\" stroke-opacity=\"0.2\"/><text x=\"138\" y=\"275.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">4</text><line x1=\"160\" y1=\"20.0\" x2=\"160\" y2=\"260.0\" stroke-opacity=\"0.2\"/><line x1=\"182\" y1=\"20.0\" x2=\"182\" y2=\"260.0\" stroke-opacity=\"0.2\"/><text x=\"182\" y=\"275.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">6</text><line x1=\"204\" y1=\"20.0\" x2=\"204\" y2=\"260.0\" stroke-opacity=\"0.2\"/><line x1=\"226\" y1=\"20.0\" x2=\"226\" y2=\"260.0\" stroke-opacity=\"0.2\"/><text x=\"226\" y=\"275.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">8</text><line x1=\"248\" y1=\"20.0\" x2=\"248\" y2=\"260.0\" stroke-opacity=\"0.2\"/><line x1=\"270\" y1=\"20.0\" x2=\"270\" y2=\"260.0\" stroke-opacity=\"0.2\"/><text x=\"270\" y=\"275.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">10</text><line x1=\"292\" y1=\"20.0\" x2=\"292\" y2=\"260.0\" stroke-opacity=\"0.2\"/><line x1=\"314\" y1=\"20.0\" x2=\"314\" y2=\"260.0\" stroke-opacity=\"0.2\"/><text x=\"314\" y=\"275.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">12</text><line x1=\"336\" y1=\"20.0\" x2=\"336\" y2=\"260.0\" stroke-opacity=\"0.2\"/><line x1=\"358\" y1=\"20.0\" x2=\"358\" y2=\"260.0\" stroke-opacity=\"0.2\"/><text x=\"358\" y=\"275.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">14</text><line x1=\"50\" y1=\"260.0\" x2=\"364.6\" y2=\"260.0\" stroke-opacity=\"1\"/><line x1=\"50\" y1=\"244.0\" x2=\"364.6\" y2=\"244.0\" stroke-opacity=\"0.2\"/><line x1=\"50\" y1=\"228.0\" x2=\"364.6\" y2=\"228.0\" stroke-opacity=\"0.2\"/><text x=\"43\" y=\"232.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">20</text><line x1=\"50\" y1=\"212.0\" x2=\"364.6\" y2=\"212.0\" stroke-opacity=\"0.2\"/><line x1=\"50\" y1=\"196.0\" x2=\"364.6\" y2=\"196.0\" stroke-opacity=\"0.2\"/><text x=\"43\" y=\"200.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">40</text><line x1=\"50\" y1=\"180.0\" x2=\"364.6\" y2=\"180.0\" stroke-opacity=\"0.2\"/><line x1=\"50\" y1=\"164.0\" x2=\"364.6\" y2=\"164.0\" stroke-opacity=\"0.2\"/><text x=\"43\" y=\"168.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">60</text><line x1=\"50\" y1=\"148.0\" x2=\"364.6\" y2=\"148.0\" stroke-opacity=\"0.2\"/><line x1=\"50\" y1=\"132.0\" x2=\"364.6\" y2=\"132.0\" stroke-opacity=\"0.2\"/><text x=\"43\" y=\"136.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">80</text><line x1=\"50\" y1=\"116.0\" x2=\"364.6\" y2=\"116.0\" stroke-opacity=\"0.2\"/><line x1=\"50\" y1=\"100.0\" x2=\"364.6\" y2=\"100.0\" stroke-opacity=\"0.2\"/><text x=\"43\" y=\"104.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">100</text><line x1=\"50\" y1=\"84.0\" x2=\"364.6\" y2=\"84.0\" stroke-opacity=\"0.2\"/><line x1=\"50\" y1=\"68.0\" x2=\"364.6\" y2=\"68.0\" stroke-opacity=\"0.2\"/><text x=\"43\" y=\"72.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">120</text><line x1=\"50\" y1=\"52.0\" x2=\"364.6\" y2=\"52.0\" stroke-opacity=\"0.2\"/><line x1=\"50\" y1=\"36.0\" x2=\"364.6\" y2=\"36.0\" stroke-opacity=\"0.2\"/><text x=\"43\" y=\"40.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">140</text><line x1=\"50\" y1=\"20.0\" x2=\"364.6\" y2=\"20.0\" stroke-opacity=\"0.2\"/><polyline points=\"50.0,57.8 54.4,65.2 58.8,72.4 63.2,79.2 67.6,85.8 72.0,92.2 76.4,98.3 80.8,104.3 85.2,110.0 89.6,115.4 94.0,120.7 98.4,125.8 102.8,130.7 107.2,135.5 111.6,140.0 116.0,144.4 120.4,148.6 124.8,152.7 129.2,156.6 133.6,160.4 138.0,164.1 142.4,167.6 146.8,170.9 151.2,174.2 155.6,177.3 160.0,180.4 164.4,183.3 168.8,186.1 173.2,188.8 177.6,191.4 182.0,193.9 186.4,196.3 190.8,198.7 195.2,200.9 199.6,203.1 204.0,205.1 208.4,207.1 212.8,209.1 217.2,210.9 221.6,212.7 226.0,214.5 230.4,216.1 234.8,217.7 239.2,219.3 243.6,220.8 248.0,222.2 252.4,223.6 256.8,224.9 261.2,226.2 265.6,227.4 270.0,228.6 274.4,229.8 278.8,230.9 283.2,232.0 287.6,233.0 292.0,234.0 296.4,234.9 300.8,235.8 305.2,236.7 309.6,237.6 314.0,238.4 318.4,239.2 322.8,239.9 327.2,240.7 331.6,241.4 336.0,242.1 340.4,242.7 344.8,243.4 349.2,244.0 353.6,244.5 358.0,245.1\" stroke-width=\"2\"/><circle cx=\"76.4\" cy=\"87.2\" r=\"3.6\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"127.0\" cy=\"151.20000000000002\" r=\"3.6\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"157.8\" cy=\"181.60000000000002\" r=\"3.6\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"193.0\" cy=\"196.0\" r=\"3.6\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"226\" cy=\"218.4\" r=\"3.6\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"307.4\" cy=\"234.4\" r=\"3.6\" fill=\"currentColor\" stroke=\"none\"/><text x=\"370.6\" y=\"264.0\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">x</text><text x=\"47\" y=\"14.0\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">y</text><text x=\"38\" y=\"274.0\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">O</text></svg></div><p>The scatterplot shows the relationship between two variables, <i>x</i> and <i>y</i>. An equation for the exponential model shown can be written as <i>y</i> = <i>a</i>(<i>b</i>)<sup><i>x</i></sup>, where <i>a</i> and <i>b</i> are positive constants. Which of the following is closest to the value of <i>b</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "0.83"
+      },
+      {
+        "label": "B",
+        "html": "1.83"
+      },
+      {
+        "label": "C",
+        "html": "18.36"
+      },
+      {
+        "label": "D",
+        "html": "126.35"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>.</p><ul><li>It's given that an equation for the exponential model shown can be written as <i>y</i> = <i>a</i>(<i>b</i>)<sup><i>x</i></sup>, where <i>a</i> and <i>b</i> are positive constants.</li><li>For an exponential model written in this form, if the value of <i>b</i> is greater than 0 but less than 1, the model is decreasing.</li><li>If the value of <i>b</i> is greater than 1, the model is increasing.</li><li>The exponential model shown is decreasing.</li><li>Therefore, the value of <i>b</i> is greater than 0 but less than 1.</li><li>Of the given choices, only 0.83 is a value greater than 0 but less than 1.</li><li>Thus, 0.83 is closest to the value of <i>b</i>.</li></ul><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u17-06",
+    "lessonCode": "U17",
+    "type": "spr",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><div class=\"tablewrap\"><table><thead><tr><th rowspan=\"2\">Rhesus factor</th><th colspan=\"4\">Blood type</th></tr><tr><th>A</th><th>B</th><th>AB</th><th>O</th></tr></thead><tbody><tr><th scope=\"row\">+</th><td>33</td><td>9</td><td>3</td><td>37</td></tr><tr><th scope=\"row\">−</th><td>7</td><td>2</td><td>1</td><td><i>x</i></td></tr></tbody></table></div></div><p>Human blood can be classified into four common blood types—A, B, AB, and O. It is also characterized by the presence (+) or absence (−) of the rhesus factor. The table above shows the distribution of blood type and rhesus factor for a group of people. If one of these people who is rhesus negative (−) is chosen at random, the probability that the person has blood type B is 1/9. What is the value of <i>x</i>?</p>",
+    "choices": [],
+    "correctAnswer": "8",
+    "acceptedAnswers": [
+      "8"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 8</b>.</p><ul><li>In this group, 1/9 of the people who are rhesus negative have blood type B. The total number of people who are rhesus negative in the group is 7 + 2 + 1 + <i>x</i>, and there are 2 people who are rhesus negative with blood type B. Therefore, 2/(7 + 2 + 1 + <i>x</i>) = 1/9.</li><li>Combining like terms on the left-hand side of the equation yields 2/(10 + <i>x</i>) = 1/9.</li><li>Multiplying both sides of this equation by 9 yields 18/(10 + <i>x</i>) = 1, and multiplying both sides of this equation by (10 + <i>x</i>) yields 18 = 10 + <i>x</i>.</li><li>Subtracting 10 from both sides of this equation yields 8 = <i>x</i>.</li></ul>"
+  },
+  {
+    "id": "u17-07",
+    "lessonCode": "U17",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">The table below shows the number of state parks in a certain state that contain camping facilities and bicycle paths.<div class=\"tablewrap\"><table><thead><tr><th></th><th>Has bicycle paths</th><th>Does not have bicycle paths</th></tr></thead><tbody><tr><th scope=\"row\">Has camping facilities</th><td>20</td><td>5</td></tr><tr><th scope=\"row\">Does not have camping facilities</th><td>8</td><td>4</td></tr></tbody></table></div></div><p>If one of these state parks is selected at random, what is the probability that it has camping facilities but does not have bicycle paths?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "5/37"
+      },
+      {
+        "label": "B",
+        "html": "5/25"
+      },
+      {
+        "label": "C",
+        "html": "8/28"
+      },
+      {
+        "label": "D",
+        "html": "5/9"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>. The total number of state parks in the state is 20 + 5 + 8 + 4 = 37. According to the table, 5 of these have camping facilities but not bicycle paths. Therefore, if a state park is selected at random, the probability that it has camping facilities but not bicycle paths is 5/37.</p><p><b>Choice B is incorrect</b>. This is the probability that a state park selected at random from the state parks with camping facilities does not have bicycle paths.</p><p><b>Choice C is incorrect</b>. This is the probability that a state park selected at random from the state parks with bicycle paths does not have camping facilities.</p><p><b>Choice D is incorrect</b>. This is the probability that a state park selected at random from the state parks without bicycle paths does have camping facilities.</p>"
+  },
+  {
+    "id": "u17-08",
+    "lessonCode": "U17",
+    "type": "spr",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">The table summarizes the distribution of age and assigned group for 90 participants in a study.<div class=\"tablewrap\"><table><thead><tr><th></th><th>0–9 years</th><th>10–19 years</th><th>20+ years</th><th>Total</th></tr></thead><tbody><tr><th scope=\"row\">Group A</th><td>7</td><td>14</td><td>9</td><td>30</td></tr><tr><th scope=\"row\">Group B</th><td>6</td><td>4</td><td>20</td><td>30</td></tr><tr><th scope=\"row\">Group C</th><td>17</td><td>12</td><td>1</td><td>30</td></tr><tr><th scope=\"row\">Total</th><td>30</td><td>30</td><td>30</td><td>90</td></tr></tbody></table></div></div><p>One of these participants will be selected at random. What is the probability of selecting a participant from group A, given that the participant is at least 10 years of age? (Express your answer as a decimal or fraction, not as a percent.)</p>",
+    "choices": [],
+    "correctAnswer": "23/60",
+    "acceptedAnswers": [
+      "23/60",
+      ".3833",
+      "0.383",
+      "0.3833"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 23/60</b>.</p><ul><li>It's given that one of the participants will be selected at random.</li><li>The probability of selecting a participant from group A given that the participant is at least 10 years of age is the number of participants in group A who are at least 10 years of age divided by the total number of participants who are at least 10 years of age.</li><li>The table shows that in group A, there are 14 participants who are 10–19 years of age and 9 participants who are 20+ years of age.</li><li>Therefore, there are 14 + 9, or 23, participants in group A who are at least 10 years of age.</li><li>The table also shows that there are a total of 30 participants who are 10–19 years of age and 30 participants who are 20+ years of age.</li><li>Therefore, there are a total of 30 + 30, or 60, participants who are at least 10 years of age.</li><li>It follows that the probability of selecting a participant from group A given that the participant is at least 10 years of age is 23/60.</li><li>Note that 23/60, .3833, and 0.383 are examples of ways to enter a correct answer.</li></ul>"
+  },
+  {
+    "id": "u17-09",
+    "lessonCode": "U17",
+    "type": "spr",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 380 290\" role=\"img\" aria-label=\"Scatterplot of 11 data points with an increasing line of best fit. Six points lie below the line and five lie above it.\" style=\"max-width:380px;width:100%;height:auto;display:block;margin:0 auto 12px\" fill=\"none\" stroke=\"currentColor\" font-family=\"inherit\" font-size=\"11\"><line x1=\"45\" y1=\"20.200000000000017\" x2=\"45\" y2=\"265\" stroke-opacity=\"1\"/><line x1=\"45\" y1=\"265\" x2=\"354.0\" y2=\"265\" stroke-opacity=\"1\"/><line x1=\"75\" y1=\"20.200000000000017\" x2=\"75\" y2=\"265\" stroke-opacity=\"0.2\"/><line x1=\"45\" y1=\"241\" x2=\"354.0\" y2=\"241\" stroke-opacity=\"0.2\"/><line x1=\"105\" y1=\"20.200000000000017\" x2=\"105\" y2=\"265\" stroke-opacity=\"0.2\"/><line x1=\"45\" y1=\"217\" x2=\"354.0\" y2=\"217\" stroke-opacity=\"0.2\"/><text x=\"105\" y=\"280\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">2</text><text x=\"38\" y=\"221\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">2</text><line x1=\"135\" y1=\"20.200000000000017\" x2=\"135\" y2=\"265\" stroke-opacity=\"0.2\"/><line x1=\"45\" y1=\"193\" x2=\"354.0\" y2=\"193\" stroke-opacity=\"0.2\"/><line x1=\"165\" y1=\"20.200000000000017\" x2=\"165\" y2=\"265\" stroke-opacity=\"0.2\"/><line x1=\"45\" y1=\"169\" x2=\"354.0\" y2=\"169\" stroke-opacity=\"0.2\"/><text x=\"165\" y=\"280\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">4</text><text x=\"38\" y=\"173\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">4</text><line x1=\"195\" y1=\"20.200000000000017\" x2=\"195\" y2=\"265\" stroke-opacity=\"0.2\"/><line x1=\"45\" y1=\"145\" x2=\"354.0\" y2=\"145\" stroke-opacity=\"0.2\"/><line x1=\"225\" y1=\"20.200000000000017\" x2=\"225\" y2=\"265\" stroke-opacity=\"0.2\"/><line x1=\"45\" y1=\"121\" x2=\"354.0\" y2=\"121\" stroke-opacity=\"0.2\"/><text x=\"225\" y=\"280\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">6</text><text x=\"38\" y=\"125\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">6</text><line x1=\"255\" y1=\"20.200000000000017\" x2=\"255\" y2=\"265\" stroke-opacity=\"0.2\"/><line x1=\"45\" y1=\"97\" x2=\"354.0\" y2=\"97\" stroke-opacity=\"0.2\"/><line x1=\"285\" y1=\"20.200000000000017\" x2=\"285\" y2=\"265\" stroke-opacity=\"0.2\"/><line x1=\"45\" y1=\"73\" x2=\"354.0\" y2=\"73\" stroke-opacity=\"0.2\"/><text x=\"285\" y=\"280\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">8</text><text x=\"38\" y=\"77\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">8</text><line x1=\"315\" y1=\"20.200000000000017\" x2=\"315\" y2=\"265\" stroke-opacity=\"0.2\"/><line x1=\"45\" y1=\"49\" x2=\"354.0\" y2=\"49\" stroke-opacity=\"0.2\"/><line x1=\"345\" y1=\"20.200000000000017\" x2=\"345\" y2=\"265\" stroke-opacity=\"0.2\"/><line x1=\"45\" y1=\"25\" x2=\"354.0\" y2=\"25\" stroke-opacity=\"0.2\"/><text x=\"345\" y=\"280\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">10</text><text x=\"38\" y=\"29\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">10</text><circle cx=\"69.0\" cy=\"193.0\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"93.0\" cy=\"195.4\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"117.0\" cy=\"203.8\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"141.0\" cy=\"184.6\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"166.5\" cy=\"172.6\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"190.5\" cy=\"152.2\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"214.5\" cy=\"109.0\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"240.0\" cy=\"100.6\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"264.0\" cy=\"109.0\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"288.0\" cy=\"65.8\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"312.0\" cy=\"85.0\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"63.0\" y1=\"223.0\" x2=\"324.0\" y2=\"55.95999999999998\" stroke-width=\"2\"/><text x=\"360.0\" y=\"269\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">x</text><text x=\"42\" y=\"14.200000000000017\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">y</text><text x=\"33\" y=\"279\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">O</text></svg></div><p>The scatterplot shows the relationship between two variables, <i>x</i> and <i>y</i>. A line of best fit is also shown. For how many of the 11 data points does the line of best fit predict a greater <i>y</i>-value than the actual <i>y</i>-value?</p>",
+    "choices": [],
+    "correctAnswer": "6",
+    "acceptedAnswers": [
+      "6"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 6</b>. The line of best fit predicts a greater <i>y</i>-value than the actual <i>y</i>-value for any data point that's located below the line of best fit. For the scatterplot shown, 6 of the data points are below the line of best fit. Therefore, the line of best fit predicts a greater <i>y</i>-value than the actual <i>y</i>-value for 6 of the data points.</p>"
+  },
+  {
+    "id": "u17-10",
+    "lessonCode": "U17",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">The owner of a restaurant supply store selects 10 cutting boards to put on sale. The graph shows the width <i>x</i>, in centimeters, of each cutting board and its corresponding sale price <i>y</i>, in dollars, where each value of <i>y</i> is an integer.<svg viewBox=\"0 0 395 280\" role=\"img\" aria-label=\"Scatterplot of 10 points: (12, 5), (24, 10), (24, 15), (30, 20), (36, 30), (42, 40), (54, 45), (60, 55), (66, 70), (72, 85).\" style=\"max-width:395px;width:100%;height:auto;display:block;margin:0 auto 12px\" fill=\"none\" stroke=\"currentColor\" font-family=\"inherit\" font-size=\"11\"><line x1=\"50\" y1=\"14.8\" x2=\"50\" y2=\"254.0\" stroke-opacity=\"1\"/><line x1=\"74\" y1=\"14.8\" x2=\"74\" y2=\"254.0\" stroke-opacity=\"0.2\"/><line x1=\"98\" y1=\"14.8\" x2=\"98\" y2=\"254.0\" stroke-opacity=\"0.2\"/><text x=\"98\" y=\"269.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">12</text><line x1=\"122\" y1=\"14.8\" x2=\"122\" y2=\"254.0\" stroke-opacity=\"0.2\"/><line x1=\"146\" y1=\"14.8\" x2=\"146\" y2=\"254.0\" stroke-opacity=\"0.2\"/><text x=\"146\" y=\"269.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">24</text><line x1=\"170\" y1=\"14.8\" x2=\"170\" y2=\"254.0\" stroke-opacity=\"0.2\"/><line x1=\"194\" y1=\"14.8\" x2=\"194\" y2=\"254.0\" stroke-opacity=\"0.2\"/><text x=\"194\" y=\"269.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">36</text><line x1=\"218\" y1=\"14.8\" x2=\"218\" y2=\"254.0\" stroke-opacity=\"0.2\"/><line x1=\"242\" y1=\"14.8\" x2=\"242\" y2=\"254.0\" stroke-opacity=\"0.2\"/><text x=\"242\" y=\"269.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">48</text><line x1=\"266\" y1=\"14.8\" x2=\"266\" y2=\"254.0\" stroke-opacity=\"0.2\"/><line x1=\"290\" y1=\"14.8\" x2=\"290\" y2=\"254.0\" stroke-opacity=\"0.2\"/><text x=\"290\" y=\"269.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">60</text><line x1=\"314\" y1=\"14.8\" x2=\"314\" y2=\"254.0\" stroke-opacity=\"0.2\"/><line x1=\"338\" y1=\"14.8\" x2=\"338\" y2=\"254.0\" stroke-opacity=\"0.2\"/><text x=\"338\" y=\"269.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">72</text><line x1=\"362\" y1=\"14.8\" x2=\"362\" y2=\"254.0\" stroke-opacity=\"0.2\"/><line x1=\"50\" y1=\"254.0\" x2=\"370\" y2=\"254.0\" stroke-opacity=\"1\"/><line x1=\"50\" y1=\"241.0\" x2=\"370\" y2=\"241.0\" stroke-opacity=\"0.2\"/><line x1=\"50\" y1=\"228.0\" x2=\"370\" y2=\"228.0\" stroke-opacity=\"0.2\"/><text x=\"43\" y=\"232.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">10</text><line x1=\"50\" y1=\"215.0\" x2=\"370\" y2=\"215.0\" stroke-opacity=\"0.2\"/><line x1=\"50\" y1=\"202.0\" x2=\"370\" y2=\"202.0\" stroke-opacity=\"0.2\"/><text x=\"43\" y=\"206.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">20</text><line x1=\"50\" y1=\"189.0\" x2=\"370\" y2=\"189.0\" stroke-opacity=\"0.2\"/><line x1=\"50\" y1=\"176.0\" x2=\"370\" y2=\"176.0\" stroke-opacity=\"0.2\"/><text x=\"43\" y=\"180.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">30</text><line x1=\"50\" y1=\"163.0\" x2=\"370\" y2=\"163.0\" stroke-opacity=\"0.2\"/><line x1=\"50\" y1=\"150.0\" x2=\"370\" y2=\"150.0\" stroke-opacity=\"0.2\"/><text x=\"43\" y=\"154.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">40</text><line x1=\"50\" y1=\"137.0\" x2=\"370\" y2=\"137.0\" stroke-opacity=\"0.2\"/><line x1=\"50\" y1=\"124.0\" x2=\"370\" y2=\"124.0\" stroke-opacity=\"0.2\"/><text x=\"43\" y=\"128.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">50</text><line x1=\"50\" y1=\"111.0\" x2=\"370\" y2=\"111.0\" stroke-opacity=\"0.2\"/><line x1=\"50\" y1=\"98.0\" x2=\"370\" y2=\"98.0\" stroke-opacity=\"0.2\"/><text x=\"43\" y=\"102.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">60</text><line x1=\"50\" y1=\"85.0\" x2=\"370\" y2=\"85.0\" stroke-opacity=\"0.2\"/><line x1=\"50\" y1=\"72.0\" x2=\"370\" y2=\"72.0\" stroke-opacity=\"0.2\"/><text x=\"43\" y=\"76.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">70</text><line x1=\"50\" y1=\"59.0\" x2=\"370\" y2=\"59.0\" stroke-opacity=\"0.2\"/><line x1=\"50\" y1=\"46.0\" x2=\"370\" y2=\"46.0\" stroke-opacity=\"0.2\"/><text x=\"43\" y=\"50.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">80</text><line x1=\"50\" y1=\"33.0\" x2=\"370\" y2=\"33.0\" stroke-opacity=\"0.2\"/><line x1=\"50\" y1=\"20.0\" x2=\"370\" y2=\"20.0\" stroke-opacity=\"0.2\"/><text x=\"43\" y=\"24.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">90</text><circle cx=\"98.0\" cy=\"241.0\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"146.0\" cy=\"228.0\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"146.0\" cy=\"215.0\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"170.0\" cy=\"202.0\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"194.0\" cy=\"176.0\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"218.0\" cy=\"150.0\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"266.0\" cy=\"137.0\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"290.0\" cy=\"111.0\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"314.0\" cy=\"72.0\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"338.0\" cy=\"33.0\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><text x=\"376\" y=\"258.0\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">x</text><text x=\"47\" y=\"10.8\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">y</text><text x=\"38\" y=\"268.0\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">O</text></svg></div><p>According to the graph, which statement is true?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Cutting boards that have a width greater than 48 centimeters have an average sale price of &#36;59.00."
+      },
+      {
+        "label": "B",
+        "html": "Cutting boards that have a width greater than 48 centimeters have an average sale price of &#36;40.00."
+      },
+      {
+        "label": "C",
+        "html": "Cutting boards that have a width between 18 and 48 centimeters have an average sale price of &#36;31.20."
+      },
+      {
+        "label": "D",
+        "html": "Cutting boards that have a width between 18 and 48 centimeters have an average sale price of &#36;23.00."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>.</p><ul><li>Each point (<i>x</i>, <i>y</i>) on the scatterplot gives the width <i>x</i>, in centimeters, and the sale price <i>y</i>, in dollars, of one of the 10 cutting boards put on sale at this store.</li><li>According to the graph, 5 cutting boards have widths that are between 18 and 48 centimeters.</li><li>These widths, in centimeters, are 24, 24, 30, 36, and 42.</li><li>The sale prices, in dollars, corresponding to these widths are 10, 15, 20, 30, and 40, respectively.</li><li>The average of these sale prices, in dollars, is (10 + 15 + 20 + 30 + 40)/5, or 115/5, which is equivalent to 23.</li><li>Therefore, cutting boards that have a width between 18 and 48 centimeters have an average sale price of &#36;23.00.</li></ul><p><b>Choice A is incorrect</b>. Cutting boards that have a width greater than 48 centimeters have an average sale price of &#36;63.75, not &#36;59.00.</p><p><b>Choice B is incorrect</b>. Cutting boards that have a width greater than 48 centimeters have an average sale price of &#36;63.75, not &#36;40.00.</p><p><b>Choice C is incorrect</b>. Cutting boards that have a width between 18 and 48 centimeters have an average sale price of &#36;23.00, not &#36;31.20.</p>"
+  },
+  {
+    "id": "u17-11",
+    "lessonCode": "U17",
+    "type": "spr",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 390 300\" role=\"img\" aria-label=\"Scatterplot titled Number of Beach Visitors versus Temperature, with a line of best fit that rises from about 80 people at 25 degrees Celsius through 480 people at 32 degrees Celsius.\" style=\"max-width:390px;width:100%;height:auto;display:block;margin:0 auto 12px\" fill=\"none\" stroke=\"currentColor\" font-family=\"inherit\" font-size=\"11\"><text x=\"218.5\" y=\"14\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"12\">Number of Beach Visitors</text><text x=\"218.5\" y=\"28\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-size=\"12\">versus Temperature</text><line x1=\"70\" y1=\"40.0\" x2=\"70\" y2=\"257.6\" stroke-opacity=\"1\"/><text x=\"70\" y=\"272.6\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">25</text><line x1=\"97\" y1=\"40.0\" x2=\"97\" y2=\"257.6\" stroke-opacity=\"0.2\"/><line x1=\"124\" y1=\"40.0\" x2=\"124\" y2=\"257.6\" stroke-opacity=\"0.2\"/><text x=\"124\" y=\"272.6\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">27</text><line x1=\"151\" y1=\"40.0\" x2=\"151\" y2=\"257.6\" stroke-opacity=\"0.2\"/><line x1=\"178\" y1=\"40.0\" x2=\"178\" y2=\"257.6\" stroke-opacity=\"0.2\"/><text x=\"178\" y=\"272.6\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">29</text><line x1=\"205\" y1=\"40.0\" x2=\"205\" y2=\"257.6\" stroke-opacity=\"0.2\"/><line x1=\"232\" y1=\"40.0\" x2=\"232\" y2=\"257.6\" stroke-opacity=\"0.2\"/><text x=\"232\" y=\"272.6\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">31</text><line x1=\"259\" y1=\"40.0\" x2=\"259\" y2=\"257.6\" stroke-opacity=\"0.2\"/><line x1=\"286\" y1=\"40.0\" x2=\"286\" y2=\"257.6\" stroke-opacity=\"0.2\"/><text x=\"286\" y=\"272.6\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">33</text><line x1=\"313\" y1=\"40.0\" x2=\"313\" y2=\"257.6\" stroke-opacity=\"0.2\"/><line x1=\"340\" y1=\"40.0\" x2=\"340\" y2=\"257.6\" stroke-opacity=\"0.2\"/><text x=\"340\" y=\"272.6\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">35</text><line x1=\"367\" y1=\"40.0\" x2=\"367\" y2=\"257.6\" stroke-opacity=\"0.2\"/><line x1=\"70\" y1=\"257.6\" x2=\"367\" y2=\"257.6\" stroke-opacity=\"1\"/><text x=\"63\" y=\"261.6\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">0</text><line x1=\"70\" y1=\"244.8\" x2=\"367\" y2=\"244.8\" stroke-opacity=\"0.2\"/><line x1=\"70\" y1=\"232.0\" x2=\"367\" y2=\"232.0\" stroke-opacity=\"0.2\"/><text x=\"63\" y=\"236.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">80</text><line x1=\"70\" y1=\"219.20000000000002\" x2=\"367\" y2=\"219.20000000000002\" stroke-opacity=\"0.2\"/><line x1=\"70\" y1=\"206.4\" x2=\"367\" y2=\"206.4\" stroke-opacity=\"0.2\"/><text x=\"63\" y=\"210.4\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">160</text><line x1=\"70\" y1=\"193.6\" x2=\"367\" y2=\"193.6\" stroke-opacity=\"0.2\"/><line x1=\"70\" y1=\"180.8\" x2=\"367\" y2=\"180.8\" stroke-opacity=\"0.2\"/><text x=\"63\" y=\"184.8\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">240</text><line x1=\"70\" y1=\"168.0\" x2=\"367\" y2=\"168.0\" stroke-opacity=\"0.2\"/><line x1=\"70\" y1=\"155.2\" x2=\"367\" y2=\"155.2\" stroke-opacity=\"0.2\"/><text x=\"63\" y=\"159.2\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">320</text><line x1=\"70\" y1=\"142.4\" x2=\"367\" y2=\"142.4\" stroke-opacity=\"0.2\"/><line x1=\"70\" y1=\"129.60000000000002\" x2=\"367\" y2=\"129.60000000000002\" stroke-opacity=\"0.2\"/><text x=\"63\" y=\"133.60000000000002\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">400</text><line x1=\"70\" y1=\"116.8\" x2=\"367\" y2=\"116.8\" stroke-opacity=\"0.2\"/><line x1=\"70\" y1=\"104.0\" x2=\"367\" y2=\"104.0\" stroke-opacity=\"0.2\"/><text x=\"63\" y=\"108.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">480</text><line x1=\"70\" y1=\"91.2\" x2=\"367\" y2=\"91.2\" stroke-opacity=\"0.2\"/><line x1=\"70\" y1=\"78.4\" x2=\"367\" y2=\"78.4\" stroke-opacity=\"0.2\"/><text x=\"63\" y=\"82.4\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">560</text><line x1=\"70\" y1=\"65.6\" x2=\"367\" y2=\"65.6\" stroke-opacity=\"0.2\"/><line x1=\"70\" y1=\"52.8\" x2=\"367\" y2=\"52.8\" stroke-opacity=\"0.2\"/><text x=\"63\" y=\"56.8\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">640</text><line x1=\"70\" y1=\"40.0\" x2=\"367\" y2=\"40.0\" stroke-opacity=\"0.2\"/><circle cx=\"124.0\" cy=\"222.4\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"151.0\" cy=\"144.0\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"178.0\" cy=\"180.8\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"205.0\" cy=\"155.2\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"205.0\" cy=\"137.6\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"232.0\" cy=\"104.0\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"245.5\" cy=\"80.0\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"286.0\" cy=\"104.0\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"313.0\" cy=\"84.8\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"313.0\" cy=\"52.8\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"340.0\" cy=\"59.2\" r=\"3.4\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"70\" y1=\"232.0\" x2=\"353.5\" y2=\"40.0\" stroke-width=\"1.8\"/><text x=\"218.5\" y=\"291.6\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">Average temperature (°C)</text><text transform=\"translate(16,148.8) rotate(-90)\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">Number of people</text></svg></div><p>Each dot in the scatterplot above represents the temperature and the number of people who visited a beach in Lagos, Nigeria, on one of eleven different days. The line of best fit for the data is also shown. According to the line of best fit, what is the number of people, rounded to the nearest 10, predicted to visit this beach on a day with an average temperature of 32°C?</p>",
+    "choices": [],
+    "correctAnswer": "480",
+    "acceptedAnswers": [
+      "480"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 480</b>. An average temperature of 32°C corresponds to the value 32 on the <i>x</i>-axis. On the line of best fit, an <i>x</i>-value of 32 corresponds to a <i>y</i>-value of 480. The values on the <i>y</i>-axis correspond to the number of people predicted to visit this beach. Therefore, 480 people are predicted to visit this beach on a day with an average temperature of 32°C.</p>"
+  },
+  {
+    "id": "u17-12",
+    "lessonCode": "U17",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><div style=\"text-align:center\">Data set A: 1, 2, 3, 4, 5, 6, 7<br>Data set B: 1, 1, 2, 2, 3, 3, 4</div></div><p>Which of the following statements correctly compares the means of data set A and data set B?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "The mean of each data set is 2."
+      },
+      {
+        "label": "B",
+        "html": "The mean of each data set is 4."
+      },
+      {
+        "label": "C",
+        "html": "The mean of data set A is less than the mean of data set B."
+      },
+      {
+        "label": "D",
+        "html": "The mean of data set A is greater than the mean of data set B."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>. The mean of a data set is found by dividing the sum of the values in the data set by the number of values in the data set. Therefore, the mean of data set A is (1 + 2 + 3 + 4 + 5 + 6 + 7)/7 = 28/7, or 4. The mean of data set B is (1 + 1 + 2 + 2 + 3 + 3 + 4)/7 = 16/7, or approximately 2.2857. Therefore, the mean of data set A is greater than the mean of data set B.</p><p><b>Alternate approach</b>: Data set A and data set B are both ordered from least to greatest value. Besides the first value in each data set, which is 1, each value in ordered data set B is less than the respective value in ordered data set A. Therefore, conceptually, the mean of data set A must be greater than the mean of data set B.</p><p><b>Choices A, B, and C are incorrect</b> and may result from various misconceptions or miscalculations.</p>"
+  },
+  {
+    "id": "u17-13",
+    "lessonCode": "U17",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 560 200\" role=\"img\" aria-label=\"Two dot plots. Lincoln High: 2 dots at 1 hour, 4 at 2, 6 at 3, 4 at 4 and 2 at 5. Roosevelt High: 2 dots at 11 hours, 4 at 12, 6 at 13, 4 at 14 and 2 at 15.\" style=\"max-width:560px;width:100%;height:auto;display:block;margin:0 auto 12px\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" font-family=\"inherit\" font-size=\"13\"><text x=\"131\" y=\"18\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">Lincoln High</text><line x1=\"21\" y1=\"150\" x2=\"241\" y2=\"150\"/><polygon points=\"21,146 11,150 21,154\" fill=\"currentColor\"/><polygon points=\"241,146 251,150 241,154\" fill=\"currentColor\"/><line x1=\"35\" y1=\"145\" x2=\"35\" y2=\"155\"/><text x=\"35\" y=\"172\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">0</text><line x1=\"67\" y1=\"145\" x2=\"67\" y2=\"155\"/><text x=\"67\" y=\"172\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">1</text><circle cx=\"67\" cy=\"134\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"67\" cy=\"115\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"99\" y1=\"145\" x2=\"99\" y2=\"155\"/><text x=\"99\" y=\"172\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">2</text><circle cx=\"99\" cy=\"134\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"99\" cy=\"115\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"99\" cy=\"96\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"99\" cy=\"77\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"131\" y1=\"145\" x2=\"131\" y2=\"155\"/><text x=\"131\" y=\"172\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">3</text><circle cx=\"131\" cy=\"134\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"131\" cy=\"115\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"131\" cy=\"96\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"131\" cy=\"77\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"131\" cy=\"58\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"131\" cy=\"39\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"163\" y1=\"145\" x2=\"163\" y2=\"155\"/><text x=\"163\" y=\"172\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">4</text><circle cx=\"163\" cy=\"134\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"163\" cy=\"115\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"163\" cy=\"96\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"163\" cy=\"77\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"195\" y1=\"145\" x2=\"195\" y2=\"155\"/><text x=\"195\" y=\"172\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">5</text><circle cx=\"195\" cy=\"134\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"195\" cy=\"115\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"227\" y1=\"145\" x2=\"227\" y2=\"155\"/><text x=\"227\" y=\"172\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">6</text><text x=\"131\" y=\"194\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">Hours</text><text x=\"411\" y=\"18\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">Roosevelt High</text><line x1=\"301\" y1=\"150\" x2=\"521\" y2=\"150\"/><polygon points=\"301,146 291,150 301,154\" fill=\"currentColor\"/><polygon points=\"521,146 531,150 521,154\" fill=\"currentColor\"/><line x1=\"315\" y1=\"145\" x2=\"315\" y2=\"155\"/><text x=\"315\" y=\"172\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">10</text><line x1=\"347\" y1=\"145\" x2=\"347\" y2=\"155\"/><text x=\"347\" y=\"172\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">11</text><circle cx=\"347\" cy=\"134\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"347\" cy=\"115\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"379\" y1=\"145\" x2=\"379\" y2=\"155\"/><text x=\"379\" y=\"172\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">12</text><circle cx=\"379\" cy=\"134\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"379\" cy=\"115\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"379\" cy=\"96\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"379\" cy=\"77\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"411\" y1=\"145\" x2=\"411\" y2=\"155\"/><text x=\"411\" y=\"172\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">13</text><circle cx=\"411\" cy=\"134\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"411\" cy=\"115\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"411\" cy=\"96\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"411\" cy=\"77\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"411\" cy=\"58\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"411\" cy=\"39\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"443\" y1=\"145\" x2=\"443\" y2=\"155\"/><text x=\"443\" y=\"172\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">14</text><circle cx=\"443\" cy=\"134\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"443\" cy=\"115\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"443\" cy=\"96\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"443\" cy=\"77\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"475\" y1=\"145\" x2=\"475\" y2=\"155\"/><text x=\"475\" y=\"172\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">15</text><circle cx=\"475\" cy=\"134\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"475\" cy=\"115\" r=\"5.5\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"507\" y1=\"145\" x2=\"507\" y2=\"155\"/><text x=\"507\" y=\"172\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">16</text><text x=\"411\" y=\"194\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">Hours</text></svg></div><p>The dot plots above show the number of weekly hours spent volunteering by each student in a random sample of students from two different high schools, Lincoln High and Roosevelt High. Which statement best compares the standard deviation of the number of weekly volunteering hours for students at Lincoln High with the standard deviation of the number of weekly volunteering hours for students at Roosevelt High?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "The standard deviation of the weekly volunteering hours for students at Lincoln High is less than the standard deviation for students at Roosevelt High."
+      },
+      {
+        "label": "B",
+        "html": "There is not enough information to compare the standard deviations of the two schools."
+      },
+      {
+        "label": "C",
+        "html": "The standard deviation of the weekly volunteering hours for students at Lincoln High is equal to the standard deviation for students at Roosevelt High."
+      },
+      {
+        "label": "D",
+        "html": "The standard deviation of the weekly volunteering hours for students at Lincoln High is greater than the standard deviation for students at Roosevelt High."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>.</p><ul><li>Standard deviation is a statistical measure of how spread out the values in a data set are relative to the mean.</li><li>Looking at the dot plots, the distribution of data for Lincoln High and Roosevelt High has the exact same shape, simply shifted along the number line (each value at Roosevelt High is exactly 10 units higher than a corresponding value at Lincoln High).</li><li>Because the spread of the data points relative to each dataset's mean is identical, the standard deviations are equal.</li><li>A constant horizontal shift in a data set changes the mean but does not affect the standard deviation or any other measure of spread.</li></ul><p><b>Choice A is incorrect</b>. Higher values do not necessarily mean a larger standard deviation. Standard deviation measures the spread of data points relative to their mean, not the magnitude of the values themselves. Although Roosevelt High has higher values, its dots follow the exact same spacing pattern as Lincoln High's dots. Because both distributions have the same shape and internal spacing, their standard deviations are equal.</p><p><b>Choice B is incorrect</b>. The dot plots provide all the information needed to compare the spread. Standard deviation is a measure of spread. We can compare spread by looking at the width and shape of the data distributions. The dot plots show that the shape for Roosevelt High is identical to the shape for Lincoln High, just shifted 10 units to the right. A translation (shifting data) does not change the standard deviation, so the values must be equal.</p>"
+  },
+  {
+    "id": "u17-14",
+    "lessonCode": "U17",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>A market researcher selected a random sample of 150 rewards program members from a specific location of a bookstore chain. The selected members answered a questionnaire about their reading preferences, and 95 stated they prefer hardcover books over paperbacks. Which of the following is the largest population to which the results of the survey can be applied?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "The 150 rewards program members who were surveyed"
+      },
+      {
+        "label": "B",
+        "html": "All customers at the specific bookstore location"
+      },
+      {
+        "label": "C",
+        "html": "All rewards program members of the bookstore chain nationwide"
+      },
+      {
+        "label": "D",
+        "html": "All rewards program members at the specific bookstore location"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>. The Masterclass rule here is simple: a survey can only represent the exact group it was randomly drawn from, nothing larger. The sample was 150 rewards program members at one specific location, so we match each option to that. All rewards program members at the specific location is exactly the group the sample was randomly drawn from: same type of people (rewards members) and same place (this location). It's the largest group the results can honestly describe.</p><p><b>Choice A is incorrect</b>. True, but it's the smallest possible population. The question asks for the largest population, so being valid isn't enough.</p><p><b>Choice B is incorrect</b>. Too broad. The sample was drawn only from rewards program members, so people who shop there but aren't members weren't represented.</p><p><b>Choice C is incorrect</b>. Too broad in a different way. Sampling at one location says nothing about members at other stores around the country.</p><p>Quick takeaway: for \"largest population\" questions, find the option that exactly matches who was sampled, both in location and in membership. Anything smaller wastes the random sample; anything larger overgeneralizes.</p>"
+  },
+  {
+    "id": "u17-15",
+    "lessonCode": "U17",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>Members of a regional fitness club chain were surveyed to determine whether they support extending the gym's operating hours. A random sample of 600 members was selected. All 600 responded, and 58% indicated they support extending the hours. Based on this information, which of the following statements must be true?<br>I. Of all the fitness club members, 58% would support extending the operating hours.<br>II. If a different random sample of 600 members were surveyed, 58% would indicate they support extending the hours.</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "I only"
+      },
+      {
+        "label": "B",
+        "html": "I and II"
+      },
+      {
+        "label": "C",
+        "html": "Neither"
+      },
+      {
+        "label": "D",
+        "html": "II only"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>. The Masterclass strategy here is simple: pick the most cautious answer. \"Must be true\" means guaranteed, and a single sample can never guarantee an exact percentage. Both statements are too absolute, which is exactly what the Masterclass warns against. The cautious truth is \"about 58%, give or take\" — so neither must be true.</p><p>Statement I: \"Of all the fitness club members, 58% would support extending the hours.\" This takes the sample's 58% and applies it to everyone as an exact fact. A sample of 600 gives you an estimate, not the true population value. The real percentage for all members could be 55% or 61%. Not guaranteed, so I is out.</p><p>Statement II: \"If a different random sample of 600 members were surveyed, 58% would indicate support.\" This assumes a new sample would give exactly the same number. Sampling variability means a different sample typically lands near 58%, but rarely exactly there. Not guaranteed, so II is out too.</p><p>Takeaway: on \"must be true\" stats questions, any answer claiming an exact number from a sample is almost always wrong.</p>"
+  }
+]

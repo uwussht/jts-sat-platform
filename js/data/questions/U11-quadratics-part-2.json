@@ -1,0 +1,369 @@
+[
+  {
+    "id": "u11-01",
+    "lessonCode": "U11",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 260 260\" role=\"img\" aria-label=\"Graph of a parabola opening upward and a line that crosses it at two points\" fill=\"none\" stroke=\"currentColor\"><line x1=\"20\" y1=\"251\" x2=\"20\" y2=\"9\" stroke-opacity=\".18\"/><line x1=\"9\" y1=\"240\" x2=\"251\" y2=\"240\" stroke-opacity=\".18\"/><line x1=\"75\" y1=\"251\" x2=\"75\" y2=\"9\" stroke-opacity=\".18\"/><line x1=\"9\" y1=\"185\" x2=\"251\" y2=\"185\" stroke-opacity=\".18\"/><line x1=\"185\" y1=\"251\" x2=\"185\" y2=\"9\" stroke-opacity=\".18\"/><line x1=\"9\" y1=\"75\" x2=\"251\" y2=\"75\" stroke-opacity=\".18\"/><line x1=\"240\" y1=\"251\" x2=\"240\" y2=\"9\" stroke-opacity=\".18\"/><line x1=\"9\" y1=\"20\" x2=\"251\" y2=\"20\" stroke-opacity=\".18\"/><line x1=\"5.699999999999989\" y1=\"130\" x2=\"254.3\" y2=\"130\" stroke-width=\"1.5\"/><line x1=\"130\" y1=\"254.3\" x2=\"130\" y2=\"5.699999999999989\" stroke-width=\"1.5\"/><polyline points=\"14.5,20.0 17.2,26.5 20.0,32.9 22.8,39.1 25.5,45.1 28.2,50.9 31.0,56.6 33.8,62.2 36.5,67.5 39.2,72.7 42.0,77.8 44.8,82.6 47.5,87.3 50.2,91.9 53.0,96.2 55.8,100.4 58.5,104.5 61.2,108.4 64.0,112.1 66.8,115.6 69.5,119.0 72.2,122.2 75.0,125.3 77.8,128.2 80.5,130.9 83.2,133.4 86.0,135.8 88.8,138.1 91.5,140.1 94.2,142.0 97.0,143.8 99.8,145.3 102.5,146.7 105.2,148.0 108.0,149.0 110.8,149.9 113.5,150.7 116.2,151.3 119.0,151.7 121.8,151.9 124.5,152.0 127.2,151.9 130.0,151.7 132.8,151.3 135.5,150.7 138.2,149.9 141.0,149.0 143.8,148.0 146.5,146.7 149.2,145.3 152.0,143.8 154.8,142.0 157.5,140.1 160.2,138.1 163.0,135.8 165.8,133.4 168.5,130.9 171.2,128.2 174.0,125.3 176.8,122.2 179.5,119.0 182.2,115.6 185.0,112.1 187.8,108.4 190.5,104.5 193.2,100.4 196.0,96.2 198.8,91.9 201.5,87.3 204.2,82.6 207.0,77.8 209.8,72.7 212.5,67.5 215.2,62.2 218.0,56.6 220.8,50.9 223.5,45.1 226.2,39.1 229.0,32.9 231.8,26.5 234.5,20.0\" stroke-width=\"2.2\"/><line x1=\"14.5\" y1=\"131.1\" x2=\"245.5\" y2=\"84.9\" stroke-width=\"2.2\"/><g fill=\"currentColor\" stroke=\"none\" font-size=\"9\" font-family=\"sans-serif\"><text x=\"20\" y=\"141\" text-anchor=\"middle\">−10</text><text x=\"126\" y=\"243\" text-anchor=\"end\">−10</text><text x=\"75\" y=\"141\" text-anchor=\"middle\">−5</text><text x=\"126\" y=\"188\" text-anchor=\"end\">−5</text><text x=\"185\" y=\"141\" text-anchor=\"middle\">5</text><text x=\"126\" y=\"78\" text-anchor=\"end\">5</text><text x=\"240\" y=\"141\" text-anchor=\"middle\">10</text><text x=\"126\" y=\"23\" text-anchor=\"end\">10</text><text x=\"126\" y=\"141\" text-anchor=\"end\">O</text><text x=\"256.5\" y=\"134\" font-style=\"italic\">x</text><text x=\"134\" y=\"6.800000000000011\" font-style=\"italic\">y</text></g></svg>A system of equations consists of a quadratic equation and a linear equation. The equations in this system are graphed in the <i>xy</i>-plane above.</div><p>How many solutions does this system have?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "0"
+      },
+      {
+        "label": "B",
+        "html": "1"
+      },
+      {
+        "label": "C",
+        "html": "2"
+      },
+      {
+        "label": "D",
+        "html": "3"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>. The solutions to a system of two equations correspond to points where the graphs of the equations intersect. The given graphs intersect at 2 points; therefore, the system has 2 solutions.</p><p><b>Choice A is incorrect</b> because the graphs intersect.</p><p><b>Choice B is incorrect</b> because the graphs intersect more than once.</p><p><b>Choice D is incorrect</b>. It’s not possible for the graph of a quadratic equation and the graph of a linear equation to intersect more than twice.</p>"
+  },
+  {
+    "id": "u11-02",
+    "lessonCode": "U11",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>y</i> = 2<i>x</i><sup>2</sup> − 21<i>x</i> + 64<br><i>y</i> = 3<i>x</i> + <i>a</i></div><p>In the given system of equations, <i>a</i> is a constant. The graphs of the equations in the given system intersect at exactly one point, (<i>x</i>, <i>y</i>), in the <i>xy</i>-plane. What is the value of <i>x</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "−8"
+      },
+      {
+        "label": "B",
+        "html": "−6"
+      },
+      {
+        "label": "C",
+        "html": "6"
+      },
+      {
+        "label": "D",
+        "html": "8"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>.</p><ul><li>It's given that the graphs of the equations in the given system intersect at exactly one point, (<i>x</i>, <i>y</i>), in the <i>xy</i>-plane.</li><li>Therefore, (<i>x</i>, <i>y</i>) is the only solution to the given system of equations.</li><li>The given system of equations can be solved by subtracting the second equation, <i>y</i> = 3<i>x</i> + <i>a</i>, from the first equation, <i>y</i> = 2<i>x</i><sup>2</sup> − 21<i>x</i> + 64.</li><li>This yields <i>y</i> − <i>y</i> = (2<i>x</i><sup>2</sup> − 21<i>x</i> + 64) − (3<i>x</i> + <i>a</i>), or 0 = 2<i>x</i><sup>2</sup> − 24<i>x</i> + 64 − <i>a</i>.</li><li>Since the given system has only one solution, this equation has only one solution.</li><li>A quadratic equation in the form <i>rx</i><sup>2</sup> + <i>sx</i> + <i>t</i> = 0, where <i>r</i>, <i>s</i>, and <i>t</i> are constants, has one solution if and only if the discriminant, <i>s</i><sup>2</sup> − 4<i>rt</i>, is equal to zero.</li><li>Substituting 2 for <i>r</i>, −24 for <i>s</i>, and −<i>a</i> + 64 for <i>t</i> in the expression <i>s</i><sup>2</sup> − 4<i>rt</i> yields (−24)<sup>2</sup> − (4)(2)(64 − <i>a</i>).</li><li>Setting this expression equal to zero yields (−24)<sup>2</sup> − (4)(2)(64 − <i>a</i>) = 0, or 8<i>a</i> + 64 = 0.</li><li>Subtracting 64 from both sides of this equation yields 8<i>a</i> = −64.</li><li>Dividing both sides of this equation by 8 yields <i>a</i> = −8.</li><li>Substituting −8 for <i>a</i> in the equation 0 = 2<i>x</i><sup>2</sup> − 24<i>x</i> + 64 − <i>a</i> yields 0 = 2<i>x</i><sup>2</sup> − 24<i>x</i> + 64 + 8, or 0 = 2<i>x</i><sup>2</sup> − 24<i>x</i> + 72.</li><li>Factoring 2 from the right-hand side of this equation yields 0 = 2(<i>x</i><sup>2</sup> − 12<i>x</i> + 36).</li><li>Dividing both sides of this equation by 2 yields 0 = <i>x</i><sup>2</sup> − 12<i>x</i> + 36, which is equivalent to 0 = (<i>x</i> − 6)(<i>x</i> − 6), or 0 = (<i>x</i> − 6)<sup>2</sup>.</li><li>Taking the square root of both sides of this equation yields 0 = <i>x</i> − 6.</li><li>Adding 6 to both sides of this equation yields <i>x</i> = 6.</li></ul><p><b>Choice A is incorrect</b>. This is the value of <i>a</i>, not <i>x</i>.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u11-03",
+    "lessonCode": "U11",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>The expression 4<i>x</i><sup>2</sup> + <i>bx</i> − 45, where <i>b</i> is a constant, can be rewritten as (<i>hx</i> + <i>k</i>)(<i>x</i> + <i>j</i>), where <i>h</i>, <i>k</i>, and <i>j</i> are integer constants. Which of the following must be an integer?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<i>b</i>/<i>h</i>"
+      },
+      {
+        "label": "B",
+        "html": "<i>b</i>/<i>k</i>"
+      },
+      {
+        "label": "C",
+        "html": "45/<i>h</i>"
+      },
+      {
+        "label": "D",
+        "html": "45/<i>k</i>"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>.</p><ul><li>It's given that 4<i>x</i><sup>2</sup> + <i>bx</i> − 45 can be rewritten as (<i>hx</i> + <i>k</i>)(<i>x</i> + <i>j</i>).</li><li>The expression (<i>hx</i> + <i>k</i>)(<i>x</i> + <i>j</i>) can be rewritten as <i>hx</i><sup>2</sup> + <i>jhx</i> + <i>kx</i> + <i>kj</i>, or <i>hx</i><sup>2</sup> + (<i>jh</i> + <i>k</i>)<i>x</i> + <i>kj</i>.</li><li>Therefore, <i>hx</i><sup>2</sup> + (<i>jh</i> + <i>k</i>)<i>x</i> + <i>kj</i> is equivalent to 4<i>x</i><sup>2</sup> + <i>bx</i> − 45.</li><li>It follows that <i>kj</i> = −45.</li><li>Dividing each side of this equation by <i>k</i> yields <i>j</i> = −45/<i>k</i>.</li><li>Since <i>j</i> is an integer, −45/<i>k</i> must be an integer.</li><li>Therefore, 45/<i>k</i> must also be an integer.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u11-04",
+    "lessonCode": "U11",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">4<i>x</i><sup>2</sup> − 5<i>x</i> − 5 = 0</div><p>What is the greatest solution to the given equation?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "5/8 − √105/8"
+      },
+      {
+        "label": "B",
+        "html": "5/8 + √105/8"
+      },
+      {
+        "label": "C",
+        "html": "5/4 − √105/4"
+      },
+      {
+        "label": "D",
+        "html": "5/4 + √105/4"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>.</p><ul><li>The solutions to a quadratic equation of the form <i>ax</i><sup>2</sup> + <i>bx</i> + <i>c</i> = 0, where <i>a</i>, <i>b</i>, and <i>c</i> are constants, can be calculated using the quadratic formula <i>x</i> = (−<i>b</i> ± √(<i>b</i><sup>2</sup> − 4<i>ac</i>))/(2<i>a</i>).</li><li>The given equation is of this form, where <i>a</i> = 4, <i>b</i> = −5, and <i>c</i> = −5.</li><li>Substituting these values into the quadratic formula yields <i>x</i> = (−(−5) ± √((−5)<sup>2</sup> − 4(4)(−5)))/(2(4)), or <i>x</i> = (5 ± √(25 + 80))/8.</li><li>These solutions can be rewritten as <i>x</i> = (5 ± √105)/8, or <i>x</i> = 5/8 ± √105/8.</li><li>Since 5/8 + √105/8 is greater than 5/8 − √105/8, it follows that the greatest solution to the given equation is 5/8 + √105/8.</li></ul><p><b>Choice A is incorrect</b>. This is the least, not the greatest, solution to the given equation.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u11-05",
+    "lessonCode": "U11",
+    "type": "spr",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>x</i><sup>2</sup> − 34<i>x</i> + <i>c</i> = 0</div><p>In the given equation, <i>c</i> is a constant. The equation has no real solutions if <i>c</i> > <i>n</i>. What is the least possible value of <i>n</i>?</p>",
+    "choices": [],
+    "correctAnswer": "289",
+    "acceptedAnswers": [
+      "289"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 289</b>.</p><ul><li>A quadratic equation of the form <i>ax</i><sup>2</sup> + <i>bx</i> + <i>c</i> = 0, where <i>a</i>, <i>b</i>, and <i>c</i> are constants, has no real solutions when the value of the discriminant, <i>b</i><sup>2</sup> − 4<i>ac</i>, is less than 0.</li><li>In the given equation, <i>x</i><sup>2</sup> − 34<i>x</i> + <i>c</i> = 0, <i>a</i> = 1 and <i>b</i> = −34.</li><li>Therefore, the discriminant of the given equation can be expressed as (−34)<sup>2</sup> − 4(1)(<i>c</i>), or 1,156 − 4<i>c</i>.</li><li>It follows that the given equation has no real solutions when 1,156 − 4<i>c</i> &lt; 0.</li><li>Adding 4<i>c</i> to both sides of this inequality yields 1,156 &lt; 4<i>c</i>.</li><li>Dividing both sides of this inequality by 4 yields 289 &lt; <i>c</i>, or <i>c</i> &gt; 289.</li><li>It's given that the equation <i>x</i><sup>2</sup> − 34<i>x</i> + <i>c</i> = 0 has no real solutions when <i>c</i> > <i>n</i>.</li><li>Therefore, the least possible value of <i>n</i> is 289.</li></ul>"
+  },
+  {
+    "id": "u11-06",
+    "lessonCode": "U11",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>y</i> = (<i>x</i> − 2)(<i>x</i> + 4)<br><i>y</i> = 6<i>x</i> − 12</div><p>Which ordered pair (<i>x</i>, <i>y</i>) is the solution to the given system of equations?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "(0, 2)"
+      },
+      {
+        "label": "B",
+        "html": "(−4, 2)"
+      },
+      {
+        "label": "C",
+        "html": "(2, 0)"
+      },
+      {
+        "label": "D",
+        "html": "(2, −4)"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>.</p><ul><li>The second equation in the given system of equations is <i>y</i> = 6<i>x</i> − 12.</li><li>Substituting 6<i>x</i> − 12 for <i>y</i> in the first equation of the given system yields 6<i>x</i> − 12 = (<i>x</i> − 2)(<i>x</i> + 4).</li><li>Factoring 6 out of the left-hand side of this equation yields 6(<i>x</i> − 2) = (<i>x</i> − 2)(<i>x</i> + 4).</li><li>An expression with a factor of the form (<i>x</i> − <i>a</i>) is equal to zero when <i>x</i> = <i>a</i>.</li><li>Each side of this equation has a factor of (<i>x</i> − 2), so each side of the equation is equal to zero when <i>x</i> = 2.</li><li>Substituting 2 for <i>x</i> into the equation 6(<i>x</i> − 2) = (<i>x</i> − 2)(<i>x</i> + 4) yields 6(2 − 2) = (2 − 2)(2 + 4), or 0 = 0, which is true.</li><li>Substituting 2 for <i>x</i> into the second equation in the given system of equations yields <i>y</i> = 6(2) − 12, or <i>y</i> = 0.</li><li>Therefore, the solution to the system of equations is the ordered pair (2, 0).</li></ul><p><b>Choice A is incorrect</b> and may result from switching the order of the solutions for <i>x</i> and <i>y</i>.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u11-07",
+    "lessonCode": "U11",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>In the <i>xy</i>-plane, the graph of <i>y</i> = <i>x</i><sup>2</sup> − 9 intersects line <i>p</i> at (1, <i>a</i>) and (5, <i>b</i>), where <i>a</i> and <i>b</i> are constants. What is the slope of line <i>p</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "6"
+      },
+      {
+        "label": "B",
+        "html": "2"
+      },
+      {
+        "label": "C",
+        "html": "−2"
+      },
+      {
+        "label": "D",
+        "html": "−6"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>.</p><ul><li>It’s given that the graph of <i>y</i> = <i>x</i><sup>2</sup> − 9 and line <i>p</i> intersect at (1, <i>a</i>) and (5, <i>b</i>).</li><li>Therefore, the value of <i>y</i> when <i>x</i> = 1 is the value of <i>a</i>, and the value of <i>y</i> when <i>x</i> = 5 is the value of <i>b</i>.</li><li>Substituting 1 for <i>x</i> in the given equation yields <i>y</i> = (1)<sup>2</sup> − 9, or <i>y</i> = −8.</li><li>Similarly, substituting 5 for <i>x</i> in the given equation yields <i>y</i> = (5)<sup>2</sup> − 9, or <i>y</i> = 16.</li><li>Therefore, the intersection points are (1, −8) and (5, 16).</li><li>The slope of line <i>p</i> is the ratio of the change in <i>y</i> to the change in <i>x</i> between these two points: (16 − (−8))/(5 − 1) = 24/4, or 6.</li></ul><p><b>Choices B, C, and D are incorrect</b> and may result from conceptual or calculation errors in determining the values of <i>a</i>, <i>b</i>, or the slope of line <i>p</i>.</p>"
+  },
+  {
+    "id": "u11-08",
+    "lessonCode": "U11",
+    "type": "spr",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>y</i> = −1.5<br><i>y</i> = <i>x</i><sup>2</sup> + 8<i>x</i> + <i>a</i></div><p>In the given system of equations, <i>a</i> is a positive constant. The system has exactly one distinct real solution. What is the value of <i>a</i>?</p>",
+    "choices": [],
+    "correctAnswer": "29/2",
+    "acceptedAnswers": [
+      "29/2",
+      "14.5"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 29/2</b>.</p><ul><li>According to the first equation in the given system, the value of <i>y</i> is −1.5.</li><li>Substituting −1.5 for <i>y</i> in the second equation in the given system yields −1.5 = <i>x</i><sup>2</sup> + 8<i>x</i> + <i>a</i>.</li><li>Adding 1.5 to both sides of this equation yields 0 = <i>x</i><sup>2</sup> + 8<i>x</i> + <i>a</i> + 1.5.</li><li>If the given system has exactly one distinct real solution, it follows that 0 = <i>x</i><sup>2</sup> + 8<i>x</i> + <i>a</i> + 1.5 has exactly one distinct real solution.</li><li>A quadratic equation in the form 0 = <i>px</i><sup>2</sup> + <i>qx</i> + <i>r</i>, where <i>p</i>, <i>q</i>, and <i>r</i> are constants, has exactly one distinct real solution if and only if the discriminant, <i>q</i><sup>2</sup> − 4<i>pr</i>, is equal to 0.</li><li>The equation 0 = <i>x</i><sup>2</sup> + 8<i>x</i> + <i>a</i> + 1.5 is in this form, where <i>p</i> = 1, <i>q</i> = 8, and <i>r</i> = <i>a</i> + 1.5.</li><li>Therefore, the discriminant of the equation 0 = <i>x</i><sup>2</sup> + 8<i>x</i> + <i>a</i> + 1.5 is (8)<sup>2</sup> − 4(1)(<i>a</i> + 1.5), or 58 − 4<i>a</i>.</li><li>Setting the discriminant equal to 0 to solve for <i>a</i> yields 58 − 4<i>a</i> = 0.</li><li>Adding 4<i>a</i> to both sides of this equation yields 58 = 4<i>a</i>.</li><li>Dividing both sides of this equation by 4 yields 58/4 = <i>a</i>, or 29/2 = <i>a</i>.</li><li>Therefore, if the given system of equations has exactly one distinct real solution, the value of <i>a</i> is 29/2.</li><li>Note that 29/2 and 14.5 are examples of ways to enter a correct answer.</li></ul>"
+  },
+  {
+    "id": "u11-09",
+    "lessonCode": "U11",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>The function <i>f</i>(<i>x</i>) = (1/9)(<i>x</i> − 7)<sup>2</sup> + 3 gives a metal ball's height above the ground <i>f</i>(<i>x</i>), in inches, <i>x</i> seconds after it started moving on a track, where 0 ≤ <i>x</i> ≤ 10. Which of the following is the best interpretation of the vertex of the graph of <i>y</i> = <i>f</i>(<i>x</i>) in the <i>xy</i>-plane?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "The metal ball's minimum height was 3 inches above the ground."
+      },
+      {
+        "label": "B",
+        "html": "The metal ball's minimum height was 7 inches above the ground."
+      },
+      {
+        "label": "C",
+        "html": "The metal ball's height was 3 inches above the ground when it started moving."
+      },
+      {
+        "label": "D",
+        "html": "The metal ball's height was 7 inches above the ground when it started moving."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>.</p><ul><li>The graph of a quadratic equation in the form <i>y</i> = <i>a</i>(<i>x</i> − <i>h</i>)<sup>2</sup> + <i>k</i>, where <i>a</i>, <i>h</i>, and <i>k</i> are positive constants, is a parabola that opens upward with vertex (<i>h</i>, <i>k</i>).</li><li>The given function <i>f</i>(<i>x</i>) = (1/9)(<i>x</i> − 7)<sup>2</sup> + 3 is in the form <i>y</i> = <i>a</i>(<i>x</i> − <i>h</i>)<sup>2</sup> + <i>k</i>, where <i>y</i> = <i>f</i>(<i>x</i>), <i>a</i> = 1/9, <i>h</i> = 7, and <i>k</i> = 3.</li><li>Therefore, the graph of <i>y</i> = <i>f</i>(<i>x</i>) is a parabola that opens upward with vertex (7, 3).</li><li>Since the parabola opens upward, the vertex is the lowest point on the graph.</li><li>It follows that the <i>y</i>-coordinate of the vertex of the graph of <i>y</i> = <i>f</i>(<i>x</i>) is the minimum value of <i>f</i>(<i>x</i>).</li><li>Therefore, the minimum value of <i>f</i>(<i>x</i>) is 3.</li><li>It’s given that <i>f</i>(<i>x</i>) = (1/9)(<i>x</i> − 7)<sup>2</sup> + 3 represents the metal ball’s height above the ground, in inches, <i>x</i> seconds after it started moving on a track.</li><li>Therefore, the best interpretation of the vertex of the graph of <i>y</i> = <i>f</i>(<i>x</i>) is that the metal ball’s minimum height was 3 inches above the ground.</li></ul><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u11-10",
+    "lessonCode": "U11",
+    "type": "spr",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><div class=\"tablewrap\"><table><thead><tr><th><i>x</i></th><th><i>y</i></th></tr></thead><tbody><tr><th scope=\"row\">21</th><td>−8</td></tr><tr><th scope=\"row\">23</th><td>8</td></tr><tr><th scope=\"row\">25</th><td>−8</td></tr></tbody></table></div></div><p>The table shows three values of <i>x</i> and their corresponding values of <i>y</i>, where <i>y</i> = <i>f</i>(<i>x</i>) + 4 and <i>f</i> is a quadratic function. What is the <i>y</i>-coordinate of the <i>y</i>-intercept of the graph of <i>y</i> = <i>f</i>(<i>x</i>) in the <i>xy</i>-plane?</p>",
+    "choices": [],
+    "correctAnswer": "-2112",
+    "acceptedAnswers": [
+      "-2112",
+      "-2,112"
+    ],
+    "explanationHtml": "<p><b>The correct answer is −2,112</b>.</p><ul><li>It's given that <i>f</i> is a quadratic function.</li><li>It follows that <i>f</i> can be defined by an equation of the form <i>f</i>(<i>x</i>) = <i>a</i>(<i>x</i> − <i>h</i>)<sup>2</sup> + <i>k</i>, where <i>a</i>, <i>h</i>, and <i>k</i> are constants.</li><li>It's also given that the table shows three values of <i>x</i> and their corresponding values of <i>y</i>, where <i>y</i> = <i>f</i>(<i>x</i>) + 4.</li><li>Substituting <i>a</i>(<i>x</i> − <i>h</i>)<sup>2</sup> + <i>k</i> for <i>f</i>(<i>x</i>) in this equation yields <i>y</i> = <i>a</i>(<i>x</i> − <i>h</i>)<sup>2</sup> + <i>k</i> + 4.</li><li>This equation represents a quadratic relationship between <i>x</i> and <i>y</i>, where <i>k</i> + 4 is either the maximum or the minimum value of <i>y</i>, which occurs when <i>x</i> = <i>h</i>.</li><li>For quadratic relationships between <i>x</i> and <i>y</i>, the maximum or minimum value of <i>y</i> occurs at the value of <i>x</i> halfway between any two values of <i>x</i> that have the same corresponding value of <i>y</i>.</li><li>The table shows that <i>x</i>-values of 21 and 25 correspond to the same <i>y</i>-value, −8.</li><li>Since 23 is halfway between 21 and 25, the maximum or minimum value of <i>y</i> occurs at an <i>x</i>-value of 23.</li><li>The table shows that when <i>x</i> = 23, <i>y</i> = 8.</li><li>It follows that <i>h</i> = 23 and <i>k</i> + 4 = 8.</li><li>Subtracting 4 from both sides of the equation <i>k</i> + 4 = 8 yields <i>k</i> = 4.</li><li>Substituting 23 for <i>h</i> and 4 for <i>k</i> in the equation <i>y</i> = <i>a</i>(<i>x</i> − <i>h</i>)<sup>2</sup> + <i>k</i> + 4 yields <i>y</i> = <i>a</i>(<i>x</i> − 23)<sup>2</sup> + 4 + 4, or <i>y</i> = <i>a</i>(<i>x</i> − 23)<sup>2</sup> + 8.</li><li>The value of <i>a</i> can be found by substituting any <i>x</i>-value and its corresponding <i>y</i>-value for <i>x</i> and <i>y</i>, respectively, in this equation.</li><li>Substituting 25 for <i>x</i> and −8 for <i>y</i> in this equation yields −8 = <i>a</i>(25 − 23)<sup>2</sup> + 8, or −8 = <i>a</i>(2)<sup>2</sup> + 8.</li><li>Subtracting 8 from both sides of this equation yields −16 = <i>a</i>(2)<sup>2</sup>, or −16 = 4<i>a</i>.</li><li>Dividing both sides of this equation by 4 yields −4 = <i>a</i>.</li><li>Substituting −4 for <i>a</i>, 23 for <i>h</i>, and 4 for <i>k</i> in the equation <i>f</i>(<i>x</i>) = <i>a</i>(<i>x</i> − <i>h</i>)<sup>2</sup> + <i>k</i> yields <i>f</i>(<i>x</i>) = −4(<i>x</i> − 23)<sup>2</sup> + 4.</li><li>The <i>y</i>-intercept of the graph of <i>y</i> = <i>f</i>(<i>x</i>) in the <i>xy</i>-plane is the point on the graph where <i>x</i> = 0.</li><li>Substituting 0 for <i>x</i> in the equation <i>f</i>(<i>x</i>) = −4(<i>x</i> − 23)<sup>2</sup> + 4 yields <i>f</i>(0) = −4(0 − 23)<sup>2</sup> + 4, or <i>f</i>(0) = −4(−23)<sup>2</sup> + 4.</li><li>This is equivalent to <i>f</i>(0) = −2,112, so the <i>y</i>-intercept of the graph of <i>y</i> = <i>f</i>(<i>x</i>) in the <i>xy</i>-plane is (0, −2,112).</li><li>Thus, the <i>y</i>-coordinate of the <i>y</i>-intercept of the graph of <i>y</i> = <i>f</i>(<i>x</i>) in the <i>xy</i>-plane is −2,112.</li></ul>"
+  },
+  {
+    "id": "u11-11",
+    "lessonCode": "U11",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>A quadratic function models the height, in feet, of an object above the ground in terms of the time, in seconds, after the object is launched off an elevated surface. The model indicates the object has an initial height of 10 feet above the ground and reaches its maximum height of 1,034 feet above the ground 8 seconds after being launched. Based on the model, what is the height, in feet, of the object above the ground 10 seconds after being launched?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "234"
+      },
+      {
+        "label": "B",
+        "html": "778"
+      },
+      {
+        "label": "C",
+        "html": "970"
+      },
+      {
+        "label": "D",
+        "html": "1,014"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>.</p><ul><li>It's given that a quadratic function models the height, in feet, of an object above the ground in terms of the time, in seconds, after the object is launched off an elevated surface.</li><li>This quadratic function can be defined by an equation of the form <i>f</i>(<i>x</i>) = <i>a</i>(<i>x</i> − <i>h</i>)<sup>2</sup> + <i>k</i>, where <i>f</i>(<i>x</i>) is the height of the object <i>x</i> seconds after it was launched, and <i>a</i>, <i>h</i>, and <i>k</i> are constants such that the function reaches its maximum value, <i>k</i>, when <i>x</i> = <i>h</i>.</li><li>Since the model indicates the object reaches its maximum height of 1,034 feet above the ground 8 seconds after being launched, <i>f</i>(<i>x</i>) reaches its maximum value, 1,034, when <i>x</i> = 8.</li><li>Therefore, <i>k</i> = 1,034 and <i>h</i> = 8.</li><li>Substituting 8 for <i>h</i> and 1,034 for <i>k</i> in the function <i>f</i>(<i>x</i>) = <i>a</i>(<i>x</i> − <i>h</i>)<sup>2</sup> + <i>k</i> yields <i>f</i>(<i>x</i>) = <i>a</i>(<i>x</i> − 8)<sup>2</sup> + 1,034.</li><li>Since the model indicates the object has an initial height of 10 feet above the ground, the value of <i>f</i>(<i>x</i>) is 10 when <i>x</i> = 0.</li><li>Substituting 0 for <i>x</i> and 10 for <i>f</i>(<i>x</i>) in the equation <i>f</i>(<i>x</i>) = <i>a</i>(<i>x</i> − 8)<sup>2</sup> + 1,034 yields 10 = <i>a</i>(0 − 8)<sup>2</sup> + 1,034, or 10 = 64<i>a</i> + 1,034.</li><li>Subtracting 1,034 from both sides of this equation yields 64<i>a</i> = −1,024.</li><li>Dividing both sides of this equation by 64 yields <i>a</i> = −16.</li><li>Therefore, the model can be represented by the equation <i>f</i>(<i>x</i>) = −16(<i>x</i> − 8)<sup>2</sup> + 1,034.</li><li>Substituting 10 for <i>x</i> in this equation yields <i>f</i>(10) = −16(10 − 8)<sup>2</sup> + 1,034, or <i>f</i>(10) = 970.</li><li>Therefore, based on the model, 10 seconds after being launched, the height of the object above the ground is 970 feet.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u11-12",
+    "lessonCode": "U11",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>The height, in feet, of an object <i>x</i> seconds after it is thrown straight up in the air can be modeled by the function <i>h</i>(<i>x</i>) = −16<i>x</i><sup>2</sup> + 20<i>x</i> + 5. Based on the model, which of the following statements best interprets the equation <i>h</i>(1.4) = 1.64?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "The height of the object 1.4 seconds after being thrown straight up in the air is 1.64 feet."
+      },
+      {
+        "label": "B",
+        "html": "The height of the object 1.64 seconds after being thrown straight up in the air is 1.4 feet."
+      },
+      {
+        "label": "C",
+        "html": "The height of the object 1.64 seconds after being thrown straight up in the air is approximately 1.4 times as great as its initial height."
+      },
+      {
+        "label": "D",
+        "html": "The speed of the object 1.4 seconds after being thrown straight up in the air is approximately 1.64 feet per second."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>. The value 1.4 is the value of <i>x</i>, which represents the number of seconds after the object was thrown straight up in the air. When the function <i>h</i> is evaluated for <i>x</i> = 1.4, the function has a value of 1.64, which is the height, in feet, of the object.</p><p><b>Choices B and C are incorrect</b> and may result from misidentifying seconds as feet and feet as seconds. Additionally, choice C may result from incorrectly including the initial height of the object as the input <i>x</i>.</p><p><b>Choice D is incorrect</b> and may result from misidentifying height as speed.</p>"
+  },
+  {
+    "id": "u11-13",
+    "lessonCode": "U11",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>f</i>(<i>t</i>) = 55<i>t</i> − 2<i>t</i><sup>2</sup></div><p>The function <i>f</i> is defined by the given equation. The function <i>g</i> is defined by <i>g</i>(<i>t</i>) = <i>f</i>(<i>t</i>) + 3. Which expression represents the maximum value of <i>g</i>(<i>t</i>)?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "3 + (55/2)<sup>2</sup>"
+      },
+      {
+        "label": "B",
+        "html": "3 + 2(55/4)<sup>2</sup>"
+      },
+      {
+        "label": "C",
+        "html": "3 − 2(55/4)<sup>2</sup>"
+      },
+      {
+        "label": "D",
+        "html": "3 − (55/2)<sup>2</sup>"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>.</p><ul><li>It’s given that function <i>g</i> is defined by <i>g</i>(<i>t</i>) = <i>f</i>(<i>t</i>) + 3 and that <i>f</i>(<i>t</i>) = 55<i>t</i> − 2<i>t</i><sup>2</sup>.</li><li>Substituting 55<i>t</i> − 2<i>t</i><sup>2</sup> for <i>f</i>(<i>t</i>) in <i>g</i>(<i>t</i>) = <i>f</i>(<i>t</i>) + 3 yields <i>g</i>(<i>t</i>) = 55<i>t</i> − 2<i>t</i><sup>2</sup> + 3, or <i>g</i>(<i>t</i>) = −2<i>t</i><sup>2</sup> + 55<i>t</i> + 3.</li><li>The maximum value of <i>g</i>(<i>t</i>) can be found by completing the square to rewrite the equation defining <i>g</i> in the form <i>g</i>(<i>t</i>) = <i>a</i>(<i>t</i> − <i>h</i>)<sup>2</sup> + <i>k</i>, where the maximum value of the function is <i>k</i>, which occurs when <i>t</i> = <i>h</i>, and <i>a</i> is a negative constant.</li><li>The equation <i>g</i>(<i>t</i>) = −2<i>t</i><sup>2</sup> + 55<i>t</i> + 3 is equivalent to <i>g</i>(<i>t</i>) = −2(<i>t</i><sup>2</sup> − (55/2)<i>t</i>) + 3, which can be rewritten as <i>g</i>(<i>t</i>) = −2(<i>t</i><sup>2</sup> − (55/2)<i>t</i> + (55/4)<sup>2</sup>) + 3 + 2(55/4)<sup>2</sup>, or <i>g</i>(<i>t</i>) = −2(<i>t</i> − 55/4)<sup>2</sup> + 3 + 2(55/4)<sup>2</sup>.</li><li>This equation is in the form <i>g</i>(<i>t</i>) = <i>a</i>(<i>t</i> − <i>h</i>)<sup>2</sup> + <i>k</i>, where <i>a</i> = −2, <i>h</i> = 55/4, and <i>k</i> = 3 + 2(55/4)<sup>2</sup>.</li><li>Thus, the maximum value of <i>g</i>(<i>t</i>) is 3 + 2(55/4)<sup>2</sup>.</li></ul><p><b>Alternate approach</b>: Since the function <i>f</i> is a quadratic function, the maximum value of <i>f</i>(<i>t</i>) occurs at the value of <i>t</i> that’s halfway between the two zeros of the function.</p><ul><li>The zeros of function <i>f</i> can be found by substituting 0 for <i>f</i>(<i>t</i>) in the equation defining <i>f</i>, which yields 0 = 55<i>t</i> − 2<i>t</i><sup>2</sup>.</li><li>This equation can be rewritten as 0 = <i>t</i>(55 − 2<i>t</i>).</li><li>By the zero product property, it follows that <i>t</i> = 0 or 55 − 2<i>t</i> = 0.</li><li>Subtracting 55 from each side of the equation 55 − 2<i>t</i> = 0 yields −2<i>t</i> = −55.</li><li>Dividing each side of this equation by −2 yields <i>t</i> = 55/2.</li><li>Therefore, the zeros of function <i>f</i> are 0 and 55/2.</li><li>The value that’s halfway between 0 and 55/2 can be found by calculating the average of 0 and 55/2, which is (0 + 55/2)/2, or 55/4.</li><li>It follows that the maximum of function <i>f</i> occurs when <i>t</i> = 55/4.</li><li>Substituting 55/4 for <i>t</i> in the equation defining function <i>f</i> yields <i>f</i>(55/4) = 55(55/4) − 2(55/4)<sup>2</sup>, which is equivalent to <i>f</i>(55/4) = 55<sup>2</sup>/4 − 2(55<sup>2</sup>/4<sup>2</sup>).</li><li>Multiplying 55<sup>2</sup>/4 by 4/4 in this equation to get a common denominator yields <i>f</i>(55/4) = 4(55<sup>2</sup>/4<sup>2</sup>) − 2(55<sup>2</sup>/4<sup>2</sup>), or <i>f</i>(55/4) = 2(55<sup>2</sup>/4<sup>2</sup>), which is equivalent to <i>f</i>(55/4) = 2(55/4)<sup>2</sup>.</li><li>Thus, the maximum value of <i>f</i>(<i>t</i>) is 2(55/4)<sup>2</sup>.</li><li>Since the equation defining <i>g</i>(<i>t</i>) is <i>g</i>(<i>t</i>) = <i>f</i>(<i>t</i>) + 3, the maximum value of <i>g</i>(<i>t</i>) is 3 greater than the maximum value of <i>f</i>(<i>t</i>).</li><li>It follows that the maximum value of <i>g</i>(<i>t</i>) is 3 + 2(55/4)<sup>2</sup>.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u11-14",
+    "lessonCode": "U11",
+    "type": "spr",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>f</i>(<i>x</i>) = (<i>x</i> + 6)(<i>x</i> − 4)</div><p>If the given function <i>f</i> is graphed in the <i>xy</i>-plane, where <i>y</i> = <i>f</i>(<i>x</i>), what is the <i>x</i>-coordinate of an <i>x</i>-intercept of the graph?</p>",
+    "choices": [],
+    "correctAnswer": "-6",
+    "acceptedAnswers": [
+      "-6",
+      "4"
+    ],
+    "explanationHtml": "<p><b>The correct answer is either −6 or 4</b>.</p><ul><li>The <i>x</i>-intercepts of a graph in the <i>xy</i>-plane are the points where <i>y</i> = 0.</li><li>Thus, for an <i>x</i>-intercept of the graph of <i>y</i> = <i>f</i>(<i>x</i>), 0 = <i>f</i>(<i>x</i>).</li><li>Substituting 0 for <i>f</i>(<i>x</i>) in the equation <i>f</i>(<i>x</i>) = (<i>x</i> + 6)(<i>x</i> − 4) yields 0 = (<i>x</i> + 6)(<i>x</i> − 4).</li><li>By the zero product property, <i>x</i> + 6 = 0 and <i>x</i> − 4 = 0.</li><li>Subtracting 6 from both sides of the equation <i>x</i> + 6 = 0 yields <i>x</i> = −6.</li><li>Adding 4 to both sides of the equation <i>x</i> − 4 = 0 yields <i>x</i> = 4.</li><li>Therefore, the <i>x</i>-coordinates of the <i>x</i>-intercepts of the graph of <i>y</i> = <i>f</i>(<i>x</i>) are −6 and 4.</li><li>Note that -6 and 4 are examples of ways to enter a correct answer.</li></ul>"
+  },
+  {
+    "id": "u11-15",
+    "lessonCode": "U11",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>A physics class is planning an experiment about a toy rocket. The equation <i>y</i> = −16(<i>x</i> − 5.6)<sup>2</sup> + 502 gives the estimated height <i>y</i>, in feet, of the toy rocket <i>x</i> seconds after it is launched into the air. Which of the following is the best interpretation of the vertex of the graph of the equation in the <i>xy</i>-plane?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "This toy rocket reaches an estimated maximum height of 502 feet 16 seconds after it is launched into the air."
+      },
+      {
+        "label": "B",
+        "html": "This toy rocket reaches an estimated maximum height of 502 feet 5.6 seconds after it is launched into the air."
+      },
+      {
+        "label": "C",
+        "html": "This toy rocket reaches an estimated maximum height of 16 feet 502 seconds after it is launched into the air."
+      },
+      {
+        "label": "D",
+        "html": "This toy rocket reaches an estimated maximum height of 5.6 feet 502 seconds after it is launched into the air."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>.</p><ul><li>The vertex of the graph of a quadratic equation is where it reaches its minimum or maximum value.</li><li>When a quadratic equation is written in the form <i>y</i> = <i>a</i>(<i>x</i> − <i>h</i>)<sup>2</sup> + <i>k</i>, the vertex of the parabola represented by the equation is (<i>x</i>, <i>y</i>) = (<i>h</i>, <i>k</i>).</li><li>In the given equation <i>y</i> = −16(<i>x</i> − 5.6)<sup>2</sup> + 502, the value of <i>h</i> is 5.6 and the value of <i>k</i> is 502.</li><li>It follows that the vertex of the graph of this equation in the <i>xy</i>-plane is (<i>x</i>, <i>y</i>) = (5.6, 502).</li><li>Additionally, since <i>a</i> = −16 in the given equation, the graph of the quadratic equation opens down, and the vertex represents a maximum.</li><li>It’s given that the value of <i>y</i> represents the estimated height, in feet, of the toy rocket <i>x</i> seconds after it is launched into the air.</li><li>Therefore, this toy rocket reaches an estimated maximum height of 502 feet 5.6 seconds after it is launched into the air.</li></ul><p><b>Choice A is incorrect</b>. The 16 in the equation is an indicator of how narrow the graph of the equation is rather than where it reaches its maximum.</p><p><b>Choice C is incorrect</b>. The 16 in the equation is an indicator of how narrow the graph of the equation is rather than where it reaches its maximum.</p><p><b>Choice D is incorrect</b>. This is an interpretation of the vertex of the graph of the equation <i>y</i> = −16(<i>x</i> − 502)<sup>2</sup> + 5.6, not of the equation <i>y</i> = −16(<i>x</i> − 5.6)<sup>2</sup> + 502.</p>"
+  }
+]

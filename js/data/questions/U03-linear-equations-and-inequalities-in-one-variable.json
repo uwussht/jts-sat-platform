@@ -1,0 +1,380 @@
+[
+  {
+    "id": "u3-01",
+    "lessonCode": "U3",
+    "type": "spr",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>If 2<i>x</i> + 3 = 9, what is the value of 6<i>x</i> − 1?</p>",
+    "choices": [],
+    "correctAnswer": "17",
+    "acceptedAnswers": [
+      "17"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 17</b>. It’s given that 2<i>x</i> + 3 = 9. Multiplying each side of this equation by 3 yields 3(2<i>x</i> + 3) = 3(9), or 6<i>x</i> + 9 = 27. Subtracting 10 from each side of this equation yields 6<i>x</i> + 9 − 10 = 27 − 10, or 6<i>x</i> − 1 = 17. Therefore, the value of 6<i>x</i> − 1 is 17.</p>"
+  },
+  {
+    "id": "u3-02",
+    "lessonCode": "U3",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>If 4<i>x</i> − 28 = −24, what is the value of <i>x</i> − 7?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "−24"
+      },
+      {
+        "label": "B",
+        "html": "−22"
+      },
+      {
+        "label": "C",
+        "html": "−6"
+      },
+      {
+        "label": "D",
+        "html": "−1"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>. Dividing all terms in the given equation by 4 yields 4<i>x</i>/4 − 28/4 = −24/4, or <i>x</i> − 7 = −6. Therefore, the value of <i>x</i> − 7 is −6.</p><p><b>Choice A is incorrect</b>. This is the value of 4<i>x</i> − 28, not <i>x</i> − 7.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u3-03",
+    "lessonCode": "U3",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">7(2<i>x</i> − 3) = 63</div><p>Which equation has the same solution as the given equation?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "2<i>x</i> − 3 = 9"
+      },
+      {
+        "label": "B",
+        "html": "2<i>x</i> − 3 = 56"
+      },
+      {
+        "label": "C",
+        "html": "2<i>x</i> − 21 = 63"
+      },
+      {
+        "label": "D",
+        "html": "2<i>x</i> − 21 = 70"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>. Dividing each side of the given equation by 7 yields 7(2<i>x</i> − 3)/7 = 63/7, or 2<i>x</i> − 3 = 9. Therefore, the equation 2<i>x</i> − 3 = 9 is equivalent to the given equation and has the same solution.</p><p><b>Choice B is incorrect</b>. This equation is equivalent to 7(2<i>x</i> − 3) = 392, not 7(2<i>x</i> − 3) = 63.</p><p><b>Choice C is incorrect</b>. Distributing 7 on the left-hand side of the given equation yields 14<i>x</i> − 21 = 63, not 2<i>x</i> − 21 = 63.</p><p><b>Choice D is incorrect</b>. Distributing 7 on the left-hand side of the given equation yields 14<i>x</i> − 21 = 63, not 2<i>x</i> − 21 = 70.</p>"
+  },
+  {
+    "id": "u3-04",
+    "lessonCode": "U3",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>What value of <i>p</i> satisfies the equation 5<i>p</i> + 180 = 250?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "14"
+      },
+      {
+        "label": "B",
+        "html": "65"
+      },
+      {
+        "label": "C",
+        "html": "86"
+      },
+      {
+        "label": "D",
+        "html": "250"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>. Subtracting 180 from both sides of the given equation yields 5<i>p</i> = 70. Dividing both sides of this equation by 5 yields <i>p</i> = 14. Therefore, the value of <i>p</i> that satisfies the equation 5<i>p</i> + 180 = 250 is 14.</p><p><b>Choice B is incorrect</b>. This value of <i>p</i> satisfies the equation 5<i>p</i> + 180 = 505.</p><p><b>Choice C is incorrect</b>. This value of <i>p</i> satisfies the equation 5<i>p</i> + 180 = 610.</p><p><b>Choice D is incorrect</b>. This value of <i>p</i> satisfies the equation 5<i>p</i> + 180 = 1,430.</p>"
+  },
+  {
+    "id": "u3-05",
+    "lessonCode": "U3",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>If 3<i>x</i> − 8 = 7, what is the value of 3<i>x</i> + 8?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "−1"
+      },
+      {
+        "label": "B",
+        "html": "5"
+      },
+      {
+        "label": "C",
+        "html": "13"
+      },
+      {
+        "label": "D",
+        "html": "23"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>. It's given that 3<i>x</i> − 8 = 7. Adding 8 to both sides of this equation yields 3<i>x</i> = 15. Adding 8 to both sides of this equation yields 3<i>x</i> + 8 = 23. Therefore, the value of 3<i>x</i> + 8 is 23.</p><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b>. This is the value of <i>x</i>, not 3<i>x</i> + 8.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u3-06",
+    "lessonCode": "U3",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">A company that creates and sells tape dispensers calculates its monthly profit, in dollars, by subtracting its fixed monthly costs, in dollars, from its monthly sales revenue, in dollars. The equation 15,000 = 2.00<i>x</i> − 4,500 represents this situation for a month where <i>x</i> tape dispensers are created and sold.</div><p>Which statement is the best interpretation of 2.00<i>x</i> in this context?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "The monthly sales revenue, in dollars, from selling <i>x</i> tape dispensers"
+      },
+      {
+        "label": "B",
+        "html": "The monthly sales revenue, in dollars, from each tape dispenser sold"
+      },
+      {
+        "label": "C",
+        "html": "The monthly cost, in dollars, of creating each tape dispenser"
+      },
+      {
+        "label": "D",
+        "html": "The monthly cost, in dollars, of creating <i>x</i> tape dispensers"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>.</p><ul><li>It’s given that the equation 15,000 = 2.00<i>x</i> − 4,500 represents this situation for a month where <i>x</i> tape dispensers are created and sold.</li><li>It’s also given that the company calculates its monthly profit, in dollars, by subtracting its fixed monthly costs, in dollars, from its monthly sales revenue, in dollars.</li><li>It follows that 2.00<i>x</i> represents the monthly sales revenue, in dollars.</li><li>Therefore, the best interpretation of 2.00<i>x</i> in this context is the monthly sales revenue from selling <i>x</i> tape dispensers.</li></ul><p><b>Choice B is incorrect</b>. This is the best interpretation of 2.00, not 2.00<i>x</i>.</p><p><b>Choice C is incorrect</b> and may result from conceptual errors.</p><p><b>Choice D is incorrect</b>. This is the best interpretation of 4,500, not 2.00<i>x</i>.</p>"
+  },
+  {
+    "id": "u3-07",
+    "lessonCode": "U3",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">3(2<i>x</i> − 6) − 11 = 4(<i>x</i> − 3) + 6</div><p>If <i>x</i> is the solution to the equation above, what is the value of <i>x</i> − 3?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "23/2"
+      },
+      {
+        "label": "B",
+        "html": "17/2"
+      },
+      {
+        "label": "C",
+        "html": "15/2"
+      },
+      {
+        "label": "D",
+        "html": "−15/2"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>.</p><ul><li>Because 2 is a factor of both 2<i>x</i> and 6, the expression 2<i>x</i> − 6 can be rewritten as 2(<i>x</i> − 3).</li><li>Substituting 2(<i>x</i> − 3) for (2<i>x</i> − 6) on the left-hand side of the given equation yields 3(2)(<i>x</i> − 3) − 11 = 4(<i>x</i> − 3) + 6, or 6(<i>x</i> − 3) − 11 = 4(<i>x</i> − 3) + 6.</li><li>Subtracting 4(<i>x</i> − 3) from both sides of this equation yields 2(<i>x</i> − 3) − 11 = 6.</li><li>Adding 11 to both sides of this equation yields 2(<i>x</i> − 3) = 17.</li><li>Dividing both sides of this equation by 2 yields <i>x</i> − 3 = 17/2.</li></ul><p><b>Alternate approach</b>: Distributing 3 to the quantity (2<i>x</i> − 6) on the left-hand side of the given equation and distributing 4 to the quantity (<i>x</i> − 3) on the right-hand side yields 6<i>x</i> − 18 − 11 = 4<i>x</i> − 12 + 6, or 6<i>x</i> − 29 = 4<i>x</i> − 6.</p><ul><li>Subtracting 4<i>x</i> from both sides of this equation yields 2<i>x</i> − 29 = −6.</li><li>Adding 29 to both sides of this equation yields 2<i>x</i> = 23.</li><li>Dividing both sides of this equation by 2 yields <i>x</i> = 23/2.</li><li>Therefore, the value of <i>x</i> − 3 is 23/2 − 3, or 17/2.</li></ul><p><b>Choice A is incorrect</b>. This is the value of <i>x</i>, not <i>x</i> − 3.</p><p><b>Choices C and D are incorrect</b>. If the value of <i>x</i> − 3 is 15/2 or −15/2, it follows that the value of <i>x</i> is 21/2 or −9/2, respectively. However, solving the given equation for <i>x</i> yields <i>x</i> = 23/2. Therefore, the value of <i>x</i> − 3 can’t be 15/2 or −15/2.</p>"
+  },
+  {
+    "id": "u3-08",
+    "lessonCode": "U3",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">2<i>n</i> + 6 = 14<br><br>A tree had a height of 6 feet when it was planted. The equation above can be used to find how many years <i>n</i> it took the tree to reach a height of 14 feet.</div><p>Which of the following is the best interpretation of the number 2 in this context?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "The number of years it took the tree to double its height"
+      },
+      {
+        "label": "B",
+        "html": "The average number of feet that the tree grew per year"
+      },
+      {
+        "label": "C",
+        "html": "The height, in feet, of the tree when the tree was 1 year old"
+      },
+      {
+        "label": "D",
+        "html": "The average number of years it takes similar trees to grow 14 feet"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>.</p><ul><li>The height of the tree at a given time is equal to its height when it was planted plus the number of feet that the tree grew.</li><li>In the given equation, 14 represents the height of the tree at the given time, and 6 represents the height of the tree when it was planted.</li><li>It follows that 2<i>n</i> represents the number of feet the tree grew from the time it was planted until the time it reached a height of 14 feet.</li><li>Since <i>n</i> represents the number of years between the given time and the time the tree was planted, 2 must represent the average number of feet the tree grew each year.</li></ul><p><b>Choice A is incorrect</b> and may result from interpreting the coefficient 2 as doubling instead of as increasing by 2 each year.</p><p><b>Choice C is incorrect</b>. The height of the tree when it was 1 year old was 2(1) + 6 = 8 feet, not 2 feet.</p><p><b>Choice D is incorrect</b>. No information is given to connect the growth of one particular tree to the growth of similar trees.</p>"
+  },
+  {
+    "id": "u3-09",
+    "lessonCode": "U3",
+    "type": "spr",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">2<i>x</i> + 16 = <i>a</i>(<i>x</i> + 8)</div><p>In the given equation, <i>a</i> is a constant. If the equation has infinitely many solutions, what is the value of <i>a</i>?</p>",
+    "choices": [],
+    "correctAnswer": "2",
+    "acceptedAnswers": [
+      "2"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 2</b>.</p><ul><li>An equation with one variable, <i>x</i>, has infinitely many solutions only when both sides of the equation are equal for any defined value of <i>x</i>.</li><li>It's given that 2<i>x</i> + 16 = <i>a</i>(<i>x</i> + 8), where <i>a</i> is a constant.</li><li>This equation can be rewritten as 2(<i>x</i> + 8) = <i>a</i>(<i>x</i> + 8).</li><li>If this equation has infinitely many solutions, then both sides of this equation are equal for any defined value of <i>x</i>.</li><li>Both sides of this equation are equal for any defined value of <i>x</i> when 2 = <i>a</i>.</li><li>Therefore, if the equation has infinitely many solutions, the value of <i>a</i> is 2.</li></ul><p><b>Alternate approach</b>: If the given equation, 2<i>x</i> + 16 = <i>a</i>(<i>x</i> + 8), has infinitely many solutions, then both sides of this equation are equal for any value of <i>x</i>. If <i>x</i> = 0, then substituting 0 for <i>x</i> in 2<i>x</i> + 16 = <i>a</i>(<i>x</i> + 8) yields 2(0) + 16 = <i>a</i>(0 + 8), or 16 = 8<i>a</i>. Dividing both sides of this equation by 8 yields 2 = <i>a</i>.</p>"
+  },
+  {
+    "id": "u3-10",
+    "lessonCode": "U3",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>a</i>(3 − <i>x</i>) − <i>b</i> = −1 − 2<i>x</i></div><p>In the equation above, <i>a</i> and <i>b</i> are constants. If the equation has infinitely many solutions, what are the values of <i>a</i> and <i>b</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<i>a</i> = 2 and <i>b</i> = 1"
+      },
+      {
+        "label": "B",
+        "html": "<i>a</i> = 2 and <i>b</i> = 7"
+      },
+      {
+        "label": "C",
+        "html": "<i>a</i> = −2 and <i>b</i> = 5"
+      },
+      {
+        "label": "D",
+        "html": "<i>a</i> = −2 and <i>b</i> = −5"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>.</p><ul><li>Distributing the <i>a</i> on the left-hand side of the equation gives 3<i>a</i> − <i>b</i> − <i>a</i><i>x</i> = −1 − 2<i>x</i>.</li><li>Rearranging the terms in each side of the equation yields −<i>a</i><i>x</i> + 3<i>a</i> − <i>b</i> = −2<i>x</i> − 1.</li><li>Since the equation has infinitely many solutions, it follows that the coefficients of <i>x</i> and the free terms on both sides must be equal.</li><li>That is, −<i>a</i> = −2, or <i>a</i> = 2, and 3<i>a</i> − <i>b</i> = −1.</li><li>Substituting 2 for <i>a</i> in the equation 3<i>a</i> − <i>b</i> = −1 gives 3(2) − <i>b</i> = −1, so <i>b</i> = 7.</li></ul><p><b>Choice A is incorrect</b> and may be the result of a conceptual error when finding the value of <i>b</i>.</p><p><b>Choices C and D are incorrect</b> and may result from making a sign error when simplifying.</p>"
+  },
+  {
+    "id": "u3-11",
+    "lessonCode": "U3",
+    "type": "spr",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">(12<i>x</i> + 28)/4 − <i>s</i>/13 = <i>r</i>(<i>x</i> − 8)</div><p>In the given equation, <i>s</i> and <i>r</i> are constants, and <i>s</i> > 0. If the equation has infinitely many solutions, what is the value of <i>s</i>?</p>",
+    "choices": [],
+    "correctAnswer": "403",
+    "acceptedAnswers": [
+      "403"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 403</b>.</p><ul><li>For a linear equation in one variable to have infinitely many solutions, the coefficients of the variable must be equal on both sides of the equation and the constant terms must also be equal on both sides of the equation.</li><li>The given equation can be rewritten as 4(3<i>x</i> + 7)/4 − <i>s</i>/13 = <i>r</i>(<i>x</i> − 8), or 3<i>x</i> + 7 − <i>s</i>/13 = <i>r</i>(<i>x</i> − 8).</li><li>Applying the distributive property to the right-hand side of this equation yields 3<i>x</i> + 7 − <i>s</i>/13 = <i>rx</i> − 8<i>r</i>.</li><li>For this equation to have infinitely many solutions, the coefficients of <i>x</i> must be equal, so it follows that 3 = <i>r</i>.</li><li>Additionally, the constant terms must be equal, which means 7 − <i>s</i>/13 = −8<i>r</i>.</li><li>Substituting 3 for <i>r</i> in this equation yields 7 − <i>s</i>/13 = −8(3), or 7 − <i>s</i>/13 = −24.</li><li>Adding <i>s</i>/13 to both sides of this equation yields 7 = −24 + <i>s</i>/13.</li><li>Adding 24 to both sides of this equation yields 31 = <i>s</i>/13.</li><li>Multiplying both sides of this equation by 13 yields 403 = <i>s</i>.</li><li>Therefore, if the equation has infinitely many solutions, the value of <i>s</i> is 403.</li></ul>"
+  },
+  {
+    "id": "u3-12",
+    "lessonCode": "U3",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">Hector used a tool called an auger to remove corn from a storage bin at a constant rate. The bin contained 24,000 bushels of corn when Hector began to use the auger. After 5 hours of using the auger, 19,350 bushels of corn remained in the bin.</div><p>If the auger continues to remove corn at this rate, what is the total number of hours Hector will have been using the auger when 12,840 bushels of corn remain in the bin?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "3"
+      },
+      {
+        "label": "B",
+        "html": "7"
+      },
+      {
+        "label": "C",
+        "html": "8"
+      },
+      {
+        "label": "D",
+        "html": "12"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>.</p><ul><li>After using the auger for 5 hours, Hector had removed 24,000 − 19,350 = 4,650 bushels of corn from the storage bin.</li><li>During the 5-hour period, the auger removed corn from the bin at a constant rate of 4,650/5 = 930 bushels per hour.</li><li>Assuming the auger continues to remove corn at this rate, after <i>x</i> hours it will have removed 930<i>x</i> bushels of corn.</li><li>Because the bin contained 24,000 bushels of corn when Hector started using the auger, the equation 24,000 − 930<i>x</i> = 12,840 can be used to find the number of hours, <i>x</i>, Hector will have been using the auger when 12,840 bushels of corn remain in the bin.</li><li>Subtracting 12,840 from both sides of this equation and adding 930<i>x</i> to both sides of the equation yields 11,160 = 930<i>x</i>.</li><li>Dividing both sides of this equation by 930 yields <i>x</i> = 12.</li><li>Therefore, Hector will have been using the auger for 12 hours when 12,840 bushels of corn remain in the storage bin.</li></ul><p><b>Choice A is incorrect</b>. Three hours after Hector began using the auger, 24,000 − 3(930) = 21,210 bushels of corn remained, not 12,840.</p><p><b>Choice B is incorrect</b>. Seven hours after Hector began using the auger, 24,000 − 7(930) = 17,490 bushels of corn will remain, not 12,840.</p><p><b>Choice C is incorrect</b>. Eight hours after Hector began using the auger, 24,000 − 8(930) = 16,560 bushels of corn will remain, not 12,840.</p>"
+  },
+  {
+    "id": "u3-13",
+    "lessonCode": "U3",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">A manufacturing plant makes 10-inch, 9-inch, and 7-inch frying pans. During a certain day, the number of 10-inch frying pans that the manufacturing plant makes is 4 times the number <i>n</i> of 9-inch frying pans it makes, and the number of 7-inch frying pans it makes is 10. During this day, the manufacturing plant makes 100 frying pans total.</div><p>Which equation represents this situation?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "10(4<i>n</i>) + 9<i>n</i> + 7(10) = 100"
+      },
+      {
+        "label": "B",
+        "html": "10<i>n</i> + 9<i>n</i> + 7<i>n</i> = 100"
+      },
+      {
+        "label": "C",
+        "html": "4<i>n</i> + 10 = 100"
+      },
+      {
+        "label": "D",
+        "html": "5<i>n</i> + 10 = 100"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>.</p><ul><li>It's given that during a certain day, the number of 9-inch frying pans the manufacturing plant makes is <i>n</i> and the number of 7-inch frying pans it makes is 10.</li><li>It's also given that during this day the number of 10-inch frying pans that the manufacturing plant makes is 4 times the number of 9-inch frying pans, or 4<i>n</i>.</li><li>Therefore, the total number of 7-inch, 9-inch, and 10-inch frying pans the manufacturing plant makes is <i>n</i> + 10 + 4<i>n</i>, or 5<i>n</i> + 10.</li><li>It's given that during this day the manufacturing plant makes 100 frying pans total.</li><li>Thus, the equation 5<i>n</i> + 10 = 100 represents this situation.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u3-14",
+    "lessonCode": "U3",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>x</i>(<i>r</i> − 9) + 4 = 19<i>x</i> + 27</div><p>In the given equation, <i>r</i> is a positive integer. If the given equation has exactly one solution, what CANNOT be the value of <i>r</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "4"
+      },
+      {
+        "label": "B",
+        "html": "9"
+      },
+      {
+        "label": "C",
+        "html": "23"
+      },
+      {
+        "label": "D",
+        "html": "28"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>.</p><ul><li>In the given equation, <i>x</i>(<i>r</i> − 9) + 4 = 19<i>x</i> + 27, <i>r</i> is a positive integer.</li><li>Distributing on the left-hand side of this equation yields <i>rx</i> − 9<i>x</i> + 4 = 19<i>x</i> + 27.</li><li>Subtracting 4 from both sides of this equation yields <i>rx</i> − 9<i>x</i> = 19<i>x</i> + 23.</li><li>Subtracting 19<i>x</i> from both sides of this equation yields <i>rx</i> − 28<i>x</i> = 23, which can be written as (<i>r</i> − 28)<i>x</i> = 23.</li><li>For this equation to have exactly one solution, the coefficient of <i>x</i>, (<i>r</i> − 28), cannot be equal to 0.</li><li>Therefore, 28 CANNOT be the value of <i>r</i>.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u3-15",
+    "lessonCode": "U3",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">Alan drives an average of 100 miles each week. His car can travel an average of 25 miles per gallon of gasoline. Alan would like to reduce his weekly expenditure on gasoline by $5.</div><p>Assuming gasoline costs $4 per gallon, which equation can Alan use to determine how many fewer average miles, <i>m</i>, he should drive each week?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "(25/4)<i>m</i> = 95"
+      },
+      {
+        "label": "B",
+        "html": "(25/4)<i>m</i> = 5"
+      },
+      {
+        "label": "C",
+        "html": "(4/25)<i>m</i> = 95"
+      },
+      {
+        "label": "D",
+        "html": "(4/25)<i>m</i> = 5"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>. Since gasoline costs $4 per gallon, and since Alan’s car travels an average of 25 miles per gallon, the expression 4/25 gives the cost, in dollars per mile, to drive the car. Multiplying 4/25 by <i>m</i> gives the cost for Alan to drive <i>m</i> miles in his car. Alan wants to reduce his weekly spending by $5, so setting (4/25)<i>m</i> equal to 5 gives the number of miles, <i>m</i>, by which he must reduce his driving.</p><p><b>Choices A, B, and C are incorrect</b>. Choices A and B transpose the numerator and the denominator in the fraction. The fraction 25/4 would result in the unit miles per dollar, but the question requires a unit of dollars per mile. Choices A and C set the expression equal to 95 instead of 5, a mistake that may result from a misconception that Alan wants to reduce his driving by 5 miles each week; instead, the question says he wants to reduce his weekly expenditure by $5.</p>"
+  }
+]

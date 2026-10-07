@@ -1,0 +1,422 @@
+[
+  {
+    "id": "u8-01",
+    "lessonCode": "U8",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Ochre sea stars live in tidal pools along the shoreline of the Pacific Ocean. At night, they move to higher shore levels in search of prey. But scientists Corey Garza and Carlos Robles noticed that ochre sea stars stayed at lower levels at night after heavy rains. Garza and Robles hypothesized that a layer of fresh water formed by rainfall was a barrier to the sea stars. To test their hypothesis, the scientists did an experiment. They placed some sea stars in a climbable tank of seawater and other sea stars in a similar tank of seawater with a layer of fresh water on top. Then, the scientists watched the sea stars’ behavior at night.</div><p>Which finding from the experiment, if true, would most directly support Garza and Robles’s hypothesis?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "None of the sea stars climbed to the tops of the tanks, but sea stars in the tank with only seawater moved around the bottom of the tank more than sea stars in the other tank did."
+      },
+      {
+        "label": "B",
+        "html": "Sea stars in the tank with only seawater climbed to the top of the tank, but sea stars in the other tank stopped climbing just below the layer of fresh water."
+      },
+      {
+        "label": "C",
+        "html": "Both groups of sea stars climbed to the tops of the tanks, but sea stars in the tank with only seawater climbed more slowly than sea stars in the other tank did."
+      },
+      {
+        "label": "D",
+        "html": "Sea stars in the tank with only seawater mostly stayed near the bottom of the tank, but sea stars in the other tank climbed into the layer of fresh water."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b> because it presents a finding that, if true, would support Garza and Robles’s hypothesis that a layer of fresh water forms a barrier to ochre sea stars.</p><ul><li>The text explains that the sea stars tend to move to higher shore levels at night in search of prey, but after a heavy rain, the sea stars stay at lower shore levels.</li><li>Garza and Robles hypothesize that rainfall results in a layer of fresh water that the sea stars don’t cross.</li><li>To determine whether fresh water forms a barrier to sea stars, Garza and Robles observed how sea stars behaved in a tank of only seawater and in a tank of seawater with a layer of fresh water on top.</li><li>If the sea stars climbed to the top of the tank with only seawater but stopped climbing just below the layer of fresh water in the other tank, that would suggest that fresh water does indeed serve as a barrier to the sea stars, thereby supporting Garza and Robles’s hypothesis.</li></ul><p><b>Choice A is incorrect</b> because finding that sea stars in the tank with only seawater moved around the bottom of the tank more than sea stars in the other tank did but that none of the stars in either tank climbed to the top would be irrelevant to Garza and Robles’s hypothesis. Such a finding would reveal nothing about whether fresh water serves as a barrier to sea stars.</p><p><b>Choice C is incorrect</b> because finding that sea stars climbed to the top of both tanks would weaken, not support, Garza and Robles’s hypothesis, since it would indicate that the layer of fresh water wasn’t a barrier to the sea stars.</p><p><b>Choice D is incorrect</b> because finding that sea stars in the tank with only seawater mostly stayed near the bottom of the tank but sea stars in the other tank climbed into the layer of fresh water wouldn’t support Garza and Robles’s hypothesis. Instead, such a finding would suggest that the layer of fresh water wasn’t a barrier to the sea stars, thereby weakening Garza and Robles’s hypothesis.</p>"
+  },
+  {
+    "id": "u8-02",
+    "lessonCode": "U8",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Fish whose DNA has been modified to include genetic material from other species are known as transgenic. Some transgenic fish have genes from jellyfish that result in fluorescence (that is, they glow in the dark). Although these fish were initially engineered for research purposes in the 1990s, they were sold as pets in the 2000s and can now be found in the wild in creeks in Brazil. A student in a biology seminar who is writing a paper on these fish asserts that their escape from Brazilian fish farms into the wild may have significant negative long-term ecological effects.</div><p>Which quotation from a researcher would best support the student’s assertion?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "“In one site in the wild where transgenic fish were observed, females outnumbered males, while in another the numbers of females and males were equivalent.”"
+      },
+      {
+        "label": "B",
+        "html": "“Though some presence of transgenic fish in the wild has been recorded, there are insufficient studies of the impact of those fish on the ecosystems into which they are introduced.”"
+      },
+      {
+        "label": "C",
+        "html": "“The ecosystems into which transgenic fish are known to have been introduced may represent a subset of the ecosystems into which the fish have actually been introduced.”"
+      },
+      {
+        "label": "D",
+        "html": "“Through interbreeding, transgenic fish might introduce the trait of fluorescence into wild fish populations, making those populations more vulnerable to predators.”"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b> because this quotation would best support the student’s assertion that the escape of transgenic fish from Brazilian fish farms into the wild may have significant negative long-term ecological effects. The text explains that transgenic fish have DNA that includes genetic material from other species, that some transgenic fish have genes from jellyfish that make them glow in the dark, and that glow-in-the-dark transgenic fish can now be found in the wild in Brazilian creeks. The quotation indicates why the escape of these fish may have negative long-term ecological effects: glow-in-the-dark transgenic fish might introduce fluorescence into wild fish populations by breeding with wild fish, causing wild fish to glow in the dark and thereby allowing predators to prey on them much more easily.</p><p><b>Choice A is incorrect</b> because this quotation doesn’t mention any negative effects of the introduction of fluorescent transgenic fish into the wild. The quotation merely compares the ratio of females to males at two sites in the wild where transgenic fish have been observed.</p><p><b>Choice B is incorrect</b> because this quotation doesn’t support the idea that the escape of fluorescent transgenic fish from Brazilian fish farms may have significant negative long-term ecological effects. Rather, the quotation suggests that more research is needed to understand the effects.</p><p><b>Choice C is incorrect</b> because this quotation supports the idea that transgenic fish may be present in more ecosystems than has been observed; it doesn’t address whether the presence of fluorescent transgenic fish affects these ecosystems.</p>"
+  },
+  {
+    "id": "u8-03",
+    "lessonCode": "U8",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Male túngara frogs make complex calls to attract mates, but their calls also attract frog-biting midges, insects that feed on the frogs’ blood. Researchers Ximena Bernal and Priyanka de Silva wondered if the calls alone are sufficient for midges to locate the frogs or if midges use carbon dioxide emitted by frogs as an additional cue to their prey’s whereabouts, like mosquitoes do. In an experiment, the researchers placed two midge traps in a túngara frog breeding area. One trap played recordings of túngara frog calls and the other released carbon dioxide along with playing the calls. Bernal and de Silva concluded that carbon dioxide does not serve as an additional cue to frog-biting midges.</div><p>Which finding from the experiment, if true, would most directly support Bernal and de Silva’s conclusion?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Only a small number of midges were found in the traps, though the majority were found in the trap that played calls and released carbon dioxide."
+      },
+      {
+        "label": "B",
+        "html": "Midges entered the trap that released carbon dioxide and played calls only during or immediately after periods of carbon dioxide release."
+      },
+      {
+        "label": "C",
+        "html": "More midges were found in the trap that only played calls than in the trap that played calls and released carbon dioxide."
+      },
+      {
+        "label": "D",
+        "html": "The trap that released carbon dioxide and played calls attracted few midges when carbon dioxide concentrations were low but attracted many midges when carbon dioxide concentrations were high."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b> because it presents a finding that, if true, would most directly support the researchers’ conclusion that carbon dioxide does not serve as an additional cue to frog-biting midges regarding the location of male túngara frogs.</p><ul><li>The text begins by stating that the mating call of the male túngara frogs also attracts frog-biting midges, which prey on the frogs’ blood.</li><li>Researchers Bernal and de Silva were curious if the mating calls were sufficient signals for the midges to locate the frogs or if midges also used carbon dioxide emitted by the frogs to locate their prey.</li><li>The text then details the procedure the researchers used to investigate their question and summarizes their conclusion—that carbon dioxide does not serve as an additional cue to the midges.</li><li>Thus, if more midges were found in the researchers’ trap that only played calls than in the trap that played calls and released carbon dioxide, it follows that the frog calls seem sufficient without the carbon dioxide cue.</li><li>This finding supports the researchers’ conclusion that carbon dioxide does not serve as an additional cue to frog-biting midges.</li></ul><p><b>Choice A is incorrect</b> because finding that the majority of frog-biting midges were found in the traps that both played the mating call and released carbon dioxide would present evidence that directly refutes the researchers’ conclusion—that carbon dioxide does not serve as an additional cue to the frog-biting midges regarding the location of túngara frogs.</p><p><b>Choice B is incorrect</b> because if the midges entered the trap that played calls and released carbon dioxide only during or immediately after carbon dioxide was released, that would suggest that the midges used the carbon dioxide as a way to locate their prey, a finding that would contradict the researchers’ conclusion that carbon dioxide was not an additional cue to the midges.</p><p><b>Choice D is incorrect</b> because a trap attracting larger numbers of midges with high carbon dioxide concentrations than a trap with low carbon dioxide concentrations suggests that carbon dioxide might serve as an additional cue to the midges as to the location on the frogs, a finding contrary to the researchers’ conclusion.</p>"
+  },
+  {
+    "id": "u8-04",
+    "lessonCode": "U8",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">“Loon Point” is a 1912 poem by Amy Lowell. In the poem, which presents a nighttime scene on a body of water, Lowell describes an element of nature as an active participant in the experience, writing, ______</div><p>Which quotation from “Loon Point” most effectively illustrates the claim?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "“Through the water the moon writes her legends / In light, on the smooth, wet sand.”"
+      },
+      {
+        "label": "B",
+        "html": "“Softly the water ripples / Against the canoe’s curving side.”"
+      },
+      {
+        "label": "C",
+        "html": "“Or like the snow-white petals / Which drop from an overblown rose.”"
+      },
+      {
+        "label": "D",
+        "html": "“But the moon in her wayward beauty / Is ever and always the same.”"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b> because it most effectively illustrates the claim that Lowell describes an element of nature as an active participant in the experience of a nighttime scene on a body of water. The quotation presents the image of the moon shining on a body of water. However, instead of describing the moon in passive terms or simply stating that it reflects through the water and onto the sandy shore, the quotation portrays the moon as being engaged in the humanlike action of writing a legend. In other words, the moon is participating actively in the nighttime scene.</p><p><b>Choice B is incorrect</b>. Although the quotation describes a nighttime scene on a body of water, the element of nature in these lines—the waves—isn’t portrayed as an active participant in an experience; instead, the waves merely ripple softly against a canoe, as waves would normally do.</p><p><b>Choice C is incorrect</b> because the quotation doesn’t present a nighttime scene on a body of water; instead, it describes petals falling from a rose.</p><p><b>Choice D is incorrect</b>. Although the quotation presents an image of an element of nature—the moon—it doesn’t mention a body of water; moreover, it portrays the moon not as an active participant in a scene but instead as static or unchanging (“ever and always the same”).</p>"
+  },
+  {
+    "id": "u8-05",
+    "lessonCode": "U8",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">East Australian humpback whales migrate up to 10,000 kilometers each year to reach their breeding grounds. Researchers long believed that migrating whales live only on the extra energy they stored up during the feeding season. But marine biologist Vanessa Pirotta and her team aren’t so sure. They analyzed 20 years of observations of the migrating whales made by citizen scientists (members of the public who help collect data for scientific research). The team claims that the whales may not live only on their stored energy during migration.</div><p>Which finding, if true, would most directly support the team’s claim?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Citizen scientists have observed many different types of marine animals feeding alongside the whales."
+      },
+      {
+        "label": "B",
+        "html": "Citizen scientists have made many observations of the whales feeding as they migrate to their breeding grounds."
+      },
+      {
+        "label": "C",
+        "html": "Citizen scientists have made more observations of the whales migrating to their breeding grounds than of the whales returning to their feeding grounds."
+      },
+      {
+        "label": "D",
+        "html": "Citizen scientists have recently begun to observe the whales migrating to their breeding grounds earlier in the year."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b> because it presents a finding that, if true, would most directly support Pirotta and her team’s claim that East Australian humpback whales may not live only on stored energy during migration. The text explains that it has long been thought that East Australian humpback whales store extra energy during the feeding season and then use that energy to survive while traveling to their breeding grounds. If it were true that citizen scientists have often seen the whales feeding as they migrate to the breeding grounds, that would indicate that the whales sometimes feed and take in additional energy during the journey, meaning that they may not rely only on energy they stored before migrating.</p>"
+  },
+  {
+    "id": "u8-06",
+    "lessonCode": "U8",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><i>The Post Office</i> is a 1912 play by Rabindranath Tagore, originally written in Bengali. The character Amal is a young boy who imagines that the people he sees passing the window of his home are carefree even when engaged in work or chores, as is evident when he says to the daughter of a flower seller, ______</div><p>Which quotation from <i>The Post Office</i> most effectively illustrates the claim?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "“I see, you don’t wish to stop; I don’t care to stay on here either.”"
+      },
+      {
+        "label": "B",
+        "html": "“Oh, flower gathering? That is why your feet seem so glad and your anklets jingle so merrily as you walk.”"
+      },
+      {
+        "label": "C",
+        "html": "“I’ll pay when I grow up—before I leave to look for work out on the other side of that stream there.”"
+      },
+      {
+        "label": "D",
+        "html": "“Wish I could be out too. Then I would pick some flowers for you from the very topmost branches right out of sight.”"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b> because it most effectively illustrates the claim that Amal imagines the people he sees are carefree even when engaged in work. In the quotation, Amal observes that the flower seller’s daughter is “flower gathering,” or working, as the text indicates. Moreover, Amal notes that the daughter’s feet “seem so glad” and her “anklets jingle so merrily,” suggesting that Amal believes that the flower seller’s daughter is cheerful.</p><p><b>Choice A is incorrect</b> because the quotation makes no observation about the cheerful mood of the flower seller’s daughter.</p><p><b>Choice C is incorrect</b> because the quotation discusses how Amal envisions his future, not the feelings of the flower seller’s daughter.</p><p><b>Choice D is incorrect</b> because the quotation discusses Amal’s wishes, not the feelings of the flower seller’s daughter.</p>"
+  },
+  {
+    "id": "u8-07",
+    "lessonCode": "U8",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Jan Gimsa, Robert Sleigh, and Ulrike Gimsa have hypothesized that the sail-like structure running down the back of the dinosaur <i>Spinosaurus aegyptiacus</i> improved the animal’s success in underwater pursuits of prey species capable of making quick, evasive movements. To evaluate their hypothesis, a second team of researchers constructed two battery-powered mechanical models of <i>S. aegyptiacus</i>, one with a sail and one without, and subjected the models to a series of identical tests in a water-filled tank.</div><p>Which finding from the model tests, if true, would most strongly support Gimsa and colleagues’ hypothesis?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "The model with a sail took significantly less time to complete a sharp turn while submerged than the model without a sail did."
+      },
+      {
+        "label": "B",
+        "html": "The model with a sail displaced significantly more water while submerged than the model without a sail did."
+      },
+      {
+        "label": "C",
+        "html": "The model with a sail had significantly less battery power remaining after completing the tests than the model without a sail did."
+      },
+      {
+        "label": "D",
+        "html": "The model with a sail took significantly longer to travel a specified distance while submerged than the model without a sail did."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. This finding would most strongly support the hypothesis. The hypothesis is that the sail improved the dinosaur’s ability to chase quick, evasive prey. This finding suggests that the sail helped the dinosaur make sharp turns more quickly, which supports that hypothesis.</p><p><b>Choice B is incorrect</b>. This finding wouldn’t necessarily support the hypothesis. The hypothesis is that the sail improved the dinosaur’s ability to chase quick, evasive prey. It’s unclear how the sail displacing more water would relate to that hypothesis—it doesn’t seem to be relevant.</p><p><b>Choice C is incorrect</b>. This finding wouldn’t necessarily support the hypothesis. The hypothesis is that the sail improved the dinosaur’s ability to chase quick, evasive prey. It’s unclear how the difference in battery power between the models would relate to that hypothesis—it doesn’t seem to be relevant.</p><p><b>Choice D is incorrect</b>. This finding would actually weaken the hypothesis. The hypothesis is that the sail improved the dinosaur’s ability to chase quick, evasive prey. This finding suggests that the sail slowed the dinosaur down—which would probably make it worse at catching quick, evasive prey.</p>"
+  },
+  {
+    "id": "u8-08",
+    "lessonCode": "U8",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">“To You” is an 1856 poem by Walt Whitman. In the poem, Whitman suggests that he deeply understands the reader, whom he addresses directly, writing, ______</div><p>Which quotation from “To You” most effectively illustrates the claim?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "“Your true soul and body appear before me.”"
+      },
+      {
+        "label": "B",
+        "html": "“Whoever you are, now I place my hand upon you, that you be my poem.”"
+      },
+      {
+        "label": "C",
+        "html": "“I should have made my way straight to you long ago.”"
+      },
+      {
+        "label": "D",
+        "html": "“Whoever you are, I fear you are walking the walks of dreams.”"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b> because it most directly illustrates the text’s claim about Whitman’s poem, “To You.” The text says that in this poem, Whitman suggests that he deeply understands the poem’s reader. This quotation says that the reader’s “true soul and body appear before” Whitman, thereby asserting that he can see the reader as the reader truly is, suggesting that he deeply understands the reader.</p><p><b>Choice B is incorrect</b> because this quotation describes Whitman making the reader the subject of the poem (“you be my poem”), not Whitman deeply understanding the reader.</p><p><b>Choice C is incorrect</b> because instead of suggesting that Whitman deeply understands the reader, it emphasizes Whitman’s regret at not having addressed the reader sooner.</p><p><b>Choice D is incorrect</b>. Although this quotation shows Whitman directly addressing the reader and expressing concern about the reader, it doesn’t illustrate the idea that Whitman suggests that he deeply understands the reader. The quotation is simply expressing concern about the reader, which doesn’t necessarily imply deep understanding of the reader.</p>"
+  },
+  {
+    "id": "u8-09",
+    "lessonCode": "U8",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">The interiors of many temples in the ancient Middle East needed to satisfy a precise set of acoustic demands: the sounds of chants and hymns should travel with clarity, while profound silences should be fully felt and appreciated. In a research paper, a student claims that the users of one such temple were aware of how the materials that were used within the structure could affect sound quality and that they deliberately applied this knowledge to influence how sound was experienced in the space.</div><p>Which quotation from a work by a historian would most directly support the student’s claim?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "“Many researchers believe that the central chamber of the temple had a high ceiling, a feature that has since become essential to the acoustic design of modern concert halls.”"
+      },
+      {
+        "label": "B",
+        "html": "“The innermost room of the temple was likely among the quietest spaces in the interior of the temple.”"
+      },
+      {
+        "label": "C",
+        "html": "“The acoustic environment of the temple was best suited for music that eschewed ornamentation in favor of simple melodies, harmonies, and rhythms.”"
+      },
+      {
+        "label": "D",
+        "html": "“During special occasions, curtains were placed inside the temple to minimize reverberation and confine the sound to designated locations.”"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b> because it provides a quotation that would most directly support the student’s claim that the temple’s users were aware of how materials used in the temple affected sound and deliberately applied that knowledge to shape the sonic experience of people in the space. The quotation indicates that curtains would, at times, be installed specifically “to minimize reverberation and confine the sound,” thereby illustrating that the users of the temple had knowledge of the acoustic properties of materials within the temple (how curtains dampen sound) and employed this knowledge to affect the experience of sound within the space.</p><p><b>Choice A is incorrect</b>. Although the quotation describes a feature of the temple’s structure (the high ceiling), it makes no mention of the materials used, the materials’ acoustic properties, or temple users’ awareness of how materials impact sound quality.</p><p><b>Choice B is incorrect</b> because it doesn’t address any materials that were used in the temple, let alone their acoustic properties or temple users’ awareness of how materials impact sound quality.</p><p><b>Choice C is incorrect</b> because it doesn’t address any materials that were used in the temple, let alone their acoustic properties or temple users’ awareness of how materials impact sound quality.</p>"
+  },
+  {
+    "id": "u8-10",
+    "lessonCode": "U8",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">As media consumption has become increasingly multiplatform and socially mediated, active news acquisition has diminished in favor of an attitude known as “news finds me” (NFM), in which people passively rely on their social networks and ambient media environments for information about current events. Homero Gil de Zúñiga and Trevor Diehl examined data on a representative group of adults in the United States to determine participants’ strength of NFM attitude, political knowledge, and political interest. Although no major election took place sufficiently near the study for Gil de Zúñiga and Diehl to identify causality between NFM and voting behavior, they did posit that NFM may reduce voting probability through an indirect effect.</div><p>Which finding, if true, would most directly support the idea advanced by Gil de Zúñiga and Diehl?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "NFM attitude tends to increase in strength as major elections approach, and people are significantly more likely to vote in major elections than in minor elections."
+      },
+      {
+        "label": "B",
+        "html": "NFM attitude has a strong negative effect on political knowledge and interest, and there is known to be a strong positive correlation between political knowledge and interest and the likelihood of voting."
+      },
+      {
+        "label": "C",
+        "html": "Political interest is known to have a strong positive effect on likelihood of voting but shows only a weak positive effect on political knowledge, and NFM attitude shows little correlation with either political knowledge or political interest."
+      },
+      {
+        "label": "D",
+        "html": "The likelihood of voting increases as political knowledge increases, and the relationship between NFM attitude and political knowledge tends to strengthen as the size of people’s social networks increases."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b> because it presents a finding that, if true, would most directly support the idea advanced by Homero Gil de Zúñiga and Trevor Diehl that NFM (\"news finds me\") attitude may reduce voting probability through an indirect effect.</p><ul><li>The text describes NFM as an attitude that has lowered people’s interest in actively acquiring news and introduces Gil de Zúñiga and Diehl’s study on the effects of NFM on people in the United States’ political knowledge and interest.</li><li>The text goes on to say that despite the fact that the study didn’t occur near a major election, Gil de Zúñiga and Diehl still conclude that NFM may reduce voting probability.</li><li>If the likelihood, or probability, that a person will vote is linked to that person’s level of political knowledge and interest, that would suggest that negatively affecting a person’s level of political knowledge and interest would also negatively affect how likely that person is to vote.</li><li>Thus, if NFM attitude has a negative effect on political knowledge and interest, then it would also likely reduce voting probability.</li></ul><p><b>Choice A is incorrect</b> because the finding that NFM attitude increases as major elections approach wouldn’t address the effect of NFM on the likelihood of voting, which is the idea advanced by Gil de Zúñiga and Diehl. Moreover, although the text mentions that there were no major elections that occurred near the time of the study, it doesn’t discern between major and minor elections when discussing voting probability.</p><p><b>Choice C is incorrect</b> because finding that NFM attitude shows little correlation with either political knowledge or political interest would undermine, not support, Gil de Zúñiga and Diehl’s idea that NFM may reduce voting probability because it suggests that NFM has no effect on political knowledge or political interest.</p><p><b>Choice D is incorrect</b>. Although Gil de Zúñiga and Diehl’s idea would be supported by the finding that the likelihood of voting increases as political knowledge increases, nothing in the text suggests that the researchers’ idea hinges on the size of people’s social networks.</p>"
+  },
+  {
+    "id": "u8-11",
+    "lessonCode": "U8",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Although it’s clear that Mars once had liquid water on its surface, astronomers have debated whether the evidence of ancient water reflects a prolonged phase of warm, wet conditions—the so-called wet and warm scenario—or a brief period of melting in an otherwise consistently frozen environment. Researchers Benjamin T. Cardenas and Michael P. Lamb recently added to this debate by using data from NASA and the Mars Orbiter Laser Altimeter to map the topography of what is now a large basin in Mars’s northern hemisphere. Cardenas and Lamb concluded that the wet and warm scenario is likely correct.</div><p>Which finding about the basin, if true, would most directly support Cardenas and Lamb’s conclusion?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Its dimensions and shape indicate that it is unlikely to have formed as the result of an asteroid or comet impact."
+      },
+      {
+        "label": "B",
+        "html": "It has features suggesting that it once held an ocean that underwent gradual sea-level changes over an extended time."
+      },
+      {
+        "label": "C",
+        "html": "Its physical characteristics are most consistent with it having formed as a result of a massive but short-lived influx of liquid water."
+      },
+      {
+        "label": "D",
+        "html": "It is surrounded by channels that could have been formed either by running water or by flowing lava."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. This choice provides direct support for the researchers’ conclusion. If the basin once held an ocean of liquid water for \"an extended time,\" that supports the \"wet and warm scenario\" on Mars, which involved a \"prolonged\" period of temperate conditions (and not just a \"brief period of melting\").</p><p><b>Choice A is incorrect</b>. This choice doesn’t provide support for the researchers’ conclusions. The dimensions of the basin have little bearing on whether or not it was filled with liquid water, and for how long, and that’s the evidence that would support the \"wet and warm\" theory. Similarly, whether or not the basin was formed by an asteroid or a comet is irrelevant to the question of whether or not there was water in the basin for a long period.</p><p><b>Choice C is incorrect</b>. This choice does not provide support for the researchers’ conclusions, but rather the opposite. A \"massive but short lived influx\" of liquid water is not the same as a \"prolonged phase of warm, wet conditions.\" It more reflects the opposing theory, a \"brief period of melting.\"</p><p><b>Choice D is incorrect</b>. This choice does not support Cardenas and Lamb’s conclusion. Both theories about liquid water on Mars (\"wet and warm\" and \"brief period of melting\") involve flowing water, but lava isn’t mentioned at all in the text. Therefore, this choice doesn’t provide exclusive support for either theory.</p>"
+  },
+  {
+    "id": "u8-12",
+    "lessonCode": "U8",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Declining fishing technology costs and overexploitation of near-shore fishing grounds have made isolated oceanic reefs, which often lack regulatory protections, increasingly attractive to commercial and sport fishers. A team led by Octavio Aburto-Oropeza surveyed the biomass density and species composition of two isolated reefs: Alacranes, a protected (fishing prohibited) reef 135 kilometers from the Yucatan Peninsula, and Bajos del Norte, an unprotected reef 25 kilometers farther out to sea. Species at the highest level of the trophic pyramid constituted 34% of the biomass at Alacranes and 10% of the biomass at Bajos del Norte. Aburto-Oropeza and colleagues attribute this difference to the two reefs’ difference in regulatory status.</div><p>Which finding, if true, would most directly support Aburto-Oropeza and colleagues’ explanation?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Total biomass at Alacranes is much greater than total biomass at Bajos del Norte, though the reefs’ biomass densities are similar."
+      },
+      {
+        "label": "B",
+        "html": "Some of the species that compose the highest trophic level at Bajos del Norte are not found at Alacranes."
+      },
+      {
+        "label": "C",
+        "html": "It is somewhat more expensive for commercial and sport fishers to reach Bajos del Norte than it is to reach Alacranes."
+      },
+      {
+        "label": "D",
+        "html": "Commercial and sport fishers tend to disproportionately remove species at the highest trophic level."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b> because it provides the finding that, if true, would most directly support Aburto-Oropeza and colleagues’ explanation that species composition differs between Alacranes and Bajos del Norte because of a difference in the regulation of fishing at the two reefs. The text explains that isolated oceanic reefs are often unprotected and are increasingly attracting commercial and sport fishing activity. According to the text, when Aburto-Oropeza and colleagues surveyed Alacranes, an isolated reef where fishing is prohibited, and Bajos del Norte, an isolated reef that is unprotected, they found that species at the highest trophic level (that is, top predators) make up a smaller proportion of the total mass of all living organisms at Bajos del Norte (10%) than they do at Alacranes (34%). If it were true that commercial and sport fishers tend to disproportionately remove top predators—that is, that they catch them at a higher rate than they catch other species—this would support the explanation that the allowance of fishing at Bajos del Norte and the prohibition of fishing at Alacranes has led to a lower proportion of top predator species remaining in the total biomass at Bajos del Norte.</p><p><b>Choice A is incorrect</b>. To support the researchers’ claim that the role of fishing regulations accounts for Alacranes having a greater proportion of species at the highest trophic level (top predators) than Bajos del Norte does, a finding would need to help explain how fishing affects the presence of top predator species in particular; the finding that the two reefs have similar biomass densities (that is, about the same mass of living organisms per unit) and that Alacranes has a much greater total biomass (total mass of living organisms) wouldn’t reveal anything about the species composition at each reef or help explain why the proportion of top predators in the total biomass at each reef differs. This finding might simply suggest that Alacranes is a larger reef, with more units at that density.</p><p><b>Choice B is incorrect</b> because the finding that there are species at the highest trophic level (top predators) at Bajos del Norte that aren’t found at Alacranes would reveal only that there are some different species in the reefs’ total biomasses (total mass of living organisms) but wouldn’t explain why that’s the case; this finding wouldn’t be clearly connected to the role of fishing regulations, which is what, according to the researchers, accounts for the reefs having different proportions of top predators in their total masses.</p><p><b>Choice C is incorrect</b>. To support the researchers’ claim that the role of fishing regulations accounts for Alacranes having a greater proportion of species at the highest trophic level (top predators) than Bajos del Norte does, a finding would need to help explain how fishing affects the presence of top predator species in particular, but different costs of reaching the two reefs wouldn’t affect fishing behavior at all because fishing isn’t even allowed on one of the reefs.</p>"
+  },
+  {
+    "id": "u8-13",
+    "lessonCode": "U8",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Although many transposons, DNA sequences that move within an organism’s genome through shuffling or duplication, have become corrupted and inactive over time, those from the long interspersed nuclear elements (LINE) family appear to remain active in the genomes of some species. In humans, they are functionally important within the hippocampus, a brain structure that supports complex cognitive processes. When the results of molecular analysis of two species of octopus—an animal known for its intelligence—were announced in 2022, the confirmation of a LINE transposon in <i>Octopus vulgaris</i> and <i>Octopus bimaculoides</i> genomes prompted researchers to hypothesize that that transposon family is tied to a species’ capacity for advanced cognition.</div><p>Which finding, if true, would most directly support the researchers’ hypothesis?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "The LINE transposon in <i>O. vulgaris</i> and <i>O. bimaculoides</i> genomes is active in an octopus brain structure that functions similarly to the human hippocampus."
+      },
+      {
+        "label": "B",
+        "html": "The human genome contains multiple transposons from the LINE family that are all primarily active in the hippocampus."
+      },
+      {
+        "label": "C",
+        "html": "A consistent number of copies of LINE transposons is present across the genomes of most octopus species, with few known corruptions."
+      },
+      {
+        "label": "D",
+        "html": "<i>O. vulgaris</i> and <i>O. bimaculoides</i> have smaller brains than humans do relative to body size, but their genomes contain sequences from a wider variety of transposon families."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. The text says that LINE transposons are important in the human hippocampus, which supports complex cognition. If the LINE transposon found in octopuses is active in a similar part of their brain, that would suggest that LINE transposons support complex cognition in octopuses too, which in turn supports the hypothesis that LINE transposons are linked to advanced cognition in general.</p><p><b>Choice B is incorrect</b>. This choice doesn’t support the hypothesis. It doesn’t include anything about how LINE transposons function in species other than humans.</p><p><b>Choice C is incorrect</b>. This choice doesn’t support the hypothesis. It doesn’t include anything about how the LINE transposon in octopuses might support advanced cognition.</p><p><b>Choice D is incorrect</b>. This choice doesn’t support the hypothesis. It doesn’t include anything about how the LINE transposon in octopuses might support advanced cognition.</p>"
+  },
+  {
+    "id": "u8-14",
+    "lessonCode": "U8",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Jean-Bernard Caron and colleagues recently discovered a cache of jellyfish fossils in the Burgess Shale, a site in the Canadian Rockies that is rich in fossils from the Cambrian period (over 500 million years ago). Caron and colleagues claim that these are the oldest jellyfish fossils ever discovered. In the past twenty years, two sites in China and the United States have yielded fossils of a similar age that some experts believe are most likely jellyfish due to their shapes and the appearance of projecting tentacles. But Caron and colleagues argue that the apparent tentacles are in fact the comb rows of ctenophores, gelatinous animals that are only distantly related to jellyfish.</div><p>Which statement, if true, would most directly weaken the claim by Caron and colleagues about the fossils found in China and the United States?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Sites in the Canadian Rockies from later periods than the Cambrian period have yielded fossils that have been conclusively identified as ctenophore fossils."
+      },
+      {
+        "label": "B",
+        "html": "The fossils found in China and the United States are so poorly preserved that though they cannot be conclusively identified as jellyfish, they cannot be conclusively identified as ctenophores either."
+      },
+      {
+        "label": "C",
+        "html": "While ctenophore fossils have been discovered in China and the United States, they have never been discovered in the Burgess Shale."
+      },
+      {
+        "label": "D",
+        "html": "The fossils discovered by Caron and colleagues in the Burgess Shale were better preserved than the fossils discovered by other researchers in China and the United States."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b> because it presents a statement that, if true, would most directly weaken Caron and colleagues’ claim that the apparent tentacles in the Chinese and American fossils are actually ctenophore comb rows. If the fossils are so poorly preserved that they cannot be conclusively identified as either organism, neither the claim that they are jellyfish nor, as Caron claims, that they are ctenophores would be supported.</p><p><b>Choice A is incorrect</b>. Caron’s claim is that fossils from the US and China are ctenophores, not jellyfish. These fossils are said to be \"of a similar age\" to the Cambrian fossils found in the Canadian Rockies. And nothing in the text or this choice suggests that the presence or absence of ctenophores after the Cambrian would have any bearing on whether the Cambrian fossils from the US and China are ctenophores.</p><p><b>Choice C is incorrect</b>. Caron’s claim is that fossils from the US and China are ctenophores, not jellyfish. Nothing in the text suggests that the presence or absence of ctenophores in the Burgess Shale (in Canada) would affect whether the fossils found in the US and China are ctenophores.</p><p><b>Choice D is incorrect</b>. Caron’s claim is that fossils from the US and China are ctenophores, not jellyfish. Although fossil quality is a plausible issue for the research described in the text, nothing in the text or this choice suggests that the fossils from US and China would have been too poorly preserved for proper identification.</p>"
+  },
+  {
+    "id": "u8-15",
+    "lessonCode": "U8",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">The ancient Greek concept of “mimesis,” a term used in the works of Plato, Aristotle, and other Greek philosophers in discussions of representational art—visual, performance, or literary art that aims to depict the real world—is a foundational concept of the Western philosophy of aesthetics. Mimesis is typically translated as “imitation” in modern editions of ancient Greek texts, but scholar Stephen Halliwell warns that this is overly reductive: “imitation” implies that art merely copies—and is thus by definition entirely derivative of—a reality that exists outside and prior to the work of art, and translating “mimesis” thusly obscures the multifaceted ways in which the ancient Greeks understood the relationship between art and reality.</div><p>Which statement, if true, would most directly support the claim by Halliwell presented in the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "One of the earliest appearances of mimesis’s root word, <i>mimos</i>, can be found in an ancient Greek tragedy in reference to dramatic impersonation, and the <i>mim-</i> root came to be generally associated with the musical and poetic arts by the fifth century BCE."
+      },
+      {
+        "label": "B",
+        "html": "Both Plato’s and Aristotle’s theorizations of mimesis examine the psychological effects that works of art induce in the viewer or listener."
+      },
+      {
+        "label": "C",
+        "html": "Although several of Plato’s earliest philosophical works discuss aesthetic ideas, the term “mimesis” doesn’t appear in Plato’s discussions of art until <i>Cratylus</i>, a relatively late work."
+      },
+      {
+        "label": "D",
+        "html": "Although Plato’s writings typically characterize representational art as an inferior reflection of the physical world, Aristotle suggests that mimesis can refer to art’s capacity to envision hypothetical conditions that could, but don’t yet, exist."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b> because it presents a statement that would support Halliwell’s claim that \"imitation\" is an overly simplified translation of the word \"mimesis\" in the context of ancient Greek philosophical discussions of representational art and that, because it suggests a view of art as merely copying things that exist in reality, the translation obscures the fact that Plato, Aristotle, and other ancient Greeks understood the relationship between art and reality in varied ways. If Plato’s works tend to treat representational art as an inferior or inadequate reflection of the physical world (consistent with the idea of mere imitation), while Aristotle’s works suggest that the term \"mimesis\" can refer to art’s ability to show conditions that don’t currently exist but could exist (going beyond imitation into novel creation), that evidence would support the claim that the term \"mimesis\" means more than just \"imitation\" and that ancient Greek philosophers held different views of the relationship between art and reality.</p><p><b>Choice A is incorrect</b> because information about the root word mimos first being used in drama and the root mim- coming to be associated with music and poetry wouldn’t indicate anything about the meaning of the specific term \"mimesis\" as it was used by ancient Greek philosophers in discussions of representational art; thus, the information would have no bearing on Halliwell’s claim that a common translation of the specific term is an oversimplification.</p><p><b>Choice B is incorrect</b> because the issue of art’s psychological effects on audiences gets at how people respond to works of art instead of how art itself is related to reality, so the idea that Plato and Aristotle both addressed such effects in their considerations of mimesis wouldn’t have any bearing on Halliwell’s claim that a common translation of that term oversimplifies the relationship between art and reality. Further, this idea would touch on one general similarity in approaches to mimesis instead of illustrating the multifaceted, or varied, ways Halliwell claims ancient Greek philosophers understood art’s relation to reality.</p><p><b>Choice C is incorrect</b> because the idea that Plato discussed aesthetics in his early works but didn’t use the term \"mimesis\" until later doesn’t give any indication of how Plato or any other ancient Greek philosophers understood the relation between art and reality, so it would have no bearing on Halliwell’s claim that a common translation of the term \"mimesis\" is oversimplified and fails to reflect the varied ways the philosophers understood that relationship.</p>"
+  }
+]

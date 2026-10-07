@@ -1,0 +1,380 @@
+[
+  {
+    "id": "u24-01",
+    "lessonCode": "U24",
+    "type": "spr",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 330 190\" role=\"img\" aria-label=\"Rectangle PQRS with Q at top left, R at top right, S at bottom right and P at bottom left. The diagonal QS is drawn.\" style=\"max-width:330px;width:100%;height:auto;display:block;margin:0 auto 12px\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" font-family=\"inherit\" font-size=\"14\"><rect x=\"40\" y=\"30\" width=\"250\" height=\"125\"/><line x1=\"40\" y1=\"30\" x2=\"290\" y2=\"155\"/><text x=\"30\" y=\"24\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">Q</text><text x=\"300\" y=\"24\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">R</text><text x=\"30\" y=\"174\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">P</text><text x=\"300\" y=\"174\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">S</text></svg><div class=\"figcap\" style=\"text-align:center;margin:-4px 0 10px\">Note: Figure not drawn to scale.</div></div><p>In rectangle <i>PQRS</i>, the length of line segment <i>QS</i> is √(2,344) and the length of side <i>PS</i> is 8 more than the length of side <i>RS</i>. What is the length of side <i>QR</i>?</p>",
+    "choices": [],
+    "correctAnswer": "38",
+    "acceptedAnswers": [
+      "38"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 38</b>.</p><ul><li>It’s given that in rectangle <i>PQRS</i>, the length of side <i>PS</i> is 8 more than the length of side <i>RS</i>.</li><li>In a rectangle, opposite sides are congruent.</li><li>Since side <i>QR</i> is opposite side <i>PS</i>, it follows that side <i>QR</i> is congruent to side <i>PS</i>.</li><li>Thus, the length of side <i>QR</i> is 8 more than the length of side <i>RS</i>.</li><li>Let <i>x</i> represent the length of side <i>RS</i>.</li><li>It follows that the length of side <i>QR</i> is represented by the expression <i>x</i> + 8.</li><li>Since all angles in a rectangle are right angles, angle <i>R</i> is a right angle.</li><li>It follows that side <i>QR</i>, side <i>RS</i>, and line segment <i>QS</i> form a right triangle, where line segment <i>QS</i> is the hypotenuse and sides <i>QR</i> and <i>RS</i> are the legs.</li><li>It’s given that the length of line segment <i>QS</i> is √(2,344).</li><li>By the Pythagorean theorem, if a right triangle has a hypotenuse with length <i>c</i> and legs with lengths <i>a</i> and <i>b</i>, then <i>a</i><sup>2</sup> + <i>b</i><sup>2</sup> = <i>c</i><sup>2</sup>.</li><li>Substituting <i>x</i> for <i>a</i>, <i>x</i> + 8 for <i>b</i>, and √(2,344) for <i>c</i> in this equation yields <i>x</i><sup>2</sup> + (<i>x</i> + 8)<sup>2</sup> = (√(2,344))<sup>2</sup>, or <i>x</i><sup>2</sup> + (<i>x</i> + 8)<sup>2</sup> = 2,344.</li><li>Expanding the left-hand side of this equation yields <i>x</i><sup>2</sup> + <i>x</i><sup>2</sup> + 16<i>x</i> + 64 = 2,344, or 2<i>x</i><sup>2</sup> + 16<i>x</i> + 64 = 2,344.</li><li>Dividing both sides of this equation by 2 yields <i>x</i><sup>2</sup> + 8<i>x</i> + 32 = 1,172.</li><li>To complete the square, subtracting 16 from both sides of this equation yields <i>x</i><sup>2</sup> + 8<i>x</i> + 16 = 1,156.</li><li>Since the left-hand side of this equation is a perfect square trinomial, it follows that <i>x</i><sup>2</sup> + 8<i>x</i> + 16 = 1,156 is equivalent to (<i>x</i> + 4)<sup>2</sup> = 1,156.</li><li>Taking the positive square root of both sides of this equation yields <i>x</i> + 4 = 34.</li><li>Subtracting 4 from both sides of this equation yields <i>x</i> = 30.</li><li>Since the length of side <i>QR</i> is represented by the expression <i>x</i> + 8, it follows that the length of side <i>QR</i> is 30 + 8, or 38.</li></ul>"
+  },
+  {
+    "id": "u24-02",
+    "lessonCode": "U24",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>Triangle <i>FGH</i> is similar to triangle <i>JKL</i>, where angle <i>F</i> corresponds to angle <i>J</i> and angles <i>G</i> and <i>K</i> are right angles. If sin(<i>F</i>) = 308/317, what is the value of sin(<i>J</i>)?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "75/317"
+      },
+      {
+        "label": "B",
+        "html": "308/317"
+      },
+      {
+        "label": "C",
+        "html": "317/308"
+      },
+      {
+        "label": "D",
+        "html": "317/75"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>.</p><ul><li>If two triangles are similar, then their corresponding angles are congruent.</li><li>It's given that right triangle <i>FGH</i> is similar to right triangle <i>JKL</i> and angle <i>F</i> corresponds to angle <i>J</i>.</li><li>It follows that angle <i>F</i> is congruent to angle <i>J</i> and, therefore, the measure of angle <i>F</i> is equal to the measure of angle <i>J</i>.</li><li>The sine ratios of angles of equal measure are equal.</li><li>Since the measure of angle <i>F</i> is equal to the measure of angle <i>J</i>, sin(<i>F</i>) = sin(<i>J</i>).</li><li>It's given that sin(<i>F</i>) = 308/317.</li><li>Therefore, sin(<i>J</i>) is 308/317.</li></ul><p><b>Choice A is incorrect</b>. This is the value of cos(<i>J</i>), not the value of sin(<i>J</i>).</p><p><b>Choice C is incorrect</b>. This is the reciprocal of the value of sin(<i>J</i>), not the value of sin(<i>J</i>).</p><p><b>Choice D is incorrect</b>. This is the reciprocal of the value of cos(<i>J</i>), not the value of sin(<i>J</i>).</p>"
+  },
+  {
+    "id": "u24-03",
+    "lessonCode": "U24",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>In right triangle <i>RST</i>, the sum of the measures of angle <i>R</i> and angle <i>S</i> is 90 degrees. The value of sin(<i>R</i>) is √15/4. What is the value of cos(<i>S</i>)?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "√15/15"
+      },
+      {
+        "label": "B",
+        "html": "√15/4"
+      },
+      {
+        "label": "C",
+        "html": "4√15/15"
+      },
+      {
+        "label": "D",
+        "html": "√15"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>. The sine of any acute angle is equal to the cosine of its complement. It’s given that in right triangle <i>RST</i>, the sum of the measures of angle <i>R</i> and angle <i>S</i> is 90 degrees. Therefore, angle <i>R</i> and angle <i>S</i> are complementary, and the value of sin <i>R</i> is equal to the value of cos <i>S</i>. It's given that the value of sin <i>R</i> is √15/4, so the value of cos <i>S</i> is also √15/4.</p><p><b>Choice A is incorrect</b>. This is the value of tan <i>S</i>.</p><p><b>Choice C is incorrect</b>. This is the value of 1/(cos <i>S</i>).</p><p><b>Choice D is incorrect</b>. This is the value of 1/(tan <i>S</i>).</p>"
+  },
+  {
+    "id": "u24-04",
+    "lessonCode": "U24",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>In triangle <i>XYZ</i>, angle <i>Z</i> is a right angle and the length of line segment <i>YZ</i> is 24 units. If tan <i>X</i> = 12/35, what is the perimeter, in units, of triangle <i>XYZ</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "188"
+      },
+      {
+        "label": "B",
+        "html": "168"
+      },
+      {
+        "label": "C",
+        "html": "84"
+      },
+      {
+        "label": "D",
+        "html": "71"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>.</p><ul><li>It's given that angle <i>Z</i> in triangle <i>XYZ</i> is a right angle.</li><li>Thus, side <i>YZ</i> is the leg opposite angle <i>X</i> and side <i>XZ</i> is the leg adjacent to angle <i>X</i>.</li><li>The tangent of an acute angle in a right triangle is the ratio of the length of the leg opposite the angle to the length of the leg adjacent to the angle.</li><li>It follows that tan <i>X</i> = <i>YZ</i>/<i>XZ</i>.</li><li>It's given that tan <i>X</i> = 12/35 and the length of side <i>YZ</i> is 24 units.</li><li>Substituting 12/35 for tan <i>X</i> and 24 for <i>YZ</i> in the equation tan <i>X</i> = <i>YZ</i>/<i>XZ</i> yields 12/35 = 24/<i>XZ</i>.</li><li>Multiplying both sides of this equation by 35(<i>XZ</i>) yields 12(<i>XZ</i>) = 24(35), or 12(<i>XZ</i>) = 840.</li><li>Dividing both sides of this equation by 12 yields <i>XZ</i> = 70.</li><li>The length <i>XY</i> can be calculated using the Pythagorean theorem, which states that if a right triangle has legs with lengths of <i>a</i> and <i>b</i> and a hypotenuse with length <i>c</i>, then <i>a</i><sup>2</sup> + <i>b</i><sup>2</sup> = <i>c</i><sup>2</sup>.</li><li>Substituting 70 for <i>a</i> and 24 for <i>b</i> in this equation yields 70<sup>2</sup> + 24<sup>2</sup> = <i>c</i><sup>2</sup>, or 5,476 = <i>c</i><sup>2</sup>.</li><li>Taking the square root of both sides of this equation yields ±74 = <i>c</i>.</li><li>Since the length of the hypotenuse must be positive, 74 = <i>c</i>.</li><li>Therefore, the length of <i>XY</i> is 74 units.</li><li>The perimeter of a triangle is the sum of the lengths of all sides.</li><li>Thus, (74 + 70 + 24) units, or 168 units, is the perimeter of triangle <i>XYZ</i>.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b>. This would be the perimeter, in units, for a right triangle where the length of side <i>YZ</i> is 12 units, not 24 units.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u24-05",
+    "lessonCode": "U24",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>For two acute angles, ∠<i>Q</i> and ∠<i>R</i>, cos(<i>Q</i>) = sin(<i>R</i>). The measures, in degrees, of ∠<i>Q</i> and ∠<i>R</i> are <i>x</i> + 52 and 4<i>x</i> + 13, respectively. What is the value of <i>x</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "5"
+      },
+      {
+        "label": "B",
+        "html": "13"
+      },
+      {
+        "label": "C",
+        "html": "23"
+      },
+      {
+        "label": "D",
+        "html": "38"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>.</p><ul><li>It’s given that for two acute angles, ∠<i>Q</i> and ∠<i>R</i>, cos(<i>Q</i>) = sin(<i>R</i>).</li><li>For two acute angles, if the sine of one angle is equal to the cosine of the other, the angles are complementary.</li><li>Therefore, the sum of the measures, in degrees, of ∠<i>Q</i> and ∠<i>R</i> is 90.</li><li>It’s given that the measures, in degrees, of ∠<i>Q</i> and ∠<i>R</i> are <i>x</i> + 52 and 4<i>x</i> + 13, respectively.</li><li>Therefore, (<i>x</i> + 52) + (4<i>x</i> + 13) = 90.</li><li>Combining like terms in this equation yields 5<i>x</i> + 65 = 90.</li><li>Subtracting 65 from each side of this equation results in 5<i>x</i> = 25.</li><li>Dividing each side of this equation by 5 yields <i>x</i> = 5.</li></ul><p><b>Choice B is incorrect</b>. This would be the value of <i>x</i> if ∠<i>Q</i> and ∠<i>R</i> were congruent rather than complementary.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u24-06",
+    "lessonCode": "U24",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 300 220\" role=\"img\" aria-label=\"Right triangle ABC with the right angle at C. A is at the left, C at the bottom right and B directly above C. Side AB is 29, side BC is 20 and side AC is 21.\" style=\"max-width:300px;width:100%;height:auto;display:block;margin:0 auto 12px\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" font-family=\"inherit\" font-size=\"14\"><polygon points=\"30,180 240,180 240,20\"/><rect x=\"224\" y=\"164\" width=\"16\" height=\"16\"/><text x=\"20\" y=\"186\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">A</text><text x=\"254\" y=\"186\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">C</text><text x=\"244\" y=\"14\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">B</text><text x=\"120\" y=\"92\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">29</text><text x=\"258\" y=\"104\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">20</text><text x=\"135\" y=\"202\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">21</text></svg></div><p>In the figure above, what is the value of tan(<i>A</i>)?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "20/29"
+      },
+      {
+        "label": "B",
+        "html": "21/29"
+      },
+      {
+        "label": "C",
+        "html": "20/21"
+      },
+      {
+        "label": "D",
+        "html": "21/20"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>. Angle <i>A</i> is an acute angle in a right triangle, so the value of tan(<i>A</i>) is equivalent to the ratio of the length of the side opposite angle <i>A</i>, 20, to the length of the nonhypotenuse side adjacent to angle <i>A</i>, 21. Therefore, tan(<i>A</i>) = 20/21.</p><p><b>Choice A is incorrect</b>. This is the value of sin(<i>A</i>).</p><p><b>Choice B is incorrect</b>. This is the value of cos(<i>A</i>).</p><p><b>Choice D is incorrect</b>. This is the value of tan(<i>B</i>).</p>"
+  },
+  {
+    "id": "u24-07",
+    "lessonCode": "U24",
+    "type": "spr",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>In triangle <i>XYZ</i>, angle <i>Y</i> is a right angle, the measure of angle <i>Z</i> is 33°, and the length of line segment <i>YZ</i> is 26 units. If the area, in square units, of triangle <i>XYZ</i> can be represented by the expression <i>k</i> tan 33°, where <i>k</i> is a constant, what is the value of <i>k</i>?</p>",
+    "choices": [],
+    "correctAnswer": "338",
+    "acceptedAnswers": [
+      "338"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 338</b>.</p><ul><li>The tangent of an acute angle in a right triangle is the ratio of the length of the leg opposite the angle to the length of the leg adjacent to the angle.</li><li>In triangle <i>XYZ</i>, it's given that angle <i>Y</i> is a right angle.</li><li>Thus, <i>XY</i> is the leg opposite of angle <i>Z</i> and <i>YZ</i> is the leg adjacent to angle <i>Z</i>.</li><li>It follows that tan <i>Z</i> = <i>XY</i>/<i>YZ</i>.</li><li>It's also given that the measure of angle <i>Z</i> is 33° and the length of <i>YZ</i> is 26 units.</li><li>Substituting 33° for <i>Z</i> and 26 for <i>YZ</i> in the equation tan <i>Z</i> = <i>XY</i>/<i>YZ</i> yields tan 33° = <i>XY</i>/26.</li><li>Multiplying each side of this equation by 26 yields 26 tan 33° = <i>XY</i>.</li><li>Therefore, the length of <i>XY</i> is 26 tan 33°.</li><li>The area of a triangle is half the product of the lengths of its legs.</li><li>Since the length of <i>YZ</i> is 26 and the length of <i>XY</i> is 26 tan 33°, it follows that the area of triangle <i>XYZ</i> is (1/2)(26)(26 tan 33°) square units, or 338 tan 33° square units.</li><li>It's given that the area, in square units, of triangle <i>XYZ</i> can be represented by the expression <i>k</i> tan 33°, where <i>k</i> is a constant.</li><li>Therefore, 338 is the value of <i>k</i>.</li></ul>"
+  },
+  {
+    "id": "u24-08",
+    "lessonCode": "U24",
+    "type": "spr",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 200 250\" role=\"img\" aria-label=\"Right triangle ABC with the right angle at C. A is at the bottom left, C at the bottom right and B directly above C. Side AB is 26.\" style=\"max-width:200px;width:100%;height:auto;display:block;margin:0 auto 12px\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" font-family=\"inherit\" font-size=\"14\"><polygon points=\"50,210 140,210 140,25\"/><rect x=\"126\" y=\"196\" width=\"14\" height=\"14\"/><text x=\"40\" y=\"218\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">A</text><text x=\"154\" y=\"218\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">C</text><text x=\"144\" y=\"18\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">B</text><text x=\"74\" y=\"112\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">26</text></svg></div><p>Triangle <i>ABC</i> above is a right triangle, and sin(<i>B</i>) = 5/13. What is the length of side <i>BC</i>?</p>",
+    "choices": [],
+    "correctAnswer": "24",
+    "acceptedAnswers": [
+      "24"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 24</b>.</p><ul><li>The sine of an acute angle in a right triangle is equal to the ratio of the length of the side opposite the angle to the length of the hypotenuse.</li><li>In the triangle shown, the sine of angle <i>B</i>, or sin(<i>B</i>), is equal to the ratio of the length of side <i>AC</i> to the length of side <i>AB</i>.</li><li>It’s given that the length of side <i>AB</i> is 26 and that sin(<i>B</i>) = 5/13.</li><li>Therefore, 5/13 = <i>AB</i>/26.</li><li>Multiplying both sides of this equation by 26 yields <i>AC</i> = 10.</li></ul><p>By the Pythagorean Theorem, the relationship between the lengths of the sides of triangle <i>ABC</i> is as follows: 26<sup>2</sup> = 10<sup>2</sup> + <i>BC</i><sup>2</sup>, or 676 = 100 + <i>BC</i><sup>2</sup>. Subtracting 100 from both sides of 676 = 100 + <i>BC</i><sup>2</sup> yields 576 = <i>BC</i><sup>2</sup>. Taking the square root of both sides of 576 = <i>BC</i><sup>2</sup> yields 24 = <i>BC</i>.</p>"
+  },
+  {
+    "id": "u24-09",
+    "lessonCode": "U24",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 360 250\" role=\"img\" aria-label=\"Right triangle with a vertical leg of length 3 and a horizontal leg of length 7.\" style=\"max-width:360px;width:100%;height:auto;display:block;margin:0 auto 12px\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" font-family=\"inherit\" font-size=\"14\"><polygon points=\"50,20 50,205 320,205\"/><rect x=\"50\" y=\"189\" width=\"16\" height=\"16\"/><text x=\"30\" y=\"118\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">3</text><text x=\"185\" y=\"228\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">7</text></svg><div class=\"figcap\" style=\"text-align:center;margin:-4px 0 10px\">Note: Figure not drawn to scale.</div></div><p>The lengths of the legs of a right triangle are shown. Which of the following is closest to the length of the triangle's hypotenuse?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "3.2"
+      },
+      {
+        "label": "B",
+        "html": "5"
+      },
+      {
+        "label": "C",
+        "html": "7.6"
+      },
+      {
+        "label": "D",
+        "html": "20"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>.</p><ul><li>The Pythagorean theorem states that for a right triangle, <i>a</i><sup>2</sup> + <i>b</i><sup>2</sup> = <i>c</i><sup>2</sup>, where <i>a</i> and <i>b</i> represent the lengths of the legs of the triangle and <i>c</i> represents the length of its hypotenuse.</li><li>In the triangle shown, the legs have lengths of 3 and 7.</li><li>Substituting 3 for <i>a</i> and 7 for <i>b</i> in the equation <i>a</i><sup>2</sup> + <i>b</i><sup>2</sup> = <i>c</i><sup>2</sup> yields 3<sup>2</sup> + 7<sup>2</sup> = <i>c</i><sup>2</sup>, which is equivalent to 9 + 49 = <i>c</i><sup>2</sup>, or 58 = <i>c</i><sup>2</sup>.</li><li>Taking the positive square root of both sides of this equation yields √58 = <i>c</i>.</li><li>Thus, the value of <i>c</i> is approximately 7.6.</li><li>Therefore, of the given choices, 7.6 is the closest to the length of the triangle's hypotenuse.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u24-10",
+    "lessonCode": "U24",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>The perimeter of an isosceles right triangle is 18 + 18√2 inches. What is the length, in inches, of the hypotenuse of this triangle?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "9"
+      },
+      {
+        "label": "B",
+        "html": "9√2"
+      },
+      {
+        "label": "C",
+        "html": "18"
+      },
+      {
+        "label": "D",
+        "html": "18√2"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>.</p><ul><li>The perimeter of a triangle is the sum of the lengths of its sides.</li><li>Since the given triangle is an isosceles right triangle, the length of each leg is the same and the length of the hypotenuse is equal to √2 times the length of a leg.</li><li>Let <i>x</i> represent the length, in inches, of a leg of this isosceles right triangle.</li><li>Therefore, the perimeter, in inches, of the triangle is <i>x</i> + <i>x</i> + <i>x</i>√2, or 2<i>x</i> + <i>x</i>√2, which is equivalent to <i>x</i>(2 + √2).</li><li>It's given that the perimeter of this triangle is 18 + 18√2 inches.</li><li>Thus, <i>x</i>(2 + √2) = 18 + 18√2.</li><li>Dividing both sides of this equation by 2 + √2 yields <i>x</i> = (18 + 18√2)/(2 + √2).</li><li>Multiplying the right-hand side of this equation by (2 − √2)/(2 − √2) yields <i>x</i> = (36 + 36√2 − 18√2 − 36)/2, or <i>x</i> = 9√2.</li><li>It follows that the length, in inches, of a leg of this isosceles right triangle is 9√2.</li><li>Therefore, the length, in inches, of the hypotenuse of this isosceles right triangle is (9√2)(√2), or 18.</li></ul><p><b>Choice A is incorrect</b>. If this were the length of the hypotenuse, the perimeter would be 9 + 9√2 inches.</p><p><b>Choice B is incorrect</b>. This is the length, in inches, of a leg of this triangle, not the hypotenuse.</p><p><b>Choice D is incorrect</b>. If this were the length of the hypotenuse, the perimeter would be 36 + 18√2 inches.</p>"
+  },
+  {
+    "id": "u24-11",
+    "lessonCode": "U24",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 360 270\" role=\"img\" aria-label=\"Right triangle ABC with the right angle at C. A is above C and B is to the right of C. Side AB is 54 and angle B is 30 degrees.\" style=\"max-width:360px;width:100%;height:auto;display:block;margin:0 auto 12px\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" font-family=\"inherit\" font-size=\"14\"><polygon points=\"50,25 50,225 320,225\"/><rect x=\"50\" y=\"209\" width=\"16\" height=\"16\"/><text x=\"42\" y=\"18\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">A</text><text x=\"40\" y=\"244\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">C</text><text x=\"326\" y=\"244\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">B</text><text x=\"204\" y=\"108\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">54</text><text x=\"262\" y=\"218\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">30°</text></svg><div class=\"figcap\" style=\"text-align:center;margin:-4px 0 10px\">Note: Figure not drawn to scale.</div></div><p>Right triangle <i>ABC</i> is shown. What is the value of tan <i>A</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "√3/54"
+      },
+      {
+        "label": "B",
+        "html": "1/√3"
+      },
+      {
+        "label": "C",
+        "html": "√3"
+      },
+      {
+        "label": "D",
+        "html": "27√3"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>.</p><ul><li>In the triangle shown, the measure of angle <i>B</i> is 30° and angle <i>C</i> is a right angle, which means that it has a measure of 90°.</li><li>Since the sum of the angles in a triangle is equal to 180°, the measure of angle <i>A</i> is equal to 180° − (30 + 90)°, or 60°.</li><li>In a right triangle whose acute angles have measures 30° and 60°, the lengths of the legs can be represented by the expressions <i>x</i>, <i>x</i>√3, and 2<i>x</i>, where <i>x</i> is the length of the leg opposite the angle with measure 30°, <i>x</i>√3 is the length of the leg opposite the angle with measure 60°, and 2<i>x</i> is the length of the hypotenuse.</li><li>In the triangle shown, the hypotenuse has a length of 54.</li><li>It follows that 2<i>x</i> = 54, or <i>x</i> = 27.</li><li>Therefore, the length of the leg opposite angle <i>B</i> is 27 and the length of the leg opposite angle <i>A</i> is 27√3.</li><li>The tangent of an acute angle in a right triangle is defined as the ratio of the length of the leg opposite the angle to the length of the leg adjacent to the angle.</li><li>The length of the leg opposite angle <i>A</i> is 27√3 and the length of the leg adjacent to angle <i>A</i> is 27.</li><li>Therefore, the value of tan <i>A</i> is 27√3/27, or √3.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b>. This is the value of 1/(tan <i>A</i>), not the value of tan <i>A</i>.</p><p><b>Choice D is incorrect</b>. This is the length of the leg opposite angle <i>A</i>, not the value of tan <i>A</i>.</p>"
+  },
+  {
+    "id": "u24-12",
+    "lessonCode": "U24",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 320 280\" role=\"img\" aria-label=\"Circle centered at the origin O in the xy-plane. The points (2, k) and (8, 0) lie on the circle; (2, k) is above the x-axis.\" style=\"max-width:320px;width:100%;height:auto;display:block;margin:0 auto 12px\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" font-family=\"inherit\" font-size=\"14\"><line x1=\"30\" y1=\"140\" x2=\"285\" y2=\"140\"/><polygon points=\"285,136 295,140 285,144\" fill=\"currentColor\"/><line x1=\"150\" y1=\"262\" x2=\"150\" y2=\"22\"/><polygon points=\"146,22 150,12 154,22\" fill=\"currentColor\"/><circle cx=\"150\" cy=\"140\" r=\"75\" stroke-width=\"2\"/><circle cx=\"168.8\" cy=\"67.4\" r=\"4\" fill=\"currentColor\"/><circle cx=\"225\" cy=\"140\" r=\"4\" fill=\"currentColor\"/><text x=\"176\" y=\"56\" text-anchor=\"start\" fill=\"currentColor\" stroke=\"none\">(2, <tspan font-style=\"italic\">k</tspan>)</text><text x=\"230\" y=\"130\" text-anchor=\"start\" fill=\"currentColor\" stroke=\"none\">(8, 0)</text><text x=\"138\" y=\"158\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">O</text><text x=\"304\" y=\"145\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">x</text><text x=\"150\" y=\"8\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">y</text></svg><div class=\"figcap\" style=\"text-align:center;margin:-4px 0 10px\">Note: Figure not drawn to scale.</div></div><p>The circle shown has its center at (0, 0). What is the value of <i>k</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "6"
+      },
+      {
+        "label": "B",
+        "html": "7"
+      },
+      {
+        "label": "C",
+        "html": "8"
+      },
+      {
+        "label": "D",
+        "html": "√60"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>.</p><ul><li>It’s given that the circle shown has its center at (0, 0).</li><li>The equation of a circle in the <i>xy</i>-plane with its center at (0, 0) can be expressed as <i>x</i><sup>2</sup> + <i>y</i><sup>2</sup> = <i>r</i><sup>2</sup>, where <i>r</i> is the radius of the circle.</li><li>It’s shown that (8, 0) lies on the circle.</li><li>Since the circle has its center at (0, 0) and (8, 0) lies on the circle, it follows that the radius of the circle is 8.</li><li>Substituting 8 for <i>r</i> in the equation <i>x</i><sup>2</sup> + <i>y</i><sup>2</sup> = <i>r</i><sup>2</sup> yields <i>x</i><sup>2</sup> + <i>y</i><sup>2</sup> = 64.</li><li>It's also shown that (2, <i>k</i>) lies on the circle.</li><li>Substituting 2 for <i>x</i> and <i>k</i> for <i>y</i> in this equation yields 2<sup>2</sup> + <i>k</i><sup>2</sup> = 64, or 4 + <i>k</i><sup>2</sup> = 64.</li><li>Subtracting 4 from both sides of this equation yields <i>k</i><sup>2</sup> = 60.</li><li>Taking the square root of both sides of this equation yields <i>k</i> = ±√60.</li><li>Since (2, <i>k</i>) lies above the <i>x</i>-axis, <i>k</i> must be positive.</li><li>Therefore <i>k</i> = √60.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b>. This is the <i>x</i>-coordinate of one of the circle’s <i>x</i>-intercepts, not the value of <i>k</i>.</p>"
+  },
+  {
+    "id": "u24-13",
+    "lessonCode": "U24",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>A circle in the <i>xy</i>-plane has its center at (−1, 1). Line <i>t</i> is tangent to this circle at the point (5, −4). Which of the following points also lies on line <i>t</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "(0, 6/5)"
+      },
+      {
+        "label": "B",
+        "html": "(4, 7)"
+      },
+      {
+        "label": "C",
+        "html": "(10, 2)"
+      },
+      {
+        "label": "D",
+        "html": "(11, 1)"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>.</p><ul><li>It’s given that the circle has its center at (−1, 1) and that line <i>t</i> is tangent to this circle at the point (5, −4).</li><li>Therefore, the points (−1, 1) and (5, −4) are the endpoints of the radius of the circle at the point of tangency.</li><li>The slope of a line or line segment that contains the points (<i>a</i>, <i>b</i>) and (<i>c</i>, <i>d</i>) can be calculated as (<i>d</i> − <i>b</i>)/(<i>c</i> − <i>a</i>).</li><li>Substituting (−1, 1) for (<i>a</i>, <i>b</i>) and (5, −4) for (<i>c</i>, <i>d</i>) in the expression (<i>d</i> − <i>b</i>)/(<i>c</i> − <i>a</i>) yields (−4 − 1)/(5 − (−1)), or −5/6.</li><li>Thus, the slope of this radius is −5/6.</li><li>A line that’s tangent to a circle is perpendicular to the radius of the circle at the point of tangency.</li><li>It follows that line <i>t</i> is perpendicular to the radius at the point (5, −4), so the slope of line <i>t</i> is the negative reciprocal of the slope of this radius.</li><li>The negative reciprocal of −5/6 is 6/5.</li><li>Therefore, the slope of line <i>t</i> is 6/5.</li><li>Since the slope of line <i>t</i> is the same between any two points on line <i>t</i>, a point lies on line <i>t</i> if the slope of the line segment connecting the point and (5, −4) is 6/5.</li><li>Substituting choice C, (10, 2), for (<i>a</i>, <i>b</i>) and (5, −4) for (<i>c</i>, <i>d</i>) in the expression (<i>d</i> − <i>b</i>)/(<i>c</i> − <i>a</i>) yields (−4 − 2)/(5 − 10), or 6/5.</li><li>Therefore, the point (10, 2) lies on line <i>t</i>.</li></ul><p><b>Choice A is incorrect</b>. The slope of the line segment connecting (0, 6/5) and (5, −4) is (−4 − 6/5)/(5 − 0), or −26/25, not 6/5.</p><p><b>Choice B is incorrect</b>. The slope of the line segment connecting (4, 7) and (5, −4) is (−4 − 7)/(5 − 4), or −11, not 6/5.</p><p><b>Choice D is incorrect</b>. The slope of the line segment connecting (11, 1) and (5, −4) is (−4 − 1)/(5 − 11), or 5/6, not 6/5.</p>"
+  },
+  {
+    "id": "u24-14",
+    "lessonCode": "U24",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>Points <i>Q</i> and <i>R</i> lie on a circle with center <i>P</i>. The radius of this circle is 9 inches. Triangle <i>PQR</i> has a perimeter of 31 inches. What is the length, in inches, of line segment <i>QR</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "13√2"
+      },
+      {
+        "label": "B",
+        "html": "13"
+      },
+      {
+        "label": "C",
+        "html": "9√2"
+      },
+      {
+        "label": "D",
+        "html": "9"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>.</p><ul><li>Since it's given that <i>P</i> is the center of a circle with a radius of 9 inches, and that points <i>Q</i> and <i>R</i> lie on that circle, it follows that <i>PQ</i> and <i>RP</i> of triangle <i>PQR</i> each have a length of 9 inches.</li><li>Let the length of <i>QR</i> be <i>x</i> inches.</li><li>It follows that the perimeter of triangle <i>PQR</i> is 9 + 9 + <i>x</i> inches.</li><li>Since it's given that the perimeter of triangle <i>PQR</i> is 31 inches, it follows that 9 + 9 + <i>x</i> = 31, or 18 + <i>x</i> = 31.</li><li>Subtracting 18 from both sides of this equation gives <i>x</i> = 13.</li><li>Therefore, the length, in inches, of <i>QR</i> is 13.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u24-15",
+    "lessonCode": "U24",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>x</i><sup>2</sup> + <i>x</i>√<i>t</i> + <i>y</i><sup>2</sup> − <i>y</i> − 65 = 0</div><p>The given equation, where <i>t</i> is a constant, defines a circle in the <i>xy</i>-plane. The radius of this circle is √83. What is the value of <i>t</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "73"
+      },
+      {
+        "label": "B",
+        "html": "71"
+      },
+      {
+        "label": "C",
+        "html": "37"
+      },
+      {
+        "label": "D",
+        "html": "35"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>.</p><ul><li>It's given that the equation <i>x</i><sup>2</sup> + <i>x</i>√<i>t</i> + <i>y</i><sup>2</sup> − <i>y</i> − 65 = 0, where <i>t</i> is a constant, defines a circle in the <i>xy</i>-plane.</li><li>The equation of a circle in the <i>xy</i>-plane can be written in the form (<i>x</i> − <i>h</i>)<sup>2</sup> + (<i>y</i> − <i>k</i>)<sup>2</sup> = <i>r</i><sup>2</sup>, where (<i>h</i>, <i>k</i>) is the center and <i>r</i> is the radius of the circle.</li><li>Adding 65 to both sides of the given equation yields <i>x</i><sup>2</sup> + <i>x</i>√<i>t</i> + <i>y</i><sup>2</sup> − <i>y</i> = 65.</li><li>By completing the square, this equation can be rewritten as (<i>x</i><sup>2</sup> + <i>x</i>√<i>t</i> + (√<i>t</i>/2)<sup>2</sup>) + (<i>y</i><sup>2</sup> − <i>y</i> + (−1/2)<sup>2</sup>) = 65 + (√<i>t</i>/2)<sup>2</sup> + (−1/2)<sup>2</sup>.</li><li>This equation can be rewritten as (<i>x</i><sup>2</sup> + <i>x</i>√<i>t</i> + <i>t</i>/4) + (<i>y</i><sup>2</sup> − <i>y</i> + 1/4) = 65 + <i>t</i>/4 + 1/4, or (<i>x</i> + √<i>t</i>/2)<sup>2</sup> + (<i>y</i> − 1/2)<sup>2</sup> = 261/4 + <i>t</i>/4.</li><li>Therefore, <i>r</i><sup>2</sup> = 261/4 + <i>t</i>/4.</li><li>It's given that the radius of this circle is √83; therefore, <i>r</i> = √83.</li><li>Squaring both sides of this equation yields <i>r</i><sup>2</sup> = 83.</li><li>Since <i>r</i><sup>2</sup> = 261/4 + <i>t</i>/4 and <i>r</i><sup>2</sup> = 83, it follows that 261/4 + <i>t</i>/4 = 83.</li><li>Multiplying both sides of this equation by 4 yields 261 + <i>t</i> = 332.</li><li>Subtracting 261 from both sides of this equation yields <i>t</i> = 71.</li><li>Therefore, the value of <i>t</i> is 71.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  }
+]

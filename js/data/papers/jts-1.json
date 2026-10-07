@@ -1,0 +1,2346 @@
+{
+  "id": "jts-1",
+  "title": "June INT Version A 2026",
+  "year": 2026,
+  "assetBase": "assets/sat/jts-1/",
+  "questions": [
+    {
+      "id": "rw-m1-01",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-01.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "persists"
+        },
+        {
+          "label": "B",
+          "html": "responds"
+        },
+        {
+          "label": "C",
+          "html": "arrives"
+        },
+        {
+          "label": "D",
+          "html": "agrees"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-02",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-02.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Protested"
+        },
+        {
+          "label": "B",
+          "html": "Defined"
+        },
+        {
+          "label": "C",
+          "html": "Exhibited"
+        },
+        {
+          "label": "D",
+          "html": "Confirmed"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-03",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-03.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "reuse"
+        },
+        {
+          "label": "B",
+          "html": "imitation"
+        },
+        {
+          "label": "C",
+          "html": "supply"
+        },
+        {
+          "label": "D",
+          "html": "examination"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-04",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-04.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "seasonal"
+        },
+        {
+          "label": "B",
+          "html": "proprietary"
+        },
+        {
+          "label": "C",
+          "html": "meticulous"
+        },
+        {
+          "label": "D",
+          "html": "localized"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-05",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-05.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Reliable"
+        },
+        {
+          "label": "B",
+          "html": "Courteous"
+        },
+        {
+          "label": "C",
+          "html": "Considerable"
+        },
+        {
+          "label": "D",
+          "html": "Capable"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-06",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-06.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The text argues against placing works of art outside."
+        },
+        {
+          "label": "B",
+          "html": "The text provides information about the land art movement."
+        },
+        {
+          "label": "C",
+          "html": "The text describes the popularity of art galleries in the 1960s."
+        },
+        {
+          "label": "D",
+          "html": "The text describes the benefits of being an artist."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-07",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-07.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "To discuss how Chloe Zhao's background in documentary filmmaking has influenced her storytelling style in films"
+        },
+        {
+          "label": "B",
+          "html": "To emphasize that Chloe Zhao's decisions during the filmmaking process reinforce the themes of her films"
+        },
+        {
+          "label": "C",
+          "html": "To summarize how Chloe Zhao's style of filmmaking changed over the course of her career"
+        },
+        {
+          "label": "D",
+          "html": "To argue that Chloe Zhao's films are best understood as documentaries"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-08",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-08.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It mentions a phenomenon that negatively affects the environment, summarizes competing methods for remedying that phenomenon, and then concedes that even apparently distinct methods share similar problems."
+        },
+        {
+          "label": "B",
+          "html": "It describes a widely accepted approach to addressing an environmental issue caused by a type of chemical emissions, indicates a potential disadvantage of that approach, and then discusses an implication of that disadvantage"
+        },
+        {
+          "label": "C",
+          "html": "It reports on a predicament resulting from emissions of a particular greenhouse gas, outlines a strategy aimed at solving that predicament, and then admonishes those who utilize that strategy without fully comprehending its ramifications."
+        },
+        {
+          "label": "D",
+          "html": "It presents an ongoing environmental challenge, demonstrates why the impact of that challenge may intensify over time, and then criticizes a misguidedly narrow attempt to address that impact"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-09",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-09.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The benefits of reading"
+        },
+        {
+          "label": "B",
+          "html": "Famous literary critics"
+        },
+        {
+          "label": "C",
+          "html": "Debut novels"
+        },
+        {
+          "label": "D",
+          "html": "Careers in the publishing industry"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-10",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-10.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "male, 4 years old, and weighed approximately 275 pounds."
+        },
+        {
+          "label": "B",
+          "html": "female, 10 years old, and weighed approximately 400 pounds."
+        },
+        {
+          "label": "C",
+          "html": "male, 3 years old, and weighed approximately 200 pounds."
+        },
+        {
+          "label": "D",
+          "html": "female, 6 years old, and weighed approximately 325 pounds."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-11",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-11.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "\"There I stood, for minutes, looking at Joe, already at work with a glow of health and strength upon his face that made it show as if the bright sun of the life in store for him were shining on it.\""
+        },
+        {
+          "label": "B",
+          "html": "\"In his working-clothes, Joe was a well-knit characteristic-looking blacksmith; in his holiday clothes, he was more like a scarecrow in good circumstances, than anything else.\""
+        },
+        {
+          "label": "C",
+          "html": "\"I have often thought [Joe] since, like the steam-hammer that can crush a man or pat an egg-shell, in his combination of strength with gentleness"
+        },
+        {
+          "label": "D",
+          "html": "\"Estella opened the gate as usual, and, the moment she appeared, Joe took his hat off and stood weighing it by the brim in both his hands.\""
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-12",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-12.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "16 individuals in October of 2001."
+        },
+        {
+          "label": "B",
+          "html": "15 individuals in July of 2001."
+        },
+        {
+          "label": "C",
+          "html": "72 individuals in January of 2001."
+        },
+        {
+          "label": "D",
+          "html": "5 individuals in July of 2001."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-13",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-13.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Many art historians working before the 1970s produced detailed analyses of the social and cultural contexts of older artworks, though few extended that approach to artworks produced in their own lifetimes"
+        },
+        {
+          "label": "B",
+          "html": "Art historians working today have largely rejected the idea, common among Baxandall's predecessors, that artists' intentions should influence how artworks are interpreted."
+        },
+        {
+          "label": "C",
+          "html": "For some historical periods, it is difficult for art historians to reconstruct how the original viewers of artworks understood what artists' intentions for their works were."
+        },
+        {
+          "label": "D",
+          "html": "Numerous art historians of the late twentieth century and twenty-first century have focused their scholarship on how various artworks were interpreted at the time of their creation."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-14",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-14.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "encourage consumers to expect next-day delivery only for products that are widely available"
+        },
+        {
+          "label": "B",
+          "html": "be able to meet consumer's expectations for next-day delivery in many areas but not in all regions."
+        },
+        {
+          "label": "C",
+          "html": "have little incentive to find a solution to last-mile delivery challenges."
+        },
+        {
+          "label": "D",
+          "html": "continue to struggle with last-mile delivery operations until viable solutions become available"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-15",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-15.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "probably established themselves on the island at about the same time as common waxbills and other fruit-eating birds did."
+        },
+        {
+          "label": "B",
+          "html": "may now depend on non-native birds, such as the common waxbill, to help maintain and increase their populations on the island"
+        },
+        {
+          "label": "C",
+          "html": "were likely already close to extinction long before non-native birds arrived on the island"
+        },
+        {
+          "label": "D",
+          "html": "seem to produce fewer fruits per plant now than they did when fruit-eating birds native to the island were still present"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-16",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-16.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "the US government's many ways, just one of which was the National Labor Relations Act (NLRA),"
+        },
+        {
+          "label": "B",
+          "html": "the National Labor Relations Act (NLRA) was just one of many ways the US government"
+        },
+        {
+          "label": "C",
+          "html": "many ways, just one of which was the National Labor Relations Act(NLRA), were how the US government"
+        },
+        {
+          "label": "D",
+          "html": "the US government in many ways, just one of which was the National Labor Relations Act (NLRA),"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-17",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-17.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "butterflies, belonging"
+        },
+        {
+          "label": "B",
+          "html": "butterflies. Belonging"
+        },
+        {
+          "label": "C",
+          "html": "butterflies and belonging"
+        },
+        {
+          "label": "D",
+          "html": "butterflies belonging"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-18",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-18.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "originates. Many"
+        },
+        {
+          "label": "B",
+          "html": "originates, many"
+        },
+        {
+          "label": "C",
+          "html": "originates many"
+        },
+        {
+          "label": "D",
+          "html": "originates many,"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-19",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-19.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "were"
+        },
+        {
+          "label": "B",
+          "html": "being"
+        },
+        {
+          "label": "C",
+          "html": "is"
+        },
+        {
+          "label": "D",
+          "html": "are"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-20",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-20.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "revealing"
+        },
+        {
+          "label": "B",
+          "html": "has revealed"
+        },
+        {
+          "label": "C",
+          "html": "reveals"
+        },
+        {
+          "label": "D",
+          "html": "reveal"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-21",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-21.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "pineapples for"
+        },
+        {
+          "label": "B",
+          "html": "pineapples, which for"
+        },
+        {
+          "label": "C",
+          "html": "pineapples, for"
+        },
+        {
+          "label": "D",
+          "html": "pineapples. For"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-22",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-22.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Likewise,"
+        },
+        {
+          "label": "B",
+          "html": "Next,"
+        },
+        {
+          "label": "C",
+          "html": "In reality,"
+        },
+        {
+          "label": "D",
+          "html": "In other words,"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-23",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-23.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Despite its creation of such an iconic trope,"
+        },
+        {
+          "label": "B",
+          "html": "By achieving such a lofty goal,"
+        },
+        {
+          "label": "C",
+          "html": "Ultimately limited in its lasting influence,"
+        },
+        {
+          "label": "D",
+          "html": "Beyond the simple coining of a term,"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-24",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-24.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Tobias Smollett's novel The Expedition of Humphry Clinker was published in 1771 and consists primarily of letters sent between four family members, their maid, and a young man."
+        },
+        {
+          "label": "B",
+          "html": "Consisting primarily of letters sent between four family members, their maid, and a young man, Tobias Smollett's The Expedition of Humphry Clinker is an epistolary novel."
+        },
+        {
+          "label": "C",
+          "html": "Published in 1771, The Expedition of Humphry Clinker is an epistolary novel by English author Tobias Smollett."
+        },
+        {
+          "label": "D",
+          "html": "An epistolary novel is a novel written primarily as a series of fictional documents, such as letters, journal entries, or newspaper clippings"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-25",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-25.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Casablanca and Rabat are both cities in Morocco."
+        },
+        {
+          "label": "B",
+          "html": "A country's capital city is not always the country's most populous city."
+        },
+        {
+          "label": "C",
+          "html": "Rabat, not Casablanca, is the capital of Morocco."
+        },
+        {
+          "label": "D",
+          "html": "The capital of Morocco is Rabat, while the capital of Jamaica is Kingston."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-26",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-26.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The A.M. Turing Award, which is named for British mathematician Alan Turing, was given to Edgar F. Codd in 1981."
+        },
+        {
+          "label": "B",
+          "html": "In 1981, Edgar F. Codd won the A.M. Turing Award, which is given for \"major contributions of lasting importance to computing.\""
+        },
+        {
+          "label": "C",
+          "html": "The A.M. Turing Award is given for \"major contributions of lasting importance to computing.\""
+        },
+        {
+          "label": "D",
+          "html": "It was in 1981 that Edgar F. Codd won the A.M. Turing Award."
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-27",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-27.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The hypothetical tunnels known as wormholes would be potential shortcuts through spacetime were it not for one complication: they have less energy than empty space."
+        },
+        {
+          "label": "B",
+          "html": "Einstein's theory of general relativity allows for potential spacetime shortcuts called wormholes but does not explain how matter with negative energy density could travel through them"
+        },
+        {
+          "label": "C",
+          "html": "For matter to travel through a wormhole, the matter would need to have less energy than empty space; such matter has not been shown to exist."
+        },
+        {
+          "label": "D",
+          "html": "For wormholes to be possible, according to Einstein's theory of general relativity, they would have to allow for potential shortcuts through spacetime"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-01",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-01.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "circumscribed"
+        },
+        {
+          "label": "B",
+          "html": "multifaceted"
+        },
+        {
+          "label": "C",
+          "html": "undiscerning"
+        },
+        {
+          "label": "D",
+          "html": "exuberant"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-02",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-02.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "habituated to"
+        },
+        {
+          "label": "B",
+          "html": "authenticated by"
+        },
+        {
+          "label": "C",
+          "html": "concentrated among"
+        },
+        {
+          "label": "D",
+          "html": "contemporary with"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-03",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-03.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Constraint"
+        },
+        {
+          "label": "B",
+          "html": "Modesty"
+        },
+        {
+          "label": "C",
+          "html": "Composure"
+        },
+        {
+          "label": "D",
+          "html": "Misgiving"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-04",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-04.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "analogical"
+        },
+        {
+          "label": "B",
+          "html": "counterfactual"
+        },
+        {
+          "label": "C",
+          "html": "retrospective"
+        },
+        {
+          "label": "D",
+          "html": "ambivalent"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-05",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-05.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It indicates a reason why skepticism about the conclusions of the psychological study mentioned in the text is likely warranted."
+        },
+        {
+          "label": "B",
+          "html": "It reports the main conclusion of a study into a social phenomenon whose methodology is critiqued in the text."
+        },
+        {
+          "label": "C",
+          "html": "It presents a scenario whose psychological impact was investigated in the study summarized in the text."
+        },
+        {
+          "label": "D",
+          "html": "It provides an observation about human behavior that was validated by the experiment summarized in the text."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-06",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-06.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "They would concede that the geographic difference in prevalence is real but argue that the frequency with which male tropical birds sing has been overstated by previous researchers"
+        },
+        {
+          "label": "B",
+          "html": "They would caution that the seeming difference in prevalence may be an artifact of researchers' tendency to study birdsong among temperate species more frequently than among tropical species."
+        },
+        {
+          "label": "C",
+          "html": "They would raise the possibility that the difference in prevalence may be due to differences in the timing of the mating season among temperate and tropical bird species."
+        },
+        {
+          "label": "D",
+          "html": "They would argue that the apparent difference in prevalence may partly reflect a difference in the ease with which female birdsong and male birdsong can be detected"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-07",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-07.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "By arguing that the author of Text 1 has conflated the method used by Xiao and colleagues with that used by He and colleagues"
+        },
+        {
+          "label": "B",
+          "html": "By claiming that the author of Text 1 has misrepresented what Xiao and colleagues were trying to achieve with their experimental design"
+        },
+        {
+          "label": "C",
+          "html": "By asserting that the author of Text 1 has overstated the effectiveness of the method that Xiao and colleagues used"
+        },
+        {
+          "label": "D",
+          "html": "By pointing out that the author of Text 1 has overlooked studies that reported results that contradict those reported by Xiao and colleagues"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-08",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-08.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It may not adequately account for cultural variations in the value attached to a particular concept."
+        },
+        {
+          "label": "B",
+          "html": "It relies on survey responses from participants who may not be representative of their countries' cultural norms"
+        },
+        {
+          "label": "C",
+          "html": "It overlooks how philosophies regarding a particular concept have evolved over time."
+        },
+        {
+          "label": "D",
+          "html": "It includes survey data from a wide range of Western countries but only from a narrow set of non-Western countries"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-09",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-09.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Politicians aim to advocate for their constituents' policy preferences, but politicians' understanding of those preferences may be skewed."
+        },
+        {
+          "label": "B",
+          "html": "People who are likely to contact their elected representatives do not tend to be representative of politicians' constituents generally."
+        },
+        {
+          "label": "C",
+          "html": "Direct contact with constituents shapes politicians' beliefs about policies their constituents favor, and they try to act in accordance with those beliefs."
+        },
+        {
+          "label": "D",
+          "html": "Although politicians have an incentive to act in accordance with their constituents' views, that is not the only incentive shaping their actions."
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-10",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-10.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Doing philosophy represents a departure from the norms that govern scholarly inquiry, whereas studying philosophy requires conformation to these norms."
+        },
+        {
+          "label": "B",
+          "html": "Doing philosophy involves developing novel ideas through imagined dialogue with past philosophers based on knowledge of those philosophers' views acquired by studying philosophy."
+        },
+        {
+          "label": "C",
+          "html": "Doing philosophy helps students formulate concrete solutions to practical issues, whereas studying philosophy prioritizes engagement with historical arguments in the field"
+        },
+        {
+          "label": "D",
+          "html": "Doing philosophy requires students to challenge the ideas articulated by past philosophers, especially when these ideas are broadly accepted by other people studying philosophy."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-11",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-11.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Participants correctly identified gestures at the same rate for videos in which the apes made sounds in addition to gestures and videos in which the apes were silent"
+        },
+        {
+          "label": "B",
+          "html": "When apes made mouth-touching gestures, which participants tended to correctly interpret as requests for food, the food was visible in the videos"
+        },
+        {
+          "label": "C",
+          "html": "Participants were more readily able to identify an ape gesture when it meant \"climb on my back\" than when it meant \"let's be friendly.\""
+        },
+        {
+          "label": "D",
+          "html": "Participants correctly interpreted ape gestures more than 50 percent of the time, whereas they would have only identified gestures correctly 25 percent of the time if they had been guessing"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-12",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-12.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Under the assumption that density is more salient than preferences, the US 2 and CI 2 proportions are approximately 0.65 and 0.85, respectively significantly higher than the values predicted under the other assumption and thus farther than those predictions from the measured values."
+        },
+        {
+          "label": "B",
+          "html": "Under the assumption that preferences are more salient than density, the US 2 and CI 2 proportions were predicted to be approximately 0.45 and.35, respectively, both below the measured values, whereas under the other assumption, the model overestimated the proportion for US 2 and overestimated that for CI 2"
+        },
+        {
+          "label": "C",
+          "html": "Under the assumption that preferences are more salient than density, the two-location patterns (US 2 and CI 2) were predicted to be most frequent in the data even though neither proportion was projected to exceed 0.5, well below the proportion predicted under the other assumption."
+        },
+        {
+          "label": "D",
+          "html": "Under the assumption that preferences are more salient than density, the US 2 and CI 2 proportions were predicted to be in the range of 0.3 to 0.5, placing them farther from the measured values than were those predicted under the other assumption."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-13",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-13.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "social learning and resource fluctuations may both play a role in dietary mix among females, at least temporarily, though genetic factors appear to make a significant contribution as well."
+        },
+        {
+          "label": "B",
+          "html": "female dietary mix is best understood as changeable and contingent on fluctuating environmental conditions rather than as the result of social learning or genetic factors."
+        },
+        {
+          "label": "C",
+          "html": "dietary mix among females may reflect a social learning effect that eventually diminishes, though environmental constraints cannot be ruled out as a contributing factor"
+        },
+        {
+          "label": "D",
+          "html": "growing dissimilarity between mothers and their daughters with regard to dietary mix may reflect changes in the resources available in maternal habitats, though social learning could also contribute to the trend."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-14",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-14.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "listeners who use streaming services would be more likely to give physical copies of music as gifts to others than to purchase physical copies for themselves"
+        },
+        {
+          "label": "B",
+          "html": "music publishers who choose to forgo releasing music on physical media are likely to see no change in revenue"
+        },
+        {
+          "label": "C",
+          "html": "the music choices of listeners who use streaming services would likely be more varied than those of listeners who do not use streaming services"
+        },
+        {
+          "label": "D",
+          "html": "listeners who prefer to purchase compact discs rather than use a service such as YouTube Music or Jango would tend to listen to older music."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-15",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-15.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "farmers who are reluctant to switch from specializing in a single crop to cultivating a variety of crops incorrectly assume that any improvements in yields will be insufficient to offset the costs associated with making that transition."
+        },
+        {
+          "label": "B",
+          "html": "farmers who focus primarily on increasing crop variety without engaging in other diversification practices will likely help reverse nonagricultural biodiversity loss, but their farms will produce smaller yields than if they had continued to focus on developing a single crop."
+        },
+        {
+          "label": "C",
+          "html": "agricultural diversification doesn't inherently involve a trade-off between environmental and economic considerations, but farmers' chances of avoiding that outcome may be diminished if they focus on crop variety to the exclusion of other diversification practices."
+        },
+        {
+          "label": "D",
+          "html": "it is more expensive to increase crop variety while simultaneously implementing other diversification practices than it is to increase crop variety and then subsequently implement other diversification practices."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-16",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-16.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "discovered. While"
+        },
+        {
+          "label": "B",
+          "html": "discovered, while"
+        },
+        {
+          "label": "C",
+          "html": "discovered while"
+        },
+        {
+          "label": "D",
+          "html": "discovered: while"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-17",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-17.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "novel's protagonist's"
+        },
+        {
+          "label": "B",
+          "html": "novels' protagonists"
+        },
+        {
+          "label": "C",
+          "html": "novels' protagonists'"
+        },
+        {
+          "label": "D",
+          "html": "novel's protagonists'"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-18",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-18.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "photographs"
+        },
+        {
+          "label": "B",
+          "html": "photographing"
+        },
+        {
+          "label": "C",
+          "html": "was photographing"
+        },
+        {
+          "label": "D",
+          "html": "photographed"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-19",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-19.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "1890, for example,"
+        },
+        {
+          "label": "B",
+          "html": "1890, for example:"
+        },
+        {
+          "label": "C",
+          "html": "1890, for example;"
+        },
+        {
+          "label": "D",
+          "html": "1890; for example,"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-20",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-20.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "was"
+        },
+        {
+          "label": "B",
+          "html": "were"
+        },
+        {
+          "label": "C",
+          "html": "having been"
+        },
+        {
+          "label": "D",
+          "html": "being"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-21",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-21.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "1714 and"
+        },
+        {
+          "label": "B",
+          "html": "1714"
+        },
+        {
+          "label": "C",
+          "html": "1714,"
+        },
+        {
+          "label": "D",
+          "html": "1714:00:00"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-22",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-22.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Similarly,"
+        },
+        {
+          "label": "B",
+          "html": "Ultimately,"
+        },
+        {
+          "label": "C",
+          "html": "By comparison,"
+        },
+        {
+          "label": "D",
+          "html": "In addition,"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-23",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-23.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Ultimately,"
+        },
+        {
+          "label": "B",
+          "html": "For example,"
+        },
+        {
+          "label": "C",
+          "html": "Thus,"
+        },
+        {
+          "label": "D",
+          "html": "Similarly,"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-24",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-24.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "By contrast,"
+        },
+        {
+          "label": "B",
+          "html": "Secondly,"
+        },
+        {
+          "label": "C",
+          "html": "Similarly,"
+        },
+        {
+          "label": "D",
+          "html": "Therefore,"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-25",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-25.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "As a result,"
+        },
+        {
+          "label": "B",
+          "html": "In particular,"
+        },
+        {
+          "label": "C",
+          "html": "Of course,"
+        },
+        {
+          "label": "D",
+          "html": "On the contrary,"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-26",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-26.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "In addition,"
+        },
+        {
+          "label": "B",
+          "html": "Nonetheless,"
+        },
+        {
+          "label": "C",
+          "html": "Specifically,"
+        },
+        {
+          "label": "D",
+          "html": "Meanwhile,"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-27",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-27.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "By depicting experiences of the Beothuk that occurred around Beothuk Lake, Shanawdithit's maps reflect Indigenous cartography's emphasis on \"experienced space, or place\" rather than the landscape alone."
+        },
+        {
+          "label": "B",
+          "html": "According to Pearce, Indigenous cartography, such as Shanawdithit's maps of Beothuk Lake, emphasizes \"experienced space, or place,\" with a variety of approaches that reflect the diversity of Indigenous cultures"
+        },
+        {
+          "label": "C",
+          "html": "Shanawdithit mapped Beothuk Lake through significant encounters that occurred there, an approach that Pearce describes as \"depicting space as universal [and] homogenized.\""
+        },
+        {
+          "label": "D",
+          "html": "Shanawdithit's maps are part of a broader tradition of Indigenous cartography that, according to Pearce, ranges from \"Hawaiian performative cartographies to Navajo verbal maps and sand paintings.\""
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m1-01",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m1-01.png\">",
+      "correctAnswer": "560"
+    },
+    {
+      "id": "math-m1-02",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-02.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "7/100"
+        },
+        {
+          "label": "B",
+          "html": "7/50"
+        },
+        {
+          "label": "C",
+          "html": "1/4"
+        },
+        {
+          "label": "D",
+          "html": "7/10"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m1-03",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-03.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "−3"
+        },
+        {
+          "label": "B",
+          "html": "15"
+        },
+        {
+          "label": "C",
+          "html": "18"
+        },
+        {
+          "label": "D",
+          "html": "21"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m1-04",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-04.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "327"
+        },
+        {
+          "label": "B",
+          "html": "654"
+        },
+        {
+          "label": "C",
+          "html": "1,308"
+        },
+        {
+          "label": "D",
+          "html": "1,962"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m1-05",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m1-05.png\">",
+      "correctAnswer": "5900"
+    },
+    {
+      "id": "math-m1-06",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m1-06.png\">",
+      "correctAnswer": "1.2",
+      "acceptedAnswers": [
+        "6/5"
+      ]
+    },
+    {
+      "id": "math-m1-07",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-07.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "64"
+        },
+        {
+          "label": "B",
+          "html": "81"
+        },
+        {
+          "label": "C",
+          "html": "258"
+        },
+        {
+          "label": "D",
+          "html": "384"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m1-08",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-08.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m1-08-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m1-08-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m1-08-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m1-08-D.png\">"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m1-09",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m1-09.png\">",
+      "correctAnswer": "208"
+    },
+    {
+      "id": "math-m1-10",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m1-10.png\">",
+      "correctAnswer": "15"
+    },
+    {
+      "id": "math-m1-11",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-11.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "40"
+        },
+        {
+          "label": "B",
+          "html": "20"
+        },
+        {
+          "label": "C",
+          "html": "10"
+        },
+        {
+          "label": "D",
+          "html": "√20"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m1-12",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-12.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "1/49"
+        },
+        {
+          "label": "B",
+          "html": "1/26"
+        },
+        {
+          "label": "C",
+          "html": "26/49"
+        },
+        {
+          "label": "D",
+          "html": "49/26"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m1-13",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-13.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "(−1, 0)"
+        },
+        {
+          "label": "B",
+          "html": "(3, 0)"
+        },
+        {
+          "label": "C",
+          "html": "(7, 0)"
+        },
+        {
+          "label": "D",
+          "html": "(8, 0)"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m1-14",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-14.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<i>x</i> + 3"
+        },
+        {
+          "label": "B",
+          "html": "<i>x</i> + 4"
+        },
+        {
+          "label": "C",
+          "html": "<i>x</i> − 3"
+        },
+        {
+          "label": "D",
+          "html": "<i>x</i> − 5"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m1-15",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-15.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "(−21, 0)"
+        },
+        {
+          "label": "B",
+          "html": "(−4, 0)"
+        },
+        {
+          "label": "C",
+          "html": "(7, 0)"
+        },
+        {
+          "label": "D",
+          "html": "(21, 0)"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m1-16",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m1-16.png\">",
+      "correctAnswer": "10"
+    },
+    {
+      "id": "math-m1-17",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-17.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The average number of trees per hectare in the park"
+        },
+        {
+          "label": "B",
+          "html": "The average number of trees per hectare in the residential area"
+        },
+        {
+          "label": "C",
+          "html": "The total number of trees in the park"
+        },
+        {
+          "label": "D",
+          "html": "The total number of trees in the residential area"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m1-18",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-18.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m1-18-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m1-18-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m1-18-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m1-18-D.png\">"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m1-19",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-19.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "1"
+        },
+        {
+          "label": "B",
+          "html": "9"
+        },
+        {
+          "label": "C",
+          "html": "15"
+        },
+        {
+          "label": "D",
+          "html": "21"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m1-20",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m1-20.png\">",
+      "correctAnswer": "485"
+    },
+    {
+      "id": "math-m1-21",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-21.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m1-21-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m1-21-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m1-21-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m1-21-D.png\">"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m1-22",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-22.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "(1/30) <i>x</i> = 2<i>y</i>"
+        },
+        {
+          "label": "B",
+          "html": "(1/30) <i>x</i> = 60<i>y</i> − 90"
+        },
+        {
+          "label": "C",
+          "html": "<i>x</i> = 2<i>y</i>"
+        },
+        {
+          "label": "D",
+          "html": "<i>x</i> = 60<i>y</i> − 90"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m2-01",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-01.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "3"
+        },
+        {
+          "label": "B",
+          "html": "7"
+        },
+        {
+          "label": "C",
+          "html": "32"
+        },
+        {
+          "label": "D",
+          "html": "40"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-02",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-02.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "39.17"
+        },
+        {
+          "label": "B",
+          "html": "48"
+        },
+        {
+          "label": "C",
+          "html": "52.22"
+        },
+        {
+          "label": "D",
+          "html": "72.33"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m2-03",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-03.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m2-03-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m2-03-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m2-03-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m2-03-D.png\">"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-04",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m2-04.png\">",
+      "correctAnswer": "26"
+    },
+    {
+      "id": "math-m2-05",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-05.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "34"
+        },
+        {
+          "label": "B",
+          "html": "16"
+        },
+        {
+          "label": "C",
+          "html": "15"
+        },
+        {
+          "label": "D",
+          "html": "8"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m2-06",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-06.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "9"
+        },
+        {
+          "label": "B",
+          "html": "7"
+        },
+        {
+          "label": "C",
+          "html": "5"
+        },
+        {
+          "label": "D",
+          "html": "1"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m2-07",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-07.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "7/24"
+        },
+        {
+          "label": "B",
+          "html": "24/7"
+        },
+        {
+          "label": "C",
+          "html": "17"
+        },
+        {
+          "label": "D",
+          "html": "31"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m2-08",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m2-08.png\">",
+      "correctAnswer": "11"
+    },
+    {
+      "id": "math-m2-09",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-09.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "44<i>c</i> − <i>p</i> = −7"
+        },
+        {
+          "label": "B",
+          "html": "44<i>c</i> − <i>p</i> = 7"
+        },
+        {
+          "label": "C",
+          "html": "44<i>p</i> − <i>c</i> = −7"
+        },
+        {
+          "label": "D",
+          "html": "44<i>p</i> − <i>c</i> = 7"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m2-10",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-10.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m2-10-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m2-10-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m2-10-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m2-10-D.png\">"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m2-11",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-11.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "(0, −15)"
+        },
+        {
+          "label": "B",
+          "html": "(0, 15)"
+        },
+        {
+          "label": "C",
+          "html": "(−8, 0)"
+        },
+        {
+          "label": "D",
+          "html": "(8, 0)"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-12",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-12.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "5"
+        },
+        {
+          "label": "B",
+          "html": "4"
+        },
+        {
+          "label": "C",
+          "html": "0"
+        },
+        {
+          "label": "D",
+          "html": "−4"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m2-13",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-13.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "−30"
+        },
+        {
+          "label": "B",
+          "html": "−29"
+        },
+        {
+          "label": "C",
+          "html": "−20"
+        },
+        {
+          "label": "D",
+          "html": "−19"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m2-14",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m2-14.png\">",
+      "correctAnswer": "-21"
+    },
+    {
+      "id": "math-m2-15",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-15.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m2-15-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m2-15-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m2-15-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m2-15-D.png\">"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-16",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-16.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "AB = 12 and DB = 12."
+        },
+        {
+          "label": "B",
+          "html": "AB = 12 and EB = 12."
+        },
+        {
+          "label": "C",
+          "html": "Triangles ABC and EBD are isosceles."
+        },
+        {
+          "label": "D",
+          "html": "No additional information is necessary to determine that the two triangles are congruent."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m2-17",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-17.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m2-17-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m2-17-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m2-17-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m2-17-D.png\">"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m2-18",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-18.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "114.83%"
+        },
+        {
+          "label": "B",
+          "html": "137.83%"
+        },
+        {
+          "label": "C",
+          "html": "156.00%"
+        },
+        {
+          "label": "D",
+          "html": "243.17%"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m2-19",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m2-19.png\">",
+      "correctAnswer": "5.5",
+      "acceptedAnswers": [
+        "11/2"
+      ]
+    },
+    {
+      "id": "math-m2-20",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-20.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "−23"
+        },
+        {
+          "label": "B",
+          "html": "13"
+        },
+        {
+          "label": "C",
+          "html": "81"
+        },
+        {
+          "label": "D",
+          "html": "313"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m2-21",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m2-21.png\">",
+      "correctAnswer": "275"
+    },
+    {
+      "id": "math-m2-22",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-22.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "cos L &gt; sin K"
+        },
+        {
+          "label": "B",
+          "html": "cos L = sin K"
+        },
+        {
+          "label": "C",
+          "html": "cos L &lt; sin K"
+        },
+        {
+          "label": "D",
+          "html": "There is not enough information to compare the values of cos L and sin K"
+        }
+      ],
+      "correctAnswer": "D"
+    }
+  ]
+}

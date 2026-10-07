@@ -1,0 +1,422 @@
+[
+  {
+    "id": "u14-01",
+    "lessonCode": "U14",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">The Limón technique, developed by Mexican-born dancer and choreographer Jose Limón, is known for its emphasis on breath control and its interplay of weight and ______ dancers may explore, for example, the moment of mid-air suspension at the top of a jump.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "weightlessness"
+      },
+      {
+        "label": "B",
+        "html": "weightlessness which"
+      },
+      {
+        "label": "C",
+        "html": "weightlessness,"
+      },
+      {
+        "label": "D",
+        "html": "weightlessness;"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. The convention being tested is the use of punctuation within a sentence. This choice uses a semicolon in a conventional way to join the first main clause (\"The Limón…weightlessness\") and the second main clause (\"dancers…jump\").</p><p><b>Choice A is incorrect</b> because it results in a run-on sentence. The two main clauses are fused without punctuation and/or a conjunction.</p><p><b>Choice B is incorrect</b>. The relative pronoun \"which\" can’t be used in this way to join two main clauses.</p><p><b>Choice C is incorrect</b> because it results in a comma splice. Without a conjunction following it, a comma can’t be used in this way to join two main clauses.</p>"
+  },
+  {
+    "id": "u14-02",
+    "lessonCode": "U14",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">In 2021, Mexican biologist Martha Lydia Macías-Rubalcava led a review of the scientific literature related to endophytic fungi (i.e., fungi that live inside a host ______ researching 120 endophytic fungi–produced compounds, she found that their phytotoxicity can make them viable alternatives to chemical herbicides for controlling weeds.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "plant). By"
+      },
+      {
+        "label": "B",
+        "html": "plant), by"
+      },
+      {
+        "label": "C",
+        "html": "plant) and by"
+      },
+      {
+        "label": "D",
+        "html": "plant) by"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. The convention being tested is punctuation use between sentences. In this choice, the period is used correctly to mark the boundary between one sentence (\"In…plant\") and another (\"By…weeds\"). The prepositional phrase beginning with \"by\" modifies the subject of the next sentence, \"she,\" which refers to Macías-Rubalcava.</p><p><b>Choice B is incorrect</b> because it results in a comma splice. A comma can’t be used in this way to join two sentences.</p><p><b>Choice C is incorrect</b>. Without a comma preceding it, the conjunction \"and\" can’t be used in this way to join two sentences.</p><p><b>Choice D is incorrect</b> because it results in a run-on sentence. The two sentences are fused without punctuation and/or a conjunction.</p>"
+  },
+  {
+    "id": "u14-03",
+    "lessonCode": "U14",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Jamaican British artist Willard Wigan is known for his remarkable ______ so small that they are best viewed through a microscope, Wigan’s sculptures are made from tiny natural materials, such as spiderweb strands.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "microsculptures creations"
+      },
+      {
+        "label": "B",
+        "html": "microsculptures, creations"
+      },
+      {
+        "label": "C",
+        "html": "microsculptures. Creations"
+      },
+      {
+        "label": "D",
+        "html": "microsculptures and creations"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b>. The convention being tested is punctuation between sentences. In this choice, the period is used to correctly mark the boundary between one sentence (\"Jamaican…microsculptures\") and another (\"Creations…strands\"). The noun phrase beginning with \"creations\" modifies the subject of the next sentence, \"Wigan’s sculptures.\"</p><p><b>Choice A is incorrect</b> because it results in a run-on sentence. The sentences (\"Jamaican…microsculptures\" and \"Creations…strands\") are fused without punctuation and/or a conjunction.</p><p><b>Choice B is incorrect</b> because it results in a comma splice. A comma can’t be used in this way to mark the boundary between sentences.</p><p><b>Choice D is incorrect</b>. Without a comma preceding it, the conjunction \"and\" can’t be used in this way to join sentences.</p>"
+  },
+  {
+    "id": "u14-04",
+    "lessonCode": "U14",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">On July 23, 1854, a clipper ship called the <i>Flying Cloud</i> entered San Francisco ______ left New York Harbor under the guidance of Captain Josiah Perkins Creesy and his wife, navigator Eleanor Creesy, a mere 89 days and 8 hours earlier, the celebrated ship set a record that would stand for 135 years.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Bay and having"
+      },
+      {
+        "label": "B",
+        "html": "Bay. Having"
+      },
+      {
+        "label": "C",
+        "html": "Bay, having"
+      },
+      {
+        "label": "D",
+        "html": "Bay having"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. The convention being tested is punctuation use between sentences. In this choice, the period after “Bay” is used correctly to mark the boundary between one sentence (“On…Bay”) and another sentence that begins with a supplementary phrase (“Having…years”). Here, the supplementary phrase beginning with “having” modifies the subject of the second sentence, “the celebrated ship.”</p><p><b>Choice A is incorrect</b>. Without a comma preceding it, the conjunction “and” can’t be used in this way to join sentences.</p><p><b>Choice C is incorrect</b> because it results in a comma splice. A comma can’t be used in this way to join two sentences.</p><p><b>Choice D is incorrect</b> because it results in a run-on sentence. The sentences (“On…Bay” and “having…years”) are fused without punctuation and/or a conjunction.</p>"
+  },
+  {
+    "id": "u14-05",
+    "lessonCode": "U14",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">On sunny days, dark rooftops absorb solar energy and convert it to unwanted heat, raising the surrounding air ______ a light-colored covering to an existing dark roof, either by attaching prefabricated reflective sheets or spraying on a paint-like coating, helps combat this effect.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "temperature; by adding"
+      },
+      {
+        "label": "B",
+        "html": "temperature, adding"
+      },
+      {
+        "label": "C",
+        "html": "temperature. Adding"
+      },
+      {
+        "label": "D",
+        "html": "temperature by adding"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b>. The convention being tested is punctuation use between sentences. In this choice, the period is used correctly to mark the boundary between the first sentence (“On…temperature”) and the second sentence (“Adding…effect”). The gerund phrase beginning with “adding” is the subject of the second sentence, and the verb phrase “helps combat this effect” describes what adding a light-colored covering can do.</p><p><b>Choice A is incorrect</b> because a semicolon can’t be used in this way to join the sentence “On...temperature” and the supplementary phrases that follow. Doing so leaves the verb phrase “helps combat” without a subject and thus results in a grammatically unconventional sentence.</p><p><b>Choice B is incorrect</b> because it results in a comma splice. A comma can’t be used in this way to mark the boundary between sentences.</p><p><b>Choice D is incorrect</b>. This choice results in a confusing and illogical sentence that suggests that adding a light-colored covering to an existing dark roof raises the temperature of the surrounding air. Furthermore, it creates ambiguity by leaving the verb phrase “helps combat” without a subject (so it isn’t clear what helps combat the effect).</p>"
+  },
+  {
+    "id": "u14-06",
+    "lessonCode": "U14",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Over twenty years ago, in a landmark experiment in the psychology of choice, professor Sheena Iyengar set up a jam-tasting booth at a grocery store. The number of jams available for tasting ______ some shoppers had twenty-four different options, others only six. Interestingly, the shoppers with fewer jams to choose from purchased more jam.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "varied:"
+      },
+      {
+        "label": "B",
+        "html": "varied,"
+      },
+      {
+        "label": "C",
+        "html": "varied, while"
+      },
+      {
+        "label": "D",
+        "html": "varied while"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. The convention being tested is the use of a colon within a sentence. In this choice, the colon is used in a conventional way to introduce the following description of how the number of jams available varied.</p><p><b>Choice B is incorrect</b> because it creates a comma splice. A comma can’t be used in this way to join two main clauses (“the number…varied” and “some…six”).</p><p><b>Choice C is incorrect</b> because it results in an illogical and confusing sentence. Using the conjunction “while” to join the main clause (“the number…varied”) with the following clause’s description of the number of jams available suggests that the variation in the number of jams is in contrast to some shoppers having twenty-four options.</p><p><b>Choice D is incorrect</b> because it results in an illogical and confusing sentence. Using “while” in this way suggests that the number of jams available varied during the time in which some shoppers had twenty-four options and others had six. The sentence makes clear, however, that what follows “varied” is a description of the variation, not a separate, simultaneous occurrence.</p>"
+  },
+  {
+    "id": "u14-07",
+    "lessonCode": "U14",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">In forecasting weather events, meteorologists sometimes discuss the role of atmospheric rivers. What are atmospheric rivers, and how ______ Part of the water cycle, atmospheric rivers are narrow channels of moisture moving through the atmosphere. In certain conditions, these “rivers” can release some of their moisture as precipitation.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "do they affect our weather."
+      },
+      {
+        "label": "B",
+        "html": "they do affect our weather."
+      },
+      {
+        "label": "C",
+        "html": "do they affect our weather?"
+      },
+      {
+        "label": "D",
+        "html": "they do affect our weather?"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b>. The convention being tested is end-of-sentence punctuation. This choice correctly uses a question mark to punctuate the coordinated interrogative clauses \"What are atmospheric rivers\" and \"how do they affect our weather,\" both of which ask direct questions.</p><p><b>Choice A is incorrect</b> because a period can’t be used in this way to punctuate an interrogative clause, such as \"how do they affect our weather,\" at the end of a sentence.</p><p><b>Choice B is incorrect</b> because the structure requires an interrogative clause and a question mark at the end of the sentence.</p><p><b>Choice D is incorrect</b> because the structure requires an interrogative clause at the end of the sentence</p>"
+  },
+  {
+    "id": "u14-08",
+    "lessonCode": "U14",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">In the 1950s, novel audio technologies allowed the addition of another instrument to jazz and swing ______ relatively quiet instrument, its full range of sound was finally audible alongside the blaring brass instruments of the time, allowing flautists like Bennie Maupin and Bobbi Humphrey to perform with other jazz greats.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "music, the flute, a"
+      },
+      {
+        "label": "B",
+        "html": "music. The flute, a"
+      },
+      {
+        "label": "C",
+        "html": "music; the flute, a"
+      },
+      {
+        "label": "D",
+        "html": "music: the flute. A"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. The convention being tested is the use of punctuation within and between sentences. In this choice, the colon correctly introduces the name of the instrument (the flute) that novel audio technologies allowed to be added to jazz and swing. In addition, the period is used to correctly mark the boundary between one sentence (\"In...flute\") and another (\"A relatively...greats\").</p><p><b>Choice A is incorrect</b> because it results in a comma splice. A comma can’t be used in this way to join two main clauses (\"In...quiet instrument\" and \"its...greats\").</p><p><b>Choice B is incorrect</b>. In standard English, it’s unconventional to form a sentence in this way with two uncoordinated subjects (\"the flute\" and \"its full range of sound\"), and the lack of a clear main subject results in an awkwardly constructed and confusing sentence.</p><p><b>Choice C is incorrect</b>. In standard English, it’s unconventional to form an independent clause in this way with two uncoordinated subjects (\"the flute\" and \"its full range of sound\"), and the lack of a clear main subject results in an awkwardly constructed and confusing clause.</p>"
+  },
+  {
+    "id": "u14-09",
+    "lessonCode": "U14",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Po’Pay was a Tewa leader from Ohkay Owingeh, a pueblo located about twenty-five miles north of present-day Santa Fe, New Mexico. He was instrumental in organizing the Pueblo Revolt of ______ as a result of his leadership, the Spanish colonizers were expelled from the region for a time.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "1680"
+      },
+      {
+        "label": "B",
+        "html": "1680 and"
+      },
+      {
+        "label": "C",
+        "html": "1680,"
+      },
+      {
+        "label": "D",
+        "html": "1680, and"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. The convention being tested is the coordination of main clauses within a sentence. This choice correctly uses a comma and the coordinating conjunction “and” to join the first main clause (“He...1680”) and the second main clause (“as...time”).</p><p><b>Choice A is incorrect</b> because it results in a run-on sentence. The two main clauses are fused without punctuation and/or a conjunction.</p><p><b>Choice B is incorrect</b> because when coordinating two longer main clauses such as these, it’s conventional to use a comma before the coordinating conjunction.</p><p><b>Choice C is incorrect</b> because it results in a comma splice. Without a conjunction following it, a comma can’t be used in this way to join two main clauses.</p>"
+  },
+  {
+    "id": "u14-10",
+    "lessonCode": "U14",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">While light is known as one of the fastest-moving substances, it slows down when passing through some types of matter. One such type of matter is a form of cooled, condensed gas called a Bose-Einstein condensate ______ Dutch physicist Lene Hau famously used a BEC to slow a beam of light to a complete halt.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "(BEC),"
+      },
+      {
+        "label": "B",
+        "html": "(BEC) and"
+      },
+      {
+        "label": "C",
+        "html": "(BEC);"
+      },
+      {
+        "label": "D",
+        "html": "(BEC)"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b>. The convention being tested is the coordination of main clauses within a sentence. This choice correctly uses a semicolon to join the first main clause (\"One...(BEC)\") and the second main clause (\"Dutch...halt\").</p><p><b>Choice A is incorrect</b> because it results in a comma splice. Without a conjunction following it, a comma can’t be used in this way to join two main clauses.</p><p><b>Choice B is incorrect</b> because it results in a run-on sentence. Without a comma preceding it, a conjunction can’t be used in this way to join two main clauses.</p><p><b>Choice D is incorrect</b> because it results in a run-on sentence. The two main clauses are fused without punctuation and/or a conjunction.</p>"
+  },
+  {
+    "id": "u14-11",
+    "lessonCode": "U14",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">In 1977, legendary Puerto Rican performer Rita Moreno won an Emmy Award, making her one of the rare talents to earn the highest honors in television, music, film, and stage entertainment—the Emmy, Grammy, Oscar, and Tony ______ the achievement is known as “winning the EGOT.”</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "awards, respectively;"
+      },
+      {
+        "label": "B",
+        "html": "awards; respectively"
+      },
+      {
+        "label": "C",
+        "html": "awards, respectively—"
+      },
+      {
+        "label": "D",
+        "html": "awards, respectively,"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. The convention being tested is the use of punctuation within a sentence. This choice correctly uses a comma to separate the supplementary adverb “respectively” from the rest of the supplementary element introduced by the dash after “entertainment” (“the Emmy...awards”), and it uses a semicolon to join the first main clause (“In...respectively”) and the second main clause (“the achievement...EGOT’”).</p><p><b>Choice B is incorrect</b> because placing the semicolon after “awards” illogically separates the supplementary adverb “respectively” from the supplementary element it belongs to (“the Emmy...awards”) and attaches it to the following main clause (“the achievement...EGOT’”), resulting in a confusing and ungrammatical sentence.</p><p><b>Choice C is incorrect</b>. The dash after “respectively” pairs with the dash after “entertainment” to close the supplementary element (“the Emmy...respectively”), so it can’t also serve to mark the boundary between the two main clauses (“In...respectively” and “the achievement...EGOT’”). The result fails to mark that boundary with appropriate punctuation.</p><p><b>Choice D is incorrect</b> because it results in a comma splice. Without a conjunction following it, the comma after “respectively” can’t be used in this way to join the first main clause (“In...respectively”) and the second main clause (“the achievement...EGOT’”).</p>"
+  },
+  {
+    "id": "u14-12",
+    "lessonCode": "U14",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">With the development of new technologies that use natural resources more efficiently, the overall consumption of those resources might be expected to decrease. Economists have observed that improvements in efficiency often correlate negatively with resource ______ efficiency gains, lowering the cost of use, may increase demand to the extent that resource consumption ultimately rises.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "conservation, though,"
+      },
+      {
+        "label": "B",
+        "html": "conservation; though"
+      },
+      {
+        "label": "C",
+        "html": "conservation, though;"
+      },
+      {
+        "label": "D",
+        "html": "conservation, though"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b>. The convention being tested is the use of punctuation within a sentence. This choice correctly uses a comma to separate the supplementary adverb \"though\" from the preceding main clause (\"Economists...conservation\") and uses a semicolon to join the next main clause (\"efficiency gains...rises\") to the rest of the sentence. Further, placing the semicolon after \"though\" indicates that the information in the preceding main clause (\"improvements in efficiency often correlate negatively with resource conservation\") is contrary to what might be assumed from the information in the previous sentence (resource consumption would be expected to decrease with the development of new, more efficient technologies).</p><p><b>Choice A is incorrect</b> because it results in a comma splice. Commas can’t be used in this way to punctuate a supplementary word or phrase between two main clauses.</p><p><b>Choice B is incorrect</b> because it fails to mark the boundary between the two main clauses (\"Economists...though\" and \"efficiency gains....rises\") with appropriate punctuation. Moreover, placing the semicolon after \"conservation\" illogically indicates that the information in the next clause (gains in efficiency may lead to an increase in resource consumption) is contrary to the information in the previous clause (\"improvements in efficiency often correlate negatively with resource conservation\").</p><p><b>Choice D is incorrect</b> because placing a comma after \"conservation\" illogically indicates that the information in the next clause (gains in efficiency may lead to an increase in resource consumption) is contrary to the information in the previous clause (\"improvements in efficiency often correlate negatively with resource conservation\").</p>"
+  },
+  {
+    "id": "u14-13",
+    "lessonCode": "U14",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Jetties—long, narrow structures that extend from a landmass into the water—are often constructed to protect coastlines from erosion. Jetties can sometimes have the opposite ______ obstructing the natural flow of sand along the shore can lead to increased erosion in some areas.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "effect, though;"
+      },
+      {
+        "label": "B",
+        "html": "effect, though"
+      },
+      {
+        "label": "C",
+        "html": "effect; though"
+      },
+      {
+        "label": "D",
+        "html": "effect, though,"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. The convention being tested is the use of punctuation within a sentence. This choice correctly uses a comma to separate the supplementary adverb \"though\" from the preceding main clause (\"Jetties can sometimes have the opposite effect\") and uses a semicolon to join the next main clause (\"obstructing…areas\") to the rest of the sentence. Further, placing the semicolon after \"though\" logically indicates that the information earlier in this sentence (that jetties can sometimes cause erosion) is contrary to what might be assumed from the information in the previous sentence (that jetties are often constructed for the purpose of protecting coastlines from erosion).</p><p><b>Choice B is incorrect</b> because it fails to mark the boundary between the two main clauses with appropriate punctuation. With \"though…areas\" functioning as a subordinate clause following the comma, this choice illogically indicates that the following information (that obstructing the natural flow of sand along the shore can sometimes lead to erosion) is contrary to the information earlier in the sentence (that jetties can sometimes cause erosion). Instead, the information following \"though\" supports the previous claim about the erosive effects of jetties.</p><p><b>Choice C is incorrect</b> because it’s not conventional to use a semicolon in this way to separate a main clause from a dependent clause. Further, it illogically indicates that the following information (that obstructing the natural flow of sand along the shore can sometimes lead to erosion) is contrary to the information earlier in the sentence (that jetties can sometimes cause erosion). Instead, the information following \"though\" supports the previous claim about the erosive effects of jetties.</p><p><b>Choice D is incorrect</b> because it results in a comma splice. Commas can’t be used in this way to set off a supplementary word or phrase between two main clauses</p>"
+  },
+  {
+    "id": "u14-14",
+    "lessonCode": "U14",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">At 1,280 meters, the Golden Gate Bridge in the United States is one of the longest suspension bridges in the ______ the Tsing Ma Bridge in China, at 1,377 meters, is even longer.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "world but"
+      },
+      {
+        "label": "B",
+        "html": "world, but,"
+      },
+      {
+        "label": "C",
+        "html": "world,"
+      },
+      {
+        "label": "D",
+        "html": "world, but"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. The convention being tested is the coordination of main clauses within a sentence. This choice correctly uses a comma and the coordinating conjunction “but” to join the first main clause (“At...world”) and the second main clause (“the...longer”).</p><p><b>Choice A is incorrect</b> because when coordinating two main clauses such as these, it’s conventional to use a comma before the coordinating conjunction.</p><p><b>Choice B is incorrect</b> because a comma isn’t needed after the conjunction “but.”</p><p><b>Choice C is incorrect</b> because it results in a comma splice. Without a conjunction following it, a comma can’t be used in this way to join two main clauses.</p>"
+  },
+  {
+    "id": "u14-15",
+    "lessonCode": "U14",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Latin America is known to have dozens, if not hundreds, of popular dance forms. Only five of these dances are included in international ballroom dance ______ rumba, samba, cha-cha-cha, paso doble, and jive—the last of which is grouped with the other Latin dances despite not having Latin roots.</div><p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "competitions, however:"
+      },
+      {
+        "label": "B",
+        "html": "competitions, however,"
+      },
+      {
+        "label": "C",
+        "html": "competitions, however;"
+      },
+      {
+        "label": "D",
+        "html": "competitions; however,"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. The convention being tested is the punctuation of supplementary elements within a sentence. This choice correctly uses a comma to separate the supplementary adverb \"however\" from the preceding main clause (\"only...competitions\"), and it uses a colon to introduce the list of dances that follows (\"rumba...jive\"). Further, placing the colon after \"however\" rather than before indicates that the information in the preceding main clause (only...competitions) is contrary to what might be assumed from the information in the previous sentence (Latin America has many more dance forms).</p><p><b>Choice B is incorrect</b>. The comma after \"however\" can’t be used in this way to introduce a series (\"rumba...jive\").</p><p><b>Choice C is incorrect</b> because it isn’t conventional to use a semicolon in this way to introduce a series of items, such as the list of dances.</p><p><b>Choice D is incorrect</b> because placing the semicolon after \"competitions\" illogically indicates that the following list of five Latin American dances (\"rumba...jive\") is contrary to the information in the previous clause (only five Latin American dances are included in international ballroom dance competitions).</p>"
+  }
+]

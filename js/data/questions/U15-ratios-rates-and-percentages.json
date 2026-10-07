@@ -1,0 +1,302 @@
+[
+  {
+    "id": "u15-01",
+    "lessonCode": "U15",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>Jennifer bought a box of Crunchy Grain cereal. The nutrition facts on the box state that a serving size of the cereal is 3/4 cup and provides 210 calories, 50 of which are calories from fat. In addition, each serving of the cereal provides 180 milligrams of potassium, which is 5% of the daily allowance for adults. If <i>p</i> percent of an adult’s daily allowance of potassium is provided by <i>x</i> servings of Crunchy Grain cereal per day, which of the following expresses <i>p</i> in terms of <i>x</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<i>p</i> = 0.5<i>x</i>"
+      },
+      {
+        "label": "B",
+        "html": "<i>p</i> = 5<i>x</i>"
+      },
+      {
+        "label": "C",
+        "html": "<i>p</i> = (0.05)<sup><i>x</i></sup>"
+      },
+      {
+        "label": "D",
+        "html": "<i>p</i> = (1.05)<sup><i>x</i></sup>"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>. It’s given that each serving of Crunchy Grain cereal provides 5% of an adult’s daily allowance of potassium, so <i>x</i> servings would provide <i>x</i> times 5%. The percentage of an adult’s daily allowance of potassium, <i>p</i>, is 5 times the number of servings, <i>x</i>. Therefore, the percentage of an adult’s daily allowance of potassium can be expressed as <i>p</i> = 5<i>x</i>.</p><p><b>Choices A, C, and D are incorrect</b> and may result from incorrectly converting 5% to its decimal equivalent, which isn’t necessary since <i>p</i> is expressed as a percentage. Additionally, choices C and D are incorrect because the context should be represented by a linear relationship, not by an exponential relationship.</p>"
+  },
+  {
+    "id": "u15-02",
+    "lessonCode": "U15",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>The expression 0.35<i>x</i> represents the result of decreasing a positive quantity <i>x</i> by what percent?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "3.5%"
+      },
+      {
+        "label": "B",
+        "html": "35%"
+      },
+      {
+        "label": "C",
+        "html": "6.5%"
+      },
+      {
+        "label": "D",
+        "html": "65%"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>.</p><ul><li>Let <i>n</i>% represent the percent by which the positive quantity <i>x</i> is decreased to result in 0.35<i>x</i>.</li><li>The value of <i>n</i> can be found by solving the equation <i>x</i> − (<i>n</i>/100)<i>x</i> = 0.35<i>x</i>.</li><li>Since <i>x</i> is a common factor of each of the terms on the left-hand side of this equation, the equation can be rewritten as <i>x</i>(1 − <i>n</i>/100) = 0.35<i>x</i>.</li><li>Dividing each side of this equation by <i>x</i> yields 1 − <i>n</i>/100 = 0.35.</li><li>Multiplying each side of this equation by 100 yields 100 − <i>n</i> = 35.</li><li>Subtracting 100 from each side of this equation yields −<i>n</i> = −65.</li><li>Dividing each side of this equation by −1 yields <i>n</i> = 65.</li><li>Therefore, the expression 0.35<i>x</i> represents the result of decreasing the positive quantity <i>x</i> by 65%.</li></ul><p><b>Choice A is incorrect</b>. Decreasing the quantity <i>x</i> by 3.5% yields <i>x</i> − 0.035<i>x</i>, or 0.965<i>x</i>, not 0.35<i>x</i>.</p><p><b>Choice B is incorrect</b>. Decreasing the quantity <i>x</i> by 35% yields <i>x</i> − 0.35<i>x</i>, or 0.65<i>x</i>, not 0.35<i>x</i>.</p><p><b>Choice C is incorrect</b>. Decreasing the quantity <i>x</i> by 6.5% yields <i>x</i> − 0.065<i>x</i>, or 0.935<i>x</i>, not 0.35<i>x</i>.</p>"
+  },
+  {
+    "id": "u15-03",
+    "lessonCode": "U15",
+    "type": "spr",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>A school district is forming a committee to discuss plans for the construction of a new high school. Of those invited to join the committee, 15% are parents of students, 45% are teachers from the current high school, 25% are school and district administrators, and the remaining 6 individuals are students. How many more teachers were invited to join the committee than school and district administrators?</p>",
+    "choices": [],
+    "correctAnswer": "8",
+    "acceptedAnswers": [
+      "8"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 8</b>.</p><ul><li>The 6 students represent (100 − 15 − 45 − 25)% = 15% of those invited to join the committee.</li><li>If <i>x</i> people were invited to join the committee, then 0.15<i>x</i> = 6.</li><li>Thus, there were 6/0.15 = 40 people invited to join the committee.</li><li>It follows that there were 0.45(40) = 18 teachers and 0.25(40) = 10 school and district administrators invited to join the committee.</li><li>Therefore, there were 8 more teachers than school and district administrators invited to join the committee.</li></ul>"
+  },
+  {
+    "id": "u15-04",
+    "lessonCode": "U15",
+    "type": "spr",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>In a sample, 80% of the items are faulty. There are 88 faulty items in the sample. How many total items are in the sample?</p>",
+    "choices": [],
+    "correctAnswer": "110",
+    "acceptedAnswers": [
+      "110"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 110</b>. Let <i>x</i> represent the total number of items in the sample. It’s given that 80% of the items are faulty and that there are 88 faulty items in the sample. Therefore, 80% of <i>x</i> is 88. Since 80% can be rewritten as 80/100, it follows that (80/100)<i>x</i> = 88. Multiplying both sides of this equation by 100 yields 80<i>x</i> = 8,800. Dividing both sides of this equation by 80 yields <i>x</i> = 110. Therefore, there are 110 total items in the sample.</p>"
+  },
+  {
+    "id": "u15-05",
+    "lessonCode": "U15",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>A square scale drawing has a side length of 55 inches, and 1 inch on the drawing represents an actual distance of 19 miles. A larger version of the same drawing is printed as a square with the side length 65% longer than the side length of the previous drawing. On the larger drawing, which of the following is closest to the actual distance, in miles, represented by 1 inch?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "6.65"
+      },
+      {
+        "label": "B",
+        "html": "11.52"
+      },
+      {
+        "label": "C",
+        "html": "31.35"
+      },
+      {
+        "label": "D",
+        "html": "35.75"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>.</p><ul><li>It's given that 1 inch on the drawing represents an actual distance of 19 miles and that the larger drawing has a side length that is 65% longer than the side length of the previous drawing.</li><li>It follows that (1.65)(1 inch), or 1.65 inches, on the larger drawing also represents an actual distance of 19 miles.</li><li>Therefore, the scale of the larger drawing can be represented as (19 miles)/(1.65 inches), which is approximately 11.52 miles per inch.</li><li>Therefore, 11.52 is closest to the actual distance, in miles, represented by 1 inch on the larger drawing.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u15-06",
+    "lessonCode": "U15",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>Of 300,000 paper clips, 234,000 are size large. What percentage of the paper clips are size large?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "22%"
+      },
+      {
+        "label": "B",
+        "html": "33%"
+      },
+      {
+        "label": "C",
+        "html": "66%"
+      },
+      {
+        "label": "D",
+        "html": "78%"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>. The proportion of the paper clips that are size large can be written as 234,000/300,000, or 0.78. Therefore, the percentage of the paper clips that are size large is 0.78(100), or 78%.</p><p><b>Choice A is incorrect</b>. This is the percentage of the paper clips that are not size large.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u15-07",
+    "lessonCode": "U15",
+    "type": "spr",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>A printer produces posters at a constant rate of 42 posters per minute. At what rate, in posters per <u>hour</u>, does the printer produce the posters?</p>",
+    "choices": [],
+    "correctAnswer": "2520",
+    "acceptedAnswers": [
+      "2520",
+      "2,520"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 2,520</b>. There are 60 minutes in one hour. At a rate of 42 posters per minute, the number of posters produced in one hour can be determined by (42 posters/1 minute)(60 minutes/1 hour), which is 2,520 posters per hour.</p>"
+  },
+  {
+    "id": "u15-08",
+    "lessonCode": "U15",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>The population density of Iceland, in people per square kilometer of land area, increased from 2.5 in 1990 to 3.3 in 2014. During this time period, the land area of Iceland was 100,250 square kilometers. By how many people did Iceland’s population increase from 1990 to 2014?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "330,825"
+      },
+      {
+        "label": "B",
+        "html": "132,330"
+      },
+      {
+        "label": "C",
+        "html": "125,312"
+      },
+      {
+        "label": "D",
+        "html": "80,200"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>.</p><ul><li>The increase in Iceland’s population can be found by multiplying the increase in population density, in people per square kilometer, by the area, in square kilometers.</li><li>It’s given that the population density of Iceland was 2.5 people per square kilometer in 1990 and 3.3 people per square kilometer in 2014.</li><li>The increase in population density can be found by subtracting 2.5 from 3.3, which yields 0.8.</li><li>It’s given that the land area of Iceland was 100,250 square kilometers.</li><li>Thus, the increase in population is 0.8(100,250), or 80,200.</li></ul><p><b>Alternate approach</b>: It’s given that the population density of Iceland, in people per square kilometer of land area, in 1990 was 2.5.</p><ul><li>Since the land area of Iceland was 100,250 square kilometers, it follows that the population of Iceland in 1990 was 2.5(100,250), or 250,625.</li><li>Similarly, the population of Iceland in 2014 was 3.3(100,250), or 330,825.</li><li>The population increase is the difference in the population from 1990 to 2014, or 330,825 − 250,625, which yields 80,200.</li><li>Therefore, Iceland’s population increased by 80,200 from 1990 to 2014.</li></ul><p><b>Choice A is incorrect</b>. This is the population of Iceland in 2014.</p><p><b>Choice B is incorrect</b> and may result from dividing 3.3 by 2.5, instead of subtracting 2.5 from 3.3.</p><p><b>Choice C is incorrect</b> and may result from dividing the population of Iceland in 1990 by 2.</p>"
+  },
+  {
+    "id": "u15-09",
+    "lessonCode": "U15",
+    "type": "spr",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>The ratio 140 to <i>m</i> is equivalent to the ratio 4 to 28. What is the value of <i>m</i>?</p>",
+    "choices": [],
+    "correctAnswer": "980",
+    "acceptedAnswers": [
+      "980"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 980</b>. It's given that the ratio 140 to <i>m</i> is equivalent to the ratio 4 to 28. Therefore, the value of <i>m</i> can be found by solving the equation 140/<i>m</i> = 4/28. Multiplying each side of this equation by <i>m</i> yields 140 = 4<i>m</i>/28. Multiplying each side of this equation by 28 yields 3,920 = 4<i>m</i>. Dividing each side of this equation by 4 yields 980 = <i>m</i>. Therefore, the value of <i>m</i> is 980.</p>"
+  },
+  {
+    "id": "u15-10",
+    "lessonCode": "U15",
+    "type": "spr",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>To study the moisture content in a group of trees, samples from the trunk of each tree were taken from 25 trees and cut in the shape of a cube. The length of the edge of one of these cubes is 2.00 centimeters. If this cube has a mass of 2.56 grams, what is the density of this cube, in grams per cubic centimeter?</p>",
+    "choices": [],
+    "correctAnswer": ".32",
+    "acceptedAnswers": [
+      ".32",
+      "0.32",
+      "8/25"
+    ],
+    "explanationHtml": "<p>The correct answer is .32.</p><ul><li>The volume of a cube is given by the formula <i>V</i> = <i>s</i><sup>3</sup>, where <i>s</i> is the length of an edge of the cube.</li><li>It’s given that each edge of the cube has a length of 2.00 centimeters.</li><li>Substituting 2.00 centimeters for <i>s</i> in the formula <i>V</i> = <i>s</i><sup>3</sup> yields <i>V</i> = (2.00 centimeters)<sup>3</sup>, or <i>V</i> = 8.00 cubic centimeters.</li><li>It’s given that the cube has a mass of 2.56 grams.</li><li>Dividing the mass, in grams, of the cube by the volume, in cubic centimeters, of the cube gives its density, in grams per cubic centimeters.</li><li>Therefore, the density of the cube is (2.56 grams)/(8.00 cubic centimeters), or .32 grams per cubic centimeter.</li><li>Note that .32 and 8/25 are examples of ways to enter a correct answer.</li></ul>"
+  },
+  {
+    "id": "u15-11",
+    "lessonCode": "U15",
+    "type": "spr",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>An area of 46.00 square nautical miles is equivalent to <i>k</i> square kilometers. To the nearest tenth, what is the value of <i>k</i>? (1 nautical mile = 1.852 kilometers)</p>",
+    "choices": [],
+    "correctAnswer": "157.8",
+    "acceptedAnswers": [
+      "157.8"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 157</b>.8. It’s given that an area of 46.00 square nautical miles is equivalent to <i>k</i> square kilometers. Since 1 nautical mile is equal to 1.852 kilometers, it follows that an area of 1 square nautical mile is equivalent to (1.852)<sup>2</sup>, or 3.429904, square kilometers. Multiplying 46.00 by 3.429904 yields 157.775584 square kilometers. Rounding this value to the nearest tenth yields 157.8. Therefore, the value of <i>k</i> is 157.8.</p>"
+  },
+  {
+    "id": "u15-12",
+    "lessonCode": "U15",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>A rectangle has an area of 3,168 square inches. What is the area, in <b>square feet</b>, of this rectangle? (1 foot = 12 inches)</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "22"
+      },
+      {
+        "label": "B",
+        "html": "56.3"
+      },
+      {
+        "label": "C",
+        "html": "264"
+      },
+      {
+        "label": "D",
+        "html": "675.4"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>. It’s given that 1 foot = 12 inches. It follows that 1<sup>2</sup> square foot = 12<sup>2</sup> square inches, or 1 square foot = 144 square inches. Thus, 3,168 square inches is equivalent to (3,168 square inches)(1 square foot/144 square inches), or 22 square feet.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b>. This is the value of 3,168/12, not 3,168/144.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u15-13",
+    "lessonCode": "U15",
+    "type": "spr",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>One side of a flat board has an area of 874 square inches. If a pressure of 19 pounds per square inch of area is exerted on this side of the board, what is the total force, in pounds, exerted on this side of the board?</p>",
+    "choices": [],
+    "correctAnswer": "16606",
+    "acceptedAnswers": [
+      "16606",
+      "16,606"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 16,606</b>. It's given that one side of a flat board has an area of 874 square inches. If a pressure of 19 pounds per square inch of area is exerted on this side of the board, the total force exerted on this side of the board is (874 square inches)(19 pounds/1 square inch), or 16,606 pounds.</p>"
+  },
+  {
+    "id": "u15-14",
+    "lessonCode": "U15",
+    "type": "spr",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>A participant in a bicycle race completes the race with an average speed of 24,816 yards per hour. What is this average speed, in <u>miles</u> per hour? (1 mile = 1,760 yards)</p>",
+    "choices": [],
+    "correctAnswer": "14.1",
+    "acceptedAnswers": [
+      "14.1",
+      "141/10"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 14</b>.1. It’s given that a participant completes the bicycle race with an average speed of 24,816 yards per hour and 1 mile = 1,760 yards. It follows that this average speed is equivalent to (24,816 yards/1 hour)(1 mile/1,760 yards), which yields 14.1 miles/1 hour, or 14.1 miles per hour.</p>"
+  },
+  {
+    "id": "u15-15",
+    "lessonCode": "U15",
+    "type": "spr",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>For an electric field passing through a flat surface perpendicular to it, the electric flux of the electric field through the surface is the product of the electric field’s strength and the area of the surface. A certain flat surface consists of two adjacent squares, where the side length, in meters, of the larger square is 3 times the side length, in meters, of the smaller square. An electric field with strength 29.00 volts per meter passes uniformly through this surface, which is perpendicular to the electric field. If the total electric flux of the electric field through this surface is 4,640 volts · meters, what is the electric flux, in volts · meters, of the electric field through the larger square?</p>",
+    "choices": [],
+    "correctAnswer": "4176",
+    "acceptedAnswers": [
+      "4176",
+      "4,176"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 4,176</b>.</p><ul><li>It’s given that the side length of the larger square is 3 times the side length of the smaller square.</li><li>This means that the area of the larger square is 3<sup>2</sup>, or 9, times the area of the smaller square.</li><li>If the area of the smaller square is represented by <i>x</i>, then the area of the larger square can be represented by 9<i>x</i>.</li><li>Therefore, the flat surface of the two adjacent squares has a total area of <i>x</i> + 9<i>x</i>, or 10<i>x</i>.</li><li>It’s given that an electric field with strength 29.00 volts per meter passes uniformly through this surface and the total electric flux of the electric field through this surface is 4,640 volts · meters.</li><li>Since it's given that the electric flux is the product of the electric field’s strength and the area of the surface, the equation 29.00(10<i>x</i>) = 4,640, or 290<i>x</i> = 4,640, can be used to represent this situation.</li><li>Dividing each side of this equation by 290 yields <i>x</i> = 16.</li><li>Substituting 16 for <i>x</i> in the expression for the area of the larger square, 9<i>x</i>, yields 9(16), or 144, square meters.</li><li>Since the area of the larger square is 144 square meters, the electric flux, in volts · meters, of the electric field through the larger square can be determined by multiplying the area of the larger square by the strength of the electric field.</li><li>Thus, the electric flux is (144 square meters)(29.00 volts/meter), or 4,176 volts · meters.</li></ul>"
+  }
+]

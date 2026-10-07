@@ -1,0 +1,422 @@
+[
+  {
+    "id": "u2-01",
+    "lessonCode": "U2",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">The following text is from Srimati Svarna Kumari Devi’s 1894 novel <i>The Fatal Garland</i> (translated by A. Christina Albers in 1910). Shakti is walking near a riverbank that she visited frequently during her childhood.<br><br>She crossed the woods she knew so well. <u>The trees seemed to extend their branches like welcoming arms.</u> They greeted her as an old friend. Soon she reached the river-side.</div><p>Which choice best describes the function of the underlined portion in the text as a whole?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "It suggests that Shakti feels uncomfortable near the river."
+      },
+      {
+        "label": "B",
+        "html": "It indicates that Shakti has lost her sense of direction in the woods."
+      },
+      {
+        "label": "C",
+        "html": "It emphasizes Shakti’s sense of belonging in the landscape."
+      },
+      {
+        "label": "D",
+        "html": "It conveys Shakti’s appreciation for her long-term friendships."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b> because it most accurately describes how the underlined sentence functions in the text as a whole.</p><ul><li>The first sentence of the text states that Shakti knows the woods she is walking in well.</li><li>The next sentence, which is underlined, emphasizes Shakti’s familiarity with, and sense of security within, the woods by describing how the tree branches are friendly and “welcoming,” as they are depicted as extending open arms to her.</li><li>The remainder of the text also shows that Shakti is comfortable and content in the woods by describing her as “an old friend” of the trees.</li><li>Thus, the function of the underlined portion is to emphasize Shakti’s sense of belonging in the wooded landscape that she visits.</li></ul><p><b>Choice A is incorrect</b> because the text and underlined portion suggest that Shakti is comfortable, not uncomfortable, in her surroundings: the trees around her are described as welcoming and reassuring. Moreover, the underlined portion discusses Shakti’s feelings in the forest, not the river, since she hasn’t reached the river yet.</p><p><b>Choice B is incorrect</b> because the text and underlined portion emphasize Shakti’s familiarity with the woods. The trees are inviting, and she feels like “an old friend” to the woods, so she isn’t lost or confused there.</p><p><b>Choice D is incorrect</b> because the third sentence uses the phrase “as an old friend” figuratively in reference to Shakti’s sense of familiarity with the landscape, not in reference to her long-standing friendships with other people, and the text and underlined portion never discuss her feelings about such friendships.</p>"
+  },
+  {
+    "id": "u2-02",
+    "lessonCode": "U2",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Ordinary soap bubbles usually exist for a minute or less before popping due to either a rupture forced by gravity-induced drainage or the evaporation of the liquid from which the bubble is composed. But physicist Aymeric Roux and colleagues discovered ways to mitigate these factors, resulting in bubbles that can last for a year or more. For example, glycerol tends to adhere to water molecules, so <u>a bubble with a shell that contains both water and glycerol is able to draw additional water molecules from the surrounding air and thereby compensate for evaporation.</u></div><p>Which choice best states the purpose of the underlined portion in the text as a whole?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "It describes the effects of a process devised by researchers that increases the longevity of an object discussed in the text."
+      },
+      {
+        "label": "B",
+        "html": "It details the circumstances that prompted the research discussed in the text."
+      },
+      {
+        "label": "C",
+        "html": "It presents a reason why the phenomenon discussed in the text that the researchers wanted to avoid will inevitably occur."
+      },
+      {
+        "label": "D",
+        "html": "It mentions a method discussed in the text that researchers intend to test in future experiments."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b> because it describes how the underlined portion of the sentence functions in the text as a whole.</p><ul><li>The text begins by discussing ordinary soap bubbles, objects that usually exist for less than a minute before popping due to either evaporation or gravity-induced drainage.</li><li>The text then goes on to mention work by researchers Aymeric Roux and colleagues, who have discovered how to increase the longevity of bubbles by altering their chemical composition.</li><li>Finally, the underlined portion of the text describes how this process works: since the bubble contains both water and glycerol, it can draw water molecules from the surrounding air to replace those lost to evaporation.</li><li>Therefore, the underlined portion of the sentence describes the effects of a process devised by researchers that increases the longevity of an object described in the text.</li></ul><p><b>Choice B is incorrect</b> because the circumstance that prompted the research is discussed in the first sentence of the text, not the underlined portion.</p><p><b>Choice C is incorrect</b> because the underlined portion of the text does not address why soap bubbles must eventually rupture. Rather, it explains how the longevity of soap bubbles can be extended.</p><p><b>Choice D is incorrect</b> because the underlined portion of the text does not mention any future experiments.</p>"
+  },
+  {
+    "id": "u2-03",
+    "lessonCode": "U2",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Using NASA’s powerful James Webb Space Telescope (JWST), Mercedes López-Morales and colleagues measured the wavelengths of light traveling through the atmosphere of WASP-39b, an exoplanet, or planet outside our solar system. Different molecules absorb different wavelengths of light, and the wavelength measurements showed the presence of carbon dioxide (CO₂) in WASP-39b’s atmosphere. This finding not only offers the first decisive evidence of CO₂ in the atmosphere of an exoplanet but also illustrates the potential for future scientific breakthroughs held by the JWST.</div><p>Which choice best describes the overall structure of the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "It discusses a method used by some researchers, then states why an alternative method is superior to it."
+      },
+      {
+        "label": "B",
+        "html": "It describes how researchers made a scientific discovery, then explains the importance of that discovery."
+      },
+      {
+        "label": "C",
+        "html": "It outlines the steps taken in a scientific study, then presents a hypothesis based on that study."
+      },
+      {
+        "label": "D",
+        "html": "It examines how a group of scientists reached a conclusion, then shows how other scientists have challenged that conclusion."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. The text begins by describing how the researchers used the JWST to detect CO₂ in WASP-39b’s atmosphere. Then the text discusses the significance of this finding, both as the first evidence of CO₂ in an exoplanet’s atmosphere and as an illustration of the JWST’s potential for making new discoveries in general.</p><p><b>Choice A is incorrect</b>. The text doesn’t compare two different methods, but rather focuses on one study that used the JWST.</p><p><b>Choice C is incorrect</b>. The text doesn’t present a hypothesis, but rather reports on the findings of a study.</p><p><b>Choice D is incorrect</b>. The text doesn’t mention any scientists challenging the conclusion reached by López-Morales and colleagues.</p>"
+  },
+  {
+    "id": "u2-04",
+    "lessonCode": "U2",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Researchers have found a nearly 164,000-year-old molar from a member of the archaic human species known as Denisovans in a cave in Laos, suggesting that Denisovans lived in a wider range of environments than indicated by earlier evidence. <u>Before the discovery, Denisovans were thought to have lived only at high altitudes in relatively cold climates in what are now Russia and China</u>, but the discovery of the tooth in Laos suggests that they may have lived at low altitudes in relatively warm climates in Southeast Asia as well.</div><p>Which choice best states the function of the underlined portion in the text as a whole?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "It dismisses as untrue the research presented in the previous sentence."
+      },
+      {
+        "label": "B",
+        "html": "It defines a term used in the description that follows in the rest of the sentence."
+      },
+      {
+        "label": "C",
+        "html": "It emphasizes the main goal of the research introduced in the previous sentence."
+      },
+      {
+        "label": "D",
+        "html": "It provides context that clarifies the significance of the information that follows in the rest of the sentence."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. The text describes how a new discovery expands our understanding of Denisovans. The underlined portion describes what we used to believe about Denisovans, which helps the reader understand the significance of the discovery of the molar: it suggests that they lived in more places than we’d previously thought.</p><p><b>Choice A is incorrect</b>. The underlined portion doesn’t do this. Instead, it explains what we used to believe about Denisovans before the discovery—it doesn’t dismiss the new discovery as false.</p><p><b>Choice B is incorrect</b>. The underlined portion doesn’t do this. No term is defined here.</p><p><b>Choice C is incorrect</b>. The underlined portion doesn’t do this. The text never tells us what the “goal” of the research was, just what its discovery was.</p>"
+  },
+  {
+    "id": "u2-05",
+    "lessonCode": "U2",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Companies are providing consumers with more opportunities to purchase customized products than ever before. Whether buying customized sneakers, jewelry, or clothing, consumers can participate in the design of products to meet their specific needs and tastes. In turn, companies profit too: studies have shown that consumers are willing to pay more and wait longer for a customized product. Still, it can be difficult for companies to offer customization while keeping costs low, as the standard methods of mass production may not be able to accommodate making a unique product each time.</div><p>Which choice best describes the overall structure of the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "It discusses several recent innovations in product manufacturing and then suggests some potential applications of those innovations."
+      },
+      {
+        "label": "B",
+        "html": "It describes a company’s recent success with new products and then explains multiple factors that may have contributed to that success."
+      },
+      {
+        "label": "C",
+        "html": "It introduces a trend in consumer products and then explains how the trend both benefits and poses a challenge to companies."
+      },
+      {
+        "label": "D",
+        "html": "It presents two contrasting product-marketing techniques and then provides examples of one of those techniques."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b> because it presents the best description of the overall structure of the text. The text begins by stating that companies are increasingly giving consumers opportunities to customize products, allowing them to make design choices when buying certain sneakers, jewelry, and clothing. The text then indicates that although this trend benefits companies because they can successfully charge buyers more for customized products and don’t have to rush production, it also poses a challenge because producing unique items may require different and more expensive methods than the ones typically used for mass production, raising the companies’ costs. Thus, the text first introduces a trend in consumer products and then explains how the trend both benefits and poses a challenge to companies.</p><p><b>Choice A is incorrect</b> because the text doesn’t present the customization of various products as a recent innovation—the fact that there are \"more opportunities\" now indicates that there were opportunities before—and no other innovations, in product manufacturing or otherwise, are discussed.</p><p><b>Choice B is incorrect</b> because the text doesn’t discuss any particular company or example and instead speaks broadly about the trend of companies providing customizable products.</p><p><b>Choice D is incorrect</b>. Although the text discusses companies offering something that consumers like and are willing to pay more for—the ability to customize products—it doesn’t characterize this as a product-marketing technique and doesn’t compare it to any other kind of offering or technique.</p>"
+  },
+  {
+    "id": "u2-06",
+    "lessonCode": "U2",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">A study by Dr. Paul Hanel and colleagues concluded that people are more likely to behave politely when listening to ideas they disagree with if they think about values before they engage in a discussion. Study participants were assigned to one of two groups. The experimental group spent a few minutes writing about one of their personal values before they had a group discussion on a controversial topic. And the control group spent a few minutes writing about a drink (tea, milk, etc.) before their group discussion on that topic. Hanel and colleagues found that the experimental group’s discussion was more civil than the control group’s discussion was.</div><p>Which choice best describes the main purpose of the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "To describe a widely held belief and how a study’s results support that belief"
+      },
+      {
+        "label": "B",
+        "html": "To argue that researchers were surprised by the results of a certain study"
+      },
+      {
+        "label": "C",
+        "html": "To suggest ways to improve a certain study’s experimental design"
+      },
+      {
+        "label": "D",
+        "html": "To explain a study’s conclusion and how a research team arrived at that conclusion"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b> because it most accurately describes the main purpose of the text, which is to explain a study’s conclusion and how researchers involved in the study arrived at that conclusion.</p><ul><li>The text begins by summarizing the main conclusion of the study conducted by Paul Hanel and colleagues: when confronted with ideas they disagree with in discussions about controversial topics, people are more likely to respond politely if they think about their personal values before engaging in such discussions.</li><li>The text then goes on to describe the design of Hanel and colleagues’ experiment.</li><li>By comparing interactions between members of an experimental group (who had been prompted to write about their personal values beforehand) to those between members of a control group (who had been prompted to write about a beverage), the team found that people in the experimental group behaved more civilly, or politely, than people in the control group did during discussions about a controversial topic.</li><li>This finding led to the conclusion described at the beginning of the text.</li></ul><p><b>Choice A is incorrect</b>. Although the text discusses the results of a study, it doesn’t provide any indication that the conclusion the study supported—that when facing disagreement, people behave more politely when they have thought about their values—is a belief that is widely held.</p><p><b>Choice B is incorrect</b> because the text doesn’t indicate that the researchers found the results of their study to be surprising, or contrary to what they expected. In fact, there’s no indication provided in the text about how the researchers felt about the study’s results or that the results should be considered surprising.</p><p><b>Choice C is incorrect</b>. Although the text discusses the experimental design of a study, it doesn’t suggest any improvements to that design; instead, it focuses on how the design enabled the researchers to draw a particular conclusion.</p>"
+  },
+  {
+    "id": "u2-07",
+    "lessonCode": "U2",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Early in the Great Migration of 1910–1970, which involved the mass migration of Black people from the southern to the northern United States, political activist and <i>Chicago Defender</i> writer Fannie Barrier Williams was instrumental in helping other Black women establish themselves in the North. Many women hoped for better employment opportunities in the North because, in the South, they faced much competition for domestic employment and men tended to get agricultural work. To aid with this transition, Barrier Williams helped secure job placement in the North for many women before they even began their journey.</div><p>Which choice best states the main purpose of the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "To introduce and illustrate Barrier Williams’s integral role in supporting other Black women as their circumstances changed during part of the Great Migration"
+      },
+      {
+        "label": "B",
+        "html": "To establish that Barrier Williams used her professional connections to arrange employment for other Black women, including jobs with the <i>Chicago Defender</i>"
+      },
+      {
+        "label": "C",
+        "html": "To demonstrate that the factors that motivated the start of the Great Migration were different for Black women than they were for Black men"
+      },
+      {
+        "label": "D",
+        "html": "To provide an overview of the employment challenges faced by Black women in the agricultural and domestic spheres in the southern United States"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b> because it most accurately describes the text’s purpose, which is to discuss the important role Barrier Williams played in supporting many other Black women as they relocated to the northern United States during the early years of the Great Migration. After introducing Barrier Williams, the text describes how she helped find jobs for other Black women, who in many cases relocated in search of better employment prospects than the South could offer at the time. The text indicates that by doing so, she eased these women’s transition as their circumstances changed.</p><p><b>Choice B is incorrect</b>. Although the text mentions Barrier Williams’s work as a political activist and writer for the Chicago Defender, it doesn’t discuss any professional connections she made in these roles or indicate that she used any such connections in her work to secure employment for other Black women.</p><p><b>Choice C is incorrect</b>. Although the text discusses a factor that caused many women to relocate during the Great Migration, their difficulty finding employment in the South, the text doesn’t indicate that this factor motivated the start of the Great Migration. Moreover, the text doesn’t discuss the factors that motivated Black men to migrate.</p><p><b>Choice D is incorrect</b>. Although the text mentions the difficult employment prospects for Black women in the domestic and agricultural sectors in the South during the Great Migration, the text’s main purpose isn’t to provide an overview of the employment challenges Black women faced in these sectors. Rather, it provides this information to show that Barrier Williams played a crucial role in supporting many Black women who relocated to the North by helping them achieve one of their main goals, securing a job.</p>"
+  },
+  {
+    "id": "u2-08",
+    "lessonCode": "U2",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Archeological excavation of Market Street Chinatown, a nineteenth-century Chinese American community in San Jose, California, provided the first evidence that Asian food products were imported to the United States in the 1800s: bones from a freshwater fish species native to Southeast Asia. <u><i>Jinshanzhuang</i>—Hong Kong–based import/export firms—likely coordinated the fish’s transport from Chinese-operated fisheries in Vietnam and Malaysia to North American markets.</u> This route reveals the (often overlooked) multinational dimensions of the trade networks linking Chinese diaspora communities.</div><p>Which choice best describes the function of the underlined sentence in the text as a whole?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "It explains why efforts to determine the country of origin of the items mentioned in the previous sentence remain inconclusive."
+      },
+      {
+        "label": "B",
+        "html": "It provides information that helps support a claim about a discovery’s significance that is presented in the following sentence."
+      },
+      {
+        "label": "C",
+        "html": "It traces the steps that were taken to locate and recover the objects that are described in the previous sentence."
+      },
+      {
+        "label": "D",
+        "html": "It outlines a hypothesis that additional evidence discussed in the following sentence casts some doubt on."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. The underlined sentence provides information about import/export firms, showing how Chinese communities across the world were connected by trade routes.</p><p><b>Choice A is incorrect</b>. The underlined sentence never suggests that the countries of origin of the fish are in question—in fact, it tells us exactly where they came from.</p><p><b>Choice C is incorrect</b>. The passage never describes the steps taken to discover the fish bones described in the previous sentence.</p><p><b>Choice D is incorrect</b>. The underlined sentence doesn’t outline a hypothesis but instead provides evidence. And the following sentence agrees with the underlined sentence, so we could eliminate this choice just for saying that the following sentence \"casts some doubt on\" the underlined one—partly wrong is all wrong.</p>"
+  },
+  {
+    "id": "u2-09",
+    "lessonCode": "U2",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">The Bayeux Tapestry, from eleventh-century France, depicts 75 scenes over 250 feet of fabric. It was likely produced by workers embroidering in sections and then joining the resulting panels together. It’s plausible that the workshop that produced the tapestry had never produced one so large, and some researchers claim that a close examination of the joins—the places where the panels are stitched together—suggests that the workers developed and refined their joining process over the course of production. <u>For example, the first join the workers completed exhibits a clear misalignment of the borders of the two panels, whereas the later joins are virtually invisible.</u></div><p>Which choice best describes the function of the underlined sentence in the text as a whole?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "It identifies the people and events depicted in the Bayeux Tapestry."
+      },
+      {
+        "label": "B",
+        "html": "It supports an argument about the workers who produced the Bayeux Tapestry."
+      },
+      {
+        "label": "C",
+        "html": "It compares the Bayeux Tapestry with other tapestries from eleventh-century France."
+      },
+      {
+        "label": "D",
+        "html": "It describes how researchers determined where the Bayeux Tapestry was produced."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b> because it most accurately describes the function of the underlined sentence in the text as a whole.</p><ul><li>The text discusses the Bayeux Tapestry, making the point that the workers who produced the huge tapestry in the eleventh century might not have ever produced a tapestry so large before.</li><li>The text goes on to suggest that because of this lack of previous experience, the workers developed and refined the process of joining the tapestry’s panels over time as they worked.</li><li>The last sentence of the text then provides an example of an observation that suggests the workers’ process changed: clear misalignment of the borders of the two panels the workers joined first and virtually invisible joins completed later.</li><li>Thus, the underlined sentence serves to support an argument about the workers who produced the tapestry.</li></ul><p><b>Choice A is incorrect</b> because the example given in the last sentence of the text has to do with how the panels of the Bayeux Tapestry were joined by the workers, not with what is depicted in those panels; the text never identifies any people or places depicted in the tapestry.</p><p><b>Choice C is incorrect</b> because the last sentence compares how early panels in the Bayeux Tapestry were joined with how later panels in the same tapestry were joined; it doesn’t make any comparison between the Bayeux Tapestry and other tapestries from the same time in France.</p><p><b>Choice D is incorrect</b> because the last sentence doesn’t address the location where the Bayeux Tapestry was created; the first sentence of the text presents it as a given that the tapestry was created in France, but nothing in the text indicates how that origin was determined.</p>"
+  },
+  {
+    "id": "u2-10",
+    "lessonCode": "U2",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><u>Yawn contagion occurs when one individual yawns in response to another’s yawn.</u> Studies of this behavior in primates have focused on populations in captivity, but biologist Elisabetta Palagi and her colleagues have shown that it can occur in wild primate populations as well. In their study, which focused on a wild population of gelada monkeys (<i>Theropithecus gelada</i>) in Ethiopia, the researchers further reported that yawn contagion most commonly occurred in males and across different social groups instead of within a single social group.</div><p>Which choice best describes the function of the first sentence in the text as a whole?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "It defines a phenomenon that is discussed in the text."
+      },
+      {
+        "label": "B",
+        "html": "It introduces a problem that is examined in the text."
+      },
+      {
+        "label": "C",
+        "html": "It makes a claim that is challenged in the text."
+      },
+      {
+        "label": "D",
+        "html": "It presents a hypothesis that is evaluated in the text."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b> because it most accurately describes how the first sentence functions in the text as a whole.</p><ul><li>The first sentence introduces what yawn contagion is, explaining that it occurs when an individual yawns in response to the yawn of another individual.</li><li>The text goes on to describe Elisabetta Palagi and her colleagues’ study of this phenomenon in a wild population of gelada monkeys.</li><li>According to the text, the study showed that wild primate populations experience yawn contagion and that the behavior occurs most commonly in male monkeys and across social groups.</li><li>Thus, the function of the first sentence is to define the phenomenon of yawn contagion that is discussed in the text.</li></ul><p><b>Choice B is incorrect</b>. Although the first sentence introduces the text’s discussion of yawn contagion, it doesn’t present this behavior, or anything else, as a problem.</p><p><b>Choice C is incorrect</b> because the first sentence doesn’t present a claim but instead explains what yawn contagion is. Moreover, the text doesn’t challenge anything; it’s an informative text that describes the findings of a research study about yawning in wild primate populations.</p><p><b>Choice D is incorrect</b>. Although the text describes a scientific study, and most scientific studies are guided by a hypothesis, the text doesn’t say what Palagi and her colleagues’ hypothesis was; the text discusses their findings instead.</p>"
+  },
+  {
+    "id": "u2-11",
+    "lessonCode": "U2",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><u>“How lifelike are they?”</u> Many computer animators prioritize this question as they strive to create ever more realistic environments and lighting. Generally, while characters in computer-animated films appear highly exaggerated, environments and lighting are carefully engineered to mimic reality. But some animators, such as Pixar’s Sanjay Patel, are focused on a different question. Rather than asking first whether the environments and lighting they’re creating are convincingly lifelike, Patel and others are asking whether these elements reflect their films’ unique stories.</div><p>Which choice best describes the function of the underlined question in the text as a whole?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "It reflects a primary goal that many computer animators have for certain components of the animations they produce."
+      },
+      {
+        "label": "B",
+        "html": "It represents a concern of computer animators who are more interested in creating unique backgrounds and lighting effects than realistic ones."
+      },
+      {
+        "label": "C",
+        "html": "It conveys the uncertainty among many computer animators about how to create realistic animations using current technology."
+      },
+      {
+        "label": "D",
+        "html": "It illustrates a reaction that audiences typically have to the appearance of characters created by computer animators."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b> because it most accurately describes the function of the underlined question in the text as a whole.</p><ul><li>The text begins with the underlined question, “How lifelike are they?”</li><li>The text then explains that many computer animators pose this question about the environments and lighting that they create for animated films, striving for realistic animation of those components even if the characters themselves aren’t portrayed in realistic terms.</li><li>The focus of the text then shifts to describe how some animators strive to create environments and lighting that reflect the film’s unique stories rather than making them appear realistic.</li><li>Therefore, the function of the underlined question is to reflect a primary goal that many computer animators have for certain components of the animations they produce.</li></ul><p><b>Choice B is incorrect</b> because, as the text makes clear, the underlined question is one posed by computer animators who wish to create realistic backgrounds and lighting effects, not by those who, instead, wish to create effects that reflect films’ unique stories and aren’t necessarily realistic; this latter group of animators is discussed later in the text.</p><p><b>Choice C is incorrect</b>. As the text explains, many computer animators strive for realistic environments and lighting, while others do not; this difference of approach relates to whether these components should be realistic, not to how realism can be achieved using current technology, and the text never suggests that animators are uncertain how to achieve it.</p><p><b>Choice D is incorrect</b> because the underlined question pertains to the perspective of computer animators, not the audience, and the text never considers audience’s reactions to characters in animated films.</p>"
+  },
+  {
+    "id": "u2-12",
+    "lessonCode": "U2",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">The field of study called affective neuroscience seeks instinctive, physiological causes for feelings such as pleasure or displeasure. Because these sensations are linked to a chemical component (for example, the release of the neurotransmitter dopamine in the brain when one receives or expects a reward), they can be said to have a partly physiological basis. These processes have been described in mammals, but Jingnan Huang and his colleagues have recently observed that some behaviors of honeybees (such as foraging) are also motivated by a dopamine-based signaling process.</div><p>What choice best describes the main purpose of the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "It describes an experimental method of measuring the strength of physiological responses in humans."
+      },
+      {
+        "label": "B",
+        "html": "It illustrates processes by which certain insects can express how they are feeling."
+      },
+      {
+        "label": "C",
+        "html": "It summarizes a finding suggesting that some mechanisms in the brains of certain insects resemble mechanisms in mammalian brains."
+      },
+      {
+        "label": "D",
+        "html": "It presents research showing that certain insects and mammals behave similarly when there is a possibility of a reward for their actions."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b> because it most accurately describes the main purpose of the text, which is to summarize a finding suggesting that some mechanisms in the brains of certain insects resemble mechanisms in mammalian brains. The text begins by explaining that feelings such as pleasure and displeasure are linked to chemical processes in the brain, such as the release of dopamine when one receives a reward. The text then indicates that such processes have been seen in mammals but that researchers have recently observed similar processes involving dopamine in honeybees. Taken together, this information serves to sum up the discovery that some mechanisms in the brains of certain insects may resemble mechanisms linked to feelings such as pleasure and displeasure in mammals.</p><p><b>Choice A is incorrect</b> because the text doesn’t describe any experiments or experimental methods. Instead, the text describes a phenomenon that has been observed in mammals and then presents the recent observations of Huang and colleagues that this phenomenon is also seen in honeybees.</p><p><b>Choice B is incorrect</b> because there’s nothing in the text to suggest that certain insects can express how they’re feeling through particular processes. The text does indicate that certain honeybee behaviors such as foraging are linked to dopamine, but it doesn’t suggest that these behaviors enable honeybees to communicate feelings or sensations.</p><p><b>Choice D is incorrect</b> because the text presents research showing that certain honeybee behaviors such as foraging are linked to dopamine and therefore may be motivated by similar mechanisms to those in mammalian brains, not that honeybees and mammals behave similarly when there is the possibility of reward for their actions.</p>"
+  },
+  {
+    "id": "u2-13",
+    "lessonCode": "U2",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Studying late nineteenth- and early twentieth-century artifacts from an agricultural and domestic site in Texas, archaeologist Ayana O. Flewellen found that Black women employed as farm workers utilized hook-and-eye closures to fasten their clothes at the waist, giving themselves a silhouette similar to the one that was popular in contemporary fashion and typically achieved through more restrictive garments such as corsets. Flewellen argues that this sartorial practice shows that these women balanced hegemonic ideals of femininity with the requirements of their physically demanding occupation.</div><p>Which choice best states the main purpose of the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "To describe an unexpected discovery that altered a researcher’s view of how rapidly fashions among Black female farmworkers in late nineteenth- and early twentieth-century Texas changed during the period"
+      },
+      {
+        "label": "B",
+        "html": "To discuss research that investigated the ways in which Black female farmworkers in late nineteenth- and early twentieth-century Texas used fashion practices to resist traditional gender ideals"
+      },
+      {
+        "label": "C",
+        "html": "To evaluate a scholarly work that offers explanations for the impact of urban fashion ideals on Black female farmworkers in late nineteenth- and early twentieth-century Texas"
+      },
+      {
+        "label": "D",
+        "html": "To summarize the findings of a study that explored factors influencing a fashion practice among Black female farmworkers in late nineteenth- and early twentieth-century Texas"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. The text provides an overview of a scholarly work discussing the fashion practices of Black female farmworkers in late 19th- and early 20th-century Texas, and how these practices were influenced by both the fashion ideals of the time and the demands of farmwork.</p><p><b>Choice A is incorrect</b>. The text never discusses the rate of fashion change among Black female farmworkers. The text also never categorizes Flewellen’s findings as \"unexpected.\"</p><p><b>Choice B is incorrect</b>. The text actually explains that Black female farmworkers were trying to achieve traditional feminine ideals, not resist them.</p><p><b>Choice C is incorrect</b>. The text doesn’t evaluate a scholarly work but rather simply describes it. Furthermore, the text is focused on \"agricultural and domestic\" fashion, not urban fashion as this choice suggests.</p>"
+  },
+  {
+    "id": "u2-14",
+    "lessonCode": "U2",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">In 2020, rap artist and professor A.D. Carson published the first peer-reviewed rap album about his experiences with Black masculinity called “i used to love to dream.” Typically in peer review, experts evaluate scholarly articles prior to publication. For Carson’s album, dubbed a “mixtap/e/ssay,” peer review involved both scholars and rap artists. In combining elements of a mixtape album with scholarly essays that connect Carson’s lyrics to historical and contemporary contexts for listeners both inside and outside academia, Carson’s album helped redefine how scholarship is created and shared.</div><p>Which choice best states the main purpose of the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "To compare the relative public impact of scholarly articles and albums"
+      },
+      {
+        "label": "B",
+        "html": "To capture one scholar’s opinion of a new rap album"
+      },
+      {
+        "label": "C",
+        "html": "To explain why a certain rap album is particularly innovative"
+      },
+      {
+        "label": "D",
+        "html": "To describe how each step of the peer review process unfolds"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b> because it best describes the main purpose of the text, which is to explain why a certain rap album is particularly innovative. The text mentions rap artist and professor A.D. Carson, who published \"the first peer-reviewed rap album.\" The text also describes the unusual process of having the work evaluated by both scholars and rap artists before its release, and details how the album combines elements of a mixtape album with elements of scholarly essays. All of these characteristics of the album and the way in which it was developed help to demonstrate the album’s novelty.</p><p><b>Choice A is incorrect</b> because though the text mentions an album that combines elements of scholarly essays and mixtapes, it does not compare the relative public impact of scholarly articles and albums.</p><p><b>Choice B is incorrect</b> because the text does not present the opinion of a scholar regarding the rap album.</p><p><b>Choice D is incorrect</b> because though the text mentions that the album was peer reviewed, it does not detail the steps of the review.</p>"
+  },
+  {
+    "id": "u2-15",
+    "lessonCode": "U2",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Astronomers are confident that the star Betelgeuse will eventually consume all the helium in its core and explode in a supernova. <u>They are much less confident, however, about when this will happen, since that depends on internal characteristics of Betelgeuse that are largely unknown.</u> Astrophysicist Sarafina El-Badry Nance and colleagues recently investigated whether acoustic waves in the star could be used to determine internal stellar states but concluded that this method could not sufficiently reveal Betelgeuse’s internal characteristics to allow its evolutionary state to be firmly fixed.</div><p>Which choice best describes the function of the second sentence in the overall structure of the text?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "It describes a serious limitation of the method used by Nance and colleagues."
+      },
+      {
+        "label": "B",
+        "html": "It presents the central finding reported by Nance and colleagues."
+      },
+      {
+        "label": "C",
+        "html": "It identifies the problem that Nance and colleagues attempted to solve but did not."
+      },
+      {
+        "label": "D",
+        "html": "It explains how the work of Nance and colleagues was received by others in the field."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b> because it best describes how the second sentence functions in the text as a whole.</p><ul><li>The first sentence establishes something astronomers believe with some certainty: that Betelgeuse will explode in a supernova.</li><li>The second sentence then introduces a problem: astronomers aren’t certain when Betelgeuse will explode because they don’t have enough information about the star’s internal characteristics.</li><li>Finally, the third sentence indicates that researcher Sarafina El-Badry Nance and colleagues investigated a possible method of obtaining the necessary information about Betelgeuse’s internal characteristics, though they found that the method wouldn’t be sufficient.</li><li>Thus, the function of the second sentence is to identify the problem that Nance and colleagues attempted to solve but didn’t.</li></ul><p><b>Choice A is incorrect</b> because the second sentence introduces the general problem Nance and colleagues hoped to solve, not a serious limitation of how Nance and colleagues tried to solve it. It is the third sentence that introduces Nance and colleagues, but no serious limitation of their approach to studying a method of determining internal stellar states is described.</p><p><b>Choice B is incorrect</b> because the second sentence introduces the general problem Nance and colleagues hoped to solve, not the central finding they ultimately reported. It is the third sentence that presents Nance and colleagues’ conclusion that a potential method for determining internal stellar states would be insufficient.</p><p><b>Choice D is incorrect</b> because the second sentence doesn’t indicate how other astronomers or astrophysicists responded to the work done by Nance and colleagues; the text doesn’t address this information at all.</p>"
+  }
+]

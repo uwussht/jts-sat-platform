@@ -1,0 +1,422 @@
+[
+  {
+    "id": "u23-01",
+    "lessonCode": "U23",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">The prime meridian, the global indicator of zero degrees longitude established in 1884, was originally determined using astronomically derived coordinates. ______ as decades passed, new calculations would reveal increasingly precise coordinates, yet the prime meridian remained unchanged; it wasn’t until the 1980s that, spurred by improved geodetic data, the prime meridian was officially moved—roughly one hundred meters east.</div><p>Which choice completes the text with the most logical transition?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Specifically,"
+      },
+      {
+        "label": "B",
+        "html": "To that end,"
+      },
+      {
+        "label": "C",
+        "html": "Again and again,"
+      },
+      {
+        "label": "D",
+        "html": "Granted,"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b>. \"Again and again\" logically signals that the information in this sentence—that new calculations revealed increasingly precise coordinates for the location of the prime meridian—refers to events that occurred multiple times in the decades after the establishment of the prime meridian in 1884 (which is described in the preceding sentence).</p><p><b>Choice A is incorrect</b> because \"specifically\" illogically signals that the information in this sentence provides specific, precise details elaborating on the description of the prime meridian’s establishment in the previous sentence. Instead, the sentence indicates that increasingly precise coordinates were revealed on multiple occasions in the decades following the meridian’s establishment.</p><p><b>Choice B is incorrect</b> because \"to that end\" illogically signals that the information in this sentence is a means of accomplishing a goal established in the previous sentence about the prime meridian’s establishment. Instead, the sentence indicates that increasingly precise coordinates were revealed on multiple occasions in the decades following the meridian’s establishment.</p><p><b>Choice D is incorrect</b> because \"granted\" illogically signals that the information in this sentence is in opposition to the information about the prime meridian’s establishment in the previous sentence. Instead, the sentence indicates that increasingly precise coordinates were revealed on multiple occasions in the decades following the meridian’s establishment.</p>"
+  },
+  {
+    "id": "u23-02",
+    "lessonCode": "U23",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">In 1942, the 1,500-mile Alaska Highway was constructed in under nine months, largely due to the skilled work of nearly 4,000 African American soldiers from US Army engineering regiments. The soldiers’ contribution was overlooked for decades. ______ in 2017, lawmakers declared October 25 a day of recognition—“Alaska Highway Day”—for the troops who helped build this critical roadway.</div><p>Which choice completes the text with the most logical transition?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Lastly,"
+      },
+      {
+        "label": "B",
+        "html": "Then,"
+      },
+      {
+        "label": "C",
+        "html": "Similarly,"
+      },
+      {
+        "label": "D",
+        "html": "For example,"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. \"Then\" logically signals that the event described in this sentence—lawmakers’ 2017 declaration of Alaska Highway Day—is part of a chronological sequence of events, occurring after the decades-long period in which the soldiers’ contribution was overlooked.</p><p><b>Choice A is incorrect</b> because \"lastly\" illogically signals that this sentence presents the last of a series of points or reasons. Instead, it describes a later event occurring in a chronological sequence of events.</p><p><b>Choice C is incorrect</b> because \"similarly\" illogically signals that the information in this sentence is similar to the previous information about the soldiers’ contribution being overlooked for decades. Instead, it describes an event occurring after that decades-long period.</p><p><b>Choice D is incorrect</b> because \"for example\" illogically signals that this sentence provides an example illustrating the previous information about the soldiers’ contribution being overlooked for decades. Instead, it describes an event occurring after that decades-long period.</p>"
+  },
+  {
+    "id": "u23-03",
+    "lessonCode": "U23",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Samuel Coleridge-Taylor was a prominent classical music composer from England who toured the US three times in the early 1900s. The child of a West African father and an English mother, Coleridge-Taylor emphasized his mixed-race ancestry. For example, he referred to himself as Anglo-African. ______ he incorporated the sounds of traditional African music into his classical music compositions.</div><p>Which choice completes the text with the most logical transition?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "In addition,"
+      },
+      {
+        "label": "B",
+        "html": "Actually,"
+      },
+      {
+        "label": "C",
+        "html": "However,"
+      },
+      {
+        "label": "D",
+        "html": "Regardless,"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. “In addition” logically signals that the detail in this sentence—that Coleridge-Taylor included traditional African music in his classical compositions—adds to the information in the previous sentence. Specifically, the previous sentence indicates one way in which Coleridge-Taylor emphasized his mixed-race ancestry, and the claim that follows indicates a second, additional way.</p><p><b>Choice B is incorrect</b> because “actually” illogically signals that the detail in this sentence is surprising in light of the information in the previous sentence. Instead, the detail adds to the information, indicating a second, additional way in which Coleridge-Taylor emphasized his mixed-race ancestry.</p><p><b>Choice C is incorrect</b> because “however” illogically signals that the detail in this sentence contrasts with the information in the previous sentence. Instead, the detail adds to the information, indicating a second, additional way in which Coleridge-Taylor emphasized his mixed-race ancestry.</p><p><b>Choice D is incorrect</b> because “regardless” illogically signals that the detail in this sentence is true despite the information in the previous sentence. Instead, the detail adds to the information, indicating a second, additional way in which Coleridge-Taylor emphasized his mixed-race ancestry.</p>"
+  },
+  {
+    "id": "u23-04",
+    "lessonCode": "U23",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">In her poetry collection <i>Thomas and Beulah</i>, Rita Dove interweaves the titular characters’ personal stories with broader historical narratives. She places Thomas’s journey from the American South to the Midwest in the early 1900s within the larger context of the Great Migration. ______ Dove sets events from Beulah’s personal life against the backdrop of the US Civil Rights Movement.</div><p>Which choice completes the text with the most logical transition?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Specifically,"
+      },
+      {
+        "label": "B",
+        "html": "Thus,"
+      },
+      {
+        "label": "C",
+        "html": "Regardless,"
+      },
+      {
+        "label": "D",
+        "html": "Similarly,"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. “Similarly” logically signals that the information in the sentence—that Dove situates Beulah’s life in the context of the US Civil Rights Movement—is similar to the previous information about Thomas and the Great Migration. Both sentences support the first sentence’s claim that Dove portrays her characters in the context of broader historical narratives.</p><p><b>Choice A is incorrect</b> because “specifically” illogically signals that the information about Beulah in this sentence provides specific details elaborating on the previous information about Thomas. Instead, it’s similar to the previous information about Thomas.</p><p><b>Choice B is incorrect</b> because “thus” illogically signals that the information about Beulah in this sentence is a result or consequence of the previous information about Thomas. Instead, it’s similar to the previous information about Thomas.</p><p><b>Choice C is incorrect</b> because “regardless” illogically signals that the information about Beulah in this sentence is true despite the previous information about Thomas. Instead, it’s similar to the previous information about Thomas.</p>"
+  },
+  {
+    "id": "u23-05",
+    "lessonCode": "U23",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Many historical accounts of the 1930s focus on the widespread movement of people from dust bowl–ravaged Great Plains states to faraway California. However, a 2016 study of 1940 census data complicates this popular narrative; ______ researchers determined, migrants in states hardest hit by prolonged droughts and dust storms—Colorado, Kansas, Oklahoma, and Texas—merely relocated within the region.</div><p>Which choice completes the text with the most logical transition?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "for this reason,"
+      },
+      {
+        "label": "B",
+        "html": "more often,"
+      },
+      {
+        "label": "C",
+        "html": "additionally,"
+      },
+      {
+        "label": "D",
+        "html": "nevertheless,"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. “More often” logically signals that the historical outcome in this clause—dust bowl migrants’ relocation within the Great Plains region—was more common than the movement to California described in many historical accounts.</p><p><b>Choice A is incorrect</b> because “for this reason” illogically signals that the historical outcome in this clause was caused by either the narrative about widespread movement to California or the 2016 study’s complication of that narrative. Instead, dust bowl migrants’ regional relocation was found to be more common than the movement to California described in many historical accounts.</p><p><b>Choice C is incorrect</b> because “additionally” illogically signals that the historical outcome in this clause merely adds to either the narrative about widespread movement to California or the 2016 study’s complication of that narrative. Instead, dust bowl migrants’ regional relocation was found to be more common than the movement to California described in many historical accounts.</p><p><b>Choice D is incorrect</b> because “nevertheless” illogically signals that the historical outcome in this clause is true despite either the narrative about widespread movement to California or the 2016 study’s complication of that narrative. While the findings about dust bowl migrants’ regional relocation did challenge the previous narrative, they did not challenge the study’s findings, and this choice creates a confusing ambiguity. Instead, dust bowl migrants’ regional relocation was found to be more common than the movement to California described in many historical accounts.</p>"
+  },
+  {
+    "id": "u23-06",
+    "lessonCode": "U23",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">While studying jorō spiders, a large species originally from East Asia, University of Georgia researchers wondered if the spiders’ rapid spread throughout the southeastern US was a result of aggressive behavior. ______ they discovered that jorō spiders are gentle giants who react to even minor disturbances by “freezing” in place for an hour or more.</div><p>Which choice completes the text with the most logical transition?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Therefore,"
+      },
+      {
+        "label": "B",
+        "html": "Instead,"
+      },
+      {
+        "label": "C",
+        "html": "For example,"
+      },
+      {
+        "label": "D",
+        "html": "In other words,"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. “Instead” logically signals that the information about the researchers’ discovery in this sentence—that jorō spiders are gentle giants who “freeze” in place when disturbed—contradicts their initial hypothesis about the spiders’ aggressiveness described in the previous sentence.</p><p><b>Choice A is incorrect</b> because “therefore” illogically signals that the discovery about jorō spiders’ gentleness is a result of the initial hypothesis about their aggressive behavior. Instead, the sentence presents information that contradicts the initial hypothesis.</p><p><b>Choice C is incorrect</b> because “for example” illogically signals that the discovery about jorō spiders’ gentleness exemplifies the initial hypothesis about their aggressive behavior. Instead, the sentence presents information that contradicts the initial hypothesis.</p><p><b>Choice D is incorrect</b> because “in other words” illogically signals that the discovery about jorō spiders’ gentleness is merely restating or rephrasing the initial hypothesis about their aggressive behavior. Instead, the sentence presents information that contradicts the initial hypothesis.</p>"
+  },
+  {
+    "id": "u23-07",
+    "lessonCode": "U23",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">In a heated debate in biogeography, the field is divided between dispersalists and vicariancists. ______ there are those who argue that dispersal is the most crucial determining factor in a species’ distribution, and those who insist that vicariance (separation due to geographic barriers) is. Biogeographer Isabel Sanmartín counts herself among neither.</div><p>Which choice completes the text with the most logical transition?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Furthermore,"
+      },
+      {
+        "label": "B",
+        "html": "By contrast,"
+      },
+      {
+        "label": "C",
+        "html": "Similarly,"
+      },
+      {
+        "label": "D",
+        "html": "That is,"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. “That is” logically signals that the information in this sentence, which explains the difference between the dispersalists’ position and the vicariancists’ position, clarifies the terms of the debate between dispersalists and vicariancists introduced in the previous sentence.</p><p><b>Choice A is incorrect</b> because “furthermore” illogically signals that the information in this sentence is merely additional to (and separate from) the information in the previous sentence about the debate between dispersalists and vicariancists. Instead, the sentence clarifies the terms of the debate, explaining the difference between the dispersalists’ position and the vicariancists’ position.</p><p><b>Choice B is incorrect</b> because “by contrast” illogically signals that the information in this sentence contrasts with the information in the previous sentence. Instead, the sentence clarifies the terms of the debate between dispersalists and vicariancists introduced in the previous sentence.</p><p><b>Choice C is incorrect</b> because “similarly” illogically signals that the information in this sentence is merely similar to (and separate from) the information in the previous sentence about the debate between dispersalists and vicariancists. Instead, the sentence clarifies the terms of the debate, explaining the difference between the dispersalists’ position and the vicariancists’ position.</p>"
+  },
+  {
+    "id": "u23-08",
+    "lessonCode": "U23",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Scientists were able to isolate a relatively pure sample of selenium in 1817, the same year they first discovered the element’s existence. ______ the isolation process took longer for molybdenum, which was isolated in its pure form three years after scientists first discovered it.</div><p>Which choice completes the text with the most logical transition?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "By contrast,"
+      },
+      {
+        "label": "B",
+        "html": "Thus,"
+      },
+      {
+        "label": "C",
+        "html": "Similarly,"
+      },
+      {
+        "label": "D",
+        "html": "For instance,"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. \"By contrast\" logically signals that the information in this sentence—that isolating molybdenum was a relatively long process—contrasts with the previous information that isolating selenium was a short process.</p><p><b>Choice B is incorrect</b> because \"thus\" illogically signals that the information in this sentence is a result of the previous information about selenium’s short isolation process. Instead, the sentence presents contrasting information about molybdenum’s longer isolation process.</p><p><b>Choice C is incorrect</b> because \"similarly\" illogically signals that the information in this sentence is similar to the previous information about selenium’s short isolation process. Instead, the sentence presents contrasting information about molybdenum’s longer isolation process.</p><p><b>Choice D is incorrect</b> because \"for instance\" illogically signals that the information in this sentence exemplifies the previous information about selenium’s short isolation process. Instead, the sentence presents contrasting information about molybdenum’s longer isolation process.</p>"
+  },
+  {
+    "id": "u23-09",
+    "lessonCode": "U23",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Most of the planets that have been discovered outside our solar system orbit G-type stars, like our Sun. In 2014, ______ researchers identified a planet orbiting KELT-9, a B-type star more than twice as massive and nearly twice as hot as the Sun. Called KELT-9b, it is one of the hottest planets ever discovered.</div><p>Which choice completes the text with the most logical transition?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "likewise,"
+      },
+      {
+        "label": "B",
+        "html": "however,"
+      },
+      {
+        "label": "C",
+        "html": "therefore,"
+      },
+      {
+        "label": "D",
+        "html": "for example,"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. The word “however” logically signals that the information in this sentence about the planet KELT-9b—that it orbits a B-type star—contrasts with the previous information about planets discovered outside our solar system. Most of these planets orbit G-type stars, not B-type stars.</p><p><b>Choice A is incorrect</b> because “likewise” illogically signals that the information about the planet KELT-9b is similar to the previous information about most planets outside our solar system. Instead, it contrasts with that information.</p><p><b>Choice C is incorrect</b> because “therefore” illogically signals that the information about the planet KELT-9b is a result of the previous information about most planets outside our solar system. Instead, it contrasts with that information.</p><p><b>Choice D is incorrect</b> because “for example” illogically signals that the information about the planet KELT-9b is an example of the previous information about most planets outside our solar system. Instead, it contrasts with that information.</p>"
+  },
+  {
+    "id": "u23-10",
+    "lessonCode": "U23",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">In 1815, while in exile in Jamaica, Venezuelan revolutionary Simón Bolívar penned a letter praising England’s republican government and expressing hope that Latin American nations seeking independence from Spain might achieve something similar. The letter was addressed to a local merchant, Henry Cullen; ______ though, Bolívar’s goal was to persuade political leaders from England and Europe to support his cause.</div><p>Which choice completes the text with the most logical transition?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "additionally,"
+      },
+      {
+        "label": "B",
+        "html": "ultimately,"
+      },
+      {
+        "label": "C",
+        "html": "accordingly,"
+      },
+      {
+        "label": "D",
+        "html": "consequently,"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. “Ultimately” means “in the long run” or “at the highest level.” Although Bolívar wrote to a local merchant, his ultimate goal was to send a message to political leaders in Europe. Therefore, “ultimately” fits perfectly in this context.</p><p><b>Choice A is incorrect</b>. This choice uses a transition that indicates the addition of an agreeing idea. However, the second part of the sentence actually disagrees with the first part. Bolívar addressed the letter to Cullen, but he was really sending a message to someone else. Notice how the contrast word “though” also acts as a transition between these ideas.</p><p><b>Choice C is incorrect</b>. This choice uses a cause-and-effect transition. Bolívar’s writing of the letter to Cullen would not cause him to have a goal of persuading European powers to support him.</p><p><b>Choice D is incorrect</b>. This choice uses a cause-and-effect transition. Bolívar’s writing of the letter to Cullen would not cause him to have a goal of persuading European powers to support him.</p>"
+  },
+  {
+    "id": "u23-11",
+    "lessonCode": "U23",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">A research team led by Gal Badihi has discovered that chimpanzees communicate through exchanges of gestures occurring at a pace similar to that of human conversations. ______ chimpanzee gesture exchanges have short pauses of about 120 milliseconds between communications, comparable to the 200-millisecond average pause between turns in human speech.</div><p>Which choice completes the text with the most logical transition?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "As a result,"
+      },
+      {
+        "label": "B",
+        "html": "Specifically,"
+      },
+      {
+        "label": "C",
+        "html": "By contrast,"
+      },
+      {
+        "label": "D",
+        "html": "Nevertheless,"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. “Specifically” logically signals that the information in this sentence—that pauses between chimpanzee gestures average about 120 milliseconds, comparable to the 200-millisecond average pause in human speech—provides specific, precise details elaborating on the previous sentence’s claim about the pace of chimpanzee communication being similar to that of human conversations.</p><p><b>Choice A is incorrect</b> because “as a result” illogically signals that this sentence presents a result or consequence of the claim about chimpanzee communication described in the previous sentence. Instead, the sentence provides specific details elaborating on that claim.</p><p><b>Choice C is incorrect</b> because “by contrast” illogically signals that the information about chimpanzee gesture exchanges in this sentence contrasts with the previous sentence’s claim about the pace of chimpanzee communication being similar to that of human conversations. Instead, the sentence provides specific details elaborating on that claim.</p><p><b>Choice D is incorrect</b> because “nevertheless” illogically signals that the information about chimpanzee gesture exchanges in this sentence is true despite the previous claim about the pace of chimpanzee communication. Instead, the sentence provides specific details elaborating on that claim.</p>"
+  },
+  {
+    "id": "u23-12",
+    "lessonCode": "U23",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">The Babylonian king Hammurabi achieved much during his forty-year reign. He conquered all of Mesopotamia and built Babylon into one of the most powerful cities of the ancient world. Today, ______ he is mainly remembered for a code of laws inscribed on a seven-foot-tall block of stone: the Code of Hammurabi.</div><p>Which choice completes the text with the most logical transition?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "therefore,"
+      },
+      {
+        "label": "B",
+        "html": "likewise,"
+      },
+      {
+        "label": "C",
+        "html": "however,"
+      },
+      {
+        "label": "D",
+        "html": "for instance,"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b>. “However” logically signals that the information in this sentence—that Hammurabi is mainly remembered for just a single achievement, the Code of Hammurabi—is contrary to what might be assumed from the previous information about Hammurabi’s many achievements.</p><p><b>Choice A is incorrect</b> because “therefore” illogically signals that the information in this sentence is a result of the previous information about Hammurabi’s many achievements. Instead, this sentence makes a point that is contrary to what might be assumed from the previous information.</p><p><b>Choice B is incorrect</b> because “likewise” illogically signals that the information in this sentence is similar to the previous information about Hammurabi’s many achievements. Instead, this sentence makes a point that is contrary to what might be assumed from the previous information.</p><p><b>Choice D is incorrect</b> because “for instance” illogically signals that this sentence exemplifies the previous information about Hammurabi’s many achievements. Instead, this sentence makes a point that is contrary to what might be assumed from the previous information.</p>"
+  },
+  {
+    "id": "u23-13",
+    "lessonCode": "U23",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">Modernista architects championed nature in their designs. ______ the wavy staircase and ornate floral tilework of Hospital de Sant Pau, a Modernista hospital designed by Lluís Domènech i Montaner, couldn’t exactly grow in a forest. Still, one sees natural influences in Domènech i Montaner’s penchant for curves (rather than right angles) and plant- and animal-inspired flourishes.</div><p>Which choice completes the text with the most logical transition?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Furthermore,"
+      },
+      {
+        "label": "B",
+        "html": "Similarly,"
+      },
+      {
+        "label": "C",
+        "html": "Of course,"
+      },
+      {
+        "label": "D",
+        "html": "Thus,"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b>. \"Of course\" logically signals that the information in this sentence—that \"the wavy staircase and ornate floral tilework\" of the Modernista hospital couldn’t actually grow in a forest—acknowledges an obvious limitation of, or qualification to, the previous claim that Modernista architects championed nature in their designs.</p><p><b>Choice A is incorrect</b> because \"furthermore\" illogically signals that the information in this sentence merely adds to the previous claim that Modernista architects championed nature in their designs. Instead, the sentence acknowledges an obvious limitation in how literally that natural influence was expressed in the hospital’s features.</p><p><b>Choice B is incorrect</b> because \"similarly\" illogically signals that the information in this sentence is similar to the previous claim that Modernista architects championed nature in their designs. Instead, the sentence acknowledges an obvious limitation in how literally that natural influence was expressed in the hospital’s features.</p><p><b>Choice D is incorrect</b> because \"thus\" illogically signals that the information in this sentence is a result of the previous claim that Modernista architects championed nature in their designs. Instead, the sentence acknowledges an obvious limitation in how literally that natural influence was expressed in the hospital’s features.</p>"
+  },
+  {
+    "id": "u23-14",
+    "lessonCode": "U23",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">When one looks at the dark craggy vistas in Hitoshi Fugo’s evocative photo series, one’s mind might wander off to the cratered surfaces of faraway planets. ______ it’s the series’ title, <i>Flying Frying Pan</i>, that brings one back to Earth, reminding the viewer that each photo is actually a close-up view of a familiar household object: a frying pan.</div><p>Which choice completes the text with the most logical transition?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Consequently,"
+      },
+      {
+        "label": "B",
+        "html": "Alternatively,"
+      },
+      {
+        "label": "C",
+        "html": "Ultimately,"
+      },
+      {
+        "label": "D",
+        "html": "Additionally,"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b>. The first sentence describes an experience that the viewer has when they’re looking at the photos: they imagine other planets. This sentence describes an experience that the viewer has afterward: the title reminds them that the photos are of frying pans, bringing them back to reality. “Ultimately” is a transition that means “eventually” or “in the end,” so it fits the context perfectly.</p><p><b>Choice A is incorrect</b>. This choice uses a cause-and-effect transition, which doesn’t make sense here. The viewer imagining other planets when they’re looking at the photos doesn’t cause the title to bring them back to reality.</p><p><b>Choice B is incorrect</b>. This choice uses a transition that indicates another option or possibility, which doesn’t make sense here. Rather, the viewer has both experiences: first the viewer imagines that they’re looking at another planet, and then the title reminds them that it’s just a frying pan.</p><p><b>Choice D is incorrect</b>. This choice uses a transition that indicates the addition of an agreeing idea. But the viewer’s experience in the second sentence is actually the opposite of the viewer’s experience in the first sentence. In the first sentence, the viewer is imagining that they’re seeing a landscape from another planet. In the second sentence, the viewer is reminded that they’re looking at a frying pan.</p>"
+  },
+  {
+    "id": "u23-15",
+    "lessonCode": "U23",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\">The 435 state districts in the US House of Representatives are designed to be roughly equal in population. These districts average around 760,000 people in size. However, only about 730,000 people live in the state of Alaska. ______ Alaska has just one House district, encompassing the entire state.</div><p>Which choice completes the text with the most logical transition?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "As a result,"
+      },
+      {
+        "label": "B",
+        "html": "Instead,"
+      },
+      {
+        "label": "C",
+        "html": "Finally,"
+      },
+      {
+        "label": "D",
+        "html": "For instance,"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. \"As a result\" logically signals that the information in the sentence—that, in the US House of Representatives, the entire state of Alaska has just one district—is the result or consequence of Alaska having only about 730,000 people. This is slightly below the average for House districts, which are designed to have roughly equal populations.</p><p><b>Choice B is incorrect</b> because \"instead\" illogically signals that Alaska having just one state district is an alternative to the information about the state’s population in the previous sentence. Rather, the fact that Alaska has just one district is a result or consequence of the entire state having slightly fewer people than an average-sized district.</p><p><b>Choice C is incorrect</b> because \"finally\" illogically signals that the information in this sentence about Alaska having just one district indicates a last step in a process or a concluding summary. Instead, the fact that Alaska has just one district is a result or consequence of the entire state having slightly fewer people than an average-sized district.</p><p><b>Choice D is incorrect</b> because \"for instance\" illogically signals that the information in this sentence about Alaska having just one district exemplifies the information about the state’s population in the previous sentence. Instead, the fact that Alaska has just one district is a result or consequence of the entire state having slightly fewer people than an average-sized district.</p>"
+  }
+]

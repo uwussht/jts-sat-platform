@@ -1,0 +1,349 @@
+[
+  {
+    "id": "u5-01",
+    "lessonCode": "U5",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">A store sells two different-sized containers of a certain Greek yogurt. The store’s sales of this Greek yogurt totaled 1,277.94 dollars last month. The equation 5.48<i>x</i> + 7.30<i>y</i> = 1,277.94 represents this situation, where <i>x</i> is the number of smaller containers sold and <i>y</i> is the number of larger containers sold.</div><p>According to the equation, which of the following represents the price, in dollars, of each smaller container?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "5.48"
+      },
+      {
+        "label": "B",
+        "html": "7.30<i>y</i>"
+      },
+      {
+        "label": "C",
+        "html": "7.30"
+      },
+      {
+        "label": "D",
+        "html": "5.48<i>x</i>"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>.</p><ul><li>It's given that the store's sales of a certain Greek yogurt totaled 1,277.94 dollars last month.</li><li>It's also given that the equation 5.48<i>x</i> + 7.30<i>y</i> = 1,277.94 represents this situation, where <i>x</i> is the number of smaller containers sold and <i>y</i> is the number of larger containers sold.</li><li>Since <i>x</i> represents the number of smaller containers of yogurt sold, the expression 5.48<i>x</i> represents the total sales, in dollars, from smaller containers of yogurt.</li><li>This means that <i>x</i> smaller containers of yogurt were sold at a price of 5.48 dollars each.</li><li>Therefore, according to the equation, 5.48 represents the price, in dollars, of each smaller container.</li></ul><p><b>Choice B is incorrect</b>. This expression represents the total sales, in dollars, from selling <i>y</i> larger containers of yogurt.</p><p><b>Choice C is incorrect</b>. This value represents the price, in dollars, of each larger container of yogurt.</p><p><b>Choice D is incorrect</b>. This expression represents the total sales, in dollars, from selling <i>x</i> smaller containers of yogurt.</p>"
+  },
+  {
+    "id": "u5-02",
+    "lessonCode": "U5",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>Line <i>k</i> is defined by <i>y</i> = 3<i>x</i> + 15. Line <i>j</i> is perpendicular to line <i>k</i> in the <i>xy</i>-plane. What is the slope of line <i>j</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "−1/3"
+      },
+      {
+        "label": "B",
+        "html": "−1/12"
+      },
+      {
+        "label": "C",
+        "html": "−1/18"
+      },
+      {
+        "label": "D",
+        "html": "−1/45"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>.</p><ul><li>It's given that line <i>j</i> is perpendicular to line <i>k</i> in the <i>xy</i>-plane.</li><li>It follows that the slope of line <i>j</i> is the opposite reciprocal of the slope of line <i>k</i>.</li><li>The equation for line <i>k</i> is written in slope-intercept form <i>y</i> = <i>mx</i> + <i>b</i>, where <i>m</i> is the slope of the line and <i>b</i> is the <i>y</i>-coordinate of the <i>y</i>-intercept of the line.</li><li>It follows that the slope of line <i>k</i> is 3.</li><li>The opposite reciprocal of a number is −1 divided by the number.</li><li>Thus, the opposite reciprocal of 3 is −1/3.</li><li>Therefore, the slope of line <i>j</i> is −1/3.</li></ul><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u5-03",
+    "lessonCode": "U5",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>A mixture consisting of only vitamin D and calcium has a total mass of 150 grams. The mass of vitamin D in the mixture is 50 grams. What is the mass, in grams, of calcium in the mixture?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "200"
+      },
+      {
+        "label": "B",
+        "html": "150"
+      },
+      {
+        "label": "C",
+        "html": "100"
+      },
+      {
+        "label": "D",
+        "html": "50"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>.</p><ul><li>Let <i>d</i> represent the mass, in grams, of vitamin D in the mixture, and let <i>c</i> represent the mass, in grams, of calcium in the mixture.</li><li>It’s given that the mixture consists of only vitamin D and calcium and that the total mass of the mixture is 150 grams.</li><li>Therefore, the equation <i>d</i> + <i>c</i> = 150 represents this situation.</li><li>It’s also given that the mass of vitamin D in the mixture is 50 grams.</li><li>Substituting 50 for <i>d</i> in the equation <i>d</i> + <i>c</i> = 150 yields 50 + <i>c</i> = 150.</li><li>Subtracting 50 from both sides of this equation yields <i>c</i> = 100.</li><li>Therefore, the mass of calcium in the mixture is 100 grams.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b>. This is the total mass, in grams, of the mixture, not the mass, in grams, of calcium in the mixture.</p><p><b>Choice D is incorrect</b>. This is the mass, in grams, of vitamin D in the mixture, not the mass, in grams, of calcium in the mixture.</p>"
+  },
+  {
+    "id": "u5-04",
+    "lessonCode": "U5",
+    "type": "spr",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">8<i>x</i> + 11<i>y</i> = 170<br><br>The equation gives the possible combinations of the number of 2009 premium grade Log Cabin Pennies, <i>x</i>, and the number of 1996 select grade Lincoln Pennies, <i>y</i>, in a collection that is worth a total of $170.</div><p>If there are 6 1996 select grade Lincoln Pennies in the collection, how many 2009 premium grade Log Cabin Pennies are in the collection?</p>",
+    "choices": [],
+    "correctAnswer": "13",
+    "acceptedAnswers": [
+      "13"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 13</b>.</p><ul><li>It’s given that the equation 8<i>x</i> + 11<i>y</i> = 170 gives the possible combinations of the number of 2009 premium grade Log Cabin Pennies, <i>x</i>, and the number of 1996 select grade Lincoln Pennies, <i>y</i>, in a collection that is worth a total of $170.</li><li>It’s also given that there are 6 1996 select grade Lincoln Pennies in the collection, and thus <i>y</i> = 6.</li><li>Substituting 6 for <i>y</i> in the given equation yields 8<i>x</i> + 11(6) = 170, or 8<i>x</i> + 66 = 170.</li><li>Subtracting 66 from both sides of this equation yields 8<i>x</i> = 104.</li><li>Dividing both sides of this equation by 8 yields <i>x</i> = 13.</li><li>Therefore, there are 13 2009 premium grade Log Cabin Pennies in the collection.</li></ul>"
+  },
+  {
+    "id": "u5-05",
+    "lessonCode": "U5",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>y</i> = <i>x</i> + 4</div><p>Which table gives three values of <i>x</i> and their corresponding values of <i>y</i> for the given equation?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<i>x</i> = 0, 1, 2 &nbsp;→&nbsp; <i>y</i> = 4, 5, 6"
+      },
+      {
+        "label": "B",
+        "html": "<i>x</i> = 0, 1, 2 &nbsp;→&nbsp; <i>y</i> = 6, 5, 4"
+      },
+      {
+        "label": "C",
+        "html": "<i>x</i> = 0, 1, 2 &nbsp;→&nbsp; <i>y</i> = 2, 1, 0"
+      },
+      {
+        "label": "D",
+        "html": "<i>x</i> = 0, 1, 2 &nbsp;→&nbsp; <i>y</i> = 0, 1, 2"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>.</p><ul><li>Substituting 0 for <i>x</i> into the given equation yields <i>y</i> = 0 + 4, or <i>y</i> = 4.</li><li>Therefore, when <i>x</i> = 0, the corresponding value of <i>y</i> for the given equation is 4.</li><li>Substituting 1 for <i>x</i> into the given equation yields <i>y</i> = 1 + 4, or <i>y</i> = 5.</li><li>Therefore, when <i>x</i> = 1, the corresponding value of <i>y</i> for the given equation is 5.</li><li>Substituting 2 for <i>x</i> into the given equation yields <i>y</i> = 2 + 4, or <i>y</i> = 6.</li><li>Therefore, when <i>x</i> = 2, the corresponding value of <i>y</i> for the given equation is 6.</li><li>Of the choices given, only the table in choice A gives these three values of <i>x</i> and their corresponding values of <i>y</i> for the given equation.</li></ul><p><b>Choice B is incorrect</b>. This table gives three values of <i>x</i> and their corresponding values of <i>y</i> for the equation <i>y</i> = −<i>x</i> + 6.</p><p><b>Choice C is incorrect</b>. This table gives three values of <i>x</i> and their corresponding values of <i>y</i> for the equation <i>y</i> = −<i>x</i> + 2.</p><p><b>Choice D is incorrect</b>. This table gives three values of <i>x</i> and their corresponding values of <i>y</i> for the equation <i>y</i> = <i>x</i>.</p>"
+  },
+  {
+    "id": "u5-06",
+    "lessonCode": "U5",
+    "type": "spr",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>Line <i>k</i> is defined by <i>y</i> = −(17/3)<i>x</i> + 5. Line <i>j</i> is perpendicular to line <i>k</i> in the <i>xy</i>-plane. What is the slope of line <i>j</i>?</p>",
+    "choices": [],
+    "correctAnswer": "3/17",
+    "acceptedAnswers": [
+      "3/17",
+      ".1764",
+      ".1765",
+      "0.176",
+      "0.1764",
+      "0.1765"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 3/17</b>.</p><ul><li>It’s given that line <i>j</i> is perpendicular to line <i>k</i> in the <i>xy</i>-plane.</li><li>This means that the slope of line <i>j</i> is the negative reciprocal of the slope of line <i>k</i>.</li><li>The equation of line <i>k</i>, <i>y</i> = −(17/3)<i>x</i> + 5, is written in slope-intercept form <i>y</i> = <i>mx</i> + <i>b</i>, where <i>m</i> is the slope of the line and <i>b</i> is the <i>y</i>-coordinate of the <i>y</i>-intercept of the line.</li><li>It follows that the slope of line <i>k</i> is −17/3.</li><li>The negative reciprocal of a number is −1 divided by the number.</li><li>Therefore, the negative reciprocal of −17/3 is −1/(−17/3), or 3/17.</li><li>Thus, the slope of line <i>j</i> is 3/17.</li><li>Note that 3/17, .1764, .1765, and 0.176 are examples of ways to enter a correct answer.</li></ul>"
+  },
+  {
+    "id": "u5-07",
+    "lessonCode": "U5",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>Line <i>p</i> is defined by 2<i>y</i> + 18<i>x</i> = 9. Line <i>r</i> is perpendicular to line <i>p</i> in the <i>xy</i>-plane. What is the slope of line <i>r</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "−9"
+      },
+      {
+        "label": "B",
+        "html": "−1/9"
+      },
+      {
+        "label": "C",
+        "html": "1/9"
+      },
+      {
+        "label": "D",
+        "html": "9"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>.</p><ul><li>It’s given that line <i>r</i> is perpendicular to line <i>p</i> in the <i>xy</i>-plane.</li><li>This means that the slope of line <i>r</i> is the negative reciprocal of the slope of line <i>p</i>.</li><li>If the equation for line <i>p</i> is rewritten in slope-intercept form <i>y</i> = <i>mx</i> + <i>b</i>, where <i>m</i> and <i>b</i> are constants, then <i>m</i> is the slope of the line and (0, <i>b</i>) is its <i>y</i>-intercept.</li><li>Subtracting 18<i>x</i> from both sides of the equation 2<i>y</i> + 18<i>x</i> = 9 yields 2<i>y</i> = −18<i>x</i> + 9.</li><li>Dividing both sides of this equation by 2 yields <i>y</i> = −9<i>x</i> + 9/2.</li><li>It follows that the slope of line <i>p</i> is −9.</li><li>The negative reciprocal of a number is −1 divided by the number.</li><li>Therefore, the negative reciprocal of −9 is −1/(−9), or 1/9.</li><li>Thus, the slope of line <i>r</i> is 1/9.</li></ul><p><b>Choice A is incorrect</b>. This is the slope of line <i>p</i>, not line <i>r</i>.</p><p><b>Choice B is incorrect</b>. This is the reciprocal, not the negative reciprocal, of the slope of line <i>p</i>.</p><p><b>Choice D is incorrect</b>. This is the negative, not the negative reciprocal, of the slope of line <i>p</i>.</p>"
+  },
+  {
+    "id": "u5-08",
+    "lessonCode": "U5",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 260 244\" role=\"img\" aria-label=\"Graph of a line from (0, 18) to (18, 0) with the point (8, 10) marked\" fill=\"none\" stroke=\"currentColor\"><line x1=\"34\" y1=\"214\" x2=\"34\" y2=\"14\" stroke-opacity=\".18\"/><line x1=\"34\" y1=\"214\" x2=\"234\" y2=\"214\" stroke-opacity=\".18\"/><line x1=\"54\" y1=\"214\" x2=\"54\" y2=\"14\" stroke-opacity=\".18\"/><line x1=\"34\" y1=\"194\" x2=\"234\" y2=\"194\" stroke-opacity=\".18\"/><line x1=\"74\" y1=\"214\" x2=\"74\" y2=\"14\" stroke-opacity=\".18\"/><line x1=\"34\" y1=\"174\" x2=\"234\" y2=\"174\" stroke-opacity=\".18\"/><line x1=\"94\" y1=\"214\" x2=\"94\" y2=\"14\" stroke-opacity=\".18\"/><line x1=\"34\" y1=\"154\" x2=\"234\" y2=\"154\" stroke-opacity=\".18\"/><line x1=\"114\" y1=\"214\" x2=\"114\" y2=\"14\" stroke-opacity=\".18\"/><line x1=\"34\" y1=\"134\" x2=\"234\" y2=\"134\" stroke-opacity=\".18\"/><line x1=\"134\" y1=\"214\" x2=\"134\" y2=\"14\" stroke-opacity=\".18\"/><line x1=\"34\" y1=\"114\" x2=\"234\" y2=\"114\" stroke-opacity=\".18\"/><line x1=\"154\" y1=\"214\" x2=\"154\" y2=\"14\" stroke-opacity=\".18\"/><line x1=\"34\" y1=\"94\" x2=\"234\" y2=\"94\" stroke-opacity=\".18\"/><line x1=\"174\" y1=\"214\" x2=\"174\" y2=\"14\" stroke-opacity=\".18\"/><line x1=\"34\" y1=\"74\" x2=\"234\" y2=\"74\" stroke-opacity=\".18\"/><line x1=\"194\" y1=\"214\" x2=\"194\" y2=\"14\" stroke-opacity=\".18\"/><line x1=\"34\" y1=\"54\" x2=\"234\" y2=\"54\" stroke-opacity=\".18\"/><line x1=\"214\" y1=\"214\" x2=\"214\" y2=\"14\" stroke-opacity=\".18\"/><line x1=\"34\" y1=\"34\" x2=\"234\" y2=\"34\" stroke-opacity=\".18\"/><line x1=\"234\" y1=\"214\" x2=\"234\" y2=\"14\" stroke-opacity=\".18\"/><line x1=\"34\" y1=\"14\" x2=\"234\" y2=\"14\" stroke-opacity=\".18\"/><line x1=\"34\" y1=\"214\" x2=\"246\" y2=\"214\" stroke-width=\"1.5\"/><line x1=\"34\" y1=\"214\" x2=\"34\" y2=\"2\" stroke-width=\"1.5\"/><line x1=\"34\" y1=\"34\" x2=\"214\" y2=\"214\" stroke-width=\"2.2\"/><circle cx=\"114\" cy=\"114\" r=\"4\" fill=\"currentColor\"/><g fill=\"currentColor\" stroke=\"none\" font-size=\"10\" font-family=\"sans-serif\"><text x=\"74\" y=\"227\" text-anchor=\"middle\">4</text><text x=\"28\" y=\"177\" text-anchor=\"end\">4</text><text x=\"114\" y=\"227\" text-anchor=\"middle\">8</text><text x=\"28\" y=\"137\" text-anchor=\"end\">8</text><text x=\"154\" y=\"227\" text-anchor=\"middle\">12</text><text x=\"28\" y=\"97\" text-anchor=\"end\">12</text><text x=\"194\" y=\"227\" text-anchor=\"middle\">16</text><text x=\"28\" y=\"57\" text-anchor=\"end\">16</text><text x=\"234\" y=\"227\" text-anchor=\"middle\">20</text><text x=\"28\" y=\"17\" text-anchor=\"end\">20</text><text x=\"28\" y=\"227\" text-anchor=\"end\">O</text><text x=\"252\" y=\"218\" font-style=\"italic\">x</text><text x=\"31\" y=\"-2\" font-style=\"italic\">y</text></g></svg>The graph in the <i>xy</i>-plane models the possible combinations of length <i>x</i>, in meters (m), and width <i>y</i>, in meters, for a rectangle with a perimeter of 36 m.</div><p>Which statement is the best interpretation of the point (8, 10) in this context?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "The length is 10 m less than the perimeter, and the width is 8 m less than the perimeter."
+      },
+      {
+        "label": "B",
+        "html": "The length is 10 m, and the width is 8 m."
+      },
+      {
+        "label": "C",
+        "html": "The length is 8 m, and the width is 10 m."
+      },
+      {
+        "label": "D",
+        "html": "The length is 8 m less than the perimeter, and the width is 10 m less than the perimeter."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>. It’s given that the graph in the <i>xy</i>-plane models the possible combinations of length <i>x</i>, in meters (m), and width <i>y</i>, in meters, for a rectangle with a perimeter of 36 m. Since <i>x</i> represents the length, in meters, and <i>y</i> represents the width, in meters, the point (8, 10) in the <i>xy</i>-plane represents a rectangle whose length is 8 m and whose width is 10 m.</p><p><b>Choice A is incorrect</b> and may result from conceptual errors.</p><p><b>Choice B is incorrect</b>. This is an interpretation of the point (10, 8), not (8, 10).</p><p><b>Choice D is incorrect</b> and may result from conceptual errors.</p>"
+  },
+  {
+    "id": "u5-09",
+    "lessonCode": "U5",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>Line <i>k</i> is defined by <i>y</i> = (17/7)<i>x</i> + 4. Line <i>j</i> is parallel to line <i>k</i> in the <i>xy</i>-plane. What is the slope of line <i>j</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "7/17"
+      },
+      {
+        "label": "B",
+        "html": "17/7"
+      },
+      {
+        "label": "C",
+        "html": "4"
+      },
+      {
+        "label": "D",
+        "html": "17"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>.</p><ul><li>It's given that line <i>k</i> is defined by <i>y</i> = (17/7)<i>x</i> + 4.</li><li>For an equation of a line written in the form <i>y</i> = <i>mx</i> + <i>b</i>, <i>m</i> is the slope of the line and <i>b</i> is the <i>y</i>-coordinate of the <i>y</i>-intercept of the line.</li><li>It follows that the slope of line <i>k</i> is 17/7.</li><li>It's also given that line <i>j</i> is parallel to line <i>k</i> in the <i>xy</i>-plane.</li><li>Since parallel lines have equal slopes, line <i>j</i> also has a slope of 17/7.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b>. This is the <i>y</i>-coordinate of the <i>y</i>-intercept of line <i>k</i>, not the slope of line <i>j</i>.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u5-10",
+    "lessonCode": "U5",
+    "type": "spr",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">24.5<i>x</i> + 24.75<i>y</i> = 641<br><br>Isabel ordered topsoil and crushed stone, which cost a total of $641, for her garden. The given equation represents the relationship between the number of cubic yards of topsoil, <i>x</i>, and the number of tons of crushed stone, <i>y</i>, Isabel ordered.</div><p>How much more, in dollars, did a ton of crushed stone cost Isabel than a cubic yard of topsoil?</p>",
+    "choices": [],
+    "correctAnswer": ".25",
+    "acceptedAnswers": [
+      ".25",
+      "0.25",
+      "1/4",
+      "0.250",
+      ".250"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 0</b>.25.</p><ul><li>It’s given that the topsoil and crushed stone Isabel ordered for her garden cost a total of $641.</li><li>It’s also given that the equation 24.5<i>x</i> + 24.75<i>y</i> = 641 represents the relationship between the number of cubic yards of topsoil, <i>x</i>, and the number of tons of crushed stone, <i>y</i>, that Isabel ordered.</li><li>Since <i>x</i> represents the number of cubic yards of topsoil ordered, 24.5<i>x</i> represents the total cost, in dollars, of the topsoil, and the cost per cubic yard of topsoil is $24.50.</li><li>Similarly, since <i>y</i> represents the number of tons of crushed stone ordered, 24.75<i>y</i> represents the total cost, in dollars, of crushed stone ordered, and the cost per ton of crushed stone is $24.75.</li><li>Therefore, a ton of crushed stone cost Isabel 24.75 − 24.50, or 0.25, more dollars than a cubic yard of topsoil.</li><li>Note that .25 and 1/4 are examples of ways to enter a correct answer.</li></ul>"
+  },
+  {
+    "id": "u5-11",
+    "lessonCode": "U5",
+    "type": "spr",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>x</i>: &nbsp;<i>k</i>, &nbsp;<i>k</i> + 7<br><i>y</i>: &nbsp;13, &nbsp;−15<br><br>The table gives the coordinates of two points on a line in the <i>xy</i>-plane. The <i>y</i>-intercept of the line is (<i>k</i> − 5, <i>b</i>), where <i>k</i> and <i>b</i> are constants.</div><p>What is the value of <i>b</i>?</p>",
+    "choices": [],
+    "correctAnswer": "33",
+    "acceptedAnswers": [
+      "33"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 33</b>.</p><ul><li>It’s given in the table that the coordinates of two points on a line in the <i>xy</i>-plane are (<i>k</i>, 13) and (<i>k</i> + 7, −15).</li><li>The <i>y</i>-intercept is another point on the line.</li><li>The slope computed using any pair of points from the line will be the same.</li><li>The slope of a line, <i>m</i>, between any two points, (<i>x</i>₁, <i>y</i>₁) and (<i>x</i>₂, <i>y</i>₂), on the line can be calculated using the slope formula, <i>m</i> = (<i>y</i>₂ − <i>y</i>₁)/(<i>x</i>₂ − <i>x</i>₁).</li><li>It follows that the slope of the line with the given points from the table, (<i>k</i>, 13) and (<i>k</i> + 7, −15), is <i>m</i> = (−15 − 13)/(<i>k</i> + 7 − <i>k</i>), which is equivalent to <i>m</i> = −28/7, or <i>m</i> = −4.</li><li>It's given that the <i>y</i>-intercept of the line is (<i>k</i> − 5, <i>b</i>).</li><li>Substituting −4 for <i>m</i> and the coordinates of the points (<i>k</i> − 5, <i>b</i>) and (<i>k</i>, 13) into the slope formula yields −4 = (13 − <i>b</i>)/(<i>k</i> − (<i>k</i> − 5)), which is equivalent to −4 = (13 − <i>b</i>)/(<i>k</i> − <i>k</i> + 5), or −4 = (13 − <i>b</i>)/5.</li><li>Multiplying both sides of this equation by 5 yields −20 = 13 − <i>b</i>.</li><li>Subtracting 13 from both sides of this equation yields −33 = −<i>b</i>.</li><li>Dividing both sides of this equation by −1 yields <i>b</i> = 33.</li><li>Therefore, the value of <i>b</i> is 33.</li></ul>"
+  },
+  {
+    "id": "u5-12",
+    "lessonCode": "U5",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>The graph of the equation <i>ax</i> + <i>ky</i> = 6 is a line in the <i>xy</i>-plane, where <i>a</i> and <i>k</i> are constants. If the line contains the points (−2, −6) and (0, −3), what is the value of <i>k</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "−2"
+      },
+      {
+        "label": "B",
+        "html": "−1"
+      },
+      {
+        "label": "C",
+        "html": "2"
+      },
+      {
+        "label": "D",
+        "html": "3"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>.</p><ul><li>The value of <i>k</i> can be found using the slope-intercept form of a linear equation, <i>y</i> = <i>mx</i> + <i>b</i>, where <i>m</i> is the slope and <i>b</i> is the <i>y</i>-coordinate of the <i>y</i>-intercept.</li><li>The equation <i>ax</i> + <i>ky</i> = 6 can be rewritten in the form <i>y</i> = −<i>ax</i>/<i>k</i> + 6/<i>k</i>.</li><li>One of the given points, (0, −3), is the <i>y</i>-intercept.</li><li>Thus, the <i>y</i>-coordinate of the <i>y</i>-intercept, −3, must be equal to 6/<i>k</i>.</li><li>Multiplying both sides by <i>k</i> gives −3<i>k</i> = 6.</li><li>Dividing both sides by −3 gives <i>k</i> = −2.</li></ul><p><b>Choices B, C, and D are incorrect</b> and may result from errors made rewriting the given equation.</p>"
+  },
+  {
+    "id": "u5-13",
+    "lessonCode": "U5",
+    "type": "spr",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>Line <i>l</i> is defined by 3<i>y</i> + 12<i>x</i> = 5. Line <i>n</i> is perpendicular to line <i>l</i> in the <i>xy</i>-plane. What is the slope of line <i>n</i>?</p>",
+    "choices": [],
+    "correctAnswer": "1/4",
+    "acceptedAnswers": [
+      "1/4",
+      ".25",
+      "0.25"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 1/4</b>.</p><ul><li>For an equation in slope-intercept form <i>y</i> = <i>mx</i> + <i>b</i>, <i>m</i> represents the slope of the line in the <i>xy</i>-plane defined by this equation.</li><li>It's given that line <i>l</i> is defined by 3<i>y</i> + 12<i>x</i> = 5.</li><li>Subtracting 12<i>x</i> from both sides of this equation yields 3<i>y</i> = −12<i>x</i> + 5.</li><li>Dividing both sides of this equation by 3 yields <i>y</i> = −(12/3)<i>x</i> + 5/3, or <i>y</i> = −4<i>x</i> + 5/3.</li><li>Thus, the slope of line <i>l</i> in the <i>xy</i>-plane is −4.</li><li>Since line <i>n</i> is perpendicular to line <i>l</i> in the <i>xy</i>-plane, the slope of line <i>n</i> is the negative reciprocal of the slope of line <i>l</i>.</li><li>The negative reciprocal of −4 is −1/(−4) = 1/4.</li><li>Note that 1/4 and .25 are examples of ways to enter a correct answer.</li></ul>"
+  },
+  {
+    "id": "u5-14",
+    "lessonCode": "U5",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>x</i>: &nbsp;18, &nbsp;23, &nbsp;26<br><i>y</i>: &nbsp;130, &nbsp;160, &nbsp;178<br><br>For line <i>h</i>, the table shows three values of <i>x</i> and their corresponding values of <i>y</i>. Line <i>k</i> is the result of translating line <i>h</i> down 5 units in the <i>xy</i>-plane.</div><p>What is the <i>x</i>-intercept of line <i>k</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "(−26/3, 0)"
+      },
+      {
+        "label": "B",
+        "html": "(−9/2, 0)"
+      },
+      {
+        "label": "C",
+        "html": "(−11/3, 0)"
+      },
+      {
+        "label": "D",
+        "html": "(−17/6, 0)"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>.</p><ul><li>The equation of line <i>h</i> can be written in slope-intercept form <i>y</i> = <i>mx</i> + <i>b</i>, where <i>m</i> is the slope of the line and (0, <i>b</i>) is the <i>y</i>-intercept of the line.</li><li>It’s given that line <i>h</i> contains the points (18, 130), (23, 160), and (26, 178).</li><li>Therefore, its slope <i>m</i> can be found as (160 − 130)/(23 − 18), or 6.</li><li>Substituting 6 for <i>m</i> in the equation <i>y</i> = <i>mx</i> + <i>b</i> yields <i>y</i> = 6<i>x</i> + <i>b</i>.</li><li>Substituting 130 for <i>y</i> and 18 for <i>x</i> in this equation yields 130 = 6(18) + <i>b</i>, or 130 = 108 + <i>b</i>.</li><li>Subtracting 108 from both sides of this equation yields 22 = <i>b</i>.</li><li>Substituting 22 for <i>b</i> in <i>y</i> = 6<i>x</i> + <i>b</i> yields <i>y</i> = 6<i>x</i> + 22.</li><li>Since line <i>k</i> is the result of translating line <i>h</i> down 5 units, an equation of line <i>k</i> is <i>y</i> = 6<i>x</i> + 22 − 5, or <i>y</i> = 6<i>x</i> + 17.</li><li>Substituting 0 for <i>y</i> in this equation yields 0 = 6<i>x</i> + 17.</li><li>Solving this equation for <i>x</i> yields <i>x</i> = −17/6.</li><li>Therefore, the <i>x</i>-intercept of line <i>k</i> is (−17/6, 0).</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u5-15",
+    "lessonCode": "U5",
+    "type": "spr",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">A certain apprentice has enrolled in 85 hours of training courses. The equation 10<i>x</i> + 15<i>y</i> = 85 represents this situation, where <i>x</i> is the number of on-site training courses and <i>y</i> is the number of online training courses this apprentice has enrolled in.</div><p>How many more hours does each online training course take than each on-site training course?</p>",
+    "choices": [],
+    "correctAnswer": "5",
+    "acceptedAnswers": [
+      "5"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 5</b>.</p><ul><li>It's given that the equation 10<i>x</i> + 15<i>y</i> = 85 represents the situation, where <i>x</i> is the number of on-site training courses, <i>y</i> is the number of online training courses, and 85 is the total number of hours of training courses the apprentice has enrolled in.</li><li>Therefore, 10<i>x</i> represents the number of hours the apprentice has enrolled in on-site training courses, and 15<i>y</i> represents the number of hours the apprentice has enrolled in online training courses.</li><li>Since <i>x</i> is the number of on-site training courses and <i>y</i> is the number of online training courses the apprentice has enrolled in, 10 is the number of hours each on-site course takes and 15 is the number of hours each online course takes.</li><li>Subtracting these numbers gives 15 − 10, or 5 more hours each online training course takes than each on-site training course.</li></ul>"
+  }
+]

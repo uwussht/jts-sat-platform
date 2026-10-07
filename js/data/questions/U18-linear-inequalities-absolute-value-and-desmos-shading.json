@@ -1,0 +1,395 @@
+[
+  {
+    "id": "u18-01",
+    "lessonCode": "U18",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>A cargo helicopter delivers only 100-pound packages and 120-pound packages. For each delivery trip, the helicopter must carry at least 10 packages, and the total weight of the packages can be at most 1,100 pounds. What is the maximum number of 120-pound packages that the helicopter can carry per trip?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "2"
+      },
+      {
+        "label": "B",
+        "html": "4"
+      },
+      {
+        "label": "C",
+        "html": "5"
+      },
+      {
+        "label": "D",
+        "html": "6"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>.</p><ul><li>Let <i>a</i> equal the number of 120-pound packages, and let <i>b</i> equal the number of 100-pound packages.</li><li>It’s given that the total weight of the packages can be at most 1,100 pounds: the inequality 120<i>a</i> + 100<i>b</i> ≤ 1,100 represents this situation.</li><li>It’s also given that the helicopter must carry at least 10 packages: the inequality <i>a</i> + <i>b</i> ≥ 10 represents this situation.</li><li>Values of <i>a</i> and <i>b</i> that satisfy these two inequalities represent the allowable numbers of 120-pound packages and 100-pound packages the helicopter can transport.</li><li>To maximize the number of 120-pound packages, <i>a</i>, in the helicopter, the number of 100-pound packages, <i>b</i>, in the helicopter needs to be minimized.</li><li>Expressing <i>b</i> in terms of <i>a</i> in the second inequality yields <i>b</i> ≥ 10 − <i>a</i>, so the minimum value of <i>b</i> is equal to 10 − <i>a</i>.</li><li>Substituting 10 − <i>a</i> for <i>b</i> in the first inequality results in 120<i>a</i> + 100(10 − <i>a</i>) ≤ 1,100.</li><li>Using the distributive property to rewrite this inequality yields 120<i>a</i> + 1,000 − 100<i>a</i> ≤ 1,100, or 20<i>a</i> + 1,000 ≤ 1,100.</li><li>Subtracting 1,000 from both sides of this inequality yields 20<i>a</i> ≤ 100.</li><li>Dividing both sides of this inequality by 20 results in <i>a</i> ≤ 5.</li><li>This means that the maximum number of 120-pound packages that the helicopter can carry per trip is 5.</li></ul><p><b>Choices A, B, and D are incorrect</b> and may result from incorrectly creating or solving the system of inequalities.</p>"
+  },
+  {
+    "id": "u18-02",
+    "lessonCode": "U18",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 380 312\" role=\"img\" aria-label=\"Graph in the xy-plane with a solid horizontal boundary line at y = 36 and the region on and above the line shaded.\" style=\"max-width:380px;width:100%;height:auto;display:block;margin:0 auto 12px\" fill=\"none\" stroke=\"currentColor\" font-family=\"inherit\" font-size=\"11\"><rect x=\"35\" y=\"23.400000000000034\" width=\"320\" height=\"111.79999999999998\" fill=\"currentColor\" fill-opacity=\".22\" stroke=\"none\"/><line x1=\"35\" y1=\"23.400000000000034\" x2=\"35\" y2=\"290.0\" stroke-opacity=\"0.25\"/><line x1=\"75\" y1=\"23.400000000000034\" x2=\"75\" y2=\"290.0\" stroke-opacity=\"0.25\"/><line x1=\"115\" y1=\"23.400000000000034\" x2=\"115\" y2=\"290.0\" stroke-opacity=\"0.25\"/><line x1=\"155\" y1=\"23.400000000000034\" x2=\"155\" y2=\"290.0\" stroke-opacity=\"0.25\"/><line x1=\"195\" y1=\"23.400000000000034\" x2=\"195\" y2=\"290.0\" stroke-opacity=\"1\"/><line x1=\"235\" y1=\"23.400000000000034\" x2=\"235\" y2=\"290.0\" stroke-opacity=\"0.25\"/><line x1=\"275\" y1=\"23.400000000000034\" x2=\"275\" y2=\"290.0\" stroke-opacity=\"0.25\"/><line x1=\"315\" y1=\"23.400000000000034\" x2=\"315\" y2=\"290.0\" stroke-opacity=\"0.25\"/><line x1=\"355\" y1=\"23.400000000000034\" x2=\"355\" y2=\"290.0\" stroke-opacity=\"0.25\"/><line x1=\"35\" y1=\"290.0\" x2=\"355\" y2=\"290.0\" stroke-opacity=\"1\"/><line x1=\"35\" y1=\"268.5\" x2=\"355\" y2=\"268.5\" stroke-opacity=\"0.25\"/><text x=\"190\" y=\"272.5\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">5</text><line x1=\"35\" y1=\"247.0\" x2=\"355\" y2=\"247.0\" stroke-opacity=\"0.25\"/><text x=\"190\" y=\"251.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">10</text><line x1=\"35\" y1=\"225.5\" x2=\"355\" y2=\"225.5\" stroke-opacity=\"0.25\"/><text x=\"190\" y=\"229.5\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">15</text><line x1=\"35\" y1=\"204.0\" x2=\"355\" y2=\"204.0\" stroke-opacity=\"0.25\"/><text x=\"190\" y=\"208.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">20</text><line x1=\"35\" y1=\"182.5\" x2=\"355\" y2=\"182.5\" stroke-opacity=\"0.25\"/><text x=\"190\" y=\"186.5\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">25</text><line x1=\"35\" y1=\"161.0\" x2=\"355\" y2=\"161.0\" stroke-opacity=\"0.25\"/><text x=\"190\" y=\"165.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">30</text><line x1=\"35\" y1=\"139.5\" x2=\"355\" y2=\"139.5\" stroke-opacity=\"0.25\"/><text x=\"190\" y=\"143.5\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">35</text><line x1=\"35\" y1=\"118.0\" x2=\"355\" y2=\"118.0\" stroke-opacity=\"0.25\"/><text x=\"190\" y=\"122.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">40</text><line x1=\"35\" y1=\"96.5\" x2=\"355\" y2=\"96.5\" stroke-opacity=\"0.25\"/><text x=\"190\" y=\"100.5\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">45</text><line x1=\"35\" y1=\"75.0\" x2=\"355\" y2=\"75.0\" stroke-opacity=\"0.25\"/><text x=\"190\" y=\"79.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">50</text><line x1=\"35\" y1=\"53.5\" x2=\"355\" y2=\"53.5\" stroke-opacity=\"0.25\"/><text x=\"190\" y=\"57.5\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">55</text><line x1=\"35\" y1=\"32.0\" x2=\"355\" y2=\"32.0\" stroke-opacity=\"0.25\"/><text x=\"190\" y=\"36.0\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">60</text><text x=\"75\" y=\"305.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">−15</text><text x=\"115\" y=\"305.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">−10</text><text x=\"155\" y=\"305.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">−5</text><text x=\"235\" y=\"305.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">5</text><text x=\"275\" y=\"305.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">10</text><text x=\"315\" y=\"305.0\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">15</text><line x1=\"35\" y1=\"135.20000000000002\" x2=\"355\" y2=\"135.20000000000002\" stroke-width=\"2.4\"/><text x=\"361\" y=\"294.0\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">x</text><text x=\"192\" y=\"18.400000000000034\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">y</text><text x=\"184\" y=\"304.0\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">O</text></svg></div><p>The shaded region shown in the graph represents all the solutions to which inequality?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<i>x</i> ≤ 36"
+      },
+      {
+        "label": "B",
+        "html": "<i>x</i> ≥ 36"
+      },
+      {
+        "label": "C",
+        "html": "<i>y</i> ≤ 36"
+      },
+      {
+        "label": "D",
+        "html": "<i>y</i> ≥ 36"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>.</p><ul><li>The equation for the line representing the boundary of the shaded region can be written in the form <i>y</i> = <i>b</i>, where (0, <i>b</i>) is the <i>y</i>-intercept of the line in the <i>xy</i>-plane.</li><li>For the graph shown in the <i>xy</i>-plane, the boundary line passes through the points (−15, 36) and (0, 36).</li><li>Thus, the equation of the boundary line is <i>y</i> = 36.</li><li>Since the shaded region represents all the points on and above this boundary line, it follows that the graph represents all the solutions to the inequality <i>y</i> ≥ 36.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual errors.</p><p><b>Choice B is incorrect</b> and may result from conceptual errors.</p><p><b>Choice C is incorrect</b> and may result from conceptual errors.</p>"
+  },
+  {
+    "id": "u18-03",
+    "lessonCode": "U18",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><svg viewBox=\"0 0 385 328\" role=\"img\" aria-label=\"Graph in the xy-plane with a dashed horizontal boundary line at y = −4 and the region above the line shaded.\" style=\"max-width:385px;width:100%;height:auto;display:block;margin:0 auto 12px\" fill=\"none\" stroke=\"currentColor\" font-family=\"inherit\" font-size=\"11\"><rect x=\"27.0\" y=\"10.0\" width=\"336.0\" height=\"156.0\" fill=\"currentColor\" fill-opacity=\".22\" stroke=\"none\"/><line x1=\"35\" y1=\"10.0\" x2=\"35\" y2=\"319.6\" stroke-opacity=\"0.25\"/><text x=\"35\" y=\"84\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">−8</text><line x1=\"55\" y1=\"10.0\" x2=\"55\" y2=\"319.6\" stroke-opacity=\"0.25\"/><line x1=\"75\" y1=\"10.0\" x2=\"75\" y2=\"319.6\" stroke-opacity=\"0.25\"/><text x=\"75\" y=\"84\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">−6</text><line x1=\"95\" y1=\"10.0\" x2=\"95\" y2=\"319.6\" stroke-opacity=\"0.25\"/><line x1=\"115\" y1=\"10.0\" x2=\"115\" y2=\"319.6\" stroke-opacity=\"0.25\"/><text x=\"115\" y=\"84\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">−4</text><line x1=\"135\" y1=\"10.0\" x2=\"135\" y2=\"319.6\" stroke-opacity=\"0.25\"/><line x1=\"155\" y1=\"10.0\" x2=\"155\" y2=\"319.6\" stroke-opacity=\"0.25\"/><text x=\"155\" y=\"84\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">−2</text><line x1=\"175\" y1=\"10.0\" x2=\"175\" y2=\"319.6\" stroke-opacity=\"0.25\"/><line x1=\"195\" y1=\"10.0\" x2=\"195\" y2=\"319.6\" stroke-opacity=\"1\"/><line x1=\"215\" y1=\"10.0\" x2=\"215\" y2=\"319.6\" stroke-opacity=\"0.25\"/><line x1=\"235\" y1=\"10.0\" x2=\"235\" y2=\"319.6\" stroke-opacity=\"0.25\"/><text x=\"235\" y=\"84\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">2</text><line x1=\"255\" y1=\"10.0\" x2=\"255\" y2=\"319.6\" stroke-opacity=\"0.25\"/><line x1=\"275\" y1=\"10.0\" x2=\"275\" y2=\"319.6\" stroke-opacity=\"0.25\"/><text x=\"275\" y=\"84\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">4</text><line x1=\"295\" y1=\"10.0\" x2=\"295\" y2=\"319.6\" stroke-opacity=\"0.25\"/><line x1=\"315\" y1=\"10.0\" x2=\"315\" y2=\"319.6\" stroke-opacity=\"0.25\"/><text x=\"315\" y=\"84\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">6</text><line x1=\"335\" y1=\"10.0\" x2=\"335\" y2=\"319.6\" stroke-opacity=\"0.25\"/><line x1=\"355\" y1=\"10.0\" x2=\"355\" y2=\"319.6\" stroke-opacity=\"0.25\"/><text x=\"355\" y=\"84\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\">8</text><line x1=\"27.0\" y1=\"310\" x2=\"363.0\" y2=\"310\" stroke-opacity=\"0.25\"/><text x=\"190\" y=\"314\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">−10</text><line x1=\"27.0\" y1=\"286\" x2=\"363.0\" y2=\"286\" stroke-opacity=\"0.25\"/><line x1=\"27.0\" y1=\"262\" x2=\"363.0\" y2=\"262\" stroke-opacity=\"0.25\"/><text x=\"190\" y=\"266\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">−8</text><line x1=\"27.0\" y1=\"238\" x2=\"363.0\" y2=\"238\" stroke-opacity=\"0.25\"/><line x1=\"27.0\" y1=\"214\" x2=\"363.0\" y2=\"214\" stroke-opacity=\"0.25\"/><text x=\"190\" y=\"218\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">−6</text><line x1=\"27.0\" y1=\"190\" x2=\"363.0\" y2=\"190\" stroke-opacity=\"0.25\"/><line x1=\"27.0\" y1=\"166\" x2=\"363.0\" y2=\"166\" stroke-opacity=\"0.25\"/><text x=\"190\" y=\"170\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">−4</text><line x1=\"27.0\" y1=\"142\" x2=\"363.0\" y2=\"142\" stroke-opacity=\"0.25\"/><line x1=\"27.0\" y1=\"118\" x2=\"363.0\" y2=\"118\" stroke-opacity=\"0.25\"/><text x=\"190\" y=\"122\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">−2</text><line x1=\"27.0\" y1=\"94\" x2=\"363.0\" y2=\"94\" stroke-opacity=\"0.25\"/><line x1=\"27.0\" y1=\"70\" x2=\"363.0\" y2=\"70\" stroke-opacity=\"1\"/><line x1=\"27.0\" y1=\"46\" x2=\"363.0\" y2=\"46\" stroke-opacity=\"0.25\"/><line x1=\"27.0\" y1=\"22\" x2=\"363.0\" y2=\"22\" stroke-opacity=\"0.25\"/><text x=\"190\" y=\"26\" text-anchor=\"end\" fill=\"currentColor\" stroke=\"none\">2</text><line x1=\"27.0\" y1=\"166\" x2=\"363.0\" y2=\"166\" stroke-width=\"2.4\" stroke-dasharray=\"7 5\"/><text x=\"369.0\" y=\"74\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">x</text><text x=\"192\" y=\"6.0\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">y</text><text x=\"184\" y=\"84\" fill=\"currentColor\" stroke=\"none\" font-style=\"italic\">O</text></svg></div><p>The shaded region shown represents the solutions to the inequality <i>ry</i> &lt; 60, where <i>r</i> is a constant. What is the value of <i>r</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "15"
+      },
+      {
+        "label": "B",
+        "html": "4"
+      },
+      {
+        "label": "C",
+        "html": "−4"
+      },
+      {
+        "label": "D",
+        "html": "−15"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>.</p><ul><li>The line representing the boundary of the shaded region shown is a horizontal line; therefore, the equation of the line can be written as <i>y</i> = −4.</li><li>Since the shaded region represents all of the points above this boundary line, it follows that the shaded region represents the solutions to the inequality <i>y</i> &gt; −4.</li><li>It's given that the shaded region shown represents the solutions to the inequality <i>ry</i> &lt; 60, where <i>r</i> is a constant.</li><li>The inequality <i>y</i> &gt; −4 can be rewritten in the form <i>ry</i> &lt; 60 by multiplying both sides of the inequality by −15, which yields (−15)<i>y</i> &lt; 60.</li><li>Therefore, the value of <i>r</i> is −15.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u18-04",
+    "lessonCode": "U18",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>The point (8, 2) in the <i>xy</i>-plane is a solution to which of the following systems of inequalities?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<i>x</i> &gt; 0<br><i>y</i> &gt; 0"
+      },
+      {
+        "label": "B",
+        "html": "<i>x</i> &gt; 0<br><i>y</i> &lt; 0"
+      },
+      {
+        "label": "C",
+        "html": "<i>x</i> &lt; 0<br><i>y</i> &gt; 0"
+      },
+      {
+        "label": "D",
+        "html": "<i>x</i> &lt; 0<br><i>y</i> &lt; 0"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>. The given point, (8, 2), is located in the first quadrant in the <i>xy</i>-plane. The system of inequalities in choice A represents all the points in the first quadrant in the <i>xy</i>-plane. Therefore, (8, 2) is a solution to the system of inequalities in choice A.</p><p><b>Alternate approach</b>: Substituting 8 for <i>x</i> in the first inequality in choice A, <i>x</i> &gt; 0, yields 8 &gt; 0, which is true. Substituting 2 for <i>y</i> in the second inequality in choice A, <i>y</i> &gt; 0, yields 2 &gt; 0, which is true. Since the coordinates of the point (8, 2) make the inequalities <i>x</i> &gt; 0 and <i>y</i> &gt; 0 true, the point (8, 2) is a solution to the system of inequalities consisting of <i>x</i> &gt; 0 and <i>y</i> &gt; 0.</p><p><b>Choice B is incorrect</b>. This system of inequalities represents all the points in the fourth quadrant, not the first quadrant, in the <i>xy</i>-plane.</p><p><b>Choice C is incorrect</b>. This system of inequalities represents all the points in the second quadrant, not the first quadrant, in the <i>xy</i>-plane.</p><p><b>Choice D is incorrect</b>. This system of inequalities represents all the points in the third quadrant, not the first quadrant, in the <i>xy</i>-plane.</p>"
+  },
+  {
+    "id": "u18-05",
+    "lessonCode": "U18",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>Adam’s school is a 20-minute walk or a 5-minute bus ride away from his house. The bus runs once every 30 minutes, and the number of minutes, <i>w</i>, that Adam waits for the bus varies between 0 and 30. Which of the following inequalities gives the values of <i>w</i> for which it would be faster for Adam to walk to school?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<i>w</i> − 5 &lt; 20"
+      },
+      {
+        "label": "B",
+        "html": "<i>w</i> − 5 &gt; 20"
+      },
+      {
+        "label": "C",
+        "html": "<i>w</i> + 5 &lt; 20"
+      },
+      {
+        "label": "D",
+        "html": "<i>w</i> + 5 &gt; 20"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>.</p><ul><li>It is given that <i>w</i> is the number of minutes that Adam waits for the bus.</li><li>The total time it takes Adam to get to school on a day he takes the bus is the sum of the minutes, <i>w</i>, he waits for the bus and the 5 minutes the bus ride takes; thus, this time, in minutes, is <i>w</i> + 5.</li><li>It is also given that the total amount of time it takes Adam to get to school on a day that he walks is 20 minutes.</li><li>Therefore, <i>w</i> + 5 &gt; 20 gives the values of <i>w</i> for which it would be faster for Adam to walk to school.</li></ul><p><b>Choices A and B are incorrect</b> because <i>w</i> – 5 is not the total length of time for Adam to wait for and then take the bus to school.</p><p><b>Choice C is incorrect</b> because the inequality should be true when walking 20 minutes is faster than the time it takes Adam to wait for and ride the bus, not less.</p>"
+  },
+  {
+    "id": "u18-06",
+    "lessonCode": "U18",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">2<i>x</i> − <i>y</i> &gt; 883</div><p>For which of the following tables are all the values of <i>x</i> and their corresponding values of <i>y</i> solutions to the given inequality?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<table style=\"display:inline-table;width:auto;border-collapse:collapse;text-align:center;vertical-align:middle\"><tr><td style=\"padding:2px 12px;border:1px solid currentColor\"><i>x</i></td><td style=\"padding:2px 12px;border:1px solid currentColor\"><i>y</i></td></tr><tr><td style=\"padding:2px 12px;border:1px solid currentColor\">440</td><td style=\"padding:2px 12px;border:1px solid currentColor\">0</td></tr><tr><td style=\"padding:2px 12px;border:1px solid currentColor\">441</td><td style=\"padding:2px 12px;border:1px solid currentColor\">−2</td></tr><tr><td style=\"padding:2px 12px;border:1px solid currentColor\">442</td><td style=\"padding:2px 12px;border:1px solid currentColor\">−4</td></tr></table>"
+      },
+      {
+        "label": "B",
+        "html": "<table style=\"display:inline-table;width:auto;border-collapse:collapse;text-align:center;vertical-align:middle\"><tr><td style=\"padding:2px 12px;border:1px solid currentColor\"><i>x</i></td><td style=\"padding:2px 12px;border:1px solid currentColor\"><i>y</i></td></tr><tr><td style=\"padding:2px 12px;border:1px solid currentColor\">440</td><td style=\"padding:2px 12px;border:1px solid currentColor\">0</td></tr><tr><td style=\"padding:2px 12px;border:1px solid currentColor\">442</td><td style=\"padding:2px 12px;border:1px solid currentColor\">−2</td></tr><tr><td style=\"padding:2px 12px;border:1px solid currentColor\">441</td><td style=\"padding:2px 12px;border:1px solid currentColor\">−4</td></tr></table>"
+      },
+      {
+        "label": "C",
+        "html": "<table style=\"display:inline-table;width:auto;border-collapse:collapse;text-align:center;vertical-align:middle\"><tr><td style=\"padding:2px 12px;border:1px solid currentColor\"><i>x</i></td><td style=\"padding:2px 12px;border:1px solid currentColor\"><i>y</i></td></tr><tr><td style=\"padding:2px 12px;border:1px solid currentColor\">442</td><td style=\"padding:2px 12px;border:1px solid currentColor\">0</td></tr><tr><td style=\"padding:2px 12px;border:1px solid currentColor\">440</td><td style=\"padding:2px 12px;border:1px solid currentColor\">−2</td></tr><tr><td style=\"padding:2px 12px;border:1px solid currentColor\">441</td><td style=\"padding:2px 12px;border:1px solid currentColor\">−4</td></tr></table>"
+      },
+      {
+        "label": "D",
+        "html": "<table style=\"display:inline-table;width:auto;border-collapse:collapse;text-align:center;vertical-align:middle\"><tr><td style=\"padding:2px 12px;border:1px solid currentColor\"><i>x</i></td><td style=\"padding:2px 12px;border:1px solid currentColor\"><i>y</i></td></tr><tr><td style=\"padding:2px 12px;border:1px solid currentColor\">442</td><td style=\"padding:2px 12px;border:1px solid currentColor\">0</td></tr><tr><td style=\"padding:2px 12px;border:1px solid currentColor\">441</td><td style=\"padding:2px 12px;border:1px solid currentColor\">−2</td></tr><tr><td style=\"padding:2px 12px;border:1px solid currentColor\">440</td><td style=\"padding:2px 12px;border:1px solid currentColor\">−4</td></tr></table>"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>.</p><ul><li>All the tables in the choices have the same three values of <i>x</i>, 440, 441, and 442, so each of the three values of <i>x</i> can be substituted in the given inequality to compare the corresponding values of <i>y</i> in each of the tables.</li><li>Substituting 440 for <i>x</i> in the given inequality yields 2(440) − <i>y</i> &gt; 883, or 880 − <i>y</i> &gt; 883.</li><li>Subtracting 880 from both sides of this inequality yields −<i>y</i> &gt; 3.</li><li>Dividing both sides of this inequality by −1 yields <i>y</i> &lt; −3.</li><li>Therefore, when <i>x</i> = 440, the corresponding value of <i>y</i> must be less than −3.</li><li>Substituting 441 for <i>x</i> in the given inequality yields 2(441) − <i>y</i> &gt; 883, or 882 − <i>y</i> &gt; 883.</li><li>Subtracting 882 from both sides of this inequality yields −<i>y</i> &gt; 1.</li><li>Dividing both sides of this inequality by −1 yields <i>y</i> &lt; −1.</li><li>Therefore, when <i>x</i> = 441, the corresponding value of <i>y</i> must be less than −1.</li><li>Substituting 442 for <i>x</i> in the given inequality yields 2(442) − <i>y</i> &gt; 883, or 884 − <i>y</i> &gt; 883.</li><li>Subtracting 884 from both sides of this inequality yields −<i>y</i> &gt; −1.</li><li>Dividing both sides of this inequality by −1 yields <i>y</i> &lt; 1.</li><li>Therefore, when <i>x</i> = 442, the corresponding value of <i>y</i> must be less than 1.</li><li>For the table in choice D, when <i>x</i> = 440, the corresponding value of <i>y</i> is −4, which is less than −3; when <i>x</i> = 441, the corresponding value of <i>y</i> is −2, which is less than −1; when <i>x</i> = 442, the corresponding value of <i>y</i> is 0, which is less than 1.</li><li>Therefore, the table in choice D gives values of <i>x</i> and their corresponding values of <i>y</i> that are all solutions to the given inequality.</li></ul><p><b>Choice A is incorrect</b>. When <i>x</i> = 440, the corresponding value of <i>y</i> in this table is 0, which isn't less than −3.</p><p><b>Choice B is incorrect</b>. When <i>x</i> = 440, the corresponding value of <i>y</i> in this table is 0, which isn't less than −3.</p><p><b>Choice C is incorrect</b>. When <i>x</i> = 440, the corresponding value of <i>y</i> in this table is −2, which isn't less than −3.</p>"
+  },
+  {
+    "id": "u18-07",
+    "lessonCode": "U18",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>For a snowstorm in a certain town, the minimum rate of snowfall recorded was 0.6 inches per hour, and the maximum rate of snowfall recorded was 1.8 inches per hour. Which inequality is true for all values of <i>s</i>, where <i>s</i> represents a rate of snowfall, in inches per hour, recorded for this snowstorm?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<i>s</i> ≥ 2.4"
+      },
+      {
+        "label": "B",
+        "html": "<i>s</i> ≥ 1.8"
+      },
+      {
+        "label": "C",
+        "html": "0 ≤ <i>s</i> ≤ 0.6"
+      },
+      {
+        "label": "D",
+        "html": "0.6 ≤ <i>s</i> ≤ 1.8"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>. It's given that for a snowstorm in a certain town, the minimum rate of snowfall recorded was 0.6 inches per hour, the maximum rate of snowfall recorded was 1.8 inches per hour, and <i>s</i> represents a rate of snowfall, in inches per hour, recorded for this snowstorm. It follows that the inequality 0.6 ≤ <i>s</i> ≤ 1.8 is true for all values of <i>s</i>.</p><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u18-08",
+    "lessonCode": "U18",
+    "type": "spr",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>f</i>(<i>x</i>) = 3 + |−2<i>x</i> − <i>x</i><sup>2</sup>|<br><i>g</i>(<i>w</i>) = |−<i>w</i>/(<i>w</i> − 1)| − <i>w</i> + 5</div><p>The functions <i>f</i> and <i>g</i> are defined by the given equations. If <i>f</i>(−4) = <i>c</i>, where <i>c</i> is a constant, what is the value of <i>g</i>(<i>c</i>)?</p>",
+    "choices": [],
+    "correctAnswer": "-4.9",
+    "acceptedAnswers": [
+      "-4.9",
+      "-49/10"
+    ],
+    "explanationHtml": "<p><b>The correct answer is −4</b>.9.</p><ul><li>The value of <i>f</i>(−4) is the value of <i>f</i>(<i>x</i>) when <i>x</i> = −4.</li><li>Substituting −4 for <i>x</i> in the equation <i>f</i>(<i>x</i>) = 3 + |−2<i>x</i> − <i>x</i><sup>2</sup>| yields <i>f</i>(−4) = 3 + |−2(−4) − (−4)<sup>2</sup>|, or <i>f</i>(−4) = 3 + |−8|, which is equivalent to <i>f</i>(−4) = 3 + 8, or <i>f</i>(−4) = 11.</li><li>Since it's given that <i>f</i>(−4) = <i>c</i>, it follows that <i>c</i> = 11 and the value of <i>g</i>(<i>c</i>) is the value of <i>g</i>(11).</li><li>Substituting 11 for <i>w</i> in the equation <i>g</i>(<i>w</i>) = |−<i>w</i>/(<i>w</i> − 1)| − <i>w</i> + 5 yields <i>g</i>(11) = |−11/(11 − 1)| − 11 + 5, or <i>g</i>(11) = |−1.1| − 6, which is equivalent to <i>g</i>(11) = 1.1 − 6, or <i>g</i>(11) = −4.9.</li><li>Note that -4.9 and -49/10 are examples of ways to enter a correct answer.</li></ul>"
+  },
+  {
+    "id": "u18-09",
+    "lessonCode": "U18",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>The average annual energy cost for a certain home is &#36;4,334. The homeowner plans to spend &#36;25,000 to install a geothermal heating system. The homeowner estimates that the average annual energy cost will then be &#36;2,712. Which of the following inequalities can be solved to find <i>t</i>, the number of years after installation at which the total amount of energy cost savings will exceed the installation cost?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "25,000 &gt; (4,334 − 2,712)<i>t</i>"
+      },
+      {
+        "label": "B",
+        "html": "25,000 &lt; (4,334 − 2,712)<i>t</i>"
+      },
+      {
+        "label": "C",
+        "html": "25,000 − 4,334 &gt; 2,712<i>t</i>"
+      },
+      {
+        "label": "D",
+        "html": "25,000 &gt; (4,332/2,712)<i>t</i>"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>. The savings each year from installing the geothermal heating system will be the average annual energy cost for the home before the geothermal heating system installation minus the average annual energy cost after the geothermal heating system installation, which is (4,334 − 2,712) dollars. In <i>t</i> years, the savings will be (4,334 − 2,712)<i>t</i> dollars. Therefore, the inequality that can be solved to find the number of years after installation at which the total amount of energy cost savings will exceed (be greater than) the installation cost, &#36;25,000, is 25,000 &lt; (4,334 − 2,712)<i>t</i>.</p><p><b>Choice A is incorrect</b>. It gives the number of years after installation at which the total amount of energy cost savings will be less than the installation cost.</p><p><b>Choice C is incorrect</b> and may result from subtracting the average annual energy cost for the home from the onetime cost of the geothermal heating system installation. To find the predicted total savings, the predicted average cost should be subtracted from the average annual energy cost before the installation, and the result should be multiplied by the number of years, <i>t</i>.</p><p><b>Choice D is incorrect</b> and may result from misunderstanding the context. The ratio 4,332/2,712 compares the average energy cost before installation and the average energy cost after installation; it does not represent the savings.</p>"
+  },
+  {
+    "id": "u18-10",
+    "lessonCode": "U18",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>The minimum value of <i>x</i> is 12 less than 6 times another number <i>n</i>. Which inequality shows the possible values of <i>x</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<i>x</i> ≤ 6<i>n</i> − 12"
+      },
+      {
+        "label": "B",
+        "html": "<i>x</i> ≥ 6<i>n</i> − 12"
+      },
+      {
+        "label": "C",
+        "html": "<i>x</i> ≤ 12 − 6<i>n</i>"
+      },
+      {
+        "label": "D",
+        "html": "<i>x</i> ≥ 12 − 6<i>n</i>"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>.</p><ul><li>It’s given that the minimum value of <i>x</i> is 12 less than 6 times another number <i>n</i>.</li><li>Therefore, the possible values of <i>x</i> are all greater than or equal to the value of 12 less than 6 times <i>n</i>.</li><li>The value of 6 times <i>n</i> is given by the expression 6<i>n</i>.</li><li>The value of 12 less than 6<i>n</i> is given by the expression 6<i>n</i> − 12.</li><li>Therefore, the possible values of <i>x</i> are all greater than or equal to 6<i>n</i> − 12.</li><li>This can be shown by the inequality <i>x</i> ≥ 6<i>n</i> − 12.</li></ul><p><b>Choice A is incorrect</b>. This inequality shows the possible values of <i>x</i> if the maximum, not the minimum, value of <i>x</i> is 12 less than 6 times <i>n</i>.</p><p><b>Choice C is incorrect</b>. This inequality shows the possible values of <i>x</i> if the maximum, not the minimum, value of <i>x</i> is 6 times <i>n</i> less than 12, not 12 less than 6 times <i>n</i>.</p><p><b>Choice D is incorrect</b>. This inequality shows the possible values of <i>x</i> if the minimum value of <i>x</i> is 6 times <i>n</i> less than 12, not 12 less than 6 times <i>n</i>.</p>"
+  },
+  {
+    "id": "u18-11",
+    "lessonCode": "U18",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">11<i>x</i> + 14<i>y</i> ≤ 115</div><p>Anthony will spend at most &#36;115 to purchase <i>x</i> small cheese pizzas and <i>y</i> large cheese pizzas for a team dinner. The given inequality represents this situation. Which of the following is the best interpretation of 14<i>y</i> in this context?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "The amount, in dollars, Anthony will spend on each large cheese pizza"
+      },
+      {
+        "label": "B",
+        "html": "The amount, in dollars, Anthony will spend on each small cheese pizza"
+      },
+      {
+        "label": "C",
+        "html": "The total amount, in dollars, Anthony will spend on large cheese pizzas"
+      },
+      {
+        "label": "D",
+        "html": "The total amount, in dollars, Anthony will spend on small cheese pizzas"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>.</p><ul><li>It's given that Anthony will spend at most &#36;115 to purchase <i>x</i> small cheese pizzas and <i>y</i> large cheese pizzas.</li><li>In the inequality 11<i>x</i> + 14<i>y</i> ≤ 115, <i>y</i> represents the number of large cheese pizzas that Anthony will purchase.</li><li>This means the coefficient 14 represents the amount, in dollars, Anthony will spend on each large cheese pizza.</li><li>Therefore, the best interpretation of 14<i>y</i> in this context is the total amount, in dollars, Anthony will spend on large cheese pizzas.</li></ul><p><b>Choice A is incorrect</b>. This is the best interpretation of 14, not 14<i>y</i>.</p><p><b>Choice B is incorrect</b>. This is the best interpretation of 11, not 14<i>y</i>.</p><p><b>Choice D is incorrect</b>. This is the best interpretation of 11<i>x</i>, not 14<i>y</i>.</p>"
+  },
+  {
+    "id": "u18-12",
+    "lessonCode": "U18",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>Ken is working this summer as part of a crew on a farm. He earned &#36;8 per hour for the first 10 hours he worked this week. Because of his performance, his crew leader raised his salary to &#36;10 per hour for the rest of the week. Ken saves 90% of his earnings from each week. What is the least number of hours he must work the rest of the week to save at least &#36;270 for the week?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "38"
+      },
+      {
+        "label": "B",
+        "html": "33"
+      },
+      {
+        "label": "C",
+        "html": "22"
+      },
+      {
+        "label": "D",
+        "html": "16"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>.</p><ul><li>Ken earned &#36;8 per hour for the first 10 hours he worked, so he earned a total of &#36;80 for the first 10 hours he worked.</li><li>For the rest of the week, Ken was paid at the rate of &#36;10 per hour.</li><li>Let <i>x</i> be the number of hours he will work for the rest of the week.</li><li>The total of Ken’s earnings, in dollars, for the week will be 10<i>x</i> + 80.</li><li>He saves 90% of his earnings each week, so this week he will save 0.9(10<i>x</i> + 80) dollars.</li><li>The inequality 0.9(10<i>x</i> + 80) ≥ 270 represents the condition that he will save at least &#36;270 for the week.</li><li>Factoring 10 out of the expression 10<i>x</i> + 80 gives 10(<i>x</i> + 8).</li><li>The product of 10 and 0.9 is 9, so the inequality can be rewritten as 9(<i>x</i> + 8) ≥ 270.</li><li>Dividing both sides of this inequality by 9 yields <i>x</i> + 8 ≥ 30, so <i>x</i> ≥ 22.</li><li>Therefore, the least number of hours Ken must work the rest of the week to save at least &#36;270 for the week is 22.</li></ul><p><b>Choices A and B are incorrect</b> because Ken can save &#36;270 by working fewer hours than 38 or 33 for the rest of the week.</p><p><b>Choice D is incorrect</b>. If Ken worked 16 hours for the rest of the week, his total earnings for the week will be &#36;80 + &#36;160 = &#36;240, which is less than &#36;270. Since he saves only 90% of his earnings each week, he would save even less than &#36;240 for the week.</p>"
+  },
+  {
+    "id": "u18-13",
+    "lessonCode": "U18",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>y</i> &gt; 2<i>x</i> − 1<br>2<i>x</i> &gt; 5</div><p>Which of the following consists of the <i>y</i>-coordinates of all the points that satisfy the system of inequalities above?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<i>y</i> &gt; 6"
+      },
+      {
+        "label": "B",
+        "html": "<i>y</i> &gt; 4"
+      },
+      {
+        "label": "C",
+        "html": "<i>y</i> &gt; 5/2"
+      },
+      {
+        "label": "D",
+        "html": "<i>y</i> &gt; 3/2"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>. Subtracting the same number from each side of an inequality gives an equivalent inequality. Hence, subtracting 1 from each side of the inequality 2<i>x</i> &gt; 5 gives 2<i>x</i> − 1 &gt; 4. So the given system of inequalities is equivalent to the system of inequalities <i>y</i> &gt; 2<i>x</i> − 1 and 2<i>x</i> − 1 &gt; 4, which can be rewritten as <i>y</i> &gt; 2<i>x</i> − 1 &gt; 4. Using the transitive property of inequalities, it follows that <i>y</i> &gt; 4.</p><p><b>Choice A is incorrect</b> because there are points with a <i>y</i>-coordinate less than 6 that satisfy the given system of inequalities. For example, (3, 5.5) satisfies both inequalities.</p><p><b>Choice C is incorrect</b>. This may result from solving the inequality 2<i>x</i> &gt; 5 for <i>x</i>, then replacing <i>x</i> with <i>y</i>.</p><p><b>Choice D is incorrect</b> because this inequality allows <i>y</i>-values that are not the <i>y</i>-coordinate of any point that satisfies both inequalities. For example, <i>y</i> = 2 is contained in the set <i>y</i> &gt; 3/2; however, if 2 is substituted into the first inequality for <i>y</i>, the result is <i>x</i> &lt; 3/2. This cannot be true because the second inequality gives <i>x</i> &gt; 5/2.</p>"
+  },
+  {
+    "id": "u18-14",
+    "lessonCode": "U18",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>An elementary school teacher is ordering <i>x</i> workbooks and <i>y</i> sets of flash cards for a math class. The teacher must order at least 20 items, but the total cost of the order must not be over &#36;80. If the workbooks cost &#36;3 each and the flash cards cost &#36;4 per set, which of the following systems of inequalities models this situation?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<i>x</i> + <i>y</i> ≥ 20<br>3<i>x</i> + 4<i>y</i> ≤ 80"
+      },
+      {
+        "label": "B",
+        "html": "<i>x</i> + <i>y</i> ≥ 20<br>3<i>x</i> + 4<i>y</i> ≥ 80"
+      },
+      {
+        "label": "C",
+        "html": "3<i>x</i> + 4<i>y</i> ≤ 20<br><i>x</i> + <i>y</i> ≥ 80"
+      },
+      {
+        "label": "D",
+        "html": "<i>x</i> + <i>y</i> ≤ 20<br>3<i>x</i> + 4<i>y</i> ≥ 80"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is correct</b>.</p><ul><li>The total number of workbooks and sets of flash cards ordered is represented by <i>x</i> + <i>y</i>.</li><li>Since the teacher must order at least 20 items, it must be true that <i>x</i> + <i>y</i> ≥ 20.</li><li>Each workbook costs &#36;3; therefore, 3<i>x</i> represents the cost, in dollars, of <i>x</i> workbooks.</li><li>Each set of flashcards costs &#36;4; therefore, 4<i>y</i> represents the cost, in dollars, of <i>y</i> sets of flashcards.</li><li>It follows that the total cost for <i>x</i> workbooks and <i>y</i> sets of flashcards is 3<i>x</i> + 4<i>y</i>.</li><li>Since the total cost of the order must not be over &#36;80, it must also be true that 3<i>x</i> + 4<i>y</i> ≤ 80.</li><li>Of the choices given, these inequalities are shown only in choice A.</li></ul><p><b>Choice B is incorrect</b>. The second inequality says that the total cost must be greater, not less than or equal to &#36;80. Choice C incorrectly limits the cost by the minimum number of items and the number of items with the maximum cost.</p><p><b>Choice D is incorrect</b>. The first inequality incorrectly says that at most 20 items must be ordered, and the second inequality says that the total cost of the order must be at least, not at most, &#36;80.</p>"
+  },
+  {
+    "id": "u18-15",
+    "lessonCode": "U18",
+    "type": "spr",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>An event planner is planning a party. It costs the event planner a onetime fee of &#36;35 to rent the venue and &#36;10.25 per attendee. The event planner has a budget of &#36;200. What is the greatest number of attendees possible without exceeding the budget?</p>",
+    "choices": [],
+    "correctAnswer": "16",
+    "acceptedAnswers": [
+      "16"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 16</b>.</p><ul><li>The total cost of the party is found by adding the onetime fee of the venue to the cost per attendee times the number of attendees.</li><li>Let <i>x</i> be the number of attendees.</li><li>The expression 35 + 10.25<i>x</i> thus represents the total cost of the party.</li><li>It's given that the budget is &#36;200, so this situation can be represented by the inequality 35 + 10.25<i>x</i> ≤ 200.</li><li>The greatest number of attendees can be found by solving this inequality for <i>x</i>.</li><li>Subtracting 35 from both sides of this inequality gives 10.25<i>x</i> ≤ 165.</li><li>Dividing both sides of this inequality by 10.25 results in approximately <i>x</i> ≤ 16.098.</li><li>Since the question is stated in terms of attendees, rounding <i>x</i> down to the nearest whole number, 16, gives the greatest number of attendees possible.</li></ul>"
+  }
+]

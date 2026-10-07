@@ -1,0 +1,397 @@
+[
+  {
+    "id": "u12-01",
+    "lessonCode": "U12",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>Which expression is equivalent to (<i>m</i><sup>4</sup><i>q</i><sup>4</sup><i>z</i><sup>−1</sup>)(<i>mq</i><sup>5</sup><i>z</i><sup>3</sup>), where <i>m</i>, <i>q</i>, and <i>z</i> are positive?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<i>m</i><sup>4</sup><i>q</i><sup>20</sup><i>z</i><sup>−3</sup>"
+      },
+      {
+        "label": "B",
+        "html": "<i>m</i><sup>5</sup><i>q</i><sup>9</sup><i>z</i><sup>2</sup>"
+      },
+      {
+        "label": "C",
+        "html": "<i>m</i><sup>6</sup><i>q</i><sup>8</sup><i>z</i><sup>−1</sup>"
+      },
+      {
+        "label": "D",
+        "html": "<i>m</i><sup>20</sup><i>q</i><sup>12</sup><i>z</i><sup>−2</sup>"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>. Applying the commutative property of multiplication, the expression (<i>m</i><sup>4</sup><i>q</i><sup>4</sup><i>z</i><sup>−1</sup>)(<i>mq</i><sup>5</sup><i>z</i><sup>3</sup>) can be rewritten as (<i>m</i><sup>4</sup><i>m</i>)(<i>q</i><sup>4</sup><i>q</i><sup>5</sup>)(<i>z</i><sup>−1</sup><i>z</i><sup>3</sup>). For positive values of <i>x</i>, (<i>x</i><sup><i>a</i></sup>)(<i>x</i><sup><i>b</i></sup>) = <i>x</i><sup><i>a</i> + <i>b</i></sup>. Therefore, the expression (<i>m</i><sup>4</sup><i>m</i>)(<i>q</i><sup>4</sup><i>q</i><sup>5</sup>)(<i>z</i><sup>−1</sup><i>z</i><sup>3</sup>) can be rewritten as (<i>m</i><sup>4 + 1</sup>)(<i>q</i><sup>4 + 5</sup>)(<i>z</i><sup>−1 + 3</sup>), or <i>m</i><sup>5</sup><i>q</i><sup>9</sup><i>z</i><sup>2</sup>.</p><p><b>Choice A is incorrect</b> and may result from multiplying, not adding, the exponents.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u12-02",
+    "lessonCode": "U12",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>On April 1, there were 233 views of an advertisement posted on a website. Every 2 days after April 1, the number of views of the advertisement had increased by 70% of the number of views 2 days earlier. The function <i>f</i> gives the predicted number of views <i>x</i> days after April 1. Which equation defines <i>f</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<i>f</i>(<i>x</i>) = 233(0.70)<sup><i>x</i>/2</sup>"
+      },
+      {
+        "label": "B",
+        "html": "<i>f</i>(<i>x</i>) = 233(0.70)<sup>2<i>x</i></sup>"
+      },
+      {
+        "label": "C",
+        "html": "<i>f</i>(<i>x</i>) = 233(1.70)<sup><i>x</i>/2</sup>"
+      },
+      {
+        "label": "D",
+        "html": "<i>f</i>(<i>x</i>) = 233(1.70)<sup>2<i>x</i></sup>"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>.</p><ul><li>It’s given that on April 1, there were 233 views of the advertisement.</li><li>It’s also given that every 2 days after April 1, the number of views of the advertisement had increased by 70% of the number of views 2 days earlier.</li><li>This situation can be represented by an exponential function of the form <i>f</i>(<i>x</i>) = <i>a</i>(1 + <i>r</i>/100)<sup><i>x</i>/<i>c</i></sup>, where <i>a</i> is the number of views on April 1 and every <i>c</i> days after April 1, the number of views had increased by <i>r</i>% of the number of views <i>c</i> days earlier.</li><li>It follows that <i>a</i> = 233, <i>r</i> = 70, and <i>c</i> = 2.</li><li>Substituting 233 for <i>a</i>, 70 for <i>r</i>, and 2 for <i>c</i> in the equation <i>f</i>(<i>x</i>) = <i>a</i>(1 + <i>r</i>/100)<sup><i>x</i>/<i>c</i></sup> yields <i>f</i>(<i>x</i>) = 233(1 + 70/100)<sup><i>x</i>/2</sup>, or <i>f</i>(<i>x</i>) = 233(1.70)<sup><i>x</i>/2</sup>.</li></ul><p><b>Choice A is incorrect</b>. This function gives the predicted number of views for an advertisement for which every 2 days, the number of views was 70%, rather than increased by 70%, of the number of views 2 days earlier.</p><p><b>Choice B is incorrect</b>. This function gives the predicted number of views for an advertisement for which every 1/2 days, the number of views was 70% of the number of views 1/2 days earlier, rather than an advertisement for which every 2 days, the number of views had increased by 70% of the number of views 2 days earlier.</p><p><b>Choice D is incorrect</b>. This function gives the predicted number of views for an advertisement for which every 1/2 days, rather than every 2 days, the number of views had increased by 70% of the number of views 1/2 days earlier, rather than 2 days earlier.</p>"
+  },
+  {
+    "id": "u12-03",
+    "lessonCode": "U12",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>The expression <i>x</i><sup>−2</sup><i>y</i><sup>1/2</sup> / (<i>x</i><sup>1/3</sup><i>y</i><sup>−1</sup>), where <i>x</i> > 1 and <i>y</i> > 1, is equivalent to which of the following?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "√<i>y</i> / ∛(<i>x</i><sup>2</sup>)"
+      },
+      {
+        "label": "B",
+        "html": "<i>y</i>√<i>y</i> / ∛(<i>x</i><sup>2</sup>)"
+      },
+      {
+        "label": "C",
+        "html": "<i>y</i>√<i>y</i> / (<i>x</i>√<i>x</i>)"
+      },
+      {
+        "label": "D",
+        "html": "<i>y</i>√<i>y</i> / (<i>x</i><sup>2</sup>∛<i>x</i>)"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>. For <i>x</i> > 1 and <i>y</i> > 1, <i>x</i><sup>1/3</sup> and <i>y</i><sup>1/2</sup> are equivalent to ∛<i>x</i> and √<i>y</i>, respectively. Also, <i>x</i><sup>−2</sup> and <i>y</i><sup>−1</sup> are equivalent to 1/<i>x</i><sup>2</sup> and 1/<i>y</i>, respectively. Therefore, the given expression can be rewritten as <i>y</i>√<i>y</i> / (<i>x</i><sup>2</sup>∛<i>x</i>).</p><p><b>Choices A, B, and C are incorrect</b> because these choices are not equivalent to the given expression for <i>x</i> > 1 and <i>y</i> > 1.</p><p>For example, for <i>x</i> = 2 and <i>y</i> = 2, the value of the given expression is 2<sup>−5/6</sup>; the values of the choices, however, are 2<sup>−1/3</sup>, 2<sup>5/6</sup>, and 1, respectively.</p>"
+  },
+  {
+    "id": "u12-04",
+    "lessonCode": "U12",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>The function <i>f</i> is defined by <i>f</i>(<i>x</i>) = <i>a</i>√(<i>x</i> + <i>b</i>), where <i>a</i> and <i>b</i> are constants. In the <i>xy</i>-plane, the graph of <i>y</i> = <i>f</i>(<i>x</i>) passes through the point (−24, 0), and <i>f</i>(24) &lt; 0. Which of the following must be true?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<i>f</i>(0) = 24"
+      },
+      {
+        "label": "B",
+        "html": "<i>f</i>(0) = −24"
+      },
+      {
+        "label": "C",
+        "html": "<i>a</i> &gt; <i>b</i>"
+      },
+      {
+        "label": "D",
+        "html": "<i>a</i> &lt; <i>b</i>"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>.</p><ul><li>It's given that <i>f</i>(24) &lt; 0.</li><li>Substituting 24 for <i>f</i>(<i>x</i>) in the equation <i>f</i>(<i>x</i>) = <i>a</i>√(<i>x</i> + <i>b</i>) yields <i>f</i>(24) = <i>a</i>√(24 + <i>b</i>).</li><li>Therefore, <i>a</i>√(24 + <i>b</i>) &lt; 0.</li><li>Since √(24 + <i>b</i>) can't be negative, it follows that <i>a</i> &lt; 0.</li><li>It's also given that the graph of <i>y</i> = <i>f</i>(<i>x</i>) passes through the point (−24, 0).</li><li>It follows that when <i>x</i> = −24, <i>f</i>(<i>x</i>) = 0.</li><li>Substituting −24 for <i>x</i> and 0 for <i>f</i>(<i>x</i>) in the equation <i>f</i>(<i>x</i>) = <i>a</i>√(<i>x</i> + <i>b</i>) yields 0 = <i>a</i>√(−24 + <i>b</i>).</li><li>By the zero product property, either <i>a</i> = 0 or √(−24 + <i>b</i>) = 0.</li><li>Since <i>a</i> &lt; 0, it follows that √(24 + <i>b</i>) = 0.</li><li>Squaring both sides of this equation yields −24 + <i>b</i> = 0.</li><li>Adding 24 to both sides of this equation yields <i>b</i> = 24.</li><li>Since <i>a</i> &lt; 0 and <i>b</i> is 24, it follows that <i>a</i> &lt; <i>b</i> must be true.</li></ul><p><b>Choice A is incorrect</b>. The value of <i>f</i>(0) is <i>a</i>√<i>b</i>, which must be negative.</p><p><b>Choice B is incorrect</b>. The value of <i>f</i>(0) is <i>a</i>√<i>b</i>, which could be −24, but doesn't have to be.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u12-05",
+    "lessonCode": "U12",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "math",
+    "stemHtml": "<p>Bacteria are growing in a liquid growth medium. There were 300,000 cells per milliliter during an initial observation. The number of cells per milliliter doubles every 3 hours. How many cells per milliliter will there be 15 hours after the initial observation?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "1,500,000"
+      },
+      {
+        "label": "B",
+        "html": "2,400,000"
+      },
+      {
+        "label": "C",
+        "html": "4,500,000"
+      },
+      {
+        "label": "D",
+        "html": "9,600,000"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>.</p><ul><li>Let <i>y</i> represent the number of cells per milliliter <i>x</i> hours after the initial observation.</li><li>Since the number of cells per milliliter doubles every 3 hours, the relationship between <i>x</i> and <i>y</i> can be represented by an exponential equation of the form <i>y</i> = <i>a</i>(<i>b</i>)<sup><i>x</i>/<i>k</i></sup>, where <i>a</i> is the number of cells per milliliter during the initial observation and the number of cells per milliliter increases by a factor of <i>b</i> every <i>k</i> hours.</li><li>It’s given that there were 300,000 cells per milliliter during the initial observation.</li><li>Therefore, <i>a</i> = 300,000.</li><li>It’s also given that the number of cells per milliliter doubles, or increases by a factor of 2, every 3 hours.</li><li>Therefore, <i>b</i> = 2 and <i>k</i> = 3.</li><li>Substituting 300,000 for <i>a</i>, 2 for <i>b</i>, and 3 for <i>k</i> in the equation <i>y</i> = <i>a</i>(<i>b</i>)<sup><i>x</i>/<i>k</i></sup> yields <i>y</i> = 300,000(2)<sup><i>x</i>/3</sup>.</li><li>The number of cells per milliliter there will be 15 hours after the initial observation is the value of <i>y</i> in this equation when <i>x</i> = 15.</li><li>Substituting 15 for <i>x</i> in the equation <i>y</i> = 300,000(2)<sup><i>x</i>/3</sup> yields <i>y</i> = 300,000(2)<sup>15/3</sup>, or <i>y</i> = 300,000(2)<sup>5</sup>.</li><li>This is equivalent to <i>y</i> = 300,000(32), or <i>y</i> = 9,600,000.</li><li>Therefore, 15 hours after the initial observation, there will be 9,600,000 cells per milliliter.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u12-06",
+    "lessonCode": "U12",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>Immanuel purchased a certain rare coin on January 1. The function <i>f</i>(<i>x</i>) = 65(1.03)<sup><i>x</i></sup>, where 0 ≤ <i>x</i> ≤ 10, gives the predicted value, in dollars, of the rare coin <i>x</i> years after Immanuel purchased it. What is the best interpretation of the statement “<i>f</i>(8) is approximately equal to 82” in this context?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "When the rare coin’s predicted value is approximately 82 dollars, it is 8% greater than the predicted value, in dollars, on January 1 of the previous year."
+      },
+      {
+        "label": "B",
+        "html": "When the rare coin’s predicted value is approximately 82 dollars, it is 8 times the predicted value, in dollars, on January 1 of the previous year."
+      },
+      {
+        "label": "C",
+        "html": "From the day Immanuel purchased the rare coin to 8 years after Immanuel purchased the coin, its predicted value increased by a total of approximately 82 dollars."
+      },
+      {
+        "label": "D",
+        "html": "8 years after Immanuel purchased the rare coin, its predicted value is approximately 82 dollars."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>.</p><ul><li>It’s given that the function <i>f</i>(<i>x</i>) = 65(1.03)<sup><i>x</i></sup> gives the predicted value, in dollars, of a certain rare coin <i>x</i> years after Immanuel purchased it.</li><li>It follows that <i>f</i>(<i>x</i>) represents the predicted value, in dollars, of the coin <i>x</i> years after Immanuel purchased it.</li><li>Since the value of <i>f</i>(8) is the value of <i>f</i>(<i>x</i>) when <i>x</i> = 8, it follows that “<i>f</i>(8) is approximately equal to 82” means that <i>f</i>(<i>x</i>) is approximately equal to 82 when <i>x</i> = 8.</li><li>Therefore, the best interpretation of the statement “<i>f</i>(8) is approximately equal to 82” in this context is 8 years after Immanuel purchased the rare coin, its predicted value is approximately 82 dollars.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual errors.</p><p><b>Choice B is incorrect</b> and may result from conceptual errors.</p><p><b>Choice C is incorrect</b> and may result from conceptual errors.</p>"
+  },
+  {
+    "id": "u12-07",
+    "lessonCode": "U12",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>The function <i>f</i> is defined by <i>f</i>(<i>x</i>) = <i>a</i>(2.2<sup><i>x</i></sup> + 2.2<sup><i>b</i></sup>), where <i>a</i> and <i>b</i> are integer constants and 0 &lt; <i>a</i> &lt; <i>b</i>. The functions <i>g</i> and <i>h</i> are equivalent to function <i>f</i>, where <i>k</i> and <i>m</i> are constants. Which of the following equations displays the <i>y</i>-coordinate of the <i>y</i>-intercept of the graph of <i>y</i> = <i>f</i>(<i>x</i>) in the <i>xy</i>-plane as a constant or coefficient?<br>I. <i>g</i>(<i>x</i>) = <i>a</i>(2.2<sup><i>x</i></sup> + <i>k</i>)<br>II. <i>h</i>(<i>x</i>) = <i>a</i>(2.2)<sup><i>x</i></sup> + <i>m</i></p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "I only"
+      },
+      {
+        "label": "B",
+        "html": "II only"
+      },
+      {
+        "label": "C",
+        "html": "I and II"
+      },
+      {
+        "label": "D",
+        "html": "Neither I nor II"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>.</p><ul><li>A <i>y</i>-intercept of a graph in the <i>xy</i>-plane is a point where the graph intersects the <i>y</i>-axis, or a point where <i>x</i> = 0.</li><li>Substituting 0 for <i>x</i> in the equation defining function <i>f</i> yields <i>f</i>(0) = <i>a</i>(2.2<sup>0</sup> + 2.2<sup><i>b</i></sup>), or <i>f</i>(0) = <i>a</i>(1 + 2.2<sup><i>b</i></sup>).</li><li>So, the <i>y</i>-coordinate of the <i>y</i>-intercept of the graph is <i>a</i>(1 + 2.2<sup><i>b</i></sup>), or equivalently, <i>a</i> + <i>a</i>(2.2)<sup><i>b</i></sup>.</li><li>It's given that function <i>g</i> is equivalent to function <i>f</i>, where 0 &lt; <i>a</i> &lt; <i>b</i>.</li><li>It follows that <i>k</i> = 2.2<sup><i>b</i></sup>.</li><li>Since <i>a</i>(2.2)<sup><i>b</i></sup> can't be equal to 0, the coefficient <i>a</i> can't be equal to <i>a</i> + <i>a</i>(2.2)<sup><i>b</i></sup>.</li><li>Since 0 &lt; <i>a</i>, the constant <i>k</i>, which is equal to 2.2<sup><i>b</i></sup>, can't be equal to <i>a</i> + <i>a</i>(2.2)<sup><i>b</i></sup>.</li><li>Therefore, function <i>g</i> doesn't display the <i>y</i>-coordinate of the <i>y</i>-intercept of the graph of <i>y</i> = <i>f</i>(<i>x</i>) in the <i>xy</i>-plane as a constant or coefficient.</li><li>It's also given that function <i>h</i> is equivalent to function <i>f</i>, where 0 &lt; <i>a</i> &lt; <i>b</i>.</li><li>The equation defining <i>f</i> can be rewritten as <i>f</i>(<i>x</i>) = <i>a</i>(2.2)<sup><i>x</i></sup> + <i>a</i>(2.2)<sup><i>b</i></sup>.</li><li>It follows that <i>m</i> = <i>a</i>(2.2)<sup><i>b</i></sup>.</li><li>Since <i>a</i>(2.2)<sup><i>b</i></sup> can't be equal to 0, the coefficient <i>a</i> can't be equal to <i>a</i> + <i>a</i>(2.2)<sup><i>b</i></sup>.</li><li>Since 0 &lt; <i>a</i>, the constant <i>m</i>, which is equal to <i>a</i>(2.2)<sup><i>b</i></sup>, can't be equal to <i>a</i> + <i>a</i>(2.2)<sup><i>b</i></sup>.</li><li>Therefore, function <i>h</i> doesn't display the <i>y</i>-coordinate of the <i>y</i>-intercept of the graph of <i>y</i> = <i>f</i>(<i>x</i>) in the <i>xy</i>-plane as a constant or coefficient.</li><li>Thus, neither function <i>g</i> nor function <i>h</i> displays the <i>y</i>-coordinate of the <i>y</i>-intercept of the graph of <i>y</i> = <i>f</i>(<i>x</i>) in the <i>xy</i>-plane as a constant or coefficient.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u12-08",
+    "lessonCode": "U12",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>P</i>(<i>t</i>) = 24.8(1.036)<sup><i>t</i></sup></div><p>The function <i>P</i> gives the predicted population, in millions, of a certain country for the period from 1984 to 2018, where <i>t</i> is the number of years after 1984. According to the model, what is the best interpretation of the statement “<i>P</i>(8) is approximately equal to 32.91”?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "In 1984, the predicted population of this country was approximately 8 million."
+      },
+      {
+        "label": "B",
+        "html": "In 1984, the predicted population of this country was approximately 32.91 million."
+      },
+      {
+        "label": "C",
+        "html": "8 years after 1984, the predicted population of this country was approximately 32.91 million."
+      },
+      {
+        "label": "D",
+        "html": "32.91 years after 1984, the predicted population of this country was approximately 8 million."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>. The function <i>P</i> gives the predicted population, in millions, of a certain country for the period from 1984 to 2018, where <i>t</i> is the number of years after 1984. Since the value of <i>P</i>(8) is the value of <i>P</i>(<i>t</i>) when <i>t</i> = 8, it follows that \"<i>P</i>(8) is approximately equal to 32.91\" means that the value of <i>P</i>(<i>t</i>) is approximately equal to 32.91 when <i>t</i> = 8. Therefore, the best interpretation of the statement \"<i>P</i>(8) is approximately equal to 32.91\" is that 8 years after 1984, the predicted population of this country was approximately 32.91 million.</p><p><b>Choice A is incorrect</b>. In 1984, the predicted population of this country was 24.8 million, not approximately 8 million.</p><p><b>Choice B is incorrect</b>. In 1984, the predicted population of this country was 24.8 million, not approximately 32.91 million.</p><p><b>Choice D is incorrect</b>. 32.91 years after 1984, the predicted population of this country was 24.8(1.036)<sup>32.91</sup> million, or approximately 79.42 million, not approximately 8 million.</p>"
+  },
+  {
+    "id": "u12-09",
+    "lessonCode": "U12",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<p>A company has a newsletter. In January 2018, there were 1,300 customers subscribed to the newsletter. For the next 24 months after January 2018, the total number of customers subscribed to the newsletter each month was 7% greater than the total number subscribed the previous month. Which equation gives the total number of customers, <i>c</i>, subscribed to the company's newsletter <i>m</i> months after January 2018, where <i>m</i> ≤ 24?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<i>c</i> = 1,300(0.07)<sup><i>m</i></sup>"
+      },
+      {
+        "label": "B",
+        "html": "<i>c</i> = 1,300(1.07)<sup><i>m</i></sup>"
+      },
+      {
+        "label": "C",
+        "html": "<i>c</i> = 1,300(1.7)<sup><i>m</i></sup>"
+      },
+      {
+        "label": "D",
+        "html": "<i>c</i> = 1,300(7)<sup><i>m</i></sup>"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>. It's given that in January 2018, there were 1,300 customers subscribed to a company's newsletter and for the next 24 months after January 2018, the total number of customers subscribed to the newsletter each month was 7% greater than the total number subscribed the previous month. It follows that this situation can be represented by the equation <i>c</i> = <i>a</i>(1 + <i>r</i>/100)<sup><i>m</i></sup>, where <i>c</i> is the total number of customers subscribed to the company's newsletter <i>m</i> months after January 2018, <i>a</i> is the number of customers subscribed to the newsletter in January 2018, and the total number of customers subscribed to the newsletter each month was <i>r</i>% greater than the total number subscribed the previous month. Substituting 1,300 for <i>a</i> and 7 for <i>r</i> in this equation yields <i>c</i> = 1,300(1 + 7/100)<sup><i>m</i></sup>, or <i>c</i> = 1,300(1.07)<sup><i>m</i></sup>.</p><p><b>Choice A is incorrect</b>. This equation represents a situation where the total number of customers subscribed each month was 93% less, not 7% greater, than the total number subscribed the previous month.</p><p><b>Choice C is incorrect</b>. This equation represents a situation where the total number of customers subscribed each month was 70%, not 7%, greater than the total number subscribed the previous month.</p><p><b>Choice D is incorrect</b>. This equation represents a situation where the total number of customers subscribed each month was 600%, not 7%, greater than the total number subscribed the previous month.</p>"
+  },
+  {
+    "id": "u12-10",
+    "lessonCode": "U12",
+    "type": "spr",
+    "difficulty": "Medium",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">∛(<i>p</i><sup>2</sup>) = <i>t</i><sup>9/7</sup></div><p>In the given equation, <i>p</i> &gt; 1 and <i>t</i> &gt; 1. If <i>t</i> = <i>p</i><sup>3<i>n</i> − 1</sup>, where <i>n</i> is a constant, what is the value of <i>n</i>?</p>",
+    "choices": [],
+    "correctAnswer": "41/81",
+    "acceptedAnswers": [
+      "41/81",
+      ".5061",
+      ".5062",
+      "0.506",
+      "0.5061",
+      "0.5062"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 41/81</b>.</p><ul><li>An expression of the form <sup><i>n</i></sup>√(<i>a</i><sup><i>m</i></sup>), where <i>m</i> and <i>n</i> are integers greater than 1 and <i>a</i> ≥ 0, is equivalent to <i>a</i><sup><i>m</i>/<i>n</i></sup>.</li><li>Therefore, the expression on the left-hand side of the given equation is equivalent to <i>p</i><sup>2/3</sup>; thus, <i>p</i><sup>2/3</sup> = <i>t</i><sup>9/7</sup>.</li><li>If <i>t</i> = <i>p</i><sup>3<i>n</i> − 1</sup>, where <i>n</i> is a constant, then substituting <i>p</i><sup>3<i>n</i> − 1</sup> for <i>t</i> in the equation yields <i>p</i><sup>2/3</sup> = <i>p</i><sup>(9/7)(3<i>n</i> − 1)</sup>.</li><li>It's given that <i>p</i> &gt; 1; therefore, 2/3 = (9/7)(3<i>n</i> − 1).</li><li>Multiplying each side of this equation by 21 yields 14 = 27(3<i>n</i> − 1).</li><li>Distributing multiplication over subtraction yields 14 = 81<i>n</i> − 27.</li><li>Adding 27 to each side of this equation yields 41 = 81<i>n</i>.</li><li>Dividing each side of this equation by 81 yields 41/81 = <i>n</i>.</li><li>Therefore, if <i>t</i> = <i>p</i><sup>3<i>n</i> − 1</sup>, where <i>n</i> is a constant, the value of <i>n</i> is 41/81.</li><li>Note that 41/81, .5061, .5062, and 0.506 are examples of ways to enter a correct answer.</li></ul>"
+  },
+  {
+    "id": "u12-11",
+    "lessonCode": "U12",
+    "type": "spr",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>If 4<sup>8<i>c</i></sup> = ∛(4<sup>7</sup>), what is the value of <i>c</i>?</p>",
+    "choices": [],
+    "correctAnswer": "7/24",
+    "acceptedAnswers": [
+      "7/24",
+      ".2916",
+      ".2917",
+      "0.291",
+      "0.292",
+      "0.2916",
+      "0.2917"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 7/24</b>.</p><ul><li>An expression of the form <sup><i>n</i></sup>√(<i>a</i><sup><i>m</i></sup>), where <i>m</i> and <i>n</i> are integers greater than 1 and <i>a</i> ≥ 0, is equivalent to <i>a</i><sup><i>m</i>/<i>n</i></sup>.</li><li>Therefore, the expression on the right-hand side of the given equation, ∛(4<sup>7</sup>), is equivalent to 4<sup>7/3</sup>.</li><li>Thus, 4<sup>8<i>c</i></sup> = 4<sup>7/3</sup>.</li><li>It follows that 8<i>c</i> = 7/3.</li><li>Dividing both sides of this equation by 8 yields <i>c</i> = 7/24.</li><li>Note that 7/24, .2916, .2917, 0.219, and 0.292 are examples of ways to enter a correct answer.</li></ul>"
+  },
+  {
+    "id": "u12-12",
+    "lessonCode": "U12",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<p>If <i>a</i> and <i>c</i> are positive numbers, which of the following is equivalent to √((<i>a</i> + <i>c</i>)<sup>3</sup>) · √(<i>a</i> + <i>c</i>)?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "<i>a</i> + <i>c</i>"
+      },
+      {
+        "label": "B",
+        "html": "<i>a</i><sup>2</sup> + <i>c</i><sup>2</sup>"
+      },
+      {
+        "label": "C",
+        "html": "<i>a</i><sup>2</sup> + 2<i>ac</i> + <i>c</i><sup>2</sup>"
+      },
+      {
+        "label": "D",
+        "html": "<i>a</i><sup>2</sup><i>c</i><sup>2</sup>"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is correct</b>. Using the property that √<i>x</i> · √<i>y</i> = √(<i>xy</i>) for positive numbers <i>x</i> and <i>y</i>, with <i>x</i> = (<i>a</i> + <i>c</i>)<sup>3</sup> and <i>y</i> = <i>a</i> + <i>c</i>, it follows that √((<i>a</i> + <i>c</i>)<sup>3</sup>) · √(<i>a</i> + <i>c</i>) = √((<i>a</i> + <i>c</i>)<sup>4</sup>). By rewriting (<i>a</i> + <i>c</i>)<sup>4</sup> as ((<i>a</i> + <i>c</i>)<sup>2</sup>)<sup>2</sup>, it is possible to simplify the square root expression as follows: √(((<i>a</i> + <i>c</i>)<sup>2</sup>)<sup>2</sup>) = (<i>a</i> + <i>c</i>)<sup>2</sup> = <i>a</i><sup>2</sup> + 2<i>ac</i> + <i>c</i><sup>2</sup>.</p><p><b>Choice A is incorrect</b> and may be the result of √((<i>a</i> + <i>c</i>)<sup>3</sup>) ÷ √(<i>a</i> + <i>c</i>).</p><p><b>Choice B is incorrect</b> and may be the result of incorrectly rewriting (<i>a</i> + <i>c</i>)<sup>2</sup> as <i>a</i><sup>2</sup> + <i>c</i><sup>2</sup>.</p><p><b>Choice D is incorrect</b> and may be the result of incorrectly applying properties of exponents.</p>"
+  },
+  {
+    "id": "u12-13",
+    "lessonCode": "U12",
+    "type": "spr",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><sup>5</sup>√(70<i>n</i>)(<sup>6</sup>√(70<i>n</i>))<sup>2</sup></div><p>For what value of <i>x</i> is the given expression equivalent to (70<i>n</i>)<sup>30<i>x</i></sup>, where <i>n</i> &gt; 1?</p>",
+    "choices": [],
+    "correctAnswer": "4/225",
+    "acceptedAnswers": [
+      "4/225",
+      ".0177",
+      ".0178",
+      "0.017",
+      "0.018",
+      "0.0177",
+      "0.0178"
+    ],
+    "explanationHtml": "<p><b>The correct answer is 4/225</b>.</p><ul><li>An expression of the form <sup><i>k</i></sup>√<i>a</i>, where <i>k</i> is an integer greater than 1 and <i>a</i> ≥ 0, is equivalent to <i>a</i><sup>1/<i>k</i></sup>.</li><li>Therefore, the given expression, where <i>n</i> &gt; 1, is equivalent to (70<i>n</i>)<sup>1/5</sup>((70<i>n</i>)<sup>1/6</sup>)<sup>2</sup>.</li><li>Applying properties of exponents, this expression can be rewritten as (70<i>n</i>)<sup>1/5</sup>(70<i>n</i>)<sup>(1/6) · 2</sup>, or (70<i>n</i>)<sup>1/5</sup>(70<i>n</i>)<sup>1/3</sup>, which can be rewritten as (70<i>n</i>)<sup>1/5 + 1/3</sup>, or (70<i>n</i>)<sup>8/15</sup>.</li><li>It's given that the expression <sup>5</sup>√(70<i>n</i>)(<sup>6</sup>√(70<i>n</i>))<sup>2</sup> is equivalent to (70<i>n</i>)<sup>30<i>x</i></sup>, where <i>n</i> &gt; 1.</li><li>It follows that (70<i>n</i>)<sup>8/15</sup> is equivalent to (70<i>n</i>)<sup>30<i>x</i></sup>.</li><li>Therefore, 8/15 = 30<i>x</i>.</li><li>Dividing both sides of this equation by 30 yields 8/450 = <i>x</i>, or 4/225 = <i>x</i>.</li><li>Thus, the value of <i>x</i> for which the given expression is equivalent to (70<i>n</i>)<sup>30<i>x</i></sup>, where <i>n</i> &gt; 1, is 4/225.</li><li>Note that 4/225, .0177, .0178, 0.017, and 0.018 are examples of ways to enter a correct answer.</li></ul>"
+  },
+  {
+    "id": "u12-14",
+    "lessonCode": "U12",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\">1/(4<i>xy</i>) + <i>xyz</i> = 1/(3<i>yz</i>)</div><p>In the given equation, <i>x</i>, <i>y</i>, and <i>z</i> are positive numbers. Which expression is equivalent to <i>y</i>?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "(4<i>x</i> − 3<i>z</i>)/(12<i>x</i><sup>2</sup><i>z</i><sup>2</sup>)"
+      },
+      {
+        "label": "B",
+        "html": "√((4<i>x</i> − 3<i>z</i>)/(12<i>x</i><sup>2</sup><i>z</i><sup>2</sup>))"
+      },
+      {
+        "label": "C",
+        "html": "1/(3<i>xz</i><sup>2</sup> − 4<i>x</i><sup>2</sup><i>z</i>)"
+      },
+      {
+        "label": "D",
+        "html": "√(1/(3<i>xz</i><sup>2</sup> − 4<i>x</i><sup>2</sup><i>z</i>))"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is correct</b>.</p><ul><li>It’s given that in the equation 1/(4<i>xy</i>) + <i>xyz</i> = 1/(3<i>yz</i>), <i>x</i>, <i>y</i>, and <i>z</i> are positive numbers.</li><li>Multiplying both sides of this equation by the least common denominator of 12<i>xyz</i> yields 12<i>xyz</i>(1/(4<i>xy</i>) + <i>xyz</i>) = 12<i>xyz</i>(1/(3<i>yz</i>)), which gives 12<i>xyz</i>/(4<i>xy</i>) + 12<i>x</i><sup>2</sup><i>y</i><sup>2</sup><i>z</i><sup>2</sup> = 12<i>xyz</i>/(3<i>yz</i>), or 3<i>z</i> + 12<i>x</i><sup>2</sup><i>y</i><sup>2</sup><i>z</i><sup>2</sup> = 4<i>x</i>.</li><li>Subtracting 3<i>z</i> from both sides of this equation yields 12<i>x</i><sup>2</sup><i>y</i><sup>2</sup><i>z</i><sup>2</sup> = 4<i>x</i> − 3<i>z</i>.</li><li>Dividing both sides of this equation by 12<i>x</i><sup>2</sup><i>z</i><sup>2</sup> yields <i>y</i><sup>2</sup> = (4<i>x</i> − 3<i>z</i>)/(12<i>x</i><sup>2</sup><i>z</i><sup>2</sup>).</li><li>Taking the square root of both sides of this equation yields <i>y</i> = ±√((4<i>x</i> − 3<i>z</i>)/(12<i>x</i><sup>2</sup><i>z</i><sup>2</sup>)).</li><li>Since <i>y</i> is a positive number, the expression √((4<i>x</i> − 3<i>z</i>)/(12<i>x</i><sup>2</sup><i>z</i><sup>2</sup>)) is equivalent to <i>y</i>.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice D is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  },
+  {
+    "id": "u12-15",
+    "lessonCode": "U12",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "math",
+    "stemHtml": "<div class=\"lw-passage\"><i>x</i><sup>2</sup>/√(<i>x</i><sup>2</sup> − <i>c</i><sup>2</sup>) = <i>c</i><sup>2</sup>/√(<i>x</i><sup>2</sup> − <i>c</i><sup>2</sup>) + 39</div><p>In the given equation, <i>c</i> is a positive constant. Which of the following is one of the solutions to the given equation?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "−<i>c</i>"
+      },
+      {
+        "label": "B",
+        "html": "−<i>c</i><sup>2</sup> − 39<sup>2</sup>"
+      },
+      {
+        "label": "C",
+        "html": "−√(39<sup>2</sup> − <i>c</i><sup>2</sup>)"
+      },
+      {
+        "label": "D",
+        "html": "−√(<i>c</i><sup>2</sup> + 39<sup>2</sup>)"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is correct</b>.</p><ul><li>If <i>x</i><sup>2</sup> − <i>c</i><sup>2</sup> ≤ 0, then neither side of the given equation is defined and there can be no solution.</li><li>Therefore, <i>x</i><sup>2</sup> − <i>c</i><sup>2</sup> &gt; 0.</li><li>Subtracting <i>c</i><sup>2</sup>/√(<i>x</i><sup>2</sup> − <i>c</i><sup>2</sup>) from both sides of the given equation yields <i>x</i><sup>2</sup>/√(<i>x</i><sup>2</sup> − <i>c</i><sup>2</sup>) − <i>c</i><sup>2</sup>/√(<i>x</i><sup>2</sup> − <i>c</i><sup>2</sup>) = 39, or (<i>x</i><sup>2</sup> − <i>c</i><sup>2</sup>)/√(<i>x</i><sup>2</sup> − <i>c</i><sup>2</sup>) = 39.</li><li>Squaring both sides of this equation yields ((<i>x</i><sup>2</sup> − <i>c</i><sup>2</sup>)/√(<i>x</i><sup>2</sup> − <i>c</i><sup>2</sup>))<sup>2</sup> = 39<sup>2</sup>, or (<i>x</i><sup>2</sup> − <i>c</i><sup>2</sup>)(<i>x</i><sup>2</sup> − <i>c</i><sup>2</sup>)/(<i>x</i><sup>2</sup> − <i>c</i><sup>2</sup>) = 39<sup>2</sup>.</li><li>Since <i>x</i><sup>2</sup> − <i>c</i><sup>2</sup> is positive and, therefore, nonzero, the expression (<i>x</i><sup>2</sup> − <i>c</i><sup>2</sup>)/(<i>x</i><sup>2</sup> − <i>c</i><sup>2</sup>) is defined and equivalent to 1.</li><li>It follows that the equation (<i>x</i><sup>2</sup> − <i>c</i><sup>2</sup>)(<i>x</i><sup>2</sup> − <i>c</i><sup>2</sup>)/(<i>x</i><sup>2</sup> − <i>c</i><sup>2</sup>) = 39<sup>2</sup> can be rewritten as ((<i>x</i><sup>2</sup> − <i>c</i><sup>2</sup>)/(<i>x</i><sup>2</sup> − <i>c</i><sup>2</sup>))(<i>x</i><sup>2</sup> − <i>c</i><sup>2</sup>) = 39<sup>2</sup>, or (1)(<i>x</i><sup>2</sup> − <i>c</i><sup>2</sup>) = 39<sup>2</sup>, which is equivalent to <i>x</i><sup>2</sup> − <i>c</i><sup>2</sup> = 39<sup>2</sup>.</li><li>Adding <i>c</i><sup>2</sup> to both sides of this equation yields <i>x</i><sup>2</sup> = <i>c</i><sup>2</sup> + 39<sup>2</sup>.</li><li>Taking the square root of both sides of this equation yields two solutions: <i>x</i> = √(<i>c</i><sup>2</sup> + 39<sup>2</sup>) and <i>x</i> = −√(<i>c</i><sup>2</sup> + 39<sup>2</sup>).</li><li>Therefore, of the given choices, −√(<i>c</i><sup>2</sup> + 39<sup>2</sup>) is one of the solutions to the given equation.</li></ul><p><b>Choice A is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice B is incorrect</b> and may result from conceptual or calculation errors.</p><p><b>Choice C is incorrect</b> and may result from conceptual or calculation errors.</p>"
+  }
+]

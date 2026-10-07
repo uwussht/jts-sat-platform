@@ -1,0 +1,422 @@
+[
+  {
+    "id": "u7-01",
+    "lessonCode": "U7",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><b>Text 1</b><br><u>Imagine you and your friend are trying to decide where to eat lunch.</u> When people try to make joint decisions like this, they often don’t reveal their true preferences. Instead, they say they would be happy with all options because they think this response will help them appear more easygoing and likable to the other person.<br><br><b>Text 2</b><br>Research shows that people who don’t state their preferences when making a decision with others aren’t more likable in the eyes of others. In fact, stating that you have no preference actually makes the decision more difficult for other people. It can also cause them to feel less happy with their ultimate decision and with you.</div><p>Based on the texts, what response would the author of Text 2 most likely suggest for someone in the situation described in the underlined sentence in Text 1?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Cancel the plan to have lunch together."
+      },
+      {
+        "label": "B",
+        "html": "Ask where the friend typically likes to eat."
+      },
+      {
+        "label": "C",
+        "html": "State a preference about where to eat."
+      },
+      {
+        "label": "D",
+        "html": "Change the subject to talk about something else."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b> because it directly applies the research findings described in Text 2 to the situation underlined in Text 1.</p><ul><li>The underlined sentence in Text 1 describes a common scenario in which two friends are deciding on a lunch location.</li><li>Text 1 goes on to explain that people often don’t reveal their true preferences in such situations, instead claiming they’re fine with any option so that they can appear more easygoing and likable.</li><li>Text 2 presents research that advises against this approach, stating that people who don’t express their preferences aren’t viewed as more likable and that this behavior actually makes decisions more difficult for others.</li><li>Since Text 2 specifically argues against the strategy of concealing preferences and indicates negative outcomes from doing so, the author of Text 2 would most likely recommend stating a preference about where to eat.</li></ul><p><b>Choice A is incorrect</b> because nothing in Text 2 suggests that canceling plans is a good solution. The author of Text 2 is addressing how to make joint decisions effectively (through stating your own preference), not advocating for avoiding such decisions entirely.</p><p><b>Choice B is incorrect</b> because asking where the friend typically likes to eat still avoids stating one’s own preference. While this approach might seem considerate, it continues the pattern of not revealing true preferences that Text 2 identifies as problematic.</p><p><b>Choice D is incorrect</b> because changing the subject would avoid making any decision altogether, which contradicts the implied advice in Text 2. The author of Text 2 presents research suggesting that directly engaging with the decision by stating preferences helps others make decisions and makes you appear more likable.</p>"
+  },
+  {
+    "id": "u7-02",
+    "lessonCode": "U7",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><b>Text 1</b><br>Public policy researcher Anthony Fowler studied the history of elections in Australia, a country that requires citizens to vote. Fowler argues that requiring citizens to vote leads to a significant increase in voters who would otherwise not have the time or motivation to vote. Thus, election results in countries that require citizens to vote better reflect the preferences of the country as a whole.<br><br><b>Text 2</b><br>Governments in democratic countries function better when more people vote. However, forcing people to vote may have negative consequences. Shane P. Singh and Jason Roy studied what happens when a country requires its citizens to vote. They found that when people feel forced to vote, they tend to spend less time looking for information about their choices when voting. As a result, votes from these voters may not reflect their actual preferences.</div><p>Based on the texts, how would Singh and Roy (Text 2) most likely respond to the research discussed in Text 1?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Only countries of a certain population size should implement mandatory voting."
+      },
+      {
+        "label": "B",
+        "html": "People who are forced to vote are likely to become politically engaged in other ways, such as volunteering or running for office."
+      },
+      {
+        "label": "C",
+        "html": "Requiring people to vote does not necessarily lead to election outcomes that better represent the preferences of the country as a whole."
+      },
+      {
+        "label": "D",
+        "html": "Countries that require voting must also make the process of voting easier for their citizens."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b>. Text 1 claims that mandatory voting results in elections that \"better reflect the preferences of the country.\" Singh and Roy disagree. They claim that more voters doesn’t equal more quality votes—instead, they argue that forced voting may lead to less-informed votes that \"may not reflect [voters’] actual preferences.\"</p><p><b>Choice A is incorrect</b>. Neither text mentions the population size of countries that require voting, or how that might affect election outcomes.</p><p><b>Choice B is incorrect</b>. Neither text discusses the effects of mandatory voting on other forms of political engagement.</p><p><b>Choice D is incorrect</b>. Neither text discusses the ease or difficulty of the voting process in countries that require voting.</p>"
+  },
+  {
+    "id": "u7-03",
+    "lessonCode": "U7",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><b>Text 1</b><br>Dance choreographer Alvin Ailey’s deep admiration for jazz music can most clearly be felt in the rhythms and beats his works were set to. Ailey collaborated with some of the greatest jazz legends, like Charles Mingus, Charlie Parker, and perhaps his favorite, Duke Ellington. With his choice of music, Ailey helped bring jazz to life for his audiences.<br><br><b>Text 2</b><br>Jazz is present throughout Ailey’s work, but it’s most visible in Ailey’s approach to choreography. Ailey often incorporated improvisation, a signature characteristic of jazz music, in his work. When managing his dance company, Ailey rarely forced his dancers to an exact set of specific moves. Instead, he encouraged his dancers to let their own skills and experiences shape their performances, as jazz musicians do.</div><p>Based on the texts, both authors would most likely agree with which statement?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Dancers who worked with Ailey greatly appreciated his supportive approach as a choreographer."
+      },
+      {
+        "label": "B",
+        "html": "Ailey’s work was strongly influenced by jazz."
+      },
+      {
+        "label": "C",
+        "html": "Audiences were mostly unfamiliar with the jazz music in Ailey’s works."
+      },
+      {
+        "label": "D",
+        "html": "Ailey blended multiple genres of music together when choreographing dance pieces."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. Author 1 states that Ailey had a “deep admiration for jazz music” and that he “helped bring jazz to life for his audiences.” Author 2 states that “Jazz is present throughout Ailey’s work.” While the authors name different aspects of Ailey’s work as the most influenced by jazz, they agree that jazz was a strong influence.</p><p><b>Choice A is incorrect</b>. This isn’t something that either text claims. Neither text mentions how Ailey’s dancers felt about his approach as a choreographer, so we have no evidence that either author would agree with this.</p><p><b>Choice C is incorrect</b>. This isn’t something that either text claims. Neither text mentions how familiar audiences were with any aspect of Ailey’s works, so we have no evidence that either author would agree with this.</p><p><b>Choice D is incorrect</b>. This isn’t something that either text claims. Neither text mentions any genre of music other than jazz, so we have no evidence that either author would agree with this.</p>"
+  },
+  {
+    "id": "u7-04",
+    "lessonCode": "U7",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><b>Text 1</b><br>Flamingos are known for their vibrant pink coloring, but they’re actually born with gray feathers. Their pink color comes from eating brine shrimp, but brine shrimp aren’t naturally pink either. Animals can’t produce carotenoids, the pigments that provide the pink hue. The algae that brine shrimp feed on, however, can produce these pigments. Thus, the pinker the flamingo, the more shrimp it has eaten.<br><br><b>Text 2</b><br>Ecologist Juan Amat has found that flamingos apply a kind of makeup to make themselves appear pinker. A gland near their tail contains pigments that come from the food they eat. When the flamingos groom themselves using the pigments, their feathers become pinker. Flamingos may do this to improve their success during mating season, when they would benefit from looking pinker.</div><p>Based on the texts, how would the ecologist in Text 2 most likely respond to the author’s conclusion in Text 1?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "By emphasizing that flamingos’ tail feathers are pinker than their other feathers are"
+      },
+      {
+        "label": "B",
+        "html": "By claiming that the coloring of flamingos’ feathers doesn’t change significantly enough for most observers to notice"
+      },
+      {
+        "label": "C",
+        "html": "By pointing out that the amount of shrimp eaten isn’t the only thing that influences flamingos’ coloring"
+      },
+      {
+        "label": "D",
+        "html": "By arguing that flamingos’ diet doesn’t include much shrimp except during mating season"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b> because it describes how the ecologist in Text 2 would most likely respond to the author’s conclusion in Text 1 based on the information provided.</p><ul><li>The author of Text 1 states that the pink color of flamingo feathers comes from pigments carried by the brine shrimp flamingos consume.</li><li>The author of Text 1 concludes that this means that a flamingo that is pinker than another flamingo must have eaten more shrimp.</li><li>However, according to Text 2, ecologist Juan Amat has found that flamingos can also affect how pink they look through grooming, when they move ingested pigments from a gland near the tail to their feathers.</li><li>This indicates that not all the pigments available from the shrimp a flamingo has eaten automatically end up coloring the flamingo’s feathers; some may or may not be applied later.</li><li>Since grooming is also a factor, the ecologist (Amat) in Text 2 would most likely respond to the conclusion in Text 1 that pinker flamingos have eaten more shrimp by pointing out that the amount of shrimp eaten isn’t the only thing that influences flamingos’ coloring.</li></ul><p><b>Choice A is incorrect</b>. Although Text 2 states that the ecologist has found that flamingos can move pigments to their feathers from a gland near their tail, there is no indication that their tail feathers are pinker than their other feathers. Moreover, the point that tail feathers are pinker than other feathers wouldn’t logically address the idea that the quantity of shrimp eaten is what determines a flamingo’s coloring.</p><p><b>Choice B is incorrect</b> because Text 2 indicates that the ecologist has found that flamingos’ feathers do sometimes look pinker and gives no indication that this change in color is particularly subtle. Moreover, the point that most observers wouldn’t notice a change wouldn’t logically address the idea that the quantity of shrimp eaten is what determines a flamingo’s coloring.</p><p><b>Choice D is incorrect</b> because nothing in Text 2 suggests that the ecologist would argue about flamingos’ shrimp consumption. Although Text 2 indicates that the ecologist has found that flamingos may make themselves look pinker during mating season, this is addressed in terms of grooming habits; apart from referring to food as a source of pigments, Text 2 doesn’t discuss the diet of flamingos at all.</p>"
+  },
+  {
+    "id": "u7-05",
+    "lessonCode": "U7",
+    "type": "mcq",
+    "difficulty": "Easy",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><b>Text 1</b><br>Today the starchy root cassava is found in many dishes across West Africa, but its rise to popularity was slow. Portuguese traders brought cassava from Brazil to the West African coast in the 1500s. But at this time, people living in the capitals further inland had little contact with coastal communities. Thus, cassava remained relatively unknown to most of the region’s inhabitants until the 1800s.<br><br><b>Text 2</b><br>Cassava’s slow adoption into the diet of West Africans is mainly due to the nature of the crop itself. If not cooked properly, cassava can be toxic. Knowledge of how to properly prepare cassava needed to spread before the food could grow in popularity. The arrival of formerly enslaved people from Brazil in the 1800s, who brought their knowledge of cassava and its preparation with them, thus directly fueled the spread of this crop.</div><p>Based on the texts, the author of Text 1 and the author of Text 2 would most likely agree with which statement?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Cassava did not become a significant crop in West Africa until long after it was first introduced."
+      },
+      {
+        "label": "B",
+        "html": "Several of the most commonly grown crops in West Africa are originally from Brazil."
+      },
+      {
+        "label": "C",
+        "html": "The climate of the West African coast in the 1500s prevented cassava’s spread in the region."
+      },
+      {
+        "label": "D",
+        "html": "The most commonly used methods to cook cassava today date to the 1500s."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. Text 1 states that cassava’s “rise to popularity was slow” in West Africa. Text 2 also describes cassava’s “slow adoption into the diet of West Africans.” While the two texts identify different causes for this slow adoption, both agree that cassava took a long time to catch on.</p><p><b>Choice B is incorrect</b>. This isn’t something that either text claims. Cassava is the only crop discussed in the passages, so we have no basis to draw conclusions about what the authors might say about “several” crops.</p><p><b>Choice C is incorrect</b>. This isn’t something that either text claims. Neither text mentions the “climate of the West African coast,” so we have no evidence that either author would agree with this.</p><p><b>Choice D is incorrect</b>. This isn’t something that either text claims. The 1500s were when cassava was brought to West Africa, but neither text describes how cassava is cooked, nor do they make any claims about when cooking methods were developed.</p>"
+  },
+  {
+    "id": "u7-06",
+    "lessonCode": "U7",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><b>Text 1</b><br>In 1916, H. Dugdale Sykes disputed claims that <i>The Two Noble Kinsmen</i> was coauthored by William Shakespeare and John Fletcher. Sykes felt Fletcher’s contributions to the play were obvious—Fletcher had a distinct style in his other plays, so much so that lines with that style were considered sufficient evidence of Fletcher’s authorship. But for the lines not deemed to be by Fletcher, Sykes felt that their depiction of women indicated that their author was not Shakespeare but Philip Massinger.<br><br><b>Text 2</b><br>Scholars have accepted <i>The Two Noble Kinsmen</i> as coauthored by Shakespeare since the 1970s: it appears in all major one-volume editions of Shakespeare’s complete works. Though scholars disagree about who wrote what exactly, it is generally held that on the basis of style, Shakespeare wrote all of the first act and most of the last, while John Fletcher authored most of the three middle acts.</div><p>Based on the texts, both Sykes in Text 1 and the scholars in Text 2 would most likely agree with which statement?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "John Fletcher’s writing has a unique, readily identifiable style."
+      },
+      {
+        "label": "B",
+        "html": "The women characters in John Fletcher’s plays are similar to the women characters in Philip Massinger’s plays."
+      },
+      {
+        "label": "C",
+        "html": "<i>The Two Noble Kinsmen</i> belongs in one-volume compilations of Shakespeare’s complete plays."
+      },
+      {
+        "label": "D",
+        "html": "Philip Massinger’s style in the first and last acts of <i>The Two Noble Kinsmen</i> is an homage to Shakespeare’s style."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. Text 1 states that Sykes felt Fletcher’s contributions to the play were obvious because he had a distinct style in his other plays. Text 2 states that scholars generally agree “on the basis of style” that Fletcher wrote most of the three middle acts. Both texts imply that Fletcher’s writing has a unique, readily identifiable style that can be used to distinguish his work from others.</p><p><b>Choice B is incorrect</b>. While Text 1 refers to the women in Massinger plays, neither text compares the women of Fletcher’s plays to the women of Massinger’s plays. Text 2 doesn’t mention Massinger at all.</p><p><b>Choice C is incorrect</b>. Text 1 states that Sykes disputed that Shakespeare coauthored the play, and implied that it was coauthored by Fletcher and Massinger instead. Sykes, therefore, would disagree that The Two Noble Kinsmen belongs in a Shakespeare compilation.</p><p><b>Choice D is incorrect</b>. Text 1 doesn’t suggest that Massinger was inspired by Shakespeare, and Text 2 doesn’t mention Massinger at all.</p>"
+  },
+  {
+    "id": "u7-07",
+    "lessonCode": "U7",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><b>Text 1</b><br>Africa’s Sahara region—once a lush ecosystem—began to dry out about 8,000 years ago. A change in Earth’s orbit that affected climate has been posited as a cause of desertification, but archaeologist David Wright also attributes the shift to Neolithic peoples. He cites their adoption of pastoralism as a factor in the region drying out: the pastoralists’ livestock depleted vegetation, prompting the events that created the Sahara Desert.<br><br><b>Text 2</b><br>Research by Chris Brierley et al. challenges the idea that Neolithic peoples contributed to the Sahara’s desertification. Using a climate-vegetation model, the team concluded that the end of the region’s humid period occurred 500 years earlier than previously assumed. The timing suggests that Neolithic peoples didn’t exacerbate aridity in the region but, in fact, may have helped delay environmental changes with practices (e.g., selective grazing) that preserved vegetation.</div><p>Based on the texts, how would Chris Brierley (Text 2) most likely respond to the discussion in Text 1?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "By pointing out that given the revised timeline for the end of the Sahara’s humid period, the Neolithic peoples’ mode of subsistence likely didn’t cause the region’s desertification"
+      },
+      {
+        "label": "B",
+        "html": "By claiming that pastoralism was only one of many behaviors the Neolithic peoples took part in that may have contributed to the Sahara’s changing climate"
+      },
+      {
+        "label": "C",
+        "html": "By insisting that pastoralism can have both beneficial and deleterious effects on a region’s vegetation and climate"
+      },
+      {
+        "label": "D",
+        "html": "By asserting that more research needs to be conducted into factors that likely contributed to the desertification of the Sahara region"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationHtml": "<p><b>Choice A is the best answer</b>. Brierley et al.’s research directly challenges Wright’s claim that pastoralism turned the Sahara into a desert, suggesting that, in a Sahara that turned arid 500 years earlier than previously thought, pastoral practices may have actually “preserved vegetation” rather than depleting it.</p><p><b>Choice B is incorrect</b>. Brierley et al.’s research actually disputes the idea that any Neolithic peoples’ behaviors, including pastoralism, could have contributed to the Sahara’s changing climate. In fact, their research implies that the Neolithic peoples’ practices did not “exacerbate aridity” (i.e., make things worse), but may have slowed environmental changes.</p><p><b>Choice C is incorrect</b>. Brierley et al.’s research does not acknowledge that pastoralism can have deleterious (i.e., negative) effects on a region’s vegetation and climate. It only describes one possible beneficial effect: preserving vegetation through practices like selective grazing.</p><p><b>Choice D is incorrect</b>. Brierley et al.’s research does not call for more research into factors that likely contributed to the desertification of the Sahara region.</p>"
+  },
+  {
+    "id": "u7-08",
+    "lessonCode": "U7",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><b>Text 1</b><br>Microbes are tiny organisms in the soil, water, and air all around us. They thrive even in very harsh conditions. That’s why Noah Fierer and colleagues were surprised when soil samples they collected from an extremely cold, dry area in Antarctica didn’t seem to contain any life. The finding doesn’t prove that there are no microbes in that area, but the team says it does suggest that the environment severely restricts microbes’ survival.<br><br><b>Text 2</b><br>Microbes are found in virtually every environment on Earth. So it’s unlikely they would be completely absent from Fierer’s team’s study site, no matter how extreme the environment is. There were probably so few organisms in the samples that current technology couldn’t detect them. But since a spoonful of typical soil elsewhere might contain billions of microbes, the presence of so few in the Antarctic soil samples would show how challenging the conditions are.</div><p>Based on the texts, Fierer’s team and the author of Text 2 would most likely agree with which statement about microbes?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Most microbes are better able to survive in environments with extremely dry conditions than in environments with harsh temperatures."
+      },
+      {
+        "label": "B",
+        "html": "A much higher number of microbes would probably be found if another sample of soil were taken from the Antarctic study site."
+      },
+      {
+        "label": "C",
+        "html": "Microbes are likely difficult to detect in the soil at the Antarctic study site because they tend to be smaller than microbes found in typical soil elsewhere."
+      },
+      {
+        "label": "D",
+        "html": "Most microbes are probably unable to withstand the soil conditions at the Antarctic study site."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b> because it presents a statement about microbes with which Fierer’s team (Text 1) and the author of Text 2 would most likely agree.</p><ul><li>Text 1 states that microbes usually thrive in very harsh conditions, and so Fierer’s team was surprised when samples collected from an extremely cold and dry area of Antarctica didn’t appear to contain any life.</li><li>Fierer’s team says that though this doesn’t conclusively prove there are no microbes in the area, it suggests that microbes would have a notably difficult time surviving in the environment.</li><li>The author of Text 2 says it’s unlikely that there would be no microbes at all in the Antarctic study site from which Fierer’s team retrieved soil samples and that there may have been hard-to-detect microbes in the samples.</li><li>However, the presence of only a few microbes in the Antarctic samples rather than the billions found in a typical soil sample (which would presumably be much easier to detect) would illustrate conditions in the Antarctic soil that make it difficult for microbes to thrive.</li><li>Since Fierer’s team says that the seeming absence of microbes in the Antarctic samples suggests an unusually harsh environment and the author of Text 2 says that even if there are a few undetectable microbes in the samples, the relatively tiny number of microbes would also suggest an unusually harsh environment, then Fierer’s team and the author of Text 2 would most likely agree that most microbes are unable to withstand the soil conditions at the Antarctic study site.</li></ul><p><b>Choice A is incorrect</b>. The samples taken by Fierer’s team were from an area of Antarctica that is described in part as extremely dry, and these samples didn’t appear to have any life. Therefore, even though these samples also came from an extremely cold area, Fierer’s team wouldn’t argue based on the evidence available that microbes were better able to survive in dry conditions than in areas with harsh temperatures. Moreover, the author of Text 2 says that microbes are found in virtually every environment on Earth but doesn’t compare dry environments and harsh environments.</p><p><b>Choice B is incorrect</b>. Nothing in Text 1 indicates that another collection of samples from the Antarctic study site might yield different results from the samples already taken by Fierer’s team. The author of Text 2 does state that microbes are found in virtually every environment on Earth and suggests that new technology may be better able to detect so few microbes in a soil sample, but the author of Text 2 concludes that the unusual absence of microbes in the Antarctic samples is evidence of the harsh Antarctic environment. Therefore, there is no reason to believe that the author of Text 2 thinks that another sample drawn from that same harsh environment would yield a much higher number of microbes.</p><p><b>Choice C is incorrect</b>. The author of Text 2 does speculate that there may have been so few microbes in the Antarctic samples that current technology couldn’t detect them, but the author doesn’t speculate that this is due to the size of the microbes. Moreover, nothing that Fierer’s team says suggests that they are speculating that their samples might have microbes that are smaller than microbes in typical soil samples.</p>"
+  },
+  {
+    "id": "u7-09",
+    "lessonCode": "U7",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><b>Text 1</b><br>Historians studying pre-Inca Peru have looked to ceramic vessels to understand daily life among the Moche people. These mold-made sculptures present plants, animals, and human faces in precise ways—vessels representing human faces are so detailed that <u>scholars have interpreted facial markings to represent scars and other skin irregularities</u>. Some historians have even used these objects to identify potential skin diseases that may have afflicted people at the time.<br><br><b>Text 2</b><br>Art historian and archaeologist Lisa Trever has argued that the interpretation of Moche “portrait” vessels as hyper-realistic portrayals of identifiable people may inadvertently disregard the creativity of the objects’ creators. Moche ceramic vessels, Trever argues, are artworks in which sculptors could free their imagination, using realistic objects and people around them as inspiration to explore more abstract concepts.</div><p>Based on the texts, what would Lisa Trever (Text 2) most likely say about the interpretation presented in the underlined portion of Text 1?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Depictions of human faces are significantly more realistic than depictions of plants and other animals are."
+      },
+      {
+        "label": "B",
+        "html": "It is likely that some depictions of human faces with extensive markings are intended to portray the same historical individual."
+      },
+      {
+        "label": "C",
+        "html": "Some vessels may have been damaged during their excavation and thus provide little insight into Moche culture."
+      },
+      {
+        "label": "D",
+        "html": "Markings on depictions of human faces are not necessarily intended to portray particular details about the physical appearance of individuals."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. Trever thinks that the “hyper-realistic portrayal of identifiable people” interpretation ignores the sculptors’ imagination and creativity. We can infer that Trevor thinks the facial markings on the sculptures may not have represented real skin blemishes on real people.</p><p><b>Choice A is incorrect</b>. The text gives us no reason to think that Trever would respond to the underlined interpretation in this way. Neither text compares the depictions of human faces to the depictions of plants or animals, so we have no basis to draw this conclusion.</p><p><b>Choice B is incorrect</b>. The text gives us no reason to think that Trever would respond to the underlined interpretation in this way. There’s nothing in either text about multiple depictions representing the same person, so we have no basis to draw this conclusion.</p><p><b>Choice C is incorrect</b>. The text gives us no reason to think that Trever would respond to the underlined interpretation in this way. Neither text mentions the state of the vessels (damaged or intact), so we have no basis to draw this conclusion.</p>"
+  },
+  {
+    "id": "u7-10",
+    "lessonCode": "U7",
+    "type": "mcq",
+    "difficulty": "Medium",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><b>Text 1</b><br>Italian painters in the 1500s rarely depicted themselves in their work. Even more rare were self-portrait paintings that portrayed the artist as a painter. At the time, painting was not yet respected as a profession, so painters mostly chose to emphasize other qualities in their self-portraits, like their intellect or social status. <u>In the city of Bologna, the first artist to depict themself painting was a man named Annibale Carracci.</u> A painting of his from around 1585 shows Carracci in front of an easel holding a palette.<br><br><b>Text 2</b><br>In their self-portraits, Bolognese artists typically avoided referring to the act of painting until the mid-1600s. However, Lavinia Fontana’s 1577 painting, <i>Self-Portrait at the Keyboard</i>, stands out as the earliest example of such a work by an artist from Bologna. Although the artist is depicted playing music, in the background, one can spot a painting easel by a window.</div><p>Based on the texts, how would the author of Text 2 most likely respond to the underlined claim in Text 1?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Carracci and Fontana were among the most well-respected painters in Bologna at the time."
+      },
+      {
+        "label": "B",
+        "html": "The depiction of Fontana in <i>Self-Portrait at the Keyboard</i> was intended to underscore the artist’s creativity."
+      },
+      {
+        "label": "C",
+        "html": "Fontana likely inspired the reference to an easel and palette in Carracci’s painting."
+      },
+      {
+        "label": "D",
+        "html": "<i>Self-Portrait at the Keyboard</i> was painted earlier than Carracci’s painting and also refers to the artist’s craft."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. The author of Text 2 states that Fontana’s painting, which depicts a painting easel in the background, was made in 1577, eight years before Carracci’s painting. Therefore, they might argue that Caracci was not “the first artist” to depict themself as a painter.</p><p><b>Choice A is incorrect</b>. The texts don’t support this choice. Neither text mentions the reputation or status of either Carracci or Fontana.</p><p><b>Choice B is incorrect</b>. The author of Text 2 does not comment on the intention or meaning of Fontana’s self-depiction in Self-Portrait at the Keyboard. This choice also holds little connection to the underlined claim.</p><p><b>Choice C is incorrect</b>. The texts don’t support this choice. The author of Text 2 does not suggest any inspirational relationship between Fontana and Carracci. The author of Text 2 is concerned with showing that Fontana’s painting is the earliest example of an artist referring to painting in their self-portrait, but makes no mention of her influence on others.</p>"
+  },
+  {
+    "id": "u7-11",
+    "lessonCode": "U7",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><b>Text 1</b><br>Many teleost fish species are protogynous, meaning that fertile females can become fertile males. One model holds that protogyny occurs when body size confers a greater reproductive advantage on males than on females. In teleost fish, body size is irrelevant to female reproduction, but among males (which tend to be larger than females), only individuals comparatively large enough to defend territory reproduce. An individual could thus maximize its lifetime reproductive success by staying female when small and becoming male upon reaching a critical size threshold.<br><br><b>Text 2</b><br>Investigating protogyny in teleost fish, Alexander Goikoetxea and colleagues placed captured spotty wrasses of typical size distributions into two mixed-sex tanks. During the breeding season, they removed all males from tank 1 but none from tank 2. They observed that sexual change began in 81 percent of females in tank 1 but in no females in tank 2.</div><p>Based on the texts, which choice best explains the difference in the outcomes of the two tanks in Goikoetxea and colleagues’ experiment (Text 2) using the model presented in Text 1?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "Once the males were removed from tank 1, territories in the tank were undefended and thus even small females could maximize their reproductive success by becoming male and taking over those territories, whereas only the largest females in tank 2 could successfully take over territories due to the ongoing presence of males in the tank."
+      },
+      {
+        "label": "B",
+        "html": "With no males left in tank 1, females were potentially large enough to defend territory as males and thus could gain an advantage by becoming male at their current size, whereas females in tank 2 may not have been large enough to outcompete the males in the tank and thus would have greater reproductive success by remaining female."
+      },
+      {
+        "label": "C",
+        "html": "Differences in body size among the females in tank 1 became irrelevant to reproductive success once the males were removed, thereby eliminating any advantage to becoming male, whereas the ongoing presence of males in tank 2 made differences in body size among the females in that tank relevant to their reproductive success."
+      },
+      {
+        "label": "D",
+        "html": "Since all males were removed from tank 1, the females in the tank could not reproduce regardless of their size and thus some became male, whereas the presence of males in tank 2 meant that females in that tank could reproduce without first becoming male and thus they remained female."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b> because it correctly applies the model presented in Text 1 to explain the different outcomes in the two tanks described in Text 2.</p><ul><li>Text 1 begins by explaining that fertile female teleost fish will sometimes become fertile males through protogyny.</li><li>The model, or explanation, of protogyny advanced in Text 1 holds that among female teleost fish, size doesn’t confer any reproductive advantage, but among male teleost fish, “only individuals comparatively large enough to defend territory reproduce”—in other words, there is a direct relationship between relative body size and reproductive success, but only among male fish.</li><li>Text 1 concludes by saying that, according to this model, individuals can maximize their reproductive success by “staying female when small” (when size has no relevance to reproduction) and only becoming male when they reach a certain size threshold by becoming large enough relative to other male fish to be able to defend territory.</li><li>In sum, according to the model, whether protogyny is advantageous depends on a female’s body size relative to the males currently present.</li><li>Text 2 describes an experiment in which fish of “typical size distributions” (meaning, size distributions consistent with Text 1’s note about the tendency of males to be larger than females) were placed in two tanks.</li><li>Applying Text 1’s model, once the males (that is, the typically larger fish) were removed from tank 1, the remaining females would no longer be at a size disadvantage and could potentially defend territory as males at their current size, making sex change advantageous for some of the fish in tank 1.</li><li>This would therefore explain the finding that 81 percent of female fish began changing into males.</li><li>In tank 2, however, the continued presence of larger males meant that on average, females would not be large enough to outcompete the males for territory and would therefore have greater reproductive success by remaining female.</li><li>In this way, the size-advantage model presented in Text 1 would also account for why no fish changed sex in tank 2.</li></ul><p><b>Choice A is incorrect</b> because it claims that “even small females” could succeed as males once territories were undefended, contradicting Text 1’s emphasis on there being a “critical size threshold” for male reproductive success, wherein only male fish who were sufficiently large to defend territory would have a reproductive advantage. Under this model, small females would have more reproductive success by remaining female than by becoming male and being unable to compete with larger fish for territory. Additionally, this choice’s claim about tank 2—that “only the largest females” could take over territories—implies either that females defend territory (when the model in Text 1 makes no such claim) or that at least some females were sufficiently large to change sex and compete for territory with fish that began the experiment as males, yet the results show that no females in tank 2 did so.</p><p><b>Choice C is incorrect</b>. Not only is it based on a flawed understanding of the model presented in Text 1, it flatly contradicts the experimental results summarized in Text 2. While Text 1 clearly states that body size is irrelevant to female reproductive success, choice C states that the presence of males in tank 2 made differences in body size relevant to the females’ reproductive success. This choice also claims that the removal of males from tank 1 eliminated any advantage to becoming male, yet the researchers reported that 81 percent of females in tank 1 began changing sex.</p><p><b>Choice D is incorrect</b> because it doesn’t use the model proposed in Text 1 to explain the findings described in Text 2. It is common sense that a certain number of male fish are required for reproduction to occur in tank 1, but the model presented by Text 1 focuses on the individual reproductive benefits of protogyny, not on its potential to benefit the population by maintaining a favorable sex ratio.</p>"
+  },
+  {
+    "id": "u7-12",
+    "lessonCode": "U7",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><b>Text 1</b><br>Growth in the use of novel nanohybrids—materials created from the conjugation of multiple distinct nanomaterials, such as iron oxide and gold nanomaterials conjugated for use in magnetic imaging—has outpaced studies of nanohybrids’ environmental risks. Unfortunately, risk evaluations based on nanohybrids’ constituents are not reliable: <u>conjugation may alter constituents’ physiochemical properties such that innocuous nanomaterials form a nanohybrid that is anything but</u>.<br><br><b>Text 2</b><br>The potential for enhanced toxicity of nanohybrids relative to the toxicity of constituent nanomaterials has drawn deserved attention, but the effects of nanomaterial conjugation vary by case. For instance, it was recently shown that a nanohybrid of silicon dioxide and zinc oxide preserved the desired optical transparency of zinc oxide nanoparticles while mitigating the nanoparticles’ potential to damage DNA.</div><p>Based on the texts, how would the author of Text 2 most likely respond to the assertion in the underlined portion of Text 1?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "By concurring that the risk described in Text 1 should be evaluated but emphasizing that the risk is more than offset by the potential benefits of nanomaterial conjugation"
+      },
+      {
+        "label": "B",
+        "html": "By arguing that the situation described in Text 1 may not be representative but conceding that the effects of nanomaterial conjugation are harder to predict than researchers had expected"
+      },
+      {
+        "label": "C",
+        "html": "By denying that the circumstance described in Text 1 is likely to occur but acknowledging that many aspects of nanomaterial conjugation are still poorly understood"
+      },
+      {
+        "label": "D",
+        "html": "By agreeing that the possibility described in Text 1 is a cause for concern but pointing out that nanomaterial conjugation does not inevitably produce that result"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. The author of Text 2 acknowledges that nanohybrids may be more toxic than their constituent parts, but also provides an example of a nanohybrid that has reduced toxicity compared to its components: silicon dioxide and zinc oxide together have all the benefits of zinc oxide nanoparticles without any of the DNA harm zinc oxide has on its own.</p><p><b>Choice A is incorrect</b>. While the author of Text 2 gives an example of a nanohybrid that isn’t as toxic as its constituent parts, they don’t argue that the benefit outweighs the risk. They merely argue that “the effects of nanomaterial conjugation vary by case.”</p><p><b>Choice B is incorrect</b>. The author of Text 2 states that the effects of nanomaterial conjugation “vary by case,” and that the attention that their potential toxicity has drawn is warranted. If the situation in Text 1 weren’t representative, then there would be less attention to the potential danger of these materials. Furthermore, neither passage suggests that researchers had expected that they could predict the effects of nanomaterial conjugation.</p><p><b>Choice C is incorrect</b>. The author of Text 2 agrees that the potential toxicity of nanohybrids “has drawn deserved attention,” so they aren’t denying the problem.</p>"
+  },
+  {
+    "id": "u7-13",
+    "lessonCode": "U7",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><b>Text 1</b><br>Soy sauce, made from fermented soybeans, is noted for its umami flavor. Umami—one of the five basic tastes along with sweet, bitter, salty, and sour—was formally classified when its taste receptors were discovered in the 2000s. In 2007, to define the pure umami flavor scientists Rie Ishii and Michael O’Mahony used broths made from shiitake mushrooms and kombu seaweed, and two panels of Japanese and US judges closely agreed on a description of the taste.<br><br><b>Text 2</b><br>A 2022 experiment by Manon Jünger et al. led to a greater understanding of soy sauce’s flavor profile. The team initially presented a mixture of compounds with low molecular weights to taste testers who found it was not as salty or bitter as real soy sauce. Further analysis of soy sauce identified proteins, including dipeptides, that enhanced umami flavor and also contributed to saltiness. The team then made a mix of 50 chemical compounds that re-created soy sauce’s flavor.</div><p>Based on the texts, if Ishii and O’Mahony (Text 1) and Jünger et al. (Text 2) were aware of the findings of both experiments, they would most likely agree with which statement?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "On average, the diets of people in the United States tend to have fewer foods that contain certain dipeptides than the diets of people in Japan have."
+      },
+      {
+        "label": "B",
+        "html": "Chemical compounds that activate both the umami and salty taste receptors tend to have a higher molecular weight than those that only activate umami taste receptors."
+      },
+      {
+        "label": "C",
+        "html": "Fermentation introduces proteins responsible for the increase of umami flavor in soy sauce, and those proteins also increase the perception of saltiness."
+      },
+      {
+        "label": "D",
+        "html": "The broths in the 2007 experiment most likely did not have a substantial amount of the dipeptides that played a key part in the 2022 experiment."
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationHtml": "<p><b>Choice D is the best answer</b>. Ishii and O’Mahony were trying to isolate the pure umami flavor, while Jünger was trying to recreate soy sauce, which has a mix of flavors that includes umami. Accordingly, the broths from Text 1 are not described as having any soy sauce in them—just “shiitake mushrooms and kombu seaweed.” So they probably don’t have as much of the dipeptides described in Text 2, which were found to be a key part of soy sauce’s umami-ness and its saltiness.</p><p><b>Choice A is incorrect</b>. Neither text supports this. Neither text gets into the diets of people in the United States, nor the diets of people in Japan.</p><p><b>Choice B is incorrect</b>. Neither text supports this. Text 2 does talk about the molecular weights of chemical compounds, but there isn’t enough information provided about molecular weights in Text 1 to make an inference about what the scientists in Text 1 would say.</p><p><b>Choice C is incorrect</b>. Neither text supports this. Text 1 briefly mentions that soy sauce is “made from fermented soybeans,” but it never claims that fermentation is responsible for its flavor in any way. And Text 2 never mentions fermentation at all.</p>"
+  },
+  {
+    "id": "u7-14",
+    "lessonCode": "U7",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><b>Text 1</b><br>Astronomer Mark Holland and colleagues examined four white dwarfs—small, dense remnants of past stars—in order to determine the composition of exoplanets that used to orbit those stars. Studying wavelengths of light in the white dwarf atmospheres, the team reported that traces of elements such as lithium and sodium support the presence of exoplanets with continental crusts similar to Earth’s.<br><br><b>Text 2</b><br>Past studies of white dwarf atmospheres have concluded that certain exoplanets had continental crusts. Geologist Keith Putirka and astronomer Siyi Xu argue that those studies unduly emphasize atmospheric traces of lithium and other individual elements as signifiers of the types of rock found on Earth. The studies don’t adequately account for different minerals made up of various ratios of those elements, and the possibility of rock types not found on Earth that contain those minerals.</div><p>Based on the texts, how would Putirka and Xu (Text 2) most likely characterize the conclusion presented in Text 1?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "As unexpected, because it was widely believed at the time that white dwarf exoplanets lack continental crusts"
+      },
+      {
+        "label": "B",
+        "html": "As premature, because researchers have only just begun trying to determine what kinds of crusts white dwarf exoplanets had"
+      },
+      {
+        "label": "C",
+        "html": "As questionable, because it rests on an incomplete consideration of potential sources of the elements detected in white dwarf atmospheres"
+      },
+      {
+        "label": "D",
+        "html": "As puzzling, because it’s unusual to successfully detect lithium and sodium when analyzing wavelengths of light in white dwarf atmospheres"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationHtml": "<p><b>Choice C is the best answer</b> because it reflects how Putirka and Xu (Text 2) would likely characterize the conclusion presented in Text 1.</p><ul><li>Text 1 discusses a study by Mark Holland and colleagues in which they detected traces of lithium and sodium in the atmospheres of four white dwarf stars.</li><li>The team claims that this supports the idea that exoplanets with continental crusts like Earth’s once orbited these stars.</li><li>Text 2 introduces Putirka and Xu, who indicate that sodium and lithium are present in several different minerals and that some of those minerals might exist in types of rock that are not found on Earth.</li><li>Therefore, Putirka and Xu would likely describe the conclusion in Text 1 as questionable because it does not consider that lithium and sodium are also found in rocks that are not like Earth’s continental crust.</li></ul><p><b>Choice A is incorrect</b> because the texts do not indicate how widely held any of the viewpoints described are.</p><p><b>Choice B is incorrect</b> because neither text discusses how new this area of study is.</p><p><b>Choice D is incorrect</b> because neither text discusses how likely lithium and sodium are to be detected by analyzing wavelengths of light.</p>"
+  },
+  {
+    "id": "u7-15",
+    "lessonCode": "U7",
+    "type": "mcq",
+    "difficulty": "Hard",
+    "section": "rw",
+    "stemHtml": "<div class=\"lw-passage\"><b>Text 1</b><br>The idea that time moves in only one direction is instinctively understood, yet it puzzles physicists. According to the second law of thermodynamics, at a macroscopic level some processes of heat transfer are irreversible due to the production of entropy—after a transfer we cannot rewind time and place molecules back exactly where they were before, just as we cannot unbreak dropped eggs. But laws of physics at a microscopic or quantum level hold that those processes <i>should</i> be reversible.<br><br><b>Text 2</b><br>In 2015, physicists Tiago Batalhão et al. performed an experiment in which they confirmed the irreversibility of thermodynamic processes at a quantum level, producing entropy by applying a rapidly oscillating magnetic field to a system of carbon-13 atoms in liquid chloroform. But the experiment “does not pinpoint … what causes [irreversibility] at the microscopic level,” coauthor Mauro Paternostro said.</div><p>Based on the texts, what would the author of Text 1 most likely say about the experiment described in Text 2?</p>",
+    "choices": [
+      {
+        "label": "A",
+        "html": "It would suggest an interesting direction for future research were it not the case that two of the physicists who conducted the experiment disagree on the significance of its findings."
+      },
+      {
+        "label": "B",
+        "html": "It provides empirical evidence that the current understanding of an aspect of physics at a microscopic level must be incomplete."
+      },
+      {
+        "label": "C",
+        "html": "It is consistent with the current understanding of physics at a microscopic level but not at a macroscopic level."
+      },
+      {
+        "label": "D",
+        "html": "It supports a claim about an isolated system of atoms in a laboratory, but that claim should not be extrapolated to a general claim about the universe."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationHtml": "<p><b>Choice B is the best answer</b>. Author 1 describes the puzzle that physicists still can’t solve: at a microscopic level, the “laws of physics” suggest that we should be able to reverse processes that are not reversible at a macroscopic level (and, maybe, turn back time!). The experiment confirmed that those processes are not reversible even on the microscopic level, but it didn’t explain why. This supports Author 1’s point that physicists still don’t fully understand how things work at a microscopic level—maybe the laws need to be revised.</p><p><b>Choice A is incorrect</b>. We can’t infer that the author of Text 1 would respond this way to the experiment. Text 2 does name two of the physicists involved in the experiment, but it never suggests that they disagree on anything.</p><p><b>Choice C is incorrect</b>. This is the opposite of what the experiment suggests. The experiment confirmed that the macroscopic-level law (“these things can’t be reversed—like time”) was still true on the microscopic level—meaning it supports the current understanding of physics at a macroscopic level.</p><p><b>Choice D is incorrect</b>. We can’t infer that the author of Text 1 would respond this way to the experiment. Neither text makes this distinction between laboratory findings and the way the universe works in general.</p>"
+  }
+]
