@@ -2576,3 +2576,22 @@ img.fig { display: block; max-width: 100%; height: auto; margin: 8px 0 12px; }
 .wt-past { gap: 6px; }
 .wt-chip { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: var(--r-pill);
   background: var(--brand-050); color: var(--brand-700); border: 1px solid var(--brand-100, var(--border)); }
+
+/* Weekly test result: rows that open to the question and its explanation */
+.wt-row { padding: 0; overflow: hidden; scroll-margin-top: 90px; }
+.wt-head { all: unset; box-sizing: border-box; width: 100%; cursor: pointer; display: flex; align-items: center;
+  justify-content: space-between; gap: 12px; padding: 14px 18px; }
+.wt-head:hover { background: var(--brand-050); }
+.wt-head:focus-visible { outline: 2px solid var(--brand-600); outline-offset: -2px; }
+.wt-caret { font-size: 18px; line-height: 1; color: var(--muted); transition: transform .15s ease; }
+.wt-row.is-open .wt-caret { transform: rotate(180deg); }
+.wt-body { border-top: 1px solid var(--border); padding: 16px 18px 20px; display: flex; flex-direction: column; gap: 14px; }
+.wt-body[hidden] { display: none; }
+.wt-passage { background: var(--surface-2); border-radius: var(--r-md); padding: 12px 14px; }
+.wt-stem { font-weight: 600; }
+.wt-body img { max-width: 100%; height: auto; }
+.wt-opts { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.wt-opts li { display: flex; gap: 10px; align-items: flex-start; padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--r-md); }
+.wt-opts li.is-right { border-color: var(--ok); background: var(--ok-bg); }
+.wt-opts li.is-wrong { border-color: var(--danger, #d33); background: var(--danger-bg, #fdecec); }
+.wt-key { font-weight: 700; min-width: 1.2em; }

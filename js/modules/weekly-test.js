@@ -215,20 +215,57 @@
     ]));
     if (!ses) return;
 
+    /* Each row opens in place: the question, the answer given, the right
+       answer and the explanation, scrolled into view. */
     var rows = U.el('div.stack-sm');
     ses.questionIds.forEach(function (qid, i) {
       var q = JTS.bank.get(qid);
       var a = ses.answers && ses.answers[qid];
       if (!q) return;
-      rows.appendChild(U.el('div.card.card-sm.row-between.row-wrap', null, [
+      var given = a && a.selected !== null && a.selected !== '' ? a.selected : null;
+      var body = U.el('div.wt-body', { hidden: true });
+      var row = U.el('div.card.card-sm.wt-row');
+      var head = U.el('button.wt-head', {
+        type: 'button', 'aria-expanded': 'false',
+        onclick: function () {
+          var open = body.hidden;
+          if (open && !body.firstChild) fill();
+          body.hidden = !open;
+          head.setAttribute('aria-expanded', String(open));
+          row.classList.toggle('is-open', open);
+          if (open) setTimeout(function () { row.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 30);
+        }
+      }, [
         U.el('div.stack-sm', null, [
           U.el('div', null, [U.el('b', { text: (i + 1) + '. ' + JTS.skills.name(q.skillId) })]),
           U.el('div.xsmall.muted', { text: t('common.' + q.section) })
         ]),
-        U.el('span.badge' + (a && a.correct ? '.badge-ok' : '.badge-danger'), {
-          text: a && a.correct ? t('common.correct') : t('common.incorrect')
-        })
-      ]));
+        U.el('div.row', null, [
+          U.el('span.badge' + (a && a.correct ? '.badge-ok' : '.badge-danger'), {
+            text: a && a.correct ? t('common.correct') : (given ? t('common.incorrect') : t('weekly.skipped'))
+          }),
+          U.el('span.wt-caret', { text: '⌄', 'aria-hidden': 'true' })
+        ])
+      ]);
+      function fill() {
+        if (q.passage) body.appendChild(U.el('div.wt-passage', { html: q.passage }));
+        body.appendChild(U.el('div.wt-stem', { html: q.stem }));
+        if (q.type === 'mcq' && q.options) {
+          body.appendChild(U.el('ol.wt-opts', null, q.options.map(function (o, k) {
+            var key = 'ABCD'.charAt(k);
+            var cls = key === q.answer ? '.is-right' : key === given ? '.is-wrong' : '';
+            return U.el('li' + cls, null, [U.el('span.wt-key', { text: key }), U.el('span', { html: o })]);
+          })));
+        } else if (given) {
+          body.appendChild(U.el('div.small', { text: t('weekly.youTyped', { a: given }) }));
+        }
+        body.appendChild(JTS.studyHelp.explanationBody(q, {
+          selected: given, submitted: !!given, correct: !!(a && a.correct)
+        }));
+      }
+      row.appendChild(head);
+      row.appendChild(body);
+      rows.appendChild(row);
     });
     screen.appendChild(rows);
 
@@ -267,7 +304,7 @@
     c.appendChild(U.el('div.row.row-wrap', null, [
       U.el('span.badge', { text: t('common.rwShort') + ' · ' + rw }),
       U.el('span.badge', { text: t('common.math') + ' · ' + (r.questionIds.length - rw) }),
-      U.el('span.badge.badge-muted', { text: t('daily.about', { n: MINUTES }) })
+      U.el('span.badge.badge-muted', { text: t('weekly.about', { n: MINUTES }) })
     ]));
     c.appendChild(U.el('div.notice', { text: t('weekly.rules') }));
     c.appendChild(U.el('button.btn.btn-primary.btn-lg.btn-block', {

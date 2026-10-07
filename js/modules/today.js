@@ -4,7 +4,7 @@
    The one screen a student opens every day, and it holds three things: how
    long is left, the test that measures this week, and the two numbers they
    are steering by. Everything else has a screen of its own — the next
-   session is on the plan, the daily check at #/daily, the road at #/roadmap,
+   session is on the plan, the road at #/roadmap,
    the review queue in practice — and repeating them here made the screen
    opened every morning the longest in the product.
 
@@ -53,17 +53,12 @@
     var name = (state.profile.name || state.profile.email || '').split(' ')[0].split('@')[0];
     if (name) name = name.charAt(0).toUpperCase() + name.slice(1);
     var dated = state.examDate && state.examDate.mode === 'date' && state.examDate.testDate;
-    var streak = (state.daily && state.daily.streak) || 0;
 
     var left = U.el('div.hero-left', null, [
       U.el('div.hero-title', { text: t('today.welcome', { name: name }) }),
       U.el('p.hero-lead', { text: t('today.heroLead') }),
       U.el('div.row.row-wrap.hero-actions', null, [
         U.el('a.btn.hero-btn', { href: '#/materials', text: t('today.goCourses') }),
-        U.el('a.btn.hero-btn', { href: '#/daily', text: t('today.dailyQuestions') }),
-        /* The streak belongs to the daily check, so it is shown beside the
-           button that continues it rather than as a statistic of its own. */
-        streak ? U.el('span.hero-streak', { text: '★ ' + t('daily.streakN', { n: streak }) }) : null
       ])
     ]);
 
