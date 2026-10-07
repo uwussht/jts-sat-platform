@@ -1,5 +1,7 @@
 {
   "files": [
-    {"file": "jts-1.json", "assetBase": "assets/sat/paper 1/"}
+    {"file": "jts-1.json", "assetBase": "assets/sat/paper 1/"},
+    {"file": "jts-2.json", "assetBase": "assets/sat/paper 2/"},
+    {"file": "jts-3.json", "assetBase": "assets/sat/paper 3/"}
   ]
 }

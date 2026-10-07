@@ -1,0 +1,2358 @@
+{
+  "id": "jts-3",
+  "title": "June INT Version C 2026",
+  "year": 2026,
+  "assetBase": "assets/sat/jts-3/",
+  "questions": [
+    {
+      "id": "rw-m1-01",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-01.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Organized"
+        },
+        {
+          "label": "B",
+          "html": "Examined"
+        },
+        {
+          "label": "C",
+          "html": "Converted"
+        },
+        {
+          "label": "D",
+          "html": "Promoted"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-02",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-02.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "stipulated"
+        },
+        {
+          "label": "B",
+          "html": "cited"
+        },
+        {
+          "label": "C",
+          "html": "ascribed"
+        },
+        {
+          "label": "D",
+          "html": "convened"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-03",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-03.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "assigned"
+        },
+        {
+          "label": "B",
+          "html": "hypothesized"
+        },
+        {
+          "label": "C",
+          "html": "preserved"
+        },
+        {
+          "label": "D",
+          "html": "debunked"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-04",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-04.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Followed"
+        },
+        {
+          "label": "B",
+          "html": "Authorized"
+        },
+        {
+          "label": "C",
+          "html": "Modified"
+        },
+        {
+          "label": "D",
+          "html": "Approved"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-05",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-05.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "To argue that M. symmetrica may have been more similar to fleas than to Japanese spider crabs"
+        },
+        {
+          "label": "B",
+          "html": "To discuss a significant feature that may have been found in a study of M. symmetrica fossils"
+        },
+        {
+          "label": "C",
+          "html": "To describe M. symmetrica and the way the animal’s optic nerve functioned"
+        },
+        {
+          "label": "D",
+          "html": "To question whether the fossils the team studied were actually of M. symmetrica"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-06",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-06.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It introduces information that helps explain why the synthesis of superheavy elements has rapidly expanded the chemical space."
+        },
+        {
+          "label": "B",
+          "html": "It provides details about the qualification later in the sentence regarding the prospect of cataloging the full range of possible chemical compounds."
+        },
+        {
+          "label": "C",
+          "html": "It emphasizes the point implicitly made earlier in the text that human inefficiency is the primary constraint on the expansion of the chemical space."
+        },
+        {
+          "label": "D",
+          "html": "It makes a comparison between the past and current rates at which new chemical compounds have entered the scientific literature."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-07",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-07.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It provides context that informs the text’s claim about why the peoples of Patagonia chose Cueva Huenul 1 as a culturally significant site."
+        },
+        {
+          "label": "B",
+          "html": "It explains the environmental circumstances that account for the rarity of rock art dating to the same period as the motif discussed in the text."
+        },
+        {
+          "label": "C",
+          "html": "It identifies a consideration that factored into an interpretation of the rock art at Cueva Huenul 1 that is presented in the text."
+        },
+        {
+          "label": "D",
+          "html": "It emphasizes the historical conditions that explain why production of the painted motif described in the text abruptly ceased after 3,000 years of continued use."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-08",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-08.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A study shows that the type of device people use to complete online surveys affects how they interact with these surveys."
+        },
+        {
+          "label": "B",
+          "html": "Researchers are investigating why survey completion rates are higher on PCs than they are on smartphones, despite increased multitasking on PCs."
+        },
+        {
+          "label": "C",
+          "html": "Researchers prefer online surveys to other ways of collecting information because they think online survey results are more reliable."
+        },
+        {
+          "label": "D",
+          "html": "People are choosing to take online surveys on smartphones more often than they are on PCs because smartphones are convenient."
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-09",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-09.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "They suggest that gas permeability testing presents a more reliable indication of concrete durability than compressive strength testing does."
+        },
+        {
+          "label": "B",
+          "html": "They bolster the claim that concrete’s susceptibility to damage decreases as its gas permeability increases."
+        },
+        {
+          "label": "C",
+          "html": "They call into question the idea that quality of curing conditions directly affects concrete gas permeability but is unrelated to compressive strength."
+        },
+        {
+          "label": "D",
+          "html": "They indicate that evaluation of gas permeability is an appropriate addition to concrete quality assessment procedures."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-10",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-10.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Culture’s duty is to use scientific methods to determine what is beautiful."
+        },
+        {
+          "label": "B",
+          "html": "One of the functions of culture is to create a consensus about matters of good taste."
+        },
+        {
+          "label": "C",
+          "html": "Most people disagree with each other on what is beautiful."
+        },
+        {
+          "label": "D",
+          "html": "The English are often subject to unfair critiques of their sense of taste."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-11",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-11.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "while the number of hours worked rose in Austria between 1950 and 2017, it declined in Norway, Finland, and the United States."
+        },
+        {
+          "label": "B",
+          "html": "though the decline in number of hours worked in Austria was less than that in Norway and the United States, it was greater than that in Finland."
+        },
+        {
+          "label": "C",
+          "html": "though the decline in number of hours worked in Austria was not as great as that in Norway, it was greater than that in Finland and the United States."
+        },
+        {
+          "label": "D",
+          "html": "the percent decrease in hours worked was greater in Austria than it was in Norway, Finland, or the United States."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-12",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-12.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "“It should not be considered essential to the interest and value of biography, that its subject be of exalted rank, or illustrious name.”"
+        },
+        {
+          "label": "B",
+          "html": "“There is often a kind of [deceptive] light, playing around such [famous] names, calculated to dazzle and mislead, by their false lustre, until the eye can no longer receive the pure light of Truth, or the mind appreciate real excellence, or intrinsic worth.”"
+        },
+        {
+          "label": "C",
+          "html": "“How careful ought we to be to speak nothing but the truth, even in regard to the most trifling circumstances; and not only so, but to be well assured that what we suppose to be true, is truth, before we receive it as such.”"
+        },
+        {
+          "label": "D",
+          "html": "“Blessed are the slumbers of the innocent! They are kindlier than balm, and they refresh and gladden the spirit of childhood, like ministerings from a better world.”"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-13",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-13.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "the average monthly low temperature was lower in May than in September."
+        },
+        {
+          "label": "B",
+          "html": "the average female wing centroid size was 2.02 mm in July but was 2.29 mm in October."
+        },
+        {
+          "label": "C",
+          "html": "the average male wing centroid size was consistently smaller than the average female wing centroid size in all four months in the table."
+        },
+        {
+          "label": "D",
+          "html": "the average male wing centroid size was smaller in September than in July."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-14",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-14.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The border collies successfully fetched the toy more often than the dogs of other breeds did."
+        },
+        {
+          "label": "B",
+          "html": "The majority of dogs in the typical group were border collies."
+        },
+        {
+          "label": "C",
+          "html": "Most of the gifted dogs tilted their heads to the same side in each trial."
+        },
+        {
+          "label": "D",
+          "html": "The typical dogs that tilted their heads appeared to be processing the meaning of the requests."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-15",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-15.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "the fox may have been a companion animal of the humans who inhabited the site at the same time."
+        },
+        {
+          "label": "B",
+          "html": "the humans who were alive at the same time as the fox most likely ate more meat than the fox did."
+        },
+        {
+          "label": "C",
+          "html": "the fox had a diet more similar to that of jackals than to that of wild foxes."
+        },
+        {
+          "label": "D",
+          "html": "the humans who were alive at the same time as the fox hunted using the spears whose points were also found at the site."
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-16",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-16.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "campaigned"
+        },
+        {
+          "label": "B",
+          "html": "to campaign"
+        },
+        {
+          "label": "C",
+          "html": "having campaigned"
+        },
+        {
+          "label": "D",
+          "html": "campaigning"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-17",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-17.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "mountains:"
+        },
+        {
+          "label": "B",
+          "html": "mountains,"
+        },
+        {
+          "label": "C",
+          "html": "mountains"
+        },
+        {
+          "label": "D",
+          "html": "mountains;"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-18",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-18.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "we can hold contradictory beliefs about a single thing?"
+        },
+        {
+          "label": "B",
+          "html": "can we hold contradictory beliefs about a single thing."
+        },
+        {
+          "label": "C",
+          "html": "we can hold contradictory beliefs about a single thing."
+        },
+        {
+          "label": "D",
+          "html": "can we hold contradictory beliefs about a single thing?"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-19",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-19.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "was her favorite book!"
+        },
+        {
+          "label": "B",
+          "html": "was her favorite book?"
+        },
+        {
+          "label": "C",
+          "html": "her favorite book was?"
+        },
+        {
+          "label": "D",
+          "html": "her favorite book was."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-20",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-20.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "dance, showcasing"
+        },
+        {
+          "label": "B",
+          "html": "dance. Which showcased"
+        },
+        {
+          "label": "C",
+          "html": "dance. Showcasing"
+        },
+        {
+          "label": "D",
+          "html": "dance, it showcased"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-21",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-21.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Next,"
+        },
+        {
+          "label": "B",
+          "html": "Rather,"
+        },
+        {
+          "label": "C",
+          "html": "Fittingly,"
+        },
+        {
+          "label": "D",
+          "html": "Granted,"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-22",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-22.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Within this category,"
+        },
+        {
+          "label": "B",
+          "html": "Despite this majority,"
+        },
+        {
+          "label": "C",
+          "html": "In a broader sense,"
+        },
+        {
+          "label": "D",
+          "html": "In the future,"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-23",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-23.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "in other words."
+        },
+        {
+          "label": "B",
+          "html": "for example."
+        },
+        {
+          "label": "C",
+          "html": "in particular."
+        },
+        {
+          "label": "D",
+          "html": "of course."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-24",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-24.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The Carnegie Prize is an international art competition administered by the Carnegie Museum of Art."
+        },
+        {
+          "label": "B",
+          "html": "The prize-winning painting Azure is by the artist Ben Nicholson."
+        },
+        {
+          "label": "C",
+          "html": "In 1952, an artist from England won a Carnegie Prize gold medal."
+        },
+        {
+          "label": "D",
+          "html": "The Carnegie Museum of Art in Pittsburgh, Pennsylvania, administers a competition honoring outstanding artworks."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-25",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-25.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Human activities are limited in the Bitter Creek NWR, a protected natural area in California."
+        },
+        {
+          "label": "B",
+          "html": "The 14,054-acre Bitter Creek NWR was established to safeguard the habitat of the California condor, an endangered species."
+        },
+        {
+          "label": "C",
+          "html": "By limiting human activities in the Bitter Creek NWR, the US Fish &amp; Wildlife Service safeguards the habitat of the California condor."
+        },
+        {
+          "label": "D",
+          "html": "Home to the California condor, the Bitter Creek NWR is located in California, where it encompasses 14,054 acres."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-26",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-26.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Clay tablets with cuneiform script have been found in present-day Iraq."
+        },
+        {
+          "label": "B",
+          "html": "Sumerian, an ancient Mesopotamian language, was written using the cuneiform script."
+        },
+        {
+          "label": "C",
+          "html": "Examples of Mesopotamian writing that are nearly 5,000 years old have been found."
+        },
+        {
+          "label": "D",
+          "html": "A language in ancient Mesopotamia used the cuneiform script for writing."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-27",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-27.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The researchers used an artificial deep neural network, which spontaneously developed neurons that responded to music but not to other auditory stimuli."
+        },
+        {
+          "label": "B",
+          "html": "By training an artificial deep neural network, the researchers aimed to establish that the brain’s ability to process natural sounds arises as a by-product of processing music."
+        },
+        {
+          "label": "C",
+          "html": "Using an artificial deep neural network, the researchers sought to explore the relationship between the brain’s ability to process natural sounds and its ability to process music."
+        },
+        {
+          "label": "D",
+          "html": "In their study, the researchers evaluated whether an artificial deep neural network could model how the brain processes auditory information."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-01",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-01.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "apparent"
+        },
+        {
+          "label": "B",
+          "html": "excessive"
+        },
+        {
+          "label": "C",
+          "html": "unusual"
+        },
+        {
+          "label": "D",
+          "html": "subtle"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-02",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-02.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "inimitable"
+        },
+        {
+          "label": "B",
+          "html": "autonomous"
+        },
+        {
+          "label": "C",
+          "html": "prolific"
+        },
+        {
+          "label": "D",
+          "html": "contemporaneous"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-03",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-03.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "a complement to"
+        },
+        {
+          "label": "B",
+          "html": "an amalgam of"
+        },
+        {
+          "label": "C",
+          "html": "a stipulation for"
+        },
+        {
+          "label": "D",
+          "html": "a surrogate for"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-04",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-04.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "exploits"
+        },
+        {
+          "label": "B",
+          "html": "neutralizes"
+        },
+        {
+          "label": "C",
+          "html": "secretes"
+        },
+        {
+          "label": "D",
+          "html": "impedes"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-05",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-05.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It emphasizes that a research finding discussed in the text has practical implications that are particularly relevant for businesses making a certain class of product."
+        },
+        {
+          "label": "B",
+          "html": "It illustrates the need for additional research to evaluate the claim in the previous sentence that automation affects how consumers rate product uniqueness."
+        },
+        {
+          "label": "C",
+          "html": "It presents evidence supporting the text’s argument that consumers prefer products with high symbolic value over products with low symbolic value."
+        },
+        {
+          "label": "D",
+          "html": "It refers to a finding presented in the previous sentence to recommend that companies that value product quality reconsider automating their production processes."
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-06",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-06.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Asimov’s characterizations would have been more believable if his writing had discussed fewer ideas."
+        },
+        {
+          "label": "B",
+          "html": "The flatness of Asimov’s characters should not necessarily be considered a flaw in his writing."
+        },
+        {
+          "label": "C",
+          "html": "The flatness of Asimov’s characters is a feature of Robots and Empire and The Currents of Space but not of Foundation."
+        },
+        {
+          "label": "D",
+          "html": "Asimov’s characterizations would have been richer if he had possessed a deeper understanding of history."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-07",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-07.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Increasing linguistic abstraction in negative reviews correlates with the degree to which consumers hold companies accountable for negative experiences, but companies can mitigate this effect by responding to such reviews promptly."
+        },
+        {
+          "label": "B",
+          "html": "When negative reviews provide specific details, they are more likely to damage companies’ public perception, and efforts by companies to mitigate this damage are less likely to be successful than when negative reviews are vague."
+        },
+        {
+          "label": "C",
+          "html": "Given its implications for companies’ reputation among consumers, the level of linguistic abstraction in negative reviews is an important consideration when companies devise a response strategy."
+        },
+        {
+          "label": "D",
+          "html": "Consumers are more likely to find companies blameworthy for negative consumer experiences if the companies are overly defensive and linguistically abstract in their responses to negative reviews than if their responses are accommodating and linguistically concrete."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-08",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-08.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "P. buchholzi had very low Mb levels in their cardiac tissue."
+        },
+        {
+          "label": "B",
+          "html": "On average, A. nigrofasciata had higher Mb levels in their cardiac tissue than C. chitala and P. buchholzi had."
+        },
+        {
+          "label": "C",
+          "html": "Less variation in Mb levels was observed among P. buchholzi individuals than among A. nigrofasciata and C. chitala individuals."
+        },
+        {
+          "label": "D",
+          "html": "Greater average Mb levels in a certain species were associated with greater variance in Mb levels among individuals of that species."
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-09",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-09.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The tribes of the Caddo Confederacy, who inhabited a vast region to the northwest of the Natchez homeland, spoke Caddo as well as Adai, a poorly documented language whose relationship to Caddo is unknown and which is typically regarded as an isolate."
+        },
+        {
+          "label": "B",
+          "html": "Barring an as-yet-undemonstrated genealogical relationship in the deep past, Natchez’s lexical similarities with the nearby languages of the Muskogean family are best attributed to areal diffusion, or the spread of linguistic features through contact instead of through descent from a common ancestral language."
+        },
+        {
+          "label": "C",
+          "html": "Despite incursions by various colonial powers—first Spain, then France, Britain, and finally the United States—into the challenging terrain of Mississippi and Louisiana, the grammar of Natchez appears to have largely resisted the influence of non-Indigenous languages."
+        },
+        {
+          "label": "D",
+          "html": "Alabama and the many other languages of the Muskogean family proliferated in the areas abutting the homelands of a number of isolate-speaking peoples, such as the Natchez and Timucua."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-10",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-10.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "caribou would be greater than 2,155 kilometers if the RTD method had been used."
+        },
+        {
+          "label": "B",
+          "html": "caribou would be less than 3,807 kilometers if the RTD method had been used."
+        },
+        {
+          "label": "C",
+          "html": "white-eared kob would be less than 400 kilometers if the GPS method had been used."
+        },
+        {
+          "label": "D",
+          "html": "white-eared kob would be greater than 3,807 kilometers if the GPS method had been used."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-11",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-11.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "“Sprinkler irrigation systems, which were developed in the late 20th century, are a method of irrigating that requires machinery that can spray water in all directions. These systems are currently widely used in many areas of California, New Mexico, and Arizona.”"
+        },
+        {
+          "label": "B",
+          "html": "“The significance of Lake Lagunitas in the development of California cannot be overstated, since irrigation is a principal means of transporting water for food production.”"
+        },
+        {
+          "label": "C",
+          "html": "“In the decades following the Second World War, irrigation of arid areas for agriculture increased to such a degree that it now accounts for roughly 70% of the world’s water usage.”"
+        },
+        {
+          "label": "D",
+          "html": "“Several major irrigation canals currently in use in central Arizona follow the original paths of the irrigation system constructed by the Hohokam people in the early 7th century CE, the first of a number of systems in the region.”"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-12",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-12.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "though phonography was a more expensive undertaking than musical stenography due to the technology involved, the expense was made up for by the fact that phonography could encode more music than stenography in the same amount of time."
+        },
+        {
+          "label": "B",
+          "html": "although stenography was nearly as efficient as phonography at documenting improvisational performances, most musicians were not familiar enough with stenographic marks for them to be able to read and accurately interpret that documentation when playing the music back in a performance."
+        },
+        {
+          "label": "C",
+          "html": "no matter what advantages musical stenography had over conventional Western notation in terms of accuracy, it carried an inherent risk of human-introduced errors that phonography, with its one-to-one encoding of sound, did not."
+        },
+        {
+          "label": "D",
+          "html": "while musical stenography was indeed faster to write than conventional Western notation, it never attained the level of accuracy that allowed conventional Western notation to capture the nuances of improvisational performances."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-13",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-13.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "reduce premium price volatility once policies are in effect but increase risks for policyholders."
+        },
+        {
+          "label": "B",
+          "html": "be more advantageous for insurers than they are for either current or prospective policyholders."
+        },
+        {
+          "label": "C",
+          "html": "prevent large increases in premium prices for new policies despite leading to fewer insurers offering such policies in the affected market."
+        },
+        {
+          "label": "D",
+          "html": "benefit policyholders at the expense of nonpolicyholders seeking to acquire policies."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-14",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-14.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "North America has sites with dinosaurs but not sites with sponges."
+        },
+        {
+          "label": "B",
+          "html": "that formation is from an earlier time than the formation with the dinosaurs."
+        },
+        {
+          "label": "C",
+          "html": "the dinosaurs at Goodsell Ridge are better preserved than the dinosaurs at the Bauru Basin."
+        },
+        {
+          "label": "D",
+          "html": "sponges are found at more sites around the world than dinosaurs."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-15",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-15.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "the six topics into which the 58 statements are grouped may actually represent more than six different topics."
+        },
+        {
+          "label": "B",
+          "html": "the reliability of the survey data for each topic would be largely unaffected by the number of survey respondents."
+        },
+        {
+          "label": "C",
+          "html": "it may be possible to collect meaningful data about all six customer experience topics without using all 58 of the original statements."
+        },
+        {
+          "label": "D",
+          "html": "responses to statements in the visual appeal topic are highly predictive of responses in the other five topics."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-16",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-16.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "improvising which"
+        },
+        {
+          "label": "B",
+          "html": "improvising and which"
+        },
+        {
+          "label": "C",
+          "html": "improvising. Which"
+        },
+        {
+          "label": "D",
+          "html": "improvising, which"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-17",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-17.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Freeman, who noted"
+        },
+        {
+          "label": "B",
+          "html": "Freeman, noting"
+        },
+        {
+          "label": "C",
+          "html": "Freeman, noted"
+        },
+        {
+          "label": "D",
+          "html": "Freeman noted"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-18",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-18.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "is helping"
+        },
+        {
+          "label": "B",
+          "html": "has helped"
+        },
+        {
+          "label": "C",
+          "html": "help"
+        },
+        {
+          "label": "D",
+          "html": "helps"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-19",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-19.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Chen, known"
+        },
+        {
+          "label": "B",
+          "html": "Chen is known"
+        },
+        {
+          "label": "C",
+          "html": "Chen, was known"
+        },
+        {
+          "label": "D",
+          "html": "Chen was known"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-20",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-20.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Chulalongkorn that"
+        },
+        {
+          "label": "B",
+          "html": "Chulalongkorn;"
+        },
+        {
+          "label": "C",
+          "html": "Chulalongkorn"
+        },
+        {
+          "label": "D",
+          "html": "Chulalongkorn,"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-21",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-21.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "will range"
+        },
+        {
+          "label": "B",
+          "html": "ranging"
+        },
+        {
+          "label": "C",
+          "html": "range"
+        },
+        {
+          "label": "D",
+          "html": "can range"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-22",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-22.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Next,"
+        },
+        {
+          "label": "B",
+          "html": "Nevertheless,"
+        },
+        {
+          "label": "C",
+          "html": "Hence,"
+        },
+        {
+          "label": "D",
+          "html": "In reality,"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-23",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-23.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Nevertheless,"
+        },
+        {
+          "label": "B",
+          "html": "Additionally,"
+        },
+        {
+          "label": "C",
+          "html": "Ultimately,"
+        },
+        {
+          "label": "D",
+          "html": "For example,"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-24",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-24.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "By contrast,"
+        },
+        {
+          "label": "B",
+          "html": "Nevertheless,"
+        },
+        {
+          "label": "C",
+          "html": "As a result,"
+        },
+        {
+          "label": "D",
+          "html": "Specifically,"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-25",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-25.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Blurring this line,"
+        },
+        {
+          "label": "B",
+          "html": "Exemplifying this distinction,"
+        },
+        {
+          "label": "C",
+          "html": "Underscoring this difference,"
+        },
+        {
+          "label": "D",
+          "html": "Supporting this claim,"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-26",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-26.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "though,"
+        },
+        {
+          "label": "B",
+          "html": "therefore,"
+        },
+        {
+          "label": "C",
+          "html": "moreover,"
+        },
+        {
+          "label": "D",
+          "html": "for example,"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-27",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-27.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "On the other hand,"
+        },
+        {
+          "label": "B",
+          "html": "In addition,"
+        },
+        {
+          "label": "C",
+          "html": "At the same time,"
+        },
+        {
+          "label": "D",
+          "html": "Sometimes,"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m1-01",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-01.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "440"
+        },
+        {
+          "label": "B",
+          "html": "360"
+        },
+        {
+          "label": "C",
+          "html": "144"
+        },
+        {
+          "label": "D",
+          "html": "64"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m1-02",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m1-02.png\">",
+      "correctAnswer": "13"
+    },
+    {
+      "id": "math-m1-03",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-03.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m1-03-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m1-03-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m1-03-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m1-03-D.png\">"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m1-04",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m1-04.png\">",
+      "correctAnswer": "7"
+    },
+    {
+      "id": "math-m1-05",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-05.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m1-05-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m1-05-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m1-05-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m1-05-D.png\">"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m1-06",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m1-06.png\">",
+      "correctAnswer": "4"
+    },
+    {
+      "id": "math-m1-07",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-07.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "−9"
+        },
+        {
+          "label": "B",
+          "html": "−7"
+        },
+        {
+          "label": "C",
+          "html": "7"
+        },
+        {
+          "label": "D",
+          "html": "9"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m1-08",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-08.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m1-08-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m1-08-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m1-08-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m1-08-D.png\">"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m1-09",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-09.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "6 years after 1984, the predicted population of the city is approximately 56,120 people."
+        },
+        {
+          "label": "B",
+          "html": "6 years after 1984, the population of the city is predicted to decrease by approximately 56,120 people."
+        },
+        {
+          "label": "C",
+          "html": "Every 6 years after 1984, the population of the city is predicted to decrease by approximately 56,120 people."
+        },
+        {
+          "label": "D",
+          "html": "Every 6 years after 1984, the population of the city is predicted to increase by approximately 56,120 people."
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m1-10",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m1-10.png\">",
+      "correctAnswer": "30"
+    },
+    {
+      "id": "math-m1-11",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-11.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "14"
+        },
+        {
+          "label": "B",
+          "html": "39"
+        },
+        {
+          "label": "C",
+          "html": "64"
+        },
+        {
+          "label": "D",
+          "html": "89"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m1-12",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-12.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "24"
+        },
+        {
+          "label": "B",
+          "html": "21"
+        },
+        {
+          "label": "C",
+          "html": "18"
+        },
+        {
+          "label": "D",
+          "html": "15"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m1-13",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-13.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m1-13-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m1-13-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m1-13-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m1-13-D.png\">"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m1-14",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-14.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "20%"
+        },
+        {
+          "label": "B",
+          "html": "30%"
+        },
+        {
+          "label": "C",
+          "html": "75%"
+        },
+        {
+          "label": "D",
+          "html": "80%"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m1-15",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-15.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "13"
+        },
+        {
+          "label": "B",
+          "html": "39"
+        },
+        {
+          "label": "C",
+          "html": "169"
+        },
+        {
+          "label": "D",
+          "html": "507"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m1-16",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-16.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m1-16-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m1-16-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m1-16-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m1-16-D.png\">"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m1-17",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m1-17.png\">",
+      "correctAnswer": "14000"
+    },
+    {
+      "id": "math-m1-18",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-18.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "0.12"
+        },
+        {
+          "label": "B",
+          "html": "0.22"
+        },
+        {
+          "label": "C",
+          "html": "1.08"
+        },
+        {
+          "label": "D",
+          "html": "1.98"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m1-19",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-19.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "4"
+        },
+        {
+          "label": "B",
+          "html": "9"
+        },
+        {
+          "label": "C",
+          "html": "15"
+        },
+        {
+          "label": "D",
+          "html": "27"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m1-20",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-20.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m1-20-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m1-20-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m1-20-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m1-20-D.png\">"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m1-21",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-21.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m1-21-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m1-21-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m1-21-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m1-21-D.png\">"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m1-22",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-22.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m1-22-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m1-22-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m1-22-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m1-22-D.png\">"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-01",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-01.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m2-01-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m2-01-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m2-01-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m2-01-D.png\">"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m2-02",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m2-02.png\">",
+      "correctAnswer": "8"
+    },
+    {
+      "id": "math-m2-03",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-03.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "39"
+        },
+        {
+          "label": "B",
+          "html": "40"
+        },
+        {
+          "label": "C",
+          "html": "49"
+        },
+        {
+          "label": "D",
+          "html": "89"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m2-04",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-04.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The bookstore has 20 free books to give away."
+        },
+        {
+          "label": "B",
+          "html": "The bookstore will give away 20 free books in 10 days."
+        },
+        {
+          "label": "C",
+          "html": "It will take 20 days to give away all the free books."
+        },
+        {
+          "label": "D",
+          "html": "It will take 200 days to give away 20 free books."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m2-05",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m2-05.png\">",
+      "correctAnswer": "27"
+    },
+    {
+      "id": "math-m2-06",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-06.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "0"
+        },
+        {
+          "label": "B",
+          "html": "45"
+        },
+        {
+          "label": "C",
+          "html": "180"
+        },
+        {
+          "label": "D",
+          "html": "360"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-07",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-07.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "7"
+        },
+        {
+          "label": "B",
+          "html": "14"
+        },
+        {
+          "label": "C",
+          "html": "21"
+        },
+        {
+          "label": "D",
+          "html": "24"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m2-08",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-08.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Zero"
+        },
+        {
+          "label": "B",
+          "html": "Exactly one"
+        },
+        {
+          "label": "C",
+          "html": "Exactly two"
+        },
+        {
+          "label": "D",
+          "html": "Infinitely many"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m2-09",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-09.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m2-09-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m2-09-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m2-09-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m2-09-D.png\">"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-10",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-10.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m2-10-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m2-10-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m2-10-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m2-10-D.png\">"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-11",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m2-11.png\">",
+      "correctAnswer": "720"
+    },
+    {
+      "id": "math-m2-12",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-12.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "51"
+        },
+        {
+          "label": "B",
+          "html": "85.7"
+        },
+        {
+          "label": "C",
+          "html": "612"
+        },
+        {
+          "label": "D",
+          "html": "1,028.4"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m2-13",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m2-13.png\">",
+      "correctAnswer": "77.95"
+    },
+    {
+      "id": "math-m2-14",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-14.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "I only"
+        },
+        {
+          "label": "B",
+          "html": "II only"
+        },
+        {
+          "label": "C",
+          "html": "I and II"
+        },
+        {
+          "label": "D",
+          "html": "Neither I nor II"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m2-15",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-15.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "28"
+        },
+        {
+          "label": "B",
+          "html": "27"
+        },
+        {
+          "label": "C",
+          "html": "−27"
+        },
+        {
+          "label": "D",
+          "html": "−28"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m2-16",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-16.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m2-16-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m2-16-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m2-16-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m2-16-D.png\">"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m2-17",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-17.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m2-17-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m2-17-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m2-17-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m2-17-D.png\">"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-18",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-18.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m2-18-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m2-18-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m2-18-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m2-18-D.png\">"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m2-19",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-19.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The statistically significant difference in behavior between the two age groups was caused by aging."
+        },
+        {
+          "label": "B",
+          "html": "The statistically significant difference in behavior between the two age groups was caused by the differences in habitat."
+        },
+        {
+          "label": "C",
+          "html": "The statistically significant difference in behavior during early adolescence between the two groups of animals can be generalized to all guinea pigs and wild cavies."
+        },
+        {
+          "label": "D",
+          "html": "The statistically significant difference in behavior during early adolescence between the two groups of animals can only be generalized to the habitats in the study."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-20",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m2-20.png\">",
+      "correctAnswer": "1512"
+    },
+    {
+      "id": "math-m2-21",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m2-21.png\">",
+      "correctAnswer": "16"
+    },
+    {
+      "id": "math-m2-22",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-22.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m2-22-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m2-22-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m2-22-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m2-22-D.png\">"
+        }
+      ],
+      "correctAnswer": "B"
+    }
+  ]
+}

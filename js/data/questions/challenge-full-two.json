@@ -8,6 +8,24 @@
       "questionNumber": 1,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-01.png\" alt=\"Question 1\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "elevated from"
+        },
+        {
+          "label": "B",
+          "html": "surpassed by"
+        },
+        {
+          "label": "C",
+          "html": "differentiated from"
+        },
+        {
+          "label": "D",
+          "html": "explored by"
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/rw-m1-01.png"
@@ -21,6 +39,24 @@
       "questionNumber": 2,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-02.png\" alt=\"Question 2\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "interpret"
+        },
+        {
+          "label": "B",
+          "html": "overshadow"
+        },
+        {
+          "label": "C",
+          "html": "hasten"
+        },
+        {
+          "label": "D",
+          "html": "transform"
+        }
+      ],
       "correctAnswer": "D",
       "assetPaths": [
         "challenge-full-two/rw-m1-02.png"
@@ -34,6 +70,24 @@
       "questionNumber": 3,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-03.png\" alt=\"Question 3\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "reprimanded"
+        },
+        {
+          "label": "B",
+          "html": "adhered to"
+        },
+        {
+          "label": "C",
+          "html": "awarded"
+        },
+        {
+          "label": "D",
+          "html": "refrained from"
+        }
+      ],
       "correctAnswer": "B",
       "assetPaths": [
         "challenge-full-two/rw-m1-03.png"
@@ -47,6 +101,24 @@
       "questionNumber": 4,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-04.png\" alt=\"Question 4\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "indicative of"
+        },
+        {
+          "label": "B",
+          "html": "incongruous with"
+        },
+        {
+          "label": "C",
+          "html": "subordinate to"
+        },
+        {
+          "label": "D",
+          "html": "opportune for"
+        }
+      ],
       "correctAnswer": "B",
       "assetPaths": [
         "challenge-full-two/rw-m1-04.png"
@@ -60,6 +132,24 @@
       "questionNumber": 5,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-05.png\" alt=\"Question 5\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "discrepancy"
+        },
+        {
+          "label": "B",
+          "html": "insolvency"
+        },
+        {
+          "label": "C",
+          "html": "redundancy"
+        },
+        {
+          "label": "D",
+          "html": "vulnerability"
+        }
+      ],
       "correctAnswer": "D",
       "assetPaths": [
         "challenge-full-two/rw-m1-05.png"
@@ -73,6 +163,24 @@
       "questionNumber": 6,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-06.png\" alt=\"Question 6\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "supplement"
+        },
+        {
+          "label": "B",
+          "html": "supersede"
+        },
+        {
+          "label": "C",
+          "html": "replicate"
+        },
+        {
+          "label": "D",
+          "html": "complicate"
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
         "challenge-full-two/rw-m1-06.png"
@@ -86,6 +194,24 @@
       "questionNumber": 7,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-07.png\" alt=\"Question 7\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It discusses some characteristics of cones in human eyes and then discusses a study involving those cones."
+        },
+        {
+          "label": "B",
+          "html": "It explains what the color olo is and then explains how that color was discovered."
+        },
+        {
+          "label": "C",
+          "html": "It mentions three different colors and then mentions the wavelengths associated with those colors."
+        },
+        {
+          "label": "D",
+          "html": "It names different cells in human eyes and then states how they work with cells in a different part of the body."
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
         "challenge-full-two/rw-m1-07.png"
@@ -99,6 +225,24 @@
       "questionNumber": 8,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-08.png\" alt=\"Question 8\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It provides evidence for the text's claim that the Lindy Hop has had a greater cultural impact than the other dances featured in The Jazz Continuum have had."
+        },
+        {
+          "label": "B",
+          "html": "It identifies the specific ways in which the Lindy Hop is similar to the contemporary dance styles discussed in the text."
+        },
+        {
+          "label": "C",
+          "html": "It addresses the reasons why the historical connections between the dance styles mentioned earlier in the text have been generally overlooked."
+        },
+        {
+          "label": "D",
+          "html": "It identifies the motivation for The Jazz Continuum's choreographic approach that is described earlier in the text."
+        }
+      ],
       "correctAnswer": "D",
       "assetPaths": [
         "challenge-full-two/rw-m1-08.png"
@@ -112,6 +256,24 @@
       "questionNumber": 9,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-09.png\" alt=\"Question 9\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It identifies the specific ways in which the Lindy Hop is similar to the contemporary dance styles discussed in the text."
+        },
+        {
+          "label": "B",
+          "html": "It identifies the motivation for The Jazz Continuum's choreographic approach that is described earlier in the text."
+        },
+        {
+          "label": "C",
+          "html": "It provides evidence for the text's claim that the Lindy Hop has had a greater cultural impact than the other dances featured in The Jazz Continuum have had."
+        },
+        {
+          "label": "D",
+          "html": "It addresses the reasons why the historical connections between the dance styles mentioned earlier in the text have been generally overlooked."
+        }
+      ],
       "correctAnswer": "B",
       "assetPaths": [
         "challenge-full-two/rw-m1-09.png"
@@ -125,6 +287,24 @@
       "questionNumber": 10,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-10.png\" alt=\"Question 10\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "To describe the importance of intellectual humility to scientists"
+        },
+        {
+          "label": "B",
+          "html": "To explain how a specific project fosters intellectual humility"
+        },
+        {
+          "label": "C",
+          "html": "To cite specific examples of scientists who acknowledged flaws in their work"
+        },
+        {
+          "label": "D",
+          "html": "To identify a particular mistake made by scientists in a research project"
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
         "challenge-full-two/rw-m1-10.png"
@@ -138,6 +318,24 @@
       "questionNumber": 11,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-11.png\" alt=\"Question 11\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "They would argue that the apparent difference in prevalence may partly reflect a difference in the ease with which female birdsong and male birdsong can be detected."
+        },
+        {
+          "label": "B",
+          "html": "They would concede that the geographic difference in prevalence is real but argue that the frequency with which male tropical birds sing has been overstated by previous researchers."
+        },
+        {
+          "label": "C",
+          "html": "They would raise the possibility that the difference in prevalence may be due to differences in the timing of the mating season among temperate and tropical bird species."
+        },
+        {
+          "label": "D",
+          "html": "They would caution that the seeming difference in prevalence may be an artifact of researchers' tendency to study birdsong among temperate species more frequently than among tropical species."
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
         "challenge-full-two/rw-m1-11.png"
@@ -151,6 +349,24 @@
       "questionNumber": 12,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-12.png\" alt=\"Question 12\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It has been challenged by some studies, but the findings of those studies have not been widely accepted."
+        },
+        {
+          "label": "B",
+          "html": "It may be true for some predators but only because those predators share certain physical characteristics."
+        },
+        {
+          "label": "C",
+          "html": "It has some evidential support, but it should not be regarded as universally applicable."
+        },
+        {
+          "label": "D",
+          "html": "It is plausible, but many of the studies that support it have methodological flaws."
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/rw-m1-12.png"
@@ -164,6 +380,24 @@
       "questionNumber": 13,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-13.png\" alt=\"Question 13\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "There are many beautiful parks in cities, but they often remain unseen because of poor urban planning decisions."
+        },
+        {
+          "label": "B",
+          "html": "The environmental interactions in city parks are abundant but occur primarily during nighttime hours when human visitors are absent."
+        },
+        {
+          "label": "C",
+          "html": "The ecological relationships in city parks may not be readily apparent without systematic observation and documentation efforts."
+        },
+        {
+          "label": "D",
+          "html": "Some wildlife species that populate city parks have developed sophisticated camouflage techniques that minimize their visibility."
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/rw-m1-13.png"
@@ -177,6 +411,24 @@
       "questionNumber": 14,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-14.png\" alt=\"Question 14\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Its rejection of established aesthetic criteria can be traced to Uman's ambivalence toward cultural traditions."
+        },
+        {
+          "label": "B",
+          "html": "Its adherence to certain dichotomies sets it apart from the work of most abstract artists based in the United States."
+        },
+        {
+          "label": "C",
+          "html": "Its openness to experimentation is evident in its diverse influences and refusal to adhere to a single conceptual frame."
+        },
+        {
+          "label": "D",
+          "html": "Its spontaneity makes it challenging for critics to recognize the conventions of genre that Uman chooses to observe."
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/rw-m1-14.png"
@@ -190,6 +442,24 @@
       "questionNumber": 15,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-15.png\" alt=\"Question 15\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Switzerland."
+        },
+        {
+          "label": "B",
+          "html": "India."
+        },
+        {
+          "label": "C",
+          "html": "the United States."
+        },
+        {
+          "label": "D",
+          "html": "Kenya."
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
         "challenge-full-two/rw-m1-15.png"
@@ -203,6 +473,24 @@
       "questionNumber": 16,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-16.png\" alt=\"Question 16\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It allowed the researchers to control for the possibility that some participants found the two faces roughly equally attractive."
+        },
+        {
+          "label": "B",
+          "html": "It helped the researchers test whether participants would embrace an outcome they thought was consistent with their intention even when it was truly contradictory."
+        },
+        {
+          "label": "C",
+          "html": "It enabled the researchers to determine whether the thought process involved in selecting which photo had the more attractive face was similar to the thought process involved in selecting a preferred jam."
+        },
+        {
+          "label": "D",
+          "html": "It allowed the researchers to measure the willingness of participants to change their positions when presented with persuasive counterarguments."
+        }
+      ],
       "correctAnswer": "B",
       "assetPaths": [
         "challenge-full-two/rw-m1-16.png"
@@ -216,6 +504,24 @@
       "questionNumber": 17,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-17.png\" alt=\"Question 17\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "provided"
+        },
+        {
+          "label": "B",
+          "html": "providing"
+        },
+        {
+          "label": "C",
+          "html": "to provide"
+        },
+        {
+          "label": "D",
+          "html": "having provided"
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
         "challenge-full-two/rw-m1-17.png"
@@ -229,6 +535,24 @@
       "questionNumber": 18,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-18.png\" alt=\"Question 18\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "the Petén LiDAR initiative revealed"
+        },
+        {
+          "label": "B",
+          "html": "previously unrecorded structures were discovered by researchers with"
+        },
+        {
+          "label": "C",
+          "html": "the discovery of fortifications was made by archaeologists in"
+        },
+        {
+          "label": "D",
+          "html": "domestic terraces and causeways were documented through"
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
         "challenge-full-two/rw-m1-18.png"
@@ -242,6 +566,24 @@
       "questionNumber": 19,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-19.png\" alt=\"Question 19\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "should they open?"
+        },
+        {
+          "label": "B",
+          "html": "they should open."
+        },
+        {
+          "label": "C",
+          "html": "should they open."
+        },
+        {
+          "label": "D",
+          "html": "they should open?"
+        }
+      ],
       "correctAnswer": "B",
       "assetPaths": [
         "challenge-full-two/rw-m1-19.png"
@@ -255,6 +597,24 @@
       "questionNumber": 20,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-20.png\" alt=\"Question 20\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Picasso;"
+        },
+        {
+          "label": "B",
+          "html": "Picasso—"
+        },
+        {
+          "label": "C",
+          "html": "Picasso:"
+        },
+        {
+          "label": "D",
+          "html": "Picasso,"
+        }
+      ],
       "correctAnswer": "B",
       "assetPaths": [
         "challenge-full-two/rw-m1-20.png"
@@ -268,6 +628,24 @@
       "questionNumber": 21,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-21.png\" alt=\"Question 21\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "efficiency"
+        },
+        {
+          "label": "B",
+          "html": "efficiency."
+        },
+        {
+          "label": "C",
+          "html": "efficiency;"
+        },
+        {
+          "label": "D",
+          "html": "efficiency, but"
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/rw-m1-21.png"
@@ -281,6 +659,24 @@
       "questionNumber": 22,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-22.png\" alt=\"Question 22\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "In contrast,"
+        },
+        {
+          "label": "B",
+          "html": "For instance,"
+        },
+        {
+          "label": "C",
+          "html": "As a result,"
+        },
+        {
+          "label": "D",
+          "html": "Furthermore,"
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
         "challenge-full-two/rw-m1-22.png"
@@ -294,6 +690,24 @@
       "questionNumber": 23,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-23.png\" alt=\"Question 23\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "therefore,"
+        },
+        {
+          "label": "B",
+          "html": "nevertheless,"
+        },
+        {
+          "label": "C",
+          "html": "indeed,"
+        },
+        {
+          "label": "D",
+          "html": "conversely,"
+        }
+      ],
       "correctAnswer": "D",
       "assetPaths": [
         "challenge-full-two/rw-m1-23.png"
@@ -307,6 +721,24 @@
       "questionNumber": 24,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-24.png\" alt=\"Question 24\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Indeed,"
+        },
+        {
+          "label": "B",
+          "html": "Similarly,"
+        },
+        {
+          "label": "C",
+          "html": "In many cases,"
+        },
+        {
+          "label": "D",
+          "html": "Therefore,"
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/rw-m1-24.png"
@@ -320,6 +752,24 @@
       "questionNumber": 25,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-25.png\" alt=\"Question 25\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Between the World and Me and Roots: The Saga of an American Family are both books by Black authors that have reached the NYT Best Sellers list."
+        },
+        {
+          "label": "B",
+          "html": "Ta-Nehisi Coates and Alex Haley are both NYT best-selling authors."
+        },
+        {
+          "label": "C",
+          "html": "The novel Roots: The Saga of an American Family became an NYT best seller in 1976; Between the World and Me, a nonfiction book, joined this list as well, but in 2015."
+        },
+        {
+          "label": "D",
+          "html": "Ta-Nehisi Coates's Between the World and Me and Alex Haley's Roots: The Saga of an American Family are both NYT best sellers, but the former is a nonfiction book whereas the latter is a novel."
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/rw-m1-25.png"
@@ -333,6 +783,24 @@
       "questionNumber": 26,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-26.png\" alt=\"Question 26\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Nakatsu's observation of kingfishers diving into water showed how the bird's beak structure could help the train eliminate sonic booms."
+        },
+        {
+          "label": "B",
+          "html": "The shape of the kingfisher's beak inspired engineers to reshape the train nose into one that gradually widens, allowing the train to move smoothly between air and water."
+        },
+        {
+          "label": "C",
+          "html": "By redesigning the train's nose to imitate the kingfisher's gradually widening beak shape, engineers improved the train's transition between tunnels and open air, eliminating sonic booms."
+        },
+        {
+          "label": "D",
+          "html": "Nakatsu discovered that the kingfisher's beak structure eliminated sonic booms, and the redesign improved the train's transition between tunnel and open-air environments."
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/rw-m1-26.png"
@@ -346,6 +814,24 @@
       "questionNumber": 27,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m1-27.png\" alt=\"Question 27\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "From 1863 to 1881, the nighttime waters of Maryland were made more navigable thanks to Esther O'Neill."
+        },
+        {
+          "label": "B",
+          "html": "As the lighthouse keeper at Turkey Point Light, Fannie May Salter helped watercraft navigate at night."
+        },
+        {
+          "label": "C",
+          "html": "Esther O'Neill worked as a lighthouse keeper in an earlier century than did Fannie May Salter."
+        },
+        {
+          "label": "D",
+          "html": "Esther O'Neill and Fannie May Salter both played crucial roles in ensuring safe navigation for watercraft in past centuries."
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/rw-m1-27.png"
@@ -359,6 +845,24 @@
       "questionNumber": 1,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-01.png\" alt=\"Question 1\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "imperceptible"
+        },
+        {
+          "label": "B",
+          "html": "invariable"
+        },
+        {
+          "label": "C",
+          "html": "malicious"
+        },
+        {
+          "label": "D",
+          "html": "ambiguous"
+        }
+      ],
       "correctAnswer": "D",
       "assetPaths": [
         "challenge-full-two/rw-m2-01.png"
@@ -372,6 +876,24 @@
       "questionNumber": 2,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-02.png\" alt=\"Question 2\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "detangling"
+        },
+        {
+          "label": "B",
+          "html": "evacuating"
+        },
+        {
+          "label": "C",
+          "html": "designating"
+        },
+        {
+          "label": "D",
+          "html": "bracing"
+        }
+      ],
       "correctAnswer": "B",
       "assetPaths": [
         "challenge-full-two/rw-m2-02.png"
@@ -385,6 +907,24 @@
       "questionNumber": 3,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-03.png\" alt=\"Question 3\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "entitled"
+        },
+        {
+          "label": "B",
+          "html": "prone"
+        },
+        {
+          "label": "C",
+          "html": "loath"
+        },
+        {
+          "label": "D",
+          "html": "admonished"
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/rw-m2-03.png"
@@ -398,6 +938,24 @@
       "questionNumber": 4,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-04.png\" alt=\"Question 4\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "unresponsive"
+        },
+        {
+          "label": "B",
+          "html": "detrimental"
+        },
+        {
+          "label": "C",
+          "html": "pertinent"
+        },
+        {
+          "label": "D",
+          "html": "amenable"
+        }
+      ],
       "correctAnswer": "D",
       "assetPaths": [
         "challenge-full-two/rw-m2-04.png"
@@ -411,6 +969,24 @@
       "questionNumber": 5,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-05.png\" alt=\"Question 5\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "amenable"
+        },
+        {
+          "label": "B",
+          "html": "unresponsive"
+        },
+        {
+          "label": "C",
+          "html": "pertinent"
+        },
+        {
+          "label": "D",
+          "html": "detrimental"
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
         "challenge-full-two/rw-m2-05.png"
@@ -424,6 +1000,24 @@
       "questionNumber": 6,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-06.png\" alt=\"Question 6\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It suggests an advantage that microwave heating has over conventional thermal processing methods."
+        },
+        {
+          "label": "B",
+          "html": "It identifies a flaw of microwave heating technologies."
+        },
+        {
+          "label": "C",
+          "html": "It introduces microwave heating as a food processing technology."
+        },
+        {
+          "label": "D",
+          "html": "It explains why conventional thermal processing methods are popular in commercial applications."
+        }
+      ],
       "correctAnswer": "B",
       "assetPaths": [
         "challenge-full-two/rw-m2-06.png"
@@ -437,6 +1031,24 @@
       "questionNumber": 7,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-07.png\" alt=\"Question 7\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It identifies several positive emotions and then asserts that positive expressive writing should be done daily to amplify those emotions."
+        },
+        {
+          "label": "B",
+          "html": "It gives an overview of positive expressive writing and then states a research finding about this type of writing."
+        },
+        {
+          "label": "C",
+          "html": "It introduces a study about positive expressive writing and then explains that the researchers are planning a follow-up study."
+        },
+        {
+          "label": "D",
+          "html": "It describes one popular technique of positive expressive writing and then names the techniques researchers have found to be most useful."
+        }
+      ],
       "correctAnswer": "B",
       "assetPaths": [
         "challenge-full-two/rw-m2-07.png"
@@ -450,6 +1062,24 @@
       "questionNumber": 8,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-08.png\" alt=\"Question 8\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Both texts establish that people need to be made aware of the specific ways global issues are likely to affect them individually, but Text 1 focuses on the empathy those details inspire and Text 2 focuses on the obligation those details entail."
+        },
+        {
+          "label": "B",
+          "html": "Both texts suggest that embracing commonalities can be beneficial when it comes to urging people to collective action to address global issues, but Text 1 focuses on the broadest scope of connection and Text 2 focuses on connections more limited in scope."
+        },
+        {
+          "label": "C",
+          "html": "Both texts imply that global issues are equally relevant to all people living today, but Text 1 focuses on the idea that such issues will remain broadly relevant for the foreseeable future and Text 2 focuses on the idea that certain issues may soon become less relevant."
+        },
+        {
+          "label": "D",
+          "html": "Both texts indicate that global issues should be addressed with large-scale shared efforts, but Text 1 focuses on the idea that it may be most effective to link global and local coordination and Text 2 focuses on the idea that local efforts sometimes divert attention from broader coordination."
+        }
+      ],
       "correctAnswer": "B",
       "assetPaths": [
         "challenge-full-two/rw-m2-08.png"
@@ -463,6 +1093,24 @@
       "questionNumber": 9,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-09.png\" alt=\"Question 9\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Neither butterfly color nor weather conditions"
+        },
+        {
+          "label": "B",
+          "html": "Both butterfly color and weather conditions"
+        },
+        {
+          "label": "C",
+          "html": "Weather conditions but not butterfly color"
+        },
+        {
+          "label": "D",
+          "html": "Butterfly color but not weather conditions"
+        }
+      ],
       "correctAnswer": "B",
       "assetPaths": [
         "challenge-full-two/rw-m2-09.png"
@@ -476,6 +1124,24 @@
       "questionNumber": 10,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-10.png\" alt=\"Question 10\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "shows evidence of increasing continental crust material in later-forming minerals."
+        },
+        {
+          "label": "B",
+          "html": "does not show the expected 87Sr/86Sr ratios across the stages of mineral formation."
+        },
+        {
+          "label": "C",
+          "html": "contains 87Sr/86Sr ratios too similar to provide reliable information about magma sources."
+        },
+        {
+          "label": "D",
+          "html": "formed from magma with decreasing but persistent crustal influence."
+        }
+      ],
       "correctAnswer": "D",
       "assetPaths": [
         "challenge-full-two/rw-m2-10.png"
@@ -489,6 +1155,24 @@
       "questionNumber": 11,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-11.png\" alt=\"Question 11\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "4:30–7:30 p.m. for previously restricted roads."
+        },
+        {
+          "label": "B",
+          "html": "10:00 a.m.–4:30 p.m. for previously unrestricted roads."
+        },
+        {
+          "label": "C",
+          "html": "7:00–10:00 a.m. for both types of roads."
+        },
+        {
+          "label": "D",
+          "html": "7:00–8:00 p.m. for both types of roads."
+        }
+      ],
       "correctAnswer": "D",
       "assetPaths": [
         "challenge-full-two/rw-m2-11.png"
@@ -502,6 +1186,24 @@
       "questionNumber": 12,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-12.png\" alt=\"Question 12\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The continent-wide population structure of modern dingoes matches that of the dingoes that were present in Australia around 2,000 years ago."
+        },
+        {
+          "label": "B",
+          "html": "Ancient dingoes quickly dispersed throughout Australia after being introduced in two independent waves from distinct source populations at least 3,000 years ago."
+        },
+        {
+          "label": "C",
+          "html": "The two earliest known sets of skeletal dingo remains in Australia date to around 3,400 years ago at a site in the west and around 3,300 years ago ata site in the east."
+        },
+        {
+          "label": "D",
+          "html": "New Guinea singing dogs, a closely related species, began interbreeding with dingoes in southeast Australia 2,200–2,600 years ago and with dingoes in northwest Australia in the same period."
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
         "challenge-full-two/rw-m2-12.png"
@@ -515,6 +1217,24 @@
       "questionNumber": 13,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-13.png\" alt=\"Question 13\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The range of Ge/Si ratios is larger for the cements than for the grains, which suggests that the cements are likely the result of high-pressure reactions that occurred long after the organisms were preserved by some other means than precipitation from a silica-rich ocean."
+        },
+        {
+          "label": "B",
+          "html": "The distribution of Ge/Si ratios indicates that a portion of the cements could have precipitated via high-pressure reactions, which suggests that organisms at the site were less likely to have been preserved via rapid precipitation from a silica-rich ocean than Tarhan et al. hypothesized."
+        },
+        {
+          "label": "C",
+          "html": "The distribution of Ge/Si ratios of the cements and grains is largely inconsistent with the cements having precipitated via high-pressure reactions, which implicitly lends support to the idea that the organisms at the site were quickly preserved by cement precipitation from a silica-rich ocean."
+        },
+        {
+          "label": "D",
+          "html": "The total number of cement samples is much lower than the total number of grains precipitated via high-pressure reactions, which suggests that rapid precipitation from silica-rich oceans could account for the preservation of the site's organisms."
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/rw-m2-13.png"
@@ -528,6 +1248,24 @@
       "questionNumber": 14,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-14.png\" alt=\"Question 14\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "the number of buildings at Çatalhöyük would have been sufficient to accommodate a population that expanded from 8,000 to 10,000 inhabitants by 5950 BCE."
+        },
+        {
+          "label": "B",
+          "html": "the use of mud bricks is a reliable indicator that a structure had been used either as a dwelling or for nonresidential purposes."
+        },
+        {
+          "label": "C",
+          "html": "the density of excavated buildings at Çatalhöyük can serve as a proxy for how many people inhabited the village at a given time."
+        },
+        {
+          "label": "D",
+          "html": "the buildings excavated at Çatalhöyük at the time of Mellaart's research had served a residential purpose as early as 7100 BCE."
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/rw-m2-14.png"
@@ -541,6 +1279,24 @@
       "questionNumber": 15,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-15.png\" alt=\"Question 15\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "the nitrogen storage environment in which the Bennu material was transported may have facilitated the formation of sodium-rich evaporites that then deteriorated when exposed to atmospheric humidity typical of most nondesert locations on Earth."
+        },
+        {
+          "label": "B",
+          "html": "the sodium evaporite concentrations on Bennu may have once been similar to those on recovered chondrites, but exposure to Earth's atmospheric humidity affected Bennu's evaporites and led to new compound formation."
+        },
+        {
+          "label": "C",
+          "html": "sodium-rich evaporites are scarce on recovered chondrites in part due to the length of time those chondrites have been exposed to much lower humidity levels than those typically found on Earth."
+        },
+        {
+          "label": "D",
+          "html": "the discrepancy between sodium evaporite concentrations on recovered chondrites and those initially observed on the Bennu material may be attributable to the chondrites' exposure to atmospheric humidity typical of many Earth environments."
+        }
+      ],
       "correctAnswer": "D",
       "assetPaths": [
         "challenge-full-two/rw-m2-15.png"
@@ -554,6 +1310,24 @@
       "questionNumber": 16,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-16.png\" alt=\"Question 16\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "less-affluent citizens were reluctant to risk incurring a fine and thus voluntarily complied with the laws even in the absence of regular enforcement."
+        },
+        {
+          "label": "B",
+          "html": "the few fines that were imposed under the laws were tolerable to wealthy offenders and thus did not help the laws serve their intended purpose."
+        },
+        {
+          "label": "C",
+          "html": "authorities focused enforcement on the wealthiest offenders, recognizing that pursuing offenders who were unable to pay the fines could weaken fines' effectiveness as a deterrent."
+        },
+        {
+          "label": "D",
+          "html": "the public announcement of fines could signal offenders' wealth and status, placing enforcement of the laws in conflict with their intent."
+        }
+      ],
       "correctAnswer": "D",
       "assetPaths": [
         "challenge-full-two/rw-m2-16.png"
@@ -567,6 +1341,24 @@
       "questionNumber": 17,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-17.png\" alt=\"Question 17\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "to realize"
+        },
+        {
+          "label": "B",
+          "html": "are realizing"
+        },
+        {
+          "label": "C",
+          "html": "is to realize"
+        },
+        {
+          "label": "D",
+          "html": "realizing"
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/rw-m2-17.png"
@@ -580,6 +1372,24 @@
       "questionNumber": 18,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-18.png\" alt=\"Question 18\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "they're"
+        },
+        {
+          "label": "B",
+          "html": "their"
+        },
+        {
+          "label": "C",
+          "html": "its"
+        },
+        {
+          "label": "D",
+          "html": "it's"
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/rw-m2-18.png"
@@ -593,6 +1403,24 @@
       "questionNumber": 19,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-19.png\" alt=\"Question 19\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "goal. Catching"
+        },
+        {
+          "label": "B",
+          "html": "goal: catching"
+        },
+        {
+          "label": "C",
+          "html": "goal; catching"
+        },
+        {
+          "label": "D",
+          "html": "goal catching"
+        }
+      ],
       "correctAnswer": "B",
       "assetPaths": [
         "challenge-full-two/rw-m2-19.png"
@@ -606,6 +1434,24 @@
       "questionNumber": 20,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-20.png\" alt=\"Question 20\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "paleogeneticist Emrah Kurdök"
+        },
+        {
+          "label": "B",
+          "html": "paleogeneticist, Emrah Kurdök"
+        },
+        {
+          "label": "C",
+          "html": "paleogeneticist, Emrah Kurdök,"
+        },
+        {
+          "label": "D",
+          "html": "paleogeneticist Emrah Kurdök,"
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
         "challenge-full-two/rw-m2-20.png"
@@ -619,6 +1465,24 @@
       "questionNumber": 21,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-21.png\" alt=\"Question 21\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "paintings;"
+        },
+        {
+          "label": "B",
+          "html": "paintings"
+        },
+        {
+          "label": "C",
+          "html": "paintings."
+        },
+        {
+          "label": "D",
+          "html": "paintings,"
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
         "challenge-full-two/rw-m2-21.png"
@@ -632,6 +1496,24 @@
       "questionNumber": 22,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-22.png\" alt=\"Question 22\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "plates, each was"
+        },
+        {
+          "label": "B",
+          "html": "plates; each being"
+        },
+        {
+          "label": "C",
+          "html": "plates, each"
+        },
+        {
+          "label": "D",
+          "html": "plates; each"
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/rw-m2-22.png"
@@ -645,6 +1527,24 @@
       "questionNumber": 23,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-23.png\" alt=\"Question 23\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "as a result,"
+        },
+        {
+          "label": "B",
+          "html": "for instance,"
+        },
+        {
+          "label": "C",
+          "html": "in addition,"
+        },
+        {
+          "label": "D",
+          "html": "however,"
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
         "challenge-full-two/rw-m2-23.png"
@@ -658,6 +1558,24 @@
       "questionNumber": 24,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-24.png\" alt=\"Question 24\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Likewise,"
+        },
+        {
+          "label": "B",
+          "html": "Nevertheless,"
+        },
+        {
+          "label": "C",
+          "html": "Thus,"
+        },
+        {
+          "label": "D",
+          "html": "Indeed,"
+        }
+      ],
       "correctAnswer": "D",
       "assetPaths": [
         "challenge-full-two/rw-m2-24.png"
@@ -671,6 +1589,24 @@
       "questionNumber": 25,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-25.png\" alt=\"Question 25\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Ta-Nehisi Coates and Tayari Jones are both NYT best-selling authors."
+        },
+        {
+          "label": "B",
+          "html": "Ta-Nehisi Coates's Between the World and Me and Tayari Jones's An American Marriage are both NYT best sellers, but the former is a nonfiction book, whereas the latter is a novel."
+        },
+        {
+          "label": "C",
+          "html": "The nonfiction book Between the World and Me became an NYT best seller in 2015; An American Marriage, a novel, joined this list as well, but in 2018."
+        },
+        {
+          "label": "D",
+          "html": "Between the World and Me and An American Marriage are both books by Black authors that have reached the NYT Best Sellers list."
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/rw-m2-25.png"
@@ -684,6 +1620,24 @@
       "questionNumber": 26,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-26.png\" alt=\"Question 26\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Nakatsu discovered that the kingfisher's beak structure eliminated sonic booms, and the redesign improved the train's transition between tunnel and open-air environments."
+        },
+        {
+          "label": "B",
+          "html": "Nakatsu's observation of kingfishers diving into water showed how the bird's beak structure could help the train eliminate sonic booms."
+        },
+        {
+          "label": "C",
+          "html": "By redesigning the train's nose to imitate the kingfisher's gradually widening beak shape, engineers improved the train's transition between tunnels and open air, eliminating sonic booms."
+        },
+        {
+          "label": "D",
+          "html": "The shape of the kingfisher's beak inspired engineers to reshape the train nose into one that gradually widens, allowing the train to move smoothly between air and water."
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/rw-m2-26.png"
@@ -697,6 +1651,24 @@
       "questionNumber": 27,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/rw-m2-27.png\" alt=\"Question 27\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Both New Hampshire and Arrowsmith are in the public domain; however, one is a poetry collection and the other a novel."
+        },
+        {
+          "label": "B",
+          "html": "The year was 2021, and the copyright to Sinclair Lewis's Arrowsmith had finally expired."
+        },
+        {
+          "label": "C",
+          "html": "New Hampshire, a poetry collection by Robert Frost, entered the public domain in 2019, unlike Sinclair Lewis's novel Arrowsmith."
+        },
+        {
+          "label": "D",
+          "html": "Robert Frost and Sinclair Lewis are two authors whose works recently entered the public domain."
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
         "challenge-full-two/rw-m2-27.png"
@@ -723,9 +1695,31 @@
       "questionNumber": 2,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m1-02.png\" alt=\"Question 2\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"challenge-full-two/math-m1-02-A.png\" alt=\"Choice A\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"challenge-full-two/math-m1-02-B.png\" alt=\"Choice B\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"challenge-full-two/math-m1-02-C.png\" alt=\"Choice C\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"challenge-full-two/math-m1-02-D.png\" alt=\"Choice D\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        }
+      ],
       "correctAnswer": "D",
       "assetPaths": [
-        "challenge-full-two/math-m1-02.png"
+        "challenge-full-two/math-m1-02.png",
+        "challenge-full-two/math-m1-02-A.png",
+        "challenge-full-two/math-m1-02-B.png",
+        "challenge-full-two/math-m1-02-C.png",
+        "challenge-full-two/math-m1-02-D.png"
       ],
       "explanationHtml": ""
     },
@@ -736,9 +1730,31 @@
       "questionNumber": 3,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m1-03.png\" alt=\"Question 3\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"challenge-full-two/math-m1-03-A.png\" alt=\"Choice A\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"challenge-full-two/math-m1-03-B.png\" alt=\"Choice B\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"challenge-full-two/math-m1-03-C.png\" alt=\"Choice C\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"challenge-full-two/math-m1-03-D.png\" alt=\"Choice D\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
-        "challenge-full-two/math-m1-03.png"
+        "challenge-full-two/math-m1-03.png",
+        "challenge-full-two/math-m1-03-A.png",
+        "challenge-full-two/math-m1-03-B.png",
+        "challenge-full-two/math-m1-03-C.png",
+        "challenge-full-two/math-m1-03-D.png"
       ],
       "explanationHtml": ""
     },
@@ -749,6 +1765,24 @@
       "questionNumber": 4,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m1-04.png\" alt=\"Question 4\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "I only"
+        },
+        {
+          "label": "B",
+          "html": "II only"
+        },
+        {
+          "label": "C",
+          "html": "I and II"
+        },
+        {
+          "label": "D",
+          "html": "Neither I nor II"
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
         "challenge-full-two/math-m1-04.png"
@@ -762,6 +1796,24 @@
       "questionNumber": 5,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m1-05.png\" alt=\"Question 5\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "42"
+        },
+        {
+          "label": "B",
+          "html": "56"
+        },
+        {
+          "label": "C",
+          "html": "112"
+        },
+        {
+          "label": "D",
+          "html": "224"
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/math-m1-05.png"
@@ -775,6 +1827,24 @@
       "questionNumber": 6,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m1-06.png\" alt=\"Question 6\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "0.5455"
+        },
+        {
+          "label": "B",
+          "html": "0.6600"
+        },
+        {
+          "label": "C",
+          "html": "0.8409"
+        },
+        {
+          "label": "D",
+          "html": "1.1766"
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/math-m1-06.png"
@@ -788,6 +1858,24 @@
       "questionNumber": 7,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m1-07.png\" alt=\"Question 7\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The margin of error is less than 3.7%."
+        },
+        {
+          "label": "B",
+          "html": "The margin of error is 7.4%."
+        },
+        {
+          "label": "C",
+          "html": "The margin of error is greater than 19%."
+        },
+        {
+          "label": "D",
+          "html": "The margin of error is 38%."
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
         "challenge-full-two/math-m1-07.png"
@@ -801,6 +1889,24 @@
       "questionNumber": 8,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m1-08.png\" alt=\"Question 8\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "0"
+        },
+        {
+          "label": "B",
+          "html": "1"
+        },
+        {
+          "label": "C",
+          "html": "10"
+        },
+        {
+          "label": "D",
+          "html": "23"
+        }
+      ],
       "correctAnswer": "B",
       "assetPaths": [
         "challenge-full-two/math-m1-08.png"
@@ -840,9 +1946,31 @@
       "questionNumber": 11,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m1-11.png\" alt=\"Question 11\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"challenge-full-two/math-m1-11-A.png\" alt=\"Choice A\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"challenge-full-two/math-m1-11-B.png\" alt=\"Choice B\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"challenge-full-two/math-m1-11-C.png\" alt=\"Choice C\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"challenge-full-two/math-m1-11-D.png\" alt=\"Choice D\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
-        "challenge-full-two/math-m1-11.png"
+        "challenge-full-two/math-m1-11.png",
+        "challenge-full-two/math-m1-11-A.png",
+        "challenge-full-two/math-m1-11-B.png",
+        "challenge-full-two/math-m1-11-C.png",
+        "challenge-full-two/math-m1-11-D.png"
       ],
       "explanationHtml": ""
     },
@@ -879,9 +2007,31 @@
       "questionNumber": 14,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m1-14.png\" alt=\"Question 14\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"challenge-full-two/math-m1-14-A.png\" alt=\"Choice A\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"challenge-full-two/math-m1-14-B.png\" alt=\"Choice B\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"challenge-full-two/math-m1-14-C.png\" alt=\"Choice C\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"challenge-full-two/math-m1-14-D.png\" alt=\"Choice D\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        }
+      ],
       "correctAnswer": "D",
       "assetPaths": [
-        "challenge-full-two/math-m1-14.png"
+        "challenge-full-two/math-m1-14.png",
+        "challenge-full-two/math-m1-14-A.png",
+        "challenge-full-two/math-m1-14-B.png",
+        "challenge-full-two/math-m1-14-C.png",
+        "challenge-full-two/math-m1-14-D.png"
       ],
       "explanationHtml": ""
     },
@@ -892,6 +2042,24 @@
       "questionNumber": 15,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m1-15.png\" alt=\"Question 15\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "8"
+        },
+        {
+          "label": "B",
+          "html": "7"
+        },
+        {
+          "label": "C",
+          "html": "5"
+        },
+        {
+          "label": "D",
+          "html": "2"
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/math-m1-15.png"
@@ -905,9 +2073,31 @@
       "questionNumber": 16,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m1-16.png\" alt=\"Question 16\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"challenge-full-two/math-m1-16-A.png\" alt=\"Choice A\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"challenge-full-two/math-m1-16-B.png\" alt=\"Choice B\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"challenge-full-two/math-m1-16-C.png\" alt=\"Choice C\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"challenge-full-two/math-m1-16-D.png\" alt=\"Choice D\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
-        "challenge-full-two/math-m1-16.png"
+        "challenge-full-two/math-m1-16.png",
+        "challenge-full-two/math-m1-16-A.png",
+        "challenge-full-two/math-m1-16-B.png",
+        "challenge-full-two/math-m1-16-C.png",
+        "challenge-full-two/math-m1-16-D.png"
       ],
       "explanationHtml": ""
     },
@@ -918,9 +2108,31 @@
       "questionNumber": 17,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m1-17.png\" alt=\"Question 17\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"challenge-full-two/math-m1-17-A.png\" alt=\"Choice A\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"challenge-full-two/math-m1-17-B.png\" alt=\"Choice B\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"challenge-full-two/math-m1-17-C.png\" alt=\"Choice C\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"challenge-full-two/math-m1-17-D.png\" alt=\"Choice D\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
-        "challenge-full-two/math-m1-17.png"
+        "challenge-full-two/math-m1-17.png",
+        "challenge-full-two/math-m1-17-A.png",
+        "challenge-full-two/math-m1-17-B.png",
+        "challenge-full-two/math-m1-17-C.png",
+        "challenge-full-two/math-m1-17-D.png"
       ],
       "explanationHtml": ""
     },
@@ -944,9 +2156,31 @@
       "questionNumber": 19,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m1-19.png\" alt=\"Question 19\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"challenge-full-two/math-m1-19-A.png\" alt=\"Choice A\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"challenge-full-two/math-m1-19-B.png\" alt=\"Choice B\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"challenge-full-two/math-m1-19-C.png\" alt=\"Choice C\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"challenge-full-two/math-m1-19-D.png\" alt=\"Choice D\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        }
+      ],
       "correctAnswer": "D",
       "assetPaths": [
-        "challenge-full-two/math-m1-19.png"
+        "challenge-full-two/math-m1-19.png",
+        "challenge-full-two/math-m1-19-A.png",
+        "challenge-full-two/math-m1-19-B.png",
+        "challenge-full-two/math-m1-19-C.png",
+        "challenge-full-two/math-m1-19-D.png"
       ],
       "explanationHtml": ""
     },
@@ -957,9 +2191,31 @@
       "questionNumber": 20,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m1-20.png\" alt=\"Question 20\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"challenge-full-two/math-m1-20-A.png\" alt=\"Choice A\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"challenge-full-two/math-m1-20-B.png\" alt=\"Choice B\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"challenge-full-two/math-m1-20-C.png\" alt=\"Choice C\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"challenge-full-two/math-m1-20-D.png\" alt=\"Choice D\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        }
+      ],
       "correctAnswer": "D",
       "assetPaths": [
-        "challenge-full-two/math-m1-20.png"
+        "challenge-full-two/math-m1-20.png",
+        "challenge-full-two/math-m1-20-A.png",
+        "challenge-full-two/math-m1-20-B.png",
+        "challenge-full-two/math-m1-20-C.png",
+        "challenge-full-two/math-m1-20-D.png"
       ],
       "explanationHtml": ""
     },
@@ -970,6 +2226,24 @@
       "questionNumber": 21,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m1-21.png\" alt=\"Question 21\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<i>p</i> − 10, <i>p</i> − 5, <i>p</i>, <i>p</i> − 2, <i>p</i> + 2"
+        },
+        {
+          "label": "B",
+          "html": "<i>p</i> − 5, <i>p</i> − 5, <i>p</i>, <i>p</i>, <i>p</i> − 2"
+        },
+        {
+          "label": "C",
+          "html": "<i>p</i> − 2, <i>p</i> + 2, <i>p</i>, <i>p</i>, <i>p</i> − 10"
+        },
+        {
+          "label": "D",
+          "html": "<i>p</i>, <i>p</i>, <i>p</i>, <i>p</i>, <i>p</i>"
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
         "challenge-full-two/math-m1-21.png"
@@ -983,6 +2257,24 @@
       "questionNumber": 22,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m1-22.png\" alt=\"Question 22\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Zero"
+        },
+        {
+          "label": "B",
+          "html": "Exactly one"
+        },
+        {
+          "label": "C",
+          "html": "Exactly two"
+        },
+        {
+          "label": "D",
+          "html": "Infinitely many"
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/math-m1-22.png"
@@ -996,9 +2288,31 @@
       "questionNumber": 1,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m2-01.png\" alt=\"Question 1\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"challenge-full-two/math-m2-01-A.png\" alt=\"Choice A\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"challenge-full-two/math-m2-01-B.png\" alt=\"Choice B\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"challenge-full-two/math-m2-01-C.png\" alt=\"Choice C\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"challenge-full-two/math-m2-01-D.png\" alt=\"Choice D\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
-        "challenge-full-two/math-m2-01.png"
+        "challenge-full-two/math-m2-01.png",
+        "challenge-full-two/math-m2-01-A.png",
+        "challenge-full-two/math-m2-01-B.png",
+        "challenge-full-two/math-m2-01-C.png",
+        "challenge-full-two/math-m2-01-D.png"
       ],
       "explanationHtml": ""
     },
@@ -1009,6 +2323,24 @@
       "questionNumber": 2,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m2-02.png\" alt=\"Question 2\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "−90"
+        },
+        {
+          "label": "B",
+          "html": "−18"
+        },
+        {
+          "label": "C",
+          "html": "18"
+        },
+        {
+          "label": "D",
+          "html": "90"
+        }
+      ],
       "correctAnswer": "D",
       "assetPaths": [
         "challenge-full-two/math-m2-02.png"
@@ -1022,6 +2354,24 @@
       "questionNumber": 3,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m2-03.png\" alt=\"Question 3\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "13.5"
+        },
+        {
+          "label": "B",
+          "html": "54"
+        },
+        {
+          "label": "C",
+          "html": "216"
+        },
+        {
+          "label": "D",
+          "html": "220"
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/math-m2-03.png"
@@ -1035,6 +2385,24 @@
       "questionNumber": 4,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m2-04.png\" alt=\"Question 4\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "8"
+        },
+        {
+          "label": "B",
+          "html": "16"
+        },
+        {
+          "label": "C",
+          "html": "32"
+        },
+        {
+          "label": "D",
+          "html": "48"
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/math-m2-04.png"
@@ -1048,6 +2416,24 @@
       "questionNumber": 5,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m2-05.png\" alt=\"Question 5\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Zero"
+        },
+        {
+          "label": "B",
+          "html": "Exactly one"
+        },
+        {
+          "label": "C",
+          "html": "Exactly two"
+        },
+        {
+          "label": "D",
+          "html": "Infinitely many"
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/math-m2-05.png"
@@ -1061,6 +2447,24 @@
       "questionNumber": 6,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m2-06.png\" alt=\"Question 6\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "6"
+        },
+        {
+          "label": "B",
+          "html": "10"
+        },
+        {
+          "label": "C",
+          "html": "14"
+        },
+        {
+          "label": "D",
+          "html": "104"
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/math-m2-06.png"
@@ -1074,6 +2478,24 @@
       "questionNumber": 7,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m2-07.png\" alt=\"Question 7\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "−12"
+        },
+        {
+          "label": "B",
+          "html": "0"
+        },
+        {
+          "label": "C",
+          "html": "8"
+        },
+        {
+          "label": "D",
+          "html": "10"
+        }
+      ],
       "correctAnswer": "B",
       "assetPaths": [
         "challenge-full-two/math-m2-07.png"
@@ -1087,9 +2509,31 @@
       "questionNumber": 8,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m2-08.png\" alt=\"Question 8\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"challenge-full-two/math-m2-08-A.png\" alt=\"Choice A\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"challenge-full-two/math-m2-08-B.png\" alt=\"Choice B\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"challenge-full-two/math-m2-08-C.png\" alt=\"Choice C\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"challenge-full-two/math-m2-08-D.png\" alt=\"Choice D\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
-        "challenge-full-two/math-m2-08.png"
+        "challenge-full-two/math-m2-08.png",
+        "challenge-full-two/math-m2-08-A.png",
+        "challenge-full-two/math-m2-08-B.png",
+        "challenge-full-two/math-m2-08-C.png",
+        "challenge-full-two/math-m2-08-D.png"
       ],
       "explanationHtml": ""
     },
@@ -1100,6 +2544,24 @@
       "questionNumber": 9,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m2-09.png\" alt=\"Question 9\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "66"
+        },
+        {
+          "label": "B",
+          "html": "99"
+        },
+        {
+          "label": "C",
+          "html": "132"
+        },
+        {
+          "label": "D",
+          "html": "396"
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
         "challenge-full-two/math-m2-09.png"
@@ -1113,6 +2575,24 @@
       "questionNumber": 10,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m2-10.png\" alt=\"Question 10\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "−10"
+        },
+        {
+          "label": "B",
+          "html": "6"
+        },
+        {
+          "label": "C",
+          "html": "10"
+        },
+        {
+          "label": "D",
+          "html": "26"
+        }
+      ],
       "correctAnswer": "B",
       "assetPaths": [
         "challenge-full-two/math-m2-10.png"
@@ -1126,6 +2606,24 @@
       "questionNumber": 11,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m2-11.png\" alt=\"Question 11\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "(−1, 6)"
+        },
+        {
+          "label": "B",
+          "html": "(1, 6)"
+        },
+        {
+          "label": "C",
+          "html": "(6, −1)"
+        },
+        {
+          "label": "D",
+          "html": "(6, 22)"
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
         "challenge-full-two/math-m2-11.png"
@@ -1139,6 +2637,24 @@
       "questionNumber": 12,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m2-12.png\" alt=\"Question 12\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The speed of the runner in miles per hour"
+        },
+        {
+          "label": "B",
+          "html": "The total time taken to finish the run"
+        },
+        {
+          "label": "C",
+          "html": "The initial total distance, in miles, of the run"
+        },
+        {
+          "label": "D",
+          "html": "The distance covered in the first hour"
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/math-m2-12.png"
@@ -1152,9 +2668,31 @@
       "questionNumber": 13,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m2-13.png\" alt=\"Question 13\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"challenge-full-two/math-m2-13-A.png\" alt=\"Choice A\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"challenge-full-two/math-m2-13-B.png\" alt=\"Choice B\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"challenge-full-two/math-m2-13-C.png\" alt=\"Choice C\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"challenge-full-two/math-m2-13-D.png\" alt=\"Choice D\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        }
+      ],
       "correctAnswer": "D",
       "assetPaths": [
-        "challenge-full-two/math-m2-13.png"
+        "challenge-full-two/math-m2-13.png",
+        "challenge-full-two/math-m2-13-A.png",
+        "challenge-full-two/math-m2-13-B.png",
+        "challenge-full-two/math-m2-13-C.png",
+        "challenge-full-two/math-m2-13-D.png"
       ],
       "explanationHtml": ""
     },
@@ -1165,9 +2703,31 @@
       "questionNumber": 14,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m2-14.png\" alt=\"Question 14\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"challenge-full-two/math-m2-14-A.png\" alt=\"Choice A\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"challenge-full-two/math-m2-14-B.png\" alt=\"Choice B\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"challenge-full-two/math-m2-14-C.png\" alt=\"Choice C\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"challenge-full-two/math-m2-14-D.png\" alt=\"Choice D\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
-        "challenge-full-two/math-m2-14.png"
+        "challenge-full-two/math-m2-14.png",
+        "challenge-full-two/math-m2-14-A.png",
+        "challenge-full-two/math-m2-14-B.png",
+        "challenge-full-two/math-m2-14-C.png",
+        "challenge-full-two/math-m2-14-D.png"
       ],
       "explanationHtml": ""
     },
@@ -1178,6 +2738,24 @@
       "questionNumber": 15,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m2-15.png\" alt=\"Question 15\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Linear"
+        },
+        {
+          "label": "B",
+          "html": "Exponential decay"
+        },
+        {
+          "label": "C",
+          "html": "Quadratic"
+        },
+        {
+          "label": "D",
+          "html": "Absolute value"
+        }
+      ],
       "correctAnswer": "B",
       "assetPaths": [
         "challenge-full-two/math-m2-15.png"
@@ -1191,6 +2769,24 @@
       "questionNumber": 16,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m2-16.png\" alt=\"Question 16\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "17.7"
+        },
+        {
+          "label": "B",
+          "html": "865.33"
+        },
+        {
+          "label": "C",
+          "html": "1,760"
+        },
+        {
+          "label": "D",
+          "html": "8,653.33"
+        }
+      ],
       "correctAnswer": "B",
       "assetPaths": [
         "challenge-full-two/math-m2-16.png"
@@ -1204,6 +2800,24 @@
       "questionNumber": 17,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m2-17.png\" alt=\"Question 17\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "1"
+        },
+        {
+          "label": "B",
+          "html": "5"
+        },
+        {
+          "label": "C",
+          "html": "6"
+        },
+        {
+          "label": "D",
+          "html": "11"
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
         "challenge-full-two/math-m2-17.png"
@@ -1217,6 +2831,24 @@
       "questionNumber": 18,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m2-18.png\" alt=\"Question 18\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "−150"
+        },
+        {
+          "label": "B",
+          "html": "2"
+        },
+        {
+          "label": "C",
+          "html": "149"
+        },
+        {
+          "label": "D",
+          "html": "150"
+        }
+      ],
       "correctAnswer": "C",
       "assetPaths": [
         "challenge-full-two/math-m2-18.png"
@@ -1230,9 +2862,31 @@
       "questionNumber": 19,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m2-19.png\" alt=\"Question 19\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"challenge-full-two/math-m2-19-A.png\" alt=\"Choice A\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"challenge-full-two/math-m2-19-B.png\" alt=\"Choice B\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"challenge-full-two/math-m2-19-C.png\" alt=\"Choice C\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"challenge-full-two/math-m2-19-D.png\" alt=\"Choice D\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        }
+      ],
       "correctAnswer": "A",
       "assetPaths": [
-        "challenge-full-two/math-m2-19.png"
+        "challenge-full-two/math-m2-19.png",
+        "challenge-full-two/math-m2-19-A.png",
+        "challenge-full-two/math-m2-19-B.png",
+        "challenge-full-two/math-m2-19-C.png",
+        "challenge-full-two/math-m2-19-D.png"
       ],
       "explanationHtml": ""
     },
@@ -1243,6 +2897,24 @@
       "questionNumber": 20,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m2-20.png\" alt=\"Question 20\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "17 mm"
+        },
+        {
+          "label": "B",
+          "html": "34 mm"
+        },
+        {
+          "label": "C",
+          "html": "68 mm"
+        },
+        {
+          "label": "D",
+          "html": "115.6 mm"
+        }
+      ],
       "correctAnswer": "B",
       "assetPaths": [
         "challenge-full-two/math-m2-20.png"
@@ -1256,9 +2928,31 @@
       "questionNumber": 21,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m2-21.png\" alt=\"Question 21\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"challenge-full-two/math-m2-21-A.png\" alt=\"Choice A\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"challenge-full-two/math-m2-21-B.png\" alt=\"Choice B\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"challenge-full-two/math-m2-21-C.png\" alt=\"Choice C\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"challenge-full-two/math-m2-21-D.png\" alt=\"Choice D\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        }
+      ],
       "correctAnswer": "B",
       "assetPaths": [
-        "challenge-full-two/math-m2-21.png"
+        "challenge-full-two/math-m2-21.png",
+        "challenge-full-two/math-m2-21-A.png",
+        "challenge-full-two/math-m2-21-B.png",
+        "challenge-full-two/math-m2-21-C.png",
+        "challenge-full-two/math-m2-21-D.png"
       ],
       "explanationHtml": ""
     },
@@ -1269,9 +2963,31 @@
       "questionNumber": 22,
       "type": "mcq",
       "stemHtml": "<img src=\"challenge-full-two/math-m2-22.png\" alt=\"Question 22\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"challenge-full-two/math-m2-22-A.png\" alt=\"Choice A\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"challenge-full-two/math-m2-22-B.png\" alt=\"Choice B\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"challenge-full-two/math-m2-22-C.png\" alt=\"Choice C\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"challenge-full-two/math-m2-22-D.png\" alt=\"Choice D\" style=\"display:block;max-width:100%;width:auto;height:auto;object-fit:contain;\" />"
+        }
+      ],
       "correctAnswer": "B",
       "assetPaths": [
-        "challenge-full-two/math-m2-22.png"
+        "challenge-full-two/math-m2-22.png",
+        "challenge-full-two/math-m2-22-A.png",
+        "challenge-full-two/math-m2-22-B.png",
+        "challenge-full-two/math-m2-22-C.png",
+        "challenge-full-two/math-m2-22-D.png"
       ],
       "explanationHtml": ""
     }

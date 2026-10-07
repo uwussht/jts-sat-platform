@@ -1,0 +1,2378 @@
+{
+  "id": "jts-2",
+  "title": "JTS Practice Test 2",
+  "year": 2026,
+  "assetBase": "assets/sat/jts-2/",
+  "questions": [
+    {
+      "id": "rw-m1-01",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-01.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "reacts to"
+        },
+        {
+          "label": "B",
+          "html": "helps with"
+        },
+        {
+          "label": "C",
+          "html": "varies from"
+        },
+        {
+          "label": "D",
+          "html": "argues with"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-02",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-02.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "loses"
+        },
+        {
+          "label": "B",
+          "html": "purchases"
+        },
+        {
+          "label": "C",
+          "html": "suspects"
+        },
+        {
+          "label": "D",
+          "html": "suggests"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-03",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-03.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "novelty"
+        },
+        {
+          "label": "B",
+          "html": "obscurity"
+        },
+        {
+          "label": "C",
+          "html": "rigor"
+        },
+        {
+          "label": "D",
+          "html": "shallowness"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-04",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-04.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Unbolt"
+        },
+        {
+          "label": "B",
+          "html": "Put down"
+        },
+        {
+          "label": "C",
+          "html": "Forget about"
+        },
+        {
+          "label": "D",
+          "html": "Erase"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-05",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-05.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Mercedes shares a passion for locomotive travel with Clarence."
+        },
+        {
+          "label": "B",
+          "html": "The sounds at the train station irritate Mercedes."
+        },
+        {
+          "label": "C",
+          "html": "Clarence boarded his train at the last minute."
+        },
+        {
+          "label": "D",
+          "html": "Mercedes feels heartbroken to be separated from Clarence."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-06",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-06.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Clara Peeters was an important figure in the development of still-life painting"
+        },
+        {
+          "label": "B",
+          "html": "Clara Peeters made significant contributions to multiple genres of painting."
+        },
+        {
+          "label": "C",
+          "html": "Clara Peeters introduced the term \"still-life painting\" to Western Europe."
+        },
+        {
+          "label": "D",
+          "html": "Some paintings attributed to Clara Peeters may have been painted by other artists in her circle"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-07",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-07.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "He is determined in his efforts to move the rock away from the opening of the cave."
+        },
+        {
+          "label": "B",
+          "html": "He is worried he will lack the courage to enter the cave when the entrance is finally opened."
+        },
+        {
+          "label": "C",
+          "html": "He is unsure why the cave's opening was purposely hidden behind a wall and a large rock."
+        },
+        {
+          "label": "D",
+          "html": "He is aware that his impatience is causing him to make clumsy errors as he enlarges the hole in the wall."
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-08",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-08.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "To provide a statistical comparison between two categories of bioluminescent species that is elaborated on in the rest of the text"
+        },
+        {
+          "label": "B",
+          "html": "To present a scientific finding that the text's discussion of the evolutionary history of bioluminescence calls into question"
+        },
+        {
+          "label": "C",
+          "html": "To provide data that support an argument made in the text about a particular light-emitting ocean species"
+        },
+        {
+          "label": "D",
+          "html": "To support the text's assertion that bioluminescence is associated with particular environments"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-09",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-09.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Feeding patterns of top marine predators"
+        },
+        {
+          "label": "B",
+          "html": "Loss of marine diversity due to overfishing"
+        },
+        {
+          "label": "C",
+          "html": "Changes in technologies used to capture fish"
+        },
+        {
+          "label": "D",
+          "html": "Effects of ocean acidification on fish behavior"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-10",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-10.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Astreopora expansa and Scolymia lacera."
+        },
+        {
+          "label": "B",
+          "html": "Astreopora expansa and Acropora echinata."
+        },
+        {
+          "label": "C",
+          "html": "Acropora echinata and Danafungia scruposa."
+        },
+        {
+          "label": "D",
+          "html": "Danafungia scruposa and Scolymia lacera."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-11",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-11.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "\"On John's [soccer] days [Nana] never once forgot his sweater, and she usually carried an umbrella in her mouth in case of rain.\""
+        },
+        {
+          "label": "B",
+          "html": "\"[Mrs. Darling] was wearing Wendy's bracelet on her arm.\""
+        },
+        {
+          "label": "C",
+          "html": "\"Mrs. Darling loved to have everything just so, and Mr. Darling had a passion for being exactly like his neighbours.\""
+        },
+        {
+          "label": "D",
+          "html": "\"Of course [Nana's] kennel was in the nursery.\""
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-12",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-12.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "\"But how can I describe the scene that followed? Some of you, dear readers, can imagine.\""
+        },
+        {
+          "label": "B",
+          "html": "\"Now, my dear reader, there is no word so endearing as the word father, and that is why [my people] call all good people father or mother.\""
+        },
+        {
+          "label": "C",
+          "html": "\"During the time my grandfather was away in California, where he [stayed] till after the Mexican war, there was a girl-baby born in our family.\""
+        },
+        {
+          "label": "D",
+          "html": "\"We would all go in company to see if the flowers we were flavored are right there.\""
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-13",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-13.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "the lower the temperature must be to fry the food."
+        },
+        {
+          "label": "B",
+          "html": "the softer the crust will be when frying is completed."
+        },
+        {
+          "label": "C",
+          "html": "the higher the fat content will be when frying is completed."
+        },
+        {
+          "label": "D",
+          "html": "the quicker the crust will lose its permeability."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-14",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-14.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "it is important to incorporate more diverse data sources, including commercial fishers' observations, into population size models."
+        },
+        {
+          "label": "B",
+          "html": "researchers should be cautious when considering findings about commercially fished populations that predate the development of the models."
+        },
+        {
+          "label": "C",
+          "html": "some commercial fishers have likely been unknowingly overfishing and may need to decrease their catches going forward."
+        },
+        {
+          "label": "D",
+          "html": "environmental factors, rather than commercial fishing, play a role in the population size models"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-15",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-15.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "misrepresent Journey to the End of the Night as being more widely read than it actually is."
+        },
+        {
+          "label": "B",
+          "html": "fail to appreciate how much creativity Celine shows in the book."
+        },
+        {
+          "label": "C",
+          "html": "refuse to acknowledge that Celine drew on real-world material when writing Journey to the End of the Night."
+        },
+        {
+          "label": "D",
+          "html": "overemphasize the extent to which Celine took inspiration from earlier writers"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-16",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-16.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "do have something in common?"
+        },
+        {
+          "label": "B",
+          "html": "do they have something in common"
+        },
+        {
+          "label": "C",
+          "html": "do they have something in common?"
+        },
+        {
+          "label": "D",
+          "html": "do have something in common."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-17",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-17.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "have been"
+        },
+        {
+          "label": "B",
+          "html": "are"
+        },
+        {
+          "label": "C",
+          "html": "is"
+        },
+        {
+          "label": "D",
+          "html": "were"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-18",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-18.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "ancestor; mexicana, a"
+        },
+        {
+          "label": "B",
+          "html": "ancestor: mexicana, a"
+        },
+        {
+          "label": "C",
+          "html": "ancestor mexicana a"
+        },
+        {
+          "label": "D",
+          "html": "ancestor, mexicana. A"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-19",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-19.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "mediated,"
+        },
+        {
+          "label": "B",
+          "html": "mediated"
+        },
+        {
+          "label": "C",
+          "html": "mediated:"
+        },
+        {
+          "label": "D",
+          "html": "mediated and"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-20",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-20.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "are"
+        },
+        {
+          "label": "B",
+          "html": "would have been"
+        },
+        {
+          "label": "C",
+          "html": "were being"
+        },
+        {
+          "label": "D",
+          "html": "were"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-21",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-21.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Nevertheless,"
+        },
+        {
+          "label": "B",
+          "html": "In doing so,"
+        },
+        {
+          "label": "C",
+          "html": "For example,"
+        },
+        {
+          "label": "D",
+          "html": "By contrast,"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-22",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-22.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "In addition,"
+        },
+        {
+          "label": "B",
+          "html": "At last,"
+        },
+        {
+          "label": "C",
+          "html": "For example,"
+        },
+        {
+          "label": "D",
+          "html": "However,"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-23",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-23.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "By achieving such a lofty goal,"
+        },
+        {
+          "label": "B",
+          "html": "Beyond the simple coining of a term,"
+        },
+        {
+          "label": "C",
+          "html": "Despite its creation of such an iconic trope,"
+        },
+        {
+          "label": "D",
+          "html": "Ultimately limited in its lasting influence,"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-24",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-24.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "While wakame and ma-konbu contain umami flavor, umami can also be found in sardines and mushrooms."
+        },
+        {
+          "label": "B",
+          "html": "After tasting two types of brown seaweed, wakame and ma-konbu, participants in a study found ma-konbu's umami flavor to be the more intense of the two."
+        },
+        {
+          "label": "C",
+          "html": "Wakame is a type of brown seaweed, but so is ma-konbu."
+        },
+        {
+          "label": "D",
+          "html": "Some types of brown seaweed, like wakame and ma-konbu, trigger umami flavor in human taste buds."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-25",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-25.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "There is a land bridge in Mexico"
+        },
+        {
+          "label": "B",
+          "html": "One example of an isthmus is the Isthmus of Tehuantepec in Mexico."
+        },
+        {
+          "label": "C",
+          "html": "An isthmus, also known as a land bridge, is a strip of land that connects two larger pieces of land across an expanse of water."
+        },
+        {
+          "label": "D",
+          "html": "In Mexico, the southern tip of Mexico is connected to the northern part of Mexico."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-26",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-26.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "At the Cloud Peak Reservoir site, there were 46 inches of snow on the ground at the start of February 2021."
+        },
+        {
+          "label": "B",
+          "html": "At the start of March 2021, 31 inches of snow covered the ground at the Cloud Peak Reservoir site"
+        },
+        {
+          "label": "C",
+          "html": "Located in Wyoming, the Cloud Peak Reservoir site monitors snow conditions, such as snow depth."
+        },
+        {
+          "label": "D",
+          "html": "In 2021, the site at Cloud Peak Reservoir was one of about 90 automated snow measurement stations in Wyoming."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-27",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m1-27.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Pianissimo and mezzo forte are two examples of notations that can appear on sheet music"
+        },
+        {
+          "label": "B",
+          "html": "The notation mf, which stands for mezzo forte, is used in sheet music"
+        },
+        {
+          "label": "C",
+          "html": "In sheet music, the notation pp stands for pianissimo, which means the piece should be performed very quietly."
+        },
+        {
+          "label": "D",
+          "html": "A piece of sheet music can contain a range of notations, such as pp or mf."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-01",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-01.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "cryptic"
+        },
+        {
+          "label": "B",
+          "html": "inaccessible"
+        },
+        {
+          "label": "C",
+          "html": "haughty"
+        },
+        {
+          "label": "D",
+          "html": "perfunctory"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-02",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-02.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "obsolete"
+        },
+        {
+          "label": "B",
+          "html": "aesthetic"
+        },
+        {
+          "label": "C",
+          "html": "counterproductive"
+        },
+        {
+          "label": "D",
+          "html": "derivative"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-03",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-03.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "inconsolable"
+        },
+        {
+          "label": "B",
+          "html": "unanticipated"
+        },
+        {
+          "label": "C",
+          "html": "unequivocal"
+        },
+        {
+          "label": "D",
+          "html": "untenable"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-04",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-04.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "To present the narrator's generalization along with supporting examples from a specific situation"
+        },
+        {
+          "label": "B",
+          "html": "To convey the narrator's confidence that he understands the role expected of him in a group"
+        },
+        {
+          "label": "C",
+          "html": "To examine how the narrator and his friends each contributed to navigating a challenge"
+        },
+        {
+          "label": "D",
+          "html": "To give an overview of a particular situation that the narrator finds startling"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-05",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-05.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Consequences of the 2008 financial crisis for JPMorgan Chase and SunTrust"
+        },
+        {
+          "label": "B",
+          "html": "How the US government used money received from taxation to help institutions recover from a period of financial instability"
+        },
+        {
+          "label": "C",
+          "html": "Techniques of assessing the risks of particular methods of financial investment"
+        },
+        {
+          "label": "D",
+          "html": "Why a scholar believes it would be beneficial for certain governmental economic practices to be reconsidered"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-06",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-06.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It distinguishes a work from others in its genre, outlines the central objective of that work, and then addresses a recent resurgence of interest in that work."
+        },
+        {
+          "label": "B",
+          "html": "It sketches the development of a prominent work, familiarizes readers with an argument in that work, and then suggests that the work has had repercussions in other fields"
+        },
+        {
+          "label": "C",
+          "html": "It characterizes a work as having been underappreciated, describes a core concept in that work, and then argues that the influence of that concept is recognizable in other works."
+        },
+        {
+          "label": "D",
+          "html": "It introduces a significant work, summarizes a noteworthy idea in that work, and then places that idea into a context that demonstrates its broader implications"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-07",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-07.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It was likely a copy Heege intended to give to a traveling minstrel working in the area around Radford and Brackonwet."
+        },
+        {
+          "label": "B",
+          "html": "The texts it includes were based on stories about the area around Radford and Brackonwet, but these names were later removed"
+        },
+        {
+          "label": "C",
+          "html": "It was copied from a text that originated from a traveling minstrel who worked in the area around Radford and Brackonwet."
+        },
+        {
+          "label": "D",
+          "html": "It was written down by Heege from memory based on a performance by a traveling minstrel who worked in the area around Radford and Brackonwet."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-08",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-08.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Nonspecialists and specialists have different ideas of what the word \"culture\" means"
+        },
+        {
+          "label": "B",
+          "html": "There is no widely agreed-upon definition of the word \"culture,\" though the field of sociology would benefit if there were."
+        },
+        {
+          "label": "C",
+          "html": "In her research, Mayntz presented reasons why sociologists disagree on how to analyze \"culture.\""
+        },
+        {
+          "label": "D",
+          "html": "Art and customs are key components of what nonspecialists refer to as \"culture."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-09",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-09.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It provides examples of the types of scenarios addressed in alternative-history fiction."
+        },
+        {
+          "label": "B",
+          "html": "It illustrates how academic historians have influenced writers of alternative-history fiction."
+        },
+        {
+          "label": "C",
+          "html": "It indicates specific ideas that were first raised by writers of alternative-history fiction and that subsequently inspired scholarship by academic historians."
+        },
+        {
+          "label": "D",
+          "html": "It acknowledges counterfactual questions that academic historians have largely overlooked."
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-10",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-10.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Other types of artifacts originating in South Asia and dating to the first through sixth centuries CE have been found throughout Southeast Asia."
+        },
+        {
+          "label": "B",
+          "html": "In the first through third centuries CE, there was a significant migration of people from South Asia to Southeast Asia."
+        },
+        {
+          "label": "C",
+          "html": "The people of Oc Eo and several communities in South Asia regularly traded with people in the region that is now the Southeast Asian country of Malaysia no later than the first century CE."
+        },
+        {
+          "label": "D",
+          "html": "Some of the spices recovered from Oc Eo are native to the Maluku Islands, which are located approximately 2,000 miles southeast of Oc Eo."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-11",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-11.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "mammalian fossil evidence offers less dating precision than do 87Sr/86Sr ratios in fossil shark teeth and that PFBV likely was deposited closer to the Hh3-Hh4 boundary than was MFS."
+        },
+        {
+          "label": "B",
+          "html": "the average 87Sr/86Sr ratios in the fossil shark teeth from MFS and PFBV resolve previous uncertainty about the sites' relative ages by indicating that both sites were deposited contemporaneously during the late Hh."
+        },
+        {
+          "label": "C",
+          "html": "the average 87Sr/86Sr ratios in the fossil shark teeth from MFS and PFBV only partially support the site age estimates previously established through mammalian fossil evidence."
+        },
+        {
+          "label": "D",
+          "html": "the average 87Sr/86Sr ratios in the fossil shark teeth from MFS and PFBV corroborate that both MFS and PFBV fall within Hh4 but suggest that PFBV was likely deposited more recently than MFS"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-12",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-12.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "\"The acoustic environment of the temple was best suited for music that eschewed ornamentation in favor of simple melodies, harmonies, and rhythms.\""
+        },
+        {
+          "label": "B",
+          "html": "\"Many researchers believe that the central chamber of the temple had a high ceiling, a feature that has since become essential to the acoustic design of modern concert halls."
+        },
+        {
+          "label": "C",
+          "html": "\"During special occasions, curtains were placed inside the temple to minimize reverberation and confine the sound to designated locations.\""
+        },
+        {
+          "label": "D",
+          "html": "\"The innermost room of the temple was likely among the quietest spaces in the interior of the temple.\""
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-13",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-13.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "a greater percentage of those that also filed Form 4720 did so because they held excess interests in a business enterprise than the percentage of those that filed Form 4720 because they did not meet the minimum charitable distribution requirement."
+        },
+        {
+          "label": "B",
+          "html": "more of those that also filed Form 4720 failed to meet a minimum charitable distribution requirement than did those organizations that filed Form 990 but also filed Form 4720 for the same reason."
+        },
+        {
+          "label": "C",
+          "html": "those that were also required to file Form 4720 because they had excess holdings in a business enterprise paid, on average, a significantly smaller penalty than those organizations that filed Form 4720 because they engaged in self-dealing."
+        },
+        {
+          "label": "D",
+          "html": "those that were also required to file Form 4720 were more likely to do so because they did not meet the minimum charitable distribution requirement than for other reasons."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-14",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-14.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "the dense vegetation and high annual precipitation levels in parts of the Sierra Madre Occidental mountain range impede the ability of Mammillaria species to survive."
+        },
+        {
+          "label": "B",
+          "html": "the perceived absence of Mammillaria in parts of the Sierra Madre Occidental mountain range may be due to insufficient exploration of the region"
+        },
+        {
+          "label": "C",
+          "html": "M. schumannii may have been overlooked in parts of the Sierra Madre Occidental mountain range because of its similarity to another species."
+        },
+        {
+          "label": "D",
+          "html": "the current methods of collecting and tracking Mammillaria species throughout Mexico may cause an overestimation of the number of species in this genus."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-15",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-15.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "researchers must prove that scientific training alone is insufficient for developing clinical skills."
+        },
+        {
+          "label": "B",
+          "html": "larger-scale, multi-institutional research studies tracking outcomes for medical students over longer periods are needed."
+        },
+        {
+          "label": "C",
+          "html": "medical schools should highlight more student testimonials about how arts education benefits their clinical abilities."
+        },
+        {
+          "label": "D",
+          "html": "institutions may need to provide medical students with exposure to larger numbers of artworks than have been used in previous studies."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-16",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-16.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "during;"
+        },
+        {
+          "label": "B",
+          "html": "during:"
+        },
+        {
+          "label": "C",
+          "html": "during"
+        },
+        {
+          "label": "D",
+          "html": "during,"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-17",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-17.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "they're"
+        },
+        {
+          "label": "B",
+          "html": "it's"
+        },
+        {
+          "label": "C",
+          "html": "their"
+        },
+        {
+          "label": "D",
+          "html": "its"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-18",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-18.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "time was"
+        },
+        {
+          "label": "B",
+          "html": "time,"
+        },
+        {
+          "label": "C",
+          "html": "time had been"
+        },
+        {
+          "label": "D",
+          "html": "time, was"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-19",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-19.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "return"
+        },
+        {
+          "label": "B",
+          "html": "return;"
+        },
+        {
+          "label": "C",
+          "html": "return."
+        },
+        {
+          "label": "D",
+          "html": "return,"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-20",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-20.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "empowerment --- not only in India ---"
+        },
+        {
+          "label": "B",
+          "html": "empowerment not only in India,"
+        },
+        {
+          "label": "C",
+          "html": "empowerment, not only in India,"
+        },
+        {
+          "label": "D",
+          "html": "empowerment --- not only in India"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-21",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-21.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "(65 mya) ---"
+        },
+        {
+          "label": "B",
+          "html": "(65 mya);"
+        },
+        {
+          "label": "C",
+          "html": "(65 mya)"
+        },
+        {
+          "label": "D",
+          "html": "(65 mya),"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-22",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-22.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "STS-51-D, it lasted"
+        },
+        {
+          "label": "B",
+          "html": "STS-51-D, lasting"
+        },
+        {
+          "label": "C",
+          "html": "STS-51-D lasting"
+        },
+        {
+          "label": "D",
+          "html": "STS-51-D. Lasting"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-23",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-23.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Furthermore,"
+        },
+        {
+          "label": "B",
+          "html": "Similarly,"
+        },
+        {
+          "label": "C",
+          "html": "Still,"
+        },
+        {
+          "label": "D",
+          "html": "In other words,"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-24",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-24.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "for instance;"
+        },
+        {
+          "label": "B",
+          "html": "regardless;"
+        },
+        {
+          "label": "C",
+          "html": "however;"
+        },
+        {
+          "label": "D",
+          "html": "in other words;"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-25",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-25.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Likewise,"
+        },
+        {
+          "label": "B",
+          "html": "Next,"
+        },
+        {
+          "label": "C",
+          "html": "Thus,"
+        },
+        {
+          "label": "D",
+          "html": "However,"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-26",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-26.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The 583.2 nm wavelength, which is in the violet portion of the visible spectrum, is one wavelength in the emission spectrum of krypton."
+        },
+        {
+          "label": "B",
+          "html": "Since the 430.5 nm wavelength of light is within the 380-450nm range, it is part of the violet portion of the visible spectrum"
+        },
+        {
+          "label": "C",
+          "html": "Containing the 430.5 nm and 583.2 nm wavelengths, respectively, both titanium's and krypton's emission spectra include wavelengths in the violet portion of the visible spectrum"
+        },
+        {
+          "label": "D",
+          "html": "Titanium's emission spectrum includes the 430.5 nm wavelength, which is in the violet portion of the visible spectrum."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-27",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"rw-m2-27.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "In 2021, the site at Cottonwood Creek was one of about 90 automated snow measurement stations in Wyoming"
+        },
+        {
+          "label": "B",
+          "html": "At the Cottonwood Creek site, there were 75 inches of snow on the ground at the start of February 2021."
+        },
+        {
+          "label": "C",
+          "html": "Located in Wyoming, the Cottonwood Creek site monitors snow conditions, such as snow depth"
+        },
+        {
+          "label": "D",
+          "html": "At the start of March 2021, 50 inches of snow covered the ground at the Cottonwood Creek site."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m1-01",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-01.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "4"
+        },
+        {
+          "label": "B",
+          "html": "8"
+        },
+        {
+          "label": "C",
+          "html": "10"
+        },
+        {
+          "label": "D",
+          "html": "13"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m1-02",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-02.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "20.5°"
+        },
+        {
+          "label": "B",
+          "html": "90°"
+        },
+        {
+          "label": "C",
+          "html": "110.5°"
+        },
+        {
+          "label": "D",
+          "html": "180°"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m1-03",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-03.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "$25"
+        },
+        {
+          "label": "B",
+          "html": "$72"
+        },
+        {
+          "label": "C",
+          "html": "$216"
+        },
+        {
+          "label": "D",
+          "html": "$288"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m1-04",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-04.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<i>y</i> = 8<i>x</i>"
+        },
+        {
+          "label": "B",
+          "html": "<i>y</i> = 10<i>x</i> + 2"
+        },
+        {
+          "label": "C",
+          "html": "<i>y</i> = 10<i>x</i>"
+        },
+        {
+          "label": "D",
+          "html": "<i>y</i> = <i>x</i> + 8"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m1-05",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m1-05.png\">",
+      "correctAnswer": "3800"
+    },
+    {
+      "id": "math-m1-06",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m1-06.png\">",
+      "correctAnswer": "1.2",
+      "acceptedAnswers": [
+        "6/5"
+      ]
+    },
+    {
+      "id": "math-m1-07",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-07.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m1-07-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m1-07-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m1-07-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m1-07-D.png\">"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m1-08",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-08.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "4,141"
+        },
+        {
+          "label": "B",
+          "html": "15,143"
+        },
+        {
+          "label": "C",
+          "html": "16,563"
+        },
+        {
+          "label": "D",
+          "html": "75,714"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m1-09",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-09.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m1-09-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m1-09-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m1-09-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m1-09-D.png\">"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m1-10",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-10.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "If the width of the rectangle is 13 ft, then the area of the rectangle is 1,014 ft<sup>2</sup>."
+        },
+        {
+          "label": "B",
+          "html": "If the width of the rectangle is 13 ft, then the length of the rectangle is 1,014 ft."
+        },
+        {
+          "label": "C",
+          "html": "If the width of the rectangle is 1,014 ft, then the length of the rectangle is 13 ft."
+        },
+        {
+          "label": "D",
+          "html": "If the width of the rectangle is 1,014 ft, then the area of the rectangle is 13 ft<sup>2</sup>."
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m1-11",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m1-11.png\">",
+      "correctAnswer": "43"
+    },
+    {
+      "id": "math-m1-12",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m1-12.png\">",
+      "correctAnswer": "343"
+    },
+    {
+      "id": "math-m1-13",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-13.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m1-13-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m1-13-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m1-13-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m1-13-D.png\">"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m1-14",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-14.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "54"
+        },
+        {
+          "label": "B",
+          "html": "48"
+        },
+        {
+          "label": "C",
+          "html": "6"
+        },
+        {
+          "label": "D",
+          "html": "0"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m1-15",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m1-15.png\">",
+      "correctAnswer": "28"
+    },
+    {
+      "id": "math-m1-16",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-16.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Exactly one"
+        },
+        {
+          "label": "B",
+          "html": "Exactly two"
+        },
+        {
+          "label": "C",
+          "html": "Infinitely many"
+        },
+        {
+          "label": "D",
+          "html": "Zero"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m1-17",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-17.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The total increase in population between 2000 and 2010"
+        },
+        {
+          "label": "B",
+          "html": "The projected population of the town 10 years after 2010"
+        },
+        {
+          "label": "C",
+          "html": "The average increase per year of the population between 2000 and 2010"
+        },
+        {
+          "label": "D",
+          "html": "The percentage by which the population of the town increased each year between 2000 and 2010"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m1-18",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-18.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m1-18-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m1-18-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m1-18-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m1-18-D.png\">"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m1-19",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-19.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m1-19-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m1-19-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m1-19-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m1-19-D.png\">"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m1-20",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m1-20.png\">",
+      "correctAnswer": "0.529",
+      "acceptedAnswers": [
+        ".529"
+      ]
+    },
+    {
+      "id": "math-m1-21",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-21.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m1-21-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m1-21-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m1-21-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m1-21-D.png\">"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m1-22",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-22.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<i>m</i> = −4<i>x</i> + 245"
+        },
+        {
+          "label": "B",
+          "html": "<i>m</i> = −4<i>x</i> + 249"
+        },
+        {
+          "label": "C",
+          "html": "<i>m</i> = −4<i>x</i> + 253"
+        },
+        {
+          "label": "D",
+          "html": "<i>m</i> = −4<i>x</i> + 257"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-01",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-01.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "170"
+        },
+        {
+          "label": "B",
+          "html": "120"
+        },
+        {
+          "label": "C",
+          "html": "70"
+        },
+        {
+          "label": "D",
+          "html": "0"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m2-02",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-02.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The mean of data set X is greater than the mean of data set Y, and the median of data set X equals the median of data set Y."
+        },
+        {
+          "label": "B",
+          "html": "The mean of data set X is greater than the mean of data set Y, and the median of data set X is greater than the median of data set Y."
+        },
+        {
+          "label": "C",
+          "html": "The mean of data set X equals the mean of data set Y, and the median of data set X equals the median of data set Y."
+        },
+        {
+          "label": "D",
+          "html": "The mean of data set X is less than the mean of data set Y, and the median of dataset X is greater than the median of data set Y."
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m2-03",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-03.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<i>y</i> − 4<i>x</i> = −36"
+        },
+        {
+          "label": "B",
+          "html": "<i>y</i> − 4<i>x</i> = 36"
+        },
+        {
+          "label": "C",
+          "html": "<i>y</i> − 9<i>x</i> = 18"
+        },
+        {
+          "label": "D",
+          "html": "<i>y</i> − 9<i>x</i> = 0"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m2-04",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m2-04.png\">",
+      "correctAnswer": "8"
+    },
+    {
+      "id": "math-m2-05",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-05.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m2-05-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m2-05-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m2-05-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m2-05-D.png\">"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-06",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-06.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<i>x</i> + 3"
+        },
+        {
+          "label": "B",
+          "html": "<i>x</i> + 7"
+        },
+        {
+          "label": "C",
+          "html": "<i>x</i> − 3"
+        },
+        {
+          "label": "D",
+          "html": "<i>x</i> − 5"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m2-07",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-07.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m2-07-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m2-07-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m2-07-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m2-07-D.png\">"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m2-08",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m2-08.png\">",
+      "correctAnswer": "36/13",
+      "acceptedAnswers": [
+        "2.769",
+        "2.77"
+      ]
+    },
+    {
+      "id": "math-m2-09",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-09.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m2-09-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m2-09-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m2-09-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m2-09-D.png\">"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m2-10",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-10.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m2-10-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m2-10-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m2-10-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m2-10-D.png\">"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-11",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-11.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m2-11-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m2-11-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m2-11-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m2-11-D.png\">"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-12",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-12.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The first sample contained fewer ovens than the second sample."
+        },
+        {
+          "label": "B",
+          "html": "The first sample contained more ovens than the second sample."
+        },
+        {
+          "label": "C",
+          "html": "The first sample took less time on average to preheat to 350°F than the second sample."
+        },
+        {
+          "label": "D",
+          "html": "The first sample took more time on average to preheat to 350°F than the second sample."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m2-13",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-13.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "20"
+        },
+        {
+          "label": "B",
+          "html": "31"
+        },
+        {
+          "label": "C",
+          "html": "40"
+        },
+        {
+          "label": "D",
+          "html": "44"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-14",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-14.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<img src=\"math-m2-14-A.png\">"
+        },
+        {
+          "label": "B",
+          "html": "<img src=\"math-m2-14-B.png\">"
+        },
+        {
+          "label": "C",
+          "html": "<img src=\"math-m2-14-C.png\">"
+        },
+        {
+          "label": "D",
+          "html": "<img src=\"math-m2-14-D.png\">"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-15",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-15.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<i>d</i> = −60.1 + 2.02<i>t</i>"
+        },
+        {
+          "label": "B",
+          "html": "<i>d</i> = 160.1 + 2.02<i>t</i>"
+        },
+        {
+          "label": "C",
+          "html": "<i>d</i> = 359.8 + 2.02<i>t</i>"
+        },
+        {
+          "label": "D",
+          "html": "<i>d</i> = 394.8 + 2.02<i>t</i>"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m2-16",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-16.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "4"
+        },
+        {
+          "label": "B",
+          "html": "25"
+        },
+        {
+          "label": "C",
+          "html": "210"
+        },
+        {
+          "label": "D",
+          "html": "232"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m2-17",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m2-17.png\">",
+      "correctAnswer": "10/3",
+      "acceptedAnswers": [
+        "3.333",
+        "3.33"
+      ]
+    },
+    {
+      "id": "math-m2-18",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-18.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "AB = 20 and PQ = 20."
+        },
+        {
+          "label": "B",
+          "html": "AB = 20 and QR = 60."
+        },
+        {
+          "label": "C",
+          "html": "The measures of angle B and angle R are 48° and 76°, respectively."
+        },
+        {
+          "label": "D",
+          "html": "The measures of angle B and angle Q are 56° and 48°, respectively."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m2-19",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m2-19.png\">",
+      "correctAnswer": "36/5",
+      "acceptedAnswers": [
+        "7.2"
+      ]
+    },
+    {
+      "id": "math-m2-20",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-20.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "−22"
+        },
+        {
+          "label": "B",
+          "html": "14"
+        },
+        {
+          "label": "C",
+          "html": "25"
+        },
+        {
+          "label": "D",
+          "html": "314"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m2-21",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-21.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "−7 and −5"
+        },
+        {
+          "label": "B",
+          "html": "−2 and 2"
+        },
+        {
+          "label": "C",
+          "html": "2 and 7"
+        },
+        {
+          "label": "D",
+          "html": "8 and 13"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m2-22",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m2-22.png\">",
+      "correctAnswer": "17/2",
+      "acceptedAnswers": [
+        "8.5"
+      ]
+    }
+  ]
+}
