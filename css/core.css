@@ -2674,3 +2674,10 @@ img.fig { display: block; max-width: 100%; height: auto; margin: 8px 0 12px; }
 
 /* A passage set inside a question (JSON tasks): set off from the question. */
 .lw-passage { background: var(--surface-2); border-left: 3px solid var(--brand-300, var(--border)); border-radius: var(--r-md); padding: 12px 14px; margin-bottom: 12px; }
+
+/* Letters only (the choices are in the picture): A B C D in one row. */
+.opt-list.is-letters { flex-direction: row; flex-wrap: wrap; gap: 12px; }
+.opt-list.is-letters .opt { flex: 0 0 auto; width: 72px; min-height: 0; height: 64px; padding: 0; justify-content: center; }
+.opt-list.is-letters .opt .opt-text,
+.opt-list.is-letters .opt .opt-strike { display: none; }
+.opt-list.is-letters .opt .key { width: 40px; height: 40px; flex-basis: 40px; font-size: 18px; margin: 0; }

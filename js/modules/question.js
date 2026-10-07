@@ -820,7 +820,13 @@
       }
 
       function renderOptions(question, a) {
-        var list = U.el('div.opt-list', { role: 'group', 'aria-label': t('common.correct') });
+        /* The choices are printed in the question's picture and the file
+           has no text for them: the answer is just the letter, so the four
+           letters sit in a row under the picture. */
+        var lettersOnly = question.options.every(function (o) {
+          return !String(o || '').replace(/<[^>]*>/g, '').trim() && !/<img/i.test(String(o || ''));
+        });
+        var list = U.el('div.opt-list' + (lettersOnly ? '.is-letters' : ''), { role: 'group', 'aria-label': t('common.correct') });
         question.options.forEach(function (text, i) {
           var key = KEYS[i];
           var struck = a.struck.indexOf(key) >= 0;
