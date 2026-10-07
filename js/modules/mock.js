@@ -568,6 +568,7 @@
               okText: t('paper.sit')
             }).then(function (yes) {
               if (!yes) return;
+              JTS.fullWindow.enter();
               var run = JTS.mock.create({ timed: true, paperId: paper.id });
               JTS.mock.startModule(run.id);
             });
@@ -701,6 +702,26 @@
     return U.el('div.table-wrap', null, [table]);
   }
 
+  /* A past paper is sat in the whole screen, like the exam: no sidebar,
+     and the browser in full screen. Browsers only allow full screen right
+     after a click, so it is asked for on "Sit this paper" and on each
+     module's start button; from then on it stays until the paper is left. */
+  JTS.fullWindow = {
+    enter: function () {
+      document.body.classList.add('unit-focus');
+      if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen().catch(function () {});
+      }
+    },
+    /* Leaving: stay if the next screen is still part of the paper. */
+    leave: function () {
+      var h = (location.hash || '').split('?')[0];
+      if (h === '#/question' || h === '#/mocks/run') return;
+      document.body.classList.remove('unit-focus');
+      if (document.fullscreenElement) document.exitFullscreen().catch(function () {});
+    }
+  };
+
   JTS.router.register('#/mocks/run', {
     title: 'mock.title',
     render: function (root, route) {
@@ -753,8 +774,10 @@
 
       var card = U.el('div.card.stack');
       screen.appendChild(card);
+      if (run.paperId) document.body.classList.add('unit-focus');
 
       function startNow() {
+        if (run.paperId) JTS.fullWindow.enter();
         if (breakTimer) breakTimer.stop();
         JTS.mock.endBreak(run.id);
         if (!JTS.mock.startModule(run.id)) {
@@ -822,7 +845,10 @@
         }
       }));
 
-      return function () { if (breakTimer) breakTimer.stop(); };
+      return function () {
+        if (breakTimer) breakTimer.stop();
+        if (run.paperId) JTS.fullWindow.leave();
+      };
     }
   });
 })();

@@ -388,6 +388,10 @@
       /* Practice takes the whole window, like a unit does: the app's sidebar
          and header step aside until the screen is left. */
       if (isStudy) document.body.classList.add('unit-focus');
+      /* A past paper's module takes the whole screen (see JTS.fullWindow). */
+      var paperRun = !!(ses.meta && ses.meta.mockId && JTS.mock &&
+        (JTS.mock.get(ses.meta.mockId) || {}).paperId);
+      if (paperRun) document.body.classList.add('unit-focus');
 
       /* ------------------------------------------------------------- shell */
       var shell = U.el('div.q-shell' + (isStudy ? '.is-practice' : '') +
@@ -812,6 +816,9 @@
             var h = img.naturalHeight;
             if (!h) return;
             if (scanned) img.style.height = Math.max(20, Math.round(h * scale)) + 'px';
+            /* A wide, short picture is a typeset equation, not a graph:
+               it is shrunk to about a line of text. */
+            else if (img.naturalWidth / h >= 2.5) img.style.height = Math.max(26, Math.min(56, Math.round(h * 0.25))) + 'px';
             else if (h > 140) img.style.maxHeight = cap + 'px';
           }
           if (img.complete) size(); else img.addEventListener('load', size);
@@ -1178,6 +1185,7 @@
         JTS.desmos.hide();
         if (board) board.closeWindow();
         if (isStudy) document.body.classList.remove('unit-focus');
+        if (paperRun && JTS.fullWindow) JTS.fullWindow.leave();
         /* A Challenge set is full screen from its class page; it stays so
            on the way back there and leaves it anywhere else. */
         if (/^CH/.test(unitCode || '') && document.fullscreenElement &&
