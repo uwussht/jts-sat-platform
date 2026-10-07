@@ -104,6 +104,10 @@ JTS.data.jtsMeta = function (ref, overrides) {
  *   calculator   true for math, false for rw
  *   explanation  a plain string, or { en } alone, is used for ru and kk too
  *   distractors  the same, per letter
+ * A question with "lessonCode": "CH2" (or "U5") belongs to that class: it
+ * is added, in file order, to the practice set on the class's page and kept
+ * out of the Practice page. One file can hold the questions of many classes.
+ *
  * A JSON question with the same id as one already loaded replaces it, so a
  * .js topic file can be moved to JSON one file at a time.
  *
@@ -211,6 +215,14 @@ JTS.data.loadQuestionFiles = function () {
     Object.keys(q).forEach(function (k) { out[k] = q[k]; });
     out.meta = JTS.data.jtsMeta(q.id, q.meta || { source: 'JSON: ' + file });
     JTS.data.canonSkill(out);
+    /* "lessonCode": "CH2" makes the question one of that class's own
+       practice questions (the set on its page), not a Practice-page one. */
+    var code = q.lessonCode || (q.meta && q.meta.lessonCode);
+    if (code) {
+      out.meta.kind = 'lesson';
+      out.meta.lessonCode = code;
+      delete out.lessonCode;
+    }
     if (typeof out.calculator !== 'boolean') out.calculator = out.section === 'math';
     if (out.explanation) out.explanation = lang(out.explanation);
     if (out.distractors) {
@@ -240,6 +252,13 @@ JTS.data.loadQuestionFiles = function () {
       });
       if (repeated.length) console.warn('[JTS] repeated question ids in JSON, first kept:', repeated);
       JTS.data.questions = JTS.data.questions.filter(function (q) { return !ids[q.id]; }).concat(all);
+      var sets = JTS.data.lessonQuestions = JTS.data.lessonQuestions || {};
+      all.forEach(function (q) {
+        var code = q.meta.kind === 'lesson' && q.meta.lessonCode;
+        if (!code) return;
+        sets[code] = sets[code] || [];
+        if (sets[code].indexOf(q.id) < 0) sets[code].push(q.id);
+      });
       console.info('[JTS] ' + all.length + ' questions loaded from JSON (' + files.length + ' file' + (files.length === 1 ? '' : 's') + ')');
       return all.length;
     });
