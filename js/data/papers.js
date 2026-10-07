@@ -163,7 +163,9 @@ JTS.papers = {
 };
 
 /* ------------------------------------------------------- papers kept as JSON
-   js/data/papers/index.json lists the files: { "files": ["bluebook-4.json"] }.
+   js/data/papers/index.json lists the files: { "files": ["bluebook-4.json"] }
+   (or { "file": "bluebook-4.json", "assetBase": "assets/sat/bb4/" } to set
+   the picture folder there).
    A file is one paper:
 
      { "id": "bluebook-4",                 kept once students have sat it
@@ -246,8 +248,13 @@ JTS.data.loadPaperFiles = function () {
 
   return get('index.json').then(function (idx) {
     var files = (idx && idx.files) || [];
-    return Promise.all(files.map(function (f) {
+    return Promise.all(files.map(function (entry) {
+      /* An entry is a file name, or { file, assetBase } to say where the
+         pictures are without editing the paper file. */
+      var opt = typeof entry === 'string' ? { file: entry } : (entry || {});
+      var f = opt.file;
       return get(f).then(function (d) {
+        if (opt.assetBase) d.assetBase = opt.assetBase;
         var modules = d.modules;
         if (!modules) {
           modules = ORDER.map(function (o) {
