@@ -809,14 +809,7 @@
          the daily check. Both only on a real navigation — a redraw is not an
          arrival, and a coach mark that reappears every time a filter is
          ticked is a good feature turned into a fault. */
-      if (changed) {
-        var touring = JTS.tours ? JTS.tours.maybeShow(route.base) : false;
-        /* One at a time. A screen introducing itself and a modal asking for
-           five minutes are both reasonable; together they are a pile-up, and
-           the modal's backdrop dims the coach mark it lands on. The nudge
-           waits for the next arrival. */
-        if (!touring && JTS.daily) JTS.daily.maybePrompt();
-      }
+      if (changed && JTS.tours) JTS.tours.maybeShow(route.base);
     },
     start: function () {
       var self = this;

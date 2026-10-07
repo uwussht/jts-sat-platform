@@ -238,52 +238,7 @@
     ]);
   }
 
-  /* --------------------------------------------------------- the prompt */
-
-  var askedThisLoad = false;
-
-  /**
-   * The once-a-day nudge. It is deliberately hard to make annoying: once per
-   * calendar day, once per page load, never over a session in flight, never on
-   * the question screen, and never before the plan exists.
-   */
-  function maybePrompt() {
-    if (askedThisLoad) return;
-    var s = S.state();
-    if (!s || !s.profile.onboardingComplete) return;
-    var d = rec();
-    if (!d) return;
-    var day = todayISO();
-    if (d.promptedOn === day || forDay(day)) return;
-    if (JTS.session.current()) return;
-    var hash = (location.hash || '').split('?')[0];
-    if (['#/question', '#/daily', '#/mocks/run'].indexOf(hash) >= 0) return;
-    if (JTS.tour && JTS.tour.isOpen && JTS.tour.isOpen()) return;
-
-    askedThisLoad = true;
-    d.promptedOn = day;
-    S.save();
-
-    var m = ui.modal({
-      title: t('daily.promptTitle'),
-      content: U.el('div.stack-sm', null, [
-        U.el('p', { text: t('daily.promptBody', { n: N }) }),
-        d.streak ? U.el('p.small.muted', { text: t('daily.promptStreak', { n: d.streak }) }) : null
-      ]),
-      actions: [
-        U.el('button.btn', {
-          type: 'button', text: t('daily.later'), onclick: function () { m.close(); }
-        }),
-        U.el('button.btn.btn-primary', {
-          type: 'button', 'data-autofocus': '', text: t('daily.start'),
-          onclick: function () { m.close(); JTS.router.go('#/daily'); }
-        })
-      ]
-    });
-  }
-
   JTS.daily.historyCard = historyCard;
-  JTS.daily.maybePrompt = maybePrompt;
 
   /* ---------------------------------------------------------- the screen */
 
