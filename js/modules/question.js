@@ -392,6 +392,13 @@
       /* ------------------------------------------------------------- shell */
       var shell = U.el('div.q-shell' + (isStudy ? '.is-practice' : '') +
         (/^CH/.test(unitCode || '') ? '.is-challenge' : ''));
+      /* A Challenge picture is held to text size, unless it is a whole
+         exam screen (passage and question side by side), which needs the
+         full width to be readable. */
+      content.addEventListener('load', function (e) {
+        var img = e.target;
+        if (img && img.tagName === 'IMG' && img.naturalWidth > 1100) img.classList.add('is-wide');
+      }, true);
       var topbar = U.el('div.q-topbar');
       var main = U.el('div.q-main');
       var content = U.el('div.q-content');
