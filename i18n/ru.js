@@ -426,8 +426,6 @@ JTS.dict.ru = {
   'practice.mode.topicDesc': 'Выбранные навыки, 5 / 10 / 20 вопросов',
   'practice.mode.weak': 'Weak Skills',
   'practice.mode.weakDesc': 'Автоподбор по вашим данным mastery',
-  'practice.mode.custom': 'Custom Set',
-  'practice.mode.customDesc': 'Свои фильтры и длина',
   'practice.openSet': 'Незаконченный набор',
   'practice.closeSet': 'Завершить',
   'practice.count': 'Количество вопросов',

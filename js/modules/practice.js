@@ -21,8 +21,7 @@
     { id: 'rwModule',   section: 'rw',   count: 27, minutes: 32 },
     { id: 'mathModule', section: 'math', count: 22, minutes: 35 },
     { id: 'topic',      section: null,   count: null, minutes: 0 },
-    { id: 'weak',       section: null,   count: null, minutes: 0 },
-    { id: 'custom',     section: null,   count: null, minutes: 0 }
+    { id: 'weak',       section: null,   count: null, minutes: 0 }
   ];
   var chosenMode = 'topic';
   /* How many questions a set has. ALL (the default) is every question the
@@ -322,16 +321,8 @@
       return;
     }
 
-    if (chosenMode === 'topic') {
-      if (!filters.skillIds.length) { ui.toast(t('practice.pickSkills'), 'err'); return; }
-      startTopic(filters.skillIds, chosenCount);
-      return;
-    }
-
-    /* Custom: whatever the filters leave, shuffled, capped at the chosen size. */
-    var shuffled = U.shuffle(list, Date.now() % 9973);
-    var custom = (chosenCount ? shuffled.slice(0, chosenCount) : shuffled).map(function (q) { return q.id; });
-    startSet(custom, { title: t('practice.mode.custom') });
+    if (!filters.skillIds.length) { ui.toast(t('practice.pickSkills'), 'err'); return; }
+    startTopic(filters.skillIds, chosenCount);
   }
 
   /* ----------------------------------------------------------------- screen */

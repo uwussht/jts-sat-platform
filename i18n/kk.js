@@ -426,8 +426,6 @@ JTS.dict.kk = {
   'practice.mode.topicDesc': 'Таңдалған дағдылар, 5 / 10 / 20 сұрақ',
   'practice.mode.weak': 'Weak Skills',
   'practice.mode.weakDesc': 'Mastery деректері бойынша автоматты іріктеу',
-  'practice.mode.custom': 'Custom Set',
-  'practice.mode.customDesc': 'Өз сүзгілеріңіз бен ұзындығыңыз',
   'practice.openSet': 'Аяқталмаған жинақ',
   'practice.closeSet': 'Аяқтау',
   'practice.count': 'Сұрақ саны',

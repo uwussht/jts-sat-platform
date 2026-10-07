@@ -426,8 +426,6 @@ JTS.dict.en = {
   'practice.mode.topicDesc': 'Chosen skills, 5 / 10 / 20 questions',
   'practice.mode.weak': 'Weak skills',
   'practice.mode.weakDesc': 'Auto-picked from your mastery data',
-  'practice.mode.custom': 'Custom set',
-  'practice.mode.customDesc': 'Your own filters and length',
   'practice.openSet': 'Set in progress',
   'practice.closeSet': 'Finish it',
   'practice.count': 'Number of questions',
