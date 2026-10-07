@@ -310,6 +310,7 @@ JTS.dict.ru = {
   'roadmap.short.month2': 'Месяц 2',
   'roadmap.short.challenge': 'Challenge',
   'lesson.practice': 'Практика',
+  'lesson.module': 'Модуль {n}',
   'lesson.practiceSoon': 'Практика для этого юнита ещё не добавлена.',
   'lesson.practiceSoonShort': 'практика скоро',
   'lesson.englishOnly': 'На английском',

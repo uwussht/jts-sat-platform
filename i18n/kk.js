@@ -310,6 +310,7 @@ JTS.dict.kk = {
   'roadmap.short.month2': '2-ай',
   'roadmap.short.challenge': 'Challenge',
   'lesson.practice': 'Жаттығу',
+  'lesson.module': 'Модуль {n}',
   'lesson.practiceSoon': 'Бұл юниттің жаттығуы әлі қосылмаған.',
   'lesson.practiceSoonShort': 'жаттығу жақында',
   'lesson.englishOnly': 'Ағылшын тілінде',

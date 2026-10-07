@@ -235,11 +235,14 @@ JTS.data.loadQuestionFiles = function () {
        fields it knows. */
     var code = q && (q.lessonCode || (q.meta && q.meta.lessonCode));
     var ownSection = q && (q.section || q.domain);
+    var module = q && q.module != null ? Number(q.module) : null;
     if (q && (q.stemHtml !== undefined || q.correctAnswer !== undefined)) q = fromExport(q);
     var out = {};
     Object.keys(q).forEach(function (k) { out[k] = q[k]; });
     out.meta = JTS.data.jtsMeta(q.id, q.meta || { source: 'JSON: ' + file });
     JTS.data.canonSkill(out);
+    /* A full test's questions say which module of their section they are. */
+    if (module) out.module = module;
     /* "lessonCode": "CH2" makes the question one of that class's own
        practice questions (the set on its page), not a Practice-page one. */
     if (code) {

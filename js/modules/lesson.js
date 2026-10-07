@@ -234,15 +234,15 @@
       var rec = JTS.programme.lessonRecord(code, ids);
       var week = n ? Math.ceil(n / pw) : null;
 
-      function startAt(i) {
+      function startAt(i, part) {
         var ses = JTS.session.start({
           kind: 'practice', mode: 'study',
-          title: pick(lesson.t),
-          questionIds: ids,
+          title: pick(lesson.t) + (part ? ' · ' + part.label : ''),
+          questionIds: part ? part.ids : ids,
           softTimer: true,
           returnHash: '#/materials/lesson?code=' + code,
           finishHash: '#/materials/lesson?code=' + code,
-          meta: { lessonCode: code }
+          meta: part ? { lessonCode: code, module: part.key } : { lessonCode: code }
         });
         if (i > 0 && ses) {
           S.update(function (st) { st.activeSession.index = i; });
@@ -311,8 +311,54 @@
             })
           : null
       ]));
+      /* A full test (CH11, CH12) is sat module by module: R&W 1 and 2, then
+         Math 1 and 2, each its own set. */
+      var parts = [];
+      ids.forEach(function (id) {
+        var q = JTS.bank.get(id);
+        if (!q || !q.module) return;
+        var key = q.section + '-' + q.module;
+        var p = parts.filter(function (x) { return x.key === key; })[0];
+        if (!p) {
+          p = { key: key, ids: [],
+                label: t(q.section === 'math' ? 'common.math' : 'common.rw') + ' · ' + t('lesson.module', { n: q.module }) };
+          parts.push(p);
+        }
+        p.ids.push(id);
+      });
+      if (parts.length < 2) parts = [];
+
       if (!ids.length) {
         practice.appendChild(U.el('div.notice', { text: t('lesson.practiceSoon') }));
+      } else if (parts.length) {
+        var openSes = JTS.session.current();
+        var list = U.el('div.stack-sm.lw-modules');
+        parts.forEach(function (p) {
+          var r = JTS.programme.lessonRecord(code, p.ids);
+          var live = openSes && openSes.meta && openSes.meta.lessonCode === code &&
+            openSes.meta.module === p.key ? openSes : null;
+          var finished = r.done >= p.ids.length;
+          list.appendChild(U.el('div.card.card-sm.lw-module' + (finished ? '.is-done' : ''), null, [
+            U.el('div.stack-sm', null, [
+              U.el('b', { text: p.label }),
+              U.el('span.small.muted', {
+                text: t('mat.nQuestions', { n: p.ids.length }) +
+                  (r.done ? ' · ' + t('lesson.recordShort', { done: r.done, total: r.total, right: r.right }) : '')
+              }),
+              r.done ? ui.bar(r.done, r.total, 'bar-ok') : null
+            ]),
+            live
+              ? U.el('a.btn.btn-primary', {
+                  href: '#/question',
+                  text: t('lesson.continue', { n: live.index + 1, total: live.questionIds.length }) + ' →'
+                })
+              : U.el('button.btn' + (finished ? '' : '.btn-primary'), {
+                  type: 'button', text: r.done ? t('lesson.again') : t('lesson.start'),
+                  onclick: function () { startAt(0, p); }
+                })
+          ]));
+        });
+        practice.appendChild(list);
       } else {
         if (rec.done) practice.appendChild(ui.bar(rec.done, rec.total, 'bar-ok'));
         /* Back from the questions to the explanation: the set is still open,

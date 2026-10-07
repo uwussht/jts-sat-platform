@@ -2603,3 +2603,8 @@ img.fig { display: block; max-width: 100%; height: auto; margin: 8px 0 12px; }
 /* A completed unit: its box is filled and ticked. */
 .mat-unit.is-done .mat-state { background: var(--ok); border-color: var(--ok); color: #fff; font-weight: 800; }
 .q-shell.is-challenge .q-stem img.is-wide { max-width: 100% !important; }
+
+/* A full test's modules on its class page */
+.lw-module { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.lw-module > .stack-sm { flex: 1 1 260px; min-width: 0; }
+.lw-module.is-done { border-color: var(--ok); }

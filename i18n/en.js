@@ -310,6 +310,7 @@ JTS.dict.en = {
   'roadmap.short.month2': 'Month 2',
   'roadmap.short.challenge': 'Challenge',
   'lesson.practice': 'Practice',
+  'lesson.module': 'Module {n}',
   'lesson.practiceSoon': 'The practice set for this unit has not been added yet.',
   'lesson.practiceSoonShort': 'practice coming soon',
   'lesson.englishOnly': 'In English',
