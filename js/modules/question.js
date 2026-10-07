@@ -1157,6 +1157,12 @@
         JTS.desmos.hide();
         if (board) board.closeWindow();
         if (isStudy) document.body.classList.remove('unit-focus');
+        /* A Challenge set is full screen from its class page; it stays so
+           on the way back there and leaves it anywhere else. */
+        if (/^CH/.test(unitCode || '') && document.fullscreenElement &&
+            (location.hash || '').indexOf('#/materials/lesson') !== 0) {
+          document.exitFullscreen().catch(function () {});
+        }
       };
     }
   });

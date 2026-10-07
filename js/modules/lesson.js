@@ -212,6 +212,13 @@
          right: the lesson's parts and the tools a teacher reaches for
          mid-lesson, one press away wherever the page is scrolled to. */
       document.body.classList.add('unit-focus');
+      /* A Challenge class goes further and takes the whole screen, as the
+         exam does. Browsers allow this only straight after a click, so a
+         reload opens it in the window and the full-screen button is there. */
+      var challenge = lesson.unit === 'ch';
+      if (challenge && !document.fullscreenElement && document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen().catch(function () {});
+      }
       var page = U.el('div.container.container-wide.screen.lesson-page');
       var screen = U.el('div.stack.lesson-main');
       page.appendChild(screen);
@@ -359,7 +366,9 @@
         side.cleanup.forEach(function (f) { f(); });
         if (viewer) viewer.cleanup();
         board.closeWindow();
-        if (document.fullscreenElement) document.exitFullscreen().catch(function () {});
+        /* A Challenge stays full screen on the way into its questions. */
+        var toQuestions = challenge && (location.hash || '').indexOf('#/question') === 0;
+        if (document.fullscreenElement && !toQuestions) document.exitFullscreen().catch(function () {});
       };
     }
   });
