@@ -1074,24 +1074,27 @@
         if (isStudy && JTS.studyHelp && JTS.studyHelp.footerControls) {
           JTS.studyHelp.footerControls(footer, ses, question, a, refresh);
         }
-        footer.appendChild(U.el('button.btn', {
+        /* Back and Next stay together on the right, on the rail's line. */
+        var nav = U.el('div.q-nav');
+        footer.appendChild(nav);
+        nav.appendChild(U.el('button.btn', {
           type: 'button', text: t('q.back'), disabled: ses.index === 0 || null,
           onclick: function () { go(-1); }
         }));
 
         if (isStudy && !a.submitted) {
-          footer.appendChild(U.el('button.btn.btn-primary', {
+          nav.appendChild(U.el('button.btn.btn-primary', {
             type: 'button', text: t('q.submit'),
             disabled: (a.selected === null || a.selected === '') || null,
             onclick: check
           }));
         } else if (last) {
-          footer.appendChild(U.el('button.btn.btn-primary', {
+          nav.appendChild(U.el('button.btn.btn-primary', {
             type: 'button', text: t('q.finish'),
             onclick: function () { commitTime(); saveNow(); JTS.session.finish(); }
           }));
         } else {
-          footer.appendChild(U.el('button.btn.btn-primary', {
+          nav.appendChild(U.el('button.btn.btn-primary', {
             type: 'button', text: t('q.next'), onclick: function () { go(1); }
           }));
         }

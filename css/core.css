@@ -2681,3 +2681,10 @@ img.fig { display: block; max-width: 100%; height: auto; margin: 8px 0 12px; }
 .opt-list.is-letters .opt .opt-text,
 .opt-list.is-letters .opt .opt-strike { display: none; }
 .opt-list.is-letters .opt .key { width: 40px; height: 40px; flex-basis: 40px; font-size: 18px; margin: 0; }
+
+/* Exam footer: the rail takes what is left and scrolls inside itself, so a
+   27-question rail no longer pushes Next onto a second line. */
+.q-footer > .q-rail { flex: 1 1 0; }
+.q-nav { display: flex; gap: 8px; flex: none; margin-left: auto; }
+.q-nav .btn { min-width: 88px; }
+@media (max-width: 760px) { .q-footer > .q-rail { flex: 1 1 100%; } }
