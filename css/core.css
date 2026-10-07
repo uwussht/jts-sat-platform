@@ -2697,3 +2697,16 @@ img.fig { display: block; max-width: 100%; height: auto; margin: 8px 0 12px; }
 .pa-mod { border: 1px solid var(--border); border-radius: var(--r-md); padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; }
 .pa-mod-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
 .pa-chips { gap: 6px; }
+
+/* Mock tests: recent tests, each opening with its arrow */
+.rt-item { border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; }
+.rt-head { all: unset; box-sizing: border-box; width: 100%; cursor: pointer; display: flex; align-items: center; gap: 14px; padding: 14px 16px; }
+.rt-head:hover { background: var(--brand-050); }
+.rt-head:focus-visible { outline: 2px solid var(--brand-600); outline-offset: -2px; }
+.rt-arrow { font-size: 22px; line-height: 1; color: var(--brand-600); transition: transform .15s ease; width: 14px; text-align: center; }
+.rt-item.is-open .rt-arrow { transform: rotate(90deg); }
+.rt-title, .rt-score { display: flex; flex-direction: column; gap: 2px; }
+.rt-title { flex: 1; min-width: 0; }
+.rt-score { text-align: right; align-items: flex-end; }
+.rt-body { border-top: 1px solid var(--border); padding: 16px; }
+.rt-body[hidden] { display: none; }

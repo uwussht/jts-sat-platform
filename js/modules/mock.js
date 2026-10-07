@@ -577,31 +577,11 @@
     return card;
   }
 
-  /* ------------------------------------------- the last paper, analysed */
+  /* ------------------------------------------------------- recent tests */
 
-  /**
-   * Under the papers: the paper the student sat last, read back — the two
-   * section scores, each module, how many were wrong or left blank, the
-   * pace against the exam's, and the slowest questions. The full review is
-   * one press away.
-   */
-  function paperAnalysis() {
-    var runs = JTS.mock.finished().filter(function (r) { return r.paperId; });
-    if (!runs.length) return null;
-    var run = runs[runs.length - 1];
-    var paper = JTS.papers.get(run.paperId);
-    var lang = S.settings().uiLang;
-    var PACE = { rw: 32 * 60 / 27, math: 35 * 60 / 22 };   /* seconds a question */
-
-    var card = U.el('div.card.stack', { id: 'paper-analysis' });
-    card.appendChild(U.el('div.stack-sm', null, [
-      U.el('div.eyebrow', { text: t('paper.analysis') }),
-      U.el('h2.h2', { text: paper ? paper.title : run.paperId }),
-      U.el('div.small.muted', { text: U.fmtDate(new Date(run.finishedAt), lang) +
-        (runs.length > 1 ? ' · ' + t('paper.attemptN', { n: runs.length }) : '') })
-    ]));
-
-    /* The two sections and the total. */
+  /** One finished paper read back: the two sections, the total, each module. */
+  function paperBody(run) {
+    var body = U.el('div.stack.rt-body');
     var tot = JTS.mock.totalEstimate(run);
     var tiles = U.el('div.grid.grid-3.pa-tiles');
     ['rw', 'math'].forEach(function (sec) {
@@ -617,64 +597,84 @@
       U.el('div.pa-big', { text: tot ? tot.low + '–' + tot.high : '—' }),
       U.el('div.small.muted', { text: t('paper.estimateNote') })
     ]));
-    card.appendChild(tiles);
+    body.appendChild(tiles);
 
-    /* Each module: right, wrong, blank, and the pace. */
     var rows = U.el('div.stack-sm');
-    var slow = [];
     run.modules.forEach(function (m) {
       var sum = m.sessionId ? JTS.session.summary(m.sessionId) : null;
       if (!sum) return;
-      var right = 0, wrong = 0, blank = 0, ms = 0;
-      var no = m.key.slice(-1);
-      sum.questionIds.forEach(function (qid, i) {
+      var right = 0, wrong = 0, blank = 0;
+      sum.questionIds.forEach(function (qid) {
         var a = sum.answers[qid] || {};
         var given = a.selected !== null && a.selected !== undefined && a.selected !== '';
         if (!given) blank++; else if (a.correct) right++; else wrong++;
-        ms += a.timeMs || 0;
-        slow.push({ label: t(m.section === 'math' ? 'common.math' : 'common.rwShort') + ' ' + no +
-          ' · ' + t('paper.qNo', { n: i + 1 }), ms: a.timeMs || 0, right: !!a.correct });
       });
       var n = sum.questionIds.length;
-      var avg = n ? Math.round(ms / n / 1000) : 0;
-      var pace = PACE[m.section] || 80;
       rows.appendChild(U.el('div.pa-mod', null, [
         U.el('div.pa-mod-head', null, [
-          U.el('b', { text: t('common.' + m.section) + ' · ' + t('lesson.module', { n: no }) }),
+          U.el('b', { text: t('common.' + m.section) + ' · ' + t('lesson.module', { n: m.key.slice(-1) }) }),
           U.el('span.small.muted', { text: right + ' / ' + n })
         ]),
         JTS.ui.bar(right, n || 1, 'bar-ok'),
         U.el('div.row.row-wrap.pa-chips', null, [
           U.el('span.badge.badge-ok', { text: t('common.correct') + ' ' + right }),
           U.el('span.badge.badge-danger', { text: t('common.incorrect') + ' ' + wrong }),
-          blank ? U.el('span.badge.badge-muted', { text: t('paper.blank', { n: blank }) }) : null,
-          U.el('span.badge' + (avg > pace * 1.1 ? '.badge-warn' : '.badge-muted'), {
-            text: t('paper.avgTime', { s: avg, pace: Math.round(pace) })
-          })
+          blank ? U.el('span.badge.badge-muted', { text: t('paper.blank', { n: blank }) }) : null
         ])
       ]));
     });
-    card.appendChild(U.el('div.stack-sm', null, [U.el('div.stat-label', { text: t('paper.byModule') }), rows]));
-
-    /* Where the time went. */
-    slow.sort(function (a, b) { return b.ms - a.ms; });
-    var top = slow.filter(function (x) { return x.ms > 0; }).slice(0, 5);
-    if (top.length) {
-      card.appendChild(U.el('div.stack-sm', null, [
-        U.el('div.stat-label', { text: t('paper.slowest') }),
-        U.el('div.row.row-wrap', null, top.map(function (x) {
-          return U.el('span.badge' + (x.right ? '.badge-muted' : '.badge-danger'), {
-            text: x.label + ' — ' + U.fmtLongTime(x.ms)
-          });
-        }))
-      ]));
-    }
-
-    card.appendChild(U.el('div.row.row-wrap', null, [
+    body.appendChild(U.el('div.stack-sm', null, [U.el('div.stat-label', { text: t('paper.byModule') }), rows]));
+    body.appendChild(U.el('div.row.row-wrap', null, [
       U.el('a.btn.btn-primary', { href: '#/mocks/review?run=' + run.id, text: t('mock.reviewQuestions') }),
       U.el('a.btn', { href: '#/mocks/result?run=' + run.id, text: t('mock.openResult') })
     ]));
-    return card;
+    return body;
+  }
+
+  /**
+   * Under the papers: the papers this student has finished, newest first.
+   * Each is one line — the paper, the day, the score — and opens with its
+   * arrow to the sections and the modules.
+   */
+  function recentTests() {
+    var runs = JTS.mock.finished().filter(function (r) { return r.paperId; }).slice().reverse().slice(0, 10);
+    if (!runs.length) return null;
+    var lang = S.settings().uiLang;
+    var list = U.el('div.stack-sm');
+    runs.forEach(function (run) {
+      var paper = JTS.papers.get(run.paperId);
+      var tot = JTS.mock.totalEstimate(run);
+      var raw = JTS.mock.raw(run, 'rw').correct + JTS.mock.raw(run, 'math').correct;
+      var all = JTS.mock.raw(run, 'rw').total + JTS.mock.raw(run, 'math').total;
+      var item = U.el('div.rt-item');
+      var body = null;
+      var head = U.el('button.rt-head', {
+        type: 'button', 'aria-expanded': 'false',
+        onclick: function () {
+          var open = !item.classList.contains('is-open');
+          if (open && !body) { body = paperBody(run); item.appendChild(body); }
+          if (body) body.hidden = !open;
+          item.classList.toggle('is-open', open);
+          head.setAttribute('aria-expanded', String(open));
+        }
+      }, [
+        U.el('span.rt-arrow', { text: '›', 'aria-hidden': 'true' }),
+        U.el('span.rt-title', null, [
+          U.el('b', { text: paper ? paper.title : run.paperId }),
+          U.el('span.small.muted', { text: U.fmtDate(new Date(run.finishedAt), lang) })
+        ]),
+        U.el('span.rt-score', null, [
+          U.el('b', { text: tot ? tot.low + '–' + tot.high : '—' }),
+          U.el('span.small.muted', { text: raw + ' / ' + all })
+        ])
+      ]);
+      item.appendChild(head);
+      list.appendChild(item);
+    });
+    return U.el('div.card.stack', { id: 'recent-tests' }, [
+      U.el('h2.h2', { text: t('paper.recent') }),
+      list
+    ]);
   }
 
   /** Finished runs, newest first — rendered by #/progress. */
@@ -731,8 +731,8 @@
 
         var papers = paperCard(rerender);
         if (papers) screen.appendChild(papers);
-        var last = paperAnalysis();
-        if (last) screen.appendChild(last);
+        var recent = recentTests();
+        if (recent) screen.appendChild(recent);
 
         /* The page is for sitting a test. The list of finished ones and the
            trajectory both live on #/progress, which is the screen that answers
