@@ -179,36 +179,95 @@
     }));
   }
 
+  /** Every question ever answered, wherever: practice, lessons, the weekly
+      test and mocks all log their answers as attempts. */
+  function tallyAttempts(attempts) {
+    var out = { all: blank(), rw: blank(), math: blank(), skills: {}, days: {} };
+    attempts.forEach(function (a) {
+      var q = JTS.bank.get(a.questionId);
+      var ok = !!a.correct, ms = a.timeMs || 0;
+      [out.all, q && out[q.section]].forEach(function (b) {
+        if (!b) return;
+        b.answered++; if (ok) b.correct++; b.timeMs += ms;
+      });
+      var sid = (q && q.skillId) || a.skillId;
+      if (sid && JTS.skills.get(sid)) {
+        var sk = out.skills[sid] || (out.skills[sid] = blank());
+        sk.answered++; if (ok) sk.correct++; sk.timeMs += ms;
+      }
+      if (a.ts) {
+        var day = U.iso(new Date(a.ts));
+        out.days[day] = (out.days[day] || 0) + 1;
+      }
+    });
+    return out;
+  }
+
+  /** The streak as it stands today: a run that missed yesterday is over. */
+  function streakNow(st) {
+    var k = (st.profile && st.profile.streak) || {};
+    var today = U.iso(new Date()), yest = U.iso(U.addDays(U.today(), -1));
+    return {
+      count: (k.lastDay === today || k.lastDay === yest) ? (k.count || 0) : 0,
+      best: k.best || 0,
+      today: k.lastDay === today
+    };
+  }
+
   function dashboardCard() {
-    var list = sessions();
-    var tl = tally(list);
+    var st = S.state();
+    var attempts = (st && st.attempts) || [];
+    var tl = tallyAttempts(attempts);
     var head = U.el('div.row-between.row-wrap', null, [
       U.el('div.eyebrow', { text: t('pstats.title') }),
-      U.el('a.small', { href: '#/practice', text: t('nav.practice') + ' →' })
+      U.el('a.small', { href: '#/progress', text: t('progress.title') + ' →' })
     ]);
-    if (!tl.all.answered) {
-      return U.el('div.card.stack-sm', { id: 'today-practice-stats' }, [
-        head, U.el('p.muted.small', { text: t('pstats.none') })
-      ]);
-    }
+
     var weekStart = U.addDays(U.today(), -6).getTime();
-    var thisWeek = 0;
-    Object.keys(tl.days).forEach(function (k) { if (U.parseISO(k).getTime() >= weekStart) thisWeek += tl.days[k]; });
+    var thisWeek = attempts.filter(function (a) { return a.ts >= weekStart; }).length;
+    var todayStart = U.today().getTime();
+    var todayMs = U.sum(attempts.filter(function (a) { return a.ts >= todayStart; })
+      .map(function (a) { return a.timeMs || 0; }));
+    var streak = streakNow(st);
+
+    var P = JTS.programme;
+    var unitsDone = P ? P.doneCount() : 0;
+    var unitsAll = P ? P.lessonCount('rw') + P.lessonCount('math') : 0;
+    var mocks = JTS.mock ? JTS.mock.finished() : [];
+    var bestMock = null;
+    mocks.forEach(function (r) {
+      var e = JTS.mock.totalEstimate(r);
+      if (e) { var v = Math.round((e.low + e.high) / 2); if (bestMock === null || v > bestMock) bestMock = v; }
+    });
+    var weekly = JTS.weeklyTest ? JTS.weeklyTest.history().length : 0;
+    var practiceSets = sessions().length;
+    var openErrors = ((st && st.errors) || []).filter(function (e) { return !e.resolvedAt; }).length;
 
     var card = U.el('div.card.stack', { id: 'today-practice-stats' }, [
       head,
       U.el('div.ps-kpis', null, [
-        kpi(t('pstats.answered'), String(tl.all.answered), t('pstats.thisWeek', { n: thisWeek })),
-        kpi(t('pstats.accuracy'), U.pct(tl.all.correct, tl.all.answered) + '%',
+        kpi(t('pstats.streak'), '\uD83D\uDD25 ' + streak.count,
+          streak.today ? t('pstats.streakToday', { best: streak.best }) : t('pstats.streakBest', { best: streak.best })),
+        kpi(t('pstats.solved'), String(tl.all.answered), t('pstats.thisWeek', { n: thisWeek })),
+        kpi(t('pstats.accuracy'), tl.all.answered ? U.pct(tl.all.correct, tl.all.answered) + '%' : '—',
           t('pstats.correctOf', { c: tl.all.correct, n: tl.all.answered })),
-        kpi(t('pstats.time'), fmtTime(tl.all.timeMs)),
-        kpi(t('pstats.sets'), String(tl.sets))
+        kpi(t('pstats.time'), fmtTime(tl.all.timeMs), t('pstats.today', { time: fmtTime(todayMs) }))
       ]),
-      U.el('div.ps-cols', null, [
-        U.el('div.stack-sm', null, [U.el('div.stat-label', { text: t('pstats.week') }), weekBars(tl)]),
-        U.el('div.stack-sm', null, [U.el('div.stat-label', { text: t('pstats.bySection') }), sectionBars(tl)])
+      U.el('div.ps-kpis', null, [
+        kpi(t('pstats.units'), unitsDone + (unitsAll ? ' / ' + unitsAll : '')),
+        kpi(t('pstats.mocks'), String(mocks.length), bestMock !== null ? t('pstats.bestScore', { n: bestMock }) : null),
+        kpi(t('pstats.weekly'), String(weekly), t('pstats.practiceSets', { n: practiceSets })),
+        kpi(t('pstats.mistakes'), String(openErrors), t('pstats.toReview'))
       ])
     ]);
+    if (!tl.all.answered) {
+      card.appendChild(U.el('p.muted.small', { text: t('pstats.none') }));
+      return card;
+    }
+    card.appendChild(U.el('div.ps-cols', null, [
+      U.el('div.stack-sm', null, [U.el('div.stat-label', { text: t('pstats.week') }), weekBars(tl)]),
+      U.el('div.stack-sm', null, [U.el('div.stat-label', { text: t('pstats.bySection') }), sectionBars(tl)])
+    ]));
     var weak = topicRows(tl, 3, 3, true);
     if (weak) {
       card.appendChild(U.el('div.stack-sm', null, [
