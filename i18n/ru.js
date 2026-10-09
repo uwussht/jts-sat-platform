@@ -8,6 +8,8 @@ JTS.dict.ru = {
   'nav.plan': 'Мой план',
   'nav.practice': 'Практика',
   'nav.mocks': 'Пробники',
+  'nav.groupStudy': 'Учёба',
+  'nav.groupTools': 'Инструменты',
   'nav.settings': 'Настройки',
   'nav.goal': 'Целевой балл',
   'roadmap.title': 'Roadmap',

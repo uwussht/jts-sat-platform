@@ -2134,9 +2134,40 @@
          question mark in a corner is not where anyone looks for that. */
       { path: '#/guide',        key: 'guide.nav',    icon: '?' }
     ],
+    /* Line icons for the navigation, drawn in currentColor so the current
+       page's icon turns black on the yellow pill with its label. */
+    navIcons: {
+      '#/today':        '<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
+      '#/plan':         '<rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/>',
+      '#/practice':     '<path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/>',
+      '#/mocks':        '<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9.5 2.5h5"/>',
+      '#/materials':    '<path d="M2.5 5.5c3-1.5 6-1.5 9.5 1 3.5-2.5 6.5-2.5 9.5-1v13c-3-1.5-6-1.5-9.5 1-3.5-2.5-6.5-2.5-9.5-1z"/><path d="M12 6.5v13"/>',
+      '#/roadmap':      '<path d="M9 4.5l-6 2v13l6-2 6 2 6-2v-13l-6 2z"/><path d="M9 4.5v13M15 6.5v13"/>',
+      '#/errors':       '<path d="M5 21V4m0 0h11l-2 4 2 4H5"/>',
+      '#/vocab':        '<path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/>',
+      '#/desmos-guide': '<path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/>',
+      '#/guide':        '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5v.7M12 17.2v.1"/>'
+    },
+    navIcon: function (path) {
+      var d = this.navIcons[path] || '<circle cx="12" cy="12" r="8"/>';
+      return '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" ' +
+        'stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '</svg>';
+    },
+    /* The group a destination belongs to: its label sits over it in the
+       sidebar, and over the page title. */
+    navGroup: function (path) {
+      return this.navItems.some(function (it) { return it.path === path; }) ? 'nav.groupStudy'
+        : this.subNavItems.some(function (it) { return it.path === path; }) ? 'nav.groupTools' : null;
+    },
     applyProfileSettings: function () {
       var st = Store.settings();
-      document.documentElement.setAttribute('data-theme', st.theme || 'light');
+      /* The TeenTechEd look is dark first. Profiles saved before it are moved
+         to dark once; after that the theme button decides. */
+      if (Store.state() && !st.themeV2) {
+        Store.update(function (s) { s.settings.theme = 'dark'; s.settings.themeV2 = true; });
+        st = Store.settings();
+      }
+      document.documentElement.setAttribute('data-theme', st.theme || 'dark');
       if (st.uiLang) JTS.i18n.lang = st.uiLang;
       document.documentElement.lang = JTS.i18n.lang;
     },
@@ -2224,7 +2255,10 @@
       /* Mid-onboarding the only other screen a student can reach is Settings,
          and #/today would bounce them; the brand is their way back. */
       bar.appendChild(U.el('a.sb-brand', { href: onboarding ? '#/onboarding' : '#/today' }, [
-        U.el('span.brand-mark', { text: 'JTS', 'aria-hidden': 'true' }),
+        U.el('span.brand-mark', { 'aria-hidden': 'true', html:
+          '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" ' +
+          'stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/>' +
+          '<path d="M6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6"/></svg>' }),
         U.el('span.brand-text', null, [
           U.el('b', { text: 'JTS SAT' }),
           U.el('span', { text: t('brand.eyebrow') })
@@ -2246,11 +2280,15 @@
 
       if (!onboarding) {
         var nav = U.el('nav.sb-nav', { id: 'main-nav' });
-        this.navItems.concat(this.subNavItems).forEach(function (it) {
-          nav.appendChild(U.el('a', { href: it.path, dataset: { path: it.path } }, [
-            U.el('em', { text: it.icon, 'aria-hidden': 'true' }),
-            U.el('span', { text: t(it.key) })
-          ]));
+        var self = this;
+        [['nav.groupStudy', this.navItems], ['nav.groupTools', this.subNavItems]].forEach(function (g) {
+          nav.appendChild(U.el('div.sb-group', { text: t(g[0]) }));
+          g[1].forEach(function (it) {
+            nav.appendChild(U.el('a', { href: it.path, dataset: { path: it.path } }, [
+              U.el('em', { html: self.navIcon(it.path), 'aria-hidden': 'true' }),
+              U.el('span', { text: t(it.key) })
+            ]));
+          });
         });
         bar.appendChild(nav);
       }
@@ -2314,9 +2352,10 @@
       var st = Store.state();
       tabbar.hidden = !st || !st.profile.onboardingComplete;
       if (tabbar.hidden) return;
+      var self = this;
       this.navItems.forEach(function (it) {
         tabbar.appendChild(U.el('a', { href: it.path, dataset: { path: it.path } }, [
-          U.el('em', { text: it.icon, 'aria-hidden': 'true' }),
+          U.el('em', { html: self.navIcon(it.path), 'aria-hidden': 'true' }),
           U.el('span', { text: t(it.key) })
         ]));
       });
@@ -2333,17 +2372,34 @@
       if (titleKey !== undefined) bar.dataset.titleKey = titleKey || '';
       var key = bar.dataset.titleKey || '';
       U.clear(bar);
+      /* The bar is a breadcrumb, JTS SAT / PRACTICE; the page's own title is
+         the large heading under it, with its group over it. */
       bar.appendChild(U.el('div.tb-left', null, [
         U.el('button.tb-menu', {
           type: 'button', 'aria-label': t('nav.main'), text: '≡',
           onclick: function () { document.body.classList.toggle('sb-open'); }
         }),
-        U.el('h1.tb-title', { text: key ? t(key) : '' }),
-        U.el('span.tb-date', { text: U.fmtDate(U.today(), Store.settings().uiLang) })
+        U.el('nav.tb-crumbs', { 'aria-label': t('nav.main') }, [
+          U.el('a', { href: '#/today', text: 'JTS SAT' }),
+          key ? U.el('span.tb-sep', { text: '/', 'aria-hidden': 'true' }) : null,
+          key ? U.el('b', { text: t(key) }) : null
+        ])
       ]));
       bar.appendChild(U.el('div.tb-actions', { id: 'topbar-actions' }));
       var st = Store.state();
       bar.hidden = !st || !st.profile.onboardingComplete;
+
+      var head = U.$('#page-head');
+      if (head) {
+        U.clear(head);
+        var path = (location.hash || '#/today').split('?')[0];
+        var group = this.navGroup(path);
+        if (key) {
+          head.appendChild(U.el('div.ph-eyebrow', { text: group ? t(group) : 'JTS SAT' }));
+          head.appendChild(U.el('h1.ph-title', { text: t(key) }));
+        }
+        head.hidden = bar.hidden || !key;
+      }
     },
 
     /** Screens call this to hang their own controls in the top bar. */

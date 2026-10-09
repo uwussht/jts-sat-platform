@@ -1,21 +1,22 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>JTS SAT</title>
   <meta name="description" content="JTS Digital SAT preparation platform">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='9' fill='%23874BF8'/><text x='16' y='21' font-family='sans-serif' font-size='12' font-weight='bold' fill='white' text-anchor='middle'>JTS</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='9' fill='%23FFD400'/><text x='16' y='21' font-family='sans-serif' font-size='12' font-weight='bold' fill='black' text-anchor='middle'>JTS</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="css/core.css?v=cfc69609d5">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="css/core.css?v=2a2e03f2bd">
 </head>
 <body>
   <div class="app-shell">
     <aside class="app-sidebar" id="app-sidebar" hidden></aside>
     <div class="app-body">
       <div class="app-topbar" id="app-topbar" hidden></div>
+      <header class="page-head container" id="page-head" hidden></header>
       <main id="app-root" role="main"></main>
     </div>
     <nav class="tabbar" id="tabbar" aria-label="Sections" hidden></nav>
@@ -26,7 +27,7 @@
   <aside id="desmos-panel" aria-hidden="true" aria-label="Desmos Graphing Calculator"></aside>
 
   <!-- Core first: it owns the JTS namespace, store, router and UI kit. -->
-  <script src="js/core.js?v=53b64ccd4a"></script>
+  <script src="js/core.js?v=a8838e3167"></script>
 
   <!-- Content data -->
   <script src="js/data/skills.js?v=3c49038358"></script>
@@ -83,9 +84,9 @@
   <script src="js/data/sat-info.js?v=eda4a0fa81"></script>
 
   <!-- Translations -->
-  <script src="i18n/en.js?v=ec80beadf2"></script>
-  <script src="i18n/ru.js?v=e0f599093a"></script>
-  <script src="i18n/kk.js?v=ba5e43513d"></script>
+  <script src="i18n/en.js?v=858aad51ab"></script>
+  <script src="i18n/ru.js?v=b896b26661"></script>
+  <script src="i18n/kk.js?v=687c8d8701"></script>
 
   <!-- Screens: each registers itself on JTS.router -->
   <script src="js/modules/auth.js?v=cb74e436c4"></script>

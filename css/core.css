@@ -2726,3 +2726,308 @@ body.unit-focus .q-shell.is-practice.is-challenge .q-content.is-single.has-wide-
 /* The two full simulations are screenshots of whole questions: their
    pictures are shown at their own size, not held to text size. */
 .q-shell.is-full-sim .q-stem img { max-width: 100% !important; width: auto !important; }
+
+/* ==========================================================================
+   TeenTechEd look (2026-10)
+   Near-black ground, dark cards with a hairline border, one yellow accent.
+   The current page is a yellow pill with black text; section labels are
+   small, spaced capitals; page titles are set heavy. Dark is the default
+   theme, and the light theme keeps the same yellow on white.
+   This block sits last so it wins over everything above it.
+   ========================================================================== */
+:root, html[data-theme="light"] {
+  --brand-950: #1A1500;
+  --brand-900: #2B2300;
+  --brand-800: #4A3C00;
+  --brand-700: #7A5F00;      /* yellow text on light grounds */
+  --brand-600: #FFD400;      /* the accent: buttons, current page */
+  --brand-500: #FFDB2E;
+  --brand-400: #FFE15C;
+  --brand-300: #FFE98A;
+  --brand-200: #FFF0B3;
+  --brand-100: #FFF6D1;
+  --brand-050: #FFFAE6;
+  --eyebrow:   #8A6B00;
+  --eyebrow-on-dark: #FFD400;
+  --on-brand:  #0B0B0B;      /* text on the yellow */
+  --bg:        #F5F5F2;
+  --surface:   #FFFFFF;
+  --surface-2: #F2F2EE;
+  --border:    #E4E4DE;
+  --border-strong: #CFCFC7;
+  --ink:       #111111;
+  --ink-2:     #2E2E2E;
+  --muted:     #6B6B66;
+  --r-sm: 10px; --r-md: 12px; --r-lg: 18px; --r-xl: 22px;
+  --shadow-1: none;
+  --shadow-2: 0 10px 30px rgba(0,0,0,.08);
+  --shadow-3: 0 24px 60px rgba(0,0,0,.25);
+  --display: Unbounded, Manrope, "Segoe UI", sans-serif;
+}
+html[data-theme="dark"] {
+  --brand-950: #FFF3B0;
+  --brand-900: #FFE97A;
+  --brand-800: #2A250D;
+  --brand-700: #FFE15C;      /* yellow text on dark grounds */
+  --brand-600: #FFD400;
+  --brand-500: #FFDB2E;
+  --brand-400: #D9B500;
+  --brand-300: #6B5A10;
+  --brand-200: #3D3510;
+  --brand-100: #29240C;
+  --brand-050: #1C190B;
+  --eyebrow:   #FFD400;
+  --eyebrow-on-dark: #FFD400;
+  --on-brand:  #0B0B0B;
+  --bg:        #0A0A0A;
+  --surface:   #141414;
+  --surface-2: #1B1B1B;
+  --border:    #262626;
+  --border-strong: #3A3A3A;
+  --ink:       #F4F4F2;
+  --ink-2:     #D6D6D2;
+  --muted:     #9A9A94;
+  --ok:        #4ADE80;  --ok-bg:     #10261A;
+  --warn:      #FBBF24;  --warn-bg:   #2A2108;
+  --danger:    #F87171;  --danger-bg: #2E1214;
+  --info:      #60A5FA;  --info-bg:   #0F1C33;
+  --m-nodata:  #2A2A2A;
+  --dark-grad-a: #141414;
+  --dark-grad-b: #1B1B1B;
+  --shadow-1: none;
+  --shadow-2: 0 2px 0 rgba(0,0,0,.5);
+  --shadow-3: 0 24px 60px rgba(0,0,0,.7);
+}
+
+body { background: var(--bg); color: var(--ink); }
+::selection { background: var(--brand-600); color: var(--on-brand); }
+a { color: var(--brand-700); }
+
+/* ----- type: heavy titles, spaced capitals ------------------------------- */
+.h1, .ph-title, .hero-title {
+  font-family: var(--display); font-weight: 800; letter-spacing: -.01em;
+}
+.h2 { font-family: var(--display); font-weight: 700; font-size: 19px; letter-spacing: 0; }
+.h3 { font-weight: 800; }
+.eyebrow, .stat-label, .sb-goal-label, .ph-eyebrow, .sb-group {
+  font-weight: 800; letter-spacing: .16em; text-transform: uppercase;
+}
+.eyebrow { color: var(--eyebrow); font-size: 11.5px; }
+
+/* ----- sidebar ----------------------------------------------------------- */
+.app-sidebar {
+  background: var(--bg); color: var(--ink);
+  border-right: 1px solid var(--border); padding: 18px 14px;
+}
+html[data-theme="light"] .app-sidebar { background: #FFFFFF; }
+.sb-brand { color: var(--ink); gap: 12px; padding: 4px 6px 12px; border-bottom: 1px solid var(--border); margin-bottom: 4px; }
+.brand-mark {
+  width: 44px; height: 44px; flex: 0 0 44px; display: grid; place-items: center;
+  background: var(--brand-600); color: var(--on-brand); border-radius: 12px;
+}
+.brand-mark svg { display: block; }
+.brand-text b { font-family: var(--display); font-size: 15px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.brand-text span { color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; }
+.sb-goal {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md);
+  color: var(--ink);
+}
+.sb-goal:hover { background: var(--surface-2); border-color: var(--border-strong); }
+.sb-goal-label { color: var(--brand-700); font-size: 10px; }
+.sb-goal-value { font-family: var(--display); font-weight: 800; }
+.sb-goal-meta { color: var(--muted); }
+.sb-nav { gap: 4px; }
+.sb-group {
+  font-size: 10.5px; color: var(--muted); padding: 14px 12px 6px;
+}
+.sb-group:first-child { padding-top: 6px; }
+.sb-nav a {
+  display: flex; align-items: center; gap: 12px;
+  padding: 11px 14px; border-radius: var(--r-md); border: 0;
+  color: var(--ink-2); font-weight: 650; font-size: 15px;
+}
+.sb-nav a em { width: 20px; flex: 0 0 20px; display: grid; place-items: center; opacity: .9; }
+.sb-nav a em svg { display: block; }
+.sb-nav a:hover { background: var(--surface-2); color: var(--ink); }
+.sb-nav a[aria-current="page"] {
+  background: var(--brand-600); color: var(--on-brand); font-weight: 800;
+}
+.sb-nav a[aria-current="page"] em { opacity: 1; }
+.sb-user { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); }
+.sb-avatar { background: var(--brand-600); color: var(--on-brand); }
+.sb-user-text b { color: var(--ink); }
+.sb-user-text span { color: var(--muted); }
+
+/* ----- small controls: icon buttons, language switch -------------------- */
+.icon-btn {
+  background: var(--surface); border: 1px solid var(--border); color: var(--ink-2);
+  border-radius: var(--r-md);
+}
+.icon-btn:hover { background: var(--surface-2); border-color: var(--border-strong); color: var(--ink); }
+.lang-switch { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); }
+.lang-switch button { color: var(--muted); font-weight: 700; }
+.lang-switch button:hover { background: var(--surface-2); color: var(--ink); }
+.lang-switch button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+
+/* ----- top bar: a breadcrumb --------------------------------------------- */
+.app-topbar {
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border); min-height: 64px;
+}
+.tb-left { align-items: center; }
+.tb-crumbs {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 12px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--muted); white-space: nowrap; overflow: hidden;
+}
+.tb-crumbs a { color: var(--muted); text-decoration: none; }
+.tb-crumbs a:hover { color: var(--ink); }
+.tb-crumbs b { color: var(--ink); font-weight: 800; overflow: hidden; text-overflow: ellipsis; }
+.tb-sep { opacity: .6; }
+.tb-menu { border-radius: var(--r-md); background: var(--surface); border-color: var(--border); color: var(--ink); }
+
+/* ----- the page's own title --------------------------------------------- */
+.page-head { padding-top: 30px; padding-bottom: 4px; }
+.page-head[hidden] { display: none; }
+.ph-eyebrow { font-size: 12px; color: var(--eyebrow); }
+.ph-title { margin: 6px 0 0; font-size: clamp(28px, 3.2vw, 40px); line-height: 1.12; color: var(--ink); }
+.page-head:not([hidden]) + main .screen { padding-top: 18px; }
+body.unit-focus .page-head { display: none !important; }
+
+/* ----- cards ------------------------------------------------------------- */
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); box-shadow: none;
+}
+.card-sm { border-radius: var(--r-md); }
+.card-brand { background: var(--brand-050); border-color: var(--brand-300); }
+.card-accent { border-left: 1px solid var(--border); box-shadow: inset 4px 0 0 var(--brand-600); }
+.card-hero, .today-hero {
+  background:
+    radial-gradient(120% 140% at 100% 0%, rgba(255, 212, 0, .16), transparent 55%),
+    #141414;
+  border: 1px solid #262626; color: #F4F4F2;
+}
+.card-hero .eyebrow, .today-hero .eyebrow { color: #FFD400; }
+.hero-lead { color: rgba(244,244,242,.72); }
+.hero-btn {
+  background: #1F1F1F; border: 1px solid #333; color: #F4F4F2; border-radius: var(--r-md);
+}
+.hero-btn:hover { background: #FFD400; border-color: #FFD400; color: #0B0B0B; }
+.hero-exam { color: #FFD400; }
+.cd-tile { background: #0A0A0A; border: 1px solid #2E2E2E; color: #F4F4F2; border-radius: 10px; }
+.cd-lab { color: rgba(244,244,242,.6); }
+.hero-date { color: rgba(244,244,242,.85); }
+.hero-change { color: rgba(244,244,242,.6); }
+
+/* ----- buttons ----------------------------------------------------------- */
+.btn {
+  border-radius: var(--r-md); border: 1px solid var(--border-strong);
+  background: var(--surface); color: var(--ink); font-weight: 700;
+}
+.btn:hover { background: var(--surface-2); border-color: var(--ink-2); color: var(--ink); }
+.btn-primary, .btn-primary:hover {
+  background: var(--brand-600); border-color: var(--brand-600); color: var(--on-brand); font-weight: 800;
+}
+.btn-primary:hover { filter: brightness(1.06); }
+.btn-ghost { background: transparent; border-color: transparent; }
+.btn-ghost:hover { background: var(--surface-2); }
+
+/* ----- chips, tabs, badges ---------------------------------------------- */
+.chip {
+  border-radius: var(--r-md); background: var(--surface); border: 1px solid var(--border);
+  color: var(--ink-2); font-weight: 700;
+}
+.chip:hover { background: var(--surface-2); border-color: var(--border-strong); color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.tabs { border-bottom: 1px solid var(--border); }
+.tabs button { color: var(--muted); font-weight: 700; }
+.tabs button:hover { color: var(--ink); }
+.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--brand-600); }
+.badge {
+  border-radius: 8px; font-weight: 700; background: var(--surface-2);
+  border: 1px solid var(--border); color: var(--ink-2);
+}
+.badge-ok     { background: var(--ok-bg); border-color: transparent; color: var(--ok); }
+.badge-warn   { background: var(--warn-bg); border-color: transparent; color: var(--warn); }
+.badge-danger { background: var(--danger-bg); border-color: transparent; color: var(--danger); }
+.badge-muted  { background: var(--surface-2); color: var(--muted); }
+
+/* ----- form fields ------------------------------------------------------- */
+.input, .select, .textarea {
+  background: var(--surface-2); border: 1px solid var(--border); color: var(--ink);
+  border-radius: var(--r-md);
+}
+.input:focus, .select:focus, .textarea:focus {
+  border-color: var(--brand-600); box-shadow: 0 0 0 3px rgba(255, 212, 0, .22); outline: none;
+}
+.input::placeholder, .textarea::placeholder { color: var(--muted); }
+
+/* ----- notices ----------------------------------------------------------- */
+.notice { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--r-md); color: var(--ink-2); }
+.notice-warn { background: var(--warn-bg); border-color: transparent; color: var(--warn); }
+
+/* ----- bars and meters --------------------------------------------------- */
+.bar { background: var(--surface-2); border-radius: 999px; overflow: hidden; }
+.bar > i { background: var(--brand-600); }
+.bar-ok > i { background: var(--ok); }
+
+/* ----- every yellow fill gets black text --------------------------------- */
+.phase-track > div.current, .q-tool[aria-pressed="true"], .opt[aria-pressed="true"] .key,
+.q-step.is-here, .q-grid button.answered, .fab, .fab:hover,
+.setup-bar .lang-switch button[aria-pressed="true"], .setup-brand .brand-mark,
+.rm-done .rm-pin, .rm-done .rm-kind, .rm-panel.is-current .rm-panel-n,
+.cal-seg a[aria-pressed="true"], .cal-today .cal-num, .cal-tag-exam,
+.mat-unit.is-current .mat-state, .lesson-tool[aria-pressed="true"],
+.lw-step.is-on, .rm-current .rm-pin, .rm-gate.rm-done .rm-pin, .rm-stop.rm-gate.rm-done .rm-pin,
+.rm-gate.rm-current .rm-pin, .rm-stop.rm-gate.rm-current .rm-pin,
+.rm-sel .rm-name, .rm-current .rm-name, .pomo-btn.is-running {
+  color: var(--on-brand) !important;
+}
+.lw-step.is-on .lw-step-n { background: var(--on-brand); border-color: var(--on-brand); color: var(--brand-600); }
+.fab { border-radius: 16px; }
+.q-step.is-here { background: var(--brand-600); border-color: var(--brand-600); }
+.q-step.is-answered { background: var(--brand-050); border-color: var(--brand-300); color: var(--ink); }
+.opt[aria-pressed="true"] { border-color: var(--brand-600); box-shadow: 0 0 0 1px var(--brand-600) inset; }
+.mat-unit.is-done .mat-state { background: var(--ok); border-color: var(--ok); color: #0B0B0B; }
+.sk-row.is-on .sk-box { color: var(--on-brand); }
+
+/* ----- question screen and practice frame -------------------------------- */
+.q-topbar, .q-footer { background: var(--bg); border-color: var(--border); }
+.q-footer { box-shadow: none; }
+.q-tool { background: var(--surface); border: 1px solid var(--border); color: var(--ink-2); border-radius: var(--r-md); }
+.q-tool:hover { background: var(--surface-2); color: var(--ink); }
+.opt { background: var(--surface); border: 1px solid var(--border); }
+.opt:hover { border-color: var(--border-strong); background: var(--surface-2); }
+.opt .key { border-color: var(--border-strong); color: var(--ink); }
+.qf-where { border-color: var(--ink); color: var(--ink); background: var(--surface); }
+.qf-progress { background: var(--brand-050); color: var(--brand-700); border-color: var(--brand-300); }
+
+/* ----- the rest of the purple, turned yellow ----------------------------- */
+.rm-current .rm-pin { box-shadow: 0 0 0 6px rgba(255, 212, 0, .18); }
+.rm-stage {
+  background:
+    radial-gradient(90% 60% at 50% 105%, rgba(255, 212, 0, .10), transparent 65%),
+    linear-gradient(180deg, var(--surface), var(--surface-2));
+}
+
+/* ----- pictures of questions on dark ground ------------------------------
+   Question pictures are black text on white; on the dark theme they sit on
+   a white plate so they stay readable. */
+html[data-theme="dark"] .q-stem img:not(.m),
+html[data-theme="dark"] .q-passage img:not(.m),
+html[data-theme="dark"] .opt-text img,
+html[data-theme="dark"] .lesson-written img,
+html[data-theme="dark"] .wt-body img,
+html[data-theme="dark"] .xp img {
+  background: #FFFFFF; border-radius: 8px; padding: 6px;
+}
+html[data-theme="dark"] img.m { background: #FFFFFF; border-radius: 4px; padding: 0 2px; }
+html[data-theme="dark"] .lw-passage { background: var(--surface-2); border-left-color: var(--brand-600); }
+
+/* ----- phone tab bar ----------------------------------------------------- */
+.tabbar { background: var(--bg); border-top: 1px solid var(--border); }
+.tabbar a { color: var(--muted); }
+.tabbar a em svg { display: block; margin: 0 auto; }
+.tabbar a[aria-current="page"] { color: var(--brand-600); }

@@ -8,6 +8,8 @@ JTS.dict.kk = {
   'nav.plan': 'Менің жоспарым',
   'nav.practice': 'Практика',
   'nav.mocks': 'Сынама тесттер',
+  'nav.groupStudy': 'Оқу',
+  'nav.groupTools': 'Құралдар',
   'nav.settings': 'Баптаулар',
   'nav.goal': 'Мақсатты балл',
   'roadmap.title': 'Roadmap',

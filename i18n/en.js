@@ -8,6 +8,8 @@ JTS.dict.en = {
   'nav.plan': 'My plan',
   'nav.practice': 'Practice',
   'nav.mocks': 'Mock tests',
+  'nav.groupStudy': 'Study',
+  'nav.groupTools': 'Tools',
   'nav.settings': 'Settings',
   'nav.goal': 'Target score',
   'roadmap.title': 'Roadmap',
