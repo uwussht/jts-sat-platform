@@ -3102,3 +3102,13 @@ html[data-theme="dark"] .lw-passage { background: var(--surface-2); border-left-
 
 /* A little wider sidebar. */
 :root, html[data-theme="light"], html[data-theme="dark"] { --sidebar-w: 276px; }
+
+/* ---------------------------------------------------------- practice: no scrollbar
+   The question area shows no scrollbar. Choices sit tighter so a passage and
+   its four answers fit on one screen; a longer question still scrolls with
+   the wheel or a swipe, just without the bar. */
+body.unit-focus .q-shell.is-practice .q-content { padding-top: 16px; padding-bottom: 16px; scrollbar-width: none; }
+body.unit-focus .q-shell.is-practice .q-content::-webkit-scrollbar { display: none; }
+.q-shell.is-practice .opt-list { gap: 8px; }
+.q-shell.is-practice .opt { font-size: 16px; line-height: 1.45; padding: 10px 16px; }
+.q-shell.is-practice .q-passage { font-size: 17px; line-height: 1.6; }
