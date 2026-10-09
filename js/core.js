@@ -38,6 +38,8 @@
       whatsapp: 'https://wa.me/00000000000', /* placeholder — replace with the JTS number */
       desmos: 'https://www.desmos.com/calculator'
     },
+    /* The name shown in the sidebar, the breadcrumb and the tab title. */
+    brandName: 'TeenTechEd',
     /* Digital SAT module structure used by the internal simulation. */
     examStructure: [
       { id: 'rw1', section: 'rw',   minutes: 32, count: 27, adaptive: false },
@@ -781,7 +783,7 @@
          screen prints it. */
       if (JTS.examDates) JTS.examDates.reconcile();
       this.current = route;
-      document.title = (def.title ? t(def.title) + ' · ' : '') + 'JTS SAT';
+      document.title = (def.title ? t(def.title) + ' · ' : '') + JTS.config.brandName;
       JTS.shell.renderTopbar(def.title || '');
       try {
         var res = def.render(root, route);
@@ -2235,7 +2237,7 @@
         U.el('div.setup-brand', null, [
           U.el('span.brand-mark', { 'aria-hidden': 'true', html: JTS.shell.logoIcon }),
           U.el('span.brand-text', null, [
-            U.el('b', { text: 'JTS SAT' }),
+            U.el('b', { text: JTS.config.brandName }),
             U.el('span', { text: t('brand.eyebrow') })
           ])
         ]),
@@ -2261,7 +2263,7 @@
       bar.appendChild(U.el('a.sb-brand', { href: onboarding ? '#/onboarding' : '#/today' }, [
         U.el('span.brand-mark', { 'aria-hidden': 'true', html: JTS.shell.logoIcon }),
         U.el('span.brand-text', null, [
-          U.el('b', { text: 'JTS SAT' }),
+          U.el('b', { text: JTS.config.brandName }),
           U.el('span', { text: t('brand.eyebrow') })
         ])
       ]));
@@ -2373,7 +2375,7 @@
       if (titleKey !== undefined) bar.dataset.titleKey = titleKey || '';
       var key = bar.dataset.titleKey || '';
       U.clear(bar);
-      /* The bar is a breadcrumb, JTS SAT / PRACTICE; the page's own title is
+      /* The bar is a breadcrumb, TEENTECHED / PRACTICE; the page's own title is
          the large heading under it, with its group over it. */
       bar.appendChild(U.el('div.tb-left', null, [
         U.el('button.tb-menu', {
@@ -2381,7 +2383,7 @@
           onclick: function () { document.body.classList.toggle('sb-open'); }
         }),
         U.el('nav.tb-crumbs', { 'aria-label': t('nav.main') }, [
-          U.el('a', { href: '#/today', text: 'JTS SAT' }),
+          U.el('a', { href: '#/today', text: JTS.config.brandName }),
           key ? U.el('span.tb-sep', { text: '/', 'aria-hidden': 'true' }) : null,
           key ? U.el('b', { text: t(key) }) : null
         ])
@@ -2396,7 +2398,7 @@
         var path = (location.hash || '#/today').split('?')[0];
         var group = this.navGroup(path);
         if (key) {
-          head.appendChild(U.el('div.ph-eyebrow', { text: group ? t(group) : 'JTS SAT' }));
+          head.appendChild(U.el('div.ph-eyebrow', { text: group ? t(group) : JTS.config.brandName }));
           head.appendChild(U.el('h1.ph-title', { text: t(key) }));
         }
         head.hidden = bar.hidden || !key;

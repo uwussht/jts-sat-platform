@@ -1,7 +1,7 @@
 /* Русские строки интерфейса. Плоские ключи через точку; {плейсхолдеры} подставляет JTS.i18n.t. */
 window.JTS = window.JTS || {}; JTS.dict = JTS.dict || {};
 JTS.dict.ru = {
-  'brand.eyebrow': 'Just To Study',
+  'brand.eyebrow': 'SAT платформа',
 
   'nav.main': 'Основная навигация',
   'nav.today': 'Дэшборд',
@@ -82,7 +82,7 @@ JTS.dict.ru = {
   'common.perWeek': 'в неделю', 'common.review': 'Разбор', 'common.resume': 'Продолжить',
   'common.discard': 'Отбросить', 'common.attempts': 'попыток', 'common.update': 'Обновить',
 
-  'auth.title': 'Вход в JTS SAT',
+  'auth.title': 'Вход в TeenTechEd',
   'auth.subtitle': 'Прогресс хранится локально в этом браузере.',
   'auth.email': 'Эл. почта', 'auth.password': 'Пароль',
   'auth.show': 'Показать', 'auth.hide': 'Скрыть',
@@ -354,7 +354,7 @@ JTS.dict.ru = {
   'mat.nQuestions': 'заданий: {n}',
   'lesson.stepOf': 'Шаг {n} из {total}',
   'mat.eyebrow': 'Материалы курса',
-  'mat.courseTitle': 'JTS SAT: 36 юнитов за 3 месяца',
+  'mat.courseTitle': 'TeenTechEd: 36 юнитов за 3 месяца',
   'mat.progress': 'Прогресс по курсу',
   'mat.lessonsOf': '{done} из {total} юнитов',
   'mat.hint': 'Каждый юнит открывается на полном уроке, доске и практике. Код рядом с юнитом — U5, U14 — это то, что записывается в error log, так что ошибка и её юнит называются одинаково.',

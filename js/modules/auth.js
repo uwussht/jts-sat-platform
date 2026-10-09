@@ -36,7 +36,7 @@
       var card = U.el('div.card.stack');
       panel.appendChild(U.el('div.auth-head', null, [
         U.el('div.brand-mark', { 'aria-hidden': 'true', html: JTS.shell.logoIcon }),
-        U.el('div.auth-title', { text: 'JTS SAT' }),
+        U.el('div.auth-title', { text: JTS.config.brandName }),
         U.el('div.eyebrow', { text: t('brand.eyebrow') })
       ]));
 
