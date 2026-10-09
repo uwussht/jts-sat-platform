@@ -3099,3 +3099,6 @@ html[data-theme="dark"] .lw-passage { background: var(--surface-2); border-left-
   .sb-user-text span { display: none; }
   .sb-nav a { padding: 3px 12px; font-size: 13px; }
 }
+
+/* A little wider sidebar. */
+:root, html[data-theme="light"], html[data-theme="dark"] { --sidebar-w: 276px; }
