@@ -3074,3 +3074,28 @@ html[data-theme="dark"] .lw-passage { background: var(--surface-2); border-left-
   .sb-group { padding: 6px 12px 2px; font-size: 10px; }
   .sb-user { padding: 6px 8px; }
 }
+
+/* No scrollbar in the sidebar menu: on shorter windows it tightens further
+   instead, dropping the target-score card's date and then the card itself
+   (the target is also on Today), so every destination fits. */
+.sb-nav { overflow-y: auto; scrollbar-width: none; }
+.sb-nav::-webkit-scrollbar { display: none; }
+@media (max-height: 860px) {
+  .sb-goal-meta { display: none; }
+  .sb-group { padding: 6px 12px 2px; }
+  .sb-nav a { padding: 7px 12px; }
+}
+@media (max-height: 760px) {
+  .sb-goal { display: none; }
+  .brand-text span { display: none; }
+  .sb-brand { padding-bottom: 8px; }
+  .sb-nav a { padding: 5px 12px; font-size: 13.5px; }
+  .sb-nav a em svg { width: 18px; height: 18px; }
+  .sb-group { padding: 4px 12px 1px; font-size: 9.5px; }
+  .sb-user { padding: 4px 8px; }
+  .sb-tools .icon-btn, .lang-switch button { height: 28px; }
+}
+@media (max-height: 640px) {
+  .sb-user-text span { display: none; }
+  .sb-nav a { padding: 3px 12px; font-size: 13px; }
+}
