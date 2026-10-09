@@ -209,6 +209,7 @@
         if (wt) screen.appendChild(wt);
       }
       screen.appendChild(targetsCard(state));
+      if (JTS.practiceStats) screen.appendChild(JTS.practiceStats.dashboardCard());
 
       /* The clock ticks once a second; the router calls this when the screen
          is left, so it does not go on ticking over a card nobody can see. */

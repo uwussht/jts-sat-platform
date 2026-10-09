@@ -275,7 +275,8 @@
       JTS.session.start({
         kind: 'practice', mode: 'study', title: title,
         questionIds: ids, softTimer: true,
-        returnHash: '#/weekly', finishHash: '#/weekly'
+        returnHash: '#/weekly', finishHash: '#/weekly',
+        meta: { source: 'weekly' }
       });
     }
     var missed = ses.questionIds.filter(function (qid) {

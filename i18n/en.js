@@ -777,5 +777,25 @@ JTS.dict.en = {
   'admin.noHistory': 'No changes yet',
   'admin.validate': 'Validate the bank',
   'admin.valid': 'The bank is valid',
-  'admin.invalid': '{n} problems found'
+  'admin.invalid': '{n} problems found',
+
+  'pstats.title': 'Practice statistics',
+  'pstats.resultTitle': 'Set finished',
+  'pstats.correct': 'Correct',
+  'pstats.answered': 'Questions answered',
+  'pstats.time': 'Time',
+  'pstats.perQuestion': 'Per question',
+  'pstats.byTopic': 'By topic',
+  'pstats.again': 'Practice again',
+  'pstats.retryMissed': 'Retry the {n} missed',
+  'pstats.missedTitle': 'Missed questions',
+  'pstats.toDashboard': 'Dashboard',
+  'pstats.week': 'Last 7 days',
+  'pstats.none': 'Finish a practice set and your statistics appear here.',
+  'pstats.thisWeek': '{n} this week',
+  'pstats.accuracy': 'Accuracy',
+  'pstats.correctOf': '{c} of {n} correct',
+  'pstats.sets': 'Sets done',
+  'pstats.bySection': 'By section',
+  'pstats.weakest': 'Weakest topics'
 };

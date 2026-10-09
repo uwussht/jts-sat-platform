@@ -777,5 +777,25 @@ JTS.dict.ru = {
   'admin.noHistory': 'Изменений пока нет',
   'admin.validate': 'Проверить банк',
   'admin.valid': 'Банк валиден',
-  'admin.invalid': 'Найдено проблем: {n}'
+  'admin.invalid': 'Найдено проблем: {n}',
+
+  'pstats.title': 'Статистика практики',
+  'pstats.resultTitle': 'Набор завершён',
+  'pstats.correct': 'Верно',
+  'pstats.answered': 'Решено вопросов',
+  'pstats.time': 'Время',
+  'pstats.perQuestion': 'На вопрос',
+  'pstats.byTopic': 'По темам',
+  'pstats.again': 'Ещё практика',
+  'pstats.retryMissed': 'Повторить ошибки ({n})',
+  'pstats.missedTitle': 'Вопросы с ошибками',
+  'pstats.toDashboard': 'На главную',
+  'pstats.week': 'Последние 7 дней',
+  'pstats.none': 'Завершите набор в практике, и здесь появится статистика.',
+  'pstats.thisWeek': '{n} за неделю',
+  'pstats.accuracy': 'Точность',
+  'pstats.correctOf': 'Верно {c} из {n}',
+  'pstats.sets': 'Наборов',
+  'pstats.bySection': 'По разделам',
+  'pstats.weakest': 'Слабые темы'
 };

@@ -777,5 +777,25 @@ JTS.dict.kk = {
   'admin.noHistory': 'Әзірге өзгеріс жоқ',
   'admin.validate': 'Банкті тексеру',
   'admin.valid': 'Банк жарамды',
-  'admin.invalid': 'Табылған мәселе: {n}'
+  'admin.invalid': 'Табылған мәселе: {n}',
+
+  'pstats.title': 'Практика статистикасы',
+  'pstats.resultTitle': 'Жиынтық аяқталды',
+  'pstats.correct': 'Дұрыс',
+  'pstats.answered': 'Шешілген сұрақтар',
+  'pstats.time': 'Уақыт',
+  'pstats.perQuestion': 'Бір сұраққа',
+  'pstats.byTopic': 'Тақырыптар бойынша',
+  'pstats.again': 'Тағы жаттығу',
+  'pstats.retryMissed': 'Қателерді қайталау ({n})',
+  'pstats.missedTitle': 'Қате сұрақтар',
+  'pstats.toDashboard': 'Басты бет',
+  'pstats.week': 'Соңғы 7 күн',
+  'pstats.none': 'Практикада жиынтықты аяқтаңыз, статистика осында шығады.',
+  'pstats.thisWeek': 'Осы аптада {n}',
+  'pstats.accuracy': 'Дәлдік',
+  'pstats.correctOf': '{n} ішінен {c} дұрыс',
+  'pstats.sets': 'Жиынтықтар',
+  'pstats.bySection': 'Бөлімдер бойынша',
+  'pstats.weakest': 'Әлсіз тақырыптар'
 };

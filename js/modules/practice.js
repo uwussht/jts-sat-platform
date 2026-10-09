@@ -270,7 +270,7 @@
       durationMs: opts.minutes ? opts.minutes * 60000 : 0,
       softTimer: !opts.minutes,
       returnHash: '#/practice', finishHash: '#/practice',
-      meta: opts.meta || {}
+      meta: Object.assign({ source: 'practice' }, opts.meta || {})
     });
   }
 
@@ -346,6 +346,13 @@
       var screen = U.el('div.container.screen.stack');
       root.appendChild(screen);
       function rerender() { JTS.router.render(); }
+
+      /* A practice set has just ended: its statistics come first. */
+      var doneId = JTS.router.parse().query.session;
+      var done = doneId && JTS.session.summary(doneId);
+      if (done && JTS.practiceStats && JTS.practiceStats.isPractice(done)) {
+        screen.appendChild(JTS.practiceStats.resultScreen(done));
+      }
 
       JTS.shell.topbarActions([
         U.el('a.btn.btn-sm', { href: '#/vocab', text: t('practice.vocab') }),
