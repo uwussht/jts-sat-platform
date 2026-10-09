@@ -263,7 +263,7 @@
         seenQuestionIds: [],
         badges: [],
         settings: {
-          uiLang: 'en', explainLang: 'en', theme: 'light',
+          uiLang: 'en', explainLang: 'en', theme: 'dark',
           timerHidden: false,
           /* Where the student last dragged the calculator, or null while it is
              still docked to the side of the question. */
@@ -373,7 +373,7 @@
       },
       settings: function () {
         var s = this.state();
-        return s ? s.settings : { uiLang: JTS.config.defaultLanguage, explainLang: JTS.config.defaultLanguage, theme: 'light' };
+        return s ? s.settings : { uiLang: JTS.config.defaultLanguage, explainLang: JTS.config.defaultLanguage, theme: 'dark' };
       },
 
       createAccount: function (email, password, name) {
@@ -2148,6 +2148,10 @@
       '#/desmos-guide': '<path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/>',
       '#/guide':        '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5v.7M12 17.2v.1"/>'
     },
+    /* The logo: a graduation cap, drawn in currentColor. */
+    logoIcon: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" ' +
+      'stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/>' +
+      '<path d="M6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6"/></svg>',
     navIcon: function (path) {
       var d = this.navIcons[path] || '<circle cx="12" cy="12" r="8"/>';
       return '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" ' +
@@ -2229,7 +2233,7 @@
     setupBar: function () {
       return U.el('div.setup-bar', null, [
         U.el('div.setup-brand', null, [
-          U.el('span.brand-mark', { text: 'JTS', 'aria-hidden': 'true' }),
+          U.el('span.brand-mark', { 'aria-hidden': 'true', html: JTS.shell.logoIcon }),
           U.el('span.brand-text', null, [
             U.el('b', { text: 'JTS SAT' }),
             U.el('span', { text: t('brand.eyebrow') })
@@ -2255,10 +2259,7 @@
       /* Mid-onboarding the only other screen a student can reach is Settings,
          and #/today would bounce them; the brand is their way back. */
       bar.appendChild(U.el('a.sb-brand', { href: onboarding ? '#/onboarding' : '#/today' }, [
-        U.el('span.brand-mark', { 'aria-hidden': 'true', html:
-          '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" ' +
-          'stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/>' +
-          '<path d="M6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6"/></svg>' }),
+        U.el('span.brand-mark', { 'aria-hidden': 'true', html: JTS.shell.logoIcon }),
         U.el('span.brand-text', null, [
           U.el('b', { text: 'JTS SAT' }),
           U.el('span', { text: t('brand.eyebrow') })

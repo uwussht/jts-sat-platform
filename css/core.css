@@ -3031,3 +3031,22 @@ html[data-theme="dark"] .lw-passage { background: var(--surface-2); border-left-
 .tabbar a { color: var(--muted); }
 .tabbar a em svg { display: block; margin: 0 auto; }
 .tabbar a[aria-current="page"] { color: var(--brand-600); }
+
+/* Sign-in and setup screens: a black logo tile with the yellow cap, on the
+   near-black ground with a yellow glow. */
+.auth-page {
+  background:
+    radial-gradient(70% 55% at 50% 0%, rgba(255, 212, 0, .14), transparent 70%),
+    #0A0A0A;
+}
+.auth-head { color: #F4F4F2; }
+.auth-head .auth-title { font-family: var(--display); font-weight: 800; letter-spacing: .02em; }
+.auth-head .eyebrow { color: #FFD400; }
+.auth-head .brand-mark, .setup-brand .brand-mark {
+  background: #0B0B0B; color: #FFD400 !important; border: 1px solid #2E2E2E;
+  display: grid; place-items: center;
+}
+.auth-head .brand-mark { width: 64px; height: 64px; border-radius: 18px; }
+.auth-head .brand-mark svg { width: 30px; height: 30px; }
+.setup-brand .brand-mark { border-radius: 10px; }
+.setup-brand .brand-mark svg { width: 20px; height: 20px; }
