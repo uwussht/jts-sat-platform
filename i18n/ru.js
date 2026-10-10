@@ -82,7 +82,7 @@ JTS.dict.ru = {
   'common.perWeek': 'в неделю', 'common.review': 'Разбор', 'common.resume': 'Продолжить',
   'common.discard': 'Отбросить', 'common.attempts': 'попыток', 'common.update': 'Обновить',
 
-  'auth.title': 'Вход в TeenTechEd',
+  'auth.title': 'Вход в TeenTech SAT',
   'auth.subtitle': 'Прогресс хранится локально в этом браузере.',
   'auth.email': 'Эл. почта', 'auth.password': 'Пароль',
   'auth.show': 'Показать', 'auth.hide': 'Скрыть',
@@ -354,7 +354,7 @@ JTS.dict.ru = {
   'mat.nQuestions': 'заданий: {n}',
   'lesson.stepOf': 'Шаг {n} из {total}',
   'mat.eyebrow': 'Материалы курса',
-  'mat.courseTitle': 'TeenTechEd: 36 юнитов за 3 месяца',
+  'mat.courseTitle': 'TeenTech SAT: 36 юнитов за 3 месяца',
   'mat.progress': 'Прогресс по курсу',
   'mat.lessonsOf': '{done} из {total} юнитов',
   'mat.hint': 'Каждый юнит открывается на полном уроке, доске и практике. Код рядом с юнитом — U5, U14 — это то, что записывается в error log, так что ошибка и её юнит называются одинаково.',

@@ -82,7 +82,7 @@ JTS.dict.kk = {
   'common.perWeek': 'аптасына', 'common.review': 'Талдау', 'common.resume': 'Жалғастыру',
   'common.discard': 'Алып тастау', 'common.attempts': 'әрекет', 'common.update': 'Жаңарту',
 
-  'auth.title': 'TeenTechEd-қа кіру',
+  'auth.title': 'TeenTech SAT-қа кіру',
   'auth.subtitle': 'Прогресс осы браузерде жергілікті сақталады.',
   'auth.email': 'Эл. пошта', 'auth.password': 'Құпиясөз',
   'auth.show': 'Көрсету', 'auth.hide': 'Жасыру',
@@ -354,7 +354,7 @@ JTS.dict.kk = {
   'mat.nQuestions': 'тапсырма: {n}',
   'lesson.stepOf': '{total} қадамның {n}-сі',
   'mat.eyebrow': 'Курс материалдары',
-  'mat.courseTitle': 'TeenTechEd: 3 айда 36 юнит',
+  'mat.courseTitle': 'TeenTech SAT: 3 айда 36 юнит',
   'mat.progress': 'Курс бойынша прогресс',
   'mat.lessonsOf': '{total} юниттің {done}-і',
   'mat.hint': 'Әр юнит толық сабақ мәтінімен, тақтамен және жаттығумен ашылады. Юнит жанындағы код — U5, U14 — error log-қа жазылатын нәрсе, сондықтан қате мен оның юниті бірдей аталады.',

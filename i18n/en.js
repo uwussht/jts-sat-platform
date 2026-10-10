@@ -82,7 +82,7 @@ JTS.dict.en = {
   'common.perWeek': 'per week', 'common.review': 'Review', 'common.resume': 'Resume',
   'common.discard': 'Discard', 'common.attempts': 'attempts', 'common.update': 'Update',
 
-  'auth.title': 'Sign in to TeenTechEd',
+  'auth.title': 'Sign in to TeenTech SAT',
   'auth.subtitle': 'Your progress is stored locally in this browser.',
   'auth.email': 'Email', 'auth.password': 'Password',
   'auth.show': 'Show', 'auth.hide': 'Hide',
@@ -354,7 +354,7 @@ JTS.dict.en = {
   'mat.nQuestions': '{n} questions',
   'lesson.stepOf': 'Step {n} of {total}',
   'mat.eyebrow': 'Course materials',
-  'mat.courseTitle': 'TeenTechEd: 36 units in 3 months',
+  'mat.courseTitle': 'TeenTech SAT: 36 units in 3 months',
   'mat.progress': 'Course progress',
   'mat.lessonsOf': '{done} of {total} units',
   'mat.hint': 'Each unit opens on its full lesson, a whiteboard and its practice set. The code beside a unit — U5, U14 — is what the error log records, so a mistake and its unit are named the same thing.',

@@ -39,7 +39,7 @@
       desmos: 'https://www.desmos.com/calculator'
     },
     /* The name shown in the sidebar, the breadcrumb and the tab title. */
-    brandName: 'TeenTechEd',
+    brandName: 'TeenTech SAT',
     /* Digital SAT module structure used by the internal simulation. */
     examStructure: [
       { id: 'rw1', section: 'rw',   minutes: 32, count: 27, adaptive: false },
@@ -2167,7 +2167,7 @@
     },
     applyProfileSettings: function () {
       var st = Store.settings();
-      /* The TeenTechEd look is dark first. Profiles saved before it are moved
+      /* The TeenTech SAT look is dark first. Profiles saved before it are moved
          to dark once; after that the theme button decides. */
       if (Store.state() && !st.themeV2) {
         Store.update(function (s) { s.settings.theme = 'dark'; s.settings.themeV2 = true; });
@@ -2375,7 +2375,7 @@
       if (titleKey !== undefined) bar.dataset.titleKey = titleKey || '';
       var key = bar.dataset.titleKey || '';
       U.clear(bar);
-      /* The bar is a breadcrumb, TEENTECHED / PRACTICE; the page's own title is
+      /* The bar is a breadcrumb, TEENTECH SAT / PRACTICE; the page's own title is
          the large heading under it, with its group over it. */
       bar.appendChild(U.el('div.tb-left', null, [
         U.el('button.tb-menu', {
