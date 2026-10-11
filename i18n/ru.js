@@ -216,6 +216,8 @@ JTS.dict.ru = {
   'today.targets.now': 'Последний замер',
   'today.targets.measured': '{what} · {when}',
   'today.targets.none': 'Замеров пока нет. Сюда попадёт завершённый пробник или реальный результат, который вы внесёте.',
+  'today.targets.gap': 'До цели {n} баллов',
+  'today.targets.reached': 'Цель достигнута',
   'today.targets.entered': 'Внесённый результат',
   'today.targets.edit': 'Изменить цель',
   'today.countdownProvisional': 'Условный горизонт',

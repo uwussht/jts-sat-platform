@@ -1988,7 +1988,27 @@ button.cal-tag:hover { background: var(--brand-100); color: var(--brand-700); }
 }
 .wk-chip.is-done { border-color: var(--ok); color: var(--ok); background: var(--ok-bg); }
 
-.tg-row { gap: var(--sp-6); align-items: flex-end; }
+.tg-row { display: flex; justify-content: space-between; align-items: flex-end; gap: var(--sp-4); }
+.tg-goal { text-align: right; align-items: flex-end; }
+.tg-goal .tg-num { color: var(--brand-700); }
+.tg-card { justify-content: space-between; }
+.tg-foot { margin-top: auto; }
+
+/* ----- Dashboard layout ---------------------------------------------------
+   This week's test with the targets beside it; the statistics as a grid of
+   tiles and a row of panels. Cards in a row are the same height. */
+.dash-row { display: grid; grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr); gap: var(--sp-4); align-items: stretch; }
+.dash-row.is-single { grid-template-columns: minmax(0, 1fr); }
+.dash-row > .card { display: flex; flex-direction: column; margin: 0; }
+.dash-stats { gap: var(--sp-3); margin-top: var(--sp-4); }
+.dash-kpis .ps-kpi { background: var(--surface); padding: 16px 18px; }
+.dash-panels { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, 1.2fr); gap: var(--sp-4); align-items: stretch; }
+.dash-panels.is-two { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.dash-panel { margin: 0; gap: var(--sp-3); }
+.dash-panel .ps-week { height: 150px; }
+@media (max-width: 1180px) {
+  .dash-row, .dash-panels, .dash-panels.is-two { grid-template-columns: minmax(0, 1fr); }
+}
 .tg-cell { display: flex; flex-direction: column; gap: 2px; }
 .tg-num { font-size: 28px; font-weight: 750; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
 .tg-edit { width: 30px; height: 30px; font-size: 13px; background: var(--surface); border-color: var(--border); color: var(--ink-2); }

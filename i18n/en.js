@@ -216,6 +216,8 @@ JTS.dict.en = {
   'today.targets.now': 'Last measured',
   'today.targets.measured': '{what} · {when}',
   'today.targets.none': 'Nothing measured yet. A finished mock or a real result you enter goes here.',
+  'today.targets.gap': '{n} points to your target',
+  'today.targets.reached': 'Target reached',
   'today.targets.entered': 'Entered result',
   'today.targets.edit': 'Change the target',
   'today.countdownProvisional': 'Provisional horizon',

@@ -243,17 +243,17 @@
     var practiceSets = sessions().length;
     var openErrors = ((st && st.errors) || []).filter(function (e) { return !e.resolvedAt; }).length;
 
-    var card = U.el('div.card.stack', { id: 'today-practice-stats' }, [
+    /* Not one tall card: a heading, the eight numbers as tiles, and under
+       them a panel each for the week, the two sections and the weak topics. */
+    var card = U.el('div.stack.dash-stats', { id: 'today-practice-stats' }, [
       head,
-      U.el('div.ps-kpis', null, [
+      U.el('div.ps-kpis.dash-kpis', null, [
         kpi(t('pstats.streak'), '\uD83D\uDD25 ' + streak.count,
           streak.today ? t('pstats.streakToday', { best: streak.best }) : t('pstats.streakBest', { best: streak.best })),
         kpi(t('pstats.solved'), String(tl.all.answered), t('pstats.thisWeek', { n: thisWeek })),
         kpi(t('pstats.accuracy'), tl.all.answered ? U.pct(tl.all.correct, tl.all.answered) + '%' : '—',
           t('pstats.correctOf', { c: tl.all.correct, n: tl.all.answered })),
-        kpi(t('pstats.time'), fmtTime(tl.all.timeMs), t('pstats.today', { time: fmtTime(todayMs) }))
-      ]),
-      U.el('div.ps-kpis', null, [
+        kpi(t('pstats.time'), fmtTime(tl.all.timeMs), t('pstats.today', { time: fmtTime(todayMs) })),
         kpi(t('pstats.units'), unitsDone + (unitsAll ? ' / ' + unitsAll : '')),
         kpi(t('pstats.mocks'), String(mocks.length), bestMock !== null ? t('pstats.bestScore', { n: bestMock }) : null),
         kpi(t('pstats.weekly'), String(weekly), t('pstats.practiceSets', { n: practiceSets })),
@@ -264,16 +264,15 @@
       card.appendChild(U.el('p.muted.small', { text: t('pstats.none') }));
       return card;
     }
-    card.appendChild(U.el('div.ps-cols', null, [
-      U.el('div.stack-sm', null, [U.el('div.stat-label', { text: t('pstats.week') }), weekBars(tl)]),
-      U.el('div.stack-sm', null, [U.el('div.stat-label', { text: t('pstats.bySection') }), sectionBars(tl)])
-    ]));
     var weak = topicRows(tl, 3, 3, true);
-    if (weak) {
-      card.appendChild(U.el('div.stack-sm', null, [
-        U.el('div.stat-label', { text: t('pstats.weakest') }), weak
-      ]));
+    function panel(title, body) {
+      return U.el('div.card.stack-sm.dash-panel', null, [U.el('div.stat-label', { text: title }), body]);
     }
+    card.appendChild(U.el('div.dash-panels' + (weak ? '' : '.is-two'), null, [
+      panel(t('pstats.week'), weekBars(tl)),
+      panel(t('pstats.bySection'), sectionBars(tl)),
+      weak ? panel(t('pstats.weakest'), weak) : null
+    ]));
     return card;
   }
 

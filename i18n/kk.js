@@ -216,6 +216,8 @@ JTS.dict.kk = {
   'today.targets.now': 'Соңғы өлшеу',
   'today.targets.measured': '{what} · {when}',
   'today.targets.none': 'Әзірге өлшеу жоқ. Мұнда аяқталған пробник немесе өзіңіз енгізген нақты нәтиже шығады.',
+  'today.targets.gap': 'Мақсатқа дейін {n} балл',
+  'today.targets.reached': 'Мақсатқа жеттіңіз',
   'today.targets.entered': 'Енгізілген нәтиже',
   'today.targets.edit': 'Мақсатты өзгерту',
   'today.countdownProvisional': 'Шартты көкжиек',

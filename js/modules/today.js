@@ -134,22 +134,32 @@
   function targetsCard(state) {
     var goal = state.goals && state.goals.total;
     var now = latestMeasure(state);
-    return U.el('div.card.stack-sm', { id: 'today-targets' }, [
+    /* How far the last measured score is along the scale to the target:
+       400 is the floor of the SAT, so the bar starts there and not at zero. */
+    var gap = goal && now ? goal - now.total : null;
+    var along = goal && now ? U.clamp(now.total - 400, 0, goal - 400) : 0;
+    return U.el('div.card.stack-sm.tg-card', { id: 'today-targets' }, [
       U.el('div.row-between.row-wrap', null, [
         U.el('div.eyebrow', { text: t('today.targets.title') }),
         U.el('a.icon-btn.tg-edit', { href: '#/settings', 'aria-label': t('today.targets.edit'), text: '✎' })
       ]),
-      U.el('div.row.row-wrap.tg-row', null, [
-        U.el('div.tg-cell', null, [
-          U.el('span.stat-label', { text: t('today.targets.target') }),
-          U.el('b.tg-num', { text: goal ? String(goal) : '—' })
-        ]),
+      U.el('div.tg-row', null, [
         U.el('div.tg-cell', null, [
           U.el('span.stat-label', { text: t('today.targets.now') }),
           U.el('b.tg-num', { text: now ? String(now.total) : '—' })
+        ]),
+        U.el('div.tg-cell.tg-goal', null, [
+          U.el('span.stat-label', { text: t('today.targets.target') }),
+          U.el('b.tg-num', { text: goal ? String(goal) : '—' })
         ])
       ]),
-      U.el('div.row-between.row-wrap', null, [
+      goal && now ? U.el('div.stack-sm', null, [
+        ui.bar(along, Math.max(goal - 400, 1), gap <= 0 ? 'bar-ok' : ''),
+        U.el('span.xsmall.muted', {
+          text: gap > 0 ? t('today.targets.gap', { n: gap }) : t('today.targets.reached')
+        })
+      ]) : null,
+      U.el('div.row-between.row-wrap.tg-foot', null, [
         U.el('span.xsmall.muted', {
           text: now
             ? t('today.targets.measured', {
@@ -204,11 +214,10 @@
          the longest in the product. */
       /* The fifteen-question weekly test. The full mock has its own page
          (Mock tests) and is no longer repeated here. */
-      if (JTS.weeklyTest) {
-        var wt = JTS.weeklyTest.card();
-        if (wt) screen.appendChild(wt);
-      }
-      screen.appendChild(targetsCard(state));
+      /* Laid out as a dashboard: this week's test with the targets beside
+         it, then the statistics as tiles and three panels. */
+      var wt = JTS.weeklyTest ? JTS.weeklyTest.card() : null;
+      screen.appendChild(U.el('div.dash-row' + (wt ? '' : '.is-single'), null, [wt, targetsCard(state)]));
       if (JTS.practiceStats) screen.appendChild(JTS.practiceStats.dashboardCard());
 
       /* The clock ticks once a second; the router calls this when the screen
