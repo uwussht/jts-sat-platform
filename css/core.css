@@ -2796,7 +2796,12 @@ img.fig { display: block; max-width: 100%; height: auto; margin: 8px 0 12px; }
 .res-sec .bar > i { background: var(--res-c); }
 .res-route { background: color-mix(in srgb, var(--brand-600) 16%, transparent); color: var(--brand-700); border-color: transparent; }
 .res-mods { display: flex; flex-direction: column; }
-.res-mod { display: grid; grid-template-columns: minmax(150px, 1.1fr) minmax(0, 1.4fr) auto 70px; gap: 12px; align-items: center; padding: 13px 0; }
+/* Every row is its own grid, so the columns are fixed widths and each cell is
+   placed by name: a row with no route badge must not pull the others along. */
+.res-mod { display: grid; grid-template-columns: minmax(0, 1fr) 190px 130px 70px; gap: 12px; align-items: center; padding: 13px 0; }
+.res-mod-name { grid-column: 1; }
+.res-mod-spec { grid-column: 2; }
+.res-mod > .badge { grid-column: 3; justify-self: start; }
 .res-mod + .res-mod { border-top: 1px solid var(--border); }
 .res-mod-score { text-align: right; font-variant-numeric: tabular-nums; grid-column: 4; }
 .res-lost { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 11px 14px; border-radius: 12px; background: var(--surface-2); font-size: 14px; font-weight: 600; }
@@ -2806,9 +2811,10 @@ img.fig { display: block; max-width: 100%; height: auto; margin: 8px 0 12px; }
 .res-build:hover { background: color-mix(in srgb, var(--brand-600) 24%, transparent); }
 @media (max-width: 1100px) {
   .res-grid { grid-template-columns: minmax(0, 1fr); }
-  .res-mod { grid-template-columns: minmax(0, 1fr) auto 70px; }
+  .res-mod { grid-template-columns: minmax(0, 1fr) 110px 60px; }
   .res-mod-spec { display: none; }
-  .res-mod-score { grid-column: auto; }
+  .res-mod > .badge { grid-column: 2; }
+  .res-mod-score { grid-column: 3; }
 }
 
 /* Mock tests: the simulation with the trajectory beside it */
