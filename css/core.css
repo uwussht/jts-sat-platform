@@ -1669,6 +1669,11 @@ body.tour-open .app-topbar, body.tour-open #add-word { z-index: 1; }
 .rm-codes { display: flex; flex-wrap: wrap; gap: 4px; }
 /* A stop's topics by name, one row each, opening the unit. */
 .rm-topics { display: flex; flex-direction: column; }
+/* The panel still scrolls when a stop has more topics than fit, but without
+   a scrollbar drawn down its side. */
+.rm-panel { scrollbar-width: none; }
+.rm-panel::-webkit-scrollbar { display: none; }
+
 .rm-topic {
   display: flex; align-items: center; justify-content: space-between; gap: 10px;
   padding: 7px 8px; margin-inline: -8px; border-radius: 8px;
