@@ -407,11 +407,14 @@
         .filter(function (s) { return s.n >= stop.from && s.n <= stop.to; })
         .reduce(function (acc, s) { return acc.concat(s.lessons); }, []);
       if (codes.length) {
-        var chips = U.el('div.rm-codes');
-        codes.slice(0, 24).forEach(function (l) {
-          chips.appendChild(U.el('a.pg-tag', {
-            href: '#/materials/lesson?code=' + l.code, text: l.code, title: pick(l.t)
-          }));
+        /* The topics by name, each a row that opens its unit: a code says
+           nothing to a student who has not met the unit yet. */
+        var chips = U.el('div.rm-topics');
+        codes.forEach(function (l) {
+          chips.appendChild(U.el('a.rm-topic', { href: '#/materials/lesson?code=' + l.code }, [
+            U.el('span.rm-topic-name', { text: pick(l.t) }),
+            U.el('span.rm-topic-go', { text: '→', 'aria-hidden': 'true' })
+          ]));
         });
         panel.appendChild(U.el('div.stack-sm', null, [
           U.el('span.rm-fact-lab', { text: t('roadmap.whatYouDo') }), chips
