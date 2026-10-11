@@ -43,8 +43,7 @@
     },
     '#/mocks': function () {
       return [
-        step('#mock-run-card', 'mock'),
-        step('#paper-card', 'paper')
+        step('#mock-run-card', 'mock')
       ];
     },
     '#/vocab': function () {

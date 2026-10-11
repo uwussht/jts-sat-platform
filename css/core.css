@@ -2729,6 +2729,10 @@ img.fig { display: block; max-width: 100%; height: auto; margin: 8px 0 12px; }
 .rt-body { border-top: 1px solid var(--border); padding: 16px; }
 .rt-body[hidden] { display: none; }
 
+/* Mock tests: the simulation with the trajectory beside it */
+.mk-top { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: var(--sp-5, 24px); align-items: start; }
+@media (max-width: 1180px) { .mk-top { grid-template-columns: minmax(0, 1fr); } }
+
 /* Past papers: tiles in a row, wrapping onto the next line */
 .pp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
 .pp-tile { border: 1px solid var(--border); border-radius: var(--r-lg); padding: 16px; display: flex; flex-direction: column; justify-content: space-between; gap: 14px; background: var(--surface); }
