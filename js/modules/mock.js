@@ -946,47 +946,6 @@
     ]);
   }
 
-  /** Finished runs, newest first — rendered by #/progress. */
-  function finishedRuns() {
-    var runs = JTS.mock.finished().slice().reverse();
-    if (!runs.length) return null;
-    var wrap = U.el('div.stack-sm');
-    runs.forEach(function (run) {
-      var est = JTS.mock.totalEstimate(run);
-      wrap.appendChild(U.el('div.card.card-sm.row-between', null, [
-        U.el('div.stack-sm', null, [
-          U.el('div', null, [
-            U.el('b', { text: U.fmtDate(new Date(run.finishedAt), S.settings().uiLang) }),
-            run.paperId && JTS.papers.get(run.paperId)
-              ? U.el('span.badge.badge-muted', { text: JTS.papers.get(run.paperId).title,
-                  style: 'margin-inline-start:8px' })
-              : null,
-            run.timed ? null : U.el('span.badge.badge-muted', { text: t('mock.untimedTag'),
-              style: 'margin-inline-start:8px' })
-          ]),
-          U.el('div.small.muted', {
-            text: t('mock.rawScore') + ': ' +
-              t('mock.rawOf', {
-                correct: JTS.mock.raw(run, 'rw').correct + JTS.mock.raw(run, 'math').correct,
-                total: JTS.mock.raw(run, 'rw').total + JTS.mock.raw(run, 'math').total
-              }) +
-              (est ? ' · ' + t('mock.estimate') + ' ' +
-                t('mock.estimateRange', { low: est.low, high: est.high }) : '')
-          })
-        ]),
-        U.el('button.btn.btn-sm', {
-          type: 'button', text: t('mock.openResult'),
-          onclick: function () { JTS.router.go('#/mocks/result?run=' + run.id); }
-        })
-      ]));
-    });
-    return wrap;
-  }
-
-  /* Exported rather than rendered here: the list of finished runs belongs to
-     #/progress, which is the screen that answers "how am I doing". */
-  JTS.mock.finishedList = finishedRuns;
-
   JTS.router.register('#/mocks', {
     title: 'mock.title',
     render: function (root) {

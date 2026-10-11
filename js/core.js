@@ -2114,8 +2114,7 @@
          bar is full at five. */
       { path: '#/papers',   key: 'paper.title',  icon: '▣', noTab: true },
       /* Materials rather than Progress: the course is what a student opens
-         daily, and the charts are a place you visit after a test. #/progress
-         is still a route, linked from Today and from the diagnostic result. */
+         daily. There is no Progress page; its measures are on the dashboard. */
       { path: '#/materials', key: 'nav.materials', icon: '▤' }
     ],
     /* Destinations that belong in the sidebar but not in the phone tab bar,

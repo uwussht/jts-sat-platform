@@ -159,18 +159,14 @@
           text: gap > 0 ? t('today.targets.gap', { n: gap }) : t('today.targets.reached')
         })
       ]) : null,
-      U.el('div.row-between.row-wrap.tg-foot', null, [
+      U.el('div.tg-foot', null, [
         U.el('span.xsmall.muted', {
           text: now
             ? t('today.targets.measured', {
                 what: now.label, when: U.fmtDate(new Date(now.at), S.settings().uiLang)
               })
             : t('today.targets.none')
-        }),
-        /* Progress is not in the navigation — Materials took its place — and
-           the charts belong to exactly this question, so the one link to them
-           is under the two numbers they explain. */
-        U.el('a.small', { href: '#/progress', text: t('progress.title') + ' →' })
+        })
       ])
     ]);
   }

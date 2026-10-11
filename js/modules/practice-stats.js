@@ -218,10 +218,7 @@
     var st = S.state();
     var attempts = (st && st.attempts) || [];
     var tl = tallyAttempts(attempts);
-    var head = U.el('div.row-between.row-wrap', null, [
-      U.el('div.eyebrow', { text: t('pstats.title') }),
-      U.el('a.small', { href: '#/progress', text: t('progress.title') + ' →' })
-    ]);
+    var head = U.el('div.eyebrow', { text: t('pstats.title') });
 
     var weekStart = U.addDays(U.today(), -6).getTime();
     var thisWeek = attempts.filter(function (a) { return a.ts >= weekStart; }).length;

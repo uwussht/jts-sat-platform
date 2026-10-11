@@ -296,7 +296,6 @@
          has happened since. */
       screen.appendChild(U.el('div.row.row-wrap', null, [
         U.el('a.btn', { href: '#/diagnostic?show=intro', text: t('diag.retake') }),
-        U.el('a.btn', { href: '#/progress', text: t('progress.title') }),
         U.el('a.btn', { href: '#/plan', text: t('nav.plan') })
       ]));
     }

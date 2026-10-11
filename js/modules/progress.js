@@ -1,102 +1,16 @@
 /* ==========================================================================
-   Screen: Progress (#/progress)
+   Progress measures for the dashboard (#/today).
+
+   There is no Progress page any more: what it showed that is still wanted —
+   accuracy by domain, study time, the last ninety days and the badges — is
+   on the dashboard, built here by JTS.progress.dashboard().
 
    Everything here is a measurement, never a forecast. There is no score
-   predictor and no "you will get X" anywhere on this screen (§14.12): what it
-   shows is what the student has actually done, split so that work done with
-   help never masquerades as work done alone.
+   predictor and no "you will get X" anywhere (§14.12).
    ========================================================================== */
 (function () {
   'use strict';
   var U = JTS.util, t = JTS.t, ui = JTS.ui, S = JTS.store;
-
-  var STATUSES = ['mastered', 'developing', 'learning', 'no-data'];
-
-  function cls(status) { return status.replace('no-data', 'nodata'); }
-
-  /* ---------------------------------------------------------------- summary */
-
-  function byHelpLevel() {
-    var s = S.state();
-    var by = { hint: 0, explanation: 0, full: 0 };
-    s.attempts.forEach(function (a) {
-      if (by[a.helpType] !== undefined) by[a.helpType]++;
-    });
-    return Object.keys(by).filter(function (k) { return by[k]; })
-      .map(function (k) { return t('help.' + k) + ' ' + by[k]; }).join(' · ');
-  }
-
-  function summaryCards() {
-    var tot = JTS.analytics.totals();
-    var s = S.state();
-    var streak = s.profile.streak || { count: 0, best: 0 };
-    var map = JTS.mastery.all();
-    var mastered = Object.keys(map).filter(function (k) { return map[k].status === 'mastered'; }).length;
-
-    function stat(label, value, note) {
-      return U.el('div.card.card-sm.stack-sm', null, [
-        U.el('div.stat-label', { text: label }),
-        U.el('div.stat-value', { text: value }),
-        note ? U.el('div.xsmall.muted', { text: note }) : null
-      ]);
-    }
-
-    return U.el('div.grid.grid-4', null, [
-      /* Independent work is the headline number. The helped count is shown
-         next to it rather than folded into it. */
-      stat(t('progress.independent'), String(tot.indep),
-        tot.indep ? U.pct(tot.indepCorrect, tot.indep) + '% ' + t('common.correct').toLowerCase() : '—'),
-      /* Not just how much help, but which kind: a hint and a read explanation
-         are different admissions. */
-      stat(t('progress.withHelp'), String(tot.helped), tot.helped ? byHelpLevel() : '—'),
-      stat(t('progress.streak'), String(streak.count), t('progress.best', { n: streak.best || 0 })),
-      stat(t('mastery.mastered'), mastered + ' / ' + JTS.skills.all().length)
-    ]);
-  }
-
-  /* ---------------------------------------------------------------- heatmap */
-
-  function legend() {
-    return U.el('div.legend', { role: 'group', 'aria-label': t('progress.legend') },
-      STATUSES.map(function (st) {
-      return U.el('span', null, [
-        U.el('span.m-dot.m-' + cls(st)), ' ' + t('mastery.' + st)
-      ]);
-      }));
-  }
-
-  /** Every skill as a cell, by domain; one section's domains when asked. */
-  function skillMap(section) {
-    var map = JTS.mastery.all();
-    var wrap = U.el('div.stack');
-    JTS.skills.domains(section).forEach(function (d) {
-      var skills = JTS.skills.all().filter(function (s) { return s.domain === d.id; });
-      var grid = U.el('div.heatmap');
-      skills.forEach(function (sk) {
-        var m = map[sk.id];
-        /* Without six independent attempts there is no percentage worth
-           showing, so the cell shows just the skill's name. */
-        var meta = m.status === 'no-data'
-          ? ''
-          : Math.round((m.windowAccuracy !== null ? m.windowAccuracy : m.accuracy) * 100) + '% · ' +
-            m.independent + ' ' + t('common.attempts');
-        grid.appendChild(U.el('button.heat-cell.m-bg-' + cls(m.status), {
-          type: 'button',
-          'aria-label': JTS.i18n.pickName(sk) + ' — ' + t('mastery.' + m.status) + (meta ? ', ' + meta : ''),
-          title: t('progress.clickSkill'),
-          onclick: function () { JTS.practice.startTopic([sk.id], 10); }
-        }, [
-          U.el('span.hc-name', { text: JTS.i18n.pickName(sk) }),
-          meta ? U.el('span.hc-meta', { text: meta }) : null
-        ]));
-      });
-      wrap.appendChild(U.el('div.stack-sm', null, [
-        U.el('div.eyebrow', { text: JTS.i18n.pickName(d) }),
-        grid
-      ]));
-    });
-    return wrap;
-  }
 
   /* ------------------------------------------------------- accuracy by domain */
 
@@ -119,44 +33,6 @@
     });
     if (!rows.length) return ui.empty(t('common.notEnoughData'));
     return ui.barChart(rows, { ariaLabel: t('progress.byDomain'), labelWidth: 230 });
-  }
-
-  /* ------------------------------------------------------------- mock trend */
-
-  function mockTrend() {
-    var s = S.state();
-    var goal = s.goals ? s.goals.total : null;
-    var imported = (JTS.mock ? JTS.mock.reports() : []).map(function (r) {
-      return { x: new Date(r.date + 'T00:00:00').getTime(), y: r.total };
-    });
-    var internal = (JTS.mock ? JTS.mock.finished() : []).map(function (run) {
-      var est = JTS.mock.totalEstimate(run);
-      return est ? { x: run.finishedAt, y: Math.round((est.low + est.high) / 2) } : null;
-    }).filter(Boolean).sort(function (a, b) { return a.x - b.x; });
-
-    if (!imported.length && !internal.length) {
-      return ui.empty(t('mock.noResults'), null, U.el('a.btn', {
-        href: '#/mocks', text: t('mock.title')
-      }));
-    }
-    var series = [];
-    if (imported.length) series.push({ label: t('mock.seriesImported'), color: 'var(--brand-600)', points: imported });
-    if (internal.length) series.push({ label: t('mock.seriesInternal'), color: 'var(--warn)', points: internal });
-    return U.el('div.stack-sm', null, [
-      ui.lineChart(series, { target: goal || undefined, yMin: 400, yMax: 1600, ariaLabel: t('progress.mockTrend') }),
-      U.el('div.legend', null, series.map(function (x) {
-        return U.el('span', null, [U.el('span.badge-dot', { style: 'background:' + x.color }), ' ' + x.label]);
-      }).concat(goal ? [U.el('span', { text: '– – ' + t('mock.goalLine') + ' ' + goal })] : []))
-    ]);
-  }
-
-  /**
-   * The finished tests themselves, under the trend they made. The list used to
-   * sit on #/mocks, which is the screen for SITTING a test; reviewing one is a
-   * question about how you are doing, and that is this screen.
-   */
-  function mockList() {
-    return (JTS.mock && JTS.mock.finishedList) ? JTS.mock.finishedList() : null;
   }
 
   /* ------------------------------------------------------------- study time */
@@ -239,32 +115,12 @@
     ]);
   }
 
-  /* ---------------------------------------------------------------- badges */
-
-  function badges() {
-    var s = S.state();
-    /* Exactly three, always all three shown: an unearned badge is greyed out
-       rather than hidden, so the student can see what there is to aim at. */
-    return U.el('div.grid.grid-3', null, JTS.badges.defs.map(function (d) {
-      var got = s.badges.indexOf(d.id) >= 0;
-      return U.el('div.card.card-sm.stack-sm', {
-        style: got ? '' : 'opacity:.5',
-        'aria-label': t('badge.' + d.id) + (got ? ' — ' + t('badge.earned') : '')
-      }, [
-        U.el('div', { text: got ? '★' : '☆', style: 'font-size:26px;line-height:1' }),
-        U.el('div', null, [U.el('b', { text: t('badge.' + d.id) })]),
-        U.el('div.xsmall.muted', { text: got ? t('badge.earned') : '—' })
-      ]);
-    }));
-  }
-
   /* ------------------------------------------------------------- dashboard */
 
   /**
    * The same measures, arranged for the dashboard (#/today): three numbers
    * (every question answered, the streak, skills mastered), accuracy beside
-   * time, and the last ninety days beside the badges. The skill map and the
-   * independent / with-help split stay on #/progress.
+   * time, and the last ninety days beside the badges.
    */
   function dashboard() {
     var s = S.state();
@@ -301,10 +157,7 @@
     }));
 
     return U.el('div.stack.dash-stats', { id: 'today-practice-stats' }, [
-      U.el('div.row-between.row-wrap', null, [
-        U.el('div.eyebrow', { text: t('pstats.title') }),
-        U.el('a.small', { href: '#/progress', text: t('progress.title') + ' →' })
-      ]),
+      U.el('div.eyebrow', { text: t('pstats.title') }),
       U.el('div.grid.grid-3', null, [
         stat(t('pstats.solved'), String(answered),
           answered ? U.pct(right, answered) + '% ' + t('common.correct').toLowerCase() : '—'),
@@ -323,63 +176,4 @@
   }
 
   JTS.progress = { dashboard: dashboard };
-
-  /* ----------------------------------------------------------------- screen */
-
-  JTS.router.register('#/progress', {
-    title: 'progress.title',
-    render: function (root) {
-      var s = S.state();
-      var screen = U.el('div.container.screen.stack-lg');
-      root.appendChild(screen);
-
-
-      if (!s.attempts.length) {
-        screen.appendChild(ui.empty(t('common.notEnoughData'), t('progress.clickSkill'),
-          U.el('a.btn.btn-primary', { href: '#/practice', text: t('nav.practice') })));
-        return;
-      }
-
-      screen.appendChild(summaryCards());
-
-      screen.appendChild(U.el('div.card.stack', null, [
-        U.el('div.row-between', null, [
-          U.el('h2.h2', { text: t('progress.skillMap') }),
-          U.el('span.small.muted', { text: t('progress.clickSkill') })
-        ]),
-        legend(),
-        skillMap()
-      ]));
-
-      screen.appendChild(U.el('div.grid.grid-2', null, [
-        U.el('div.card.stack-sm', null, [
-          U.el('h2.h2', { text: t('progress.byDomain') }), byDomain()
-        ]),
-        U.el('div.card.stack-sm', null, [
-          U.el('h2.h2', { text: t('progress.studyTime') }), studyTime()
-        ])
-      ]));
-
-      var trend = U.el('div.card.stack-sm', { id: 'mock-trend' }, [
-        U.el('h2.h2', { text: t('progress.mockTrend') }), mockTrend()
-      ]);
-      var list = mockList();
-      if (list) {
-        trend.appendChild(U.el('div.stack-sm', null, [
-          U.el('div.eyebrow', { text: t('mock.reviewOnly') }), list
-        ]));
-      }
-      screen.appendChild(trend);
-
-      screen.appendChild(U.el('div.card.stack-sm', null, [
-        U.el('h2.h2', { text: t('progress.calendar') }), calendar()
-      ]));
-
-      screen.appendChild(U.el('div.card.stack-sm', null, [
-        U.el('h2.h2', { text: t('progress.badges') }),
-        badges(),
-        U.el('p.xsmall.muted', { text: t('progress.milestones') })
-      ]));
-    }
-  });
 })();
