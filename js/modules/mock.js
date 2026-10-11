@@ -1263,24 +1263,118 @@
     return run;
   }
 
+  function routeTag(route) {
+    return route ? U.el('span.badge.res-route', {
+      text: t('mock.module2', { route: t('mock.route' + (route === 'harder' ? 'Harder' : 'Easier')) })
+    }) : null;
+  }
+
+  /** One section: raw score, its estimate, and how much of it was right. */
   function sectionBlock(run, section) {
     var raw = JTS.mock.raw(run, section);
     var est = JTS.mock.estimate(run, section);
+    return U.el('div.card.stack-sm.res-sec.is-' + section, null, [
+      U.el('div.row-between.row-wrap', null, [
+        U.el('span.res-sec-name', null, [U.el('i.res-dot'), U.el('span', { text: t('common.' + section) })]),
+        routeTag(raw.route)
+      ]),
+      U.el('div.res-sec-nums', null, [
+        U.el('div', null, [
+          U.el('b.res-raw', { text: raw.correct + ' / ' + raw.total }),
+          U.el('span.xsmall.muted', { text: t('mock.rawScore') })
+        ]),
+        U.el('div', null, [
+          U.el('b.res-est', { text: est ? t('mock.estimateRange', { low: est.low, high: est.high }) : '—' }),
+          U.el('span.xsmall.muted', { text: t('mock.sectionEst') })
+        ])
+      ]),
+      ui.bar(raw.correct, raw.total || 1)
+    ]);
+  }
+
+  /**
+   * The total, as the range it is, on the 400–1600 scale with the target
+   * marked on it. §14.12: no predicted SAT score anywhere — the tag and the
+   * line under the scale both say what this number is.
+   */
+  function totalCard(run) {
+    var total = JTS.mock.totalEstimate(run);
+    var st = S.state();
+    var goal = st && st.goals ? st.goals.total : null;
+    function at(v) { return U.clamp((v - 400) / 1200 * 100, 0, 100); }
+
+    var scale = U.el('div.res-scale');
+    if (total) {
+      scale.appendChild(U.el('i.res-scale-range', {
+        style: 'left:' + at(total.low) + '%;width:' + Math.max(at(total.high) - at(total.low), 1.5) + '%'
+      }));
+    }
+    if (goal) scale.appendChild(U.el('i.res-scale-goal', { style: 'left:' + at(goal) + '%' }));
+    var ticks = U.el('div.res-ticks', null, [400, 800, 1200, 1600].map(function (v) {
+      return U.el('span', { text: String(v), style: 'left:' + at(v) + '%' });
+    }));
+    if (goal) {
+      ticks.appendChild(U.el('span.res-tick-goal', {
+        text: t('mock.goalLine') + ' ' + goal, style: 'left:' + at(goal) + '%'
+      }));
+    }
+
+    return U.el('div.card.res-total', null, [
+      U.el('div.row-between.row-wrap', null, [
+        U.el('div.eyebrow', { text: t('mock.totalEstimate') }),
+        U.el('span.badge.badge-warn', { text: t('mock.rangeTag') })
+      ]),
+      U.el('div.res-big', {
+        text: total ? t('mock.estimateRange', { low: total.low, high: total.high }) : '—'
+      }),
+      U.el('div.res-scale-wrap', null, [scale, ticks]),
+      U.el('p.small.muted', { text: t('mock.estimateNote'), style: 'margin:0' })
+    ]);
+  }
+
+  function modulesCard(run) {
+    var list = U.el('div.res-mods');
+    run.modules.forEach(function (m) {
+      list.appendChild(U.el('div.res-mod.is-' + m.section, null, [
+        U.el('span.res-mod-name', null, [
+          U.el('i.res-dot'),
+          U.el('b', { text: t('mock.moduleCard', { section: t('common.' + m.section), n: Number(m.key.slice(-1)) }) })
+        ]),
+        U.el('span.small.muted.res-mod-spec', { text: t('mock.moduleSpec', { count: m.count, minutes: m.minutes }) }),
+        m.route ? U.el('span.badge.res-route', {
+          text: t('mock.route' + (m.route === 'harder' ? 'Harder' : 'Easier'))
+        }) : (m.adaptive ? null : (m.key.slice(-1) === '1'
+          ? U.el('span.badge.badge-muted', { text: t('mock.routeFirst') }) : null)),
+        U.el('b.res-mod-score', { text: (m.correct || 0) + ' / ' + m.count })
+      ]));
+    });
+    return U.el('div.card.stack-sm', null, [U.el('h2.h3', { text: t('mock.moduleTable') }), list]);
+  }
+
+  /** The skills the run lost most on, and one button to practise them. */
+  function lostCard(run) {
+    var weak = JTS.mock.weakSkills(run, 5).filter(function (w) { return JTS.skills.get(w.skillId); });
+    if (!weak.length) return null;
+    var list = U.el('div.stack-sm');
+    weak.forEach(function (w) {
+      var sk = JTS.skills.get(w.skillId);
+      list.appendChild(U.el('div.res-lost.is-' + sk.section, null, [
+        U.el('span.res-lost-name', null, [U.el('i.res-dot'), U.el('span', { text: JTS.skills.name(w.skillId) })]),
+        U.el('span.res-lost-n', { text: t('mock.nMissed', { n: w.missed }) })
+      ]));
+    });
     return U.el('div.card.stack-sm', null, [
-      U.el('div.eyebrow', { text: t('common.' + section) }),
-      U.el('div.stat', null, [
-        U.el('div.stat-label', { text: t('mock.rawScore') }),
-        U.el('div.stat-value', { text: t('mock.rawOf', { correct: raw.correct, total: raw.total }) })
+      U.el('div', null, [
+        U.el('h2.h3', { text: t('mock.lostTitle') }),
+        U.el('p.xsmall.muted', { text: t('mock.lostLead'), style: 'margin:4px 0 0' })
       ]),
-      U.el('div.stat', null, [
-        U.el('div.stat-label', { text: t('mock.estimate') }),
-        U.el('div.stat-value', {
-          text: est ? t('mock.estimateRange', { low: est.low, high: est.high }) : '—'
-        })
-      ]),
-      raw.route ? U.el('div.small.muted', {
-        text: t('mock.route') + ': ' + t('mock.route' + (raw.route === 'harder' ? 'Harder' : 'Easier'))
-      }) : null
+      list,
+      U.el('button.btn.res-build', {
+        type: 'button', text: '✦ ' + t('mock.buildSession'),
+        onclick: function () {
+          JTS.practice.startTopic(weak.map(function (w) { return w.skillId; }), 10);
+        }
+      })
     ]);
   }
 
@@ -1293,77 +1387,37 @@
       if (JTS.fullWindow) JTS.fullWindow.leave();
       var run = runFrom(route);
       if (!run || run.status !== 'finished') { JTS.router.go('#/mocks'); return; }
+      var paper = run.paperId ? JTS.papers.get(run.paperId) : null;
 
       var screen = U.el('div.container.screen.stack-lg');
       root.appendChild(screen);
-      screen.appendChild(U.el('div.row', null, [
-run.paperId
-          ? U.el('a.btn.btn-sm', { href: '#/papers', text: '← ' + t('paper.title') })
-          : U.el('a.btn.btn-sm', { href: '#/mocks', text: '← ' + t('nav.mocks') })
-      ]));
 
-      screen.appendChild(U.el('div.stack-sm', null, [
-        U.el('div.row.row-wrap', null, [
-          U.el('span.small.muted', {
-            text: t('mock.startedAt') + ': ' +
-              U.fmtDate(new Date(run.startedAt), S.settings().uiLang) + ' · ' +
-              t('mock.finishedAt') + ': ' +
-              U.fmtDate(new Date(run.finishedAt), S.settings().uiLang)
-          }),
-          run.timed ? null : U.el('span.badge.badge-warn', { text: t('mock.untimedTag') })
-        ])
-      ]));
-
-      screen.appendChild(U.el('div.grid.grid-2', null, [
-        sectionBlock(run, 'rw'), sectionBlock(run, 'math')
-      ]));
-
-      var total = JTS.mock.totalEstimate(run);
-      screen.appendChild(U.el('div.card.card-accent.stack-sm', null, [
-        U.el('div.eyebrow', { text: t('mock.totalEstimate') }),
-        U.el('div.h1', {
-          text: total ? t('mock.estimateRange', { low: total.low, high: total.high }) : '—'
-        }),
-        /* §14.12: no predicted SAT score anywhere. What this screen shows is a
-           range from an internal model, and it says so next to the number. */
-        U.el('p.small.muted', { text: t('mock.estimateNote') })
-      ]));
-
-      var weak = JTS.mock.weakSkills(run, 5);
-      if (weak.length) {
-        var list = U.el('div.stack-sm');
-        weak.forEach(function (w) {
-          /* Same shape as the Practice skill list: .skill-row lays out a
-             flexible .name against whatever sits to its right. */
-          list.appendChild(U.el('div.skill-row', null, [
-            U.el('span.name', null, [
-              U.el('div', { text: JTS.skills.name(w.skillId) }),
-              U.el('div.xsmall.muted', {
-                text: w.missed + ' ' + t('common.incorrect').toLowerCase() +
-                  ' · ' + Math.round(w.weight * 1000) / 10 + '%'
-              })
-            ]),
-            U.el('button.btn.btn-sm', {
-              type: 'button', text: t('practice.startSession'),
-              onclick: function () { JTS.practice.startTopic([w.skillId], 10); }
-            })
-          ]));
-        });
-        screen.appendChild(U.el('div.card.stack-sm', null, [
-          U.el('h2.h2', { text: t('mock.recommended') }), list
-        ]));
-      }
-
-      screen.appendChild(U.el('div.row.row-wrap', null, [
-        U.el('button.btn.btn-primary', {
-          type: 'button', text: t('mock.reviewQuestions'),
-          onclick: function () { JTS.router.go('#/mocks/review?run=' + run.id); }
-        }),
-        U.el('button.btn', {
-          type: 'button', text: t(run.paperId ? 'paper.title' : 'mock.title'),
-          onclick: function () { JTS.router.go(run.paperId ? '#/papers' : '#/mocks'); }
+      var mins = Math.round(U.sum(run.modules.map(function (m) { return m.timeMs || 0; })) / 60000);
+      screen.appendChild(U.el('div.res-head', null, [
+        U.el('div.row.row-wrap.res-meta', null, [
+          run.paperId
+            ? U.el('a.btn.btn-sm', { href: '#/papers', text: '← ' + t('paper.title') })
+            : U.el('a.btn.btn-sm', { href: '#/mocks', text: '← ' + t('nav.mocks') }),
+          paper ? U.el('span.badge', { text: paper.title }) : null,
+          U.el('span.badge.badge-muted', { text: U.fmtDate(new Date(run.finishedAt), S.settings().uiLang) }),
+          U.el('span.badge.badge-muted', { text: t(run.timed ? 'mock.timed' : 'mock.untimedTag') }),
+          mins ? U.el('span.badge.badge-muted', {
+            text: t('mock.duration', { h: Math.floor(mins / 60), m: mins % 60 })
+          }) : null
+        ]),
+        U.el('a.btn.btn-primary', {
+          href: '#/mocks/review?run=' + run.id, text: t('mock.reviewQuestions') + ' →'
         })
       ]));
+
+      /* The total with the two sections beside it; under them the modules
+         with the skills that cost the most. */
+      screen.appendChild(U.el('div.res-grid', null, [
+        totalCard(run),
+        U.el('div.res-secs', null, [sectionBlock(run, 'rw'), sectionBlock(run, 'math')])
+      ]));
+      var lost = lostCard(run);
+      screen.appendChild(U.el('div.res-grid' + (lost ? '' : '.is-single'), null, [modulesCard(run), lost]));
     }
   });
 
