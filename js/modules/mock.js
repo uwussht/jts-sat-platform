@@ -552,19 +552,20 @@
   function sourceLabel(id) { return t('mock.source.' + id); }
 
   /**
-   * Every score there is, oldest first: the simulations and papers finished
+   * Every score on this page, oldest first: the full simulations finished
    * here (a range, so the midpoint is what gets plotted) and the results the
-   * student added from outside.
+   * student added from outside. A past paper's result is not one of them —
+   * those are kept on #/papers, under the papers.
    */
   function allResults() {
     var rows = [];
     JTS.mock.finished().forEach(function (run) {
+      if (run.paperId) return;
       var tot = JTS.mock.totalEstimate(run);
       if (!tot) return;
-      var paper = run.paperId ? JTS.papers.get(run.paperId) : null;
       rows.push({
         kind: 'sim', at: run.finishedAt, run: run,
-        source: paper ? paper.title : t('mock.source.sim'),
+        source: t('mock.source.sim'),
         rw: JTS.mock.estimate(run, 'rw'), math: JTS.mock.estimate(run, 'math'),
         total: tot, mid: Math.round((tot.low + tot.high) / 2)
       });
