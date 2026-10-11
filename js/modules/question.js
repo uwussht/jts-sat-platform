@@ -809,6 +809,11 @@
       function fitChoiceImages(span, question) {
         var small = /^m\.(psda|geo)\./.test(question.skillId || '');
         var scale = small ? 0.24 : 0.3, cap = small ? 180 : 220;
+        /* A past paper's answers are pictures of the printed choices. They
+           are shown at the size they were saved, so they read like the
+           question above them and all four at the same scale; only the
+           papers scanned at about twice that are brought down to it. */
+        var paper = !!(JTS.papers && JTS.papers.of(question));
         Array.prototype.forEach.call(span.querySelectorAll('img'), function (img) {
           var scanned = !!img.closest('.sat-natural-option, .sat-display-math');
           if (img.classList.contains('m') && !scanned) {
@@ -823,6 +828,11 @@
           function size() {
             var h = img.naturalHeight;
             if (!h) return;
+            if (paper) {
+              if (img.naturalWidth / h >= 2.5) img.style.height = (h > 110 ? Math.round(h * 0.45) : h) + 'px';
+              else if (h > 260) img.style.maxHeight = '260px';
+              return;
+            }
             if (scanned) img.style.height = Math.max(20, Math.round(h * scale)) + 'px';
             /* A wide, short picture is a typeset equation, not a graph:
                it is shrunk to about a line of text. */
