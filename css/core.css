@@ -1674,15 +1674,16 @@ body.tour-open .app-topbar, body.tour-open #add-word { z-index: 1; }
 .rm-panel { scrollbar-width: none; }
 .rm-panel::-webkit-scrollbar { display: none; }
 
-.rm-topic {
-  display: flex; align-items: center; justify-content: space-between; gap: 10px;
-  padding: 7px 8px; margin-inline: -8px; border-radius: 8px;
-  font-size: 13.5px; line-height: 1.35; color: var(--ink); text-decoration: none;
-}
+.rm-topics[hidden] { display: none; }
+.rm-topic { padding: 7px 0; font-size: 13.5px; line-height: 1.35; color: var(--ink); }
 .rm-topic + .rm-topic { border-top: 1px solid var(--border); }
-.rm-topic:hover { background: var(--surface-2); text-decoration: none; }
-.rm-topic-go { flex: none; color: var(--muted); }
-.rm-topic:hover .rm-topic-go { color: var(--brand-700); }
+/* The arrow that opens and closes the list. */
+.rm-fold {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%;
+  padding: 6px 0; background: none; border: 0; color: inherit; font: inherit; cursor: pointer; text-align: left;
+}
+.rm-fold-arrow { flex: none; font-size: 16px; line-height: 1; color: var(--muted); }
+.rm-fold:hover .rm-fold-arrow { color: var(--brand-700); }
 .rm-codes .pg-tag { text-decoration: none; }
 .rm-codes .pg-tag:hover { background: var(--brand-200); text-decoration: none; }
 

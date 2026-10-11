@@ -122,8 +122,7 @@
            rather than repeating its full title. */
         short: t('roadmap.short.' + ph.id),
         lead: pick(ph.lead),
-        weeks: t('prog.weeks', { range: pw === 2 ? ph.weeks2 : ph.weeks3 }),
-        cta: { href: '#/materials', label: t('nav.materials') }
+        weeks: t('prog.weeks', { range: pw === 2 ? ph.weeks2 : ph.weeks3 })
       });
       /* The gate that closes this phase is the next stop, because on the road
          it genuinely is: you do not walk past it. */
@@ -407,18 +406,23 @@
         .filter(function (s) { return s.n >= stop.from && s.n <= stop.to; })
         .reduce(function (acc, s) { return acc.concat(s.lessons); }, []);
       if (codes.length) {
-        /* The topics by name, each a row that opens its unit: a code says
-           nothing to a student who has not met the unit yet. */
-        var chips = U.el('div.rm-topics');
+        /* The topics by name — a code says nothing to a student who has not
+           met the unit yet. They are read here, not opened from here, and
+           the list is folded until its arrow is pressed. */
+        var chips = U.el('div.rm-topics', { hidden: true });
         codes.forEach(function (l) {
-          chips.appendChild(U.el('a.rm-topic', { href: '#/materials/lesson?code=' + l.code }, [
-            U.el('span.rm-topic-name', { text: pick(l.t) }),
-            U.el('span.rm-topic-go', { text: '→', 'aria-hidden': 'true' })
-          ]));
+          chips.appendChild(U.el('div.rm-topic', { text: pick(l.t) }));
         });
-        panel.appendChild(U.el('div.stack-sm', null, [
-          U.el('span.rm-fact-lab', { text: t('roadmap.whatYouDo') }), chips
-        ]));
+        var arrow = U.el('span.rm-fold-arrow', { text: '▾', 'aria-hidden': 'true' });
+        var fold = U.el('button.rm-fold', {
+          type: 'button', 'aria-expanded': 'false',
+          onclick: function () {
+            chips.hidden = !chips.hidden;
+            fold.setAttribute('aria-expanded', String(!chips.hidden));
+            arrow.textContent = chips.hidden ? '▾' : '▴';
+          }
+        }, [U.el('span.rm-fact-lab', { text: t('roadmap.whatYouDo') }), arrow]);
+        panel.appendChild(U.el('div.stack-sm', null, [fold, chips]));
       }
     }
 
@@ -432,12 +436,16 @@
       ]));
     }
 
-    panel.appendChild(U.el('div.rm-panel-foot', null, [
-      U.el('span'),
-      U.el('a.btn.btn-sm' + (info.status === 'current' ? '.btn-primary' : ''), {
-        href: stop.cta.href, text: stop.cta.label
-      })
-    ]));
+    /* A phase has no button: there is nowhere it sends you. The diagnostic
+       and a gate each lead to the test they are. */
+    if (stop.cta) {
+      panel.appendChild(U.el('div.rm-panel-foot', null, [
+        U.el('span'),
+        U.el('a.btn.btn-sm' + (info.status === 'current' ? '.btn-primary' : ''), {
+          href: stop.cta.href, text: stop.cta.label
+        })
+      ]));
+    }
     return panel;
   }
 
