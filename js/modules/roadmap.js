@@ -448,9 +448,7 @@
       var state = S.state();
       if (!state) { JTS.router.go('#/auth'); return; }
 
-      /* The map half is sized to the window; the course under it is a long
-         read, so the screen stops being height-locked once it is there. */
-      var screen = U.el('div.container.screen.rm-screen' + (JTS.programme ? '.has-course' : ''));
+      var screen = U.el('div.container.screen.rm-screen');
       root.appendChild(screen);
 
       var list = stops();
@@ -602,15 +600,9 @@
 
       select(current);
 
-      /* Under the map: the phases, week by week, and nothing else — no
-         heading over them, no totals and no official-test cards. The road is
-         the shape of the preparation and the phases are the units that fill
-         it. */
-      if (JTS.programme) {
-        screen.appendChild(U.el('div.rm-course', null, [
-          JTS.programme.chronology({ phasesOnly: true })
-        ]));
-      }
+      /* Nothing under the map: the week-by-week list of units is not here.
+         The phases are the stops on the road, and each one's units are in
+         the panel beside it. */
     }
   });
 })();

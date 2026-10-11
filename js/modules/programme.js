@@ -90,15 +90,11 @@
     var sch = P.scheduleOf(pw);
     var wrap = U.el('div.stack');
 
-    /* opts.phasesOnly: the months and nothing around them — no line of
-       totals over them and no official-test cards between them. */
-    if (!opts.phasesOnly) {
-      wrap.appendChild(U.el('div.card.card-sm.pg-zero', null, [
-        U.el('div', null, [U.el('b', {
-          text: t('prog.scheduleShape', { weeks: sch.weeks, lessons: P.lessonsTotal, tests: sch.tests })
-        })])
-      ]));
-    }
+    wrap.appendChild(U.el('div.card.card-sm.pg-zero', null, [
+      U.el('div', null, [U.el('b', {
+        text: t('prog.scheduleShape', { weeks: sch.weeks, lessons: P.lessonsTotal, tests: sch.tests })
+      })])
+    ]));
 
     /* An official Bluebook test is its own card, where it falls in the
        course: before Month 1, and after each of the first two months. */
@@ -110,7 +106,6 @@
       ]);
     }
     function testsAfter(phaseId) {
-      if (opts.phasesOnly) return;
       (P.officialTests || []).forEach(function (test) {
         if (test.after === phaseId) wrap.appendChild(testCard(test));
       });
