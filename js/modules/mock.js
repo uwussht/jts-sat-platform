@@ -249,7 +249,7 @@
         durationMs: m.minutes * 60000,
         softTimer: !run.timed,
         wallClock: run.timed,
-        returnHash: '#/mocks',
+        returnHash: run.paperId ? '#/papers' : '#/mocks',
         finishHash: '#/mocks/run',
         meta: { mockId: run.id, moduleIndex: run.index, moduleKey: m.key }
       });
@@ -425,6 +425,43 @@
 
   function fitsMock() { return window.innerWidth >= JTS.config.mockMinWidth; }
 
+  /* The run in flight: where it stands, and the way back into it or out of
+     it. Shown on both pages that can start a run, since neither can start a
+     second one. */
+  function unfinishedNotice(active, rerender) {
+    return U.el('div.notice.notice-warn', null, [
+      U.el('div.stack-sm', null, [
+        U.el('div', null, [U.el('b', { text: t('mock.unfinished') })]),
+        U.el('div.small', { text: t('mock.oneAtATime') }),
+        U.el('div.small', {
+          text: t('mock.inProgressLine', {
+            n: active.index + 1, total: active.modules.length,
+            date: U.fmtDate(new Date(active.startedAt), S.settings().uiLang)
+          })
+        }),
+        U.el('div.row.row-wrap', null, [
+          U.el('button.btn.btn-primary', {
+            type: 'button', text: t('mock.resumeMock'),
+            onclick: function () {
+              if (active.paperId) JTS.fullWindow.enter();
+              JTS.router.go('#/mocks/run');
+            }
+          }),
+          U.el('button.btn.btn-danger', {
+            type: 'button', text: t('mock.discardMock'),
+            onclick: function () {
+              ui.confirm({ title: t('mock.abandon'), message: t('mock.abandonConfirm'),
+                okText: t('common.discard') }).then(function (yes) {
+                if (!yes) return;
+                JTS.mock.discard(active.id); rerender();
+              });
+            }
+          })
+        ])
+      ])
+    ]);
+  }
+
   function runCard(rerender) {
     var cap = JTS.mock.capacity();
     var active = JTS.mock.active();
@@ -438,34 +475,7 @@
     ]);
 
     if (active) {
-      card.appendChild(U.el('div.notice.notice-warn', null, [
-        U.el('div.stack-sm', null, [
-          U.el('div', null, [U.el('b', { text: t('mock.unfinished') })]),
-          U.el('div.small', { text: t('mock.oneAtATime') }),
-          U.el('div.small', {
-            text: t('mock.inProgressLine', {
-              n: active.index + 1, total: active.modules.length,
-              date: U.fmtDate(new Date(active.startedAt), S.settings().uiLang)
-            })
-          }),
-          U.el('div.row.row-wrap', null, [
-            U.el('button.btn.btn-primary', {
-              type: 'button', text: t('mock.resumeMock'),
-              onclick: function () { JTS.router.go('#/mocks/run'); }
-            }),
-            U.el('button.btn.btn-danger', {
-              type: 'button', text: t('mock.discardMock'),
-              onclick: function () {
-                ui.confirm({ title: t('mock.abandon'), message: t('mock.abandonConfirm'),
-                  okText: t('common.discard') }).then(function (yes) {
-                  if (!yes) return;
-                  JTS.mock.discard(active.id); rerender();
-                });
-              }
-            })
-          ])
-        ])
-      ]));
+      card.appendChild(unfinishedNotice(active, rerender));
       return card;
     }
 
@@ -527,17 +537,32 @@
    *
    * The gates are the simulation's gates, because it is the simulation's
    * machinery: one run at a time, and not on a phone.
+   *
+   * They have their own page, #/papers; Mock tests keeps a card that opens it.
    */
+  function paperLink() {
+    if (!JTS.papers.all().length) return null;
+    return U.el('div.card.stack', { id: 'paper-card' }, [
+      U.el('h2.h2', { text: t('paper.title') }),
+      U.el('p.small.muted', { text: t('paper.lead') }),
+      U.el('a.btn.btn-primary', { href: '#/papers', text: t('paper.open'),
+        style: 'align-self:flex-start' })
+    ]);
+  }
+
   function paperCard(rerender) {
     var papers = JTS.papers.all();
-    if (!papers.length) return null;
     var active = JTS.mock.active();
 
-    var card = U.el('div.card.stack', { id: 'paper-card' }, [
-      U.el('h2.h2', { text: t('paper.title') }),
+    var card = U.el('div.card.stack', { id: 'paper-list' }, [
       U.el('p.small.muted', { text: t('paper.lead') }),
       U.el('p.xsmall.muted', { text: t('paper.noHelp') })
     ]);
+
+    if (!papers.length) {
+      card.appendChild(ui.empty(t('paper.none')));
+      return card;
+    }
 
     if (!fitsMock()) {
       card.appendChild(U.el('div.notice.desktop-only-note', null, [
@@ -563,18 +588,34 @@
               (sat ? ' \u00b7 ' + t('paper.satTimes', { n: sat }) : '')
           })
         ]),
-        U.el('button.btn.btn-primary', {
-          type: 'button', text: t('paper.sit'), disabled: !!active,
-          onclick: function () {
-            JTS.fullWindow.enter();
-            var run = JTS.mock.create({ timed: true, paperId: paper.id });
-            JTS.mock.startModule(run.id);
-          }
-        })
+        /* The paper being sat is continued from its own tile; the others
+           wait until it is finished or discarded. */
+        active && active.paperId === paper.id
+          ? U.el('button.btn.btn-primary', {
+              type: 'button', text: t('common.continue'),
+              onclick: function () {
+                JTS.fullWindow.enter();
+                JTS.router.go('#/mocks/run');
+              }
+            })
+          : U.el('button.btn.btn-primary', {
+              type: 'button', text: t('paper.sit'), disabled: !!active,
+              onclick: function () {
+                JTS.fullWindow.enter();
+                var run = JTS.mock.create({ timed: true, paperId: paper.id });
+                if (!JTS.mock.startModule(run.id)) {
+                  /* Nothing to show: do not leave a run behind that blocks
+                     every other button. */
+                  JTS.mock.discard(run.id);
+                  JTS.fullWindow.leave();
+                  ui.toast(t('paper.cantOpen'), 'err', 5000);
+                  rerender();
+                }
+              }
+            })
       ]));
     });
     card.appendChild(list);
-    if (active) card.appendChild(U.el('div.xsmall.muted', { text: t('mock.oneAtATime') }));
     return card;
   }
 
@@ -730,10 +771,8 @@
       function paint() {
         screen.appendChild(runCard(rerender));
 
-        var papers = paperCard(rerender);
+        var papers = paperLink();
         if (papers) screen.appendChild(papers);
-        var recent = recentTests();
-        if (recent) screen.appendChild(recent);
 
         /* The page is for sitting a test. The list of finished ones and the
            trajectory both live on #/progress, which is the screen that answers
@@ -744,6 +783,37 @@
 
       /* The width gate is a real gate, not a one-off read: rotating a tablet
          or dragging a window past 1024px has to change the answer. */
+      var wasFitting = fitsMock();
+      function onResize() {
+        if (fitsMock() === wasFitting) return;
+        wasFitting = fitsMock();
+        rerender();
+      }
+      window.addEventListener('resize', onResize);
+      return function () { window.removeEventListener('resize', onResize); };
+    }
+  });
+
+  /* Past papers: the run in flight if there is one, the papers, and the
+     papers already sat. */
+  JTS.router.register('#/papers', {
+    title: 'paper.title',
+    render: function (root) {
+      var screen = U.el('div.container.screen.stack-lg');
+      root.appendChild(screen);
+
+      function rerender() { U.clear(screen); paint(); }
+
+      function paint() {
+        var active = JTS.mock.active();
+        if (active) screen.appendChild(unfinishedNotice(active, rerender));
+        screen.appendChild(paperCard(rerender));
+        var recent = recentTests();
+        if (recent) screen.appendChild(recent);
+      }
+
+      paint();
+
       var wasFitting = fitsMock();
       function onResize() {
         if (fitsMock() === wasFitting) return;
@@ -939,7 +1009,7 @@
             okText: t('common.discard') }).then(function (yes) {
             if (!yes) return;
             JTS.mock.discard(run.id);
-            JTS.router.go('#/mocks');
+            JTS.router.go(run.paperId ? '#/papers' : '#/mocks');
           });
         }
       }));
@@ -1003,7 +1073,9 @@
       var screen = U.el('div.container.screen.stack-lg');
       root.appendChild(screen);
       screen.appendChild(U.el('div.row', null, [
-        U.el('a.btn.btn-sm', { href: '#/mocks', text: '← ' + t('nav.mocks') })
+run.paperId
+          ? U.el('a.btn.btn-sm', { href: '#/papers', text: '← ' + t('paper.title') })
+          : U.el('a.btn.btn-sm', { href: '#/mocks', text: '← ' + t('nav.mocks') })
       ]));
 
       screen.appendChild(U.el('div.stack-sm', null, [
@@ -1064,8 +1136,8 @@
           onclick: function () { JTS.router.go('#/mocks/review?run=' + run.id); }
         }),
         U.el('button.btn', {
-          type: 'button', text: t('mock.title'),
-          onclick: function () { JTS.router.go('#/mocks'); }
+          type: 'button', text: t(run.paperId ? 'paper.title' : 'mock.title'),
+          onclick: function () { JTS.router.go(run.paperId ? '#/papers' : '#/mocks'); }
         })
       ]));
     }

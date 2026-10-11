@@ -2110,6 +2110,9 @@
       { path: '#/plan',     key: 'nav.plan',     icon: '☷' },
       { path: '#/practice', key: 'nav.practice', icon: '✎' },
       { path: '#/mocks',    key: 'nav.mocks',    icon: '⏱' },
+      /* In the sidebar only: a paper is sat on a laptop, and the phone tab
+         bar is full at five. */
+      { path: '#/papers',   key: 'paper.title',  icon: '▣', noTab: true },
       /* Materials rather than Progress: the course is what a student opens
          daily, and the charts are a place you visit after a test. #/progress
          is still a route, linked from Today and from the diagnostic result. */
@@ -2143,6 +2146,7 @@
       '#/plan':         '<rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/>',
       '#/practice':     '<path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/>',
       '#/mocks':        '<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9.5 2.5h5"/>',
+      '#/papers':       '<path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 12.5h6M9 16.5h6"/>',
       '#/materials':    '<path d="M2.5 5.5c3-1.5 6-1.5 9.5 1 3.5-2.5 6.5-2.5 9.5-1v13c-3-1.5-6-1.5-9.5 1-3.5-2.5-6.5-2.5-9.5-1z"/><path d="M12 6.5v13"/>',
       '#/roadmap':      '<path d="M9 4.5l-6 2v13l6-2 6 2 6-2v-13l-6 2z"/><path d="M9 4.5v13M15 6.5v13"/>',
       '#/errors':       '<path d="M5 21V4m0 0h11l-2 4 2 4H5"/>',
@@ -2356,7 +2360,7 @@
       tabbar.hidden = !st || !st.profile.onboardingComplete;
       if (tabbar.hidden) return;
       var self = this;
-      this.navItems.forEach(function (it) {
+      this.navItems.filter(function (it) { return !it.noTab; }).forEach(function (it) {
         tabbar.appendChild(U.el('a', { href: it.path, dataset: { path: it.path } }, [
           U.el('em', { html: self.navIcon(it.path), 'aria-hidden': 'true' }),
           U.el('span', { text: t(it.key) })
