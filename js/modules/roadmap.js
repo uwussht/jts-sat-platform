@@ -106,9 +106,11 @@
 
     out.push({
       id: 1, kind: 'diagnostic', from: 1, to: 1,
-      name: t('diag.title'), short: t('diag.title'),
+      /* Named by its test, the way the two checkpoints are; the pin keeps
+         the one word. */
+      name: t('roadmap.diagName'), short: t('diag.title'),
       lead: t('roadmap.diagLead'),
-      weeks: t('prog.weekNo', { n: 1 }),
+      weeks: t('prog.weekNo', { n: 1 }), bluebook: 6,
       cta: { href: '#/diagnostic', label: t('diag.title') }
     });
 
@@ -129,13 +131,14 @@
       var gate = gates.filter(function (g) { return g.n === ph.gate; })[0];
       if (gate) {
         var at = pw === 2 ? gate.afterLesson2 : gate.afterLesson3;
-        var test = pw === 2 ? gate.test2 : gate.test3;
         out.push({
           id: out.length + 1, kind: 'gate', gate: gate, from: at, to: at,
           name: pick(gate.name),
           short: t('roadmap.short.gate', { n: gate.n }),
           lead: t('roadmap.gateLead', { name: pick(ph.name) }),
-          weeks: t('prog.testNo', { n: test })
+          /* Which Bluebook test it is, not which weekend's: "Practice
+             test 8" under a stop that sits Bluebook 9 read as a mistake. */
+          weeks: null, bluebook: gate.bluebook
         });
       }
     });
@@ -374,7 +377,8 @@
         info.status === 'current' ? U.el('span.badge', { text: t('roadmap.youAreHere') })
           : info.status === 'done' ? U.el('span.badge.badge-ok', { text: t('common.done') })
           : null,
-        U.el('span.badge.badge-muted', { text: stop.weeks }),
+        stop.bluebook ? U.el('span.badge.badge-muted', { text: 'Bluebook ' + stop.bluebook }) : null,
+        stop.weeks ? U.el('span.badge.badge-muted', { text: stop.weeks }) : null,
         /* Weeks and lesson numbers, and no calendar dates. A stop is a
            position in the course; a date on it is the plan's business, moves
            every time the plan is rebuilt, and read as a deadline that was

@@ -26,6 +26,7 @@ JTS.dict.en = {
   'roadmap.kind.diagnostic': 'Measure', 'roadmap.kind.phase': 'Learn', 'roadmap.kind.gate': 'Checkpoint',
   'roadmap.short.content': 'Every topic', 'roadmap.short.hard': 'Hard Module 2',
   'roadmap.short.test': 'Test week', 'roadmap.short.gate': 'Test {n}',
+  'roadmap.diagName': 'Bluebook Practice Test 6 — diagnostic',
   'roadmap.diagLead': 'Before Unit 1: Bluebook Practice Test 6 as the diagnostic, so the course is aimed at evidence rather than at a guess. The platform’s own baseline test works too.',
   'roadmap.gateLead': 'The checkpoint that closes {name}. You do not walk past it: the next month is built on what this test shows.',
   'roadmap.gateWhat': 'A new official practice test in Bluebook, under exam conditions, reviewed the next day. Every miss goes into the error log by unit code and by reason.',

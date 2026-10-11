@@ -26,6 +26,7 @@ JTS.dict.ru = {
   'roadmap.kind.diagnostic': 'Замер', 'roadmap.kind.phase': 'Учёба', 'roadmap.kind.gate': 'Контрольная точка',
   'roadmap.short.content': 'Все темы', 'roadmap.short.hard': 'Сложный Модуль 2',
   'roadmap.short.test': 'Test week', 'roadmap.short.gate': 'Тест {n}',
+  'roadmap.diagName': 'Bluebook Practice Test 6 — диагностика',
   'roadmap.diagLead': 'Перед юнитом 1: Bluebook Practice Test 6 как диагностика, чтобы курс целился в факты, а не в догадку. Подойдёт и baseline-тест платформы.',
   'roadmap.gateLead': 'Контрольная точка, закрывающая этап «{name}». Пройти мимо нельзя: следующий месяц строится на том, что покажет этот тест.',
   'roadmap.gateWhat': 'Новый официальный practice test в Bluebook, в условиях экзамена, с разбором на следующий день. Каждый промах — в error log по коду юнита и причине.',

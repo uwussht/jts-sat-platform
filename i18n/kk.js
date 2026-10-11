@@ -26,6 +26,7 @@ JTS.dict.kk = {
   'roadmap.kind.diagnostic': 'Өлшеу', 'roadmap.kind.phase': 'Оқу', 'roadmap.kind.gate': 'Бақылау нүктесі',
   'roadmap.short.content': 'Барлық тақырып', 'roadmap.short.hard': 'Күрделі 2-модуль',
   'roadmap.short.test': 'Test week', 'roadmap.short.gate': '{n}-тест',
+  'roadmap.diagName': 'Bluebook Practice Test 6 — диагностика',
   'roadmap.diagLead': '1-юнитке дейін: диагностика ретінде Bluebook Practice Test 6, сонда курс болжамға емес, фактіге бағытталады. Платформаның baseline-тесті де жарайды.',
   'roadmap.gateLead': '«{name}» кезеңін жабатын бақылау нүктесі. Оны айналып өтуге болмайды: келесі ай осы тест көрсеткенге сүйенеді.',
   'roadmap.gateWhat': 'Bluebook-тағы жаңа ресми practice test, емтихан жағдайында, келесі күні талдаумен. Әр қате error log-қа юнит коды және себебі бойынша жазылады.',
