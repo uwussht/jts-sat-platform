@@ -602,19 +602,13 @@
 
       select(current);
 
-      /* Under the map: the course itself, week by week. The road is the shape
-         of the preparation — six stops a student can hold in their head — and
-         the chronology is the forty-five lessons that fill it. They are two
-         views of the same journey and neither replaces the other. */
+      /* Under the map: the phases, week by week, and nothing else — no
+         heading over them, no totals and no official-test cards. The road is
+         the shape of the preparation and the phases are the units that fill
+         it. */
       if (JTS.programme) {
         screen.appendChild(U.el('div.rm-course', null, [
-          U.el('div.row-between.row-wrap', null, [
-            U.el('div', null, [
-              U.el('div.eyebrow', { text: t('prog.title') }),
-              U.el('p.small.muted', { text: t('prog.lead'), style: 'margin:4px 0 0' })
-            ])
-          ]),
-          JTS.programme.chronology()
+          JTS.programme.chronology({ phasesOnly: true })
         ]));
       }
     }
