@@ -101,23 +101,21 @@
     if (counts.none) order.push('none');
 
     var total = rows.length;
-    var grid = U.el('div.err-kinds');
+    var list = U.el('div.el-kinds');
     order.forEach(function (k) {
       var n = counts[k];
       var on = filter.kind === k;
-      grid.appendChild(U.el('button.err-kind' + (on ? '.is-on' : '') + (k === 'none' ? '.is-none' : ''), {
+      list.appendChild(U.el('button.el-kind' + (on ? '.is-on' : '') + (k === 'none' ? '.is-none' : '') +
+        (n ? '' : '.is-zero'), {
         type: 'button', 'aria-pressed': String(on),
         onclick: function () { apply({ kind: on ? 'all' : k }); }
       }, [
-        U.el('div.err-kind-top', null, [
-          U.el('span.err-kind-name', { text: k === 'none' ? t('errors.unclassified') : t('err.' + k) }),
-          U.el('b.err-kind-n', { text: String(n) })
-        ]),
-        ui.bar(n, total || 1, k === 'none' ? '' : 'bar-ok'),
-        U.el('div.err-kind-pct', { text: U.pct(n, total) + '%' })
+        U.el('span.el-kind-name', { text: k === 'none' ? t('errors.unclassified') : t('err.' + k) }),
+        U.el('b.el-kind-n', { text: String(n) }),
+        U.el('span.el-kind-bar', null, [U.el('i', { style: 'width:' + U.pct(n, total) + '%' })])
       ]));
     });
-    return grid;
+    return list;
   }
 
   /* ----------------------------------------------------------- add / edit */
@@ -325,8 +323,7 @@
       var toReview = all.filter(function (r) { return !r.reviewed; }).length;
 
       /* The page already carries its title, so the head is what the log is
-         for with the one action beside it, and under it the log in four
-         numbers. */
+         for with the one action beside it. */
       screen.appendChild(U.el('div.err-top', { id: 'err-head' }, [
         U.el('div.stack-sm', null, [
           U.el('div.eyebrow', { text: t('errors.eyebrow') }),
@@ -334,27 +331,6 @@
         ]),
         addButton('btn-primary')
       ]));
-
-      if (all.length) {
-        var byKind = {};
-        all.forEach(function (r) { if (r.kind) byKind[r.kind] = (byKind[r.kind] || 0) + 1; });
-        var top = Object.keys(byKind).sort(function (a, b) { return byKind[b] - byKind[a]; })[0];
-        var kpi = function (label, value, sub) {
-          return U.el('div.ps-kpi', null, [
-            U.el('span.stat-label', { text: label }),
-            U.el('b.ps-num', { text: value }),
-            sub ? U.el('span.xsmall.muted', { text: sub }) : null
-          ]);
-        };
-        screen.appendChild(U.el('div.ps-kpis.dash-kpis', { id: 'err-kpis' }, [
-          kpi(t('errors.kpi.logged'), String(all.length)),
-          kpi(t('errors.kpi.toReview'), String(toReview)),
-          kpi(t('errors.kpi.reviewed'), String(all.length - toReview),
-            U.pct(all.length - toReview, all.length) + '%'),
-          kpi(t('errors.kpi.top'), top ? t('err.' + top) : '—',
-            top ? U.pct(byKind[top], all.length) + '%' : null)
-        ]));
-      }
 
       if (!all.length) {
         screen.appendChild(U.el('div.card', { id: 'err-empty' }, [
@@ -368,15 +344,36 @@
         paint();
       }
 
-      /* ---------------------------------------------------- why breakdown */
+      /* Two columns. On the left what the log adds up to: how much of it has
+         been gone back over, and why the mistakes happen — each reason a
+         filter. On the right the mistakes themselves, one card each. */
+      var done = all.length - toReview;
+      var share = U.pct(done, all.length);
+      var summary = U.el('div.card.el-summary', { id: 'err-kpis' }, [
+        U.el('div.el-ring', { style: '--p:' + share, role: 'img',
+          'aria-label': t('errors.kpi.reviewed') + ' ' + share + '%' }, [
+          U.el('b', { text: share + '%' }),
+          U.el('span', { text: t('errors.kpi.reviewed') })
+        ]),
+        U.el('div.el-counts', null, [
+          [t('errors.kpi.logged'), all.length],
+          [t('errors.kpi.toReview'), toReview],
+          [t('errors.kpi.reviewed'), done]
+        ].map(function (c) {
+          return U.el('div', null, [
+            U.el('b', { text: String(c[1]) }), U.el('span', { text: c[0] })
+          ]);
+        }))
+      ]);
       var whyCard = U.el('div.card.stack-sm', { id: 'err-kinds' });
-      screen.appendChild(whyCard);
 
-      /* -------------------------------------------------------- the table */
       var toolbar = U.el('div.err-bar');
-      var tableHost = U.el('div.table-wrap.xl-wrap');
+      var listHost = U.el('div.el-list');
       var foot = U.el('div.small.muted');
-      screen.appendChild(U.el('div.card.stack-sm', { id: 'err-table' }, [toolbar, tableHost, foot]));
+      screen.appendChild(U.el('div.el-layout', null, [
+        U.el('aside.el-side', null, [summary, whyCard]),
+        U.el('div.stack-sm.el-main', { id: 'err-table' }, [toolbar, listHost, foot])
+      ]));
 
       function select(id, current, values, label) {
         var sel = U.el('select.cal-filter', {
@@ -388,15 +385,23 @@
         return sel;
       }
 
+      /* The order the cards come in: the table's column headers are gone, so
+         the same sorts are one list. */
+      var SORTS = [
+        ['date:-1', t('errors.col.date') + ' \u2193'], ['date:1', t('errors.col.date') + ' \u2191'],
+        ['topic:1', t('errors.col.topic')], ['why:1', t('errors.col.why')],
+        ['reviewed:1', t('errors.notReviewed')]
+      ];
+
       function paintToolbar() {
         U.clear(toolbar);
         var search = U.el('input.input.err-search', {
           type: 'search', value: filter.q, placeholder: t('errors.search')
         });
-        /* Only the table is repainted as you type: repainting the toolbar
+        /* Only the list is repainted as you type: repainting the toolbar
            would replace the input under the cursor and lose the focus. */
         search.addEventListener('input', U.debounce(function () {
-          filter.q = search.value; paintTable();
+          filter.q = search.value; paintList();
         }, 200));
         toolbar.appendChild(search);
 
@@ -407,9 +412,19 @@
         toolbar.appendChild(select('section', filter.section, [
           ['all', t('errors.allSections')], ['rw', t('common.rw')], ['math', t('common.math')]
         ], t('errors.col.topic')));
-        toolbar.appendChild(select('kind', filter.kind, [['all', t('errors.allKinds')]]
-          .concat(KINDS.map(function (k) { return [k, t('err.' + k)]; }))
-          .concat([['none', t('errors.unclassified')]]), t('errors.col.why')));
+
+        var order = U.el('select.cal-filter', {
+          'aria-label': t('errors.col.date'),
+          onchange: function () {
+            var v = order.value.split(':');
+            sort.col = v[0]; sort.dir = Number(v[1]);
+            paintList();
+          }
+        });
+        SORTS.forEach(function (o) { order.appendChild(U.el('option', { value: o[0], text: o[1] })); });
+        order.value = sort.col + ':' + sort.dir;
+        toolbar.appendChild(order);
+
         toolbar.appendChild(U.el('button.btn.btn-sm', {
           type: 'button', text: t('errors.exportCsv'),
           onclick: function () {
@@ -418,73 +433,52 @@
         }));
       }
 
-      function paintTable() {
+      function paintList() {
         var list = visible();
-        U.clear(tableHost);
+        U.clear(listHost);
 
-        var table = U.el('table.table.xl');
-        var hr = U.el('tr');
-        COLS.forEach(function (c) {
-          var on = sort.col === c.id;
-          hr.appendChild(U.el('th' + (c.num ? '.num' : '') + (on ? '.is-sorted' : ''), {
-            'aria-sort': on ? (sort.dir === 1 ? 'ascending' : 'descending') : 'none'
-          }, [
-            U.el('button.xl-sort', {
-              type: 'button',
-              text: t('errors.col.' + c.id) + (on ? (sort.dir === 1 ? ' ↑' : ' ↓') : ''),
-              onclick: function () {
-                if (sort.col === c.id) sort.dir = -sort.dir;
-                else { sort.col = c.id; sort.dir = c.id === 'date' ? -1 : 1; }
-                paintTable();
-              }
-            })
-          ]));
-        });
-        table.appendChild(U.el('thead', null, [hr]));
-
-        var body = U.el('tbody');
         list.forEach(function (r) {
           var tick = U.el('input', {
             type: 'checkbox', checked: r.reviewed || null,
             'aria-label': t('errors.col.reviewed')
           });
-          /* The tick is the one control in a row that is not "open this": a
+          /* The tick is the one control on a card that is not "open this": a
              student marking ten things reviewed should not have ten dialogs. */
-          tick.addEventListener('click', function (ev) { ev.stopPropagation(); });
+          var check = U.el('label.check.el-check', null, [
+            tick, U.el('span', { text: t(r.reviewed ? 'errors.reviewed' : 'errors.notReviewed') })
+          ]);
+          check.addEventListener('click', function (ev) { ev.stopPropagation(); });
           tick.addEventListener('change', function () {
             JTS.attempts.setReviewed(r.id, tick.checked);
             rerender();
           });
 
-          body.appendChild(U.el('tr.xl-row' + (r.reviewed ? '.is-done' : ''), {
+          listHost.appendChild(U.el('div.el-item' + (r.reviewed ? '.is-done' : '') +
+            (r.section ? '.is-' + r.section : ''), {
             tabindex: '0', role: 'button',
             onclick: function () { entryForm(r, rerender); },
             onkeydown: function (e) {
               if (e.key === 'Enter') { e.preventDefault(); entryForm(r, rerender); }
             }
           }, [
-            U.el('td.num.xl-n', { text: String(r.n) }),
-            U.el('td.xl-nowrap', { text: r.date }),
-            U.el('td', null, [
-              r.code ? U.el('span.pg-tag', { text: r.code }) : null,
-              U.el('span.xl-topic', { text: r.topic || '—' })
+            U.el('div.el-item-top', null, [
+              U.el('span.el-topic', null, [
+                U.el('i.res-dot'),
+                r.code ? U.el('span.pg-tag', { text: r.code }) : null,
+                U.el('span', { text: r.topic || '\u2014' })
+              ]),
+              U.el('span.xsmall.muted', { text: r.date })
             ]),
-            U.el('td.xl-stem', { title: r.title }, [
-              U.el('span.xl-clip', { text: r.title }),
-              r.note ? U.el('span.xl-note', { text: r.note }) : null
-            ]),
-            U.el('td', null, [
+            U.el('div.el-title', { text: r.title, title: r.title }),
+            r.note ? U.el('div.el-note', { text: r.note }) : null,
+            U.el('div.el-item-foot', null, [
               r.kind
                 ? U.el('span.badge.badge-muted', { text: t('err.' + r.kind) })
-                : U.el('span.badge.badge-warn', { text: t('errors.unclassified') })
-            ]),
-            U.el('td.xl-tick', null, [U.el('label.check', null, [
-              tick, U.el('span', { text: t(r.reviewed ? 'errors.reviewed' : 'errors.notReviewed') })
-            ])])
+                : U.el('span.badge.badge-warn', { text: t('errors.unclassified') }),
+              check
+            ])
           ]));
         });
-        table.appendChild(body);
-        tableHost.appendChild(table);
 
         U.clear(foot);
         foot.appendChild(U.el('span', {
@@ -506,9 +500,9 @@
             : null
         ]));
         whyCard.appendChild(whyBreakdown(all, filter, apply));
-        whyCard.appendChild(U.el('p.xsmall.muted', { text: t('errors.kindsHint') }));
+        whyCard.appendChild(U.el('p.xsmall.muted', { text: t('errors.kindsHint'), style: 'margin:0' }));
         paintToolbar();
-        paintTable();
+        paintList();
       }
 
       paint();

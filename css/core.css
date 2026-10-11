@@ -2031,6 +2031,59 @@ button.cal-tag:hover { background: var(--brand-100); color: var(--brand-700); }
   display: grid; gap: 10px;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
+/* ----- Error log: a summary column and the mistakes as cards -------------- */
+.el-layout { display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: var(--sp-4); align-items: start; }
+.el-side { display: flex; flex-direction: column; gap: var(--sp-4); position: sticky; top: calc(var(--topbar-h) + 16px); }
+.el-side > .card { margin: 0; }
+.el-summary { display: flex; flex-direction: column; align-items: center; gap: var(--sp-4); }
+.el-ring {
+  --p: 0; width: 148px; height: 148px; border-radius: 50%; display: grid; place-items: center; align-content: center;
+  background: radial-gradient(closest-side, var(--surface) 80%, transparent 81%),
+    conic-gradient(var(--brand-600) calc(var(--p) * 1%), var(--surface-2) 0);
+}
+.el-ring b { font-family: var(--display); font-size: 32px; line-height: 1; letter-spacing: -.02em; }
+.el-ring span { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+.el-counts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; text-align: center; }
+.el-counts > div { display: flex; flex-direction: column; gap: 2px; padding: 0 6px; }
+.el-counts > div + div { border-left: 1px solid var(--border); }
+.el-counts b { font-family: var(--display); font-size: 20px; font-variant-numeric: tabular-nums; }
+.el-counts span { font-size: 11px; color: var(--muted); }
+.el-kinds { display: flex; flex-direction: column; gap: 2px; }
+.el-kind {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 10px; align-items: baseline; text-align: left;
+  font: inherit; color: inherit; cursor: pointer; padding: 9px 10px; margin-inline: -10px;
+  background: none; border: 1px solid transparent; border-radius: 10px;
+}
+.el-kind:hover { background: var(--surface-2); }
+.el-kind.is-on { border-color: var(--brand-600); background: color-mix(in srgb, var(--brand-600) 10%, transparent); }
+.el-kind.is-zero { opacity: .55; }
+.el-kind-name { font-size: 13.5px; font-weight: 600; }
+.el-kind-n { font-variant-numeric: tabular-nums; }
+.el-kind-bar { grid-column: 1 / -1; height: 4px; border-radius: 4px; background: var(--surface-2); overflow: hidden; }
+.el-kind-bar i { display: block; height: 100%; border-radius: 4px; background: var(--brand-600); }
+.el-kind.is-none .el-kind-bar i { background: var(--warn); }
+.el-main .err-bar { padding: 12px; border: 1px solid var(--border); border-radius: var(--r-lg); background: var(--surface); }
+.el-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 12px; }
+.el-item {
+  display: flex; flex-direction: column; gap: 10px; padding: 16px 18px; cursor: pointer;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg);
+  box-shadow: inset 3px 0 0 var(--res-c, var(--border-strong));
+}
+.el-item:hover, .el-item:focus-visible { border-color: var(--brand-500); outline: none; }
+.el-item.is-done { opacity: .62; }
+.el-item-top, .el-item-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.el-topic { display: inline-flex; align-items: center; gap: 8px; min-width: 0; font-size: 12.5px; font-weight: 700; color: var(--ink-2); }
+.el-topic > span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.el-title { font-size: 14.5px; line-height: 1.5; font-weight: 600; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.el-note { font-size: 13px; line-height: 1.45; color: var(--muted); padding-left: 10px; border-left: 2px solid var(--border-strong); }
+.el-item-foot { margin-top: auto; }
+.el-check { gap: 6px; font-size: 12px; margin: 0; align-items: center; }
+.el-check input { margin: 0; }
+@media (max-width: 1100px) {
+  .el-layout { grid-template-columns: minmax(0, 1fr); }
+  .el-side { position: static; }
+}
+
 /* The head of the log: what it is for, and the one action. */
 .err-top { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-5, 24px); }
 .err-top > .stack-sm { max-width: 760px; min-width: 0; }
