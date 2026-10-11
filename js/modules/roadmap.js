@@ -135,8 +135,7 @@
           name: pick(gate.name),
           short: t('roadmap.short.gate', { n: gate.n }),
           lead: t('roadmap.gateLead', { name: pick(ph.name) }),
-          weeks: t('prog.testNo', { n: test }),
-          cta: { href: '#/mocks', label: t('nav.mocks') }
+          weeks: t('prog.testNo', { n: test })
         });
       }
     });
@@ -436,8 +435,8 @@
       ]));
     }
 
-    /* A phase has no button: there is nowhere it sends you. The diagnostic
-       and a gate each lead to the test they are. */
+    /* Only the diagnostic has a button, to the test it is. A phase and a
+       gate send you nowhere from here. */
     if (stop.cta) {
       panel.appendChild(U.el('div.rm-panel-foot', null, [
         U.el('span'),
