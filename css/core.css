@@ -1272,8 +1272,9 @@ svg.chart { display: block; max-width: 100%; height: auto; }
    would have to be off screen. */
 .rm-screen {
   display: flex; flex-direction: column; gap: var(--sp-4);
-  padding-block: 20px; max-width: 1560px;
-  /* Everything but the top bar and this screen's own padding. */
+  padding-block: 20px 56px; max-width: 1560px;
+  /* Room under the map, so it does not end on the window's edge.
+     Everything but the top bar and this screen's own padding. */
   height: calc(100vh - var(--topbar-h) - 40px);
 }
 .rm-top { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--sp-4); flex-wrap: wrap; }
