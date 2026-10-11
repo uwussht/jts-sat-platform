@@ -984,6 +984,12 @@ html[data-theme="dark"] mark.hl { background: #8C7415; color: #FFF7DA; }
 /* The lesson number sits before the title, not after it: it is part of the
    name of the section, not a label on it. */
 .dg-lesson { flex: none; margin-inline-end: 2px; }
+/* A lesson: the video on the left, the calculator open on the right. */
+.dg-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--sp-4); align-items: start; }
+.dg-pair .video-wrap { max-width: none; }
+.dg-calc { min-width: 0; }
+.dg-calc .desmos-embed { display: block; height: clamp(360px, 62vh, 640px); }
+@media (max-width: 1100px) { .dg-pair { grid-template-columns: minmax(0, 1fr); } }
 
 .video-wrap { width: 100%; max-width: 820px; margin-inline: auto; }
 .video-slot.has-video {

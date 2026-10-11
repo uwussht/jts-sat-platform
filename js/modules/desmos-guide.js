@@ -1,11 +1,12 @@
 /* ==========================================================================
    Screen: Desmos guide (#/desmos-guide)
 
-   Each lesson is its heading, a live calculator, the video and the exercises
-   to practise — no written walkthrough; the video is the lesson. The
-   calculator is mounted when a section is first opened rather than all of
-   them at once — an iframe that nobody has scrolled to is seconds of
-   somebody's connection spent on nothing.
+   Each lesson is its heading, the video on the left with a live calculator
+   open beside it on the right, and the exercises to practise under them — no
+   written walkthrough; the video is the lesson. The calculator is mounted
+   when a section is first opened rather than all of them at once — an iframe
+   that nobody has scrolled to is seconds of somebody's connection spent on
+   nothing.
 
    A section's exercises are links listed in js/data/desmos-guide.js as
    `exercises: [{ title, url }]`; until they are added the heading says so.
@@ -27,26 +28,13 @@
    * again. Removing or reparenting an iframe reloads it; leaving it alone is
    * what keeps a student's work on screen while they read the steps.
    */
-  function calculator(host) {
-    var slot = U.el('div.stack-sm');
-    var mounted = false;
-    var mount = U.el('button.btn.btn-sm', {
-      type: 'button', text: t('desmos.loadCalc'),
-      onclick: function () {
-        if (mounted) return;
-        mounted = true;
-        mount.remove();
-        var frame = U.el('iframe.desmos-embed', {
-          src: JTS.config.desmosUrl,
-          title: t('desmos.title'),
-          loading: 'lazy',
-          referrerpolicy: 'no-referrer'
-        });
-        slot.appendChild(frame);
-      }
+  function calculator() {
+    return U.el('iframe.desmos-embed', {
+      src: JTS.config.desmosUrl,
+      title: t('desmos.title'),
+      loading: 'lazy',
+      referrerpolicy: 'no-referrer'
     });
-    slot.appendChild(mount);
-    host.appendChild(slot);
   }
 
   function videoSlot(url, credit) {
@@ -105,8 +93,12 @@
     ]);
 
     function fill() {
-      calculator(body);
-      body.appendChild(videoSlot(sec.video, sec.videoCredit));
+      /* Watch on the left, try it on the right: the calculator is already
+         open, so following the video needs no second click. */
+      body.appendChild(U.el('div.dg-pair', null, [
+        U.el('div.dg-video', null, [videoSlot(sec.video, sec.videoCredit)]),
+        U.el('div.dg-calc', null, [calculator()])
+      ]));
       body.appendChild(exercisesBlock(sec));
     }
 
