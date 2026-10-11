@@ -2019,8 +2019,14 @@ button.cal-tag:hover { background: var(--brand-100); color: var(--brand-700); }
    a filter, so it is a button and has to lose the UA button chrome. */
 .err-kinds {
   display: grid; gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
+/* The head of the log: what it is for, and the one action. */
+.err-top { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-5, 24px); }
+.err-top > .stack-sm { max-width: 760px; min-width: 0; }
+.err-top .btn { flex: none; }
+#err-kpis .ps-num { font-size: 22px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@media (max-width: 720px) { .err-top { flex-direction: column; align-items: stretch; } }
 .err-kind {
   display: flex; flex-direction: column; gap: 6px; text-align: left;
   font: inherit; cursor: pointer; padding: 11px 13px;
@@ -2041,7 +2047,11 @@ button.cal-tag:hover { background: var(--brand-100); color: var(--brand-700); }
    and a tutor sit in front of together, and the thing they already know how to
    read is a grid. Hence ruled columns, a frozen header and tabular numerals —
    and an Export that opens in the real one. */
-.xl-wrap { max-height: 62vh; overflow: auto; border: 1px solid var(--border); border-radius: var(--r-md); }
+.xl-wrap { max-height: 62vh; overflow: auto; border: 1px solid var(--border); border-radius: var(--r-md);
+  scrollbar-width: thin; scrollbar-color: var(--border-strong) transparent; }
+.xl-wrap::-webkit-scrollbar { width: 8px; height: 8px; }
+.xl-wrap::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 8px; }
+.xl-wrap::-webkit-scrollbar-track { background: transparent; }
 table.table.xl { font-size: 13px; border-collapse: separate; border-spacing: 0; }
 table.table.xl th, table.table.xl td {
   border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);

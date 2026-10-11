@@ -529,6 +529,8 @@ JTS.dict.en = {
   /* ------------------------------------------------------------ error log */
   'errors.title': 'Error log', 'errors.nav': 'Error log',
   'errors.eyebrow': 'Your own log, in your own words',
+  'errors.kpi.logged': 'Logged', 'errors.kpi.toReview': 'To review',
+  'errors.kpi.reviewed': 'Reviewed', 'errors.kpi.top': 'Most common reason',
   'errors.lead': 'Write down what you got wrong, which topic it belongs to and why it happened. Mistakes you log in practice with “Log error” appear here too, and you can edit them like any other row.',
   'errors.addMistake': 'Add a mistake', 'errors.editMistake': 'Edit this mistake',
   'errors.added': 'Added to your log',

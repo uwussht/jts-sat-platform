@@ -324,21 +324,37 @@
       /* ------------------------------------------------------------- head */
       var toReview = all.filter(function (r) { return !r.reviewed; }).length;
 
-      screen.appendChild(U.el('div.card.stack-sm', { id: 'err-head' }, [
-        U.el('div.eyebrow', { text: t('errors.eyebrow') }),
-        U.el('div.row-between.row-wrap', null, [
-          U.el('div.h2', { text: t('errors.title') }),
-          addButton('btn-primary')
+      /* The page already carries its title, so the head is what the log is
+         for with the one action beside it, and under it the log in four
+         numbers. */
+      screen.appendChild(U.el('div.err-top', { id: 'err-head' }, [
+        U.el('div.stack-sm', null, [
+          U.el('div.eyebrow', { text: t('errors.eyebrow') }),
+          U.el('p.small.muted', { text: t('errors.lead'), style: 'margin:0' })
         ]),
-        U.el('p.small.muted', { text: t('errors.lead') }),
-        all.length
-          ? U.el('div.row.row-wrap', null, [
-              U.el('span.badge.badge-muted', { text: t('errors.nLogged', { n: all.length }) }),
-              U.el('span.badge' + (toReview ? '.badge-warn' : '.badge-ok'),
-                { text: t('errors.nToReview', { n: toReview }) })
-            ])
-          : null
+        addButton('btn-primary')
       ]));
+
+      if (all.length) {
+        var byKind = {};
+        all.forEach(function (r) { if (r.kind) byKind[r.kind] = (byKind[r.kind] || 0) + 1; });
+        var top = Object.keys(byKind).sort(function (a, b) { return byKind[b] - byKind[a]; })[0];
+        var kpi = function (label, value, sub) {
+          return U.el('div.ps-kpi', null, [
+            U.el('span.stat-label', { text: label }),
+            U.el('b.ps-num', { text: value }),
+            sub ? U.el('span.xsmall.muted', { text: sub }) : null
+          ]);
+        };
+        screen.appendChild(U.el('div.ps-kpis.dash-kpis', { id: 'err-kpis' }, [
+          kpi(t('errors.kpi.logged'), String(all.length)),
+          kpi(t('errors.kpi.toReview'), String(toReview)),
+          kpi(t('errors.kpi.reviewed'), String(all.length - toReview),
+            U.pct(all.length - toReview, all.length) + '%'),
+          kpi(t('errors.kpi.top'), top ? t('err.' + top) : '—',
+            top ? U.pct(byKind[top], all.length) + '%' : null)
+        ]));
+      }
 
       if (!all.length) {
         screen.appendChild(U.el('div.card', { id: 'err-empty' }, [
