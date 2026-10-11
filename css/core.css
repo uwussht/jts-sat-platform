@@ -2006,7 +2006,7 @@ button.cal-tag:hover { background: var(--brand-100); color: var(--brand-700); }
 .dash-panels.is-two { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 .dash-panel { margin: 0; gap: var(--sp-3); }
 .dash-panel .ps-week { height: 150px; }
-.dash-stats > .grid-4 > .card { margin: 0; }
+.dash-stats > .grid-3 > .card { margin: 0; }
 .dash-map { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--sp-5, 24px); align-items: start; }
 .dash-map-sec { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--res-c); }
 .dash-map .heatmap { grid-template-columns: repeat(auto-fill, minmax(128px, 1fr)); }

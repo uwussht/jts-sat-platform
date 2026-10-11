@@ -261,9 +261,10 @@
   /* ------------------------------------------------------------- dashboard */
 
   /**
-   * The same measures, arranged for the dashboard (#/today): four numbers,
-   * the skill map with the two sections side by side, accuracy beside time,
-   * and the last ninety days beside the badges.
+   * The same measures, arranged for the dashboard (#/today): three numbers
+   * (every question answered, the streak, skills mastered), accuracy beside
+   * time, and the last ninety days beside the badges. The skill map and the
+   * independent / with-help split stay on #/progress.
    */
   function dashboard() {
     var s = S.state();
@@ -276,12 +277,18 @@
         body
       ]);
     }
-    function sectionCol(sec) {
-      return U.el('div.stack-sm.dash-map-col.is-' + sec, null, [
-        U.el('div.dash-map-sec', null, [U.el('i.res-dot'), U.el('span', { text: t('common.' + sec) })]),
-        skillMap(sec)
+    function stat(label, value, note) {
+      return U.el('div.card.card-sm.stack-sm', null, [
+        U.el('div.stat-label', { text: label }),
+        U.el('div.stat-value', { text: value }),
+        note ? U.el('div.xsmall.muted', { text: note }) : null
       ]);
     }
+    var answered = s.attempts.length;
+    var right = s.attempts.filter(function (a) { return a.correct; }).length;
+    var streak = s.profile.streak || { count: 0, best: 0 };
+    var map = JTS.mastery.all();
+    var mastered = Object.keys(map).filter(function (k) { return map[k].status === 'mastered'; }).length;
     var badgeList = U.el('div.stack-sm', null, JTS.badges.defs.map(function (d) {
       var got = s.badges.indexOf(d.id) >= 0;
       return U.el('div.dash-badge' + (got ? '.is-got' : ''), null, [
@@ -298,16 +305,11 @@
         U.el('div.eyebrow', { text: t('pstats.title') }),
         U.el('a.small', { href: '#/progress', text: t('progress.title') + ' →' })
       ]),
-      summaryCards(),
-      U.el('div.card.stack.dash-panel', null, [
-        U.el('div.row-between.row-wrap', null, [
-          U.el('div', null, [
-            U.el('h2.h3', { text: t('progress.skillMap') }),
-            U.el('p.xsmall.muted', { text: t('progress.clickSkill'), style: 'margin:4px 0 0' })
-          ]),
-          legend()
-        ]),
-        U.el('div.dash-map', null, [sectionCol('rw'), sectionCol('math')])
+      U.el('div.grid.grid-3', null, [
+        stat(t('pstats.solved'), String(answered),
+          answered ? U.pct(right, answered) + '% ' + t('common.correct').toLowerCase() : '—'),
+        stat(t('progress.streak'), String(streak.count), t('progress.best', { n: streak.best || 0 })),
+        stat(t('mastery.mastered'), mastered + ' / ' + JTS.skills.all().length)
       ]),
       U.el('div.dash-two', null, [
         card(t('progress.byDomain'), byDomain()),
