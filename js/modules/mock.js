@@ -463,7 +463,7 @@
           U.el('button.btn.btn-primary', {
             type: 'button', text: t('mock.resumeMock'),
             onclick: function () {
-              if (active.paperId) JTS.fullWindow.enter();
+              JTS.fullWindow.enter();
               JTS.router.go('#/mocks/run');
             }
           }),
@@ -540,8 +540,9 @@
     card.appendChild(U.el('button.btn.btn-primary.btn-lg', {
       type: 'button', text: t('mock.start'),
       onclick: function () {
+        JTS.fullWindow.enter();
         var run = JTS.mock.create({ timed: timed });
-        JTS.mock.startModule(run.id);
+        if (!JTS.mock.startModule(run.id)) JTS.fullWindow.leave();
       }
     }));
     return card;
@@ -1054,8 +1055,8 @@
     return U.el('div.table-wrap', null, [table]);
   }
 
-  /* A past paper is sat in the whole screen, like the exam: no sidebar,
-     and the browser in full screen. Browsers only allow full screen right
+  /* A full simulation and a past paper are both sat in the whole screen,
+     like the exam: no sidebar, and the browser in full screen. Browsers only allow full screen right
      after a click, so it is asked for on "Sit this paper" and on each
      module's start button; from then on it stays until the paper is left. */
   JTS.fullWindow = {
@@ -1126,10 +1127,10 @@
 
       var card = U.el('div.card.stack');
       screen.appendChild(card);
-      if (run.paperId) document.body.classList.add('unit-focus');
+      document.body.classList.add('unit-focus');
 
       function startNow() {
-        if (run.paperId) JTS.fullWindow.enter();
+        JTS.fullWindow.enter();
         if (breakTimer) breakTimer.stop();
         JTS.mock.endBreak(run.id);
         if (!JTS.mock.startModule(run.id)) {
@@ -1199,7 +1200,7 @@
 
       return function () {
         if (breakTimer) breakTimer.stop();
-        if (run.paperId) JTS.fullWindow.leave();
+        JTS.fullWindow.leave();
       };
     }
   });

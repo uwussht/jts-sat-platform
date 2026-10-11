@@ -388,9 +388,9 @@
       /* Practice takes the whole window, like a unit does: the app's sidebar
          and header step aside until the screen is left. */
       if (isStudy) document.body.classList.add('unit-focus');
-      /* A past paper's module takes the whole screen (see JTS.fullWindow). */
-      var paperRun = !!(ses.meta && ses.meta.mockId && JTS.mock &&
-        (JTS.mock.get(ses.meta.mockId) || {}).paperId);
+      /* A module of a full simulation or of a past paper takes the whole
+         screen (see JTS.fullWindow). */
+      var paperRun = !!(ses.meta && ses.meta.mockId && JTS.mock && JTS.mock.get(ses.meta.mockId));
       if (paperRun) document.body.classList.add('unit-focus');
 
       /* ------------------------------------------------------------- shell */
