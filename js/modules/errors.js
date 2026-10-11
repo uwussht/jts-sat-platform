@@ -27,6 +27,12 @@
      the same vocabulary in both places. */
   var KINDS = ['knowledge gap', 'misread', 'calculation', 'strategy', 'time pressure', 'careless'];
 
+  /* Mistakes to a page, and the page being read — kept here so ticking one
+     reviewed, which redraws the screen, does not send the student back to
+     page 1. */
+  var PER_PAGE = 10;
+  var page = 1;
+
   var COLS = [
     { id: 'n',        num: true, sort: function (r) { return r.n; } },
     { id: 'date',     sort: function (r) { return r.ts; } },
@@ -341,6 +347,7 @@
 
       function apply(patch) {
         Object.keys(patch).forEach(function (k) { filter[k] = patch[k]; });
+        page = 1;
         paint();
       }
 
@@ -369,7 +376,7 @@
 
       var toolbar = U.el('div.err-bar');
       var listHost = U.el('div.el-list');
-      var foot = U.el('div.small.muted');
+      var foot = U.el('div.small.muted.el-foot');
       screen.appendChild(U.el('div.el-layout', null, [
         U.el('aside.el-side', null, [summary, whyCard]),
         U.el('div.stack-sm.el-main', { id: 'err-table' }, [toolbar, listHost, foot])
@@ -401,7 +408,7 @@
         /* Only the list is repainted as you type: repainting the toolbar
            would replace the input under the cursor and lose the focus. */
         search.addEventListener('input', U.debounce(function () {
-          filter.q = search.value; paintList();
+          filter.q = search.value; page = 1; paintList();
         }, 200));
         toolbar.appendChild(search);
 
@@ -418,6 +425,7 @@
           onchange: function () {
             var v = order.value.split(':');
             sort.col = v[0]; sort.dir = Number(v[1]);
+            page = 1;
             paintList();
           }
         });
@@ -437,7 +445,13 @@
         var list = visible();
         U.clear(listHost);
 
-        list.forEach(function (r) {
+        /* One mistake to a row, ten to a page; the pages are numbered
+           under the list. */
+        var pages = Math.max(1, Math.ceil(list.length / PER_PAGE));
+        page = U.clamp(page, 1, pages);
+        var shown = list.slice((page - 1) * PER_PAGE, page * PER_PAGE);
+
+        shown.forEach(function (r) {
           var tick = U.el('input', {
             type: 'checkbox', checked: r.reviewed || null,
             'aria-label': t('errors.col.reviewed')
@@ -486,6 +500,21 @@
             ? t('errors.showingAll', { n: all.length })
             : t('errors.showingSome', { n: list.length, total: all.length })
         }));
+        if (pages > 1) {
+          var nav = U.el('nav.el-pages', { 'aria-label': t('errors.title') });
+          for (var i = 1; i <= pages; i++) {
+            (function (n) {
+              nav.appendChild(U.el('button.el-page' + (n === page ? '.is-on' : ''), {
+                type: 'button', text: String(n), 'aria-current': n === page ? 'page' : null,
+                onclick: function () {
+                  page = n; paintList();
+                  toolbar.scrollIntoView({ block: 'nearest' });
+                }
+              }));
+            })(i);
+          }
+          foot.appendChild(nav);
+        }
       }
 
       function paint() {
