@@ -24,9 +24,9 @@
   var U = JTS.util, t = JTS.t, ui = JTS.ui, S = JTS.store;
 
   var GOALS = [5, 10, 20];
-  var GRADES = [
-    { id: 'again', q: 0 }, { id: 'hard', q: 3 }, { id: 'good', q: 4 }, { id: 'easy', q: 5 }
-  ];
+  /* The SM-2 quality a card gets when the student moves on from it: there is
+     one Next button and no Again / Hard / Good / Easy to choose between. */
+  var NEXT_Q = 4;
   /* A card is "mastered" once its own interval has stretched past three weeks;
      before that it is still being learned, whatever the last answer was. */
   var MASTERED_DAYS = 21;
@@ -240,24 +240,22 @@
       type: 'button', 'aria-label': word.word, 'aria-pressed': 'false'
     }, [U.el('div.flash-inner', null, [front, back])]);
 
-    var grades = U.el('div.vocab-grades', { hidden: true });
-    GRADES.forEach(function (g) {
-      grades.appendChild(U.el('button.btn' + (g.id === 'good' ? '.btn-primary' : ''), {
-        type: 'button', text: t('vocab.' + g.id),
-        onclick: function () {
-          JTS.vocab.grade(word.id, g.q);
-          JTS.badges.evaluate();
-          rerender();
-        }
-      }));
-    });
+    /* One button, not four: the student reads the answer and goes on. The
+       card is scheduled as an ordinary "good" recall. */
+    function next() {
+      JTS.vocab.grade(word.id, NEXT_Q);
+      JTS.badges.evaluate();
+      rerender();
+    }
+    var grades = U.el('div.vocab-grades', { hidden: true }, [
+      U.el('button.btn.btn-primary', { type: 'button', text: t('common.next') + ' →', onclick: next })
+    ]);
 
     function flip() {
       flipped = !flipped;
       card.classList.toggle('flipped', flipped);
       card.setAttribute('aria-pressed', String(flipped));
-      /* The grading buttons appear only once the answer has been seen: a
-         grade given before that is a guess about a guess. */
+      /* Next appears only once the answer has been seen. */
       grades.hidden = !flipped;
     }
     card.addEventListener('click', flip);
@@ -274,13 +272,9 @@
         if (document.activeElement === card) return;   /* the button handles it */
         e.preventDefault(); flip(); return;
       }
-      if (!flipped) return;
-      var idx = ['1', '2', '3', '4'].indexOf(e.key);
-      if (idx < 0) return;
+      if (!flipped || e.key !== 'ArrowRight') return;
       e.preventDefault();
-      JTS.vocab.grade(word.id, GRADES[idx].q);
-      JTS.badges.evaluate();
-      rerender();
+      next();
     }
     document.addEventListener('keydown', onKey);
     return function () { document.removeEventListener('keydown', onKey); };

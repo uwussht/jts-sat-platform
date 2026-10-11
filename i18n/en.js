@@ -833,6 +833,7 @@ JTS.dict.en = {
   'pstats.streak': 'Day streak',
   'pstats.streakToday': 'Done today · best {best}',
   'pstats.streakBest': 'Best {best} · study today to keep it',
+  'pstats.wordsToday': 'Words today',
   'pstats.solved': 'Questions solved',
   'pstats.today': '{time} today',
   'pstats.units': 'Units completed',

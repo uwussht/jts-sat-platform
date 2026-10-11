@@ -118,8 +118,8 @@
   /* ------------------------------------------------------------- dashboard */
 
   /**
-   * The same measures, arranged for the dashboard (#/today): three numbers
-   * (every question answered, the streak, skills mastered), accuracy beside
+   * The same measures, arranged for the dashboard (#/today): four numbers
+   * (every question answered, the streak, skills mastered, words today), accuracy beside
    * time, and the last ninety days beside the badges.
    */
   function dashboard() {
@@ -158,11 +158,14 @@
 
     return U.el('div.stack.dash-stats', { id: 'today-practice-stats' }, [
       U.el('div.eyebrow', { text: t('pstats.title') }),
-      U.el('div.grid.grid-3', null, [
+      U.el('div.grid.grid-4', null, [
         stat(t('pstats.solved'), String(answered),
           answered ? U.pct(right, answered) + '% ' + t('common.correct').toLowerCase() : '—'),
         stat(t('progress.streak'), String(streak.count), t('progress.best', { n: streak.best || 0 })),
-        stat(t('mastery.mastered'), mastered + ' / ' + JTS.skills.all().length)
+        stat(t('mastery.mastered'), mastered + ' / ' + JTS.skills.all().length),
+        /* Vocabulary cards gone through today, against the daily goal. */
+        JTS.vocab ? stat(t('pstats.wordsToday'), String(JTS.vocab.doneToday()),
+          t('vocab.dailyGoal') + ': ' + JTS.vocab.state().dailyGoal) : null
       ]),
       U.el('div.dash-two', null, [
         card(t('progress.byDomain'), byDomain()),

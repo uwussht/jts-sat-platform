@@ -833,6 +833,7 @@ JTS.dict.ru = {
   'pstats.streak': 'Дней подряд',
   'pstats.streakToday': 'Сегодня есть · рекорд {best}',
   'pstats.streakBest': 'Рекорд {best} · позанимайтесь сегодня',
+  'pstats.wordsToday': 'Слов сегодня',
   'pstats.solved': 'Решено вопросов',
   'pstats.today': 'Сегодня {time}',
   'pstats.units': 'Пройдено юнитов',

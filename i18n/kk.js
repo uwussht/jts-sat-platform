@@ -833,6 +833,7 @@ JTS.dict.kk = {
   'pstats.streak': 'Қатарынан күн',
   'pstats.streakToday': 'Бүгін бар · рекорд {best}',
   'pstats.streakBest': 'Рекорд {best} · бүгін жаттығыңыз',
+  'pstats.wordsToday': 'Бүгінгі сөздер',
   'pstats.solved': 'Шешілген сұрақтар',
   'pstats.today': 'Бүгін {time}',
   'pstats.units': 'Өтілген юниттер',
