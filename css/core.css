@@ -2006,6 +2006,16 @@ button.cal-tag:hover { background: var(--brand-100); color: var(--brand-700); }
 .dash-panels.is-two { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 .dash-panel { margin: 0; gap: var(--sp-3); }
 .dash-panel .ps-week { height: 150px; }
+.dash-stats > .grid-4 > .card { margin: 0; }
+.dash-map { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--sp-5, 24px); align-items: start; }
+.dash-map-sec { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--res-c); }
+.dash-map .heatmap { grid-template-columns: repeat(auto-fill, minmax(128px, 1fr)); }
+.dash-map .eyebrow { font-size: 10.5px; color: var(--muted); }
+.dash-two { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr); gap: var(--sp-4); align-items: stretch; }
+.dash-badge { display: flex; align-items: center; gap: 12px; opacity: .5; }
+.dash-badge.is-got { opacity: 1; }
+.dash-badge-ico { flex: none; width: 36px; height: 36px; display: grid; place-items: center; border-radius: 10px; background: var(--surface-2); font-size: 18px; color: var(--brand-700); }
+@media (max-width: 1180px) { .dash-map, .dash-two { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 1180px) {
   .dash-row, .dash-panels, .dash-panels.is-two { grid-template-columns: minmax(0, 1fr); }
 }

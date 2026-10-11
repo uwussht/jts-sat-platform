@@ -215,10 +215,11 @@
       /* The fifteen-question weekly test. The full mock has its own page
          (Mock tests) and is no longer repeated here. */
       /* Laid out as a dashboard: this week's test with the targets beside
-         it, then the statistics as tiles and three panels. */
+         it, then the progress measures (js/modules/progress.js): four
+         numbers, the skill map, accuracy, time, the last 90 days and badges. */
       var wt = JTS.weeklyTest ? JTS.weeklyTest.card() : null;
       screen.appendChild(U.el('div.dash-row' + (wt ? '' : '.is-single'), null, [wt, targetsCard(state)]));
-      if (JTS.practiceStats) screen.appendChild(JTS.practiceStats.dashboardCard());
+      if (JTS.progress) screen.appendChild(JTS.progress.dashboard());
 
       /* The clock ticks once a second; the router calls this when the screen
          is left, so it does not go on ticking over a card nobody can see. */

@@ -65,10 +65,11 @@
       }));
   }
 
-  function skillMap() {
+  /** Every skill as a cell, by domain; one section's domains when asked. */
+  function skillMap(section) {
     var map = JTS.mastery.all();
     var wrap = U.el('div.stack');
-    JTS.skills.domains().forEach(function (d) {
+    JTS.skills.domains(section).forEach(function (d) {
       var skills = JTS.skills.all().filter(function (s) { return s.domain === d.id; });
       var grid = U.el('div.heatmap');
       skills.forEach(function (sk) {
@@ -256,6 +257,70 @@
       ]);
     }));
   }
+
+  /* ------------------------------------------------------------- dashboard */
+
+  /**
+   * The same measures, arranged for the dashboard (#/today): four numbers,
+   * the skill map with the two sections side by side, accuracy beside time,
+   * and the last ninety days beside the badges.
+   */
+  function dashboard() {
+    var s = S.state();
+    function card(title, body, lead) {
+      return U.el('div.card.stack-sm.dash-panel', null, [
+        U.el('div', null, [
+          U.el('h2.h3', { text: title }),
+          lead ? U.el('p.xsmall.muted', { text: lead, style: 'margin:4px 0 0' }) : null
+        ]),
+        body
+      ]);
+    }
+    function sectionCol(sec) {
+      return U.el('div.stack-sm.dash-map-col.is-' + sec, null, [
+        U.el('div.dash-map-sec', null, [U.el('i.res-dot'), U.el('span', { text: t('common.' + sec) })]),
+        skillMap(sec)
+      ]);
+    }
+    var badgeList = U.el('div.stack-sm', null, JTS.badges.defs.map(function (d) {
+      var got = s.badges.indexOf(d.id) >= 0;
+      return U.el('div.dash-badge' + (got ? '.is-got' : ''), null, [
+        U.el('span.dash-badge-ico', { text: got ? '★' : '☆', 'aria-hidden': 'true' }),
+        U.el('div', null, [
+          U.el('b', { text: t('badge.' + d.id) }),
+          U.el('div.xsmall.muted', { text: got ? t('badge.earned') : '—' })
+        ])
+      ]);
+    }));
+
+    return U.el('div.stack.dash-stats', { id: 'today-practice-stats' }, [
+      U.el('div.row-between.row-wrap', null, [
+        U.el('div.eyebrow', { text: t('pstats.title') }),
+        U.el('a.small', { href: '#/progress', text: t('progress.title') + ' →' })
+      ]),
+      summaryCards(),
+      U.el('div.card.stack.dash-panel', null, [
+        U.el('div.row-between.row-wrap', null, [
+          U.el('div', null, [
+            U.el('h2.h3', { text: t('progress.skillMap') }),
+            U.el('p.xsmall.muted', { text: t('progress.clickSkill'), style: 'margin:4px 0 0' })
+          ]),
+          legend()
+        ]),
+        U.el('div.dash-map', null, [sectionCol('rw'), sectionCol('math')])
+      ]),
+      U.el('div.dash-two', null, [
+        card(t('progress.byDomain'), byDomain()),
+        card(t('progress.studyTime'), studyTime())
+      ]),
+      U.el('div.dash-two', null, [
+        card(t('progress.calendar'), calendar()),
+        card(t('progress.badges'), badgeList, t('progress.milestones'))
+      ])
+    ]);
+  }
+
+  JTS.progress = { dashboard: dashboard };
 
   /* ----------------------------------------------------------------- screen */
 
