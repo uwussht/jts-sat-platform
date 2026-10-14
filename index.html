@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@600;700;800&display=swap">
-  <link rel="stylesheet" href="css/core.css?v=789e86db6e">
+  <link rel="stylesheet" href="css/core.css?v=6b8c058077">
 </head>
 <body>
   <div class="app-shell">
@@ -17,7 +17,13 @@
     <div class="app-body">
       <div class="app-topbar" id="app-topbar" hidden></div>
       <header class="page-head container" id="page-head" hidden></header>
-      <main id="app-root" role="main"></main>
+      <main id="app-root" role="main">
+        <div class="boot-loading" role="status" aria-live="polite">
+          <strong>TeenTech SAT</strong>
+          <p>Loading study materials…</p>
+          <p>The first load may take a minute. Please keep this page open.</p>
+        </div>
+      </main>
     </div>
     <nav class="tabbar" id="tabbar" aria-label="Sections" hidden></nav>
   </div>

@@ -3331,3 +3331,16 @@ a.ps-topic-name:hover { color: var(--brand-600); }
   .ps-ring { align-self: center; }
   .ps-cols { grid-template-columns: 1fr; }
 }
+/* Visible before the question bank finishes loading and the router starts. */
+.boot-loading {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.boot-loading strong { font-size: 24px; }
+.boot-loading p { margin: 12px 0 0; }
