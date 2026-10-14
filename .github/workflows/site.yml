@@ -1,4 +1,4 @@
-name: Build and publish site
+name: Build and deploy site
 
 on:
   push:
@@ -8,6 +8,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: sat-site-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   image:
     runs-on: ubuntu-latest
@@ -16,6 +20,12 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v4
+      - name: Validate deployment files
+        env:
+          SAT_IMAGE: ghcr.io/uwussht/jts-sat-platform:sha-0000000000000000000000000000000000000000
+        run: |
+          bash -n deploy/release.sh
+          docker compose -f docker-compose.prod.yaml config --quiet
       - name: Build Docker image
         run: docker build -t jts-sat:ci .
       - name: Check site over HTTP
@@ -37,7 +47,7 @@ jobs:
             docker exec sat-check wget -q -O /dev/null "http://127.0.0.1/$path"
           done
       - name: Publish tested image to GHCR
-        if: github.event_name == 'push' && github.ref_name == github.event.repository.default_branch
+        if: github.event_name != 'pull_request' && github.ref_name == github.event.repository.default_branch
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_USER: ${{ github.actor }}
@@ -52,3 +62,48 @@ jobs:
           docker tag jts-sat:ci "$image:latest"
           docker push "$image:sha-$COMMIT_SHA"
           docker push "$image:latest"
+
+  deploy:
+    needs: image
+    if: github.event_name != 'pull_request' && github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      packages: read
+    concurrency:
+      group: sat-production
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure SSH
+        env:
+          DEPLOY_KEY: ${{ secrets.SAT_DEPLOY_KEY }}
+          KNOWN_HOSTS: ${{ secrets.SAT_KNOWN_HOSTS }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$DEPLOY_KEY" && test -n "$KNOWN_HOSTS"
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$DEPLOY_KEY" > ~/.ssh/sat_deploy
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/sat_deploy ~/.ssh/known_hosts
+      - name: Deploy tested image
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USER: ${{ github.actor }}
+          GH_REPOSITORY: ${{ github.repository }}
+          COMMIT_SHA: ${{ github.sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          target=sattutor@169.58.80.127
+          release="/opt/jts-sat/releases/$COMMIT_SHA"
+          image="ghcr.io/${GH_REPOSITORY,,}:sha-$COMMIT_SHA"
+          ssh_options=(-i "$HOME/.ssh/sat_deploy" -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 -o ServerAliveInterval=15 -o ServerAliveCountMax=4)
+          ssh "${ssh_options[@]}" "$target" "mkdir -p '$release'"
+          scp "${ssh_options[@]}" deploy/release.sh docker-compose.prod.yaml "$target:$release/"
+          printf '%s\n' "$GH_TOKEN" | ssh "${ssh_options[@]}" "$target" "bash '$release/release.sh' '$image' '$GH_USER'"
+      - name: Remove runner SSH key
+        if: always()
+        run: rm -f ~/.ssh/sat_deploy

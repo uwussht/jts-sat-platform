@@ -24,6 +24,25 @@ python3 -m http.server   # then open http://localhost:8000
 For a production build, run `python3 tools/build.py` and publish the contents
 of `dist/`. To build and run with Docker, use `docker compose up -d --build`.
 
+The `Build and deploy site` GitHub Actions workflow builds and checks the
+container, publishes a commit-tagged image to GHCR, and deploys default-branch
+pushes (or manual runs on that branch) to `sattutor@169.58.80.127`.
+Pull requests only build and check the image.
+
+One-time server setup: create the `sattutor` user, give it Docker access and
+ownership of `/opt/jts-sat`, and install the dedicated CI public SSH key in
+`/home/sattutor/.ssh/authorized_keys`. Add repository Actions secrets
+`SAT_DEPLOY_KEY` (the dedicated private key) and `SAT_KNOWN_HOSTS` (the server's
+verified SSH host-key line, beginning with `169.58.80.127`).
+
+Deployment uses `docker-compose.prod.yaml` with the existing `jts-sat` project
+name and loopback port 8085. It downloads the tested image before replacing the
+container, waits for its health check, checks HTTP resources, and restores the
+previous local image if the new container or HTTP checks fail. Releases are
+saved under `/opt/jts-sat/releases/<commit>`. The successful image tag is saved
+in `/opt/jts-sat/.env`; registry credentials use a temporary directory removed
+when deployment ends. Caddy continues proxying to `127.0.0.1:8085`.
+
 ```
 index.html              shell: header, tab bar, router container, Desmos panel
 admin.html              question editor (localStorage overlay + change history)
