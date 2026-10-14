@@ -1,0 +1,6 @@
+# Add this block to the existing Caddyfile, keeping its other sites.
+# This upstream assumes Caddy runs on the host, not inside a Docker container.
+sattutor.teenteched.kz {
+    encode zstd gzip
+    reverse_proxy 127.0.0.1:8085
+}

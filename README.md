@@ -21,6 +21,9 @@ python3 -m http.server   # then open http://localhost:8000
 
 ## Where things are
 
+For a production build, run `python3 tools/build.py` and publish the contents
+of `dist/`. To build and run with Docker, use `docker compose up -d --build`.
+
 ```
 index.html              shell: header, tab bar, router container, Desmos panel
 admin.html              question editor (localStorage overlay + change history)
