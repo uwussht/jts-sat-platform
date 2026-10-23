@@ -1126,5 +1126,7 @@ JTS.dict.en = {
   'desmos.videoNote': 'This lesson is a video: watch it and repeat each step in the calculator beside it.',
   'desmos.markStudied': 'Mark as studied',
   'desmos.unmark': 'Studied — undo',
-  'desmos.studied': 'Studied'
+  'desmos.studied': 'Studied',
+  'staff.extraNoFit': '{left} weeks to the exam after the basic course; the extra package needs {need}. It will not fit before the exam.',
+  'staff.grantAnyway': 'Add anyway'
 };

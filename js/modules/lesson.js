@@ -258,11 +258,28 @@
       var week = n ? Math.ceil(n / pw) : null;
       var planned = JTS.course ? JTS.course.lessonByCode(code) : null;
 
+      /* Phase 4 (lessons 13–24): two or three questions from the student's
+         weakest domains go at the end of the lesson's set. The domains come
+         from the platform's own data, never from a Bluebook score. They are
+         extra: the lesson counts as done on its own questions. */
+      function withWeak(list) {
+        var no = planned ? planned.no : n;
+        var ph = JTS.planEngine.PHASES.filter(function (p) { return p.key === 'foundations2'; })[0];
+        if (!no || no < ph.from || no > ph.to || !JTS.course) return list;
+        var pri = JTS.course.domainSnapshot().priorities;
+        if (!pri.length) return list;
+        var seen = (S.state().seenQuestionIds) || [];
+        var pool = JTS.bank.query({ domains: pri, excludeIds: list, licenseStatus: 'all' });
+        var fresh = pool.filter(function (q) { return seen.indexOf(q.id) < 0; });
+        var pickFrom = U.shuffle(fresh.length >= 3 ? fresh : pool, Date.now() % 9973);
+        return list.concat(pickFrom.slice(0, 3).map(function (q) { return q.id; }));
+      }
+
       function startAt(i, part) {
         var ses = JTS.session.start({
           kind: 'practice', mode: 'study',
           title: pick(lesson.t) + (part ? ' · ' + part.label : ''),
-          questionIds: part ? part.ids : ids,
+          questionIds: part ? part.ids : withWeak(ids),
           softTimer: true,
           returnHash: '#/materials/lesson?code=' + code,
           finishHash: '#/materials/lesson?code=' + code,

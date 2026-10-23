@@ -288,9 +288,22 @@
               var list = ['basic', 'extra'].filter(function (x) {
                 return x === p ? cb.checked : u.packages.indexOf(x) >= 0;
               });
-              api('staff/users/' + u.id + '/packages', { packages: list }, 'PUT').then(function (r) {
-                if (!r.ok) { failToast(r); cb.checked = !cb.checked; return; }
-                u.packages = r.packages; ui.toast(t('staff.saved'), 'ok');
+              function save() {
+                api('staff/users/' + u.id + '/packages', { packages: list }, 'PUT').then(function (r) {
+                  if (!r.ok) { failToast(r); cb.checked = !cb.checked; return; }
+                  u.packages = r.packages; ui.toast(t('staff.saved'), 'ok');
+                });
+              }
+              /* Before the extra package is added: does it fit before the exam?
+                 Said before, not after — the Challenge month needs four weeks. */
+              if (p !== 'extra' || !cb.checked) { save(); return; }
+              api('staff/users/' + u.id + '/plan').then(function (r) {
+                var f = r.ok && r.plan.extraFit;
+                if (!f || f.fits !== false) { save(); return; }
+                ui.confirm({ title: t('staff.pkg.extra'),
+                  message: t('staff.extraNoFit', { left: f.weeksLeft, need: f.weeksNeeded }),
+                  okText: t('staff.grantAnyway'), cancelText: t('common.cancel') })
+                  .then(function (yes) { if (yes) save(); else cb.checked = false; });
               });
             });
             return U.el('label.check', null, [cb, U.el('span', { text: t('staff.pkg.' + p) })]);

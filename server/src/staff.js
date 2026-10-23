@@ -14,7 +14,7 @@
 const express = require('express');
 const { pool, tx } = require('./db');
 const { requireUser, requirePerm, can, isoDate, clean, ROLES } = require('./auth');
-const { groupSlots, groupMarks, engine, scoreRow, today } = require('./course');
+const { groupSlots, groupMarks, engine, scoreRow, today, planFor } = require('./course');
 
 const router = express.Router();
 router.use(requireUser, requirePerm('staff'));
@@ -56,6 +56,15 @@ router.get('/users', async (req, res, next) => {
       group: r.group_id ? { id: r.group_id, name: r.group_name } : null,
       createdAt: r.created_at, lastLoginAt: r.last_login_at
     })) });
+  } catch (e) { next(e); }
+});
+
+/** A student's plan, as they see it — for the fit check before a package is sold. */
+router.get('/users/:id/plan', async (req, res, next) => {
+  try {
+    const plan = await planFor(Number(req.params.id));
+    if (!plan) return res.status(404).json({ ok: false, reason: 'not-found' });
+    res.json({ ok: true, plan });
   } catch (e) { next(e); }
 });
 

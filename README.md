@@ -19,40 +19,71 @@ npx http-server .        # then open http://localhost:8080
 python3 -m http.server   # then open http://localhost:8000
 ```
 
-## Running it with sign-in (Docker)
+## Running it with the server (Docker)
 
-Real accounts need the accounts server. `docker compose` starts three
-containers: `web` (nginx serving the site), `api` (Node.js accounts API) and
-`db` (PostgreSQL: `users` and `user_progress`).
-
-Students sign up with first and last name, phone number, password, grade,
-an optional email and consent to personal-data processing, and sign in with
-phone and password. Phone numbers are stored in one format (+77001234567), so
-`8 700 123 45 67` and `+7 (700) 123-45-67` are the same account.
+`docker compose` starts three containers: `web` (nginx serving the site),
+`api` (Node.js) and `db` (PostgreSQL).
 
 ```
 cp .env.example .env     # then put your own secrets in .env
 docker compose up --build -d
 ```
 
-Open http://localhost:8080. Stop with `docker compose down`; accounts stay in
-the `db-data` volume (`docker compose down -v` deletes them).
+Open http://localhost:8080. Stop with `docker compose down`; the data stays
+in the `db-data` volume (`docker compose down -v` deletes it). After changing
+site files: `docker compose up --build -d web`.
 
-- Passwords are stored as bcrypt hashes; a sign-in is a JWT in an httpOnly
-  cookie that lasts 30 days.
-- API: `POST /api/register`, `POST /api/login`, `POST /api/logout`,
-  `GET /api/me`, `GET`/`PUT /api/progress` (code in `server/src/index.js`).
-- Progress (answers, plan, statistics) is saved to `user_progress` a moment
-  after every change, and downloaded on sign-in, so it follows the student to
-  any device.
-- Database changes are numbered migrations in `server/src/index.js`
-  (`MIGRATIONS`), applied once each when the API starts.
-- See the students:
-  `docker compose exec db psql -U teentech -d teentech -c "select id, phone, first_name, last_name, grade, email, created_at, last_login_at from users order by id"`
-- Opened without Docker (Live Server, `file://`), the site finds no API and
-  falls back to the old browser-only profiles.
-- After changing site files, rebuild the web container:
-  `docker compose up --build -d web`.
+**The first admin.** Put your phone in `.env` as `ADMIN_PHONES=+77001234567`
+(comma-separated for several), restart (`docker compose up -d api`) and sign
+up or sign in with that phone: the account becomes an admin and gets the
+Staff area in the sidebar, where it can give other people their roles.
+
+### Accounts
+Students sign up with first and last name, phone, password, grade, an
+optional email and consent to personal-data processing, and sign in with
+phone and password (one stored format: `+77001234567`). Passwords are bcrypt
+hashes; a sign-in is a JWT in an httpOnly cookie for 30 days. Progress
+(answers, statistics, marks) is saved to the server after every change and
+downloaded on sign-in, so it follows the student to any device.
+
+Roles: `student`, `teacher` (marks their lessons held), `curator` (groups,
+moves, confirms Bluebook scores), `manager` (groups, packages), `admin`
+(everything, and roles). New students get the packages in
+`DEFAULT_PACKAGES` (`basic`) until a manager changes them.
+
+### The course plan
+`js/shared/plan-engine.js` is the plan, and both the browser and the API run
+it: the programme (lessons in their fixed order), the packages (basic:
+lessons 1–24; extra: the 12 Challenge lessons), the 8 phases, the Bluebook
+tests 6/8/10, weekly simulations, and the check that the course fits before
+the exam. Three 90-minute lessons a week; no number of lessons is written
+anywhere else.
+
+- In a group, lessons fall on the group's three weekly slots from its start
+  date, and a lesson is done when the teacher marks it held (absences count
+  as missed). A curator can move a lesson.
+- On their own, a student's lessons fall Mon/Wed/Fri 18:00 from the day after
+  they set their exam date, done when they finish the lesson's practice set;
+  a lesson not done by its day moves forward.
+- Without Docker (Live Server, `file://`) the same engine builds the plan in
+  the browser from the profile.
+
+### API
+| | |
+|---|---|
+| `POST /api/register` `POST /api/login` `POST /api/logout` | accounts |
+| `GET /api/me` `PUT /api/me` `POST /api/me/diagnostic` | the account, exam date |
+| `GET /api/plan` | the student's plan (built by the engine) |
+| `POST /api/lessons/:no/complete` | a lesson finished (no group) |
+| `GET/POST /api/scores` `DELETE /api/scores/:id` | Bluebook results (pending → confirmed / rejected) |
+| `GET/PUT /api/progress` | the saved progress document |
+| `/api/staff/users`, `/teachers`, `/groups`, `/teaching`, `/scores` | the staff area |
+
+Code: `server/src/` — `db.js` (pool and numbered migrations, applied once
+each at start), `auth.js`, `course.js`, `staff.js`.
+
+See the students:
+`docker compose exec db psql -U teentech -d teentech -c "select id, phone, first_name, last_name, grade, role, created_at from users order by id"`
 
 ## Where things are
 
