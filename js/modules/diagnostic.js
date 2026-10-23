@@ -160,7 +160,6 @@
     setupHeader(screen);
 
     var phase = recommendPhase(summary);
-    var phaseKey = JTS.planner.phases.filter(function (p) { return p.id === phase; })[0].key;
     var totalQ = summary.questionIds.length;
     var overall = totalQ ? summary.correct / totalQ : 0;
     var rw = sectionShare(summary, 'rw');
@@ -243,57 +242,46 @@
       screen.appendChild(U.el('div.card.card-accent.stack-sm', null, [
         U.el('div.eyebrow', { text: t('diag.startWith') }),
         U.el('div.h2', { text: focus.map(function (f) { return JTS.i18n.pickName(f.domain); }).join(' · ') }),
-        U.el('p.small.muted', { text: t('diag.startWithNote', { phase: t('plan.phase.' + phaseKey) }) }),
+        U.el('p.small.muted', { text: t('diag.focusNote') }),
         U.el('a.btn.btn-sm', { href: '#/roadmap', text: t('diag.seeRoadmap') })
       ]));
     }
 
-    /* -------------------------------------------------- availability → plan */
+    /* ------------------------------------------------------------- the plan */
+    /* No form between the diagnostic and the plan: the days come from the
+       group's schedule (or three a week on the student's own), every lesson
+       is 90 minutes, and the order is the programme's. The plan is shown as
+       it is, ready. */
     if (first) {
-    var planCard = U.el('div.card.stack');
-    planCard.appendChild(U.el('h2.h2', { text: first ? t('diag.buildPlan') : t('settings.rebuildPlan') }));
-    planCard.appendChild(U.el('p.small.muted', {
-      text: first ? t('diag.buildPlanLead') : t('diag.replanLead')
-    }));
-    var availValid = JTS.onboarding.availabilityBlock(planCard, S.state(), function () {});
-    planCard.appendChild(U.el('button.btn.btn-primary.btn-lg.btn-block', {
-      type: 'button', text: first ? t('diag.toPlan') : t('settings.rebuildPlan'),
-      onclick: function () {
-        if (!availValid()) return;
-        S.update(function (s) { s.profile.currentPhase = phase; });
-        /* A first run generates the plan; a retake rebuilds the weeks that are
-           still ahead and leaves the ones already spent alone. */
-        if (first || !S.state().plan) JTS.planner.generate();
-        else JTS.planner.rebuild();
-        S.update(function (s) { s.profile.onboardingComplete = true; });
-        JTS.shell.renderHeader();
-        JTS.router.go('#/today');
-      }
-    }));
-    screen.appendChild(planCard);
-    } else {
-      /* Removing the rebuild card must not remove the rebuild. A retake moves
-         the mastery the plan was built from, so a plan older than the result
-         being read is out of date — and only then is it worth saying. One
-         line and one button, not the availability form again: the time itself
-         is edited in Settings, where it is kept. */
-      var plan = S.state().plan;
-      var planAt = plan ? Math.max(plan.generatedAt || 0, plan.rebuiltAt || 0) : 0;
-      if (plan && summary.finishedAt > planAt) {
-        screen.appendChild(U.el('div.notice.row-between.row-wrap', { id: 'diag-restale' }, [
-          U.el('span.small', { text: t('diag.planStale') }),
-          U.el('button.btn.btn-sm.btn-primary', {
-            type: 'button', text: t('settings.rebuildPlan'),
-            onclick: function () {
-              S.update(function (st) { st.profile.currentPhase = phase; });
-              JTS.planner.rebuild();
-              JTS.router.go('#/plan');
-            }
-          })
+      var planCard = U.el('div.card.stack');
+      planCard.appendChild(U.el('h2.h2', { text: t('diag.planReady') }));
+      var preview = JTS.course.plan();
+      if (preview) {
+        planCard.appendChild(U.el('div.row.row-wrap', null, [
+          U.el('span.badge', { text: t('phase.lessonsTotal', { n: preview.total }) }),
+          U.el('span.badge.badge-muted', { text: t('plan.rhythm', { n: preview.perWeek, mins: preview.lessonMinutes }) }),
+          preview.lessons[0] ? U.el('span.badge.badge-muted', {
+            text: t('diag.firstLesson', { date: U.fmtDate(U.parseISO(preview.lessons[0].date), S.settings().uiLang) })
+          }) : null
         ]));
+        var fit = JTS.courseUI.fitBanner(preview);
+        if (fit) planCard.appendChild(fit);
       }
-      /* What is left to do with an old result: take it again, or look at what
-         has happened since. */
+      planCard.appendChild(U.el('p.small.muted', { text: t('diag.planReadyLead') }));
+      planCard.appendChild(U.el('button.btn.btn-primary.btn-lg.btn-block', {
+        type: 'button', text: t('diag.toPlan'),
+        onclick: function () {
+          S.update(function (s) { s.profile.onboardingComplete = true; });
+          JTS.course.diagnosticDone().then(function () {
+            JTS.shell.renderHeader();
+            JTS.router.go('#/today');
+          });
+        }
+      }));
+      screen.appendChild(planCard);
+    } else {
+      /* What is left to do with an old result: take it again, or look at the
+         plan it belongs to. */
       screen.appendChild(U.el('div.row.row-wrap', null, [
         U.el('a.btn', { href: '#/diagnostic?show=intro', text: t('diag.retake') }),
         U.el('a.btn', { href: '#/plan', text: t('nav.plan') })

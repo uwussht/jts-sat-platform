@@ -1,81 +1,75 @@
 /* ==========================================================================
    Screen: My plan (#/plan)
 
-   Two things live here: the week grid (what happens on which day) and the
-   month calendar (where the whole thing is going). The week and the month are two views of one plan, not
-   two plans — both read JTS.planner.allLessons().
+   The course on the calendar: every lesson of the student's packages on its
+   date (three a week, from the group's schedule or the default slots), the
+   Bluebook tests between the months, the weekly simulations of the Challenge
+   month and the exam. Above it, the same phase strip the dashboard draws and
+   the check that the course fits before the exam.
 
-   The rule that shapes this screen is that missed sessions are NOT carried
-   forward. A plan that accumulates overdue work stops being a plan and becomes
-   a guilt ledger, so 'Rebuild' marks what was missed as skipped and rebuilds
-   the remaining weeks from current mastery inside the time the student has.
+   Everything comes from JTS.course.plan(). Nothing here moves a lesson or
+   changes its status: the teacher marks a group's lesson held, a curator
+   moves it, and a student without a group finishes it on the platform. A
+   lesson on the calendar opens that lesson.
    ========================================================================== */
 (function () {
   'use strict';
   var U = JTS.util, t = JTS.t, ui = JTS.ui, S = JTS.store;
 
-  var STATUS_CLASS = { planned: '', done: 'done', skipped: 'skipped', moved: 'moved' };
+  var STATUS_CLASS = { planned: '', next: 'next', done: 'done', missed: 'skipped', moved: 'moved' };
 
   /* --------------------------------------------------------------- events */
 
-  /* The four kinds of thing the plan puts on a date. A lesson whose actions
-     include the mini-test is a checkpoint rather than an ordinary session, and
-     the exam and its two registration deadlines are dates the student is
-     steering by that the calendar used to know nothing about. */
+  /* The kinds of thing the plan puts on a date: a lesson; a test (a
+     Bluebook test between months, or a full simulation in the Challenge
+     month); a registration deadline; the exam. */
   var TYPES = ['lesson', 'test', 'deadline', 'exam'];
 
-  /* What a day says it is. A square used to read "Lesson 7 · Learn · Practice",
-     which is the same three words on every square and tells a student only how
-     many sittings are behind them. It reads as the topic now — "Linear
-     equations in one variable" — because the question a calendar is asked is
-     what Tuesday is for. The number and the actions are still there, in the
-     tooltip and in the day the student presses. */
-  function lessonLabel(lesson) {
-    var topics = JTS.programme
-      ? JTS.programme.topicsOf(JTS.programme.numberOf(lesson) || 0) : [];
-    if (topics.length) {
-      return topics.map(function (l) { return JTS.programme.lessonName(l); }).join(' · ');
-    }
-    /* Past the end of the 36, or before the programme has loaded: the skills
-       the planner picked are still a better answer than a bare number. */
-    var skills = lesson.skillIds.map(function (id) { return JTS.skills.name(id); });
-    return skills.length ? skills.join(' · ') : lessonActions(lesson);
-  }
-
-  function lessonActions(lesson) {
-    return lesson.actions.map(function (a) { return t('plan.action.' + a); }).join(' · ');
+  function lessonTitle(l) {
+    var unit = JTS.data.programme.byCode ? JTS.data.programme.byCode(l.code) : null;
+    return unit ? JTS.i18n.pick(unit.t, S.settings().uiLang) : l.topic;
   }
 
   /** date (ISO) -> the events on it, in the order they should be read. */
-  function eventsByDay(state) {
+  function eventsByDay(state, plan) {
     var map = {};
     function put(iso, ev) {
       if (!iso) return;
       (map[iso] = map[iso] || []).push(ev);
     }
-    JTS.planner.allLessons().forEach(function (l) {
-      var n = JTS.programme ? JTS.programme.numberOf(l) : null;
+    plan.lessons.forEach(function (l) {
       put(l.date, {
-        type: l.actions.indexOf('mini-test') >= 0 ? 'test' : 'lesson',
+        type: l.section === 'both' ? 'test' : 'lesson',
         lesson: l,
-        label: lessonLabel(l),
-        /* Second line in the week view, tooltip everywhere else: which sitting
-           of the course it is and what is done in it. */
-        sub: (n ? t('prog.lessonNo', { n: n }) + ' · ' : '') + lessonActions(l)
+        label: lessonTitle(l),
+        sub: t('prog.lessonNo', { n: l.no }) + (l.time ? ' · ' + l.time : '') +
+          ' · ' + t('lstatus.' + l.status) +
+          (l.teacher && l.teacher.name ? ' · ' + l.teacher.name : '')
       });
     });
+    plan.tests.forEach(function (x) {
+      put(x.date, { type: 'test', test: x, label: t('tests.name', { n: JTS.courseUI.TEST_NO[x.id] }),
+        sub: x.entered ? t('tests.entered') : t('tests.notEntered') });
+    });
+    plan.simulations.forEach(function (x) {
+      put(x.date, { type: 'test', sim: x, label: t('plan.ev.simulation'), sub: t('prog.weekNo', { n: x.week }) });
+    });
     var ex = state.examDate || {};
-    if (ex.registrationDeadline) {
-      put(ex.registrationDeadline, { type: 'deadline', label: t('plan.ev.regDeadline') });
-    }
-    if (ex.lateDeadline) {
-      put(ex.lateDeadline, { type: 'deadline', label: t('plan.ev.lateDeadline') });
-    }
-    if (ex.testDate) put(ex.testDate, { type: 'exam', label: t('roadmap.examDay') });
+    if (ex.registrationDeadline) put(ex.registrationDeadline, { type: 'deadline', label: t('plan.ev.regDeadline') });
+    if (ex.lateDeadline) put(ex.lateDeadline, { type: 'deadline', label: t('plan.ev.lateDeadline') });
+    if (plan.examDate) put(plan.examDate, { type: 'exam', label: t('roadmap.examDay') });
     Object.keys(map).forEach(function (iso) {
       map[iso].sort(function (a, b) { return TYPES.indexOf(a.type) - TYPES.indexOf(b.type); });
     });
     return map;
+  }
+
+  /** Where pressing an event goes: the lesson itself, a test, or the mocks. */
+  function eventHref(ev) {
+    if (ev.lesson) return '#/materials/lesson?code=' + ev.lesson.code;
+    if (ev.test) return '#/tests';
+    if (ev.sim) return '#/mocks';
+    return null;
   }
 
   /**
@@ -85,8 +79,8 @@
   function eventChip(ev, rerender, opts) {
     opts = opts || {};
     var status = ev.lesson ? STATUS_CLASS[ev.lesson.status] : '';
-    /* The week has room for the skills as well as the label, and a day column
-       with three words in it reads as an empty day. */
+    /* The week has room for the details as well as the label, and a day
+       column with three words in it reads as an empty day. */
     var rich = opts.rich && ev.sub;
     var cls = '.cal-tag' + (ev.lesson ? '.cal-tag-lesson' : '') + (rich ? '.is-rich' : '') +
       (ev.type === 'exam' ? '.cal-tag-exam' : '') + (status ? '.' + status : '');
@@ -94,18 +88,16 @@
     var kids = [
       U.el('span.cal-dot', { 'aria-hidden': 'true' }),
       rich
-        ? U.el('span.cal-tag-body', null, [
-            U.el('b', { text: ev.label }),
-            U.el('span', { text: ev.sub })
-          ])
+        ? U.el('span.cal-tag-body', null, [U.el('b', { text: ev.label }), U.el('span', { text: ev.sub })])
         : U.el('span.cal-tag-text', { text: ev.label })
     ];
-    if (!ev.lesson) {
-      return U.el('div' + cls, { dataset: { type: ev.type }, title: ev.label }, kids);
-    }
-    return U.el('button' + cls, {
-      type: 'button', dataset: { type: ev.type }, title: full,
-      onclick: function (e) { e.stopPropagation(); lessonModal(ev.lesson, rerender); }
+    var href = eventHref(ev);
+    if (!href) return U.el('div' + cls, { dataset: { type: ev.type }, title: full }, kids);
+    /* A lesson opens the lesson: there is no menu, because there is nothing
+       for the student to change on it. */
+    return U.el('a' + cls, {
+      href: href, dataset: { type: ev.type }, title: full,
+      onclick: function (e) { e.stopPropagation(); }
     }, kids);
   }
 
@@ -120,8 +112,8 @@
    * Which view is open lives in the hash (?view=), so a reload and a link both
    * land where the student was.
    */
-  function calendarCard(state, ctx, rerender) {
-    var events = eventsByDay(state);
+  function calendarCard(state, plan, ctx, rerender) {
+    var events = eventsByDay(state, plan);
     var todayISO = U.iso(U.today());
     var filter = 'all';
 
@@ -170,7 +162,7 @@
         }));
         nav.appendChild(U.el('div.cal-title-box', null, [
           U.el('div.h3.cal-title', { text: t('plan.week', { n: ctx.weekIndex + 1 }) }),
-          U.el('div.small.muted', { text: t('plan.lessonsThisWeek', { n: ctx.week.lessons.length }) })
+          U.el('div.small.muted', { text: t('plan.lessonsThisWeek', { n: ctx.week.lessons }) })
         ]));
         nav.appendChild(U.el('a.icon-btn.cal-arrow' +
           (ctx.weekIndex === ctx.weekCount - 1 ? '.is-off' : ''), {
@@ -264,9 +256,8 @@
             /* The filter decides what the square shows at a glance; the day
                it opens is still the whole day, because a modal headed with a
                date that hid half of what is on it would be lying. */
-            var lessons = (events[iso] || []).filter(function (ev) { return ev.lesson; })
-              .map(function (ev) { return ev.lesson; });
-            function open() { dayModal(iso, lessons, rerender); }
+            var dayEvents = (events[iso] || []).filter(function (ev) { return eventHref(ev); });
+            function open() { dayOpen(iso, dayEvents); }
             cell.addEventListener('click', open);
             cell.addEventListener('keydown', function (e) {
               if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
@@ -316,73 +307,23 @@
   }
 
   /**
-   * A day, opened from the calendar. Everything the programme sets for it
-   * lives here now — the lesson, its topics, the homework with its numbers —
-   * rather than in a card under the month, where it was the same words on
-   * every day and belonged to none of them.
+   * A day pressed on the month. One thing on it opens that thing; several
+   * are listed so the student picks one; an empty day says so.
    */
-  function dayModal(iso, dayLessons, rerender) {
-    if (dayLessons.length === 1) return lessonModal(dayLessons[0], rerender);
+  function dayOpen(iso, evs) {
+    if (evs.length === 1) { JTS.router.go(eventHref(evs[0])); return; }
     var m;
-    var body = U.el('div.stack');
-    if (!dayLessons.length) {
-      body.appendChild(U.el('p.muted', { text: t('prog.dayEmpty') }));
-    }
-    dayLessons.forEach(function (lesson) {
-      var n = JTS.programme ? JTS.programme.numberOf(lesson) : null;
-      var detail = n && JTS.programme ? JTS.programme.lessonDetail(n) : null;
-      body.appendChild(U.el('div.card.card-sm.stack-sm', null, [
-        U.el('div.row-between.row-wrap', null, [
-          U.el('b', { text: t('plan.goalFor', {
-            skills: lesson.skillIds.map(function (id) { return JTS.skills.name(id); }).join(', ')
-          }) }),
-          U.el('button.btn.btn-sm', {
-            type: 'button', text: t('common.open'),
-            onclick: function () { m.close(); lessonModal(lesson); }
-          })
-        ]),
-        detail
+    var body = U.el('div.stack-sm');
+    if (!evs.length) body.appendChild(U.el('p.muted', { text: t('prog.dayEmpty') }));
+    evs.forEach(function (ev) {
+      body.appendChild(U.el('a.card.card-sm.row-between.plan-day-row', {
+        href: eventHref(ev), onclick: function () { m.close(); }
+      }, [
+        U.el('div.stack-sm', null, [U.el('b', { text: ev.label }), U.el('span.small.muted', { text: ev.sub || '' })]),
+        ev.lesson ? JTS.courseUI.lessonStatus(ev.lesson) : null
       ]));
     });
-    m = ui.modal({ title: U.fmtDate(U.parseISO(iso), S.settings().uiLang), content: body, wide: true });
-  }
-
-  /**
-   * A planned day: which unit it is, which month of the course, and one way
-   * on — Practice, opened on that unit's topics (or, for a Challenge class,
-   * on the class itself, which has no single topic).
-   */
-  function lessonModal(lesson) {
-    var m;
-    var P = JTS.data.programme;
-    var pw = JTS.programme ? JTS.programme.perWeek() : 3;
-    var n = JTS.programme ? JTS.programme.numberOf(lesson) : null;
-    var slot = n ? P.order(pw).filter(function (x) { return x.n === n; })[0] : null;
-    var unit = slot ? slot.lessons[0] : null;
-    var phase = n ? P.phaseOf(n, pw) : null;
-    function pick(o) { return JTS.i18n.pick(o, S.settings().uiLang); }
-
-    var skills = unit && P.unitSkills ? (P.unitSkills[unit.code] || []) : [];
-    var href = skills.length ? '#/practice?skills=' + skills.join(',')
-      : unit ? '#/materials/lesson?code=' + unit.code : '#/practice';
-
-    m = ui.modal({
-      title: U.fmtDate(lesson.date),
-      content: U.el('div.stack-sm.plan-day', null, [
-        unit ? U.el('div.row.row-wrap.plan-day-unit', null, [
-          JTS.programme.codeChip(unit),
-          U.el('b', { text: t('prog.lessonNo', { n: n }) + ' · ' + pick(unit.t) })
-        ]) : U.el('div', { text: t('plan.goalFor', {
-          skills: lesson.skillIds.map(function (id) { return JTS.skills.name(id); }).join(', ') }) }),
-        phase ? U.el('div.row', null, [U.el('span.badge.badge-muted', { text: pick(phase.name) })]) : null
-      ]),
-      actions: [
-        U.el('a.btn.btn-primary', {
-          href: href, text: t('plan.practice'),
-          onclick: function () { m.close(); }
-        })
-      ]
-    });
+    m = ui.modal({ title: U.fmtDate(U.parseISO(iso), S.settings().uiLang), content: body });
   }
 
   /**
@@ -420,6 +361,32 @@
     return grid;
   }
 
+  /** The calendar weeks the plan spans, Monday to Sunday, with lesson counts. */
+  function planWeeks(plan) {
+    var mondays = {};
+    plan.lessons.forEach(function (l) {
+      var mon = U.iso(U.weekStart(U.parseISO(l.date)));
+      mondays[mon] = (mondays[mon] || 0) + 1;
+    });
+    return Object.keys(mondays).sort().map(function (m) { return { monday: m, lessons: mondays[m] }; });
+  }
+
+  /** The group and its three slots, or the default days for a student on their own. */
+  function scheduleLine(plan) {
+    var slots = plan.slots.map(function (s) {
+      return U.dayLabel(s.weekday) + ' ' + (s.time || '') +
+        (s.section ? ' · ' + t(s.section === 'rw' ? 'common.rwShort' : 'common.math') : '') +
+        (s.teacher && s.teacher.name ? ' · ' + s.teacher.name : '');
+    });
+    return U.el('div.card.card-sm.row-between.row-wrap.plan-sched', null, [
+      U.el('div.stack-sm', null, [
+        U.el('div.eyebrow', { text: plan.group ? t('plan.group', { name: plan.group.name }) : t('plan.ownPace') }),
+        U.el('div.small', { text: slots.join('   ·   ') })
+      ]),
+      U.el('span.small.muted', { text: t('plan.rhythm', { n: plan.perWeek, mins: plan.lessonMinutes }) })
+    ]);
+  }
+
   JTS.router.register('#/plan', {
     title: 'nav.plan',
     render: function (root) {
@@ -430,68 +397,32 @@
       root.appendChild(screen);
       function rerender() { JTS.router.render(); }
 
-      if (!state.plan) {
-        screen.appendChild(ui.empty(t('plan.noPlan'), null, U.el('button.btn.btn-primary.btn-lg', {
-          type: 'button', text: t('plan.generate'),
-          onclick: function () { JTS.planner.generate(); rerender(); }
-        })));
-        return;
-      }
+      var plan = JTS.course.plan();
+      if (!plan) { screen.appendChild(ui.empty(t('plan.noPlan'))); return; }
 
-      /* Which week is on screen is view state, not saved progress.
-         Open on the first week that actually has upcoming sessions: sign up on
-         a Sunday and the calendar week containing today is empty, which reads
-         as a broken plan rather than as a week already spent. */
-      var weeks = state.plan.weeks;
-      var todayISO = U.iso(U.today());
-      var idx = weeks.reduce(function (found, w, i) {
-        if (found !== -1) return found;
-        var hasUpcoming = w.lessons.some(function (l) { return l.date >= todayISO; });
-        return hasUpcoming ? i : -1;
-      }, -1);
-      if (idx === -1) {
-        var thisMonday = U.iso(U.weekStart(U.today()));
-        idx = weeks.reduce(function (best, w, i) { return w.monday <= thisMonday ? i : best; }, 0);
-      }
+      var fit = JTS.courseUI.fitBanner(plan);
+      if (fit) screen.appendChild(fit);
+      screen.appendChild(JTS.courseUI.phaseStrip(plan, { id: 'plan-phases' }));
+      if (!plan.examDate) screen.appendChild(U.el('div.notice', { text: t('plan.provisional') }));
+      screen.appendChild(scheduleLine(plan));
+
+      /* Which week is on screen is view state, not saved progress. It opens
+         on the week of the next lesson. */
+      var weeks = planWeeks(plan);
+      var nextMon = plan.next ? U.iso(U.weekStart(U.parseISO(plan.next.date))) : null;
+      var idx = Math.max(0, weeks.map(function (w) { return w.monday; }).indexOf(nextMon));
       if (JTS.router.current && JTS.router.current.query.week) {
         idx = U.clamp(Number(JTS.router.current.query.week), 0, weeks.length - 1);
       }
-      var week = weeks[idx];
 
-      JTS.shell.topbarActions(U.el('button.btn.btn-sm', {
-        type: 'button', text: t('plan.rebuild'),
-        onclick: function () {
-          ui.confirm({ title: t('plan.rebuild'), message: t('plan.rebuildNote'), okText: t('plan.rebuild') })
-            .then(function (yes) {
-              if (!yes) return;
-              var fresh = JTS.planner.rebuild();
-              ui.toast(t('plan.rebuilt', { n: fresh.skippedCount || 0 }), 'ok');
-              JTS.router.go('#/plan');
-            });
-        }
-      }));
-
-      if (state.plan.provisional) {
-        screen.appendChild(U.el('div.notice.notice-warn', { text: t('plan.provisional') }));
-      }
-
-      /* The month, the week and the list are three views of the same lessons,
-         and the switch between them sits in the calendar's own toolbar rather
-         than above it — on a calendar that control belongs next to the month
-         you are looking at. The month is the default: a week is what you do
-         next, but a plan is a shape, and the shape only appears at the length
-         of a month — which weeks are heavy, where the checkpoints fall, how
-         much of the run to the exam is left. */
       var view = (JTS.router.current && JTS.router.current.query.view) || 'month';
       if (['month', 'week', 'agenda'].indexOf(view) < 0) view = 'month';
 
-      screen.appendChild(calendarCard(state, {
+      screen.appendChild(calendarCard(state, plan, {
         view: view,
-        week: week,
+        week: weeks[idx] || { monday: U.iso(U.weekStart(U.today())), lessons: 0 },
         weekIndex: idx,
-        weekCount: weeks.length,
-        /* Which view and which week are on screen live in the hash, so a
-           reload and a shared link both land where the student was. */
+        weekCount: Math.max(1, weeks.length),
         href: function (q) {
           var parts = [];
           if (q.view && q.view !== 'month') parts.push('view=' + q.view);
@@ -499,12 +430,6 @@
           return '#/plan' + (parts.length ? '?' + parts.join('&') : '');
         }
       }, rerender));
-
-      /* Nothing follows the calendar. The folded topic tables, the status
-         legend and the note about missed sessions all sat under it saying the
-         same thing on every visit; a day that is struck through is already a
-         skipped day, and the rebuild rule is on the button that rebuilds. The
-         calendar is the screen. */
     }
   });
 })();

@@ -202,6 +202,20 @@
       var hero = heroCard(state);
       screen.appendChild(hero.el);
 
+      /* The course: whether it fits before the exam, where the student is on
+         it (the same phase strip as #/plan), the next lesson with the
+         teacher, and what to do on their own today. */
+      var plan = JTS.course ? JTS.course.plan() : null;
+      if (plan) {
+        var fit = JTS.courseUI.fitBanner(plan);
+        if (fit) screen.appendChild(fit);
+        screen.appendChild(JTS.courseUI.phaseStrip(plan, { id: 'today-phases', link: '#/plan' }));
+        var teacher = JTS.todayTasks.teacherLine(plan);
+        if (teacher) screen.appendChild(teacher);
+        var self = JTS.todayTasks.selfStudy(plan);
+        screen.appendChild(self || JTS.todayTasks.card(plan));
+      }
+
       /* Three things and no more: the clock, the test that measures the week,
          and the two numbers a student is steering by. What used to be stacked
          under them — the next session, the daily check, the roadmap reminder,

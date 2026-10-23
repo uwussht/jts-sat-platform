@@ -304,8 +304,9 @@
         st.sessions.push(summary);
         st.activeSession = null;
       });
-      /* A lesson counts as done when its session ends, however it ended. */
-      if (ses.meta && ses.meta.lessonId) JTS.planner.setStatus(ses.meta.lessonId, 'done');
+      /* A lesson's practice set worked through moves the plan of a student
+         who studies on their own; in a group the teacher marks it. */
+      if (ses.meta && ses.meta.lessonCode && JTS.course) JTS.course.lessonFinished(ses.meta.lessonCode);
       JTS.router.go(ses.finishHash + (ses.finishHash.indexOf('?') >= 0 ? '&' : '?') + 'session=' + ses.id);
       return summary;
     },

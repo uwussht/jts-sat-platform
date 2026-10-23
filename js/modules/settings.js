@@ -32,18 +32,12 @@
       root.appendChild(screen);
       function rerender() { JTS.router.render(); }
 
-      /* A new exam date changes the plan's length, so the plan is offered a
-         rebuild. */
-      function doRebuild() {
-        if (!S.state().plan) { JTS.planner.generate(); }
-        else { JTS.planner.rebuild(); }
-        ui.toast(t('settings.replanned'), 'ok');
-      }
-      function offerRebuild() {
-        if (!S.state().plan) { rerender(); return; }
-        ui.confirm({ title: t('settings.rebuildPlan'), message: t('settings.replanConfirm'),
-          okText: t('settings.rebuildPlan') }).then(function (yes) {
-          if (yes) doRebuild();
+      /* A new exam date re-checks whether the course fits before it. The
+         lessons themselves keep their dates: they follow the schedule. */
+      function examChanged() {
+        var ed = S.state().examDate || {};
+        JTS.course.setExamDate(ed.mode === 'date' ? ed.testDate : null).then(function () {
+          ui.toast(t('settings.examSaved'), 'ok');
           rerender();
         });
       }
@@ -103,7 +97,7 @@
                   registrationDeadline: d.registrationDeadline, lateDeadline: d.lateDeadline }
               : { mode: 'undecided', examDateId: null, testDate: null, registrationDeadline: null };
           });
-          offerRebuild();
+          examChanged();
         });
 
         examWrap.appendChild(ui.field(t('settings.exam'), select, t('settings.examChange')));
@@ -122,6 +116,23 @@
             }));
       })();
       screen.appendChild(card(t('settings.exam'), [examWrap]));
+
+      /* --- language of explanations ---
+         Questions and answer choices are always in English, as on the exam;
+         the explanations can be read in any of the three languages. */
+      var langSel = U.el('select.select', { id: 'set-explain-lang' });
+      [['en', 'English'], ['ru', 'Русский'], ['kk', 'Қазақша']].forEach(function (l) {
+        var o = U.el('option', { value: l[0], text: l[1] });
+        if (S.settings().explainLang === l[0]) o.selected = true;
+        langSel.appendChild(o);
+      });
+      langSel.addEventListener('change', function () {
+        S.update(function (st) { st.settings.explainLang = langSel.value; });
+        ui.toast(t('common.saved'), 'ok');
+      });
+      screen.appendChild(card(t('settings.explainLang'), [
+        ui.field(t('onb.s4.explainLang'), langSel, t('settings.explainLangNote'))
+      ]));
 
       /* --- goals --- */
       var goalWrap = U.el('div.stack');

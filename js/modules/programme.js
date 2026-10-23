@@ -5,11 +5,11 @@
    screens hang on their own pages, so a lesson row looks the same wherever it
    appears and a topic is worded once:
 
-     JTS.programme.chronology()    the 36 classes by month, with the checkpoints
-                                   — used by #/roadmap
      JTS.programme.unitList(sec)   the units and their lessons — #/materials
      JTS.programme.errorLogCard()  the error log — used by #/guide
-     JTS.programme.lessonDetail(n) one lesson, for a day on the calendar
+
+   The course's phases, dates and counts are the plan's (JTS.course), not
+   this file's.
 
    Everything that prints a lesson number asks which schedule the student is
    on first: the same 36 classes fall in different weeks at two a week and at
@@ -32,7 +32,7 @@
    * schedule is not a student's choice; this stays a function so the screens
    * that number weeks keep asking one place.
    */
-  function perWeek() { return 3; }
+  function perWeek() { return JTS.planEngine.LESSONS_PER_WEEK; }
 
   function schedule() { return P.scheduleOf(perWeek()); }
 
@@ -48,109 +48,6 @@
     });
   }
 
-  /** One sitting: its number, the lessons in it, and the gate that follows. */
-  function slotRow(slot, opts) {
-    opts = opts || {};
-    var pw = opts.perWeek || perWeek();
-    var gate = P.gateAfter(slot.n, pw);
-    var row = U.el('div.pg-lesson' + (gate ? '.is-gate' : ''));
-    row.appendChild(U.el('span.pg-n', { text: String(slot.n) }));
-
-    var body = U.el('div.pg-body');
-    slot.lessons.forEach(function (l) {
-      body.appendChild(U.el('div.pg-name', null, [
-        codeChip(l),
-        U.el('b', { text: lessonName(l) })
-      ]));
-      if (opts.skills && l.skills) {
-        body.appendChild(U.el('div.pg-topic-text', { text: pick(l.skills) }));
-      }
-    });
-    row.appendChild(body);
-
-    if (gate) {
-      row.appendChild(U.el('div.pg-gate', null, [
-        U.el('span.badge.badge-warn', { text: pick(gate.name) })
-      ]));
-    }
-    return row;
-  }
-
-  /* ---------------------------------------------------------- chronology */
-
-  /**
-   * The whole course in order: three phases, the weeks inside each, and the
-   * gate that closes it. This is the chronology — it answers "what comes after
-   * what", which the road cannot because the road has six shapes and the
-   * course has thirty-six steps.
-   */
-  function chronology(opts) {
-    opts = opts || {};
-    var pw = opts.perWeek || perWeek();
-    var sch = P.scheduleOf(pw);
-    var wrap = U.el('div.stack');
-
-    wrap.appendChild(U.el('div.card.card-sm.pg-zero', null, [
-      U.el('div', null, [U.el('b', {
-        text: t('prog.scheduleShape', { weeks: sch.weeks, lessons: P.lessonsTotal, tests: sch.tests })
-      })])
-    ]));
-
-    /* An official Bluebook test is its own card, where it falls in the
-       course: before Month 1, and after each of the first two months. */
-    function testCard(test) {
-      return U.el('div.card.stack-sm.pg-official', null, [
-        U.el('div.eyebrow', { text: t('prog.officialTest') }),
-        U.el('div.h3', { text: pick(test.name) }),
-        U.el('p.small.muted', { text: pick(test.note) })
-      ]);
-    }
-    function testsAfter(phaseId) {
-      (P.officialTests || []).forEach(function (test) {
-        if (test.after === phaseId) wrap.appendChild(testCard(test));
-      });
-    }
-    testsAfter(null);
-
-    var weeks = P.weeks(pw);
-    P.phases.forEach(function (ph) {
-      var from = pw === 2 ? ph.from2 : ph.from3;
-      var to = pw === 2 ? ph.to2 : ph.to3;
-      var mine = weeks.filter(function (w) {
-        return w.slots.some(function (s) { return s.n >= from && s.n <= to; });
-      });
-
-      var head = U.el('div.pg-stage-head', null, [
-        U.el('div', null, [
-          U.el('div.eyebrow', { text: t('prog.weeks', { range: pw === 2 ? ph.weeks2 : ph.weeks3 }) }),
-          U.el('div.h3', { text: pick(ph.name) })
-        ]),
-        U.el('span.badge.badge-muted', { text: t('prog.lessonRange', { from: from, to: to }) })
-      ]);
-
-      var body = U.el('div.pg-lessons');
-      mine.forEach(function (w) {
-        body.appendChild(U.el('div.pg-week', null, [
-          U.el('span.pg-week-n', { text: t('prog.weekNo', { n: w.n }) }),
-          U.el('span.pg-week-test', { text: t('prog.testNo', { n: w.n }) })
-        ]));
-        w.slots.forEach(function (s) {
-          if (s.n < from || s.n > to) return;
-          body.appendChild(slotRow(s, { perWeek: pw }));
-        });
-      });
-
-      wrap.appendChild(U.el('div.card.stack-sm', null, [
-        head,
-        U.el('p.small.muted', { text: pick(ph.lead) }),
-        body
-      ]));
-      testsAfter(ph.id);
-    });
-
-    return wrap;
-  }
-
   /* --------------------------------------------------------------- units */
 
   /**
@@ -164,8 +61,15 @@
     return ids.every(function (id) { return byQ[id] && byQ[id].submitted; });
   }
 
-  /** How many units of the course are complete: the ticks, and the bar. */
+  /**
+   * Lessons done, and lessons in the course — both from the student's plan
+   * (JTS.course): the total is what their packages hold, never a fixed number,
+   * and "done" is what the teacher marked (in a group) or what they finished
+   * (on their own).
+   */
   function doneCount() {
+    var plan = JTS.course && JTS.course.plan();
+    if (plan) return plan.done;
     var pw = perWeek();
     return P.lessons.filter(function (l) {
       return P.numberOn(l, pw) && isComplete(l.code);
@@ -426,86 +330,21 @@
    * makes "set #10" and "word list #10" mean something on a calendar.
    */
   function numberOf(lesson) {
-    var all = JTS.planner.allLessons();
-    var i = -1;
-    all.forEach(function (l, k) { if (l.id === lesson.id) i = k; });
-    if (i < 0) return null;
-    var n = i + 1;
-    return n <= P.lessonsTotal ? n : null;
+    return lesson && lesson.no ? lesson.no : null;
   }
 
-  function slotOf(n, pw) {
-    return P.order(pw).filter(function (s) { return s.n === n; })[0] || null;
+  function total() {
+    var plan = JTS.course && JTS.course.plan();
+    return plan ? plan.total : JTS.planEngine.lessonsFor(['basic']).length;
   }
 
-  /**
-   * What a sitting actually covers, as words: the programme lessons that fall
-   * on sitting `n`. The calendar prints this instead of "Lesson 7", because a
-   * number on a square tells a student the count of what is behind them and
-   * nothing about what Tuesday is for.
-   *
-   * Returns [] when `n` is past the end of the course, which is how a day the
-   * programme does not reach keeps its ordinary label.
-   */
-  function topicsOf(n) {
-    var slot = slotOf(n, perWeek());
-    return slot ? slot.lessons.slice() : [];
-  }
-
-  /**
-   * Everything the programme sets for one lesson, for the day a student taps:
-   * which class of the 36 it is, what it covers, and the homework with its
-   * numbers filled in.
-   */
-  function lessonDetail(n) {
-    var pw = perWeek();
-    var slot = slotOf(n, pw);
-    if (!slot) return null;
-    var box = U.el('div.stack-sm.pg-day');
-    var phase = P.phaseOf(n, pw);
-
-    box.appendChild(U.el('div.row.row-wrap', null, [
-      U.el('span.badge', { text: t('prog.lessonNo', { n: n }) }),
-      phase ? U.el('span.badge.badge-muted', { text: pick(phase.name) }) : null
-    ]));
-
-    var topics = U.el('div.stack-sm');
-    slot.lessons.forEach(function (l) {
-      topics.appendChild(U.el('div.pg-day-topic', null, [
-        codeChip(l),
-        U.el('span', null, [
-          U.el('b', { text: lessonName(l) }),
-          l.skills ? U.el('span.small.muted', { text: ' — ' + pick(l.skills) }) : null
-        ])
-      ]));
+  /** The course's length and its tests, from the plan. */
+  function shapeText() {
+    var plan = JTS.course && JTS.course.plan();
+    if (!plan) return '';
+    return t('prog.scheduleShape', {
+      weeks: plan.week.of, lessons: plan.total, tests: plan.tests.length + plan.simulations.length
     });
-    box.appendChild(U.el('div.stack-sm', null, [
-      U.el('div.stat-label', { text: t('prog.topicsToday') }), topics
-    ]));
-
-    var hw = U.el('div.pg-hw');
-    P.homework.forEach(function (h, i) {
-      /* "#N" in the wording is this lesson's number, so the student is told
-         which list and which set rather than being told the pattern. */
-      var body = pick(h.body).replace(/#N/g, '#' + n);
-      hw.appendChild(U.el('div.pg-hw-item', null, [
-        U.el('span.pg-hw-n', { text: String(i + 1) }),
-        U.el('div', null, [
-          U.el('div', null, [
-            U.el('b', { text: pick(h.name).replace(/#N/g, '#' + n) }),
-            U.el('span.pg-mins', { text: h.mins + ' ' + t('common.minutes') })
-          ]),
-          U.el('div.small.muted', { text: body })
-        ])
-      ]));
-    });
-    box.appendChild(U.el('div.stack-sm', null, [
-      U.el('div.stat-label', { text: t('prog.hwTitle') }), hw
-    ]));
-
-    var gate = P.gateAfter(n, pw);
-    if (gate) box.appendChild(U.el('div.notice.notice-warn', { text: pick(gate.name) }));
-    return box;
   }
 
   JTS.programme = {
@@ -519,16 +358,14 @@
     unitState: unitState,
     schedule: schedule,
     numberOf: numberOf,
-    topicsOf: topicsOf,
-    lessonDetail: lessonDetail,
-    chronology: chronology,
-    slotRow: slotRow,
     lessonName: lessonName,
     unitList: unitList,
     unitCard: unitCard,
     lessonsOfSection: lessonsOfSection,
     lessonCount: lessonCount,
     doneCount: doneCount,
+    total: total,
+    shapeText: shapeText,
     isComplete: isComplete,
     errorLogCard: errorLogCard
   };

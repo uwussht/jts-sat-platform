@@ -1,26 +1,14 @@
 /* ==========================================================================
-   The JTS 36-unit course.
+   The school's course: its words, its homework and its routines.
 
-   This is the school's own course, not the platform's generated plan: three
-   months, 36 units. Months 1 and 2 are 24 content units in alternating
-   weeks — two Reading & Writing units and one Math unit, then one Reading
-   & Writing unit and two Math units. Month 3 is Challenge 1–12: timed sets
-   at the difficulty of the second, harder module, each followed by an error
-   review. Bluebook Practice Test 6 is the diagnostic, and an official
-   practice test closes Month 1 and Month 2.
+   The course's shape — the lesson order, the packages (basic: lessons 1–24;
+   extra: the Challenge lessons), the phases, the Bluebook tests and the
+   dates — lives in js/shared/plan-engine.js, the one file the browser and the
+   server both run. This file only says things about the course in words.
 
-   The course runs at three units a week for everyone, so it takes 12
-   weeks. A unit still carries n3 and n2 (its number on a three- and a
-   two-a-week schedule) because the lookups were written for both; they are
-   the same number, and only the three-a-week schedule is used.
-
-   Four screens read this one file, which is why it is data and not prose in
-   four places:
-
-   - #/roadmap    — the chronology: months, checkpoints and every unit in order;
-   - #/materials  — the units, Verbal and Math apart, with their domains;
-   - #/plan       — the homework after each unit;
-   - #/guide      — the error log and the terms a beginner has not met.
+   A unit still carries n3 and n2 (its number on a three- and a two-a-week
+   schedule) because the lookups were written for both; they are the same
+   number, and only the three-a-week schedule is used.
 
    A unit's wording lives once, in js/data/programme-units.js, and every
    screen reads it from there by code (C1 … C24, CH1 … CH12). The code is also
@@ -30,91 +18,18 @@ window.JTS = window.JTS || {}; JTS.data = JTS.data || {};
 
 JTS.data.programme = {
   /* ------------------------------------------------------------- shape */
-  lessonsTotal: 36,
+  /* How many lessons a student has comes from their packages
+     (js/shared/plan-engine.js), not from here. */
   wordsPerLesson: 10,
 
-  /**
-   * The schedule: three units a week, 12 weeks, a practice test every
-   * week. It is the same for every student and is not a setting.
-   */
+  /** Three lessons a week, for everyone. Not a setting. */
   schedules: [
     {
-      id: 3, perWeek: 3, weeks: 12, tests: 12,
+      id: 3, perWeek: 3,
       name: { en: 'Three units a week', ru: 'Три юнита в неделю', kk: 'Аптасына үш юнит' }
     }
   ],
 
-  /**
-   * Three stages, a month each at three units a week. `from`/`to` are unit
-   * numbers; they are the same on both schedules, only the weeks differ.
-   */
-  phases: [
-    {
-      id: 'month1', weeks3: '1–4', weeks2: '1–6', from3: 1, to3: 12, from2: 1, to2: 12,
-      gate: 1,
-      name: { en: 'Month 1 · Foundations', ru: 'Месяц 1 · Основа', kk: '1-ай · Негіз' },
-      lead: {
-        en: 'Units 1–12, weeks 1–4: the first half of the content. Every unit is a method, a full lesson and a practice set, with a full practice test every weekend.',
-        ru: 'Юниты 1–12, недели 1–4: первая половина материала. Каждый юнит — метод, полный урок и практика, и каждые выходные — полный practice test.',
-        kk: '1–12 юниттер, 1–4 апталар: материалдың бірінші жартысы. Әр юнит — әдіс, толық сабақ және жаттығу, әр демалыс сайын толық practice test.'
-      }
-    },
-    {
-      id: 'month2', weeks3: '5–8', weeks2: '7–12', from3: 13, to3: 24, from2: 13, to2: 24,
-      gate: 2,
-      name: { en: 'Month 2 · The rest of the content', ru: 'Месяц 2 · Остальной материал', kk: '2-ай · Қалған материал' },
-      lead: {
-        en: 'Units 13–24, weeks 5–8: the remaining topics. Timing starts to matter from week 4, and practice shifts to the hardest questions in weeks 6–8.',
-        ru: 'Юниты 13–24, недели 5–8: оставшиеся темы. С 4-й недели важен тайминг, а в неделях 6–8 практика смещается к самым сложным вопросам.',
-        kk: '13–24 юниттер, 5–8 апталар: қалған тақырыптар. 4-аптадан бастап уақыт маңызды, ал 6–8 апталарда жаттығу ең күрделі сұрақтарға ауысады.'
-      }
-    },
-    {
-      id: 'challenge', weeks3: '9–12', weeks2: '13–18', from3: 25, to3: 36, from2: 25, to2: 36,
-      name: { en: 'Month 3 · Challenge', ru: 'Месяц 3 · Challenge', kk: '3-ай · Challenge' },
-      lead: {
-        en: 'Challenge 1–12: hard-module practice tests. R&W and Math modules alternate, then two full simulations. Every test ends with an error review.',
-        ru: 'Challenge 1–12: практика сложного модуля. Модули R&W и Math чередуются, затем две полные симуляции. После каждого теста — разбор ошибок.',
-        kk: 'Challenge 1–12: күрделі модуль практикасы. R&W және Math модульдері кезектеседі, содан кейін екі толық симуляция. Әр тесттен кейін қателерді талдау.'
-      }
-    }
-  ],
-
-  /**
-   * The three official Bluebook practice tests the course is measured by:
-   * Practice Test 6 before Unit 1 as the diagnostic, Practice Test 8 after
-   * Month 1, and Practice Test 9 after Month 2. `after` is the phase the test
-   * follows; null means it comes before the course starts.
-   */
-  officialTests: [
-    { id: 'pt6', after: null,
-      name: { en: 'Official Bluebook Practice Test 6', ru: 'Официальный Bluebook Practice Test 6', kk: 'Ресми Bluebook Practice Test 6' },
-      note: { en: 'The diagnostic. Take it before Unit 1, in one sitting and under exam conditions, so the course starts from your real score.',
-              ru: 'Диагностика. Пройдите его до юнита 1, за один присест и в условиях экзамена, чтобы курс начинался с вашего реального балла.',
-              kk: 'Диагностика. Оны 1-юнитке дейін, бір отырыста және емтихан жағдайында тапсырыңыз, сонда курс нақты баллыңыздан басталады.' } },
-    { id: 'pt8', after: 'month1',
-      name: { en: 'Official Bluebook Practice Test 8', ru: 'Официальный Bluebook Practice Test 8', kk: 'Ресми Bluebook Practice Test 8' },
-      note: { en: 'The progress test that closes Month 1. Take it in one sitting under exam conditions and review it the next day.',
-              ru: 'Прогресс-тест, закрывающий месяц 1. Пройдите его за один присест в условиях экзамена и разберите на следующий день.',
-              kk: '1-айды жабатын прогресс тест. Оны бір отырыста емтихан жағдайында тапсырып, келесі күні талдаңыз.' } },
-    { id: 'pt9', after: 'month2',
-      name: { en: 'Official Bluebook Practice Test 9', ru: 'Официальный Bluebook Practice Test 9', kk: 'Ресми Bluebook Practice Test 9' },
-      note: { en: 'The progress test that closes Month 2. Take it in one sitting under exam conditions and review it the next day.',
-              ru: 'Прогресс-тест, закрывающий месяц 2. Пройдите его за один присест в условиях экзамена и разберите на следующий день.',
-              kk: '2-айды жабатын прогресс тест. Оны бір отырыста емтихан жағдайында тапсырып, келесі күні талдаңыз.' } }
-  ],
-
-  /** Two checkpoints: the official practice test after Month 1 and Month 2. */
-  gates: [
-    {
-      n: 1, afterLesson3: 12, afterLesson2: 12, test3: 4, test2: 6, bluebook: 8,
-      name: { en: 'Bluebook Practice Test 8 — end of Month 1', ru: 'Bluebook Practice Test 8 — конец месяца 1', kk: 'Bluebook Practice Test 8 — 1-айдың соңы' }
-    },
-    {
-      n: 2, afterLesson3: 24, afterLesson2: 24, test3: 8, test2: 12, bluebook: 9,
-      name: { en: 'Bluebook Practice Test 9 — end of Month 2', ru: 'Bluebook Practice Test 9 — конец месяца 2', kk: 'Bluebook Practice Test 9 — 2-айдың соңы' }
-    }
-  ],
   gateRule: {
     en: 'Each month closes with a new official Bluebook practice test, which also counts as that weekend’s test. Review it the next day: a test without a review is worth half a test.',
     ru: 'Каждый месяц заканчивается новым официальным practice test в Bluebook — он же тест этих выходных. Разберите его на следующий день: тест без разбора стоит половину теста.',

@@ -256,6 +256,7 @@
       var ids = JTS.programme.lessonSet(code);
       var rec = JTS.programme.lessonRecord(code, ids);
       var week = n ? Math.ceil(n / pw) : null;
+      var planned = JTS.course ? JTS.course.lessonByCode(code) : null;
 
       function startAt(i, part) {
         var ses = JTS.session.start({
@@ -290,9 +291,17 @@
           drill.hard ? U.el('span.badge.badge-warn', { text: t('lesson.hard') }) : null
         ]),
         U.el('div.h2', { text: pick(lesson.t) }),
-        /* A Challenge class mixes every topic, so it has no summary. */
+        /* When this lesson is on the student's plan, and where it stands. */
+        planned ? U.el('div.row.row-wrap.small', null, [
+          JTS.courseUI.lessonStatus(planned),
+          U.el('span.muted', { text: U.fmtDate(U.parseISO(planned.date), S.settings().uiLang) +
+            (planned.time ? ', ' + planned.time : '') +
+            (planned.teacher && planned.teacher.name ? ' · ' + planned.teacher.name : '') })
+        ]) : null,
+        /* The lesson's goals: what it covers. A Challenge class mixes every
+           topic, so it has none. */
         lesson.skills ? U.el('div.stack-sm', null, [
-          U.el('div.stat-label', { text: t('lesson.mustDo') }),
+          U.el('div.stat-label', { text: t('lesson.goals') }),
           U.el('p', { text: pick(lesson.skills) })
         ]) : null
       ]));

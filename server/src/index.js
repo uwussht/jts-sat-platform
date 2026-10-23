@@ -46,8 +46,12 @@ app.use('/api', (req, res) => res.status(404).json({ ok: false, reason: 'not-fou
 
 /* Anything thrown inside a route ends here: logged, and a plain answer. */
 app.use((err, req, res, next) => {
-  console.error(req.method, req.path, err);
   if (res.headersSent) return next(err);
+  /* A body that is not JSON, or too large, is the caller's mistake. */
+  if (err.type === 'entity.parse.failed' || err.type === 'entity.too.large') {
+    return res.status(400).json({ ok: false, reason: 'bad-request' });
+  }
+  console.error(req.method, req.path, err);
   res.status(500).json({ ok: false, reason: 'server' });
 });
 

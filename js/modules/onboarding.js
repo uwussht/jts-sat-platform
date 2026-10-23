@@ -628,69 +628,6 @@
     };
   }
 
-  function availabilityBlock(body, state, refresh) {
-    var a = state.availability || { days: [], minutesPerSession: 60, intensity: 'standard' };
-    body.appendChild(U.el('h2.h2', { text: t('onb.s4.title') }));
-
-    var err = U.el('div.error-text', { role: 'alert', hidden: true });
-    var summary = U.el('div.notice');
-
-    function save() {
-      var days = U.$$('input[data-dow]', body).filter(function (i) { return i.checked; })
-        .map(function (i) { return Number(i.dataset.dow); });
-      var mins = Number((U.$$('input[name=mins]', body).filter(function (i) { return i.checked; })[0] || {}).value || 60);
-      var intensity = intensityFor(days, mins);
-      S.patch({ availability: { days: days, minutesPerSession: mins, intensity: intensity } });
-      summary.textContent = t('onb.s4.intensity', {
-        level: t('onb.intensity.' + intensity), minutes: days.length * mins
-      });
-    }
-
-    var dayRow = U.el('div.row.row-wrap');
-    for (var dow = 1; dow <= 7; dow++) {
-      (function (d) {
-        var cb = U.el('input', { type: 'checkbox', checked: a.days.indexOf(d) >= 0 || null, dataset: { dow: String(d) } });
-        cb.addEventListener('change', save);
-        dayRow.appendChild(U.el('label.check.check-card', { style: 'min-width:84px' }, [
-          cb, U.el('span', { text: dayLabel(d) })
-        ]));
-      })(dow);
-    }
-    body.appendChild(ui.field(t('onb.s4.days'), dayRow));
-
-    var minRow = U.el('div.row.row-wrap');
-    [30, 60, 90, 120].forEach(function (m) {
-      var r = U.el('input', { type: 'radio', name: 'mins', value: String(m),
-        checked: a.minutesPerSession === m || null });
-      r.addEventListener('change', save);
-      minRow.appendChild(U.el('label.check.check-card', { style: 'min-width:96px' }, [
-        r, U.el('span', { text: m + ' ' + t('common.minutes') })
-      ]));
-    });
-    body.appendChild(ui.field(t('onb.s4.minutes'), minRow));
-
-    var langSel = U.el('select.select');
-    [['en', 'English'], ['ru', 'Русский'], ['kk', 'Қазақша']].forEach(function (l) {
-      var o = U.el('option', { value: l[0], text: l[1] });
-      if (S.settings().explainLang === l[0]) o.selected = true;
-      langSel.appendChild(o);
-    });
-    langSel.addEventListener('change', function () {
-      S.update(function (s) { s.settings.explainLang = langSel.value; });
-    });
-    body.appendChild(ui.field(t('onb.s4.explainLang'), langSel));
-
-    body.appendChild(summary);
-    body.appendChild(err);
-    save();
-
-    return function valid() {
-      var av = S.state().availability;
-      if (!av || !av.days.length) { err.textContent = t('onb.s4.errDays'); err.hidden = false; return false; }
-      err.hidden = true; return true;
-    };
-  }
-
   /* ------------------------------------------------------------------ shell */
 
   JTS.router.register('#/onboarding', {
@@ -776,6 +713,11 @@
               if (msg && msg.scrollIntoView) msg.scrollIntoView({ block: 'center' });
               return;
             }
+            /* The exam date is what the plan is laid out against. */
+            if (def.block === 'examDate' && JTS.course) {
+              var ex = S.state().examDate || {};
+              JTS.course.setExamDate(ex.mode === 'date' ? ex.testDate : null);
+            }
             if (step < TOTAL_STEPS) { goTo(step + 1); return; }
             /* Onboarding ends at the diagnostic for everyone. Nothing here
                assigns a level, so the diagnostic is the only thing that has
@@ -806,7 +748,6 @@
   });
 
   JTS.onboarding = {
-    availabilityBlock: availabilityBlock,
     infoStep: infoStep,
     domainTable: domainTable
   };

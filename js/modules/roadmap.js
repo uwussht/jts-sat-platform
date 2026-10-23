@@ -7,20 +7,12 @@
    behind you, three stars over it, and a marker showing where you are
    standing today.
 
-   The six stops are the course's own, not a shape invented for the drawing:
-
-     1  the baseline diagnostic, which lesson 1 opens with
-     2  the content phase — every topic once, by unit
-     3  gate 1, passed on the weekly practice test
-     4  the hard Module 2 phase
-     5  gate 2
-     6  test week, and then the exam
-
-   Everything they say comes from js/data/programme*.js, so this screen cannot
-   disagree with the materials, the plan or the guide. Which lesson numbers
-   and which weeks they cover depends on the student's schedule — three
-   lessons a week or two — because that is the one thing the two schedules
-   really change.
+   The stops are the phases of the student's own plan (JTS.course.plan(),
+   built by js/shared/plan-engine.js): the diagnostic and Bluebook Test 6, the
+   two months of foundations with Test 8 and Test 10 after them, the Challenge
+   month when the extra package is bought, self-study until the exam, and the
+   exam itself at the end of the road. The dashboard and #/plan draw the same
+   phases, so the three screens cannot disagree.
 
    The map does not scroll. It is sized to the window so the road always fits
    on one screen; moving along it is done with the arrows, the keyboard, a
@@ -67,105 +59,46 @@
 
   /* ---------------------------------------------------------------- model */
 
-  function perWeek() {
-    return JTS.programme ? JTS.programme.perWeek() : 3;
-  }
-
-  /** How many lessons of the course are behind this student. */
-  function doneCount() {
-    return JTS.programme ? JTS.programme.doneCount() : 0;
-  }
-
   /**
-   * Has the baseline actually been sat?
-   *
-   * The diagnostic is step 1 of the road but it is not a plan lesson, so
-   * counting ticked lessons left it standing at "you are here" for a student
-   * who had finished it weeks ago — and the road cannot start at a step that
-   * is already behind you. A finished diagnostic session is the record of it.
+   * The stops: the plan's phases, without the exam day, which is the star at
+   * the end of the road. A test phase is a gate; self-study is its own kind.
    */
-  function diagTaken() {
-    var st = S.state();
-    return !!(st && (st.sessions || []).filter(function (x) {
-      return x.kind === 'diagnostic' && x.finishedAt;
-    }).length);
-  }
-
-  /**
-   * The six stops, from the course.
-   *
-   * `from`/`to` are lesson numbers on this student's schedule; `weeks` is the
-   * range of weeks they fall in. A gate is a single point rather than a range:
-   * it is one practice test, sat in the week the phase before it ends.
-   */
-  function stops() {
-    var pw = perWeek();
-    var out = [];
-    var phases = P.phases;
-    var gates = P.gates;
-
-    out.push({
-      id: 1, kind: 'diagnostic', from: 1, to: 1,
-      /* Named by its test, the way the two checkpoints are; the pin keeps
-         the one word. */
-      name: t('roadmap.diagName'), short: t('diag.title'),
-      lead: t('roadmap.diagLead'),
-      weeks: t('prog.weekNo', { n: 1 }), bluebook: 6,
-      cta: { href: '#/diagnostic', label: t('diag.title') }
+  function stops(plan) {
+    if (!plan) return [];
+    return plan.phases.filter(function (ph) { return ph.key !== 'examDay'; }).map(function (ph, i) {
+      var kind = ph.id === 1 ? 'diagnostic' : ph.test ? 'gate' : ph.key === 'selfStudy' ? 'self' : 'phase';
+      var stop = {
+        id: i + 1, phase: ph, kind: kind,
+        name: t('phase.' + ph.id + '.name'),
+        short: t('phase.' + ph.id + '.short'),
+        lead: t('phase.' + ph.id + '.lead'),
+        from: ph.lessons ? ph.lessons[0] : null,
+        to: ph.lessons ? ph.lessons[1] : null,
+        weeks: ph.weeks ? t('phase.weeks', { from: ph.weeks[0], to: ph.weeks[1] }) : null,
+        bluebook: ph.test ? JTS.courseUI.TEST_NO[ph.test] : null
+      };
+      if (ph.id === 1) stop.cta = { href: '#/diagnostic', label: t('diag.title') };
+      if (ph.test) stop.cta2 = { href: '#/tests', label: t('tests.enter') };
+      return stop;
     });
-
-    phases.forEach(function (ph, i) {
-      var from = pw === 2 ? ph.from2 : ph.from3;
-      var to = pw === 2 ? ph.to2 : ph.to3;
-      out.push({
-        id: out.length + 1, kind: 'phase', phase: ph, from: from, to: to,
-        name: pick(ph.name),
-        /* Under a pin there is room for two words, so a phase says what it is
-           rather than repeating its full title. */
-        short: t('roadmap.short.' + ph.id),
-        lead: pick(ph.lead),
-        weeks: t('prog.weeks', { range: pw === 2 ? ph.weeks2 : ph.weeks3 })
-      });
-      /* The gate that closes this phase is the next stop, because on the road
-         it genuinely is: you do not walk past it. */
-      var gate = gates.filter(function (g) { return g.n === ph.gate; })[0];
-      if (gate) {
-        var at = pw === 2 ? gate.afterLesson2 : gate.afterLesson3;
-        out.push({
-          id: out.length + 1, kind: 'gate', gate: gate, from: at, to: at,
-          name: pick(gate.name),
-          short: t('roadmap.short.gate', { n: gate.n }),
-          lead: t('roadmap.gateLead', { name: pick(ph.name) }),
-          /* Which Bluebook test it is, not which weekend's: "Practice
-             test 8" under a stop that sits Bluebook 9 read as a mistake. */
-          weeks: null, bluebook: gate.bluebook
-        });
-      }
-    });
-    return out;
   }
 
-  /** Lessons done / total inside a stop's own range. */
-  function stopProgress(stop, done) {
-    var total = stop.to - stop.from + 1;
-    /* The diagnostic is one sitting and it is either sat or it is not; there
-       is no plan lesson under it to count. */
-    if (stop.kind === 'diagnostic') return { done: diagTaken() ? total : 0, total: total };
-    var inside = U.clamp(done - (stop.from - 1), 0, total);
-    return { done: inside, total: total };
+  /** Done / total inside a stop: its lessons, or the steps a test phase has. */
+  function stopProgress(stop) {
+    var ph = stop.phase;
+    if (ph.lessons) return { done: ph.done, total: ph.total };
+    if (ph.id === 1) return { done: (ph.diagnosticDone ? 1 : 0) + (ph.testEntered ? 1 : 0), total: 2 };
+    if (ph.test) return { done: ph.testEntered ? 1 : 0, total: 1 };
+    return { done: 0, total: 0 };
   }
 
-  /**
-   * A stop is done when its last lesson is behind you, and exactly one stop is
-   * current: the first one that is not. The ranges overlap on purpose — the
-   * diagnostic IS lesson 1 of the content phase — so "the first unfinished
-   * one" is the only reading that puts the marker in one place.
-   */
-  function statusOf(stop, done, list) {
-    if (stop.kind === 'diagnostic') return diagTaken() ? 'done' : 'current';
-    if (done >= stop.to) return 'done';
-    if (list && currentStop(list, done) !== stop.id) return 'ahead';
-    return 'current';
+  /** current · done · ahead, from the plan; a passed phase left unfinished
+      is drawn as passed, and its panel says what is missing. */
+  function statusOf(stop) {
+    var st = stop.phase.state;
+    if (st === 'current') return 'current';
+    if (st === 'done' || st === 'incomplete') return 'done';
+    return 'ahead';
   }
 
   function pctOfStop(prog, status) {
@@ -173,14 +106,9 @@
     return Math.round((prog.done / prog.total) * 100);
   }
 
-  /** Which stop a student is standing on. */
-  function currentStop(list, done) {
-    var taken = diagTaken();
-    for (var i = 0; i < list.length; i++) {
-      if (list[i].kind === 'diagnostic' && taken) continue;
-      if (done < list[i].to) return list[i].id;
-    }
-    return list.length;
+  function currentStop(list) {
+    var cur = list.filter(function (s) { return s.phase.state === 'current'; })[0];
+    return cur ? cur.id : list.length;
   }
 
   /* ------------------------------------------------------------------ map */
@@ -383,13 +311,13 @@
            position in the course; a date on it is the plan's business, moves
            every time the plan is rebuilt, and read as a deadline that was
            never promised. "Lesson 1 — Lesson 1" was also simply silly. */
-        stop.kind === 'gate'
-          ? null
-          : U.el('span.badge.badge-muted', {
+        stop.from
+          ? U.el('span.badge.badge-muted', {
               text: stop.from === stop.to
                 ? t('prog.lessonNo', { n: stop.from })
                 : t('prog.lessonRange', { from: stop.from, to: stop.to })
             })
+          : U.el('span.badge.badge-muted', { text: JTS.courseUI.phaseSub(stop.phase) })
       ]),
       U.el('p.small.muted.rm-panel-desc', { text: stop.lead })
     ]);
@@ -404,10 +332,9 @@
         U.el('span.rm-fact-lab', { text: t('roadmap.whatYouDo') }),
         U.el('span', { text: t('roadmap.gateWhat') })
       ]));
-    } else if (JTS.programme) {
-      var codes = P.order(perWeek())
-        .filter(function (s) { return s.n >= stop.from && s.n <= stop.to; })
-        .reduce(function (acc, s) { return acc.concat(s.lessons); }, []);
+    } else if (stop.from) {
+      var codes = P.lessons.filter(function (l) { return l.n3 >= stop.from && l.n3 <= stop.to; })
+        .sort(function (a, b) { return a.n3 - b.n3; });
       if (codes.length) {
         /* The topics by name — a code says nothing to a student who has not
            met the unit yet. They are read here, not opened from here, and
@@ -429,6 +356,12 @@
       }
     }
 
+    if (stop.phase.state === 'incomplete') {
+      panel.appendChild(U.el('div.notice.notice-warn.small', {
+        text: stop.phase.test ? t('phase.testMissing', { n: stop.bluebook }) : t('phase.incomplete')
+      }));
+    }
+
     if (stop.kind !== 'gate' && info.progress && info.progress.total) {
       panel.appendChild(U.el('div.rm-panel-bar', null, [
         ui.bar(info.progress.done, info.progress.total,
@@ -441,12 +374,17 @@
 
     /* Only the diagnostic has a button, to the test it is. A phase and a
        gate send you nowhere from here. */
-    if (stop.cta) {
+    if (stop.cta || stop.cta2) {
       panel.appendChild(U.el('div.rm-panel-foot', null, [
         U.el('span'),
-        U.el('a.btn.btn-sm' + (info.status === 'current' ? '.btn-primary' : ''), {
-          href: stop.cta.href, text: stop.cta.label
-        })
+        U.el('div.row.row-wrap', null, [
+          stop.cta ? U.el('a.btn.btn-sm' + (info.status === 'current' && !stop.phase.diagnosticDone ? '.btn-primary' : ''), {
+            href: stop.cta.href, text: stop.cta.label
+          }) : null,
+          stop.cta2 ? U.el('a.btn.btn-sm' + (info.status !== 'ahead' && !stop.phase.testEntered ? '.btn-primary' : ''), {
+            href: stop.cta2.href, text: stop.cta2.label
+          }) : null
+        ])
       ]));
     }
     return panel;
@@ -465,21 +403,18 @@
       var screen = U.el('div.container.screen.rm-screen');
       root.appendChild(screen);
 
-      var list = stops();
-      var done = doneCount();
-      var pw = perWeek();
-      var sch = P.scheduleOf(pw);
-      var current = currentStop(list, done);
+      var plan = JTS.course.plan();
+      var list = stops(plan);
+      if (!list.length) { screen.appendChild(ui.empty(t('plan.noPlan'))); return; }
+      var current = currentStop(list);
       var selected = current;
       var days = JTS.analytics.daysToExam();
-      var exam = state.examDate && state.examDate.testDate;
+      var exam = plan.examDate;
       var examLabel = exam ? U.fmtDate(U.parseISO(exam), S.settings().uiLang)
         : t('settings.noExamDate');
-      var week = Math.min(Math.ceil(Math.max(done + 1, 1) / pw), sch.weeks);
-
-      function statusFor(stop) { return statusOf(stop, done, list); }
+      function statusFor(stop) { return statusOf(stop); }
       function infoFor(stop) {
-        return { status: statusFor(stop), progress: stopProgress(stop, done) };
+        return { status: statusFor(stop), progress: stopProgress(stop) };
       }
 
       /* One line of state, then the map. Everything else is available on
@@ -496,7 +431,7 @@
             text: t('today.countdown') + ': ' + (days === null ? '—' : Math.max(0, days))
           }),
           U.el('span.badge.badge-muted', {
-            text: t('roadmap.weekOf', { n: week, total: sch.weeks })
+            text: t('roadmap.weekOf', { n: plan.week.now, total: plan.week.of })
           }),
           U.el('button.btn.btn-sm', {
             type: 'button', text: t('roadmap.howTitle'),
@@ -510,23 +445,15 @@
          the header so the answer is on screen without a click. */
       top.appendChild(U.el('div.rm-total', null, [
         U.el('span.rm-total-lab', { text: t('roadmap.overall') }),
-        ui.bar(Math.min(done, P.lessonsTotal), P.lessonsTotal,
-          done >= P.lessonsTotal ? 'bar-ok' : ''),
+        ui.bar(plan.done, plan.total, plan.done >= plan.total ? 'bar-ok' : ''),
         U.el('span.rm-total-n', {
-          text: t('roadmap.pctDone', { n: U.pct(Math.min(done, P.lessonsTotal), P.lessonsTotal) })
+          text: t('phase.lessonsDone', { n: plan.done, of: plan.total })
         })
       ]));
       screen.appendChild(top);
 
-      if (!state.plan) {
-        screen.appendChild(U.el('div.notice.notice-warn', null, [
-          U.el('div', null, [
-            U.el('div', { text: t('roadmap.noPlan') }),
-            U.el('a.btn.btn-sm.btn-primary', { href: '#/diagnostic', text: t('diag.title'),
-              style: 'margin-top:10px' })
-          ])
-        ]));
-      }
+      var fit = JTS.courseUI.fitBanner(plan);
+      if (fit) screen.appendChild(fit);
 
       /* Map on the left, the stop you are reading on the right. Side by side
          and not stacked, because the road has to stay whole on one screen and
@@ -584,7 +511,7 @@
       mapHost.appendChild(levelMap({
         list: list,
         statusOf: statusFor,
-        pctOf: function (s) { return pctOfStop(stopProgress(s, done), statusFor(s)); },
+        pctOf: function (s) { return pctOfStop(stopProgress(s), statusFor(s)); },
         here: U.initials(state.profile.name || state.profile.email),
         examDate: examLabel,
         onSelect: select,

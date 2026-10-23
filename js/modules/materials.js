@@ -44,14 +44,16 @@
       var pw = JTS.programme.perWeek();
       var sch = JTS.programme.schedule();
       var done = JTS.programme.doneCount();
-      var total = P.lessonsTotal;
+      var total = JTS.programme.total();
+      var plan = JTS.course.plan();
       var pct = Math.round((Math.min(done, total) / total) * 100);
 
       /* The header is the course, not the student: its title, how long it is
          on this schedule, and one bar for how much of it is behind them. */
       screen.appendChild(U.el('div.card.stack-sm', { id: 'mat-head' }, [
         U.el('div.eyebrow', { text: t('mat.eyebrow') }),
-        U.el('div.h2', { text: t('mat.courseTitle') }),
+        U.el('div.h2', { text: t('mat.courseTitle', { brand: JTS.config.brandName, n: total,
+          weeks: plan ? plan.week.of : Math.ceil(total / 3) }) }),
         U.el('div.stack-sm', null, [
           U.el('div.row-between.row-wrap', null, [
             U.el('span.small.muted', { text: t('mat.progress') }),
@@ -60,15 +62,12 @@
           JTS.ui.bar(Math.min(done, total), total, 'bar-ok')
         ]),
         U.el('div.row.row-wrap.small.muted', null, [
-          U.el('span', { text: t('mat.lessonsOf', { done: Math.min(done, total), total: total }) }),
-          U.el('span', { text: '·' }),
-          /* Eight units — the review, hard and test-week blocks are phases of
-             the course rather than units of content, and counting them here
-             would contradict the document the course is written from. */
-          U.el('span', { text: t('prog.nUnits', { n: P.lessons.filter(function (l) { return P.numberOn(l, pw); }).length }) })
+          /* Lessons in this student's packages. Every material below stays
+             open whatever the package: only lessons with the teacher are. */
+          U.el('span', { text: t('phase.lessonsDone', { n: Math.min(done, total), of: total }) })
         ]),
         U.el('div.small.muted', {
-          text: t('prog.scheduleShape', { weeks: sch.weeks, lessons: total, tests: sch.tests })
+          text: JTS.programme.shapeText()
         })
       ]));
 

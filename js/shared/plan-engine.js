@@ -212,7 +212,10 @@
       /* Self-paced: what is done keeps the day it was done; what is left is
          laid on the slots from today (or the start, if later), in order. */
       var left = list.filter(function (l) { return !held[l.no]; });
-      var from = start > today ? start : today;
+      /* Lesson 1 is the day after the plan starts (the diagnostic and Test 6
+         come first); a lesson not done by its day moves to today or later. */
+      var dayAfterStart = addDays(start, 1);
+      var from = dayAfterStart > today ? dayAfterStart : today;
       var occ2 = occurrences(slots, from, left.length);
       var k = 0;
       lessons = list.map(function (l) {

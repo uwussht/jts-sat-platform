@@ -1111,9 +1111,10 @@
    * the older local profiles are used, so the site still works on its own.
    * detect() decides once, at boot.
    */
-  function api(path, body) {
+  /** JSON to and from the API: GET with no body, POST with one, or `method`. */
+  function api(path, body, method) {
     return fetch('/api/' + path, {
-      method: body ? 'POST' : 'GET',
+      method: method || (body ? 'POST' : 'GET'),
       credentials: 'same-origin',
       headers: body ? { 'Content-Type': 'application/json', Accept: 'application/json' }
                     : { Accept: 'application/json' },
@@ -1138,6 +1139,8 @@
     if (d.length < 10 || d.length > 15) return null;
     return '+' + d;
   }
+
+  JTS.api = api;
 
   var pushTimer = null, pushing = false, pushAgain = false;
 
@@ -1172,7 +1175,11 @@
       this.ready = false;
       var key = Store.ensureServerProfile(user);
       Store.setCurrent(key);
-      return this.pull(key);
+      /* The plan is built from the account (packages, group, marks), so it
+         comes down with the progress. */
+      return this.pull(key).then(function () {
+        return JTS.course ? JTS.course.refresh() : null;
+      });
     },
 
     /**
@@ -1238,6 +1245,7 @@
       var res = Store.verify(id, password);
       if (!res.ok) return Promise.resolve(res);
       Store.setCurrent(res.email);
+      if (JTS.course) JTS.course.clear();
       JTS.shell.applyProfileSettings();
       return Promise.resolve({ ok: true, email: res.email });
     },
@@ -1257,6 +1265,7 @@
       var res = Store.createAccount(a, password, name);
       if (!res.ok) return Promise.resolve(res);
       Store.setCurrent(res.email);
+      if (JTS.course) JTS.course.clear();
       JTS.shell.applyProfileSettings();
       return Promise.resolve({ ok: true, email: res.email });
     },
@@ -1264,11 +1273,13 @@
     logout: function () {
       if (this.mode !== 'server') {
         Store.setCurrent(null);
+        if (JTS.course) JTS.course.clear();
         return Promise.resolve({ ok: true });
       }
       /* Save the last answers first, then end the session. */
       return this.pushNow().then(function () { return api('logout', {}); }).then(function () {
         JTS.Auth.user = null;
+        if (JTS.course) JTS.course.clear();
         JTS.Auth.ready = false;
         Store.setCurrent(null);
         return { ok: true };
@@ -2316,11 +2327,16 @@
          question mark in a corner is not where anyone looks for that. */
       { path: '#/guide',        key: 'guide.nav',    icon: '?' }
     ],
+    /* Shown to staff only (see renderHeader). */
+    staffNavItems: [
+      { path: '#/staff', key: 'staff.nav', icon: '◎' }
+    ],
     /* Line icons for the navigation, drawn in currentColor so the current
        page's icon turns black on the yellow pill with its label. */
     navIcons: {
       '#/today':        '<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
       '#/plan':         '<rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/>',
+      '#/staff':        '<circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.6"/><path d="M15.5 14.2c3 .2 5.5 2.6 5.5 5.8"/>',
       '#/practice':     '<path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/>',
       '#/mocks':        '<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9.5 2.5h5"/>',
       '#/papers':       '<path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 12.5h6M9 16.5h6"/>',
@@ -2344,7 +2360,8 @@
        sidebar, and over the page title. */
     navGroup: function (path) {
       return this.navItems.some(function (it) { return it.path === path; }) ? 'nav.groupStudy'
-        : this.subNavItems.some(function (it) { return it.path === path; }) ? 'nav.groupTools' : null;
+        : this.subNavItems.some(function (it) { return it.path === path; }) ? 'nav.groupTools'
+        : this.staffNavItems.some(function (it) { return it.path === path; }) ? 'nav.groupStaff' : null;
     },
     applyProfileSettings: function () {
       var st = Store.settings();
@@ -2465,7 +2482,12 @@
       if (!onboarding) {
         var nav = U.el('nav.sb-nav', { id: 'main-nav' });
         var self = this;
-        [['nav.groupStudy', this.navItems], ['nav.groupTools', this.subNavItems]].forEach(function (g) {
+        var groups = [['nav.groupStudy', this.navItems], ['nav.groupTools', this.subNavItems]];
+        /* Teachers, curators, managers and admins: their own area. */
+        if (JTS.Auth.user && (JTS.Auth.user.perms || []).indexOf('staff') >= 0) {
+          groups.push(['nav.groupStaff', this.staffNavItems]);
+        }
+        groups.forEach(function (g) {
           nav.appendChild(U.el('div.sb-group', { text: t(g[0]) }));
           g[1].forEach(function (it) {
             nav.appendChild(U.el('a', { href: it.path, dataset: { path: it.path } }, [
@@ -2636,7 +2658,10 @@
       /* and whether a sign-in server is there, and who is signed in to it. */
       JTS.Auth.detect()
     ]);
-    load.then(start, start);
+    /* The plan needs the bank (lesson sets) and the account, so it comes last. */
+    load.then(function () {
+      return JTS.course ? JTS.course.refresh() : null;
+    }).then(start, function (e) { console.error('[JTS] plan not loaded', e); start(); });
   };
 
   function start() {

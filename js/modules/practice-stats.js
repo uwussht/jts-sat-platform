@@ -227,9 +227,9 @@
       .map(function (a) { return a.timeMs || 0; }));
     var streak = streakNow(st);
 
-    var P = JTS.programme;
-    var unitsDone = P ? P.doneCount() : 0;
-    var unitsAll = P ? P.lessonCount('rw') + P.lessonCount('math') : 0;
+    var plan = JTS.course ? JTS.course.plan() : null;
+    var unitsDone = plan ? plan.done : 0;
+    var unitsAll = plan ? plan.total : 0;
     var mocks = JTS.mock ? JTS.mock.finished() : [];
     var bestMock = null;
     mocks.forEach(function (r) {

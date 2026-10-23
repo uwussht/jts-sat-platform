@@ -239,17 +239,6 @@ JTS.data.programme.unitSkills = {
     return out;
   }
 
-  function phaseOf(n, perWeek) {
-    var from = perWeek === 2 ? 'from2' : 'from3';
-    var to = perWeek === 2 ? 'to2' : 'to3';
-    return P.phases.filter(function (p) { return n >= p[from] && n <= p[to]; })[0] || null;
-  }
-
-  function gateAfter(n, perWeek) {
-    var key = perWeek === 2 ? 'afterLesson2' : 'afterLesson3';
-    return P.gates.filter(function (g) { return g[key] === n; })[0] || null;
-  }
-
   function scheduleOf(perWeek) {
     return P.schedules.filter(function (s) { return s.perWeek === perWeek; })[0] || P.schedules[0];
   }
@@ -262,7 +251,5 @@ JTS.data.programme.unitSkills = {
   P.numberOn = numberOn;
   P.order = order;
   P.weeks = weeks;
-  P.phaseOf = phaseOf;
-  P.gateAfter = gateAfter;
   P.scheduleOf = scheduleOf;
 })();
