@@ -19,6 +19,31 @@ npx http-server .        # then open http://localhost:8080
 python3 -m http.server   # then open http://localhost:8000
 ```
 
+## Running it with sign-in (Docker)
+
+Real accounts need the sign-in server. `docker compose` starts three
+containers: `web` (nginx serving the site), `api` (Node.js sign-in API) and
+`db` (PostgreSQL with the `users` table).
+
+```
+cp .env.example .env     # then put your own secrets in .env
+docker compose up --build -d
+```
+
+Open http://localhost:8080. Stop with `docker compose down`; accounts stay in
+the `db-data` volume (`docker compose down -v` deletes them).
+
+- Passwords are stored as bcrypt hashes; a sign-in is a JWT in an httpOnly
+  cookie that lasts 30 days.
+- API: `POST /api/register`, `POST /api/login`, `POST /api/logout`,
+  `GET /api/me` (code in `server/src/index.js`).
+- Progress (answers, plan, statistics) is still kept in the browser, under the
+  signed-in account's email.
+- Opened without Docker (Live Server, `file://`), the site finds no API and
+  falls back to the old browser-only profiles.
+- After changing site files, rebuild the web container:
+  `docker compose up --build -d web`.
+
 ## Where things are
 
 ```
