@@ -21,9 +21,14 @@ python3 -m http.server   # then open http://localhost:8000
 
 ## Running it with sign-in (Docker)
 
-Real accounts need the sign-in server. `docker compose` starts three
-containers: `web` (nginx serving the site), `api` (Node.js sign-in API) and
-`db` (PostgreSQL with the `users` table).
+Real accounts need the accounts server. `docker compose` starts three
+containers: `web` (nginx serving the site), `api` (Node.js accounts API) and
+`db` (PostgreSQL: `users` and `user_progress`).
+
+Students sign up with first and last name, phone number, password, grade,
+an optional email and consent to personal-data processing, and sign in with
+phone and password. Phone numbers are stored in one format (+77001234567), so
+`8 700 123 45 67` and `+7 (700) 123-45-67` are the same account.
 
 ```
 cp .env.example .env     # then put your own secrets in .env
@@ -36,9 +41,14 @@ the `db-data` volume (`docker compose down -v` deletes them).
 - Passwords are stored as bcrypt hashes; a sign-in is a JWT in an httpOnly
   cookie that lasts 30 days.
 - API: `POST /api/register`, `POST /api/login`, `POST /api/logout`,
-  `GET /api/me` (code in `server/src/index.js`).
-- Progress (answers, plan, statistics) is still kept in the browser, under the
-  signed-in account's email.
+  `GET /api/me`, `GET`/`PUT /api/progress` (code in `server/src/index.js`).
+- Progress (answers, plan, statistics) is saved to `user_progress` a moment
+  after every change, and downloaded on sign-in, so it follows the student to
+  any device.
+- Database changes are numbered migrations in `server/src/index.js`
+  (`MIGRATIONS`), applied once each when the API starts.
+- See the students:
+  `docker compose exec db psql -U teentech -d teentech -c "select id, phone, first_name, last_name, grade, email, created_at, last_login_at from users order by id"`
 - Opened without Docker (Live Server, `file://`), the site finds no API and
   falls back to the old browser-only profiles.
 - After changing site files, rebuild the web container:

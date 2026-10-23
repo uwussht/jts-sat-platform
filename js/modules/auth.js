@@ -1,11 +1,13 @@
 /* ==========================================================================
    Screen: Auth (#/auth)
 
-   There is no server. A "profile" is a record in this browser's localStorage,
-   keyed by email; JTS.Auth is the adapter that a real backend would replace.
-   The password is stored as a non-cryptographic digest — enough to keep two
-   students on one laptop out of each other's progress, and nothing more. That
-   limitation is stated on screen and in the README.
+   Served by docker compose, accounts are on the server: a student signs up
+   with their phone number, a password, their name and grade, and signs in
+   with phone and password (JTS.Auth.mode === 'server').
+
+   Opened without the server (Live Server, file://), the older local profiles
+   are used: a record in this browser's localStorage keyed by email, with the
+   password kept as a non-cryptographic digest.
    ========================================================================== */
 (function () {
   'use strict';
@@ -49,25 +51,99 @@
       page.appendChild(panel);
       root.appendChild(page);
 
+      var server = JTS.Auth.mode === 'server';
+      if (server) U.$('.auth-foot', panel).textContent = t('auth.serverNote');
+
+      var REASONS = {
+        'no-account': server ? 'auth.errNoAccountPhone' : 'auth.errNoAccount',
+        'bad-password': 'auth.errBadPassword',
+        'exists': server ? 'auth.errPhoneTaken' : 'auth.errExists',
+        'email-taken': 'auth.errEmailTaken',
+        'bad-email': 'auth.errEmail',
+        'bad-phone': 'auth.errPhone',
+        'bad-name': 'auth.errName',
+        'no-consent': 'auth.errConsent',
+        'bad-password-length': server ? 'auth.errPassword8' : 'auth.errPassword',
+        'too-many': 'auth.errTooMany'
+      };
+
       function render() {
         U.clear(card);
+        var reg = mode === 'register';
 
-        var emailInput = U.el('input.input', {
-          type: 'email', id: 'auth-email', autocomplete: 'email', inputmode: 'email',
-          placeholder: 'student@example.com'
-        });
         var pw = passwordField('auth-password');
-        if (mode === 'register') pw.input.setAttribute('autocomplete', 'new-password');
-        var nameInput = U.el('input.input', { type: 'text', id: 'auth-name', autocomplete: 'name' });
+        if (reg) pw.input.setAttribute('autocomplete', 'new-password');
         var error = U.el('div.error-text', { role: 'alert', hidden: true });
         var submit = U.el('button.btn.btn-primary.btn-lg.btn-block', {
-          type: 'submit', text: mode === 'login' ? t('auth.login') : t('auth.register')
+          type: 'submit', text: reg ? t('auth.register') : t('auth.login')
         });
 
-        function fail(msg) {
+        /* The fields this mode asks for, in the order they are shown. */
+        var f = {};
+        if (server) {
+          if (reg) {
+            f.firstName = U.el('input.input', { type: 'text', id: 'auth-first', autocomplete: 'given-name', maxlength: '60' });
+            f.lastName = U.el('input.input', { type: 'text', id: 'auth-last', autocomplete: 'family-name', maxlength: '60' });
+          }
+          f.phone = U.el('input.input', {
+            type: 'tel', id: 'auth-phone', autocomplete: 'tel', inputmode: 'tel',
+            placeholder: '+7 700 000 00 00'
+          });
+          if (reg) {
+            f.grade = U.el('select.select', { id: 'auth-grade' }, [
+              U.el('option', { value: '', text: t('auth.gradePick') })
+            ].concat(['8', '9', '10', '11', '12', 'gap', 'other'].map(function (g) {
+              return U.el('option', { value: g, text: t('auth.grade.' + g) });
+            })));
+            f.email = U.el('input.input', {
+              type: 'email', id: 'auth-email', autocomplete: 'email', inputmode: 'email',
+              placeholder: 'student@example.com'
+            });
+            f.consent = U.el('input', { type: 'checkbox', id: 'auth-consent' });
+          }
+        } else {
+          f.email = U.el('input.input', {
+            type: 'email', id: 'auth-email', autocomplete: 'email', inputmode: 'email',
+            placeholder: 'student@example.com'
+          });
+          if (reg) f.name = U.el('input.input', { type: 'text', id: 'auth-name', autocomplete: 'name' });
+        }
+
+        function fail(msg, field) {
           error.textContent = msg;
           error.hidden = false;
-          emailInput.setAttribute('aria-invalid', 'true');
+          if (field) { field.setAttribute('aria-invalid', 'true'); field.focus(); }
+        }
+
+        function submitServer() {
+          var phone = JTS.Auth.normPhone(f.phone.value);
+          var password = pw.input.value;
+          if (reg) {
+            if (!f.firstName.value.trim()) return fail(t('auth.errName'), f.firstName);
+            if (!f.lastName.value.trim()) return fail(t('auth.errName'), f.lastName);
+          }
+          if (!phone) return fail(t('auth.errPhone'), f.phone);
+          if (password.length < (reg ? 8 : 1)) return fail(t(reg ? 'auth.errPassword8' : 'auth.errBadPassword'), pw.input);
+          var email = reg ? f.email.value.trim().toLowerCase() : '';
+          if (reg && email && !U.isEmail(email)) return fail(t('auth.errEmail'), f.email);
+          if (reg && !f.consent.checked) return fail(t('auth.errConsent'), f.consent);
+          return reg
+            ? JTS.Auth.register({
+                phone: phone, password: password,
+                firstName: f.firstName.value.trim(), lastName: f.lastName.value.trim(),
+                grade: f.grade.value || null, email: email || null, consent: true
+              })
+            : JTS.Auth.login(phone, password);
+        }
+
+        function submitLocal() {
+          var email = f.email.value.trim().toLowerCase();
+          var password = pw.input.value;
+          if (!U.isEmail(email)) return fail(t('auth.errEmail'), f.email);
+          if (password.length < 6) return fail(t('auth.errPassword'), pw.input);
+          return reg
+            ? JTS.Auth.register(email, password, f.name.value.trim())
+            : JTS.Auth.login(email, password);
         }
 
         var form = U.el('form.stack', {
@@ -75,31 +151,14 @@
           onsubmit: function (e) {
             e.preventDefault();
             error.hidden = true;
-            emailInput.removeAttribute('aria-invalid');
+            card.querySelectorAll('[aria-invalid]').forEach(function (x) { x.removeAttribute('aria-invalid'); });
 
-            var email = emailInput.value.trim().toLowerCase();
-            var password = pw.input.value;
-
-            if (!U.isEmail(email)) return fail(t('auth.errEmail'));
-            if (password.length < 6) return fail(t('auth.errPassword'));
-
+            var action = server ? submitServer() : submitLocal();
+            if (!action) return;
             submit.disabled = true;
-            var action = mode === 'login'
-              ? JTS.Auth.login(email, password)
-              : JTS.Auth.register(email, password, nameInput.value.trim());
-
             action.then(function (res) {
               submit.disabled = false;
-              if (!res.ok) {
-                return fail(t({
-                  'no-account': 'auth.errNoAccount',
-                  'bad-password': 'auth.errBadPassword',
-                  'exists': 'auth.errExists',
-                  'bad-email': 'auth.errEmail',
-                  'bad-password-length': 'auth.errPassword',
-                  'too-many': 'auth.errTooMany'
-                }[res.reason] || 'auth.errServer'));
-              }
+              if (!res.ok) return fail(t(REASONS[res.reason] || 'auth.errServer'));
               JTS.shell.renderHeader();
               var s = JTS.store.state();
               JTS.router.go(s && s.profile.onboardingComplete ? '#/today' : '#/onboarding');
@@ -107,25 +166,39 @@
           }
         });
 
-        form.appendChild(U.el('h1.h1', {
-          text: mode === 'login' ? t('auth.title') : t('auth.register')
-        }));
-        form.appendChild(U.el('p.small.muted', { text: t('auth.subtitle') }));
-        form.appendChild(ui.field(t('auth.email'), emailInput));
-        form.appendChild(ui.field(t('auth.password'), pw.wrap));
-        if (mode === 'register') form.appendChild(ui.field(t('auth.name'), nameInput));
+        form.appendChild(U.el('h1.h1', { text: reg ? t('auth.register') : t('auth.title') }));
+        form.appendChild(U.el('p.small.muted', { text: t(server ? 'auth.serverSubtitle' : 'auth.subtitle') }));
+        if (server) {
+          if (reg) {
+            form.appendChild(U.el('div.auth-row', null, [
+              ui.field(t('auth.firstName'), f.firstName),
+              ui.field(t('auth.lastName'), f.lastName)
+            ]));
+          }
+          form.appendChild(ui.field(t('auth.phone'), f.phone, reg ? t('auth.phoneHint') : null));
+          form.appendChild(ui.field(t('auth.password'), pw.wrap, reg ? t('auth.passwordHint') : null));
+          if (reg) {
+            form.appendChild(ui.field(t('auth.grade'), f.grade));
+            form.appendChild(ui.field(t('auth.emailOptional'), f.email));
+            form.appendChild(U.el('label.auth-consent', { for: 'auth-consent' }, [
+              f.consent, U.el('span.small', { text: t('auth.consent') })
+            ]));
+          }
+        } else {
+          form.appendChild(ui.field(t('auth.email'), f.email));
+          form.appendChild(ui.field(t('auth.password'), pw.wrap));
+          if (reg) form.appendChild(ui.field(t('auth.name'), f.name));
+        }
         form.appendChild(error);
         form.appendChild(submit);
         form.appendChild(U.el('button.btn.btn-ghost.btn-block', {
           type: 'button',
-          text: mode === 'login' ? t('auth.toRegister') : t('auth.toLogin'),
-          onclick: function () { mode = mode === 'login' ? 'register' : 'login'; render(); }
+          text: reg ? t('auth.toLogin') : t('auth.toRegister'),
+          onclick: function () { mode = reg ? 'login' : 'register'; render(); }
         }));
-        /* The local-storage caveat lives under the panel now, so it is not
-           repeated inside the form as well. */
 
         card.appendChild(form);
-        emailInput.focus();
+        (f.firstName || f.phone || f.email).focus();
       }
 
       render();

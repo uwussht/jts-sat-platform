@@ -344,9 +344,11 @@
       return root;
     }
 
-    var persist = function () {
+    var persist = function (fromServer) {
       try { global.localStorage.setItem(JTS.config.storageKey, JSON.stringify(root)); }
       catch (e) { console.warn('[JTS] save failed:', e); JTS.ui && JTS.ui.toast('Storage full or blocked', 'err'); }
+      /* A server account: the saved progress goes to the database as well. */
+      if (!fromServer && JTS.Auth && JTS.Auth.mode === 'server') JTS.Auth.queuePush();
     };
 
     return {
@@ -397,16 +399,30 @@
         return { ok: true, email: email };
       },
       setCurrent: function (email) { var r = read(); r.currentUser = email; persist(); },
-      /** The account is on the server; progress still lives here, under its email. */
-      ensureProfile: function (email, name) {
+      /**
+       * An account that lives on the server. Its progress is kept here under
+       * the key `u<id>` and mirrored to the server (JTS.Auth.queuePush).
+       */
+      ensureServerProfile: function (user) {
         var r = read();
-        email = String(email).trim().toLowerCase();
-        if (!r.accounts[email]) r.accounts[email] = { server: true, createdAt: Date.now() };
-        if (!r.profiles[email]) r.profiles[email] = blankProfile(email);
-        if (name && !r.profiles[email].profile.name) r.profiles[email].profile.name = name;
+        var key = 'u' + user.id;
+        if (!r.accounts[key]) r.accounts[key] = { server: true, createdAt: Date.now() };
+        if (!r.profiles[key]) r.profiles[key] = blankProfile(user.email || user.phone);
+        var p = r.profiles[key].profile;
+        p.email = user.email || user.phone;
+        p.phone = user.phone;
+        p.name = [user.firstName, user.lastName].filter(Boolean).join(' ');
+        if (user.grade) p.grade = user.grade;
         persist();
-        return email;
+        return key;
       },
+      /** Replace a profile's state with the copy the server holds. */
+      replaceProfile: function (key, data) {
+        var r = read();
+        r.profiles[key] = data;
+        persist(true);
+      },
+      profileData: function (key) { return read().profiles[key] || null; },
       hasAccounts: function () { return Object.keys(read().accounts).length > 0; },
       listAccounts: function () { return Object.keys(read().accounts); },
 
@@ -1109,10 +1125,29 @@
     });
   }
 
+  /**
+   * One spelling per phone number, the same rule the server uses: 8 701 ...
+   * and +7 (701) ... are one account. Returns +<digits>, or null.
+   */
+  function normPhone(raw) {
+    var d = String(raw || '').replace(/[^\d+]/g, '');
+    var plus = d.charAt(0) === '+';
+    d = d.replace(/\D/g, '');
+    if (!plus && d.length === 11 && d.charAt(0) === '8') d = '7' + d.slice(1);
+    if (!plus && d.length === 10) d = '7' + d;
+    if (d.length < 10 || d.length > 15) return null;
+    return '+' + d;
+  }
+
+  var pushTimer = null, pushing = false, pushAgain = false;
+
   JTS.Auth = {
     mode: 'local',
+    user: null,
+    normPhone: normPhone,
 
-    /** Is the API there, and who is signed in to it? */
+    /** Is the API there, and who is signed in to it? Their progress comes
+        down before the first screen is drawn. */
     detect: function () {
       if (!/^https?:$/.test(global.location.protocol)) return Promise.resolve('local');
       return fetch('/api/me', { credentials: 'same-origin', headers: { Accept: 'application/json' } })
@@ -1121,57 +1156,130 @@
           if (!json || (r.status !== 200 && r.status !== 401)) return 'local';
           JTS.Auth.mode = 'server';
           return r.json().then(function (body) {
-            JTS.Auth.adopt(r.status === 200 && body.ok ? body.user : null);
+            if (r.status === 200 && body.ok) return JTS.Auth.adopt(body.user).then(function () { return 'server'; });
+            Store.setCurrent(null);
             return 'server';
           });
         })
         .catch(function () { return 'local'; });
     },
 
-    /** Make the server's account the current local profile, or sign out. */
+    /** Sign the browser in as this server account and bring its progress down. */
     adopt: function (user) {
-      if (user) Store.setCurrent(Store.ensureProfile(user.email, user.name));
-      else Store.setCurrent(null);
+      this.user = user;
+      /* Nothing goes up until the server's copy has come down: the empty
+         profile a new device starts with must never overwrite it. */
+      this.ready = false;
+      var key = Store.ensureServerProfile(user);
+      Store.setCurrent(key);
+      return this.pull(key);
+    },
+
+    /**
+     * The server's copy wins: it is what the student saved last, on whichever
+     * device. An account with nothing on the server yet sends up what this
+     * browser has.
+     */
+    pull: function (key) {
+      return api('progress').then(function (res) {
+        if (!res.ok) return;
+        JTS.Auth.ready = true;
+        if (res.data && res.data.profile) {
+          var user = JTS.Auth.user;
+          Store.replaceProfile(key, res.data);
+          if (user) Store.ensureServerProfile(user);  /* names follow the account */
+        } else {
+          JTS.Auth.pushNow();
+        }
+      });
+    },
+
+    queuePush: function () {
+      if (!this.ready) return;
+      clearTimeout(pushTimer);
+      pushTimer = setTimeout(function () { JTS.Auth.pushNow(); }, 1500);
+    },
+
+    pushNow: function (keepalive) {
+      var key = Store.currentEmail();
+      if (this.mode !== 'server' || !this.ready || !key || key.charAt(0) !== 'u') return Promise.resolve();
+      if (pushing && !keepalive) { pushAgain = true; return Promise.resolve(); }
+      clearTimeout(pushTimer);
+      var data = Store.profileData(key);
+      if (!data) return Promise.resolve();
+      var body = JSON.stringify({ data: data });
+      pushing = true;
+      return fetch('/api/progress', {
+        method: 'PUT', credentials: 'same-origin', keepalive: !!keepalive && body.length < 60000,
+        headers: { 'Content-Type': 'application/json' }, body: body
+      }).catch(function () { /* offline: the next save tries again */ })
+        .then(function () {
+          pushing = false;
+          if (pushAgain) { pushAgain = false; JTS.Auth.queuePush(); }
+        });
     },
 
     current: function () {
       var s = Store.state();
       return s ? { email: s.profile.email, name: s.profile.name } : null;
     },
-    login: function (email, password) {
+
+    /** Server mode: {phone, password}. Local mode: (email, password). */
+    login: function (id, password) {
       if (this.mode === 'server') {
-        return api('login', { email: email, password: password }).then(function (res) {
-          if (res.ok) { JTS.Auth.adopt(res.user); JTS.shell.applyProfileSettings(); }
-          return res.ok ? { ok: true, email: res.user.email } : res;
+        return api('login', { phone: id, password: password }).then(function (res) {
+          if (!res.ok) return res;
+          return JTS.Auth.adopt(res.user).then(function () {
+            JTS.shell.applyProfileSettings();
+            return { ok: true };
+          });
         });
       }
-      var res = Store.verify(email, password);
+      var res = Store.verify(id, password);
       if (!res.ok) return Promise.resolve(res);
       Store.setCurrent(res.email);
       JTS.shell.applyProfileSettings();
       return Promise.resolve({ ok: true, email: res.email });
     },
-    register: function (email, password, name) {
+
+    /** Server mode: register(fields) with {phone, password, firstName,
+        lastName, grade, email, consent}. Local mode: (email, password, name). */
+    register: function (a, password, name) {
       if (this.mode === 'server') {
-        return api('register', { email: email, password: password, name: name }).then(function (res) {
-          if (res.ok) { JTS.Auth.adopt(res.user); JTS.shell.applyProfileSettings(); }
-          return res.ok ? { ok: true, email: res.user.email } : res;
+        return api('register', a).then(function (res) {
+          if (!res.ok) return res;
+          return JTS.Auth.adopt(res.user).then(function () {
+            JTS.shell.applyProfileSettings();
+            return { ok: true };
+          });
         });
       }
-      var res = Store.createAccount(email, password, name);
+      var res = Store.createAccount(a, password, name);
       if (!res.ok) return Promise.resolve(res);
       Store.setCurrent(res.email);
       JTS.shell.applyProfileSettings();
       return Promise.resolve({ ok: true, email: res.email });
     },
+
     logout: function () {
-      var done = this.mode === 'server' ? api('logout', {}) : Promise.resolve();
-      return done.then(function () {
+      if (this.mode !== 'server') {
+        Store.setCurrent(null);
+        return Promise.resolve({ ok: true });
+      }
+      /* Save the last answers first, then end the session. */
+      return this.pushNow().then(function () { return api('logout', {}); }).then(function () {
+        JTS.Auth.user = null;
+        JTS.Auth.ready = false;
         Store.setCurrent(null);
         return { ok: true };
       });
     }
   };
+
+  /* Closing the tab within the 1.5 s wait still saves what was just done. */
+  global.addEventListener('pagehide', function () {
+    if (pushTimer) JTS.Auth.pushNow(true);
+  });
 
   global.JTS = JTS;
 })(window);

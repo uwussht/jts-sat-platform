@@ -3331,3 +3331,9 @@ a.ps-topic-name:hover { color: var(--brand-600); }
   .ps-ring { align-self: center; }
   .ps-cols { grid-template-columns: 1fr; }
 }
+
+/* ---------------------------------------------------------- sign-up form */
+.auth-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.auth-consent { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; line-height: 1.4; }
+.auth-consent input { margin-top: 2px; width: 18px; height: 18px; flex: none; accent-color: var(--brand-600); }
+@media (max-width: 420px) { .auth-row { grid-template-columns: 1fr; } }
