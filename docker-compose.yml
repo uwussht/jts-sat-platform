@@ -18,12 +18,18 @@ services:
       retries: 10
 
   api:
-    build: ./server
+    build:
+      context: .
+      dockerfile: server/Dockerfile
     restart: unless-stopped
     environment:
       DATABASE_URL: postgres://teentech:${POSTGRES_PASSWORD}@db:5432/teentech
       JWT_SECRET: ${JWT_SECRET:?set JWT_SECRET in .env}
       COOKIE_SECURE: ${COOKIE_SECURE:-false}
+      # Phones that become admins on sign-up or sign-in (comma-separated).
+      ADMIN_PHONES: ${ADMIN_PHONES:-}
+      # Packages a new student starts with until a manager changes them.
+      DEFAULT_PACKAGES: ${DEFAULT_PACKAGES:-basic}
     depends_on:
       db:
         condition: service_healthy

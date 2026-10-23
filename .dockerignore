@@ -1,7 +1,7 @@
 .git
 .env
 .claude
-server
+server/node_modules
 tools
 node_modules
 *.log
