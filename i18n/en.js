@@ -96,6 +96,8 @@ JTS.dict.en = {
   'auth.errNoAccount': 'No profile found for this email',
   'auth.errBadPassword': 'Wrong password',
   'auth.errExists': 'A profile with this email already exists',
+  'auth.errTooMany': 'Too many attempts. Wait a few minutes and try again',
+  'auth.errServer': 'Could not reach the server. Check your connection and try again',
   'auth.localNote': 'No server is involved: a “profile” is a record in this browser. Export it in Settings to move it.',
   'auth.logout': 'Sign out',
 

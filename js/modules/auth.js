@@ -94,8 +94,11 @@
                 return fail(t({
                   'no-account': 'auth.errNoAccount',
                   'bad-password': 'auth.errBadPassword',
-                  'exists': 'auth.errExists'
-                }[res.reason] || 'auth.errEmail'));
+                  'exists': 'auth.errExists',
+                  'bad-email': 'auth.errEmail',
+                  'bad-password-length': 'auth.errPassword',
+                  'too-many': 'auth.errTooMany'
+                }[res.reason] || 'auth.errServer'));
               }
               JTS.shell.renderHeader();
               var s = JTS.store.state();

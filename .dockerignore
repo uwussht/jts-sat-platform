@@ -1,0 +1,7 @@
+.git
+.env
+.claude
+server
+tools
+node_modules
+*.log

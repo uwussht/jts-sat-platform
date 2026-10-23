@@ -1,0 +1,20 @@
+{
+  "name": "teentech-sat-auth",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sign-in API for TeenTech SAT: accounts in PostgreSQL, sessions as JWT cookies",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "bcryptjs": "2.4.3",
+    "cookie-parser": "1.4.7",
+    "express": "4.21.2",
+    "jsonwebtoken": "9.0.2",
+    "pg": "8.13.1"
+  }
+}

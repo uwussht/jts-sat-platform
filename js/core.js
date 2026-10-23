@@ -397,6 +397,16 @@
         return { ok: true, email: email };
       },
       setCurrent: function (email) { var r = read(); r.currentUser = email; persist(); },
+      /** The account is on the server; progress still lives here, under its email. */
+      ensureProfile: function (email, name) {
+        var r = read();
+        email = String(email).trim().toLowerCase();
+        if (!r.accounts[email]) r.accounts[email] = { server: true, createdAt: Date.now() };
+        if (!r.profiles[email]) r.profiles[email] = blankProfile(email);
+        if (name && !r.profiles[email].profile.name) r.profiles[email].profile.name = name;
+        persist();
+        return email;
+      },
       hasAccounts: function () { return Object.keys(read().accounts).length > 0; },
       listAccounts: function () { return Object.keys(read().accounts); },
 
@@ -1078,12 +1088,63 @@
   };
 
   /* ------------------------------------------------------------ Auth adapter */
+  /**
+   * Two modes. Served by docker compose, the site has a sign-in API at /api:
+   * accounts and passwords live in its database and the session is an
+   * httpOnly cookie. Opened from Live Server or file://, there is no API and
+   * the older local profiles are used, so the site still works on its own.
+   * detect() decides once, at boot.
+   */
+  function api(path, body) {
+    return fetch('/api/' + path, {
+      method: body ? 'POST' : 'GET',
+      credentials: 'same-origin',
+      headers: body ? { 'Content-Type': 'application/json', Accept: 'application/json' }
+                    : { Accept: 'application/json' },
+      body: body ? JSON.stringify(body) : undefined
+    }).then(function (r) {
+      return r.json().catch(function () { return { ok: false, reason: 'server' }; });
+    }, function () {
+      return { ok: false, reason: 'network' };
+    });
+  }
+
   JTS.Auth = {
+    mode: 'local',
+
+    /** Is the API there, and who is signed in to it? */
+    detect: function () {
+      if (!/^https?:$/.test(global.location.protocol)) return Promise.resolve('local');
+      return fetch('/api/me', { credentials: 'same-origin', headers: { Accept: 'application/json' } })
+        .then(function (r) {
+          var json = (r.headers.get('content-type') || '').indexOf('application/json') >= 0;
+          if (!json || (r.status !== 200 && r.status !== 401)) return 'local';
+          JTS.Auth.mode = 'server';
+          return r.json().then(function (body) {
+            JTS.Auth.adopt(r.status === 200 && body.ok ? body.user : null);
+            return 'server';
+          });
+        })
+        .catch(function () { return 'local'; });
+    },
+
+    /** Make the server's account the current local profile, or sign out. */
+    adopt: function (user) {
+      if (user) Store.setCurrent(Store.ensureProfile(user.email, user.name));
+      else Store.setCurrent(null);
+    },
+
     current: function () {
       var s = Store.state();
       return s ? { email: s.profile.email, name: s.profile.name } : null;
     },
     login: function (email, password) {
+      if (this.mode === 'server') {
+        return api('login', { email: email, password: password }).then(function (res) {
+          if (res.ok) { JTS.Auth.adopt(res.user); JTS.shell.applyProfileSettings(); }
+          return res.ok ? { ok: true, email: res.user.email } : res;
+        });
+      }
       var res = Store.verify(email, password);
       if (!res.ok) return Promise.resolve(res);
       Store.setCurrent(res.email);
@@ -1091,6 +1152,12 @@
       return Promise.resolve({ ok: true, email: res.email });
     },
     register: function (email, password, name) {
+      if (this.mode === 'server') {
+        return api('register', { email: email, password: password, name: name }).then(function (res) {
+          if (res.ok) { JTS.Auth.adopt(res.user); JTS.shell.applyProfileSettings(); }
+          return res.ok ? { ok: true, email: res.user.email } : res;
+        });
+      }
       var res = Store.createAccount(email, password, name);
       if (!res.ok) return Promise.resolve(res);
       Store.setCurrent(res.email);
@@ -1098,8 +1165,11 @@
       return Promise.resolve({ ok: true, email: res.email });
     },
     logout: function () {
-      Store.setCurrent(null);
-      return Promise.resolve({ ok: true });
+      var done = this.mode === 'server' ? api('logout', {}) : Promise.resolve();
+      return done.then(function () {
+        Store.setCurrent(null);
+        return { ok: true };
+      });
     }
   };
 
@@ -2454,7 +2524,9 @@
       /* Written lessons kept as JSON (js/data/lessons/) the same way. */
       JTS.data.loadLessonFiles ? JTS.data.loadLessonFiles() : 0,
       /* and past papers (js/data/papers/). */
-      JTS.data.loadPaperFiles ? JTS.data.loadPaperFiles() : 0
+      JTS.data.loadPaperFiles ? JTS.data.loadPaperFiles() : 0,
+      /* and whether a sign-in server is there, and who is signed in to it. */
+      JTS.Auth.detect()
     ]);
     load.then(start, start);
   };
