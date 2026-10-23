@@ -3428,3 +3428,61 @@ a.cal-tag { text-decoration: none; }
   .staff-slot { grid-template-columns: 1fr 1fr; }
   .staff-lesson { grid-template-columns: 1fr auto; }
 }
+
+/* ---------------------------------------------------------- practice: all questions
+   The bank by topic, each question a cell coloured by its last answer. */
+.practice-match { color: var(--muted); margin-left: auto; }
+.bank-head { padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+.bank-legend { gap: 12px; }
+.bank-key { font-size: 12px; display: inline-flex; align-items: center; gap: 6px; color: var(--muted); }
+.bank-key::before { content: ""; width: 12px; height: 12px; border-radius: 4px; border: 1px solid var(--border-strong); }
+.bank-key.is-right::before { background: var(--ok); border-color: var(--ok); }
+.bank-key.is-wrong::before { background: var(--danger); border-color: var(--danger); }
+.bank-domain { margin-top: 6px; }
+.bank-topic { border: 1px solid var(--border); border-radius: 12px; background: var(--surface-2); }
+.bank-skill {
+  width: 100%; display: grid; grid-template-columns: 16px minmax(0, 1fr) auto; gap: 10px; align-items: center;
+  padding: 10px 14px; background: none; border: 0; color: var(--ink); text-align: left; cursor: pointer;
+}
+.bank-skill .caret { transition: transform .15s ease; font-size: 11px; color: var(--muted); }
+.bank-skill[aria-expanded="true"] .caret { transform: rotate(90deg); }
+.bank-skill-name { font-weight: 700; font-size: 14px; }
+.bank-grid { display: flex; flex-wrap: wrap; gap: 5px; padding: 4px 14px 14px; }
+.bank-cell {
+  width: 34px; height: 30px; border-radius: 7px; border: 1px solid var(--border-strong);
+  background: var(--surface); color: var(--ink); font-size: 11px; font-weight: 700; cursor: pointer;
+}
+.bank-cell:hover { border-color: var(--brand-600); }
+.bank-cell.is-right { background: var(--ok); border-color: var(--ok); color: #fff; }
+.bank-cell.is-wrong { background: var(--danger); border-color: var(--danger); color: #fff; }
+.q-preview { max-height: 260px; overflow-y: auto; padding: 12px; border: 1px solid var(--border); border-radius: 12px; font-size: 15px; }
+
+/* ---------------------------------------------------------- question grid: results */
+.q-grid.is-study button.is-correct { background: var(--ok); border-color: var(--ok); color: #fff; }
+.q-grid.is-study button.is-wrong { background: var(--danger); border-color: var(--danger); color: #fff; }
+.q-grid-counts { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; }
+.q-count { display: inline-flex; align-items: center; gap: 6px; }
+.q-count i { width: 12px; height: 12px; border-radius: 4px; border: 1px solid var(--border-strong); background: var(--surface); }
+.q-count.is-correct i { background: var(--ok); border-color: var(--ok); }
+.q-count.is-wrong i { background: var(--danger); border-color: var(--danger); }
+.q-count.answered i { background: var(--brand-600); border-color: var(--brand-600); }
+.q-count.marked i { border-color: var(--warn); box-shadow: inset 0 0 0 3px var(--warn); }
+/* The real test's black "finish" button: the ink colour, so it is the
+   darkest thing on a light screen and the lightest on a dark one. */
+.btn-finish { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.btn-finish:hover { background: var(--ink); color: var(--bg); opacity: .9; }
+
+/* ---------------------------------------------------------- work on mistakes */
+.err-filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.err-filters .err-search { flex: 1 1 200px; }
+.err-dates { display: inline-flex; align-items: center; gap: 6px; }
+.err-date { width: 150px; }
+#err-insights { border-left: 3px solid var(--brand-600); }
+.el-insight { margin: 0; font-size: 15px; line-height: 1.5; }
+.el-stat + .el-stat { border-top: 1px solid var(--border); padding-top: 12px; }
+.el-q { font-size: 15px; }
+.badge.is-none { border: 1px dashed var(--border-strong); }
+
+/* ---------------------------------------------------------- desmos lessons */
+.dg-note { margin: 0 0 10px; }
+.dg-foot { justify-content: flex-end; margin-top: 10px; }

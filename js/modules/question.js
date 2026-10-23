@@ -271,10 +271,18 @@
       if (!ses) return null;
       ses.finishedAt = Date.now();
 
+      var timed = (ses.durationMs > 0 || ses.mode === 'exam') && ses.kind !== 'diagnostic';
       ses.questionIds.forEach(function (qid) {
         var a = ses.answers[qid];
         if (a.attemptId) return;                 /* study mode logged it on check */
-        if (a.selected === null || a.selected === '') return;  /* unanswered */
+        if (a.selected === null || a.selected === '') {
+          /* Blank in a timed set: the error log keeps it as "not answered". */
+          if (timed) {
+            var qq = JTS.bank.get(qid);
+            if (qq) JTS.attempts.logUnanswered(qid, qq.skillId, ses.id, ses.finishedAt);
+          }
+          return;
+        }
         var q = JTS.bank.get(qid);
         if (!q) return;
         a.correct = JTS.session.isCorrect(q, a.selected);
@@ -291,7 +299,7 @@
       var summary = {
         id: ses.id, kind: ses.kind, mode: ses.mode, title: ses.title,
         startedAt: ses.startedAt, finishedAt: ses.finishedAt,
-        elapsedMs: ses.elapsedMs,
+        elapsedMs: ses.elapsedMs, durationMs: ses.durationMs || 0,
         questionIds: ses.questionIds.slice(),
         answers: U.deepClone(ses.answers),
         meta: ses.meta,
@@ -1116,8 +1124,8 @@
           }));
         } else if (last) {
           nav.appendChild(U.el('button.btn.btn-primary', {
-            type: 'button', text: t('q.finish'),
-            onclick: function () { commitTime(); saveNow(); JTS.session.finish(); }
+            type: 'button', text: isStudy ? t('q.finish') : t('q.finishModule'),
+            onclick: finishModule
           }));
         } else {
           nav.appendChild(U.el('button.btn.btn-primary', {
@@ -1126,37 +1134,77 @@
         }
       }
 
+      /**
+       * Close an exam-mode module, after the warning a real module gives: once
+       * closed its answers cannot change, and a blank costs as much as a
+       * wrong answer. Study sets just finish.
+       */
+      function finishModule() {
+        commitTime(); saveNow();
+        if (isStudy) { JTS.session.finish(); return; }
+        var blank = ses.questionIds.length - answeredCount();
+        ui.confirm({
+          title: t('q.finishModule'),
+          message: t('q.finishModuleWarn') + (blank ? ' ' + t('q.blankLeft', { n: blank }) : ''),
+          okText: t('q.finishModule'), cancelText: t('common.cancel')
+        }).then(function (yes) { if (yes) JTS.session.finish(); });
+      }
+
+      /**
+       * Every question of the set. In study mode each cell shows how it went
+       * — the explanation was already on screen, so hiding the result here
+       * only took information away. In exam mode, as on the real test, it
+       * shows answered and marked only.
+       */
       function openGrid() {
-        var grid = U.el('div.q-grid');
+        var grid = U.el('div.q-grid' + (isStudy ? '.is-study' : ''));
         var m;
+        var n = { correct: 0, wrong: 0, open: 0, answered: 0, marked: 0 };
         ses.questionIds.forEach(function (qid, i) {
           var a = ses.answers[qid];
           var answered = a.selected !== null && a.selected !== '';
           var cls = '';
-          if (answered) cls += '.answered';
-          if (a.marked) cls += '.marked';
+          var label;
+          if (isStudy && a.submitted) {
+            cls += a.correct ? '.is-correct' : '.is-wrong';
+            n[a.correct ? 'correct' : 'wrong']++;
+            label = a.correct ? t('common.correct') : t('common.incorrect');
+          } else if (isStudy) {
+            n.open++; label = t('common.unanswered');
+          } else {
+            if (answered) { cls += '.answered'; n.answered++; } else n.open++;
+            label = answered ? t('q.answered') : t('common.unanswered');
+          }
+          if (a.marked) { cls += '.marked'; n.marked++; }
           if (i === ses.index) cls += '.current';
           grid.appendChild(U.el('button' + cls, {
             type: 'button', text: String(i + 1),
-            'aria-label': (i + 1) + ' ' + (answered ? t('common.correct') : t('common.unanswered')),
+            'aria-label': (i + 1) + ' ' + label,
             onclick: function () {
               commitTime(); ses.index = i; saveNow(); m.close();
               buildTopbar(); renderQuestion(); window.scrollTo(0, 0);
             }
           }));
         });
+        var counts = isStudy
+          ? [['is-correct', t('common.correct'), n.correct], ['is-wrong', t('common.incorrect'), n.wrong],
+             ['is-open', t('common.unanswered'), n.open]]
+          : [['answered', t('q.answered'), n.answered], ['is-open', t('common.unanswered'), n.open],
+             ['marked', t('q.marked'), n.marked]];
         m = ui.modal({
           title: t('q.position', { n: ses.index + 1, total: ses.questionIds.length }),
           content: U.el('div.stack', null, [
+            U.el('div.q-grid-counts', null, counts.map(function (c) {
+              return U.el('span.q-count.' + c[0], null, [
+                U.el('i', { 'aria-hidden': 'true' }), U.el('span', { text: c[1] + ' · ' }), U.el('b', { text: String(c[2]) })
+              ]);
+            })),
             grid,
-            U.el('div.legend', null, [
-              U.el('span', { text: '■ ' + t('common.correct') }),
-              U.el('span', { text: '⚑ ' + t('q.marked') })
-            ])
+            isStudy ? null : U.el('p.small.muted', { text: t('q.finishModuleWarn') })
           ]),
-          actions: [U.el('button.btn.btn-danger', {
-            type: 'button', text: t('q.finish'),
-            onclick: function () { m.close(); commitTime(); saveNow(); JTS.session.finish(); }
+          actions: [U.el('button.btn.btn-finish', {
+            type: 'button', text: isStudy ? t('q.finish') : t('q.finishModule'),
+            onclick: function () { m.close(); finishModule(); }
           })]
         });
       }

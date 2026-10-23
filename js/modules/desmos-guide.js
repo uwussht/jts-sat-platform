@@ -10,6 +10,10 @@
 
    A section's exercises are links listed in js/data/desmos-guide.js as
    `exercises: [{ title, url }]`; until they are added the heading says so.
+
+   "Mark as studied" is kept in the student's profile (desmosGuideProgress), which
+   is saved to the server with the rest of their progress — so a lesson
+   marked on the laptop is marked on the phone too.
    ========================================================================== */
 (function () {
   'use strict';
@@ -65,6 +69,20 @@
     ]);
   }
 
+  /* ---------------------------------------------------------- studied marks */
+
+  function studied() {
+    var st = S.state();
+    return (st && st.desmosGuideProgress) || {};
+  }
+  function setStudied(id, on) {
+    S.update(function (st) {
+      st.desmosGuideProgress = st.desmosGuideProgress || {};
+      if (on) st.desmosGuideProgress[id] = U.iso(U.today());
+      else delete st.desmosGuideProgress[id];
+    });
+  }
+
   /* ---------------------------------------------------------------- section */
 
   function sectionAcc(sec, rerender) {
@@ -89,17 +107,28 @@
       sec.lesson ? U.el('span.badge.badge-muted.dg-lesson', {
         text: t('desmos.lesson', { n: sec.lesson })
       }) : null,
-      U.el('b', { text: t('desmos.section.' + sec.id) })
+      U.el('b', { text: t('desmos.section.' + sec.id) }),
+      U.el('span.spacer'),
+      studied()[sec.id] ? U.el('span.badge.badge-ok', { text: '✓ ' + t('desmos.studied') }) : null
     ]);
 
     function fill() {
       /* Watch on the left, try it on the right: the calculator is already
          open, so following the video needs no second click. */
+      /* The video is the lesson: no written steps, no extra button to press. */
+      body.appendChild(U.el('div.notice.small.dg-note', { text: t('desmos.videoNote') }));
       body.appendChild(U.el('div.dg-pair', null, [
         U.el('div.dg-video', null, [videoSlot(sec.video, sec.videoCredit)]),
         U.el('div.dg-calc', null, [calculator()])
       ]));
       body.appendChild(exercisesBlock(sec));
+      var on = !!studied()[sec.id];
+      body.appendChild(U.el('div.row.dg-foot', null, [
+        U.el('button.btn' + (on ? '' : '.btn-primary'), {
+          type: 'button', text: on ? t('desmos.unmark') : t('desmos.markStudied'),
+          onclick: function () { setStudied(sec.id, !on); rerender(); }
+        })
+      ]));
     }
 
     return U.el('div.acc', null, [head, body]);

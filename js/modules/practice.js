@@ -4,6 +4,13 @@
    A session builder rather than a menu: pick a section, narrow by skill and
    filter, see honestly how many questions that leaves, and start.
 
+   Five modes: a timed R&W or Math module, topic practice, weak skills, and
+   "All questions" — not a set but the whole bank by topic, each question a
+   cell coloured by its last answer.
+
+   A topic set defaults to the length of a real module: 27 questions in
+   Reading and Writing, 22 in Math. Smaller sizes stay on the selector.
+
    Everything here runs in study mode (§2), so hints and explanations are
    available throughout.
    ========================================================================== */
@@ -13,7 +20,7 @@
 
   /* Builder state is view state: it lives for as long as the screen does. */
   function blankFilters() {
-    return { section: 'rw', skillIds: [], difficulty: [], status: [], marked: false, source: 'all' };
+    return { section: 'rw', skillIds: [], difficulty: [], status: [], marked: false };
   }
   var filters = blankFilters();
 
@@ -21,13 +28,19 @@
     { id: 'rwModule',   section: 'rw',   count: 27, minutes: 32 },
     { id: 'mathModule', section: 'math', count: 22, minutes: 35 },
     { id: 'topic',      section: null,   count: null, minutes: 0 },
-    { id: 'weak',       section: null,   count: null, minutes: 0 }
+    { id: 'weak',       section: null,   count: null, minutes: 0 },
+    { id: 'all',        section: null,   count: null, minutes: 0 }
   ];
   var chosenMode = 'topic';
-  /* How many questions a set has. ALL (the default) is every question the
-     chosen topics and filters allow. */
-  var ALL = 0;
-  var chosenCount = ALL;
+  /* How many questions a set has. FULL (the default) is a real module's
+     length for the section; ALL is every question the topics and filters
+     allow. */
+  var ALL = 0, FULL = -1;
+  var chosenCount = FULL;
+  /** A real module's length: 27 in Reading and Writing, 22 in Math. */
+  function fullSize(section) { return (section || filters.section) === 'math' ? 22 : 27; }
+  function sizeOf(n, section) { return n === FULL ? fullSize(section) : n; }
+  var DIFFICULTY = [{ value: 1, label: 'Easy' }, { value: 2, label: 'Medium' }, { value: 3, label: 'Hard' }];
 
   /* ------------------------------------------------------------- selection */
 
@@ -220,15 +233,16 @@
       return U.el('div.stack-sm', null, [U.el('div.label', { text: label }), group]);
     }
 
-    row.appendChild(chipRow(t('common.difficulty'),
-      [{ value: 1, label: '1' }, { value: 2, label: '2' }, { value: 3, label: '3' }],
+    /* Easy / Medium / Hard in English whatever the interface language: the
+       words College Board uses, the words on the exam. */
+    row.appendChild(chipRow(t('practice.fDifficulty'), DIFFICULTY,
       function (v) { return filters.difficulty.indexOf(v) >= 0; },
       function (v) {
         var i = filters.difficulty.indexOf(v);
         if (i >= 0) filters.difficulty.splice(i, 1); else filters.difficulty.push(v);
       }));
 
-    row.appendChild(chipRow(t('practice.answeredStatus'),
+    row.appendChild(chipRow(t('practice.fAnswers'),
       [{ value: 'correct', label: t('common.correct') },
        { value: 'incorrect', label: t('common.incorrect') },
        { value: 'unanswered', label: t('common.unanswered') }],
@@ -238,11 +252,13 @@
         if (i >= 0) filters.status.splice(i, 1); else filters.status.push(v);
       }));
 
+    var matching = pool().length;
     row.appendChild(U.el('div.row.row-wrap', null, [
       U.el('button.chip', {
         type: 'button', text: t('practice.marked'), 'aria-pressed': String(filters.marked),
         onclick: function () { filters.marked = !filters.marked; rerender(); }
       }),
+      U.el('span.small.practice-match', { text: t('practice.matching', { n: matching }) }),
       U.el('button.btn.btn-sm.btn-ghost', {
         type: 'button', text: t('practice.resetFilters'),
         onclick: function () {
@@ -257,6 +273,116 @@
     return row;
   }
 
+  /* ------------------------------------------------------- all questions */
+
+  /* Which topics are open in "All questions". View state, like the domains. */
+  var openSkills = {};
+
+  /** The last answer to every question, from every source (practice,
+      lessons, tests): one question is one question wherever it was met. */
+  function lastAnswers() {
+    var last = {};
+    ((S.state() || {}).attempts || []).forEach(function (a) { last[a.questionId] = a; });
+    return last;
+  }
+
+  /**
+   * A cell pressed. Not answered yet: solve it, with hints and the
+   * explanation. Answered: your answer, the right one and the explanation,
+   * and "Solve again".
+   */
+  function openBankQuestion(q, last) {
+    var back = '#/practice?mode=all';
+    function solve() {
+      startSet([q.id], { title: JTS.skills.name(q.skillId), back: back, meta: { bank: true } });
+    }
+    if (!last) { solve(); return; }
+    var m = ui.modal({
+      title: JTS.skills.name(q.skillId),
+      content: U.el('div.stack', null, [
+        U.el('div.q-preview', { html: (q.passage || '') + (q.stem || '') }),
+        JTS.studyHelp.explanationBody(q, { selected: last.selected, submitted: true, correct: last.correct })
+      ]),
+      wide: true,
+      actions: [U.el('button.btn.btn-primary', {
+        type: 'button', text: t('practice.solveAgain'), onclick: function () { m.close(); solve(); }
+      })]
+    });
+  }
+
+  function bankBrowser(rerender) {
+    var wrap = U.el('div.stack.bank');
+    var last = lastAnswers();
+    /* The filters hide cells; they do not change what a topic counts. */
+    var shown = {};
+    pool().forEach(function (q) { shown[q.id] = true; });
+
+    var all = JTS.bank.query({ section: filters.section, licenseStatus: 'all' });
+    function tally(list) {
+      var done = 0, right = 0;
+      list.forEach(function (q) { var a = last[q.id]; if (a) { done++; if (a.correct) right++; } });
+      return { done: done, right: right, total: list.length };
+    }
+    var sec = tally(all);
+    wrap.appendChild(U.el('div.row-between.row-wrap.bank-head', null, [
+      U.el('div.stack-sm', null, [
+        U.el('div.eyebrow', { text: t('practice.bankProgress') }),
+        U.el('b', { text: t('practice.bankCount', { done: sec.done, total: sec.total, pct: U.pct(sec.right, sec.done) }) })
+      ]),
+      U.el('div.row.row-wrap.bank-legend', null, [
+        U.el('span.bank-key.is-right', { text: t('common.correct') }),
+        U.el('span.bank-key.is-wrong', { text: t('common.incorrect') }),
+        U.el('span.bank-key', { text: t('common.unanswered') })
+      ])
+    ]));
+
+    JTS.skills.domains(filters.section).forEach(function (domain) {
+      var box = U.el('div.stack-sm.bank-domain', null, [U.el('div.label', { text: JTS.i18n.pickName(domain) })]);
+      JTS.skills.bySection(filters.section).filter(function (sk) { return sk.domain === domain.id; })
+        .forEach(function (skill) {
+          var qs = all.filter(function (q) { return q.skillId === skill.id; });
+          if (!qs.length) return;
+          var tl = tally(qs);
+          var isOpen = !!openSkills[skill.id];
+          var grid = U.el('div.bank-grid', { hidden: !isOpen });
+          function paint() {
+            U.clear(grid);
+            qs.forEach(function (q, i) {
+              if (!shown[q.id]) return;
+              var a = last[q.id];
+              grid.appendChild(U.el('button.bank-cell' + (a ? (a.correct ? '.is-right' : '.is-wrong') : ''), {
+                type: 'button', text: String(i + 1),
+                title: (a ? (a.correct ? t('common.correct') : t('common.incorrect')) : t('common.unanswered')) +
+                  ' · ' + (DIFFICULTY[(q.difficulty || 2) - 1] || {}).label,
+                onclick: function () { openBankQuestion(q, a); }
+              }));
+            });
+            if (!grid.children.length) grid.appendChild(U.el('span.small.muted', { text: t('practice.noMatch') }));
+          }
+          if (isOpen) paint();
+          var head = U.el('button.bank-skill', {
+            type: 'button', 'aria-expanded': String(isOpen),
+            onclick: function () {
+              openSkills[skill.id] = grid.hidden;
+              grid.hidden = !grid.hidden;
+              head.setAttribute('aria-expanded', String(!grid.hidden));
+              if (!grid.hidden) paint();
+            }
+          }, [
+            U.el('span.caret', { text: '❯', 'aria-hidden': 'true' }),
+            U.el('span.bank-skill-name', { text: JTS.i18n.pickName(skill) }),
+            U.el('span.small.muted', { text: t('practice.bankCount', { done: tl.done, total: tl.total, pct: U.pct(tl.right, tl.done) }) })
+          ]);
+          box.appendChild(U.el('div.bank-topic', null, [head, grid]));
+        });
+      wrap.appendChild(box);
+    });
+
+    wrap.appendChild(U.el('h3.h3', { text: t('practice.filters') }));
+    wrap.appendChild(filterBar(rerender));
+    return wrap;
+  }
+
   /* ----------------------------------------------------------- starting up */
 
   function startSet(ids, opts) {
@@ -269,12 +395,14 @@
       questionIds: ids,
       durationMs: opts.minutes ? opts.minutes * 60000 : 0,
       softTimer: !opts.minutes,
-      returnHash: '#/practice', finishHash: '#/practice',
+      returnHash: opts.back || '#/practice', finishHash: opts.back || '#/practice',
       meta: Object.assign({ source: 'practice' }, opts.meta || {})
     });
   }
 
   function startTopic(skillIds, n) {
+    var sec = (JTS.skills.get(skillIds[0]) || {}).section;
+    n = sizeOf(n, sec);
     if (!n) {
       /* Every question of these topics that the filters allow: the ones not
          seen yet first, then the rest, each group shuffled. */
@@ -301,6 +429,8 @@
         if (ids.length < n && ids.indexOf(q.id) < 0) ids.push(q.id);
       });
     });
+    /* The bank may hold fewer than the set asks for: say how many there are. */
+    if (ids.length && ids.length < n) ui.toast(t('practice.fewer', { have: ids.length, want: n }), 'ok', 4000);
     startSet(ids, { title: skillIds.map(function (id) { return JTS.skills.name(id); }).join(' · ') });
   }
 
@@ -337,12 +467,15 @@
       var asked = (JTS.router.parse().query.skills || '').split(',').filter(function (id) {
         return !!JTS.skills.get(id);
       });
+      var q0 = JTS.router.parse().query;
       if (asked.length) {
         filters.section = JTS.skills.get(asked[0]).section;
         filters.skillIds = asked.filter(function (id) { return JTS.skills.get(id).section === filters.section; });
         chosenMode = 'topic';
+        chosenCount = Number(q0.size) > 0 ? Number(q0.size) : FULL;
         try { history.replaceState(null, '', '#/practice'); } catch (e) {}
       }
+      if (q0.mode === 'all') chosenMode = 'all';
       var screen = U.el('div.container.screen.stack');
       root.appendChild(screen);
       function rerender() { JTS.router.render(); }
@@ -350,7 +483,7 @@
       /* A practice set has just ended: its statistics come first. */
       var doneId = JTS.router.parse().query.session;
       var done = doneId && JTS.session.summary(doneId);
-      if (done && JTS.practiceStats && JTS.practiceStats.isPractice(done)) {
+      if (done && !(done.meta && done.meta.bank) && JTS.practiceStats && JTS.practiceStats.isPractice(done)) {
         screen.appendChild(JTS.practiceStats.resultScreen(done));
       }
 
@@ -393,12 +526,18 @@
         modeCards(rerender)
       ]));
 
-      /* Length only matters for the modes that do not define their own. */
       var mode = MODES.filter(function (m) { return m.id === chosenMode; })[0];
+      /* "All questions" is the bank itself, not a set: no length, no start. */
+      if (mode.id === 'all') {
+        card.appendChild(bankBrowser(rerender));
+        screen.appendChild(card);
+        return;
+      }
+      /* Length only matters for the modes that do not define their own. */
       if (!mode.count) {
         var lenRow = U.el('div.row.row-wrap');
-        [ALL, 5, 10, 20].forEach(function (n) {
-          var label = n ? String(n) : t('practice.countAll');
+        [5, 10, 20, FULL, ALL].forEach(function (n) {
+          var label = n === FULL ? String(fullSize()) : n ? String(n) : t('practice.countAll');
           lenRow.appendChild(U.el('button.chip', {
             type: 'button', text: label, 'aria-pressed': String(chosenCount === n),
             'aria-label': t('practice.count') + ': ' + label,
@@ -487,7 +626,7 @@
           U.el('button.btn.btn-sm' + (enough ? '.btn-primary' : ''), {
             type: 'button',
             text: enough ? t('practice.startSession') : t('practice.quickDiag'),
-            onclick: function () { startTopic([r.skillId], enough ? 10 : 5); }
+            onclick: function () { startTopic([r.skillId], enough ? FULL : 5); }
           })
         ]));
       });

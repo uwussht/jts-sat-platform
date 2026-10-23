@@ -1836,6 +1836,50 @@
      * question right, on their own, at least the review delay later. Getting it
      * right ten minutes after reading the explanation proves nothing.
      */
+    /**
+     * A question left blank in a timed set: a module, a mock, a paper, the
+     * weekly test. It goes to the error log as its own kind — "did not
+     * answer" is not "answered wrong", and it has no reason to ask for. An
+     * untimed practice set closed early is not logged: those questions were
+     * simply not reached.
+     */
+    logUnanswered: function (questionId, skillId, sessionId, ts) {
+      var s = Store.state(); if (!s) return null;
+      var open = s.errors.some(function (e) {
+        return e.unanswered && e.questionId === questionId && !e.resolvedAt;
+      });
+      if (open) return null;
+      var err = {
+        id: U.uid('err'), attemptId: null, questionId: questionId, skillId: skillId || null,
+        sessionId: sessionId || null, unanswered: true, errorType: null,
+        ts: ts || Date.now(), reviewDueAt: (ts || Date.now()) + JTS.config.errorReviewDelayDays * U.DAY_MS,
+        resolvedAt: null, mode: 'exam'
+      };
+      s.errors.push(err);
+      return err;
+    },
+
+    /** Timed sets finished before unanswered questions were logged, logged now — once. */
+    backfillUnanswered: function () {
+      var s = Store.state(); if (!s || s.profile.unansweredBackfilled) return 0;
+      var n = 0, self = this;
+      (s.sessions || []).forEach(function (sum) {
+        var timed = sum.durationMs > 0 || sum.mode === 'exam' ||
+          ['mock', 'module', 'weekly', 'mini-test'].indexOf(sum.kind) >= 0;
+        if (!timed || sum.kind === 'diagnostic') return;
+        (sum.questionIds || []).forEach(function (qid) {
+          var a = sum.answers && sum.answers[qid];
+          if (a && a.selected !== null && a.selected !== '' && a.selected !== undefined) return;
+          var q = JTS.bank.get(qid);
+          if (!q) return;
+          if (self.logUnanswered(qid, q.skillId, sum.id, sum.finishedAt)) n++;
+        });
+      });
+      s.profile.unansweredBackfilled = true;
+      Store.save();
+      return n;
+    },
+
     resolveIfDemonstrated: function (attempt) {
       if (!attempt.correct || attempt.helpType !== 'none') return 0;
       var resolved = 0;

@@ -399,29 +399,14 @@
        the trajectory next to the simulations run here. */
     SOURCES: ['bluebook', 'official', 'other'],
 
-    addReport: function (rec) {
-      var row = {
-        id: U.uid('sr'),
-        date: rec.date,
-        source: rec.source || 'other',
-        rw: Number(rec.rw), math: Number(rec.math),
-        total: Number(rec.rw) + Number(rec.math),
-        addedAt: Date.now()
-      };
-      S.update(function (st) { (st.scoreReports = st.scoreReports || []).push(row); });
-      return row;
-    },
-    removeReport: function (id) {
-      S.update(function (st) {
-        st.scoreReports = (st.scoreReports || []).filter(function (r) { return r.id !== id; });
-      });
-    },
+    /* Entered results live in JTS.course.scores: on the server, where a
+       curator confirms them, or in the profile without one. */
+    addReport: function (rec) { return JTS.course.scores.add(rec); },
+    removeReport: function (id) { return JTS.course.scores.remove(id); },
 
+    /** Entered results, oldest first; one a curator sent back is not counted. */
     reports: function () {
-      var s = S.state();
-      return ((s && s.scoreReports) || []).slice().sort(function (a, b) {
-        return a.date < b.date ? -1 : a.date > b.date ? 1 : 0;
-      });
+      return JTS.course.scores.list().filter(function (r) { return r.status !== 'rejected'; });
     },
 
     /** Is a section score a plausible Digital SAT section score? */
@@ -551,22 +536,23 @@
   /* ----------------------------------------------- trajectory and results */
 
   function sourceLabel(id) { return t('mock.source.' + id); }
+  /* One colour per source, the same in the table, the chart and its legend. */
+  var SOURCE_COLOR = { report: 'var(--brand-600)', sim: 'var(--warn)', paper: 'var(--info)' };
 
   /**
-   * Every score on this page, oldest first: the full simulations finished
-   * here (a range, so the midpoint is what gets plotted) and the results the
-   * student added from outside. A past paper's result is not one of them —
-   * those are kept on #/papers, under the papers.
+   * Every score in one place, oldest first: the full simulations and the past
+   * papers sat here (a range, so the midpoint is what gets plotted) and the
+   * results the student entered from outside. One picture of progress, so the
+   * change column and the chart do the comparing.
    */
   function allResults() {
     var rows = [];
     JTS.mock.finished().forEach(function (run) {
-      if (run.paperId) return;
       var tot = JTS.mock.totalEstimate(run);
       if (!tot) return;
       rows.push({
-        kind: 'sim', at: run.finishedAt, run: run,
-        source: t('mock.source.sim'),
+        kind: run.paperId ? 'paper' : 'sim', at: run.finishedAt, run: run,
+        source: t(run.paperId ? 'mock.source.paper' : 'mock.source.sim'),
         rw: JTS.mock.estimate(run, 'rw'), math: JTS.mock.estimate(run, 'math'),
         total: tot, mid: Math.round((tot.low + tot.high) / 2)
       });
@@ -574,7 +560,8 @@
     JTS.mock.reports().forEach(function (r) {
       rows.push({
         kind: 'report', at: U.parseISO(r.date).getTime(), report: r,
-        source: sourceLabel(r.source), mid: r.total
+        source: r.test ? t('tests.name', { n: JTS.courseUI.TEST_NO[r.test] }) : sourceLabel(r.source),
+        mid: r.total
       });
     });
     return rows.sort(function (a, b) { return a.at - b.at; });
@@ -590,8 +577,9 @@
         .map(function (r) { return { x: r.at, y: r.mid }; });
     }
     var series = [];
-    if (pts('report').length) series.push({ label: t('mock.seriesImported'), color: 'var(--brand-600)', points: pts('report') });
-    if (pts('sim').length) series.push({ label: t('mock.seriesInternal'), color: 'var(--warn)', points: pts('sim') });
+    Object.keys(SOURCE_COLOR).forEach(function (kind) {
+      if (pts(kind).length) series.push({ label: t('mock.series.' + kind), color: SOURCE_COLOR[kind], points: pts(kind) });
+    });
 
     var card = U.el('div.card.stack', { id: 'mock-trajectory' }, [
       U.el('div', null, [
@@ -612,63 +600,6 @@
     return card;
   }
 
-  function importModal(onDone) {
-    var m;
-    var date = U.el('input.input', { type: 'date', id: 'sr-date', value: U.iso(new Date()) });
-    var source = U.el('select.select', { id: 'sr-source' },
-      JTS.mock.SOURCES.map(function (s) {
-        return U.el('option', { value: s, text: sourceLabel(s) });
-      }));
-    var rw = U.el('input.input', { type: 'number', id: 'sr-rw', min: '200', max: '800', step: '10', placeholder: '600' });
-    var math = U.el('input.input', { type: 'number', id: 'sr-math', min: '200', max: '800', step: '10', placeholder: '700' });
-    var total = U.el('div.stat-value', { text: '—', id: 'sr-total' });
-    var err = U.el('div.error-text', { role: 'alert', hidden: true });
-
-    /* Total is derived, never typed: a total that disagrees with its parts is
-       a data-entry bug the student should not be able to create. */
-    function retotal() {
-      var a = Number(rw.value), b = Number(math.value);
-      total.textContent = (JTS.mock.validScore(a) && JTS.mock.validScore(b)) ? String(a + b) : '—';
-    }
-    rw.addEventListener('input', retotal);
-    math.addEventListener('input', retotal);
-
-    m = ui.modal({
-      title: t('mock.addResult'),
-      content: U.el('div.stack', null, [
-        ui.field(t('mock.import.date'), date),
-        ui.field(t('mock.import.source'), source),
-        U.el('div.grid.grid-2', null, [
-          ui.field(t('mock.import.rw'), rw),
-          ui.field(t('mock.import.math'), math)
-        ]),
-        U.el('div.stat', null, [
-          U.el('div.stat-label', { text: t('mock.import.total') }), total
-        ]),
-        err
-      ]),
-      actions: [
-        U.el('button.btn', { type: 'button', text: t('common.cancel'), onclick: function () { m.close(); } }),
-        U.el('button.btn.btn-primary', {
-          type: 'button', text: t('mock.import.save'),
-          onclick: function () {
-            if (!date.value) { err.hidden = false; err.textContent = t('mock.invalidDate'); return; }
-            if (!JTS.mock.validScore(rw.value) || !JTS.mock.validScore(math.value)) {
-              err.hidden = false; err.textContent = t('mock.invalidScore'); return;
-            }
-            JTS.mock.addReport({
-              date: date.value, source: source.value,
-              rw: Number(rw.value), math: Number(math.value)
-            });
-            m.close();
-            ui.toast(t('common.saved'), 'ok');
-            onDone();
-          }
-        })
-      ]
-    });
-  }
-
   /**
    * One table for every result, newest first. A simulation is a range and is
    * marked as an estimate; an added result is the number that was reported,
@@ -685,7 +616,7 @@
         ]),
         U.el('button.btn.btn-primary', {
           type: 'button', text: '+ ' + t('mock.addResult'),
-          onclick: function () { importModal(rerender); }
+          onclick: function () { JTS.courseUI.scoreModal(null, rerender); }
         })
       ])
     ]);
@@ -707,59 +638,58 @@
       U.el('th', { text: '' })
     ])]));
     var body = U.el('tbody');
-    var prevReport = {};
-    var last = null;
-    rows.forEach(function (r) {
-      if (r.kind !== 'report') return;
-      prevReport[r.report.id] = last;
-      last = r.report;
-    });
+    /* The change is to the result before it by date, whatever its source. */
+    rows.forEach(function (r, i) { r.delta = i ? r.mid - rows[i - 1].mid : null; });
+    function deltaCell(d) {
+      return U.el('td.num', {
+        text: d === null ? '—' : (d > 0 ? '+' : '') + d,
+        style: d === null ? '' : 'color:var(--' + (d > 0 ? 'ok' : d < 0 ? 'danger' : 'muted') + ')'
+      });
+    }
     rows.slice().reverse().forEach(function (r) {
       var date = U.fmtDate(new Date(r.at), lang);
-      if (r.kind === 'sim') {
+      if (r.kind === 'sim' || r.kind === 'paper') {
         body.appendChild(U.el('tr', null, [
           U.el('td', { text: date }),
-          U.el('td', null, [U.el('span.badge.badge-warn', { text: r.source })]),
+          U.el('td', null, [U.el('span.badge.src-' + r.kind, { text: r.source })]),
           U.el('td.num', { text: range(r.rw) }),
           U.el('td.num', { text: range(r.math) }),
           U.el('td.num', null, [
             U.el('b', { text: range(r.total) }), ' ',
             U.el('span.badge.badge-muted', { text: t('mock.estimateTag') })
           ]),
-          U.el('td.num', { text: '—' }),
+          deltaCell(r.delta),
           U.el('td', null, [U.el('a.btn.btn-sm.btn-ghost', {
             href: '#/mocks/result?run=' + r.run.id, text: t('common.review')
           })])
         ]));
         return;
       }
-      var rep = r.report, prev = prevReport[rep.id];
-      var d = prev ? rep.total - prev.total : null;
+      var rep = r.report;
       body.appendChild(U.el('tr', null, [
         U.el('td', { text: date }),
-        U.el('td', null, [U.el('span.badge' + (rep.source === 'official' ? '' : '.badge-muted'), {
-          text: r.source
-        })]),
-        U.el('td.num', { text: String(rep.rw) }),
-        U.el('td.num', { text: String(rep.math) }),
+        U.el('td', null, [
+          U.el('span.badge.src-report', { text: r.source }),
+          rep.status === 'pending' || rep.status === 'confirmed' ? ' ' : null,
+          JTS.courseUI.statusBadge(rep.status)
+        ]),
+        U.el('td.num', { text: rep.rw == null ? '—' : String(rep.rw) }),
+        U.el('td.num', { text: rep.math == null ? '—' : String(rep.math) }),
         U.el('td.num', null, [U.el('b', { text: String(rep.total) })]),
-        U.el('td.num', {
-          text: d === null ? '—' : (d > 0 ? '+' : '') + d,
-          style: d === null ? '' : 'color:var(--' + (d > 0 ? 'ok' : d < 0 ? 'danger' : 'muted') + ')'
-        }),
-        U.el('td', null, [U.el('button.btn.btn-sm.btn-ghost', {
+        deltaCell(r.delta),
+        rep.status === 'confirmed' ? U.el('td') : U.el('td', null, [U.el('button.btn.btn-sm.btn-ghost', {
           type: 'button', text: '✕', 'aria-label': t('mock.deleteReport') + ' ' + date,
           onclick: function () {
             ui.confirm({ title: t('mock.deleteReport'), message: date + ' · ' + rep.total,
               okText: t('common.delete') })
-              .then(function (yes) { if (yes) { JTS.mock.removeReport(rep.id); rerender(); } });
+              .then(function (yes) { if (yes) JTS.mock.removeReport(rep.id).then(rerender); });
           }
         })])
       ]));
     });
     table.appendChild(body);
     card.appendChild(U.el('div.table-wrap', null, [table]));
-    if (rows.some(function (r) { return r.kind === 'sim'; })) {
+    if (rows.some(function (r) { return r.kind === 'sim' || r.kind === 'paper'; })) {
       card.appendChild(U.el('div.notice.notice-warn.small', { text: t('mock.estimateNote') }));
     }
     return card;
@@ -1365,9 +1295,14 @@
             text: t('mock.duration', { h: Math.floor(mins / 60), m: mins % 60 })
           }) : null
         ]),
-        U.el('a.btn.btn-primary', {
-          href: '#/mocks/review?run=' + run.id, text: t('mock.reviewQuestions') + ' →'
-        })
+        U.el('div.row.row-wrap', null, [
+          /* Every miss of the test is already in the error log, with its
+             reason, beside the misses from everywhere else. */
+          U.el('a.btn', { href: '#/errors', text: t('errors.allMine') }),
+          U.el('a.btn.btn-primary', {
+            href: '#/mocks/review?run=' + run.id, text: t('mock.reviewQuestions') + ' →'
+          })
+        ])
       ]));
 
       /* The total with the two sections beside it; under them the modules
