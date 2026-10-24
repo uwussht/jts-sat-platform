@@ -856,6 +856,10 @@ html[data-theme="dark"] mark.hl { background: #8C7415; color: #FFF7DA; }
   box-shadow: var(--shadow-3); display: none; flex-direction: column;
 }
 #desmos-panel.open { display: flex; animation: dp-in .22s ease; }
+/* A question screen has its own top bar and no app header above it, so the
+   docked calculator runs from the very top of the window — not from under a
+   header that is not there, which left an empty strip above it. */
+body:has(.q-shell) #desmos-panel:not(.floating) { top: 0; }
 @keyframes dp-in { from { transform: translateX(100%); } to { transform: translateX(0); } }
 /* The panel is fixed, so without this the question footer sits underneath it
    and Next becomes unclickable while the calculator is open. */
