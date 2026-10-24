@@ -64,33 +64,13 @@ previous_api_image=$(image_of api)
 export SAT_IMAGE="$image" SAT_API_IMAGE="$api_image" ADMIN_PHONES="$admin_phones"
 compose=(docker compose -p jts-sat --project-directory "$site_dir" -f "$compose_file")
 # Pull first: an unavailable image must not disturb the running containers.
-"${compose[@]}" pull web api db
+"${compose[@]}" pull web api db backup
 
-# A copy of the database before anything changes. The last 14 are kept.
-backup_dir="$site_dir/backups"
-mkdir -p "$backup_dir"
-db_container=$(docker ps -q --filter label=com.docker.compose.project=jts-sat --filter label=com.docker.compose.service=db | head -n 1)
-if [[ -n "$db_container" ]]; then
-  stamp=$(date -u +%Y%m%dT%H%M%SZ)
-  target="$backup_dir/db-$stamp.sql"
-  echo "Backing up the database ($db_container)"
-  # Straight into the running container, not through compose. A failed
-  # backup is reported and the release goes on: the data itself is the
-  # volume, which nothing here touches.
-  if docker exec "$db_container" pg_dump -U teentech -d teentech > "$target.next" 2> "$target.err"; then
-    gzip -f "$target.next"
-    mv "$target.next.gz" "$target.gz"
-    rm -f "$target.err"
-    ls -1t "$backup_dir"/db-*.sql.gz | tail -n +15 | xargs -r rm -f
-    echo "Backed up the database to $target.gz"
-  else
-    echo "WARNING: database backup failed (exit $?); continuing without it:" >&2
-    cat "$target.err" >&2 || true
-    rm -f "$target.next" "$target.err"
-  fi
-else
-  echo 'No database running yet; nothing to back up.'
-fi
+# Backups are made by the backup service itself (docker-compose.prod.yaml):
+# one when it starts — so on every release — and one a day, into
+# /opt/jts-sat/backups, kept 14 days. Nothing here runs inside the database
+# container: a command exec'd into it ended the deploy's SSH session.
+mkdir -p "$site_dir/backups"
 
 check_site() {
   local endpoint
@@ -99,7 +79,7 @@ check_site() {
   done
 }
 
-if "${compose[@]}" up -d --no-build --pull never --wait --wait-timeout 180 db api web && check_site; then
+if "${compose[@]}" up -d --no-build --pull never --wait --wait-timeout 180 db api web backup && check_site; then
   {
     printf 'SAT_IMAGE=%s\n' "$image"
     printf 'SAT_API_IMAGE=%s\n' "$api_image"

@@ -48,6 +48,32 @@ services:
       timeout: 3s
       retries: 12
 
+  # A copy of the database when it starts (so on every release) and then once
+  # a day, gzipped into /opt/jts-sat/backups; copies older than 14 days go.
+  backup:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      PGHOST: db
+      PGUSER: teentech
+      PGDATABASE: teentech
+    env_file:
+      - secrets.env
+    volumes:
+      - ./backups:/backups
+    depends_on:
+      db:
+        condition: service_healthy
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        while true; do
+          f=/backups/db-$$(date -u +%Y%m%dT%H%M%SZ).sql.gz
+          if pg_dump | gzip > "$$f.next"; then mv "$$f.next" "$$f"; echo "backup $$f"; else rm -f "$$f.next"; echo "backup failed" >&2; fi
+          find /backups -name 'db-*.sql.gz' -mtime +14 -delete
+          sleep 86400
+        done
+
   web:
     image: ${SAT_IMAGE:?Set SAT_IMAGE to the published image}
     restart: unless-stopped
