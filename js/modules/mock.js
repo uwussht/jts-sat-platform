@@ -249,7 +249,7 @@
         durationMs: m.minutes * 60000,
         softTimer: !run.timed,
         wallClock: run.timed,
-        returnHash: run.paperId ? '#/papers' : '#/mocks',
+        returnHash: run.paperId ? '#/mocks?tab=papers' : '#/mocks',
         finishHash: '#/mocks/run',
         meta: { mockId: run.id, moduleIndex: run.index, moduleKey: m.key }
       });
@@ -706,7 +706,7 @@
    * The gates are the simulation's gates, because it is the simulation's
    * machinery: one run at a time, and not on a phone.
    *
-   * They have their own page, #/papers, reached from the sidebar.
+   * They are the second tab of #/mocks (#/mocks?tab=papers).
    */
   function paperCard(rerender) {
     var papers = JTS.papers.all();
@@ -885,11 +885,28 @@
 
       function rerender() { U.clear(screen); paint(); }
 
+      /* One page for both kinds of full test: a switch between the JTS
+         simulation and the past papers. Only the left card changes; the
+         trajectory and every result stay, since they hold both. */
+      var tab = (JTS.router.current && JTS.router.current.query.tab) === 'papers' ? 'papers' : 'sim';
+
       function paint() {
-        /* The simulation and where the scores are heading, side by side;
-           under them every result, the student's own Bluebook and official
-           scores included. Past papers are their own page. */
-        screen.appendChild(U.el('div.mk-top', null, [runCard(rerender), trajectoryCard()]));
+        screen.appendChild(U.el('div.mk-switch', { role: 'tablist', 'aria-label': t('mock.title') },
+          [['sim', 'mock.tabSim'], ['papers', 'paper.title']].map(function (p) {
+            return U.el('a', {
+              href: p[0] === 'papers' ? '#/mocks?tab=papers' : '#/mocks', role: 'tab',
+              'aria-selected': String(tab === p[0]), text: t(p[1])
+            });
+          })));
+        if (tab === 'papers') {
+          var active = JTS.mock.active();
+          if (active && active.paperId) screen.appendChild(unfinishedNotice(active, rerender));
+          screen.appendChild(U.el('div.mk-top', null, [paperCard(rerender), trajectoryCard()]));
+          var recent = recentTests();
+          if (recent) screen.appendChild(recent);
+        } else {
+          screen.appendChild(U.el('div.mk-top', null, [runCard(rerender), trajectoryCard()]));
+        }
         screen.appendChild(resultsCard(rerender));
       }
 
@@ -908,35 +925,10 @@
     }
   });
 
-  /* Past papers: the run in flight if there is one, the papers, and the
-     papers already sat. */
+  /* Past papers are the second tab of #/mocks; old links land there. */
   JTS.router.register('#/papers', {
     title: 'paper.title',
-    render: function (root) {
-      var screen = U.el('div.container.screen.stack-lg');
-      root.appendChild(screen);
-
-      function rerender() { U.clear(screen); paint(); }
-
-      function paint() {
-        var active = JTS.mock.active();
-        if (active) screen.appendChild(unfinishedNotice(active, rerender));
-        screen.appendChild(paperCard(rerender));
-        var recent = recentTests();
-        if (recent) screen.appendChild(recent);
-      }
-
-      paint();
-
-      var wasFitting = fitsMock();
-      function onResize() {
-        if (fitsMock() === wasFitting) return;
-        wasFitting = fitsMock();
-        rerender();
-      }
-      window.addEventListener('resize', onResize);
-      return function () { window.removeEventListener('resize', onResize); };
-    }
+    render: function () { JTS.router.go('#/mocks?tab=papers'); }
   });
 })();
 
@@ -1123,7 +1115,7 @@
             okText: t('common.discard') }).then(function (yes) {
             if (!yes) return;
             JTS.mock.discard(run.id);
-            JTS.router.go(run.paperId ? '#/papers' : '#/mocks');
+            JTS.router.go(run.paperId ? '#/mocks?tab=papers' : '#/mocks');
           });
         }
       }));
@@ -1286,7 +1278,7 @@
       screen.appendChild(U.el('div.res-head', null, [
         U.el('div.row.row-wrap.res-meta', null, [
           run.paperId
-            ? U.el('a.btn.btn-sm', { href: '#/papers', text: '← ' + t('paper.title') })
+            ? U.el('a.btn.btn-sm', { href: '#/mocks?tab=papers', text: '← ' + t('paper.title') })
             : U.el('a.btn.btn-sm', { href: '#/mocks', text: '← ' + t('nav.mocks') }),
           paper ? U.el('span.badge', { text: paper.title }) : null,
           U.el('span.badge.badge-muted', { text: U.fmtDate(new Date(run.finishedAt), S.settings().uiLang) }),

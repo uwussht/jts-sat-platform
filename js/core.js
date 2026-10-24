@@ -2370,9 +2370,6 @@
       { path: '#/plan',     key: 'nav.plan',     icon: '☷' },
       { path: '#/practice', key: 'nav.practice', icon: '✎' },
       { path: '#/mocks',    key: 'nav.mocks',    icon: '⏱' },
-      /* In the sidebar only: a paper is sat on a laptop, and the phone tab
-         bar is full at five. */
-      { path: '#/papers',   key: 'paper.title',  icon: '▣', noTab: true },
       /* Materials rather than Progress: the course is what a student opens
          daily. There is no Progress page; its measures are on the dashboard. */
       { path: '#/materials', key: 'nav.materials', icon: '▤' }

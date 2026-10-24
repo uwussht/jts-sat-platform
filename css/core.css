@@ -3521,3 +3521,11 @@ a.cal-tag { text-decoration: none; }
 .practice-tally { display: flex; flex-direction: column; gap: 4px; }
 /* The phase strip, its description and the bar, with room between them. */
 .ph-card .ph-lead { margin-top: 4px; line-height: 1.5; }
+
+/* Mock tests: the switch between the JTS simulation and past papers. */
+.mk-switch { display: inline-flex; gap: 4px; padding: 4px; border: 1px solid var(--border);
+  border-radius: 14px; background: var(--surface); align-self: flex-start; }
+.mk-switch a { padding: 9px 18px; border-radius: 10px; font-weight: 700; font-size: 14px;
+  color: var(--muted); text-decoration: none; }
+.mk-switch a:hover { color: var(--ink); text-decoration: none; }
+.mk-switch a[aria-selected="true"] { background: var(--brand-600); color: var(--on-brand, #0B0B0B); }

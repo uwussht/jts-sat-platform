@@ -1130,5 +1130,6 @@ JTS.dict.ru = {
   'staff.extraNoFit': 'После базового курса до экзамена {left} нед., а доппакету нужно {need}. До экзамена он не поместится.',
   'staff.grantAnyway': 'Всё равно добавить',
   'boot.bankLoading': 'Загружаем банк вопросов…',
-  'boot.bankProgress': 'Загружено частей: {n} из {of}'
+  'boot.bankProgress': 'Загружено частей: {n} из {of}',
+  'mock.tabSim': 'Симуляция JTS'
 };

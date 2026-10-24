@@ -1130,5 +1130,6 @@ JTS.dict.en = {
   'staff.extraNoFit': '{left} weeks to the exam after the basic course; the extra package needs {need}. It will not fit before the exam.',
   'staff.grantAnyway': 'Add anyway',
   'boot.bankLoading': 'Loading the question bank…',
-  'boot.bankProgress': '{n} of {of} parts loaded'
+  'boot.bankProgress': '{n} of {of} parts loaded',
+  'mock.tabSim': 'JTS simulation'
 };

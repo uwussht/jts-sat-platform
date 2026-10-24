@@ -1130,5 +1130,6 @@ JTS.dict.kk = {
   'staff.extraNoFit': 'Базалық курстан кейін емтиханға дейін {left} апта, ал қосымша пакетке {need} апта керек. Емтиханға дейін сыймайды.',
   'staff.grantAnyway': 'Бәрібір қосу',
   'boot.bankLoading': 'Сұрақтар банкі жүктелуде…',
-  'boot.bankProgress': '{of} бөліктің {n}-і жүктелді'
+  'boot.bankProgress': '{of} бөліктің {n}-і жүктелді',
+  'mock.tabSim': 'JTS симуляциясы'
 };
