@@ -4,8 +4,8 @@
    The course on the calendar: every lesson of the student's packages on its
    date (three a week, from the group's schedule or the default slots), the
    Bluebook tests between the months, the weekly simulations of the Challenge
-   month and the exam. Above it, the same phase strip the dashboard draws and
-   the check that the course fits before the exam.
+   month and the exam. Above it, the check that the course fits before the
+   exam; the phases are on the dashboard.
 
    Everything comes from JTS.course.plan(). Nothing here moves a lesson or
    changes its status: the teacher marks a group's lesson held, a curator
@@ -386,7 +386,6 @@
 
       var fit = JTS.courseUI.fitBanner(plan);
       if (fit) screen.appendChild(fit);
-      screen.appendChild(JTS.courseUI.phaseStrip(plan, { id: 'plan-phases', noTitle: true }));
       if (!plan.examDate) screen.appendChild(U.el('div.notice', { text: t('plan.provisional') }));
 
       /* Which week is on screen is view state, not saved progress. It opens
