@@ -3512,3 +3512,12 @@ a.cal-tag { text-decoration: none; }
   animation: bank-wait 1.2s ease-in-out infinite; }
 @keyframes bank-wait { 0% { transform: translateX(-100%); } 100% { transform: translateX(250%); } }
 @media (prefers-reduced-motion: reduce) { .bank-wait-bar i { animation: none; width: 100%; opacity: .5; } }
+
+/* Tabs scroll sideways only. The active tab's underline overlaps the row by a
+   pixel, which made the browser add a vertical scrollbar with arrows. */
+.tabs { overflow-y: hidden; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+/* "Answered 1 of 1845" and the total time, on two lines, apart. */
+.practice-tally { display: flex; flex-direction: column; gap: 4px; }
+/* The phase strip, its description and the bar, with room between them. */
+.ph-card .ph-lead { margin-top: 4px; line-height: 1.5; }

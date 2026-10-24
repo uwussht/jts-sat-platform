@@ -81,7 +81,8 @@
       head,
       U.el('div.ph-strip-wrap', null, [strip]),
       cur ? U.el('p.small.muted.ph-lead', { text: t('phase.' + cur.id + '.lead') }) : null,
-      U.el('div.bar-wrap', null, [ui.bar(plan.done, plan.total, plan.done === plan.total ? 'bar-ok' : '')])
+      /* An empty bar reads as a broken line: shown once a lesson is done. */
+      plan.done ? U.el('div.bar-wrap', null, [ui.bar(plan.done, plan.total, plan.done === plan.total ? 'bar-ok' : '')]) : null
     ]);
     /* A test that was not sat stays visible until its scores are in. */
     plan.phases.forEach(function (p) {

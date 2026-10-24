@@ -559,7 +559,7 @@
       var list = pool();
       card.appendChild(U.el('div.divider'));
       card.appendChild(U.el('div.row-between.row-wrap', null, [
-        U.el('div.stack-sm', null, [
+        U.el('div.practice-tally', null, [
           U.el('b', { text: t('practice.counter', { answered: answeredIn(list), total: list.length }) }),
           U.el('span.small.muted', {
             text: t('practice.totalTime', { time: U.fmtLongTime(timeSpentIn(list)) })

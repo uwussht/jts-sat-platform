@@ -371,22 +371,6 @@
     return Object.keys(mondays).sort().map(function (m) { return { monday: m, lessons: mondays[m] }; });
   }
 
-  /** The group and its three slots, or the default days for a student on their own. */
-  function scheduleLine(plan) {
-    var slots = plan.slots.map(function (s) {
-      return U.dayLabel(s.weekday) + ' ' + (s.time || '') +
-        (s.section ? ' · ' + t(s.section === 'rw' ? 'common.rwShort' : 'common.math') : '') +
-        (s.teacher && s.teacher.name ? ' · ' + s.teacher.name : '');
-    });
-    return U.el('div.card.card-sm.row-between.row-wrap.plan-sched', null, [
-      U.el('div.stack-sm', null, [
-        U.el('div.eyebrow', { text: plan.group ? t('plan.group', { name: plan.group.name }) : t('plan.ownPace') }),
-        U.el('div.small', { text: slots.join('   ·   ') })
-      ]),
-      U.el('span.small.muted', { text: t('plan.rhythm', { n: plan.perWeek, mins: plan.lessonMinutes }) })
-    ]);
-  }
-
   JTS.router.register('#/plan', {
     title: 'nav.plan',
     render: function (root) {
@@ -404,7 +388,6 @@
       if (fit) screen.appendChild(fit);
       screen.appendChild(JTS.courseUI.phaseStrip(plan, { id: 'plan-phases' }));
       if (!plan.examDate) screen.appendChild(U.el('div.notice', { text: t('plan.provisional') }));
-      screen.appendChild(scheduleLine(plan));
 
       /* Which week is on screen is view state, not saved progress. It opens
          on the week of the next lesson. */
