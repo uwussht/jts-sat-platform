@@ -26,6 +26,42 @@
     return { wrap: U.el('div.input-affix', null, [input, toggle]), input: input };
   }
 
+  /**
+   * A Kazakhstan number with +7 already in the box. The rest is grouped as it
+   * is typed (+7 700 123 45 67), and a whole number typed or pasted with its
+   * own 8 or +7 in front does not end up with the prefix twice.
+   */
+  function phoneInput() {
+    var input = U.el('input.input', {
+      type: 'tel', id: 'auth-phone', autocomplete: 'tel', inputmode: 'tel',
+      placeholder: '+7 700 000 00 00', value: '+7 '
+    });
+    function format() {
+      /* What follows the box's own +7. A whole number pasted or typed after
+         it carries its own 8 or +7, which is dropped; an extra digit typed
+         at the end is simply not taken. */
+      var rest = input.value.replace(/^\s*\+?7/, '').trim();
+      var own = /^(\+7|8)/.test(rest.replace(/[\s()-]/g, ''));
+      var d = rest.replace(/\D/g, '');
+      if (own && d.length >= 11) d = d.slice(1);
+      d = d.slice(0, 10);
+      var parts = [d.slice(0, 3), d.slice(3, 6), d.slice(6, 8), d.slice(8, 10)].filter(Boolean);
+      input.value = '+7 ' + parts.join(' ');
+    }
+    input.addEventListener('input', format);
+    /* The cursor goes after the prefix, never inside it. */
+    input.addEventListener('focus', function () {
+      setTimeout(function () {
+        if (input.selectionStart < 3) input.setSelectionRange(input.value.length, input.value.length);
+      }, 0);
+    });
+    input.addEventListener('keydown', function (e) {
+      if ((e.key === 'Backspace' && input.selectionStart <= 3 && input.selectionEnd <= 3) ||
+          (e.key === 'Delete' && input.selectionStart < 3)) e.preventDefault();
+    });
+    return input;
+  }
+
   JTS.router.register('#/auth', {
     title: 'auth.title',
     render: function (root) {
@@ -85,10 +121,7 @@
             f.firstName = U.el('input.input', { type: 'text', id: 'auth-first', autocomplete: 'given-name', maxlength: '60' });
             f.lastName = U.el('input.input', { type: 'text', id: 'auth-last', autocomplete: 'family-name', maxlength: '60' });
           }
-          f.phone = U.el('input.input', {
-            type: 'tel', id: 'auth-phone', autocomplete: 'tel', inputmode: 'tel',
-            placeholder: '+7 700 000 00 00'
-          });
+          f.phone = phoneInput();
           if (reg) {
             f.grade = U.el('select.select', { id: 'auth-grade' }, [
               U.el('option', { value: '', text: t('auth.gradePick') })
