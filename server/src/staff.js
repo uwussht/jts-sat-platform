@@ -50,12 +50,40 @@ router.get('/users', async (req, res, next) => {
          LEFT JOIN sat_groups g ON g.id = gm.group_id
         ${where.length ? 'WHERE ' + where.join(' AND ') : ''}
         ORDER BY u.created_at DESC LIMIT 500`, vals);
-    res.json({ ok: true, users: rows.map((r) => ({
-      id: r.id, phone: r.phone, email: r.email, name: name(r), grade: r.grade, role: r.role,
-      examDate: isoDate(r.exam_date), packages: r.packages,
-      group: r.group_id ? { id: r.group_id, name: r.group_name } : null,
-      createdAt: r.created_at, lastLoginAt: r.last_login_at
-    })) });
+    /* Each student's Bluebook results, newest first, for the same table. */
+    const ids = rows.map((r) => r.id);
+    const scores = {};
+    if (ids.length) {
+      const sc = await pool.query(
+        `SELECT * FROM score_reports WHERE user_id = ANY($1) ORDER BY taken_on DESC, created_at DESC`, [ids]);
+      sc.rows.forEach((r) => { (scores[r.user_id] = scores[r.user_id] || []).push(scoreRow(r)); });
+    }
+    const out = [];
+    for (const r of rows) {
+      const u = {
+        id: r.id, phone: r.phone, email: r.email, name: name(r), grade: r.grade, role: r.role,
+        examDate: isoDate(r.exam_date), packages: r.packages,
+        group: r.group_id ? { id: r.group_id, name: r.group_name } : null,
+        createdAt: r.created_at, lastLoginAt: r.last_login_at,
+        scores: scores[r.id] || []
+      };
+      /* Where a student is on the course: the same plan they see. */
+      if (r.role === 'student') {
+        const plan = await planFor(r.id);
+        if (plan) {
+          const cur = plan.phases.filter((ph) => ph.id === plan.current)[0];
+          u.course = {
+            startDate: plan.startDate,
+            phase: cur ? { id: cur.id, key: cur.key } : null,
+            phaseCounter: plan.phaseCounter,
+            next: plan.next ? { no: plan.next.no, code: plan.next.code, topic: plan.next.topic, date: plan.next.date } : null,
+            done: plan.done, total: plan.total
+          };
+        }
+      }
+      out.push(u);
+    }
+    res.json({ ok: true, users: out });
   } catch (e) { next(e); }
 });
 

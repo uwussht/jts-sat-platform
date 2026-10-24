@@ -3538,3 +3538,13 @@ a.cal-tag { text-decoration: none; }
 /* Desmos lessons: the calculator the same size as the video beside it. */
 .dg-pair { align-items: stretch; }
 .dg-calc .desmos-embed { height: auto; aspect-ratio: 16 / 9; }
+
+/* Staff: one table of students, with their course and Bluebook results. */
+.staff-tools { gap: 10px; align-items: center; }
+.staff-tools .input { flex: 1 1 280px; }
+.staff-table td { vertical-align: top; }
+.staff-score { display: flex; flex-direction: column; gap: 4px; padding: 6px 0; }
+.staff-score + .staff-score { border-top: 1px solid var(--border); }
+.staff-score-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.staff-score.is-pending .staff-score-top b { color: var(--warn); }
+.staff-role { min-width: 150px; }
