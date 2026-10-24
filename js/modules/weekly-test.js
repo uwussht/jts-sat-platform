@@ -109,6 +109,9 @@
     var recs = all();
     if (!recs) return null;
     if (!recs[week]) {
+      /* The week's fifteen are drawn once and kept, so never from a bank
+         still loading: the card appears when the bank is in. */
+      if (!JTS.data.bankLoaded) return null;
       var ids = pick(week);
       if (!ids.length) return null;
       recs[week] = { week: week, questionIds: ids, sessionId: null,
@@ -200,7 +203,7 @@
           href: running ? '#/question' : '#/weekly',
           text: done ? t('weekly.seeResult') : running ? t('weekly.continue') : t('weekly.start')
         })
-      ]) : U.el('div.small.muted', { text: t('practice.noQuestions') })
+      ]) : U.el('div.small.muted', { text: t(JTS.data.bankLoaded ? 'practice.noQuestions' : 'boot.bankLoading') })
     ]);
   }
 

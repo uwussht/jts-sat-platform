@@ -1128,5 +1128,7 @@ JTS.dict.kk = {
   'desmos.unmark': 'Оқылды — болдырмау',
   'desmos.studied': 'Оқылды',
   'staff.extraNoFit': 'Базалық курстан кейін емтиханға дейін {left} апта, ал қосымша пакетке {need} апта керек. Емтиханға дейін сыймайды.',
-  'staff.grantAnyway': 'Бәрібір қосу'
+  'staff.grantAnyway': 'Бәрібір қосу',
+  'boot.bankLoading': 'Сұрақтар банкі жүктелуде…',
+  'boot.bankProgress': '{of} бөліктің {n}-і жүктелді'
 };

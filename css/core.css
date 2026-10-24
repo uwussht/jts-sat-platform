@@ -3500,3 +3500,11 @@ a.cal-tag { text-decoration: none; }
 
 .boot-loading strong { font-size: 24px; }
 .boot-loading p { margin: 12px 0 0; }
+
+/* The question bank arriving after start: a screen that needs it waits here. */
+.bank-wait { max-width: 520px; margin: 40px auto; text-align: center; align-items: center; }
+.bank-wait-bar { width: 100%; height: 4px; border-radius: 999px; background: var(--surface-2); overflow: hidden; }
+.bank-wait-bar i { display: block; width: 40%; height: 100%; background: var(--brand-600); border-radius: 999px;
+  animation: bank-wait 1.2s ease-in-out infinite; }
+@keyframes bank-wait { 0% { transform: translateX(-100%); } 100% { transform: translateX(250%); } }
+@media (prefers-reduced-motion: reduce) { .bank-wait-bar i { animation: none; width: 100%; opacity: .5; } }

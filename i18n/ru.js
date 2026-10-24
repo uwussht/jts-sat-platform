@@ -1128,5 +1128,7 @@ JTS.dict.ru = {
   'desmos.unmark': 'Изучено — отменить',
   'desmos.studied': 'Изучено',
   'staff.extraNoFit': 'После базового курса до экзамена {left} нед., а доппакету нужно {need}. До экзамена он не поместится.',
-  'staff.grantAnyway': 'Всё равно добавить'
+  'staff.grantAnyway': 'Всё равно добавить',
+  'boot.bankLoading': 'Загружаем банк вопросов…',
+  'boot.bankProgress': 'Загружено частей: {n} из {of}'
 };

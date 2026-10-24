@@ -281,13 +281,12 @@ JTS.data.loadQuestionFiles = function () {
       function (m, head, src) { return head + base + src + '"'; });
   }
 
-  return get('index.json').then(function (idx) {
-    var files = (idx && idx.files) || [];
-    return Promise.all(files.map(function (entry) {
-      /* An entry is a file name, or { file, lessonCode, assetBase, idPrefix }
-         to put a whole file into one class, fix where its pictures are and
-         keep its question ids apart from another file's, without editing
-         the file itself. */
+  /* One entry of index.json: its questions, prepared. */
+  function loadEntry(entry) {
+      /* An entry is a file name, or { file, lessonCode, assetBase, idPrefix,
+         defer } to put a whole file into one class, fix where its pictures
+         are, keep its question ids apart from another file's, or load it
+         after the site has started — without editing the file itself. */
       var opt = typeof entry === 'string' ? { file: entry } : (entry || {});
       var f = opt.file;
       return get(f).then(function (data) {
@@ -318,7 +317,10 @@ JTS.data.loadQuestionFiles = function () {
         console.error('[JTS] question file not loaded — ' + e.message);
         return [];
       });
-    })).then(function (lists) {
+  }
+
+  /* A batch of files into the bank. */
+  function merge(lists, count) {
       var all = [].concat.apply([], lists);
       if (!all.length) return 0;
       var ids = {}, repeated = [];
@@ -338,9 +340,31 @@ JTS.data.loadQuestionFiles = function () {
         if (!fromJson[code]) { fromJson[code] = 1; sets[code] = []; }
         if (sets[code].indexOf(q.id) < 0) sets[code].push(q.id);
       });
-      console.info('[JTS] ' + all.length + ' questions loaded from JSON (' + files.length + ' file' + (files.length === 1 ? '' : 's') + ')');
+      console.info('[JTS] ' + all.length + ' questions loaded from JSON (' + count + ' file' + (count === 1 ? '' : 's') + ')');
       return all.length;
-    });
+  }
+
+  /* Entries marked "defer": true are the big general banks. The site starts
+     without them — only the lessons, Challenge sets and papers are waited
+     for — and they are fetched right after, in the background
+     (JTS.data.loadDeferredQuestions); a screen that needs the whole bank
+     waits for it (JTS.router, needsBank). */
+  return get('index.json').then(function (idx) {
+    var files = (idx && idx.files) || [];
+    var now = files.filter(function (e) { return !(e && e.defer); });
+    var later = files.filter(function (e) { return e && e.defer; });
+    JTS.data.loadDeferredQuestions = function (onProgress) {
+      var done = 0;
+      if (onProgress) onProgress(0, later.length);
+      return Promise.all(later.map(function (entry) {
+        return loadEntry(entry).then(function (list) {
+          done++;
+          if (onProgress) onProgress(done, later.length);
+          return list;
+        });
+      })).then(function (lists) { return merge(lists, later.length); });
+    };
+    return Promise.all(now.map(loadEntry)).then(function (lists) { return merge(lists, now.length); });
   }).catch(function (e) {
     console.warn('[JTS] no JSON questions loaded — ' + e.message);
     return 0;

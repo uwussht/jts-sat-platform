@@ -734,6 +734,11 @@
     _teardown: null,
     _renderedHash: null,
     register: function (path, def) { this.routes[path] = def; },
+    /* Screens that need the whole question bank before they can draw. */
+    bankRoutes: ['#/practice', '#/mocks', '#/papers', '#/weekly', '#/diagnostic', '#/question', '#/errors', '#/tests'],
+    needsBank: function (path) {
+      return this.bankRoutes.some(function (p) { return path === p || path.indexOf(p + '/') === 0; });
+    },
     parse: function (hash) {
       var raw = (hash || global.location.hash || '#/today').replace(/^#/, '');
       var qIdx = raw.indexOf('?');
@@ -805,6 +810,26 @@
       var root = U.$('#app-root');
       U.clear(root);
       JTS.desmos.hide();
+      /* The general question bank comes in after the site has started. A
+         screen that draws from it waits here, with the count of files in,
+         and is drawn the moment the bank is complete. */
+      if (!JTS.data.bankLoaded && this.needsBank(route.path)) {
+        this.current = route;
+        JTS.shell.renderTopbar(def.title || '');
+        JTS.shell.syncNav(route.base);
+        var wait = U.el('div.container.screen');
+        var line = U.el('p.small.muted', { text: JTS.data.bankProgressText() });
+        wait.appendChild(U.el('div.card.stack-sm.bank-wait', { role: 'status', 'aria-live': 'polite' }, [
+          U.el('b', { text: t('boot.bankLoading') }), line, U.el('div.bank-wait-bar', null, [U.el('i')])
+        ]));
+        root.appendChild(wait);
+        JTS.data.onBankProgress(function () { line.textContent = JTS.data.bankProgressText(); });
+        var self = this, wanted = global.location.hash;
+        JTS.data.bankReady.then(function () {
+          if ((global.location.hash || '#/today') === (wanted || '#/today')) self.render();
+        });
+        return;
+      }
       /* A chosen exam date follows College Board's changes to it before any
          screen prints it. */
       if (JTS.examDates) JTS.examDates.reconcile();
@@ -2708,19 +2733,44 @@
     }).then(start, function (e) { console.error('[JTS] plan not loaded', e); start(); });
   };
 
+  /* The general bank, fetched once the site is up (see loadQuestionFiles). */
+  var bankWaiters = [];
+  var bankProgress = { done: 0, total: 0 };
+  JTS.data.bankProgressText = function () {
+    return bankProgress.total ? t('boot.bankProgress', { n: bankProgress.done, of: bankProgress.total }) : '';
+  };
+  JTS.data.onBankProgress = function (fn) { bankWaiters.push(fn); };
+  JTS.data.bankLoaded = false;
+  JTS.data.bankReady = new Promise(function (resolve) { JTS.data._bankResolve = resolve; });
+  function loadBank() {
+    var go = JTS.data.loadDeferredQuestions
+      ? JTS.data.loadDeferredQuestions(function (done, total) {
+          bankProgress = { done: done, total: total };
+          bankWaiters.forEach(function (fn) { fn(); });
+        })
+      : Promise.resolve(0);
+    go.catch(function (e) { console.error('[JTS] question bank not loaded', e); }).then(function () {
+      JTS.bank.reindex();
+      JTS.data.bankLoaded = true;
+      bankWaiters = [];
+      var problems = JTS.bank.validateAll();
+      if (problems.length) console.warn('[JTS] question bank problems:', problems);
+      else console.info('[JTS] question bank OK — ' + JTS.bank.all().length + ' items');
+      JTS.data._bankResolve();
+      /* The dashboard counts from the bank: draw it again with all of it. */
+      var path = JTS.router.current && JTS.router.current.path;
+      if (path === '#/today' || path === '#/plan') JTS.router.render();
+    });
+  }
+
   function start() {
     Store.root();
     JTS.shell.applyProfileSettings();
     JTS.bank.reindex();
     JTS.i18n.onChange(function () { JTS.shell.renderHeader(); });
     JTS.shell.renderHeader();
-    var problems = JTS.bank.validateAll();
-    if (problems.length) {
-      console.warn('[JTS] question bank problems:', problems);
-    } else {
-      console.info('[JTS] question bank OK — ' + JTS.bank.all().length + ' items');
-    }
     JTS.router.start();
+    loadBank();
   }
 
 })(window);
