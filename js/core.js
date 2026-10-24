@@ -17,7 +17,9 @@
     storageKey: 'jts_sat_v1',
     schemaVersion: 4,
     languages: ['en', 'ru', 'kk'],
-    defaultLanguage: 'en',
+    /* The interface starts in Russian. Topic names, SAT terms and the
+       questions themselves stay in English whatever is chosen. */
+    defaultLanguage: 'ru',
     desmosUrl: 'https://www.desmos.com/calculator',
     /* Official practice is done in College Board's own app. The platform
        links to it and never reproduces its items: they are College Board's,
@@ -265,7 +267,7 @@
         seenQuestionIds: [],
         badges: [],
         settings: {
-          uiLang: 'en', explainLang: 'en', theme: 'dark',
+          uiLang: JTS.config.defaultLanguage, explainLang: JTS.config.defaultLanguage, theme: 'dark',
           timerHidden: false,
           /* Where the student last dragged the calculator, or null while it is
              still docked to the side of the question. */
@@ -497,7 +499,7 @@
     onChange: function (fn) { this.listeners.push(fn); },
     /** t('nav.today', {n: 3}) — falls back to EN, then to the key itself. */
     t: function (key, params) {
-      var dicts = [JTS.dict[this.lang], JTS.dict[JTS.config.defaultLanguage]];
+      var dicts = [JTS.dict[this.lang], JTS.dict.en];
       var val;
       for (var i = 0; i < dicts.length && val === undefined; i++) {
         if (dicts[i] && dicts[i][key] !== undefined) val = dicts[i][key];
@@ -513,7 +515,7 @@
       if (!obj) return '';
       if (typeof obj === 'string') return obj;
       var l = lang || (Store.settings().explainLang) || this.lang;
-      return obj[l] || obj[JTS.config.defaultLanguage] || obj.en || '';
+      return obj[l] || obj.en || obj[JTS.config.defaultLanguage] || '';
     },
     /** Localized skill / domain names live on the record as name_en / name_ru / name_kk. */
     pickName: function (rec, lang) {

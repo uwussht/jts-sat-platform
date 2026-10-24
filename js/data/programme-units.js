@@ -91,6 +91,9 @@ var UNIT_ALIASES = { 'v-eoi': 'v-ei' };
 JTS.data.unit = function (def) {
   var P = JTS.data.programme;
   var lesson = {};
+  /* A lesson's title is its topic, and topics are College Board's English
+     names in every interface language (Words in Context, Quadratics …). */
+  if (def.t && def.t.en) def.t = { en: def.t.en, ru: def.t.en, kk: def.t.en };
   if (UNIT_ALIASES[def.unit]) def.unit = UNIT_ALIASES[def.unit];
   Object.keys(def).forEach(function (k) {
     if (k !== 'lesson' && k !== 'drill') lesson[k] = def[k];
