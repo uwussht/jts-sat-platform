@@ -23,11 +23,20 @@ jobs:
       - name: Validate deployment files
         env:
           SAT_IMAGE: ghcr.io/uwussht/jts-sat-platform:sha-0000000000000000000000000000000000000000
+          SAT_API_IMAGE: ghcr.io/uwussht/jts-sat-platform:api-sha-0000000000000000000000000000000000000000
         run: |
           bash -n deploy/release.sh
+          # secrets.env exists only on the server; an empty one lets the file be checked here.
+          touch secrets.env
           docker compose -f docker-compose.prod.yaml config --quiet
+          rm secrets.env
       - name: Build Docker image
         run: docker build -t jts-sat:ci .
+      - name: Build API image
+        run: |
+          docker build -f server/Dockerfile -t jts-sat-api:ci .
+          # The API's code loads and the shared plan engine is in the image.
+          docker run --rm --entrypoint node jts-sat-api:ci -e "require('/app/js/shared/plan-engine.js'); for (const f of ['db','auth','course','staff']) require('child_process').execSync('node --check /app/server/src/' + f + '.js')"
       - name: Check site over HTTP
         shell: bash
         run: |
@@ -62,6 +71,10 @@ jobs:
           docker tag jts-sat:ci "$image:latest"
           docker push "$image:sha-$COMMIT_SHA"
           docker push "$image:latest"
+          docker tag jts-sat-api:ci "$image:api-sha-$COMMIT_SHA"
+          docker tag jts-sat-api:ci "$image:api-latest"
+          docker push "$image:api-sha-$COMMIT_SHA"
+          docker push "$image:api-latest"
 
   deploy:
     needs: image
@@ -94,16 +107,20 @@ jobs:
           GH_USER: ${{ github.actor }}
           GH_REPOSITORY: ${{ github.repository }}
           COMMIT_SHA: ${{ github.sha }}
+          # Optional repository variable: phones that become admins (comma-separated).
+          ADMIN_PHONES: ${{ vars.SAT_ADMIN_PHONES }}
         shell: bash
         run: |
           set -euo pipefail
           target=sattutor@169.58.80.127
           release="/opt/jts-sat/releases/$COMMIT_SHA"
           image="ghcr.io/${GH_REPOSITORY,,}:sha-$COMMIT_SHA"
+          api_image="ghcr.io/${GH_REPOSITORY,,}:api-sha-$COMMIT_SHA"
+          admins=$(printf '%s' "${ADMIN_PHONES:-}" | tr -cd '0-9+,')
           ssh_options=(-i "$HOME/.ssh/sat_deploy" -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 -o ServerAliveInterval=15 -o ServerAliveCountMax=4)
           ssh "${ssh_options[@]}" "$target" "mkdir -p '$release'"
           scp "${ssh_options[@]}" deploy/release.sh docker-compose.prod.yaml "$target:$release/"
-          printf '%s\n' "$GH_TOKEN" | ssh "${ssh_options[@]}" "$target" "bash '$release/release.sh' '$image' '$GH_USER'"
+          printf '%s\n' "$GH_TOKEN" | ssh "${ssh_options[@]}" "$target" "bash '$release/release.sh' '$image' '$GH_USER' '$api_image' '$admins'"
       - name: Remove runner SSH key
         if: always()
         run: rm -f ~/.ssh/sat_deploy

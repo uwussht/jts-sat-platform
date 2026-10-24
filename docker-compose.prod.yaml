@@ -1,8 +1,60 @@
 name: jts-sat
 
+# Production, on the server, deployed by deploy/release.sh:
+#   web  the site (root Dockerfile); passes /api/ to the API
+#   api  accounts, plans, groups, scores (server/Dockerfile)
+#   db   PostgreSQL. Its data lives in the named volume db-data: a release
+#        replaces only web and api, and nothing here or in release.sh ever
+#        removes a volume.
+# The database password and the JWT key are in secrets.env, next to this
+# file in /opt/jts-sat, created once by release.sh and never overwritten.
+
 services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: teentech
+      POSTGRES_USER: teentech
+    env_file:
+      - secrets.env
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U teentech -d teentech"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  api:
+    image: ${SAT_API_IMAGE:?Set SAT_API_IMAGE to the published API image}
+    restart: unless-stopped
+    environment:
+      PGHOST: db
+      PGUSER: teentech
+      PGDATABASE: teentech
+      # The site is served over HTTPS (Caddy), so the sign-in cookie is Secure.
+      COOKIE_SECURE: "true"
+      ADMIN_PHONES: ${ADMIN_PHONES:-}
+      DEFAULT_PACKAGES: ${DEFAULT_PACKAGES:-basic}
+    env_file:
+      - secrets.env
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1:3000/api/health || exit 1"]
+      interval: 10s
+      timeout: 3s
+      retries: 12
+
   web:
     image: ${SAT_IMAGE:?Set SAT_IMAGE to the published image}
     restart: unless-stopped
     ports:
       - "127.0.0.1:8085:80"
+    depends_on:
+      - api
+
+volumes:
+  db-data:
