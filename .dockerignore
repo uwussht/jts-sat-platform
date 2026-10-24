@@ -1,7 +1,13 @@
 .git
-.env
+.github
+.vscode
 .claude
-server/node_modules
-tools
+dist
 node_modules
+server/node_modules
+**/.DS_Store
+**/__pycache__
+**/*.pyc
 *.log
+.env
+.env.*

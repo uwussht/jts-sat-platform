@@ -3486,3 +3486,17 @@ a.cal-tag { text-decoration: none; }
 /* ---------------------------------------------------------- desmos lessons */
 .dg-note { margin: 0 0 10px; }
 .dg-foot { justify-content: flex-end; margin-top: 10px; }
+
+/* Visible before the question bank finishes loading and the router starts. */
+.boot-loading {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.boot-loading strong { font-size: 24px; }
+.boot-loading p { margin: 12px 0 0; }
