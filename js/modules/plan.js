@@ -386,7 +386,7 @@
 
       var fit = JTS.courseUI.fitBanner(plan);
       if (fit) screen.appendChild(fit);
-      screen.appendChild(JTS.courseUI.phaseStrip(plan, { id: 'plan-phases' }));
+      screen.appendChild(JTS.courseUI.phaseStrip(plan, { id: 'plan-phases', noTitle: true }));
       if (!plan.examDate) screen.appendChild(U.el('div.notice', { text: t('plan.provisional') }));
 
       /* Which week is on screen is view state, not saved progress. It opens

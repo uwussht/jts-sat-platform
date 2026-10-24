@@ -3529,3 +3529,12 @@ a.cal-tag { text-decoration: none; }
   color: var(--muted); text-decoration: none; }
 .mk-switch a:hover { color: var(--ink); text-decoration: none; }
 .mk-switch a[aria-selected="true"] { background: var(--brand-600); color: var(--on-brand, #0B0B0B); }
+
+/* The phase card: the heading, the strip and the description each with room. */
+.ph-card { gap: 18px; }
+.ph-card .ph-head { margin-bottom: 2px; }
+.ph-card .ph-head .h2 { margin: 6px 0 0; }
+.ph-card .ph-lead { margin: 2px 0 0; }
+/* Desmos lessons: the calculator the same size as the video beside it. */
+.dg-pair { align-items: stretch; }
+.dg-calc .desmos-embed { height: auto; aspect-ratio: 16 / 9; }

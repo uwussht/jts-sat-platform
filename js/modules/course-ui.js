@@ -69,7 +69,9 @@
         U.el('div.eyebrow', { text: plan.phaseCounter.n
           ? t('phase.counter', { n: plan.phaseCounter.n, of: plan.phaseCounter.of })
           : t('phase.' + plan.current + '.short') }),
-        U.el('div.h2', { text: cur ? t('phase.' + cur.id + '.name') : '' })
+        /* #/plan leaves out the phase's long name: the strip right under it
+           already says where the student is. */
+        cur && !opts.noTitle ? U.el('div.h2', { text: t('phase.' + cur.id + '.name') }) : null
       ]),
       U.el('div.row.row-wrap.ph-meta', null, [
         U.el('span.badge.badge-muted', { text: t('phase.lessonsDone', { n: plan.done, of: plan.total }) }),
