@@ -69,12 +69,27 @@ compose=(docker compose -p jts-sat --project-directory "$site_dir" -f "$compose_
 # A copy of the database before anything changes. The last 14 are kept.
 backup_dir="$site_dir/backups"
 mkdir -p "$backup_dir"
-if [[ -n "$(docker ps -q --filter label=com.docker.compose.project=jts-sat --filter label=com.docker.compose.service=db)" ]]; then
+db_container=$(docker ps -q --filter label=com.docker.compose.project=jts-sat --filter label=com.docker.compose.service=db | head -n 1)
+if [[ -n "$db_container" ]]; then
   stamp=$(date -u +%Y%m%dT%H%M%SZ)
-  "${compose[@]}" exec -T db pg_dump -U teentech -d teentech | gzip > "$backup_dir/db-$stamp.sql.gz.next"
-  mv "$backup_dir/db-$stamp.sql.gz.next" "$backup_dir/db-$stamp.sql.gz"
-  ls -1t "$backup_dir"/db-*.sql.gz | tail -n +15 | xargs -r rm -f
-  echo "Backed up the database to $backup_dir/db-$stamp.sql.gz"
+  target="$backup_dir/db-$stamp.sql"
+  echo "Backing up the database ($db_container)"
+  # Straight into the running container, not through compose. A failed
+  # backup is reported and the release goes on: the data itself is the
+  # volume, which nothing here touches.
+  if docker exec "$db_container" pg_dump -U teentech -d teentech > "$target.next" 2> "$target.err"; then
+    gzip -f "$target.next"
+    mv "$target.next.gz" "$target.gz"
+    rm -f "$target.err"
+    ls -1t "$backup_dir"/db-*.sql.gz | tail -n +15 | xargs -r rm -f
+    echo "Backed up the database to $target.gz"
+  else
+    echo "WARNING: database backup failed (exit $?); continuing without it:" >&2
+    cat "$target.err" >&2 || true
+    rm -f "$target.next" "$target.err"
+  fi
+else
+  echo 'No database running yet; nothing to back up.'
 fi
 
 check_site() {
