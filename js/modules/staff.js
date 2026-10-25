@@ -89,6 +89,30 @@
     }));
   }
 
+  /** Admins only, and never one's own account: delete, after a confirmation
+      that names the person. Their progress and results go with them. */
+  function deleteButton(u, reload) {
+    if (!can('roles') || (JTS.Auth.user && JTS.Auth.user.id === u.id)) return null;
+    return U.el('button.btn.btn-sm.btn-ghost.staff-delete', {
+      type: 'button', text: t('staff.delete'),
+      onclick: function () {
+        ui.confirm({
+          title: t('staff.deleteTitle'),
+          message: t('staff.deleteBody', { name: u.name || '—', phone: u.phone }),
+          okText: t('staff.delete'), cancelText: t('common.cancel')
+        }).then(function (yes) {
+          if (!yes) return;
+          fetch('/api/staff/users/' + u.id, { method: 'DELETE', credentials: 'same-origin' })
+            .then(function (r) { return r.json(); })
+            .then(function (res) {
+              if (!res.ok) return failToast(res);
+              ui.toast(t('staff.deleted'), 'ok'); reload();
+            }, function () { failToast(null); });
+        });
+      }
+    });
+  }
+
   function roleCell(u) {
     if (!can('roles')) return U.el('span.small', { text: t('staff.role.' + u.role) });
     var sel = U.el('select.select.staff-role', null, ['student', 'teacher', 'curator', 'manager', 'admin'].map(function (r) {
@@ -145,7 +169,7 @@
             U.el('td', null, shown.length ? shown.map(function (sc) { return scoreLine(sc, load); })
               : [U.el('span.small.muted', { text: '—' })]),
             U.el('td', null, [packagesCell(u)]),
-            U.el('td', null, [roleCell(u)])
+            U.el('td', null, [roleCell(u), deleteButton(u, load)])
           ]));
         });
         table.appendChild(U.el('table.table.staff-table', null, [

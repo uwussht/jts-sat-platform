@@ -1137,5 +1137,10 @@ JTS.dict.kk = {
   'staff.col.start': 'Басталды',
   'staff.col.phase': 'Фаза',
   'staff.col.lesson': 'Ағымдағы сабақ',
-  'staff.col.bluebook': 'Bluebook баллдары'
+  'staff.col.bluebook': 'Bluebook баллдары',
+  'staff.delete': 'Жою',
+  'staff.deleteTitle': 'Аккаунтты жою керек пе?',
+  'staff.deleteBody': '{name} ({phone}) прогресі, пакеттері және Bluebook баллдарымен бірге жойылады. Мұны қайтару мүмкін емес.',
+  'staff.deleted': 'Аккаунт жойылды',
+  'staff.err.own-account': 'Өз аккаунтыңызды жоя алмайсыз.'
 };

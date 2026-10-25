@@ -1137,5 +1137,10 @@ JTS.dict.ru = {
   'staff.col.start': 'Старт',
   'staff.col.phase': 'Фаза',
   'staff.col.lesson': 'Текущее занятие',
-  'staff.col.bluebook': 'Баллы Bluebook'
+  'staff.col.bluebook': 'Баллы Bluebook',
+  'staff.delete': 'Удалить',
+  'staff.deleteTitle': 'Удалить аккаунт?',
+  'staff.deleteBody': '{name} ({phone}) будет удалён вместе с прогрессом, пакетами и баллами Bluebook. Отменить это нельзя.',
+  'staff.deleted': 'Аккаунт удалён',
+  'staff.err.own-account': 'Нельзя удалить свой собственный аккаунт.'
 };

@@ -130,6 +130,22 @@ router.put('/users/:id/role', requirePerm('roles'), async (req, res, next) => {
   } catch (e) { next(e); }
 });
 
+/**
+ * Delete an account, admins only. Its progress, packages, results, lesson
+ * marks and group place go with it (ON DELETE CASCADE). Never one's own:
+ * the last admin must not be able to lock everyone out.
+ */
+router.delete('/users/:id', requirePerm('roles'), async (req, res, next) => {
+  const id = Number(req.params.id);
+  if (!id) return res.status(400).json({ ok: false, reason: 'bad-id' });
+  if (id === req.userId) return res.status(400).json({ ok: false, reason: 'own-account' });
+  try {
+    const { rowCount } = await pool.query('DELETE FROM users WHERE id = $1', [id]);
+    if (!rowCount) return res.status(404).json({ ok: false, reason: 'not-found' });
+    res.json({ ok: true });
+  } catch (e) { next(e); }
+});
+
 router.get('/teachers', async (req, res, next) => {
   try {
     const { rows } = await pool.query(

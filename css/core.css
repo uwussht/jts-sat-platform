@@ -3548,3 +3548,6 @@ a.cal-tag { text-decoration: none; }
 .staff-score-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .staff-score.is-pending .staff-score-top b { color: var(--warn); }
 .staff-role { min-width: 150px; }
+
+.staff-delete { margin-top: 6px; color: var(--danger); }
+.staff-delete:hover { color: var(--danger); background: var(--danger-bg); }

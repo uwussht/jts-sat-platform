@@ -1137,5 +1137,10 @@ JTS.dict.en = {
   'staff.col.start': 'Started',
   'staff.col.phase': 'Phase',
   'staff.col.lesson': 'Current lesson',
-  'staff.col.bluebook': 'Bluebook scores'
+  'staff.col.bluebook': 'Bluebook scores',
+  'staff.delete': 'Delete',
+  'staff.deleteTitle': 'Delete this account?',
+  'staff.deleteBody': '{name} ({phone}) will be deleted with their progress, packages and Bluebook results. This cannot be undone.',
+  'staff.deleted': 'Account deleted',
+  'staff.err.own-account': 'You cannot delete your own account.'
 };
