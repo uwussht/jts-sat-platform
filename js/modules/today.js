@@ -201,6 +201,8 @@
 
       var hero = heroCard(state);
       screen.appendChild(hero.el);
+      var accessStrip = JTS.courseUI && JTS.courseUI.accessBanner();
+      if (accessStrip) screen.appendChild(accessStrip);
 
       /* The course: whether it fits before the exam, where the student is on
          it (the same phase strip as #/plan), the next lesson with the

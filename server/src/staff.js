@@ -13,7 +13,7 @@
 
 const express = require('express');
 const { pool, tx } = require('./db');
-const { requireUser, requirePerm, can, isoDate, clean, ROLES } = require('./auth');
+const { requireUser, requirePerm, can, isoDate, clean, ROLES, accessOf } = require('./auth');
 const { groupSlots, groupMarks, engine, scoreRow, today, planFor } = require('./course');
 
 const router = express.Router();
@@ -42,6 +42,7 @@ router.get('/users', async (req, res, next) => {
     if (role) { vals.push(role); where.push(`u.role = $${vals.length}`); }
     const { rows } = await pool.query(
       `SELECT u.id, u.phone, u.email, u.first_name, u.last_name, u.grade, u.role, u.exam_date,
+              u.access_type, u.access_until,
               u.created_at, u.last_login_at,
               COALESCE((SELECT array_agg(package ORDER BY package) FROM user_packages p WHERE p.user_id = u.id), '{}') AS packages,
               g.id AS group_id, g.name AS group_name
@@ -65,6 +66,7 @@ router.get('/users', async (req, res, next) => {
         examDate: isoDate(r.exam_date), packages: r.packages,
         group: r.group_id ? { id: r.group_id, name: r.group_name } : null,
         createdAt: r.created_at, lastLoginAt: r.last_login_at,
+        access: accessOf(r.role, r.access_type, r.access_until),
         scores: scores[r.id] || []
       };
       /* Where a student is on the course: the same plan they see. */
@@ -93,6 +95,30 @@ router.get('/users/:id/plan', async (req, res, next) => {
     const plan = await planFor(Number(req.params.id));
     if (!plan) return res.status(404).json({ ok: false, reason: 'not-found' });
     res.json({ ok: true, plan });
+  } catch (e) { next(e); }
+});
+
+/**
+ * Set a student's access: none, trial or full, until a date (the last day
+ * included) or, with no date, open-ended. A trial with no date given lasts
+ * TRIAL_DAYS, today included.
+ */
+const TRIAL_DAYS = 7;
+router.put('/users/:id/access', requirePerm('packages'), async (req, res, next) => {
+  const id = Number(req.params.id);
+  const type = (req.body || {}).type;
+  let until = (req.body || {}).until || null;
+  if (['none', 'trial', 'full'].indexOf(type) < 0) return res.status(400).json({ ok: false, reason: 'bad-access' });
+  if (until !== null && !isDate(until)) return res.status(400).json({ ok: false, reason: 'bad-date' });
+  /* Today counts as day one, so a 7-day trial's last day is today + 6. */
+  if (type === 'trial' && !until) until = engine.date.addDays(today(), TRIAL_DAYS - 1);
+  if (type === 'none') until = null;
+  try {
+    const { rows } = await pool.query(
+      `UPDATE users SET access_type = $2, access_until = $3, access_set_by = $4, access_set_at = now()
+        WHERE id = $1 RETURNING role, access_type, access_until`, [id, type, until, req.userId]);
+    if (!rows.length) return res.status(404).json({ ok: false, reason: 'not-found' });
+    res.json({ ok: true, access: accessOf(rows[0].role, rows[0].access_type, rows[0].access_until) });
   } catch (e) { next(e); }
 });
 

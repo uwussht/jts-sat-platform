@@ -113,6 +113,43 @@
     });
   }
 
+  /**
+   * Access: none / trial / full, and the last day it lasts (empty: no end).
+   * Choosing trial with no date gives a week from today.
+   */
+  function accessCell(u) {
+    var acc = u.access || { type: 'none', until: null, active: false };
+    if (acc.staff) return U.el('span.small.muted', { text: t('access.staffAlways') });
+    var editable = can('packages');
+    var type = U.el('select.select.staff-access', { disabled: !editable || null },
+      ['none', 'trial', 'full'].map(function (k) {
+        return U.el('option', { value: k, text: t('access.type.' + k), selected: acc.type === k || null });
+      }));
+    var until = U.el('input.input.staff-until', { type: 'date', value: acc.until || '', disabled: !editable || acc.type === 'none' || null,
+      'aria-label': t('access.until') });
+    var state = U.el('span.badge' + (acc.active ? '.badge-ok' : '.badge-danger'), {
+      text: acc.active ? (acc.until ? t('access.activeUntil', { date: fmt(acc.until) }) : t('access.activeOpen')) : t('access.closed')
+    });
+    function save(clearDate) {
+      var body = { type: type.value, until: clearDate || type.value === 'none' ? null : (until.value || null) };
+      api('staff/users/' + u.id + '/access', body, 'PUT').then(function (r) {
+        if (!r.ok) return failToast(r);
+        u.access = r.access;
+        until.value = r.access.until || '';
+        until.disabled = r.access.type === 'none' || null;
+        state.className = 'badge ' + (r.access.active ? 'badge-ok' : 'badge-danger');
+        state.textContent = r.access.active
+          ? (r.access.until ? t('access.activeUntil', { date: fmt(r.access.until) }) : t('access.activeOpen'))
+          : t('access.closed');
+        ui.toast(t('staff.saved'), 'ok');
+      });
+    }
+    /* A new trial starts a fresh week; switching to full keeps no old date. */
+    type.addEventListener('change', function () { save(type.value !== 'none'); });
+    until.addEventListener('change', function () { save(false); });
+    return U.el('div.stack-sm', null, [type, until, state]);
+  }
+
   function roleCell(u) {
     if (!can('roles')) return U.el('span.small', { text: t('staff.role.' + u.role) });
     var sel = U.el('select.select.staff-role', null, ['student', 'teacher', 'curator', 'manager', 'admin'].map(function (r) {
@@ -168,13 +205,14 @@
             U.el('td.small', { text: u.examDate ? fmt(u.examDate) : '—' }),
             U.el('td', null, shown.length ? shown.map(function (sc) { return scoreLine(sc, load); })
               : [U.el('span.small.muted', { text: '—' })]),
+            U.el('td', null, [accessCell(u)]),
             U.el('td', null, [packagesCell(u)]),
             U.el('td', null, [roleCell(u), deleteButton(u, load)])
           ]));
         });
         table.appendChild(U.el('table.table.staff-table', null, [
           U.el('thead', null, [U.el('tr', null, ['staff.col.name', 'staff.col.start', 'staff.col.phase', 'staff.col.lesson',
-            'staff.col.exam', 'staff.col.bluebook', 'staff.col.packages', 'staff.col.role']
+            'staff.col.exam', 'staff.col.bluebook', 'staff.col.access', 'staff.col.packages', 'staff.col.role']
             .map(function (k) { return U.el('th', { text: t(k) }); }))]),
           tb
         ]));

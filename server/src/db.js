@@ -129,7 +129,17 @@ const MIGRATIONS = [
    CREATE INDEX score_reports_status ON score_reports (status);
 
    INSERT INTO user_packages (user_id, package)
-     SELECT id, 'basic' FROM users ON CONFLICT DO NOTHING;`
+     SELECT id, 'basic' FROM users ON CONFLICT DO NOTHING;`,
+
+  /* 4: access, set by an admin — none (a new account waits), trial or full,
+        each until a date or, with no date, open-ended. Accounts that already
+        exist get open-ended full access, so nobody is locked out by this. */
+  `ALTER TABLE users ADD COLUMN IF NOT EXISTS access_type TEXT NOT NULL DEFAULT 'none'
+     CHECK (access_type IN ('none', 'trial', 'full'));
+   ALTER TABLE users ADD COLUMN IF NOT EXISTS access_until DATE;
+   ALTER TABLE users ADD COLUMN IF NOT EXISTS access_set_by INTEGER REFERENCES users (id) ON DELETE SET NULL;
+   ALTER TABLE users ADD COLUMN IF NOT EXISTS access_set_at TIMESTAMPTZ;
+   UPDATE users SET access_type = 'full', access_until = NULL;`
 ];
 
 async function migrate() {

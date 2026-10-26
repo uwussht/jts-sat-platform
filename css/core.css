@@ -3551,3 +3551,10 @@ a.cal-tag { text-decoration: none; }
 
 .staff-delete { margin-top: 6px; color: var(--danger); }
 .staff-delete:hover { color: var(--danger); background: var(--danger-bg); }
+
+/* Access: the closed screen, the dashboard strip, the staff column. */
+.access-lock { align-items: flex-start; margin-top: 40px; }
+.access-lock-icon { font-size: 34px; }
+.access-banner { align-items: center; }
+.staff-access { min-width: 140px; }
+.staff-until { min-width: 140px; padding: 6px 8px; }

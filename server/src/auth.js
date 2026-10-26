@@ -60,7 +60,20 @@ function normPhone(raw) {
 const clean = (s, max) => String(s || '').trim().replace(/\s+/g, ' ').slice(0, max);
 const isoDate = (d) => (d ? new Date(d).toISOString().slice(0, 10) : null);
 
-const USER_COLS = `u.id, u.phone, u.email, u.first_name, u.last_name, u.grade, u.role,
+/**
+ * Can this account use the course today? Staff always can. A student can
+ * while their access is trial or full and its end date (if any) is today or
+ * later — the end date is the last day included.
+ */
+function accessOf(role, type, until) {
+  const today = new Date().toISOString().slice(0, 10);
+  const end = until ? isoDate(until) : null;
+  const staff = role !== 'student';
+  const active = staff || ((type === 'trial' || type === 'full') && (!end || end >= today));
+  return { type: type || 'none', until: end, active, staff };
+}
+
+const USER_COLS = `u.access_type, u.access_until, u.id, u.phone, u.email, u.first_name, u.last_name, u.grade, u.role,
                    u.exam_date, u.plan_start, u.diagnostic_done_at`;
 
 /** The account as the site sees it, with its packages and group. */
@@ -87,6 +100,7 @@ async function loadUser(id) {
     examDate: isoDate(r.exam_date),
     planStart: isoDate(r.plan_start),
     diagnosticDone: !!r.diagnostic_done_at,
+    access: accessOf(r.role, r.access_type, r.access_until),
     packages: r.packages,
     group: r.group_id ? { id: r.group_id, name: r.group_name } : null
   };
@@ -112,12 +126,22 @@ async function requireUser(req, res, next) {
   const id = sessionUserId(req);
   if (!id) return res.status(401).json({ ok: false, reason: 'signed-out' });
   try {
-    const { rows } = await pool.query('SELECT id, role FROM users WHERE id = $1', [id]);
+    const { rows } = await pool.query(
+      'SELECT id, role, access_type, access_until FROM users WHERE id = $1', [id]);
     if (!rows.length) return res.status(401).json({ ok: false, reason: 'signed-out' });
     req.userId = id;
     req.role = rows[0].role;
+    req.access = accessOf(rows[0].role, rows[0].access_type, rows[0].access_until);
     next();
   } catch (e) { next(e); }
+}
+
+/** After requireUser: the course itself is for accounts with access. */
+function requireAccess(req, res, next) {
+  if (!req.access || !req.access.active) {
+    return res.status(403).json({ ok: false, reason: 'no-access', access: req.access || null });
+  }
+  next();
 }
 
 function requirePerm(perm) {
@@ -260,6 +284,7 @@ router.post('/me/diagnostic', requireUser, async (req, res, next) => {
 });
 
 module.exports = {
+  requireAccess, accessOf,
   router, requireUser, requirePerm, can, permsOf, loadUser, normPhone, isoDate, clean,
   ROLES, PERMS, COOKIE
 };

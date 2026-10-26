@@ -777,6 +777,14 @@
       /* Guards: no session -> auth; incomplete onboarding -> onboarding. */
       var openRoutes = ['#/auth'];
       if (!state && openRoutes.indexOf(route.base) < 0) { this.go('#/auth'); return; }
+      /* An account whose access is closed (not opened yet, or past its end
+         date) sees only the screen that says so. The server refuses the
+         course to it as well; this is what the student sees. */
+      var acc = JTS.Auth.mode === 'server' && JTS.Auth.user && JTS.Auth.user.access;
+      if (state && acc && !acc.active && route.base !== '#/auth' && route.base !== '#/locked') {
+        this.go('#/locked'); return;
+      }
+      if (route.base === '#/locked' && (!acc || acc.active)) { this.go('#/today'); return; }
       /* #/question is on this list because the diagnostic runs on it, and the
          diagnostic is now what finishes onboarding — without it the student
          presses Start and is bounced straight back to step 6. */

@@ -363,7 +363,71 @@
     }
   });
 
+  /* ----------------------------------------------------------- access */
+
+  function accessText(acc) {
+    if (!acc) return '';
+    if (acc.type === 'none') return t('access.none');
+    return t(acc.type === 'trial' ? 'access.trialEnded' : 'access.fullEnded', { date: fmt(acc.until) });
+  }
+
+  /** Days left, the end date counted in. */
+  function daysLeft(until) {
+    return U.daysBetween(U.today(), U.parseISO(until)) + 1;
+  }
+
+  /**
+   * On the dashboard: a trial says when it ends, and so does full access in
+   * its last week. Nothing for open-ended access.
+   */
+  function accessBanner() {
+    var acc = JTS.Auth.user && JTS.Auth.user.access;
+    if (!acc || acc.staff || !acc.active || !acc.until) return null;
+    var left = daysLeft(acc.until);
+    if (acc.type === 'full' && left > 7) return null;
+    return U.el('div.notice.access-banner.row-between.row-wrap' + (left <= 2 ? '.notice-warn' : ''), { id: 'access-banner' }, [
+      U.el('span.small', { text: t(acc.type === 'trial' ? 'access.trialUntil' : 'access.fullUntil',
+        { date: fmt(acc.until), n: left }) }),
+      U.el('a.btn.btn-sm', { href: JTS.config.links.whatsapp, target: '_blank', rel: 'noopener', text: t('access.contact') })
+    ]);
+  }
+
+  JTS.router.register('#/locked', {
+    title: 'access.title',
+    render: function (root) {
+      var acc = JTS.Auth.user && JTS.Auth.user.access;
+      var screen = U.el('div.container.screen', { style: 'max-width:640px' });
+      root.appendChild(screen);
+      var status = U.el('p.small.muted', { hidden: true });
+      screen.appendChild(U.el('div.card.stack.access-lock', null, [
+        U.el('div.access-lock-icon', { text: '🔒', 'aria-hidden': 'true' }),
+        U.el('h1.h2', { text: t('access.title') }),
+        U.el('p', { text: accessText(acc) }),
+        U.el('p.small.muted', { text: t('access.lead') }),
+        U.el('div.row.row-wrap', null, [
+          U.el('a.btn.btn-primary', { href: JTS.config.links.whatsapp, target: '_blank', rel: 'noopener', text: t('access.contact') }),
+          U.el('button.btn', { type: 'button', text: t('access.check'), onclick: function () {
+            JTS.api('me').then(function (res) {
+              if (!res.ok) return;
+              JTS.Auth.user = res.user;
+              if (res.user.access && res.user.access.active) {
+                JTS.course.refresh().then(function () { JTS.shell.renderHeader(); JTS.router.go('#/today'); });
+              } else {
+                status.textContent = t('access.stillClosed'); status.hidden = false;
+              }
+            });
+          } }),
+          U.el('button.btn.btn-ghost', { type: 'button', text: t('auth.logout'), onclick: function () {
+            JTS.Auth.logout().then(function () { JTS.shell.renderHeader(); JTS.router.go('#/auth'); });
+          } })
+        ]),
+        status
+      ]));
+    }
+  });
+
   JTS.courseUI = {
+    accessBanner: accessBanner,
     phaseStrip: phaseStrip,
     fitBanner: fitBanner,
     scoreModal: scoreModal,

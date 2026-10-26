@@ -12,7 +12,7 @@
 const path = require('path');
 const express = require('express');
 const { pool } = require('./db');
-const { requireUser, isoDate } = require('./auth');
+const { requireUser, requireAccess, isoDate } = require('./auth');
 
 const engine = require(path.join(__dirname, '..', '..', 'js', 'shared', 'plan-engine.js'));
 
@@ -107,14 +107,14 @@ async function planFor(userId) {
 
 const router = express.Router();
 
-router.get('/plan', requireUser, async (req, res, next) => {
+router.get('/plan', requireUser, requireAccess, async (req, res, next) => {
   try { res.json({ ok: true, plan: await planFor(req.userId) }); }
   catch (e) { next(e); }
 });
 
 /** A student without a group finished a lesson on the platform. In a group
     a lesson is done when the teacher marks it, so this is ignored there. */
-router.post('/lessons/:no/complete', requireUser, async (req, res, next) => {
+router.post('/lessons/:no/complete', requireUser, requireAccess, async (req, res, next) => {
   const no = Number(req.params.no);
   if (!engine.PROGRAMME.some((l) => l.no === no)) return res.status(400).json({ ok: false, reason: 'bad-lesson' });
   const on = /^\d{4}-\d{2}-\d{2}$/.test(String((req.body || {}).date)) ? req.body.date : today();
@@ -146,7 +146,7 @@ function scoreRow(r) {
   };
 }
 
-router.get('/scores', requireUser, async (req, res, next) => {
+router.get('/scores', requireUser, requireAccess, async (req, res, next) => {
   try {
     const { rows } = await pool.query(
       'SELECT * FROM score_reports WHERE user_id = $1 ORDER BY taken_on, created_at', [req.userId]);
@@ -159,7 +159,7 @@ router.get('/scores', requireUser, async (req, res, next) => {
  * curator confirms it. One live result per course test: entering Test 8
  * again replaces a pending one; a rejected one stays in the history.
  */
-router.post('/scores', requireUser, async (req, res, next) => {
+router.post('/scores', requireUser, requireAccess, async (req, res, next) => {
   const b = req.body || {};
   const test = ['pt6', 'pt8', 'pt10'].indexOf(b.test) >= 0 ? b.test : null;
   const source = ['bluebook', 'official', 'other'].indexOf(b.source) >= 0 ? b.source : 'bluebook';
@@ -193,7 +193,7 @@ router.post('/scores', requireUser, async (req, res, next) => {
 });
 
 /** A pending result the student wants to take back. */
-router.delete('/scores/:id', requireUser, async (req, res, next) => {
+router.delete('/scores/:id', requireUser, requireAccess, async (req, res, next) => {
   try {
     const { rowCount } = await pool.query(
       `DELETE FROM score_reports WHERE id = $1 AND user_id = $2 AND status = 'pending'`,
