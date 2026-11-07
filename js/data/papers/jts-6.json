@@ -1,0 +1,2415 @@
+{
+  "id": "jts-6",
+  "title": "December US 2025",
+  "year": 2026,
+  "questions": [
+    {
+      "id": "rw-m1-01",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>The extensive use of the costly pigment ultramarine in the paintings of Johannes Vermeer—creator of masterpieces such as Woman Writing a Letter, with Her Maid (ca. 1670)—was likely ______ as much by the pigment's chemical durability as by its exclusiveness and vivid blue hue: relative to azurite and other blue pigments employed by Vermeer and his contemporaries, ultramarine is less susceptible to degradation.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "expedited"
+        },
+        {
+          "label": "B",
+          "html": "constrained"
+        },
+        {
+          "label": "C",
+          "html": "preempted"
+        },
+        {
+          "label": "D",
+          "html": "motivated"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-02",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>The financial situation of playwrights in Elizabethan theater was often ______, but being as commercially successful as he was early in his career likely granted William Shakespeare security that contributed to his ability to later create Twelfth Night, Antony and Cleopatra, and other works still revered today.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "indecipherable"
+        },
+        {
+          "label": "B",
+          "html": "justifiable"
+        },
+        {
+          "label": "C",
+          "html": "predictable"
+        },
+        {
+          "label": "D",
+          "html": "precarious"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-03",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>The following text is from Charles Dickens's 1861 novel Great Expectations. The narrator is taking a walk near his home on a damp morning.</p><p>On every rail and gate, wet lay clammy, and the marsh mist was so thick, that the wooden finger on the post directing people to our village—a direction which they never accepted, for they never came there—was invisible to me until I was quite close under it.</p>",
+      "stemHtml": "<p>As used in the text, what does the word “accepted” most nearly mean?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Changed"
+        },
+        {
+          "label": "B",
+          "html": "Followed"
+        },
+        {
+          "label": "C",
+          "html": "Approved"
+        },
+        {
+          "label": "D",
+          "html": "Allowed"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-04",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Several scholars of children’s literature recently ______ to discuss the work of John Steptoe, illustrator of such lauded books as Mother Crocodile: An Uncle Amadou Tale from Senegal. Once together, they talked about his style, influences, and themes.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "convened"
+        },
+        {
+          "label": "B",
+          "html": "stipulated"
+        },
+        {
+          "label": "C",
+          "html": "cited"
+        },
+        {
+          "label": "D",
+          "html": "ascribed"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-05",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Following the swing era of the 1930s, cool jazz emerged as yet another innovative style in jazz ______ larger ensembles than those of their predecessors, cool jazz composers like Chico Hamilton emphasized smooth melodies in their works.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "music. Featuring"
+        },
+        {
+          "label": "B",
+          "html": "music, featuring"
+        },
+        {
+          "label": "C",
+          "html": "music, to feature"
+        },
+        {
+          "label": "D",
+          "html": "music to feature"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-06",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>When ordering the branches of the Yukon River system by Hack’s method, one begins with the riverway’s lowest point, the Yukon River. ______ when using Strahler's method, one begins at the top of the river system, with the Kanuti River and other tributaries fed by the riverway’s source, Alaska’s Llewellyn Glacier.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical transition?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Indeed,"
+        },
+        {
+          "label": "B",
+          "html": "Specifically,"
+        },
+        {
+          "label": "C",
+          "html": "Alternatively,"
+        },
+        {
+          "label": "D",
+          "html": "In other words,"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-07",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Editor Jared Shurin’s 2023 anthology The Big Book of Cyberpunk contains 108 stories, an enormous number. The anthology has a vast chronological scope, including both James Tiptree Jr.’s “The Girl Who Was Plugged In” (1973) and Lavanya Lakshminarayan’s “Études” (2020). In his introduction, Shurin defines cyberpunk as a subgenre of speculative fiction concerning “the influence of technology on the scale, the pace, or the pattern of human affairs”; however, many critics have previously argued that <u>cyberpunk is a literary movement that is not just idea driven but that has distinctive aesthetic components as well.</u></p>",
+      "stemHtml": "<p>Which choice best describes the function of the underlined portion in the text as a whole?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It points out a characteristic that is shared by the work of Tiptree and Lakshminarayan."
+        },
+        {
+          "label": "B",
+          "html": "It explains one of several points of disagreement that an editor of a cyberpunk anthology has with a group of critics."
+        },
+        {
+          "label": "C",
+          "html": "It explains why some critics think that a particular anthology of cyberpunk stories should not be considered a definitive summary of its genre."
+        },
+        {
+          "label": "D",
+          "html": "It suggests a way in which a particular editor's definition of cyberpunk may be considered incomplete."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-08",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Many places in the United States share a name with a foreign city or country. When founding the city of Warsaw, Indiana, residents decided to name ______ after the Polish city of Warsaw.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "them"
+        },
+        {
+          "label": "B",
+          "html": "it"
+        },
+        {
+          "label": "C",
+          "html": "that"
+        },
+        {
+          "label": "D",
+          "html": "us"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-09",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Providence, Rhode Island, has installed shoreline-hardening structures—mainly breakwalls—along 62% of its shoreline to protect infrastructure from sea-level rise and other hazards. To evaluate the responses of waterbirds at sites in the Chesapeake Bay on the US East Coast to shoreline hardening and other landscape alterations, Diann Prosser et al. surveyed waterbird communities consisting of sixty-four species, including the brown pelican and the red knot. Utilizing the Index of Waterbird Community Integrity (IWC), on which a low score corresponds to low community integrity, the researchers concluded that shoreline hardening more negatively affects waterbirds than does land development for uses such as housing or agriculture.</p>",
+      "stemHtml": "<p>Which finding, if true, would most directly challenge the researchers’ conclusion?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Waterbird communities at Margothy, a site with a relatively low percentage of developed land and a relatively high percentage of hardened shoreline, had lower average IWCI scores than did waterbird communities at Back River, a site with a higher percentage of developed land and a lower percentage of hardened shoreline."
+        },
+        {
+          "label": "B",
+          "html": "Waterbird communities at Stony and Curtis, two sites with relatively high percentages of developed land and hardened shoreline, had similar IWCI scores, whereas waterbird communities at Ware and Honga, two sites with relatively low percentages of developed land and hardened shoreline, had widely differing IWCI scores."
+        },
+        {
+          "label": "C",
+          "html": "Waterbird &gt;»mmunities at Old Road, a site with a relatively high percentage of developed land and hardened shoreline, had lower average IWCI scores than did waterbird communities at Onancock, a site with a relatively low percentage of developed land and hardened shoreline."
+        },
+        {
+          "label": "D",
+          "html": "Waterbird communities at Mill, a site with a relatively low percentage of developed land and a relatively high percentage of hardened shoreline, had higher average IWCI scores than did waterbird communities at Langford, a site with a higher percentage of developed land and a lower percentage of hardened shoreline."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-10",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>The synthesis of novel superheavy elements, such as nihonium (Nh), has led theorists to consider the feasibility of synthesizing all possible chemical compounds. In 2022, Guillermo Restrepo calculated the historical rates at which newly discovered compounds have entered the scientific literature, expanding the “chemical space.” <u>Using a conservative estimate of the number of viable compounds and assuming a doubling of the historical pace of discovery,</u> Restrepo found that under these hypothetical conditions, all potential compounds could be synthesized and documented by 2050.</p>",
+      "stemHtml": "<p>Which choice best describes the function of the underlined portion in the text as a whole?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It introduces information that helps explain why the synthesis of superheavy elements has rapidly expanded the chemical space."
+        },
+        {
+          "label": "B",
+          "html": "It provides details about the qualification later in the sentence regarding the prospect of cataloging the full range of possible chemical compounds."
+        },
+        {
+          "label": "C",
+          "html": "It emphasizes the point implicitly made earlier in the text that human inefficiency is the primary constraint on the expansion of the chemical space."
+        },
+        {
+          "label": "D",
+          "html": "It makes a comparison between the past and current rates at which new chemical compounds have entered the scientific literature."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-11",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<img src=\"rw-m1-11.png\"><p>Dogs and modern gray wolves share a recent wolf ancestor from which dogs were domesticated. Noting that dogs tend to have darker irises than gray wolves do, Akitsugu Konno et al. presented facial images of dogs with a range of iris colors to human participants, who rated the dogs’ personality traits and their own attitudes toward the dogs. On the basis of their findings, Konno et al. concluded that the dog-wolf iris pattern may be an effect of human selection for a positively perceived trait during domestication.</p>",
+      "stemHtml": "<p>Which choice best describes data from the table that support Konno et al.'s conclusion?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Participants rated the dogs in images 3 and 6 as friendlier than the dogs in images 14 and 20 and indicated that they were more willing to interact with or keep the dogs in the former two images than the dogs in the latter two images."
+        },
+        {
+          "label": "B",
+          "html": "Participants rated the dog in image 6 as friendlier than the dog in image 3 and rated the dog in image 14 as friendlier than the dog in image 20."
+        },
+        {
+          "label": "C",
+          "html": "Participants rated the irises of the dogs in images 3 and 6 as darker than the irises of the dogs in images 14 and 20."
+        },
+        {
+          "label": "D",
+          "html": "Participants rated the dogs in images 14 and 20 as more mature than the dogs in images 3 and 6 and indicated that they were more willing to interact with or keep the dogs in the former two images than the dogs in the latter two images."
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-12",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>With its mournful subject matter and haunting tune, \"Silver Dagger” is one of the most celebrated folk ballads of the southern Appalachian Mountains. Dolly Parton, who was born and raised in the region, was deeply influenced by these traditional ballads, as can be heard in the songs she wrote in the first decade of her career. <u>\"My Blue Tears,” a song from her 1971 album Coat of Many Colors, echoes Appalachian ballads both in theme and word choice.</u></p>",
+      "stemHtml": "<p>Which choice best describes the function of the underlined sentence?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It cites an album by Dolly as one of her most commercially successful works."
+        },
+        {
+          "label": "B",
+          "html": "It expresses disappointment in a song that Dolly wrote early in her career."
+        },
+        {
+          "label": "C",
+          "html": "It identifies a song by Dolly that was influenced by Appalachian music."
+        },
+        {
+          "label": "D",
+          "html": "It lists several Appalachian folk ballads that Dolly recorded early in her career."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-13",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Pollination syndromes are suites of floral traits that have independently evolved as a result of selection pressure exerted by pollinators; psychophilous (butterfly-pollinated) flowers, for example, frequently exhibit yellow, red, or orange coloring. In a review of previous studies covering 417 plant species, Victor Rosas-Guerrero et al. concluded that the syndromes reliably predict angiosperms’ most effective pollinators. However, in a response paper, Jeff Ollerton et al. note that Rosas-Guerrero et al. may have inadvertently ignored inconsistencies in how authors of previous studies evaluated floral traits.</p>",
+      "stemHtml": "<p>What does the text most strongly suggest about the study conducted by Rosas-Guerrero et al.?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A limitation in the methodology used by the researchers may entail that the study's conclusion is not well supported."
+        },
+        {
+          "label": "B",
+          "html": "The approach selected by the researchers enabled them to sort through and remove obviously incomplete or inconsistent data before conducting their analysis."
+        },
+        {
+          "label": "C",
+          "html": "Because the study contained data on a limited number of plant species, its conclusion is accurate for those species but cannot be applied to species not in the study."
+        },
+        {
+          "label": "D",
+          "html": "Due to the difficulty of gathering representative research on angiosperms, the study may have included previous research with a focus too heterogeneous to be comparable."
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-14",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Book lovers are often eager to watch movie versions of the books they admire. When Dr. Seuss's popular children's book How the Grinch Stole Christmas was turned into a movie in 2000, for example, fans of the book flocked to theaters to see the movie. Curious to know whether screen adaptations also inspire people to read the original books, Klaudia H.Y. Lee interviewed more than three thousand students. She found that many of the students indicated that they were more motivated to seek out and read certain books after having watched movies based on them.</p>",
+      "stemHtml": "<p>Which choice best states the main topic of the text?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Books that have been adapted into movies"
+        },
+        {
+          "label": "B",
+          "html": "Students hoping to become filmmakers"
+        },
+        {
+          "label": "C",
+          "html": "Dr. Seuss’s career as a writer"
+        },
+        {
+          "label": "D",
+          "html": "Movies about people working in bookstores"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-15",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<img src=\"rw-m1-15.png\"><p>Installing a new high-speed rail (HSR) hub in an area has the potential to boost residential development nearby, though the amount and type of development vary considerably by location. This potential is greatest when HSR hubs are established in areas far away from city centers, as these locations tend to have more available land for redevelopment into residential areas.</p>",
+      "stemHtml": "<p>Which statement is best supported by information from the text and table?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The area around København H has greater potential for residential development than the area around Stuttgart Hbf does."
+        },
+        {
+          "label": "B",
+          "html": "The area around Kassel-Wilhelmshöhe has greater potential for residential development than the area around København H does."
+        },
+        {
+          "label": "C",
+          "html": "The area around København H has greater potential for residential development than the area around Belfort-Montbéliard TGV does."
+        },
+        {
+          "label": "D",
+          "html": "The area around Kassel-Wilhelmshöhe has greater potential for residential development than the area around Belfort-Montbéliard TGV does."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-16",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Zooarchaeologist Ophélie Lebrasseur and her team examined a fox skeleton discovered in 1991 at an archaeological site alongside artifacts of human habitation (like spear points) in central Argentina. Lebrasseur et al. determined that the fox was Dusicyon avus, an extinct species resembling a jackal, and radiocarbon dating placed the fox at the site at the same time as human inhabitants. (Indeed, the inhabitants may have deliberately buried the fox.) In addition, while wild foxes have a diet entirely made of meat, isotopic signatures of the skeleton's teeth indicated that the fox's diet, like that of the humans, was partly composed of plant material. Lebrasseur et al. therefore concluded that ______</p>",
+      "stemHtml": "<p>Which choice most logically completes the text?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "the fox had a diet more similar to that of jackals than to that of wild foxes."
+        },
+        {
+          "label": "B",
+          "html": "the humans who were alive at the same time as the fox hunted using the spears whose points were also found at the site."
+        },
+        {
+          "label": "C",
+          "html": "the humans who were alive at the same time as the fox most likely ate more meat than the fox did."
+        },
+        {
+          "label": "D",
+          "html": "the fox may have been a companion animal of the humans who inhabited the site at the same time."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-17",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Online surveys are a common tool researchers use to collect information. These surveys are usually designed for use on personal computers (PCs), but more people are using smartphones to complete them than they are PCs. This shift in device usage may change how participants interact with online surveys. When researchers Jean Philippe Décieux and Philipp F. Sischka investigated, they found that PC users were more likely to multitask while taking surveys than smartphone users were, but PC users were also more likely to complete the surveys.</p>",
+      "stemHtml": "<p>Which choice best states the main idea of the text?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A study shows that the type of device people use to complete online surveys affects how they interact with these surveys."
+        },
+        {
+          "label": "B",
+          "html": "Researchers are investigating why survey completion rates are higher on PCs than they are on smartphones, despite increased multitasking on PCs."
+        },
+        {
+          "label": "C",
+          "html": "People are choosing to take online surveys on smartphones more often than they are on PCs because smartphones are convenient."
+        },
+        {
+          "label": "D",
+          "html": "Researchers prefer online surveys to other ways of collecting information because they think online survey results are more reliable."
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-18",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>The following text is adapted from Daniel Defoe’s 1704 nonfiction book The Storm.</p><p>If I judge right, ‘tis the duty of an historian to set everything in its own light, and to convey matter of fact upon its legitimate authority, and no other: I mean thus, (for I would be as explicit as I can) that where a story is vouched to him with sufficient authority, he ought to give the world the special testimonial of its proper voucher, or else he is not just to the story: and where it comes without such sufficient authority, he ought to say so; otherwise he is not just to himself.</p>",
+      "stemHtml": "<p>Which choice best states the main idea of the text?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The only figures that a historian should quote are those who are widely viewed as credible."
+        },
+        {
+          "label": "B",
+          "html": "Because no memories can be trusted, all historians are forced to admit that some records of events may be, in part, false."
+        },
+        {
+          "label": "C",
+          "html": "It is difficult for historians to be completely accurate, and eventually they will feel remorse for some of their work."
+        },
+        {
+          "label": "D",
+          "html": "Historians should clearly indicate the extent to which each of their sources is trustworthy."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-19",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>The following text is adapted from Kenneth Grahame's 1908 novel The Wind in the Willows. The Mole is dazed after briefly meeting a stranger while traveling with a friend.</p><p>[The] Mole stood still a moment, held in thought. As one wakened suddenly from a beautiful dream, who struggles to recall it, and can re-capture nothing but a dim sense of the beauty of it, the beauty! Till that, too, fades away in its turn.</p>",
+      "stemHtml": "<p>As used in the text, what does the word “recall” most nearly mean?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Overlook"
+        },
+        {
+          "label": "B",
+          "html": "Remember"
+        },
+        {
+          "label": "C",
+          "html": "Deny"
+        },
+        {
+          "label": "D",
+          "html": "Start"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-20",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>The fecal-steroidal profile of moose is clearly distinct from those of other ungulates. By contrast, <u>bison dung cannot be distinguished from elk dung based solely on their fecal-steroidal profiles,</u> as both contain similar levels of cholestanone and stigmastanol, among other sterols. The relative levels of fecal zoostanols (steroids with animal origins), such as coprostanol and 24-ethyl-coprostanol, in layers of lake bed sediments at Buffalo Ford Lake in Yellowstone National Park show that bison, elk, or both have been the dominant ungulate species in the lake's watershed for at least the last 2,000 years.</p>",
+      "stemHtml": "<p>Which choice best describes the function of the underlined portion in the text as a whole?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It offers context that helps account for the finding that the dominant ungulate species in the Buffalo Ford Lake watershed have been largely unchanged for at least 2,000 years."
+        },
+        {
+          "label": "B",
+          "html": "It describes an assumption about two types of ungulates’ fecal-steroidal profiles that the research on Buffalo Ford Lake sediment calls into question."
+        },
+        {
+          "label": "C",
+          "html": "It presents an observation that supports an argument about why the dominant ungulate species in the Buffalo Ford Lake watershed shifted over the course of the last 2,000 years."
+        },
+        {
+          "label": "D",
+          "html": "It provides information that explains why the data from Buffalo Ford Lake allow for multiple possibilities regarding the dominant ungulate species in the watershed."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-21",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Devon A. Mihesuah is a novelist and a citizen of the Choctaw Nation of Oklahoma. Critics and fellow writers have praised her work for combining traditional Choctaw stories with popular genres of literature, such as mystery fiction. But Mihesuah is not the only Indigenous writer to blend traditional stories with popular literature. In the 2018 novel Moon of the Crusted Snow, Waubgeshig Rice successfully blended the oral storytelling tradition of his people, the Anishinaabe, with horror fiction.</p>",
+      "stemHtml": "<p>Which choice best states the main idea of the text?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Recent Indigenous fiction writers are mixing traditional stories with popular literary genres."
+        },
+        {
+          "label": "B",
+          "html": "Several famous Indigenous writers increased their book sales when they began incorporating traditional stories."
+        },
+        {
+          "label": "C",
+          "html": "The success of Devon A. Mihesuah has influenced non-indigenous authors who write in popular literary genres."
+        },
+        {
+          "label": "D",
+          "html": "Non-Indigenous authors should consider the expectations of Indigenous readers."
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-22",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>The El Chaco meteorite, discovered in Argentina in 1969, weighs approximately 63,580 pounds and is the fourth-largest iron meteorite ever discovered on Earth. The Fukang meteorite, discovered in China in 2000, is much smaller at 2,211 pounds. ______ the latter is a stony-iron meteorite, and a size difference between meteorites of different compositions isn’t unexpected.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical transition?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "As a result,"
+        },
+        {
+          "label": "B",
+          "html": "In other words,"
+        },
+        {
+          "label": "C",
+          "html": "Admittedly,"
+        },
+        {
+          "label": "D",
+          "html": "In conclusion,"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-23",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Smart watches and wireless speakers tend to rely on batteries that can't be easily taken out and swapped for new ones. Environmental policy researcher Jessika Richter warns that because these gadgets can't ______ without working batteries, once the batteries stop working, the devices are typically disposed of as trash.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "decide"
+        },
+        {
+          "label": "B",
+          "html": "separate"
+        },
+        {
+          "label": "C",
+          "html": "expand"
+        },
+        {
+          "label": "D",
+          "html": "function"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-24",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>While researching a topic, a student has taken the following notes:</p><p>e Tlahuelilpan is a municipality in the state of Hidalgo, Mexico.</p><ul><li>Municipalities are governmental regions responsible for providing many public services to their residents.</li><li>Tlahuelilpan's population was 17,153 in 2010.</li><li>Its population was 19,067 in 2020.</li><li>Hidalgo is divided into 84 municipalities.</li></ul>",
+      "stemHtml": "<p>The student wants to compare Tlahuelilpan's 2020 population with its 2010 population. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "In 2020, the municipality of Tlahuelilpan had a population of 19,067."
+        },
+        {
+          "label": "B",
+          "html": "Tlahuelilpan is one of 84 governmental regions, known as municipalities, in Hidalgo, Mexico."
+        },
+        {
+          "label": "C",
+          "html": "As a municipality in Hidalgo, Tlahuelilpan is responsible for providing many public services to its population."
+        },
+        {
+          "label": "D",
+          "html": "In 2020, Tlahuelilpan’s population was greater than what it had been ten years earlier."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-25",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>While researching a topic, a student has taken the following notes:</p><ul><li>The Ural River is in Europe.</li><li>It is the third longest river in Europe.</li><li>It crosses the countries Kazakhstan and Russia.</li><li>It ranks No. 43 among the longest rivers in the world.</li><li>It is 2,428 kilometers long.</li></ul>",
+      "stemHtml": "<p>The student wants to specify how many kilometers long the Ural River is. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The third longest river in Europe, the Ural River crosses both Kazakhstan and Russia."
+        },
+        {
+          "label": "B",
+          "html": "The Ural River crosses both Kazakhstan and Russia in Europe."
+        },
+        {
+          "label": "C",
+          "html": "The Ural River in Europe is 2,428 kilometers long."
+        },
+        {
+          "label": "D",
+          "html": "Among the longest rivers in the world, the Ural River ranks No. 43."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-26",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>While researching a topic, a student has taken the following notes:</p><ul><li>Lighthouses send out crucial light signals to help ships and other watercraft navigate at night.</li><li>Before automation, lighthouses were run by lighthouse keepers.</li><li>Elizabeth Smith was the lighthouse keeper at Old Field Point Light in New York.</li><li>She held this position from 1830 to 1856.</li><li>Thelma Austin was the lighthouse keeper at Point Fermin Light in California.</li><li>She held this position from 1925 to 1941.</li></ul>",
+      "stemHtml": "<p>The student wants to emphasize a difference between the two lighthouse keepers. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Elizabeth Smith worked as a lighthouse keeper in an earlier century than did Thelma Austin."
+        },
+        {
+          "label": "B",
+          "html": "From 1830 to 1856, the nighttime waters of New York were made more navigable thanks to Elizabeth Smith."
+        },
+        {
+          "label": "C",
+          "html": "As the lighthouse keeper at Point Fermin Light, Thelma Austin helped watercraft navigate at night."
+        },
+        {
+          "label": "D",
+          "html": "Elizabeth Smith and Thelma Austin both played crucial roles in ensuring safe navigation for watercraft in past centuries."
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-27",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>While researching a topic, a student has taken the following notes:</p><ul><li>Epistolary novels are novels written primarily as a series of fictional documents, typically letters.</li><li>Sometimes, the documents are journal entries, newspaper clippings, and more.</li><li>Julie, or The New Heloise (1761) is an epistolary novel by French author Jean-Jacques Rousseau.</li><li>It consists primarily of letters sent between a man and a woman living in a small French town.</li><li>Parable of the Sower (1993) is an epistolary novel by American author Octavia Butler.</li><li>It consists primarily of journal entries written by a teenager living in an apocalyptic society.</li></ul>",
+      "stemHtml": "<p>The student wants to emphasize a difference between the two novels. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Julie, or The New Heloise and Parable of the Sower are epistolary novels, which means they are written primarily as a series of documents."
+        },
+        {
+          "label": "B",
+          "html": "Both Jean-Jacques Rousseau and Octavia Butler have written epistolary novels."
+        },
+        {
+          "label": "C",
+          "html": "While the novel Julie, or The New Heloise consists primarily of letters, the novel Parable of the Sower consists primarily of journal entries."
+        },
+        {
+          "label": "D",
+          "html": "Some epistolary novels consist primarily of journal entries, but most, like Jean-Jacques Rousseau’s Julie, or The New Heloise, consist primarily of letters."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-01",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>“Woman Hollering Creek” is an English-language short story by Sandra Cisneros that often includes Spanish words and phrases. In Bless Me, Ultima, Rudolfo Anaya frequently ______ Spanish text as well. But readers who are unfamiliar with Spanish can easily read both works since the meaning of the Spanish text can be inferred from the surrounding English text.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "suspects"
+        },
+        {
+          "label": "B",
+          "html": "relaxes"
+        },
+        {
+          "label": "C",
+          "html": "uses"
+        },
+        {
+          "label": "D",
+          "html": "loses"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-02",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>One reasonable way to evaluate the ______ of a scholar’s research is to track how often other scholars refer to that research. For example, Federal Reserve Bank of Cleveland economist Loretta J. Mester, who studies central banking, is among the world's most frequently cited researchers in her specialty, indicating that her work has had a significant effect on the field.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "complexity"
+        },
+        {
+          "label": "B",
+          "html": "unity"
+        },
+        {
+          "label": "C",
+          "html": "impact"
+        },
+        {
+          "label": "D",
+          "html": "expense"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-03",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Memoirs of Elleanor Eldridge is an 1838 historical account by Elleanor Eldridge and Frances Harriet Whipple Green. In the book, the authors caution against inquiring into the private life of the book’s subject beyond what is presented in the text, writing, ______</p>",
+      "stemHtml": "<p>Which quotation from Memoirs of Elleanor Eldridge most effectively illustrates the claim?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "\"How careful ought we to be to speak nothing but the truth, even in regard to the most trifling circumstances; and not only so, but to be well assured that what we suppose to be true, is truth, before we receive it as such.”"
+        },
+        {
+          "label": "B",
+          "html": "\"Having thus so comfortably established ourselves, with no evil-minded eaves-dropper to make us afraid, bend now, dear reader, thy most earnest and delicately adjusted ear; for I am going to tell thee a secret.”"
+        },
+        {
+          "label": "C",
+          "html": "“Let us, dear reader, remember the punishment of idle curiosity, as taught in the true and affecting history [named] ‘Blue Beard;' and, striving to be content with the facts in the case, seek not to lift the veil, which the sensibility of true love, and feminine delicacy, have alike conspired to draw.”"
+        },
+        {
+          "label": "D",
+          "html": "“Home is home, to the lowly as well as the great; and no rank, or color, destroys its sacred character, its power over the mind, and the affections.”"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-04",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Like most dog breeds developed in the Americas, the dogo argentino descends from dogs brought from Europe during the colonial era. In contrast, the Xoloitzcuintli is among a handful of breeds that descend from non-European populations that predated colonization. In 2013, researchers added another breed to this list: the Carolina dog, which is native to rural pockets of the Southeastern US. This breed has a unique genetic link to East Asian populations that were themselves the ancestors of the precolonial dogs of the Americas.</p>",
+      "stemHtml": "<p>What is the subject of the main distinction the text draws between the dogo argentino and the Xoloitzcuintli?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The size, coloration, and other traits typically associated with the two breeds"
+        },
+        {
+          "label": "B",
+          "html": "The geographical origins of the populations from which the two breeds descend"
+        },
+        {
+          "label": "C",
+          "html": "The degree to which the two breeds contributed to the ancestry of breeds developed more recently"
+        },
+        {
+          "label": "D",
+          "html": "The rate at which the two breeds spread from their places of origin to the Southeastern US"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-05",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Refined safflower oil reaches its smoke point at around 510 degrees Fahrenheit. At this temperature, the substance cannot absorb any more heat will begin to combust, emitting smoke.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "energy, it"
+        },
+        {
+          "label": "B",
+          "html": "energy and"
+        },
+        {
+          "label": "C",
+          "html": "energy. And"
+        },
+        {
+          "label": "D",
+          "html": "energy it"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-06",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Skeletal muscles are attached to bones. One bone, the trapezoid, has a skeletal muscle attached to ______ called the flexor pollicis brevis.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "her"
+        },
+        {
+          "label": "B",
+          "html": "it"
+        },
+        {
+          "label": "C",
+          "html": "them"
+        },
+        {
+          "label": "D",
+          "html": "him"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-07",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Philosopher Gottlob Frege (1848–1925) explored how multiple names can be used to refer to the same object or person yet still have different meanings. For instance, the fictional character Clark Kent and his alter ego Superman are the same person, yet the two personas are distinct. For Frege, this raises further questions about how ______</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "we can hold contradictory beliefs about a single thing?"
+        },
+        {
+          "label": "B",
+          "html": "can we hold contradictory beliefs about a single thing."
+        },
+        {
+          "label": "C",
+          "html": "we can hold contradictory beliefs about a single thing."
+        },
+        {
+          "label": "D",
+          "html": "can we hold contradictory beliefs about a single thing?"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-08",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Generally, sleek vehicles are more aerodynamic than bulkier ones. The streamlined nose of the Comac ARJ21 Xiangfeng jet, ______ helps it glide through wind with relative ease, while a boxy pickup truck encounters more wind resistance, making it less aerodynamic.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical transition?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "meanwhile,"
+        },
+        {
+          "label": "B",
+          "html": "additionally,"
+        },
+        {
+          "label": "C",
+          "html": "for instance,"
+        },
+        {
+          "label": "D",
+          "html": "however,"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-09",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Formerly known as the Southwest Territory, Tennessee was granted statehood by a vote of the US Congress on June 1, 1796, making Tennessee the 16th US state. By comparison, as one of the nation’s original thirteen colonies, Delaware became a state when it ratified the US Constitution on December 7, 1787. ______ New York attained statehood by ratifying the Constitution, becoming the 11th US state on July 26, 1788.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical transition?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Therefore,"
+        },
+        {
+          "label": "B",
+          "html": "Nevertheless,"
+        },
+        {
+          "label": "C",
+          "html": "For example,"
+        },
+        {
+          "label": "D",
+          "html": "Likewise,"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-10",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Mariana Lopes Barata and Pedro Simões Coelho collected data from 324 music-streaming service users to identify factors that influence users to opt for paid (premium) versions of music streaming services, like Apple Music. They found that hedonic motivation (the enjoyment that a consumer perceives to be associated with using a service) is positively correlated with users’ intentions to adopt premium versions. They also found that users’ intentions to purchase a premium service positively influence their intentions to recommend the premium service to others, which suggests that ______</p>",
+      "stemHtml": "<p>Which choice most logically completes the text?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "by encouraging existing users of premium services to recommend those services to nonusers, music streaming companies may be able to increase the extent to which their existing users perceive the premium version as pleasant to use."
+        },
+        {
+          "label": "B",
+          "html": "users’ intentions to pay for premium streaming services are probably unaffected by factors other than hedonic motivation."
+        },
+        {
+          "label": "C",
+          "html": "if music streaming companies can increase the degree to which some potential users perceive the premium version as pleasant to use, they may be able to generate interest in their premium services from other potential users that they have not reached directly."
+        },
+        {
+          "label": "D",
+          "html": "participants who strongly agreed with the statement “Using paid music streaming services is enjoyable” were more likely to express loyalty to Apple Music than to other streaming services."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-11",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>George Meade’s image was printed on $1,000 US banknotes in 1890, making the former major general of the US Army one of many nonpresidents ______ on US currency.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "to appear"
+        },
+        {
+          "label": "B",
+          "html": "had appeared"
+        },
+        {
+          "label": "C",
+          "html": "appears"
+        },
+        {
+          "label": "D",
+          "html": "did appear"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-12",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>From polar bears to short-tailed crickets, many animals practice some form of brood care (caring for offspring). Chenyang Cai and team claim to have found the earliest evidence of this behavior in insects in 163.5-million-year-old remains from the Haifanggou Formation in China, a location that has yielded many fossils, including those of feathered dinosaurs. Cai and team examined 157 specimens of the extinct water boatman species Karataviella popovi and noted thirty individuals that appear to carry eggs on one of their legs. This finding establishes brood care in insects approximately 38 million years earlier than previously known.</p>",
+      "stemHtml": "<p>Which choice best states the main idea of the text?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Research shows that feathered dinosaurs inhabited the location that is now the Haifanggou Formation long before K. popovi did."
+        },
+        {
+          "label": "B",
+          "html": "Cai and team's study of K. popovi fossils suggests that brood care in insects began earlier than formerly established."
+        },
+        {
+          "label": "C",
+          "html": "Cai and team concluded that K. popovi likely carried their offspring on one of their legs."
+        },
+        {
+          "label": "D",
+          "html": "The Haifanggou Formation is an abundant source of fossilized dinosaurs and K. popovi."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-13",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>In Puerto Rico, it's not unusual for a city or town to be known by a nickname that corresponds to one of its notable features, like landscape, ______ or chief exports. For example, the Puerto Rican municipality of Hatillo has also been called “the Blue Coast of Puerto Rico,” a nickname that alludes to what the area is well known for: the pristine blue ocean that surrounds it.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "climate; famous residents;"
+        },
+        {
+          "label": "B",
+          "html": "climate, famous residents,"
+        },
+        {
+          "label": "C",
+          "html": "climate famous residents,"
+        },
+        {
+          "label": "D",
+          "html": "climate famous residents"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-14",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p><b>Text 1</b></p><p>Norse settlers occupied part of Greenland from about 985 CE until the early 15th century, when they mysteriously abandoned the region. Many researchers cite increasingly lower temperatures to explain why the Norse fled. The researchers reason that the Norse settlers arrived in the region while the climate was warm and were able to remain there until temperatures declined during the Little Ice Age, which occurred between the 14th and 19th centuries.</p><p><b>Text 2</b></p><p>Jeffrey Salacup, Isla Castañeda, and colleagues analyzed sediment samples from a lake in Greenland close to the Norse settlement. This allowed them to reconstruct the area’s climate history. The researchers found no evidence of substantial temperature changes during the settlement period. They argue that instead the region experienced a persistent drought, which played a more important role in forcing the Norse out of the area than did increasingly lower temperatures.</p>",
+      "stemHtml": "<p>Based on the texts, the researchers in both passages address which question?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Why did the Norse settlers abandon their settlement in Greenland?"
+        },
+        {
+          "label": "B",
+          "html": "What was the average global temperature during the Little Ice Age?"
+        },
+        {
+          "label": "C",
+          "html": "How often did the Norse settlers in Greenland experience drought?"
+        },
+        {
+          "label": "D",
+          "html": "Where was the first sediment sample of a Norse settlement found?"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-15",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Many ranching terms come from Spanish. For example, the word “rodeo” (a roundup) comes from the Spanish word rodear, and \"stockade\" (a fence) ______ from estacada. This is because the first Anglo, African, and Native American cattle ranchers in the southwestern US learned the trade from Spanish-speaking Mexican vaqueros, or cowboys.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "will be coming"
+        },
+        {
+          "label": "B",
+          "html": "had come"
+        },
+        {
+          "label": "C",
+          "html": "will come"
+        },
+        {
+          "label": "D",
+          "html": "comes"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-16",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<img src=\"rw-m2-16.png\"><p>Scientists collected information about brown bears in Katmai National Park in Alaska. This information included each bear's sex, age, and approximate weight. The bear with the lowest approximate weight shown in the table was a ______</p>",
+      "stemHtml": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "female that was 5 years old."
+        },
+        {
+          "label": "B",
+          "html": "male that was 23 years old."
+        },
+        {
+          "label": "C",
+          "html": "male that was 10 years old."
+        },
+        {
+          "label": "D",
+          "html": "female that was 16 years old."
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-17",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<img src=\"rw-m2-17.png\"><p>During the Pleistocene, people began using sharpened bone awls to make holes in hide and fur, through which cord was then strung to make clothing. Eventually, people made needles by perforating the end of a bone awl with an eye (hole) to hold the cord, thereby enabling the simultaneous performance of the previously separate actions of puncturing and threading. And once the needle was invented, artisans could use finer cord and smaller holes, resulting in tighter, more thermally efficient seams in their clothing. For example, all other things being equal, the clothing worn by inhabitants at Malaya Syia likely had less thermally efficient seams than the clothing worn by inhabitants at both ______</p>",
+      "stemHtml": "<p>Which choice most effectively uses data from the table to complete the example?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Stajnia Cave and Yafteh Cave."
+        },
+        {
+          "label": "B",
+          "html": "Yafteh Cave and Shizitan."
+        },
+        {
+          "label": "C",
+          "html": "Khayrgas Cave and Yafteh Cave."
+        },
+        {
+          "label": "D",
+          "html": "Khayrgas Cave and Shizitan."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-18",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Eliza Stewart of Ohio and Julia Smith of Connecticut were leaders of the National Woman Suffrage Association in the late</p><p>1800s. Today, both of these women ______ remembered for their fierce advocacy of women's voting rights.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "is"
+        },
+        {
+          "label": "B",
+          "html": "are"
+        },
+        {
+          "label": "C",
+          "html": "was"
+        },
+        {
+          "label": "D",
+          "html": "being"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-19",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Memoirs of Elleanor Eldridge is an 1838 historical account by Elleanor Eldridge and Frances Harriet Whipple Green. In the book, the authors caution against inquiring into the private life of the book's subject beyond what is presented in the text, writing, ______</p>",
+      "stemHtml": "<p>Which quotation from Memoirs of Elleanor Eldridge most effectively illustrates the claim?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "\"To give some idea of the high esteem in which the subject of the following narrative is held, and the strong interest her misfortunes have excited, a few, from the great number of recommendations in her possession, are selected.”"
+        },
+        {
+          "label": "B",
+          "html": "“Home is home, to the lowly as well as the great; and no rank, or color, destroys its sacred character, its power over the mind, and the affections.”"
+        },
+        {
+          "label": "C",
+          "html": "“Let us, dear reader, remember the punishment of idle curiosity, as taught in the true and affecting history [named] ‘Blue Beard;’ and, striving to be content with the facts in the case, seek not to lift the veil, which the sensibility of true love, and feminine delicacy, have alike conspired to draw.”"
+        },
+        {
+          "label": "D",
+          "html": "\"Having thus so comfortably established ourselves, with no evil-minded eaves-dropper to make us afraid, bend now, dear reader, thy most earnest and delicately adjusted ear; for I am going to tell thee a secret.”"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-20",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Nicknamed “The Borinqueneers,” the US Army’s 65th Infantry Regiment has a membership that has included Colonel Juan Cordero Davila, Master Sergeant Pedro Rodriguez, and thousands of other Puerto Rican servicepeople. In 2016, these soldiers were honored for ______ historic service when President Barack Obama awarded the 65th Infantry Regiment with the Congressional Gold Medal.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "it's"
+        },
+        {
+          "label": "B",
+          "html": "there"
+        },
+        {
+          "label": "C",
+          "html": "their"
+        },
+        {
+          "label": "D",
+          "html": "they’re"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-21",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Researchers who study olfaction—the sense of smell—define valence as a person’s perception of how pleasant an odor is. Conventional wisdom holds that valence is culturally mediated. A team of scientists led by Artin Arshamian evaluated this view by testing how people from ten different places—including the Semelai people from a small community in the Malay Peninsula and the Chachi people from a small community in Ecuador—ranked ten odors from most pleasant to least pleasant. In general, respondents ranked scents similarly regardless of where they lived, overwhelmingly choosing the odorant eugenol as more pleasant than caprylic acid. These results show that ______</p>",
+      "stemHtml": "<p>Which choice most logically completes the text?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "the conventional belief that odor pleasantness can be objectively measured is questionable."
+        },
+        {
+          "label": "B",
+          "html": "the standard view of culture’s role in olfactory valence may be unsound."
+        },
+        {
+          "label": "C",
+          "html": "the respondents agreed more often on unpleasant odors than they did on pleasant ones."
+        },
+        {
+          "label": "D",
+          "html": "valence may affect cultural traditions more strongly than researchers had previously predicted."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-22",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Modernista architects championed nature in their designs. ______ the dramatic archways and decorative botanical panels of Castell dels Tres Dragons, a Modernista public building designed by Lluís Domènech i Montaner, couldn't exactly grow in a forest. Still, one sees natural influences in Domènech i Montaner’s penchant for curves (rather than right angles) and plant- and animal-inspired flourishes.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical transition?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Thus,"
+        },
+        {
+          "label": "B",
+          "html": "Granted,"
+        },
+        {
+          "label": "C",
+          "html": "Furthermore,"
+        },
+        {
+          "label": "D",
+          "html": "Similarly,"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-23",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Ethicist Ingrid Robeyns argues in her work that taxes on the very wealthy should be increased so that governments will be enabled to solve problems of collective action, such as mitigating climate change. Robeyns cites the work of economist Mariana Mazzucato, who shows that government subsidies are a more effective engine of innovation than private sector investments; in addition, government-funded innovations tend to lead to further developments in disparate fields (such as the United States mission to land a person on the Moon, which accelerated developments in textiles as well as electronics).</p>",
+      "stemHtml": "<p>Which choice best describes the overall structure of the text?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It offers a claim by a scholar, then uses the results of a project by another scholar to show why that claim should be rejected."
+        },
+        {
+          "label": "B",
+          "html": "It summarizes the research of one scholar, then presents a study by another scholar that was inspired by the findings of that research."
+        },
+        {
+          "label": "C",
+          "html": "It details the findings of a research project by one scholar, then puts forward the suggestions of another scholar for further investigation."
+        },
+        {
+          "label": "D",
+          "html": "It introduces a proposition by a scholar, then describes that scholar’s use of findings by another scholar to support that proposition."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-24",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>While researching a topic, a student has taken the following notes:</p><ul><li>The Mohs scale of mineral hardness is a ten-point scale that orders minerals by hardness based on their ability to scratch other minerals.</li><li>Minerals with larger numbers are harder than minerals with smaller numbers and can leave visible scratches on them.</li><li>Minerals with smaller numbers are softer than minerals with larger numbers and cannot leave visible scratches on them.</li><li>The mineral orthoclase has a Mohs scale number of 6.</li><li>The mineral topaz has a Mohs scale number of 8.</li><li>The mineral diamond has a Mohs scale number of 10.</li></ul>",
+      "stemHtml": "<p>The student wants to emphasize how hard topaz is in relation to other minerals. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "In the Mohs scale of mineral hardness, diamond (10) is ranked higher than orthoclase (6)."
+        },
+        {
+          "label": "B",
+          "html": "Diamond is hard enough to scratch both orthoclase and topaz."
+        },
+        {
+          "label": "C",
+          "html": "Diamond, orthoclase, and topaz can be ordered by hardness based on their ability to scratch other minerals."
+        },
+        {
+          "label": "D",
+          "html": "Topaz is hard enough to scratch orthoclase but not hard enough to scratch diamond."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-25",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>While researching a topic, a student has taken the following notes:</p><ul><li>Louis Ballard was a classical composer and citizen of the Quapaw Tribe.</li><li>His works blend Western classical music with elements of various Native musical traditions.</li><li>His 1970 composition Cacéga Ayuwipi incorporates a Pueblo water drum, a traditional Native instrument.</li><li>Critic Peter Altman commended Ballard's ability to synthesize “strong, idiomatically modern expressions.\"</li></ul>",
+      "stemHtml": "<p>The student wants to present Altman's claim to an audience already familiar with Louis Ballard. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Ballard was commended for his musical compositions, many of which blend Western classical music with elements of various Native musical traditions, by the critic Peter Altman."
+        },
+        {
+          "label": "B",
+          "html": "Ballard's works demonstrate what Peter Altman refers to as an ability to synthesize “strong, idiomatically modern expressions.”"
+        },
+        {
+          "label": "C",
+          "html": "Peter Altman praised Ballard—a classical composer whose works blend Western classical music with elements of Native musical traditions—for creating \"strong, idiomatically modern expressions.”"
+        },
+        {
+          "label": "D",
+          "html": "Ballard's 1970 Cacéga Ayuwipi blends Western classical music and elements of various Native musical traditions by incorporating a Pueblo water drum."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-26",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>While researching a topic, a student has taken the following notes:</p><ul><li>Blueberries are fruits that contain ascorbic acid, an essential nutrient for humans.</li><li>Every 100 grams (g) of blueberries contains 10 milligrams (mg) of ascorbic acid.</li><li>Many animals can make ascorbic acid in their bodies, but humans cannot.</li><li>Humans must get ascorbic acid from foods, including fruits and vegetables.</li><li>Ascorbic acid is also known as vitamin C.</li></ul>",
+      "stemHtml": "<p>The student wants to specify how much vitamin C is in blueberries. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "There is 10 mg of vitamin C in every 100 g of blueberries."
+        },
+        {
+          "label": "B",
+          "html": "Since humans cannot make vitamin C in their bodies, they must get this essential nutrient from foods like blueberries."
+        },
+        {
+          "label": "C",
+          "html": "Blueberries contain vitamin C, which humans must get from food."
+        },
+        {
+          "label": "D",
+          "html": "Many animals can make ascorbic acid, which is also known as vitamin C, in their bodies, but humans cannot."
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-27",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>While researching a topic, a student has taken the following notes:</p><ul><li>Maya Lin is an American artist known for her memorials and works of installation art.</li><li>She completed the Vietnam Veterans Memorial in 1982.</li><li>It is a memorial sculpture consisting of two 246-foot granite walls, and it is designed to commemorate veterans of the Vietnam War.</li><li>She completed Above and Below in 2007.</li><li>It is an installation composed of aluminum tubing that fills an entire gallery ceiling.</li></ul>",
+      "stemHtml": "<p>The student wants to describe Above and Below to a new audience. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Though Maya Lin's Above and Below (2007) is not a memorial, its gallery-filling scale may call to mind the imposing Vietnam Veterans Memorial, which consists of two 246-foot granite walls."
+        },
+        {
+          "label": "B",
+          "html": "Artist Maya Lin is well known for her installation art, such as Above and Below (2007), and for her memorials."
+        },
+        {
+          "label": "C",
+          "html": "Completed in 2007, Maya Lin's Above and Below is a large-scale installation artwork composed of aluminum tubing that fills an entire gallery ceiling."
+        },
+        {
+          "label": "D",
+          "html": "Maya Lin’s Vietnam Veterans Memorial is a granite memorial sculpture that commemorates veterans of the Vietnam War, while Above and Below is an installation artwork."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m1-01",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-01.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m1-02",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m1-02.png\">",
+      "correctAnswer": "10"
+    },
+    {
+      "id": "math-m1-03",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-03.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m1-04",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-04.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m1-05",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-05.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m1-06",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-06.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m1-07",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-07.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m1-08",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-08.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m1-09",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-09.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m1-10",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-10.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m1-11",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-11.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m1-12",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-12.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m1-13",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-13.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m1-14",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m1-14.png\">",
+      "correctAnswer": "96"
+    },
+    {
+      "id": "math-m1-15",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m1-15.png\">",
+      "correctAnswer": "35"
+    },
+    {
+      "id": "math-m1-16",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m1-16.png\">",
+      "correctAnswer": "588"
+    },
+    {
+      "id": "math-m1-17",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-17.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m1-18",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-18.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m1-19",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-19.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m1-20",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-20.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m1-21",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m1-21.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m1-22",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m1-22.png\">",
+      "correctAnswer": "16"
+    },
+    {
+      "id": "math-m2-01",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m2-01.png\">",
+      "correctAnswer": "41"
+    },
+    {
+      "id": "math-m2-02",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-02.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m2-03",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-03.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m2-04",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-04.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-05",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m2-05.png\">",
+      "correctAnswer": "1200"
+    },
+    {
+      "id": "math-m2-06",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-06.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m2-07",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m2-07.png\">",
+      "correctAnswer": "3"
+    },
+    {
+      "id": "math-m2-08",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-08.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m2-09",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-09.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m2-10",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-10.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-11",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-11.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m2-12",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m2-12.png\">",
+      "correctAnswer": "1/2",
+      "acceptedAnswers": [
+        "0.5",
+        ".5"
+      ]
+    },
+    {
+      "id": "math-m2-13",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-13.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m2-14",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-14.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m2-15",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-15.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m2-16",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-16.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-17",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m2-17.png\">",
+      "correctAnswer": "8"
+    },
+    {
+      "id": "math-m2-18",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-18.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-19",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-19.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m2-20",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-20.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-21",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<img src=\"math-m2-21.png\">",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A"
+        },
+        {
+          "label": "B",
+          "html": "B"
+        },
+        {
+          "label": "C",
+          "html": "C"
+        },
+        {
+          "label": "D",
+          "html": "D"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m2-22",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<img src=\"math-m2-22.png\">",
+      "correctAnswer": "3"
+    }
+  ]
+}

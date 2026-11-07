@@ -1,0 +1,1465 @@
+{
+  "id": "jts-4",
+  "title": "December INT Version A 2025",
+  "year": 2026,
+  "questions": [
+    {
+      "id": "rw-m1-01",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>One reasonable way to evaluate the ______ of a scholar's research is to track how often other scholars refer to that research. For example, Massachusetts Institute of Technology economist Antoinette Schoar, who studies management and economic performance, is among the world's most frequently cited researchers in her specialty, indicating that her work has had a significant effect on the field.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "expense"
+        },
+        {
+          "label": "B",
+          "html": "impact"
+        },
+        {
+          "label": "C",
+          "html": "unity"
+        },
+        {
+          "label": "D",
+          "html": "complexity"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-02",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Zygomorphic (bilaterally symmetric) flowers remain open and functional on average 1.1 days longer than actinomorphic (radially symmetric) flowers do. Ruby E. Stephens and colleagues claim that this extended period could be ______ the relatively small pool of potential pollinators available to zygomorphic flowers and the greater chance at successful pollination that remaining open affords them.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "analogous to"
+        },
+        {
+          "label": "B",
+          "html": "converted by"
+        },
+        {
+          "label": "C",
+          "html": "magnified by"
+        },
+        {
+          "label": "D",
+          "html": "attributed to"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-03",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>The influence of William Shakespeare's writings is clear in a vast range of subsequent literary works and is similarly ______ in many works in other media, from fine art (such as Richard Kindersley's sculpture The Seven Ages of Man) to popular music (such as the band Supergrass's song \"Richard II\").</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "unusual"
+        },
+        {
+          "label": "B",
+          "html": "apparent"
+        },
+        {
+          "label": "C",
+          "html": "excessive"
+        },
+        {
+          "label": "D",
+          "html": "subtle"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-04",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>The Apollo Moon landings (1969-1972) brought radiation detectors and seismic sensors to the Moon and produced large amounts of data, much of which was stored on technologies that are now obsolete. A data-transfer project is working to ______ these data so that the information is available to researcher Renee Weber, who is investigating tectonic activity on the Moon.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "simplify"
+        },
+        {
+          "label": "B",
+          "html": "salvage"
+        },
+        {
+          "label": "C",
+          "html": "amend"
+        },
+        {
+          "label": "D",
+          "html": "improve"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-05",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>In factories, humans and robots often work together. A research team ran an experiment to find out how working with robots affects relationships between human coworkers. The experiment included teams working together to make electric motor parts. <u>One type of team included only humans and the other type included both humans and robots.</u> Participants were paid for their work and were asked about their willingness to share their earnings with their human teammates. Participants from teams with robots were more likely to share with each other than participants from teams with only humans were.</p>",
+      "stemHtml": "<p>Which choice best describes the function of the underlined sentence in the text as a whole?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It illustrates a problem that inspired the study discussed in the text."
+        },
+        {
+          "label": "B",
+          "html": "It explains an important part of the design of the experiment discussed in the text."
+        },
+        {
+          "label": "C",
+          "html": "It states the results of the experiment discussed in the text."
+        },
+        {
+          "label": "D",
+          "html": "It indicates the question that the study discussed in the text was meant to answer."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-06",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Despite potential independent confirmation, the apparent detection in 2020 of phosphine (PH3) --- a gas that on Earth almost exclusively derives from biological sources --- in Venus's cloud deck remains controversial, in part because Venus is thought to be uninhabitable. To evaluate such a finding's plausibility, William Bains et al. modeled multiple abiotic PH3 pathways, including geochemical, atmospheric, and photochemical reactions, but none adequately explain the observed levels of PH3. If Venusian PH, does exist, it would indicate insufficiencies in the current consensus on Venus's chemistry.</p>",
+      "stemHtml": "<p>Which choice best describes the overall structure of the text?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It compares the levels of a particular gas on Venus and Earth, sketches the chemical processes that account for differences in these levels, and then addresses some of the practical challenges of studying the presence of this gas on Venus more closely."
+        },
+        {
+          "label": "B",
+          "html": "It introduces an unexpected observation of a particular gas in Venus's atmosphere, presents an effort to investigate possible mechanisms that could explain that observation, and then notes an implication of that investigation's findings."
+        },
+        {
+          "label": "C",
+          "html": "It explains why the consensus view of a particular gas in Venus's atmosphere has recently become controversial, expands on a scientific team's reasons for questioning that consensus, and then suggests that future observations of Venus's atmosphere will likely be needed to settle the controversy."
+        },
+        {
+          "label": "D",
+          "html": "It outlines recent efforts to confirm the presence of a particular gas in Venus's atmosphere, summarizes a research team's evaluations of those efforts' methodological shortcomings, and then explains why that team remains skeptical of the gas's future detection."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-07",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Guadalupe Romero Villanueva et al. conducted radiocarbon analysis of paint used in rock art at the Patagonian archaeological site Cueva Huenul 1, revealing that images of a comblike motif date to as early as 8,000 years ago, predating other paintings in the region by several millennia. The motif was subsequently reproduced multiple times at the site over the next 3,000 years, <u>a period coinciding with extremely arid conditions and slightly negative population growth.</u> The motif may therefore have functioned to help preserve cultural knowledge during a time of ecological and demographic stress.</p>",
+      "stemHtml": "<p>Which choice best describes the function of the underlined portion in the text as a whole?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It explains the environmental circumstances that account for the rarity of rock art dating to the same period as the motif discussed in the text."
+        },
+        {
+          "label": "B",
+          "html": "It emphasizes the historical conditions that explain why production of the painted motif described in the text abruptly ceased after 3.000 years of continued use."
+        },
+        {
+          "label": "C",
+          "html": "It identifies a consideration that factored into an interpretation of the rock art at Cueva Huenul 1 that is presented in the text."
+        },
+        {
+          "label": "D",
+          "html": "It provides context that informs the text's claim about why the peoples of Patagonia chose Cueva Huenul 1 as a culturally significant site."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-08",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Given the immense scope of space, the search for extraterrestrial life is almost necessarily concentrated on the exoplanets deemed to have the most plausible chance of success --- typically, atmosphere-bearing terrestrial planets orbiting within a certain range of their stars (termed the habitable zone). Claiming that Earth experienced a long transition from single-lid to plate tectonics that accelerated the emergence and evolution of complex organisms, researchers Robert J. Stern and Taras V. Gerya hold that consideration of tectonics, an often overlooked factor, could help further narrow the search for advanced extraterrestrial species.</p>",
+      "stemHtml": "<p>Based on the text, what do Stern and Gerya most likely believe about the development of commplex life on exoplanets?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It is unlikely unless the transition from single-lid to plate tectonics occurs before the acquisition of a lasting atmosphere."
+        },
+        {
+          "label": "B",
+          "html": "It is probably more dependent on the presence of plate tectonics than on orbital distance from a host star or the presence of an atmosphere."
+        },
+        {
+          "label": "C",
+          "html": "It is more likely to occur on habitable zone planets with atmospheres and plate tectonics than on otherwise similar planets that lack plate tectonics"
+        },
+        {
+          "label": "D",
+          "html": "It is more likely to occur if habitable zone planets with atmospheres transition from single-lid to plate tectonics late in their history than if they transition early in their history."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-09",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>The Wonderful Wizard of Oz is a 1900 novel by L. Frank Baum. In the novel, Dorothy, who is from Kansas, finds herself in an unfamiliar place called Oz. Kansas is presented as beingless appealing than Oz, as is clear when ______</p>",
+      "stemHtml": "<p>Which quotation from The Wonderful Wizard of Oz most effectively illustrates the claim?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "the narrator states, \"Dorothy did not feel nearly so bad as you might think a little girl would who had been suddenly whisked away from her own country and set down in the midst of a strange land.\""
+        },
+        {
+          "label": "B",
+          "html": "a character says to Dorothy, \"I cannot understand why you should wish to leave this beautiful country and go back to the dry, gray place you call Kansas.\""
+        },
+        {
+          "label": "C",
+          "html": "the narrator states, \"They walked along listening to the singing of the brightly colored birds and looking at the lovely flowers which now became so thick that the ground was carpeted with them.\""
+        },
+        {
+          "label": "D",
+          "html": "a character says to others, \"But it will take more than imagination to carry Dorothy back to Kansas, and I'm sure I don't know how it can be done.\""
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-10",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Memoirs of Elleanor Eldridge is an 1838 historical account by Elleanor Eldridge and Frances Harriet Whipple Green. In the book, the authors suggest that many memoirs of renowned people aren't particularly straightforward or candid, writing, ______</p>",
+      "stemHtml": "<p>Which quotation from Memoirs of Elleanor Eldridge most effectively illustrates the claim?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "\"And now, dear reader, a word with you. What is done cannot be undone. We cannot unravel this web of iniquity, and extract justice from this mass of cruel wrongs.\""
+        },
+        {
+          "label": "B",
+          "html": "\"There is often a kind of [deceptive] light, playing around such [famous]names, calculated to dazzle and mislead, by their false lustre, until the eye can no longer receive the pure light of Truth, or the mind appreciate real excellence, or intrinsic worth.\""
+        },
+        {
+          "label": "C",
+          "html": "\"It should not be considered essential to the interest and value of biography, that its subject be of exalted rank, or illustrious name.\""
+        },
+        {
+          "label": "D",
+          "html": "\"Then let no one turn with too much [fussiness from the simple story of the humble Elleanor, though it may contain few, or none, of the thrilling charms of poetry and passion.\""
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-11",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<img src=\"rw-m1-11.png\"><p>As the second-most populous continent in the world, Africa was home to an estimated1.186 billion people in 2015. In a paper for a social studies class, a student nonetheless notes that countries with very large populations may be less densely populated than are countries with much smaller populations, as can be seen by comparing ______</p>",
+      "stemHtml": "<p>Which choice most effectively uses data from the table to complete the example?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Zambia, which has a low density, with Benin, which has a similar density despite both countries having different geographic sizes."
+        },
+        {
+          "label": "B",
+          "html": "the geographic size of Mali (1,240,000 square kilometers) with its relatively high population of 17,600,000 inhabitants."
+        },
+        {
+          "label": "C",
+          "html": "Mali, which has a high population of 17,600,000 inhabitants and a relatively low density of 14.2 inhabitants/square kilometer, with Lesotho, which has a much lower population and a higher density."
+        },
+        {
+          "label": "D",
+          "html": "the populations of both Lesotho and Benin in 2015 with their populations in 2010."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-12",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<img src=\"rw-m1-12.png\"><p>Ratifed in 2017 by two-thirds of World Trade Organization member nations, the Trade Facilitation Agreement (TFA) is a trade-reform measure that aims to reduce slow cargo import inspections and other costly aspects of international trade. In a 2021 report, economist Jayson Beckman modeled global market prices of several agricultural commodities under both the TFA and an alternative trade- reform scenario: removal of agricultural tariffs (taxes on imports that generally increase prices on imported goods). After reviewing data from the report, a student concludes that overall, consumers of the commodities listed in the table would likely benefit more from the TFA than they would from tariff removal.</p>",
+      "stemHtml": "<p>Which choice most effectively uses data from the table to support the student's claim?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Under the TFA scenario, the average prices of all four commodities would decrease, whereas under the tariff-removal scenario, only the average price of processed foods would decrease."
+        },
+        {
+          "label": "B",
+          "html": "Under the tariff-removal scenario, the average prices of processed foods maize, and oilseeds would decrease by more than 1%, while the average price of rice would decrease by less than 1%."
+        },
+        {
+          "label": "C",
+          "html": "Under the TFA scenario, the average price of rice would decrease by a smaller amount than any of the other three commodities prices would whereas its average price would increase under the tariff-removalscenar10."
+        },
+        {
+          "label": "D",
+          "html": "Under the tariff-removal scenario, the average price of processed foods would increase, but the average prices of maize and rice would decrease."
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-13",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<img src=\"rw-m1-13.png\"><p>Drosophila (fruit flies) have generation times of 10-12 days, so seasonal changes in humidity and other environmental conditions can drive seasonal fluctuations in chromosome rearrangements in species such as D, robusta and D, subobscura. Drosophila body size (for which wing centroid size serves as a proxy measure) correlates with lifespan. Banu Sebnem Onder and Cansu Fidan Aksoy measured the wing sizes of members of a D, melanogaster population in Yesilöz, Turkey, that were collected monthly between May and October over three years. Their research suggests that Drosophila collected in relatively cooler months should tend to have a shorter life span, as is illustrated by the finding that ______</p>",
+      "stemHtml": "<p>Which choice most effectively uses data from the table to complete the assertion?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "the average male wing centroid size was consistently smaller than the average female wing centroid size in all four months in the table."
+        },
+        {
+          "label": "B",
+          "html": "the average female wing centroid size was 2.02 mm in July but was 2.29mm in October."
+        },
+        {
+          "label": "C",
+          "html": "the average male wing centroid size was smaller in May than in July."
+        },
+        {
+          "label": "D",
+          "html": "the average monthly low temperature was lower in May than in September."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-14",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Andrea Sommese, Ádám Miklósi, and team investigated head-tilting behavior in a group of forty dogs, which included thirty-four typical dogs from five different breeds (including Benhur, a kelpie) and six dogs that had previously demonstrated giftedness at learning words, all of which were border collies. The researchers recorded the dogs head-tilting behavior in response to requests to fetch a toy that had been introduced early in the study. They found that all six gifted dogs tilted their heads at least some of the time when asked to retrieve the toy by name, while the typical dogs almost never tilted their heads. After reviewing the study, a student concludes that a tendency to tilt their heads is a characteristic trait of all border collies.</p>",
+      "stemHtml": "<p>Which finding from the study, if true, would most directly challenge the student's conclusion?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Most of the gifted dogs tilted their heads to the same side in each trial."
+        },
+        {
+          "label": "B",
+          "html": "The majority of dogs in the typical group were border collies."
+        },
+        {
+          "label": "C",
+          "html": "The border collies successfully fetched the toy more often than the dogs of other breeds did."
+        },
+        {
+          "label": "D",
+          "html": "The typical dogs that tilted their heads appeared to be processing the meaning of the requests."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-15",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Mariana Lopes Barata and Pedro Simöes Coelho collected data from 324 music-streaming service users to identify factors that influence users to opt for paid (premium) versions of music streaming services, like Apple Music. They found that hedonic motivation (the enjoyment that a consumer perceives to be associated with using a service) is positively correlated with users' intentions to adopt premium versions. They also found that users' intentions to purchase a premium service positively influence their intentions to recommend the premium service to others, which suggests that ______</p>",
+      "stemHtml": "<p>Which choice most logically completes the text?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "if music streaming companies can increase the degree to which some potential users perceive the premium version as pleasant to use, they maybe able to generate interest in their premium services from other potential users that they have not reached directly."
+        },
+        {
+          "label": "B",
+          "html": "participants who strongly agreed with the statement \"Using paid music streaming services is exciting\" were more likely to express loyalty to Apple Music than to other streaming services."
+        },
+        {
+          "label": "C",
+          "html": "users' intentions to pay for premium streaming services are probably unaffected by factors other than hedonic motivation."
+        },
+        {
+          "label": "D",
+          "html": "by encouraging existing users of premium services to recommend those services to nonusers, music streaming companies may be able to increase the extent to which their existing users perceive the premium version as pleasant to use."
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-16",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Cycads are palmlike plants with cones. ______ plants were abundant throughout the Mesozoic Era (66 to 252 million years ago).</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "These"
+        },
+        {
+          "label": "B",
+          "html": "That"
+        },
+        {
+          "label": "C",
+          "html": "This"
+        },
+        {
+          "label": "D",
+          "html": "Each"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-17",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>The theory of plate tectonics explains how large pieces of Earth's crust, called tectonic plates, move and interact. According to the theory, the movement of tectonic plates forms ______ creates volcanoes, and causes earthquakes.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "mountains;"
+        },
+        {
+          "label": "B",
+          "html": "mountains,"
+        },
+        {
+          "label": "C",
+          "html": "mountains"
+        },
+        {
+          "label": "D",
+          "html": "mountains:"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-18",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>At the Atlantic Acting School in New York, New York, students can learn the world-famous Meisner technique. ______ by acting teacher Sanford Meisner, this technique trains actors to react naturally to the other performers in a scene.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Developing"
+        },
+        {
+          "label": "B",
+          "html": "Developed"
+        },
+        {
+          "label": "C",
+          "html": "Develops"
+        },
+        {
+          "label": "D",
+          "html": "Develop"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-19",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>While conducting an interview for her book Latina Authors and Their Muses, editor Mayra Calvani asked Iris Gomez, author of the poetry collection When Comets Rained, what ______ Gomez's response was Mona in the Promised Land by Gish Jen.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "her favorite book was."
+        },
+        {
+          "label": "B",
+          "html": "her favorite book was?"
+        },
+        {
+          "label": "C",
+          "html": "was her favorite book!"
+        },
+        {
+          "label": "D",
+          "html": "was her favorite book?"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-20",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>In the book A Theory of Harmony (1985), Swiss musicologist Ernst Levy argued that every chord has an opposite that can be substituted for it. For example, a pianist could replace the bii chord for the VII chord while ______ chord is a given chord's opposite can be determined using a music visualization tool called the circle of fifths.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "improvising. Which"
+        },
+        {
+          "label": "B",
+          "html": "improvising, which"
+        },
+        {
+          "label": "C",
+          "html": "improvising which"
+        },
+        {
+          "label": "D",
+          "html": "improvising and which"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-21",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Cornelia Konrads is a German sculptor who creates art that seems to be part of its surroundings. Her sculpture entitled the match is built between statues at a park in France. ______ appearing as large vases being tossed between statues at the park, it is cleverly placed into its environment, serving as an example of Konrads's approach.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical transition?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "For instance,"
+        },
+        {
+          "label": "B",
+          "html": "Later,"
+        },
+        {
+          "label": "C",
+          "html": "However,"
+        },
+        {
+          "label": "D",
+          "html": "There,"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-22",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>When it was completed in 1889, the Eiffel Tower in Paris, France, was criticized-even protested for --- the novelty of its unique spire-like silhouette. ______ the design became accepted --- even beloved --- and can now be found in everything from the Eiffel Tower replica in Uman, Ukraine, to the Funkturm Berlin in Berlin, Germany.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical transition?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Over time,"
+        },
+        {
+          "label": "B",
+          "html": "Indeed,"
+        },
+        {
+          "label": "C",
+          "html": "Therefore,"
+        },
+        {
+          "label": "D",
+          "html": "Furthermore,"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-23",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Rose B. Simpson, a Santa Clara Pueblo mixed-media artist, makes intuition and imperfection important parts of her artistic process. ______ her \"slap-slab\" technique involves throwing slabs of clay onto the floor until they're very thin and then assembling them quickly and intuitively by hand before they dry. The resulting sculptures are marked by seams, fingerprints, and other signs of her process.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical transition?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Nevertheless,"
+        },
+        {
+          "label": "B",
+          "html": "Similarly,"
+        },
+        {
+          "label": "C",
+          "html": "For example,"
+        },
+        {
+          "label": "D",
+          "html": "Meanwhile,"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-24",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>While researching a topic, a student has taken the following notes:</p><p>- The Pilot Knob National Wildlife Refuge (NWR) is a protected natural area in Missouri.</p><p>- It encompasses 90 acres.</p><p>- The Pilot Knob NWR was established to safeguard the habitat of the Indiana bat, an endangered species.</p><p>- The Pilot Knob NWR is managed by the Us Fish &amp; Wildlife Service.</p><p>- The US Fish &amp; Wildlife Service limits human activities in the area.</p>",
+      "stemHtml": "<p>The student wants to emphasize the role the Us Fish &amp; Wildlife Service plays in safeguarding the habitat of the Indiana bat. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Home to the Indiana bat, the Pilot Knob NWR is located in Missouri, where it encompasses 90 acres."
+        },
+        {
+          "label": "B",
+          "html": "Human activities are limited in the Pilot Knob NWR, a protected natural area in Missouri."
+        },
+        {
+          "label": "C",
+          "html": "By limiting human activities in the Pilot Knob NWR, the Us Fish &amp; Wildlife Service safeguards the habitat of the Indiana bat."
+        },
+        {
+          "label": "D",
+          "html": "The 90-acre Pilot Knob NWR was established to safeguard the habitat of the Indiana bat, an endangered species."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-25",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>While researching a topic, a student has taken the following notes:</p><p>- The cuneiform script is the earliest known set of symbols used for writing.</p><p>- Sumerian was one of the first languages to be written using the cuneiform script.</p><p>- Sumerian was a language in ancient Mesopotamia (present-day Iraq).</p><p>- Clay tablets with Sumerian writing have been found there.</p>",
+      "stemHtml": "<p>- Some of these tablets are almost 5,000 years old. The student wants to identify a language that was written using the cuneiform script. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Clay tablets with cuneiform script have been found in present-day Iraq."
+        },
+        {
+          "label": "B",
+          "html": "A language in ancient Mesopotamia used the cuneiform script for writing."
+        },
+        {
+          "label": "C",
+          "html": "Sumerian, an ancient Mesopotamian language, was written using the cuneiform script."
+        },
+        {
+          "label": "D",
+          "html": "Examples of Mesopotamian writing that are nearly 5,000 years old have been found."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-26",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>While researching a topic, a student has taken the following notes:</p><p>- Anne of Windy Poplars (1936) is an epistolary novel by Canadian author Lucy MaudMontgomery.</p><p>- Epistolary novels are novels written primarily as a series of fictional documents.</p><p>- These documents can be letters, journal entries, newspaper clippings, and more.</p><p>- Anne of Windy Poplars consists primarily of letters.</p><p>- The letters are sent between a young high school principal and her fiancé.</p>",
+      "stemHtml": "<p>The student wants to provide an example of an epistolary novel. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "In 1936, Canadian author Lucy Maud Montgomery published a novel of letters sent between a young high school principal and her fiancé."
+        },
+        {
+          "label": "B",
+          "html": "An epistolary novel is a novel written primarily as a series of fictional documents, such as letters, journal entries, or newspaper clippings"
+        },
+        {
+          "label": "C",
+          "html": "Consisting primarily of letters sent between a young high school principal and her fiancé, Lucy Maud Montgomery's Anne of Windy Poplars is an epistolary novel."
+        },
+        {
+          "label": "D",
+          "html": "It was Lucy Maud Montgomery who published the novel Anne of Windy Poplars in 1936."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-27",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>While researching a topic, a student has taken the following notes:</p><p>- Researchers Gwangsu Kim et al. sought to explore the relationship between the brain's ability to process natural sounds and its ability to process music.</p><p>- They used an artificial deep neural network (DNN) that models how the brain processes auditory information.</p><p>- The DNN had been trained to detect natural sounds (excluding music).</p><p>- Finding: The DNN spontaneously developed neurons that responded to music but not to other auditory stimuli.</p><p>- Conclusion: The brain's ability to process music may arise as a by-product of natural sound processing.</p>",
+      "stemHtml": "<p>The student wants to present the aim of the study. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Using an artificial deep neural network, the researchers sought to explore the relationship between the brain's ability to process natural sounds and its ability to process music."
+        },
+        {
+          "label": "B",
+          "html": "In their study, the researchers evaluated whether an artificial deep neural network could model how the brain processes auditory information."
+        },
+        {
+          "label": "C",
+          "html": "The researchers used an artificial deep neural network, which spontaneously developed neurons that responded to music but not toother auditory stimuli."
+        },
+        {
+          "label": "D",
+          "html": "By training an artificial deep neural network, the researchers aimed to establish that the brain's ability to process natural sounds arises as a byproduct of processing music."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-01",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Mastering 'ajami, a Syrian art of creating intricately painted wood panels, demands a skill set that ______ innate talent: crafting the panels requires not just the ability to draw but also an understanding of traditional techniques, materials, and design elements, necessitating expertise gained through dedicated guidance from experienced artisans.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "replicates"
+        },
+        {
+          "label": "B",
+          "html": "transcends"
+        },
+        {
+          "label": "C",
+          "html": "characterizes"
+        },
+        {
+          "label": "D",
+          "html": "restrains"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-02",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Writer Lydia Davis observed that while ______ literary forms, such as the short story, are recognizable as such even as they evolve, there are pathbreaking \"intergeneric\" forms that might, for example, use elements of both fiction and essays to create something unclassifiable. Anne Carson's collection Float arguably fits in this category, since it straddles the line between prose and poetry.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "elusive"
+        },
+        {
+          "label": "B",
+          "html": "ambiguous"
+        },
+        {
+          "label": "C",
+          "html": "innovative"
+        },
+        {
+          "label": "D",
+          "html": "established"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-03",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Analysis of preserved plants cataloged in the Mid-Atlantic Herbaria Consortium indicates that rising temperatures correlate with earlier fruiting, but such specimens represent only brief moments in plants' overall development. ______ this research with studies involving live plants would enable a fuller understanding of how these observed changes affect plant fitness.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Categorizing"
+        },
+        {
+          "label": "B",
+          "html": "Anticipating"
+        },
+        {
+          "label": "C",
+          "html": "Foregrounding"
+        },
+        {
+          "label": "D",
+          "html": "Complementing"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-04",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Although Mistress and Maid, which depicts two women perusing a letter, is atypical of Johannes Vermeer's genre paintings (scenes of everyday life) in that its subjects are set against a plain background instead of --- as in Woman Writing a Letter, with Her Maid --- a richly detailed one, the painting nonetheless ______ many signature traits of Vermeer's art, including prominent use of yellow pigments.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "eschews"
+        },
+        {
+          "label": "B",
+          "html": "repudiates"
+        },
+        {
+          "label": "C",
+          "html": "predates"
+        },
+        {
+          "label": "D",
+          "html": "evinces"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-05",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>When a landscape with native megafaunal (large-bodied) mammalian herbivores experiences a substantial decline in those populations, it loses a functional component of plant ecology. Introducing non-native proxy species has been beneficial in some such cases, but the reasonable concern persists that ecosystems may be negatively affected by species that didn't coevolve with local vegetation. Scholarly analysis of findings from 221 studies revealed no evidence that nativeness mediates the ecological effects of megafauna, however, determining instead that other traits, such as diet selectivity, are more germane.</p>",
+      "stemHtml": "<p>Which choice best states the function of the underlined portion in the text as a whole?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It presents an insight suggesting that a concern acknowledged as sensible earlier in the text is unsubstantiated."
+        },
+        {
+          "label": "B",
+          "html": "It explains why data do not show the expected pattern described at the beginning of the text."
+        },
+        {
+          "label": "C",
+          "html": "It identifies an inconclusive finding that motivated a shift in the focus of an analysis discussed in the text."
+        },
+        {
+          "label": "D",
+          "html": "It outlines the reasoning behind the claim about a benefit that is presented in the previous sentence."
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-06",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Text 1</p><p>For decades, ornithologists assumed that if they saw a singing Bell's vireo --- a bird species found in temperate North America-they must be observing a male trying to attract a mate or claim territory. As Peter J.B. Slater and Nigel I. Mann have emphasized, however, a similar assumption can't be made about birds in the tropics, where females sing as often as males do. Slater and Mann call for more research on this discrepancy between tropical and temperate female birdsong.</p><p>Text 2</p>",
+      "stemHtml": "<p>Recent evidence shows that a female Bell's vireo is as capable of song as a male is. In fact, female birdsong is more common among temperate species than currently assumed, claim Evangeline Rose and colleagues. These female songbirds sing less frequently than males do, and in duller tones, making it \"easy for researchers to miss the quiet and hidden females and focus on the loud and colorful males,\" says Rose. Based on the texts, how would Rose and colleagues (Text 2) most likely respond to the assertion by Slater and Mann (Text 1) about the different prevalence of female birdsong intemperate and tropical areas?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "They would caution that the seeming difference in prevalence may be an artifact of researchers, tendency to study birdsong among temperate species more frequently than among tropical species."
+        },
+        {
+          "label": "B",
+          "html": "They would concede that the geographic difference in prevalence is real but argue that the frequency with which male tropical birds sing has been overstated by previous researchers."
+        },
+        {
+          "label": "C",
+          "html": "They would argue that the apparent difference in prevalence may partly reflect a difference in the ease with which female birdsong and male birdsong can be detected."
+        },
+        {
+          "label": "D",
+          "html": "They would raise the possibility that the difference in prevalence may be due to differences in the timing of the mating season among temperate and tropical bird species."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-07",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Text 1</p><p>To many artists in the mid-nineteenth-century United States, the American wilderness symbolized innocence and untouched beauty. So George Imness's decision to foreground a railroad in his 1855 painting The Lackawanna Valley is notable, since images of railroads often alluded to the destruction of wilderness in the name of progress. In fact, art historian Nicolai Cikovsky Tr, argues that Inness glorifies the subject of the railroad by painting a scene that suggests hopefulness rather than devastation.</p><p>Text 2</p><p>It is impossible to deduce anything about George Inness's attitude toward his subject in the painting The Lackawanna Valley, primarily because it is a commissioned work. Inness was restricted in how he could portray the Delaware, Lackawanna and Western Railroad Company: his client was the company's first president, who had requested the painting possibly as a way to promote the company's rail network.</p>",
+      "stemHtml": "<p>Which choice best describes a difference in how the author of Text 1 and the author of Text 2view the painting The Lackawanna Valley?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The author of Text 1 claims that the painting is an accurate representation of a physical place, whereas the author of Text 2 identifies several embellishments that Inness made to alter the scene."
+        },
+        {
+          "label": "B",
+          "html": "The author of Text 1 implies that the styles and themes of the painting are atypical of Inness's body of work, whereas the author of Text 2 claims that the painting is representative of Inness as a painter."
+        },
+        {
+          "label": "C",
+          "html": "The author of Text 1 suggests that the painting can reveal information about Inness's opinions, whereas the author of Text 2 believes that the circumstances of the painting's production prohibit such an interpretation."
+        },
+        {
+          "label": "D",
+          "html": "The author of Text 1 emphasizes the painting's similarities to the works of other painters at the time, whereas the author of Text 2 uses the painting to exemplify a contrast between Inness and some of his contemporaries."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-08",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Biologist Grace Herzel and colleagues conducted a study of how butterfly color and weather conditions relate to butterfly behavior, which wouldn't have been possible without data gathered by students and other amateur science enthusiasts in the community. Considering over three years' worth of data, the researchers found that butterfly color might influence behavior more than butterfly size does, and that butterflies tended to prefer orange and red flowers on cloudy days and multicolor flowers on partly cloudy days.</p>",
+      "stemHtml": "<p>According to the text, which factors seemed to be linked to the behavior of butterflies in Grace Herzel and colleagues' study?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Weather conditions but not butterfly color"
+        },
+        {
+          "label": "B",
+          "html": "Neither butterfly color nor weather conditions"
+        },
+        {
+          "label": "C",
+          "html": "Butterfly color but not weather conditions"
+        },
+        {
+          "label": "D",
+          "html": "Both butterfly color and weather conditions"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-09",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Research by economists Wei Feng and Jinzhe Yan indicates that the degree of linguistic abstraction in negative reviews influences how consumers perceive businesses: reviews with concrete details were more likely to result in stronger attributions of fault to companies than vague reviews were. They also found that varying levels of linguistic abstraction in reviews require different types of responses to mitigate their effects. Conciliatory responses were most effective at mitigating the impact of concrete reviews, whereas more defensive responses were more useful when reviews were relatively abstract.</p>",
+      "stemHtml": "<p>Which choice best states the main idea of the text?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "When negative reviews provide specific details, they are more likely to damage companies public perception, and efforts by companies to mitigate this damage are less likely to be successful than when negative reviews are vague."
+        },
+        {
+          "label": "B",
+          "html": "Given its implications for companies' reputation among consumers, the level of linguistic abstraction in negative reviews is an important consideration when companies devise a response strategy"
+        },
+        {
+          "label": "C",
+          "html": "Increasing linguistic abstraction in negative reviews correlates with the degree to which consumers hold companies accountable for negative experiences, but companies can mitigate this effect by responding to such reviews promptly."
+        },
+        {
+          "label": "D",
+          "html": "Consumers are more likely to find companies blameworthy for negative consumer experiences if the companies are overly defensive and linguistically abstract in their responses to negative reviews than if their responses are accommodating and linguistically concrete."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-10",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Arturo Casadevall et al. have confirmed that twenty mushroom species (including Amanita muscaria and species from the genus Hortiboletus) maintain subambient temperatures in both their fruited bodies and their mycelium (the root-like hyphae from which the fruited bodies grow), though the benefits of this hypothermic behavior are unclear. Noting that relative coldness was more pronounced in fruiting than in nonfruiting sites of the mycelium --- a difference that persisted even after fruited bodies were detached --- the researchers speculate that thermoregulation in the mycelium may influence reproductive success.</p>",
+      "stemHtml": "<p>Which statement about the mycelium of the twenty mushroom species is best supported by the text?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Temperatures in the fruiting areas of the mycelium are lower than in the nonfruiting areas due to differences in the depth and spread of the mycelium within soil or other organic matter."
+        },
+        {
+          "label": "B",
+          "html": "Variation in thermoregulation across the mycelium may occur independent of the presence or absence of fruited bodies."
+        },
+        {
+          "label": "C",
+          "html": "The mycelium generally maintains temperatures lower than those of the fruited bodies even when considering temperature variations between fruiting and nonfruiting sites."
+        },
+        {
+          "label": "D",
+          "html": "The correlation between higher mycelium temperature and greater fruit productivity indicates that successful reproduction may be dependent on thermoregulation in the mycelium."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-11",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>The following text is from William Carlos Wiliams's 1925 creative nonfiction book In the American Grain. Williams is discussing how works by nineteenth-century Us poet and fiction writer Edgar Allan Poe were received by American readers.</p><p>Poe must suffer by his originality, Invent that which is new, even if it be made of pine from your own yard, and there's none to know what you have done. It is because there's no name. This is the cause of Poe's lack of recognition. He was American. He was the astounding, inconceivable growth of his locality. Gape at him they did, and heat them in amazement. Afterward with mutual hatred; he in disgust, they in mistrust. It is only that which is under your nose which seems inexplicable.</p>",
+      "stemHtml": "<p>What does the text most strongly suggest about Poe's work and American readers?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Poe's work was so innovative that there was not even terminology to describe it, which led American readers to regard both the work and Poe himself as strange but quintessentially American."
+        },
+        {
+          "label": "B",
+          "html": "American readers largely ignored Poe's work because its tone and subject matter were out of keeping with mainstream literature."
+        },
+        {
+          "label": "C",
+          "html": "American readers failed to appreciate Poe's work because of its novelty and the fact that it reflected aspects of the American character too ingrained in those readers for them to comprehend."
+        },
+        {
+          "label": "D",
+          "html": "Poe's work had few defenders among American readers because it tended to present a negative image of American life and institutions."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-12",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<img src=\"rw-m2-12.png\"><p>Myoglobin (Mb) is a protein that primarily aids in oxygen storage and diffusion across the mitochondrial membrane in cardiac muscle cells, these are necessary functions in aerobic organisms, including teleost fish. Carrying out these functions typically requires Mb to be expressed at high levels, evidenced by red heart tissue. The table shows the average Mb levels and their standard deviations (indicating how dispersed the Mb levels of individual fish are in relation to the average) of three teleost fish species, as calculated by Daniel J. Macqueen et al. Based on the data, the researchers concluded that for some teleost species, oxygen storage and diffusion may occur with negligible assistance from Mb.</p>",
+      "stemHtml": "<p>Which choice most effectively uses data from the table to support Macqueen et al.'s conclusion?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "On average, A. anguilla had higher Mb levels in their cardiac tissue than S.salar and P. buchholzi had."
+        },
+        {
+          "label": "B",
+          "html": "Greater average Mb levels in a certain species were associated with greater variance in Mb levels among individuals of that species."
+        },
+        {
+          "label": "C",
+          "html": "Less variation in Mb levels was observed among P. buchholzi individuals than among A. anguilla and S. salar individuals"
+        },
+        {
+          "label": "D",
+          "html": "P. buchholzi had very low Mb levels in their cardiac tissue."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-13",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<img src=\"rw-m2-13.png\"><p>The percent of cities and towns in a given period that persist from a prior period (backward continuity) and the percent that persist into a later period (forward continuity) are known to correlate positively with economic and political stability in a region. Researchers studying demographic trends in the Indigenous societies of ancient Mexico determined both continuity measures for the Yautepec Valley, which lay within the macroregional hegemony of the city-state of Teotihuacan from roughly 100 BCE until roughly 450 CE, after which point Teotihuacan declined. The team concluded that ______</p>",
+      "stemHtml": "<p>Which choice most effectively uses data from the table to complete the text?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "the marginal decrease in the compound average annual growth rate of the Yautepec Valley's population in the Early Classic was likely associated with the widespread abandonment of cities and towns established in the Terminal Formative."
+        },
+        {
+          "label": "B",
+          "html": "values for both backward and forward continuity in the Yautepec Valley were consistently higher during the centuries of Teotihuacan's hegemony than they were in the period following the collapse of the hegemony."
+        },
+        {
+          "label": "C",
+          "html": "although the forward continuity data suggest that the decline of Teotihuacan occasioned economic and political instability in the Yautepec Valley, these developments were nonetheless associated with a net increase in the valley's population."
+        },
+        {
+          "label": "D",
+          "html": "Teotihuacan's hegemony imposed stability on the Yautepec Valley, mitigating the decrease in the compound average annual growth rate of the valley's population as well as the decrease in the number of cities and towns there in the Early Classic and Middle Classic."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-14",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>In 2002, the US state of Texas enacted rate stability regulations (RSRs), constraining insurance companies' latitude to raise premiums (the periodic fees policyholders pay to maintain insurance policies) after policies are in effect, RSRs are effective at protecting existing policyholders from price volatility, but Naoki Aizawa and Ami Ko note that since dynamic pricing of premiums is an important risk-mitigation tool for insurers, RSRs may lead some insurers to scale back or entirely cease selling new policies in the affected market, thereby reducing the competitive pressure that typically restrains premium prices for new policies. Thus, Texas's RSRs may ______</p>",
+      "stemHtml": "<p>Which choice most logically completes the text?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "prevent large increases in premium prices for new policies despite leading to fewer insurers offering such policies in the affected market."
+        },
+        {
+          "label": "B",
+          "html": "reduce premium price volatility once policies are in effect but increase risks for policyholders."
+        },
+        {
+          "label": "C",
+          "html": "benefit policyholders at the expense of nonpolicyholders seeking to acquire policies."
+        },
+        {
+          "label": "D",
+          "html": "be more advantageous for insurers than they are for either current or prospective policyholders."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-15",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>In an analysis of medieval urbanization in Florence, Greifswald, and other European settlements, researchers drew on modern urban scaling theory, which posits that population density in core urban areas increases as a city grows larger. Hypothesizing that this typical relationship would have differed in medieval settlements because of the constraining influence of strong hierarchical social structures (which are much less pronounced in modern cities) on social networking and economic integration -- - drivers of urban agglomeration --- the team created a model that accounted for the presence of restrictive institutions. They found that the typically expected density-size relationship held for each of the 173 medieval settlements whose growth they analyzed, suggesting that ______</p>",
+      "stemHtml": "<p>Which choice most logically completes the text?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "the constraining influence of hierarchical medieval institutions likely had a significant effect on individuals in some social groupings but little to no effect on members of other social groupings."
+        },
+        {
+          "label": "B",
+          "html": "although there tends to be a positive relationship between population size and development of core urban areas for both medieval settlements and modern cities, social institutions likely limited the rate at which population density increased in medieval settlements."
+        },
+        {
+          "label": "C",
+          "html": "despite a change in the role of social structures over time, there is likely a notable consistency between medieval settlements and modern cities in underlying elements of the social and economic interactions among individuals that shape the development of core urban areas."
+        },
+        {
+          "label": "D",
+          "html": "the social and economic dynamics that affect urban agglomeration were likely much different in medieval settlements than in modern cities, despite the similarity across time in population density patterns."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-16",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>As jazz singer Sarah Vaughan honed her vocal abilities --- acquiring a sophisticated timbre and precise control over pitch, dynamics, and ______ she earned comparisons to opera icon Leontyne Price, one of her personal heroes. The comparisons highlight how Vaughan, a jazz star, had transcended genre boundaries with her singing prowess.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "vibrato ---"
+        },
+        {
+          "label": "B",
+          "html": "vibrato:"
+        },
+        {
+          "label": "C",
+          "html": "vibrato"
+        },
+        {
+          "label": "D",
+          "html": "vibrato,"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-17",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>In her Silueta sculpture series, the Cuban American artist Ana ______ to access what she called an \"omnipresent female force,\" utilized a variety of natural materials to create outlines-or silhouettes of her own body.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Mendieta had hoped"
+        },
+        {
+          "label": "B",
+          "html": "Mendieta, hoping"
+        },
+        {
+          "label": "C",
+          "html": "Mendieta was hoping"
+        },
+        {
+          "label": "D",
+          "html": "Mendieta hoped"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-18",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Los Angeles-based artist Henry Taylor's large, vibrant paintings of prominent Black figures such as Olympian Alice Coachman (See Alice Jump, 2011) and artist David Hammons(Hammons meets a hyena on holiday, ______ celebrated by admirers of twenty-first-century portraiture, attracted legions of new fans in 2024 when they were included in a popular Taylor retrospective at the Whitney Museum.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "2016), had long been"
+        },
+        {
+          "label": "B",
+          "html": "2016) were long"
+        },
+        {
+          "label": "C",
+          "html": "2016) have long been"
+        },
+        {
+          "label": "D",
+          "html": "2016), long"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-19",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Among the small magazines animating Boston's vibrant literary scene in the early twentieth century was ______ by William Stanley Braithwaite and featuring poetry by John Gould Fletcher, Louis Untermeyer, and Richard Aldington; essays by Amy Lowell and Jeanette Marks; and reviews of recent books, this magazine publicized the work of influential avant-garde writers and artists of the day.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "the Poetry Review of America; edited"
+        },
+        {
+          "label": "B",
+          "html": "the Poetry Review of America edited"
+        },
+        {
+          "label": "C",
+          "html": "the Poetry Review of America, edited"
+        },
+        {
+          "label": "D",
+          "html": "the Poetry Review of America. Edited"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-20",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Reena Esmail's classical composition \"E Safar\" incorporates a raag, a melodic framework used in Hindustani classical music, called Raag Malkauns. Often, interplay between the raag's designated vadi and samvadi (the first- and second-most important notes, respectively) and its prescribed melodic sequences ______ a mood of longing.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "evoking"
+        },
+        {
+          "label": "B",
+          "html": "evokes"
+        },
+        {
+          "label": "C",
+          "html": "evoke"
+        },
+        {
+          "label": "D",
+          "html": "have evoked"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-21",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Archived within the storied libraries of Timbuktu, a West African city prominent during the Songhai Empire, is The Pearls Leading to Accepted Guidance, one of the city's hundreds of thousands of historical manuscripts, each of which ______ researchers insight into Timbuktu's tenure as a center of trade and education.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "offering"
+        },
+        {
+          "label": "B",
+          "html": "are offering"
+        },
+        {
+          "label": "C",
+          "html": "offer"
+        },
+        {
+          "label": "D",
+          "html": "offers"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-22",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>The moon Carpo orbits Jupiter in the same direction that the planet rotates. ______ Carpo's orbit is described as prograde. Erinome, another of Jupiter's moons, orbits in the opposite direction, so its orbit is described with the opposite term: retrograde.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical transition?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "In reality,"
+        },
+        {
+          "label": "B",
+          "html": "Hence,"
+        },
+        {
+          "label": "C",
+          "html": "Next,"
+        },
+        {
+          "label": "D",
+          "html": "Nevertheless,"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-23",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Iodine and beryllium are among the elements contained in the salty, concentrated brine that remains after seawater is desalinated. Elements can be extracted from this brine in much the same way that materials are mined from the earth. ______ recovering materials from desalination by-products is known as brine mining.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical transition?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Rather,"
+        },
+        {
+          "label": "B",
+          "html": "Fittingly,"
+        },
+        {
+          "label": "C",
+          "html": "Granted,"
+        },
+        {
+          "label": "D",
+          "html": "Next,"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-24",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Born in Port Gibson, Mississippi, in 1902, musician J.D. Short is best known as a key figure in the development of the Delta blues, a variant of blues that originated in the Mississippi Delta region. ______ steeped in the fertile music scene that sprung up in the alluvial delta between the Mississippi and Yazoo Rivers, short and his peers developed their distinctive stripped-down, guitar-driven style.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical transition?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Thus,"
+        },
+        {
+          "label": "B",
+          "html": "Nevertheless,"
+        },
+        {
+          "label": "C",
+          "html": "Moreover,"
+        },
+        {
+          "label": "D",
+          "html": "There,"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-25",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>According to climate envelope models, individual organisms that inhabit the coolest areas of their species' geographic distribution are expected to benefit from a warming climate while individuals in the warmest areas will struggle. A 2024 University of Arizona study, ______ found that warmer-than- average temperatures resulted in a decrease in growth across all areas of the common pinon tree's distribution range.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical transition?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "though,"
+        },
+        {
+          "label": "B",
+          "html": "therefore,"
+        },
+        {
+          "label": "C",
+          "html": "for example,"
+        },
+        {
+          "label": "D",
+          "html": "moreover,"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-26",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>While researching a topic, a student has taken the following notes.</p><p>- GrigoryV. Domogatsky is a Russian particle physicist.</p><p>- Particle physicists study subatomic particles.</p><p>- Neutrinos are some of the least understood subatomic particles.</p><p>- Neutrinos were first discovered in the mid-twentieth century.</p><p>- Domogatsky is known for his research on high-energy astrophysical neutrinos.</p>",
+      "stemHtml": "<p>The student wants to provide an example of a particle physicist whose research focuses on neutrinos. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Particle physicist Grigory V. Domogatsky is known for his research on high-energy astrophysical neutrinos."
+        },
+        {
+          "label": "B",
+          "html": "Neutrinos are a type of subatomic particle that particle physicists are still trying to understand."
+        },
+        {
+          "label": "C",
+          "html": "The research done on high-energy astrophysical neutrinos exemplifies the work particle physicists do to advance our understanding of subatomic particles."
+        },
+        {
+          "label": "D",
+          "html": "By studying high-energy astrophysical neutrinos to name just one example particle physicists can learn more about neutrinos."
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-27",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>While researching a topic, a student has taken the following notes: - Ukiyo-e woodblock prints were a popular artistic form in Japan from the 1600sthrough the 1800s.</p><p>- Ukiyo-e prints were produced by teams of artisans that included artists, wood-carvers, printers, and publishers.</p><p>- Sosaku-hanga was a popular Japanese printmaking movement that emerged in the early 1900s.</p><p>- Sosaku-hanga prioritized individual artistic expression.</p><p>- An artist working in this style typically handled all aspects of print creation, from drawing to wood carving to printing.</p>",
+      "stemHtml": "<p>The student wants to contrast ukiyo-e and sosaku-hanga production methods. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Teams of artisans produced ukiyo-e prints, whereas individual artists typically handled all aspects of sosaku-hanga printmaking themselves."
+        },
+        {
+          "label": "B",
+          "html": "One notable distinction between ukiyo-e and sosaku-hanga prints is sosaku-hanga's emphasis on individual artistic expression."
+        },
+        {
+          "label": "C",
+          "html": "Ukiyo-e prints were popular in Japan from the 1600s through the 1800s, while sosaku-hanga prints emerged later, in the early 1900s."
+        },
+        {
+          "label": "D",
+          "html": "In contrast to ukiyo-e prints, sosaku-hanga prints were produced using methods such as drawing and wood carving."
+        }
+      ],
+      "correctAnswer": "A"
+    }
+  ]
+}

@@ -1,0 +1,2411 @@
+{
+  "id": "jts-5",
+  "title": "December INT Version B 2025",
+  "year": 2026,
+  "questions": [
+    {
+      "id": "rw-m1-01",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>The following text is from Mark Twain’s 1876 novel The Adventures of Tom Sawyer. Tom, a child, has been told by his aunt to paint their house’s fence.</p><p>Tom appeared on the sidewalk with a bucket of whitewash and a long-handled brush. He <u>surveyed</u> the fence, and all gladness left him and a deep melancholy settled down upon his spirit. Thirty yards of board fence nine feet high.</p>",
+      "stemHtml": "<p>As used in the text, what does the word “surveyed” most nearly mean?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Guaranteed"
+        },
+        {
+          "label": "B",
+          "html": "Modified"
+        },
+        {
+          "label": "C",
+          "html": "Examined"
+        },
+        {
+          "label": "D",
+          "html": "Organized"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-02",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Zygomorphic (bilaterally symmetric) flowers remain open and functional on average 1.1 days longer than actinomorphic (radially symmetric) flowers do. Ruby E. Stephens and colleagues claim that this extended period could be ______ the relatively small pool of potential pollinators available to zygomorphic flowers and the greater chance at successful pollination that remaining open affords them.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "attributed to"
+        },
+        {
+          "label": "B",
+          "html": "converted by"
+        },
+        {
+          "label": "C",
+          "html": "analogous to"
+        },
+        {
+          "label": "D",
+          "html": "magnified by"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-03",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>The influence of William Shakespeare’s writings is clear in a vast range of subsequent literary works and is similarly ______ in many works in other media, from fine art (such as Edward Alcock’s painting Portia and Shylock) to popular music (such as the band the Lumineers’ song “Ophelia”).</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "excessive"
+        },
+        {
+          "label": "B",
+          "html": "unusual"
+        },
+        {
+          "label": "C",
+          "html": "apparent"
+        },
+        {
+          "label": "D",
+          "html": "subtle"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-04",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Mastering ‘ajami, a Syrian art of creating intricately painted wood panels, demands a skill set that ______ innate talent: crafting the panels requires not just the ability to draw but also an understanding of traditional techniques, materials, and design elements, necessitating expertise gained through dedicated guidance from experienced artisans.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "replicates"
+        },
+        {
+          "label": "B",
+          "html": "characterizes"
+        },
+        {
+          "label": "C",
+          "html": "transcends"
+        },
+        {
+          "label": "D",
+          "html": "restrains"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-05",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Phillip Hayes Dean’s award-winning play The Sty of the Blind Pig was produced in 1971 by the groundbreaking Negro Ensemble Company (NEC). NEC cofounder Douglas Turner Ward, who worked as an actor, director, and playwright, had met actor and producer Robert Hooks while they were performing in a 1960 touring production of Lorraine Hansberry’s play A Raisin in the Sun. Together, they envisioned a theater company that would nurture and showcase the work of Black theater professionals. <u>Since NEC’s founding in 1967, its workshops and performances have given Black playwrights, including Dean, a forum for their compelling stories.</u></p>",
+      "stemHtml": "<p>Which choice best describes the function of the underlined sentence in the text as a whole?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It provides additional information about a person mentioned in the text."
+        },
+        {
+          "label": "B",
+          "html": "It explains the circumstances that led to the formation of the theater company discussed in the text."
+        },
+        {
+          "label": "C",
+          "html": "It emphasizes the ongoing significance of the theater company discussed in the text."
+        },
+        {
+          "label": "D",
+          "html": "It illustrates the widespread influence of a play discussed earlier in the text."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-06",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>The following text is from Rachel Heng’s 2023 novel The Great Reclamation. Ah Boon is fishing off the coast of Singapore.</p><p>When he pulled up the nets, they contained only one kind of fish—<u>black pomfrets,</u> the flat diamonds of their bodies slick in the morning light. This uniformity did not surprise him; over the years, he’d learned that the waters here were temperamental. They could be relied upon for a good catch, but from time to time threw up only <u>prawns or squid,</u> and other times <u>colorful varieties of fish</u> that weren’t even supposed to be found in this region. He’d grown to accept the unpredictability, embracing it as a game to be played, like the reading of tea leaves or the grooves of a palm.</p>",
+      "stemHtml": "<p>Taken together, the three underlined portions most clearly serve which function in the text as a whole?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "They illustrate the changeable nature of the fishing grounds where Ah Boon is."
+        },
+        {
+          "label": "B",
+          "html": "They underscore Ah Boon’s lack of surprise at seeing sea creatures that aren’t usually found in the region."
+        },
+        {
+          "label": "C",
+          "html": "They provide examples of what Ah Boon most frequently catches in the area."
+        },
+        {
+          "label": "D",
+          "html": "They emphasize the wide variety of sea creatures that Ah Boon has caught on this particular fishing trip."
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-07",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>When a landscape with native megafaunal (large-bodied) mammalian herbivores experiences a substantial decline in those populations, it loses a functional component of plant ecology. Introducing non-native proxy species has been beneficial in some such cases, but the reasonable concern persists that ecosystems may be negatively affected by species that didn’t coevolve with local vegetation. <u>Scholarly analysis of findings from 221 studies revealed no evidence that nativeness mediates the ecological effects of megafauna, however,</u> determining instead that other traits, such as diet selectivity, are more germane.</p>",
+      "stemHtml": "<p>Which choice best states the function of the underlined portion in the text as a whole?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It outlines the reasoning behind the claim about a benefit that is presented in the previous sentence."
+        },
+        {
+          "label": "B",
+          "html": "It presents an insight suggesting that a concern acknowledged as sensible earlier in the text is unsubstantiated."
+        },
+        {
+          "label": "C",
+          "html": "It explains why data do not show the expected pattern described at the beginning of the text."
+        },
+        {
+          "label": "D",
+          "html": "It identifies an inconclusive finding that motivated a shift in the focus of an analysis discussed in the text."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-08",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Given the immense scope of space, the search for extraterrestrial life is almost necessarily concentrated on the exoplanets deemed to have the most plausible chance of success—typically, atmosphere-bearing terrestrial planets orbiting within a certain range of their stars (termed the habitable zone). Claiming that Earth experienced a long transition from single-lid to plate tectonics that accelerated the emergence and evolution of complex organisms, researchers Robert J. Stern and Taras V. Gerya hold that consideration of tectonics, an often overlooked factor, could help further narrow the search for advanced extraterrestrial species.</p>",
+      "stemHtml": "<p>Based on the text, what do Stern and Gerya most likely believe about the development of complex life on exoplanets?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "It is more likely to occur if habitable zone planets with atmospheres transition from single-lid to plate tectonics late in their history than if they transition early in their history."
+        },
+        {
+          "label": "B",
+          "html": "It is probably more dependent on the presence of plate tectonics than on orbital distance from a host star or the presence of an atmosphere."
+        },
+        {
+          "label": "C",
+          "html": "It is more likely to occur on habitable zone planets with atmospheres and plate tectonics than on otherwise similar planets that lack plate tectonics."
+        },
+        {
+          "label": "D",
+          "html": "It is unlikely unless the transition from single-lid to plate tectonics occurs before the acquisition of a lasting atmosphere."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-09",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Quality assessments of concrete typically focus almost exclusively on compressive strength as a measure of durability, overlooking other potentially relevant factors. Lisa Ptacek et al. therefore investigated the potential of gas permeability (vulnerability to incursion by gases), which is caused in part by excessive porosity, as a durability indicator. Their measurements and observations revealed that quality of conditions during the concrete curing phase negatively correlates with gas permeability and that high gas permeability values are associated with increased deterioration as concrete surfaces age.</p>",
+      "stemHtml": "<p>Information in the text best supports which statement about Ptacek et al.’s findings?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "They suggest that gas permeability testing presents a more reliable indication of concrete durability than compressive strength testing does."
+        },
+        {
+          "label": "B",
+          "html": "They bolster the claim that concrete’s susceptibility to damage decreases as its gas permeability increases."
+        },
+        {
+          "label": "C",
+          "html": "They call into question the idea that quality of curing conditions directly affects concrete gas permeability but is unrelated to compressive strength."
+        },
+        {
+          "label": "D",
+          "html": "They indicate that evaluation of gas permeability is an appropriate addition to concrete quality assessment procedures."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-10",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>The Wonderful Wizard of Oz is a 1900 novel by L. Frank Baum. In the novel, Dorothy, who is from Kansas, finds herself in an unfamiliar place called Oz. Kansas is presented as being less appealing than Oz, as is clear when ______</p>",
+      "stemHtml": "<p>Which quotation from The Wonderful Wizard of Oz most effectively illustrates the claim?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "the narrator states, “Once more they could see fences built beside the road; but these were painted green, and when they came to a small house, in which a farmer evidently lived, that also was painted green.”"
+        },
+        {
+          "label": "B",
+          "html": "a character says to others, “But it will take more than imagination to carry Dorothy back to Kansas, and I’m sure I don’t know how it can be done.”"
+        },
+        {
+          "label": "C",
+          "html": "the narrator states, “When Dorothy stood in the doorway and looked around, she could see nothing but the great gray prairie on every side.”"
+        },
+        {
+          "label": "D",
+          "html": "a character says to Dorothy, “I cannot understand why you should wish to leave this beautiful country and go back to the dry, gray place you call Kansas.”"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-11",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<table><caption>Average Hours Worked per Person per Year in 1950 and 2017</caption><tr><th>Country</th><th>1950</th><th>2017</th><th>Change in hours</th><th>Percent change in hours</th></tr><tr><td>Norway</td><td>2,129</td><td>1,417</td><td>−712</td><td>−33%</td></tr><tr><td>Australia</td><td>2,178</td><td>1,731</td><td>−447</td><td>−21%</td></tr><tr><td>Colombia</td><td>2,323</td><td>1,998</td><td>−325</td><td>−14%</td></tr><tr><td>Mexico</td><td>2,432</td><td>2,255</td><td>−177</td><td>−7%</td></tr></table><p><i>Calculations may be inexact due to rounding.</i></p><p>A student in an economics course is examining the decline since 1950 in average hours worked per person per year in various nations due to both increased productivity and the adoption of policies that limit working hours. The student researches how the decline in Australia compares to that in other countries and finds that ______</p>",
+      "stemHtml": "<p>Which choice most effectively uses data from the table to complete the student’s conclusion?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "the percent decrease in hours worked was greater in Australia than it was in Norway, Colombia, or Mexico."
+        },
+        {
+          "label": "B",
+          "html": "though the decline in number of hours worked in Australia was less than that in Norway and Mexico, it was greater than that in Colombia."
+        },
+        {
+          "label": "C",
+          "html": "while the number of hours worked rose in Australia between 1950 and 2017, it declined in Norway, Colombia, and Mexico."
+        },
+        {
+          "label": "D",
+          "html": "though the decline in number of hours worked in Australia was not as great as that in Norway, it was greater than that in Colombia and Mexico."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-12",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<table><caption>Minimum and Maximum Depths of Stony Coral Species in Caribbean and Indo-Pacific Waters</caption><tr><th>Species</th><th>Location</th><th>Minimum depth (meters)</th><th>Maximum depth (meters)</th></tr><tr><td><i>Acropora awi</i></td><td>Indo-Pacific</td><td>0</td><td>5</td></tr><tr><td><i>Indophyllia macassarensis</i></td><td>Indo-Pacific</td><td>20</td><td>25</td></tr><tr><td><i>Isophyllia rigida</i></td><td>Caribbean</td><td>3</td><td>20</td></tr><tr><td><i>Scolymia cubensis</i></td><td>Caribbean</td><td>10</td><td>92</td></tr></table><p>A marine biologist is researching four stony coral species in Caribbean and Indo-Pacific waters, focusing on sightings of these species in the shallow zone (less than 30 meters below …</p>",
+      "stemHtml": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Indo-Pacific waters in the mesophotic zone."
+        },
+        {
+          "label": "B",
+          "html": "Caribbean waters in the shallow zone."
+        },
+        {
+          "label": "C",
+          "html": "Caribbean waters in the mesophotic zone."
+        },
+        {
+          "label": "D",
+          "html": "Indo-Pacific waters in the shallow zone."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-13",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Rafael Núñez and colleagues studied how members of the Yupno, an Indigenous group in Papua New Guinea, conceptualize time in both spoken language and gestures. The researchers recorded Yupno speakers explaining certain temporal words and phrases, such as kalip bishap, a past-oriented expression that translates to “past times,” and coded each speaker’s manual gestures. Previous research has found a tendency in many cultures to make temporal distinctions along imagined linear axes: for instance, Spanish speakers often refer to the left/right axis to describe events in time. Some researchers believe this tendency is universal, but Núñez and colleagues claim this is not the case.</p>",
+      "stemHtml": "<p>Which finding, if true, would most directly support Núñez and colleagues’ claim?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Yupno speakers typically use their left hand to make temporal gestures regardless of whether the gestures are past oriented or future oriented."
+        },
+        {
+          "label": "B",
+          "html": "Some Yupno grammatical structures used when talking about time are also used in Spanish."
+        },
+        {
+          "label": "C",
+          "html": "Future-oriented gestures used by Yupno speakers do not, on average, point in the opposite linear direction of past-oriented gestures."
+        },
+        {
+          "label": "D",
+          "html": "Yupno speakers were observed making temporal gestures both indoors and outdoors, though with greater frequency when indoors."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m1-14",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>The 1980 production of A Lesson from Aloes was the first Broadway show for which Susan Hilferty was credited as a costume designer. Hilferty was among the Broadway costume designers interviewed by Sara Jablon-Roberts and Eulanda A. Sanders for their study of historical accuracy in costume design. They argue that aesthetics often outweigh fidelity to the past among designers for shows with historical settings. In a paper for a theater class, a student claims that the costume design for a modern production of the musical Our Town (set in the early 1900s) exemplifies this tendency.</p>",
+      "stemHtml": "<p>Which quotation from the costume designer for the modern production of Our Town would most effectively support the student’s claim?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "“In trying to create the period look of Our Town, I had to make some practical compromises, such as substituting cooler modern fabrics for historically accurate woolens so that the actors didn’t overheat.”"
+        },
+        {
+          "label": "B",
+          "html": "“For Our Town, I decided not to include the extra fabric that would have been typical of clothing in the period because it made the costumes unappealingly bulky.”"
+        },
+        {
+          "label": "C",
+          "html": "“The clothing of the period of Our Town is aesthetically appealing but largely unfamiliar to today’s audiences, so minor deviations from historical accuracy largely went unnoticed.”"
+        },
+        {
+          "label": "D",
+          "html": "[Choice D is cut off in the source PDF]"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-15",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Studies have shown that when we listen to high-tempo music (songs with a high number of beats per minute, or bpm) during endurance exercise, we perceive our effort as lower than it actually is, which leads to an increased pace and a higher heart rate. Researchers recently designed a follow-up study in which participants jogged outdoors for 30 minutes while listening to Aerosmith’s “Livin’ on the Edge” (169 bpm) continuously. The next day, participants performed the same activity while listening to Ella Fitzgerald’s “From This Moment On” (93 bpm). As expected, listening to that song resulted in participants ______</p>",
+      "stemHtml": "<p>Which choice most logically completes the text?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "perceiving their effort as lower while jogging than they had the previous day."
+        },
+        {
+          "label": "B",
+          "html": "varying their jogging pace more than they had the previous day."
+        },
+        {
+          "label": "C",
+          "html": "exhibiting a higher average heart rate while jogging than they had the previous day."
+        },
+        {
+          "label": "D",
+          "html": "jogging a shorter distance in the 30 minutes than they had the previous day."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-16",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Cycads are palmlike plants with cones. ______ plants were abundant throughout the Mesozoic Era (66 to 252 million years ago).</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "This"
+        },
+        {
+          "label": "B",
+          "html": "Each"
+        },
+        {
+          "label": "C",
+          "html": "That"
+        },
+        {
+          "label": "D",
+          "html": "These"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-17",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>The theory of plate tectonics explains how large pieces of Earth’s crust, called tectonic plates, move and interact. According to the theory, the movement of tectonic plates forms ______ creates volcanoes, and causes earthquakes.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "mountains,"
+        },
+        {
+          "label": "B",
+          "html": "mountains"
+        },
+        {
+          "label": "C",
+          "html": "mountains;"
+        },
+        {
+          "label": "D",
+          "html": "mountains:"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-18",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>While conducting an interview for her book Latina Authors and Their Muses, editor Mayra Calvani asked Reyna Grande, author of the novel The Distance Between Us, what ______ Grande’s response was The House on Mango Street by Sandra Cisneros.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "her favorite book was?"
+        },
+        {
+          "label": "B",
+          "html": "was her favorite book?"
+        },
+        {
+          "label": "C",
+          "html": "was her favorite book!"
+        },
+        {
+          "label": "D",
+          "html": "her favorite book was."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-19",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Many folktales that originate in the Hindi language start with a phrase that roughly translates to “in one era.” Many tales that originate in English use “once upon a time.” Such phrases, known as story starters, ______ from language to language.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "has varied"
+        },
+        {
+          "label": "B",
+          "html": "is varying"
+        },
+        {
+          "label": "C",
+          "html": "varies"
+        },
+        {
+          "label": "D",
+          "html": "vary"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-20",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>In the book A Theory of Harmony (1985), Swiss musicologist Ernst Levy argued that every chord has an opposite that can be substituted for it. For example, a pianist could replace the bvii6 chord for the II7 chord while ______ chord is a given chord’s opposite can be determined using a music visualization tool called the circle of fifths.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "improvising, which"
+        },
+        {
+          "label": "B",
+          "html": "improvising which"
+        },
+        {
+          "label": "C",
+          "html": "improvising and which"
+        },
+        {
+          "label": "D",
+          "html": "improvising. Which"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-21",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>On a chilly spring morning in a Virginia park, as sunlight crested the treetops, Kathrin Swoboda raised her Nikon D500 camera and captured an image that would win the Grand Prize in the 2019 Audubon Photography Awards: a red-winged blackbird, exhaling what appeared to be rings of smoke. ______ the “smoke” was actually the blackbird’s breath hitting the cold morning air as the bird sang.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical transition?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Therefore,"
+        },
+        {
+          "label": "B",
+          "html": "For example,"
+        },
+        {
+          "label": "C",
+          "html": "Furthermore,"
+        },
+        {
+          "label": "D",
+          "html": "Of course,"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-22",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>Vanadium is one of a variety of potentially useful trace elements contained in the chemical-rich brine that remains after seawater is purified through desalination. However, routine extraction of vanadium and other such elements from brine is not yet technologically or economically feasible. ______ most trace elements have only been extracted from seawater on an experimental basis.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical transition?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "To date,"
+        },
+        {
+          "label": "B",
+          "html": "In doing so,"
+        },
+        {
+          "label": "C",
+          "html": "Finally,"
+        },
+        {
+          "label": "D",
+          "html": "Similarly,"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-23",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>While researching a topic, a student has taken the following notes:</p><ul><li>A synthesis reaction is a type of chemical reaction.</li><li>In a synthesis reaction, two or more substances combine to form a new substance.</li><li>When sodium and chloride combine, they form a substance called sodium chloride.</li><li>This substance is more commonly known as table salt.</li></ul>",
+      "stemHtml": "<p>The student wants to define the term “synthesis reaction.” Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "A synthesis reaction is a chemical reaction in which two or more substances combine to form a new substance."
+        },
+        {
+          "label": "B",
+          "html": "A new substance is formed when a chemical reaction combines sodium and chloride."
+        },
+        {
+          "label": "C",
+          "html": "The substance sodium chloride, also known as table salt, is formed by a chemical reaction."
+        },
+        {
+          "label": "D",
+          "html": "When sodium and chloride combine, they form a substance commonly known as table salt."
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m1-24",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>While researching a topic, a student has taken the following notes:</p><ul><li>Documentary TV programs in the slow TV genre consist of uninterrupted broadcasts of ordinary events in real time.</li><li>MORA: Zeichner is a German slow TV program.</li><li>The 45-minute-long program documented an artist making a pencil drawing during a train journey.</li><li>It first aired in 2016.</li><li>Slow TV has been called “the world’s most boring television.”</li><li>American journalist Nathan Heller praises it, writing that “it affords a visceral kind of armchair tourism.”</li></ul>",
+      "stemHtml": "<p>The student wants to use a quotation to refute the claim that slow TV programs are boring. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "With broadcasts of ordinary events, like artists at work, occurring in real time, slow TV just might be “the world’s most boring television.”"
+        },
+        {
+          "label": "B",
+          "html": "Far from boring, slow TV programs can provide a “visceral kind of armchair tourism,” as Heller puts it, whereby viewers can watch artists at work in real time."
+        },
+        {
+          "label": "C",
+          "html": "MORA: Zeichner can afford a “visceral kind of armchair tourism,” as Heller puts it."
+        },
+        {
+          "label": "D",
+          "html": "While some have praised slow TV for affording “a visceral kind of armchair tourism,” others have called it “the world’s most boring television.”"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-25",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>While researching a topic, a student has taken the following notes:</p><ul><li>The Great Salt Lake in Utah is one of the world’s saltiest bodies of water.</li><li>The northern portion of the lake has a higher concentration of salt than the southern portion.</li><li>Aquatic insects called Ephydra cinerea live in the southern portion.</li><li>Bacteria called Nodularia live in the southern portion.</li></ul>",
+      "stemHtml": "<p>The student wants to emphasize a difference between Ephydra cinerea and Nodularia. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Ephydra cinerea and Nodularia both live in the Great Salt Lake’s southern portion."
+        },
+        {
+          "label": "B",
+          "html": "The northern portion of the Great Salt Lake has a higher concentration of salt than does the southern portion."
+        },
+        {
+          "label": "C",
+          "html": "Ephydra cinerea are aquatic insects that live in the southern portion of the Great Salt Lake."
+        },
+        {
+          "label": "D",
+          "html": "Ephydra cinerea and Nodularia are different types of organisms: Ephydra cinerea are aquatic insects, whereas Nodularia are bacteria."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m1-26",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>While researching a topic, a student has taken the following notes:</p><ul><li>Extravehicular activities (EVAs) are activities performed outside a spacecraft by astronauts in outer space.</li><li>EVAs are also known as spacewalks.</li><li>Jerry Ross is a former US astronaut who has performed 9 spacewalks.</li><li>The total time of Ross’s spacewalks was 58 hours and 32 minutes.</li><li>Francisco Rubio is a US astronaut who has performed 3 spacewalks.</li><li>The total time of Rubio’s spacewalks was 21 hours and 24 minutes.</li></ul>",
+      "stemHtml": "<p>The student wants to emphasize a similarity between the astronauts Ross and Rubio. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Ross has performed spacewalks, but Rubio has performed EVAs."
+        },
+        {
+          "label": "B",
+          "html": "Ross and Rubio have each performed multiple spacewalks."
+        },
+        {
+          "label": "C",
+          "html": "Rubio has spent less time performing spacewalks than Ross has."
+        },
+        {
+          "label": "D",
+          "html": "EVAs, also known as spacewalks, are activities done by astronauts outside a spacecraft."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m1-27",
+      "section": "rw",
+      "module": 1,
+      "type": "mcq",
+      "passageHtml": "<p>While researching a topic, a student has taken the following notes:</p><ul><li>Letters from a Peruvian Woman (1747) is an epistolary novel by French author Françoise de Graffigny.</li><li>Epistolary novels are novels written primarily as a series of fictional documents.</li><li>These documents can be letters, journal entries, newspaper clippings, and more.</li><li>Letters from a Peruvian Woman consists primarily of letters.</li><li>The letters are sent between a captured Incan princess and her fiancé.</li></ul>",
+      "stemHtml": "<p>The student wants to provide an example of an epistolary novel. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "An epistolary novel is a novel written primarily as a series of fictional documents, such as letters, journal entries, or newspaper clippings."
+        },
+        {
+          "label": "B",
+          "html": "It was Françoise de Graffigny who published the novel Letters from a Peruvian Woman in 1747."
+        },
+        {
+          "label": "C",
+          "html": "In 1747, French author Françoise de Graffigny published a novel of letters sent between a captured Incan princess and her fiancé."
+        },
+        {
+          "label": "D",
+          "html": "Consisting primarily of letters sent between a captured Incan princess and her fiancé, Françoise de Graffigny’s Letters from a Peruvian Woman is an epistolary novel."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-01",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>The following text is adapted from Jhumpa Lahiri’s 2003 novel The Namesake. Gogol is an elementary school student in Massachusetts.</p><p>In art class, his favorite hour of the week, he carves his name with paper clips into the bottoms of clay cups and bowls. He pastes uncooked pasta to cardboard, and <u>leaves</u> his signature in fat brush strokes below paintings.</p><p>©2003 by Jhumpa Lahiri</p>",
+      "stemHtml": "<p>As used in the text, what does the word “leaves” most nearly mean?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Lifts"
+        },
+        {
+          "label": "B",
+          "html": "Allows"
+        },
+        {
+          "label": "C",
+          "html": "Switches"
+        },
+        {
+          "label": "D",
+          "html": "Writes"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-02",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Several scholars of children’s literature recently ______ to discuss the work of Jerry Pinkney, illustrator of such lauded books as The Talking Eggs: A Folktale from the American South. Once together, they talked about his style, influences, and themes.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "cited"
+        },
+        {
+          "label": "B",
+          "html": "stipulated"
+        },
+        {
+          "label": "C",
+          "html": "convened"
+        },
+        {
+          "label": "D",
+          "html": "ascribed"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-03",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>The following text is from Thomas Hardy’s 1874 novel Far from the Madding Crowd. Bathsheba and Liddy are traveling down a road when Liddy points out a neighbor whom Bathsheba hasn’t met yet.</p><p>Liddy looked. “That! That’s Farmer Boldwood—of course ’tis—the man you couldn’t see the other day when he called.” “Oh, Farmer Boldwood,” murmured Bathsheba, and looked at him as he outstripped them. The farmer had never turned his head once, but with eyes fixed on the <u>most advanced</u> point along the road, passed as unconsciously and abstractedly as if Bathsheba and her charms were thin air.</p>",
+      "stemHtml": "<p>As used in the text, what does the phrase “most advanced” most nearly mean?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Most developed"
+        },
+        {
+          "label": "B",
+          "html": "Brightest"
+        },
+        {
+          "label": "C",
+          "html": "Most novel"
+        },
+        {
+          "label": "D",
+          "html": "Farthest"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-04",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Though Vasily Grossman’s novel Stalingrad is not as beloved as his later work Everything Flows, some critics commend it despite its mangling by Soviet censors: Marcel Theroux in The Guardian called it “lucid and readable.” Several draft versions have been ______, and translators consulted those drafts when working on what they hoped would be a definitive English edition.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "assigned"
+        },
+        {
+          "label": "B",
+          "html": "debunked"
+        },
+        {
+          "label": "C",
+          "html": "preserved"
+        },
+        {
+          "label": "D",
+          "html": "hypothesized"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-05",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>How does the friction between different surfaces and a rolling object affect the speed of the object? One way to explore this question is to use the scientific method. This method involves forming a hypothesis, conducting an experiment, collecting data, and drawing a conclusion. Using the scientific method helps us understand how things work and helps us answer questions, such as the one about friction and a rolling object.</p>",
+      "stemHtml": "<p>Which choice best describes the main purpose of the text?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "To criticize an experiment scientists conducted about friction and a rolling object"
+        },
+        {
+          "label": "B",
+          "html": "To explain one way to answer the question about friction and a rolling object"
+        },
+        {
+          "label": "C",
+          "html": "To summarize two sides of a scientific debate"
+        },
+        {
+          "label": "D",
+          "html": "To describe the career of a famous scientist"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-06",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p><b>Text 1</b></p><p>Economist Thomas Piketty’s book Capital in the Twenty-First Century has a more rigorous structure than its sequel, Capital and Ideology. While the first book’s chapters all contribute to bolstering a clear, coherent argument about income inequality, the second book’s digressions on subjects such as the various constitutions of France do not just make the book tedious but also muddy its reasoning.</p><p><b>Text 2</b></p><p>Capital and Ideology has different aims than Piketty’s earlier books. It should be judged not just in the context of Piketty’s previous work but placed next to books like Robert Burton’s Anatomy of Melancholy, in which the stated theme of the varieties of melancholy is mainly an excuse for a polymath to map his own mind. Even when sections do not explicitly support the central thesis, they link to each other in intriguing ways. None of them should be considered extraneous.</p>",
+      "stemHtml": "<p>Based on the texts, which choice best describes a difference in how the authors of Text 1 and Text 2 view Capital and Ideology?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The author of Text 1 finds the claim that Capital and Ideology resembles the work of Robert Burton to be dubious, while the author of Text 2 believes there is sufficient evidence to substantiate the claim."
+        },
+        {
+          "label": "B",
+          "html": "The author of Text 1 thinks that Capital and Ideology does not entirely succeed in its attempt to make a single coherent argument, while the author of Text 2 contends that making such an argument is not the book’s ambition."
+        },
+        {
+          "label": "C",
+          "html": "The author of Text 1 thinks that the structure of Capital and Ideology makes it a less well-written book than Capital in the Twenty-First Century, while the author of Text 2 thinks that the structure of Capital and Ideology is why it is superior to Capital in the Twenty-First Century."
+        },
+        {
+          "label": "D",
+          "html": "[Choice D is cut off in the source PDF]"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-07",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>What is a city? The answer depends on where you live! Many countries define an area as a city based on how many people live there. However, not every country uses the same numbers. Greenland defines a city as an area with a population of at least 200, while Switzerland defines a city as having a minimum population of 10,000. Some countries even define cities using other factors, like if there is a local government.</p>",
+      "stemHtml": "<p>Which choice best states the main topic of the text?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The number of small towns in Greenland"
+        },
+        {
+          "label": "B",
+          "html": "What some people enjoy about cities"
+        },
+        {
+          "label": "C",
+          "html": "How different countries define what a city is"
+        },
+        {
+          "label": "D",
+          "html": "The country of Switzerland"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-08",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Animals use many objects as tools to achieve goals more easily. Such goals include grooming, finding food, and protecting themselves. For a long time, people thought tool use was unique to primates. Elephants and other animals, though, have busted the myth that tool use requires hands. Inventively, elephants use branches to scratch themselves. Woodpecker finches also get creative. They use cactus spines to pry insects from hiding places.</p>",
+      "stemHtml": "<p>Which choice best states the main idea of the text?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Unlike primates, elephants are exceptionally skillful at using different tools."
+        },
+        {
+          "label": "B",
+          "html": "Contrary to long-held beliefs, primates aren’t the only animals to use tools."
+        },
+        {
+          "label": "C",
+          "html": "There are many myths about tool use that researchers are starting to challenge."
+        },
+        {
+          "label": "D",
+          "html": "Animals find it difficult to use objects as tools."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-09",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<table><caption>River Lengths</caption><tr><th>River</th><th>Length (km)</th></tr><tr><td>Yangtze River</td><td>6,236</td></tr><tr><td>Ob River</td><td>5,525</td></tr><tr><td>Congo River</td><td>5,118</td></tr></table><p>Researcher Shaochuang Liu and team presented updated measurements of the lengths of several rivers.</p>",
+      "stemHtml": "<p>According to the table, which river is the longest?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Zambezi River"
+        },
+        {
+          "label": "B",
+          "html": "Snake River"
+        },
+        {
+          "label": "C",
+          "html": "Ob River"
+        },
+        {
+          "label": "D",
+          "html": "Yangtze River"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-10",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<table><caption>Number of City Residents Who Often Biked to Work in 2016</caption><tr><th>City</th><th>Number of residents</th></tr><tr><td>Phoenix, Arizona</td><td>4,709</td></tr><tr><td>Seattle, Washington</td><td>14,801</td></tr><tr><td>Madison, Wisconsin</td><td>7,186</td></tr><tr><td>Boulder, Colorado</td><td>5,314</td></tr></table><p>In the table, the city with the lowest number of residents who often biked to work in 2016 is ______</p>",
+      "stemHtml": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Madison, Wisconsin."
+        },
+        {
+          "label": "B",
+          "html": "Seattle, Washington."
+        },
+        {
+          "label": "C",
+          "html": "Phoenix, Arizona."
+        },
+        {
+          "label": "D",
+          "html": "Boulder, Colorado."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-11",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>It may seem that works of art are best experienced in person. However, in an online collection from the Museo de Arte de Lima in Lima, Peru, people can zoom in on a high-quality image of the drawing Drawing B... by Gilda Mantilla. A student argues that <u>viewers usually can’t examine works of art in a museum as carefully as they can examine works in online collections.</u></p>",
+      "stemHtml": "<p>Which statement, if true, would most directly support the underlined argument?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Most museums have signs that provide basic information about the works of art on display."
+        },
+        {
+          "label": "B",
+          "html": "Most museums don’t allow visitors to get very close to the works of art on display."
+        },
+        {
+          "label": "C",
+          "html": "Many museums have started adding images of works from their collections to their websites."
+        },
+        {
+          "label": "D",
+          "html": "Museums don’t always put works by different artists together in one room."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-12",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<table><caption>Bird Species by Average Mass</caption><tr><th>Common name</th><th>Average mass (kg)</th><th>Capable of flight?</th></tr><tr><td>Great bustard</td><td>10.6</td><td>Yes</td></tr><tr><td>Trumpeter swan</td><td>12.7</td><td>Yes</td></tr><tr><td>Emperor penguin</td><td>31.5</td><td>No</td></tr><tr><td>Common ostrich</td><td>104.0</td><td>No</td></tr></table><p>Most bird species that are capable of flight weigh less than a kilogram (kg), which is not surprising considering the burden that extra body weight puts on a flying animal. But not all flying birds are so light, as we can see most clearly in the example of the ______</p>",
+      "stemHtml": "<p>Which choice most effectively uses data from the table to complete the example?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "common ostrich, which has a higher average mass than the emperor penguin."
+        },
+        {
+          "label": "B",
+          "html": "trumpeter swan, which has an average mass of 12.7 kg."
+        },
+        {
+          "label": "C",
+          "html": "common ostrich, which has an average mass of 104.0 kg."
+        },
+        {
+          "label": "D",
+          "html": "great bustard, which has an average mass below 10 kg."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-13",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>In a recent study, Antonia Olivia Dolan and colleagues investigated the relationship between people’s music preferences and their preferred listening volume. Participants listened to recordings—Led Zeppelin’s “Whole Lotta Love,” Ludwig van Beethoven’s Symphony no. 5 in C Minor, and others—at their preferred volume and indicated their most and least favorite among the recordings. The researchers found that participants listened to recordings they liked most at a higher volume than recordings they liked least. And given that the frequencies in all the recordings were within the audible range of these participants (all of whom had clinically typical hearing), it is therefore likely that for a given participant, the ______</p>",
+      "stemHtml": "<p>Which choice most logically completes the text?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "relationship between the preferred volume of a recording and the participant’s attitude toward that recording cannot be attributed to its genre."
+        },
+        {
+          "label": "B",
+          "html": "fact that the preferred volume differed by recording cannot be attributed to the participant wanting to hear the favorite recording at a higher volume than the least favorite recording."
+        },
+        {
+          "label": "C",
+          "html": "difference between the preferred volumes of the favorite and least favorite recordings cannot be attributed to one recording being inherently harder to hear than the other."
+        },
+        {
+          "label": "D",
+          "html": "identification of one recording as the favorite and another recording as the least favorite cannot be attributed to the participant having prior familiarity with either recording."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-14",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Research such as the 2010 study of arthropods by Alvin Aaden Yim-Hol Chan and colleagues has shown that noise from human activity, like traffic on a busy highway, has various significant effects on animals, and many governments require studies of the potential noise effects on wildlife before approving highway construction projects. For one of these projects, a group of researchers suggested that, although there are both arthropods and birds in the area, taking actions to reduce the effects of noise on the arthropods will probably protect both types of animals because noise tends to affect arthropods more strongly than birds. Another group of researchers indicated that, although the effects are usually greater on arthropods, addressing only those effects won’t reduce the potential harm to the birds in the area because ______</p>",
+      "stemHtml": "<p>Which choice most logically completes the text?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "the species of birds in the area experience different negative effects from noise than the species of arthropods in the area do."
+        },
+        {
+          "label": "B",
+          "html": "the actions to reduce effects on the arthropods are significantly more robust than is needed to lessen the effects on the birds in the area."
+        },
+        {
+          "label": "C",
+          "html": "the effects of noise on birds have been more thoroughly studied than the effects on arthropods have."
+        },
+        {
+          "label": "D",
+          "html": "the types of actions that are usually taken to lessen the effects of noise on birds can sometimes harm arthropods."
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-15",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Few stories in art history rival the gilded drama of James McNeill Whistler’s Peacock Room. This sumptuous dining space became the setting of a spectacular falling-out between Whistler, who transformed the somber room into a golden aviary, and shipping magnate Frederick Leyland, who commissioned the work but refused to pay for what he ______ as a tasteless, gaudy design.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "having viewed"
+        },
+        {
+          "label": "B",
+          "html": "viewed"
+        },
+        {
+          "label": "C",
+          "html": "to view"
+        },
+        {
+          "label": "D",
+          "html": "viewing"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-16",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>When searching for clues about how Neolithic peoples lived, British archaeologist Lisa-Marie Shillito starts by examining ______ trash. Buried trash deposits (known as middens) are a rich source of information for archaeologists like Shillito.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "they’re"
+        },
+        {
+          "label": "B",
+          "html": "their"
+        },
+        {
+          "label": "C",
+          "html": "its"
+        },
+        {
+          "label": "D",
+          "html": "it’s"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-17",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>One example of public art (art that’s readily accessible to the general public) ______ the work Singing Ringing Tree. This sculpture is installed on public land in Burnley, England.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "were"
+        },
+        {
+          "label": "B",
+          "html": "being"
+        },
+        {
+          "label": "C",
+          "html": "are"
+        },
+        {
+          "label": "D",
+          "html": "is"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-18",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Many ranching terms come from Spanish. For example, the word “rodeo” (a roundup) comes from the Spanish word rodear, and “cinch” (a belt) ______ from cincho. This is because the first Anglo, African, and Native American cattle ranchers in the southwestern US learned the trade from Spanish-speaking Mexican vaqueros, or cowboys.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "will be coming"
+        },
+        {
+          "label": "B",
+          "html": "will come"
+        },
+        {
+          "label": "C",
+          "html": "had come"
+        },
+        {
+          "label": "D",
+          "html": "comes"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-19",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Many places in the United States share a name with a foreign city or country. When founding the town of Edinburgh, Indiana, residents decided to name ______ after the Scottish city of Edinburgh.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "it"
+        },
+        {
+          "label": "B",
+          "html": "that"
+        },
+        {
+          "label": "C",
+          "html": "them"
+        },
+        {
+          "label": "D",
+          "html": "us"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-20",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Many folktales that originate in the Persian language start with a phrase that roughly translates to “someday, sometime.” Many tales that originate in English use “once upon a time.” Such phrases, known as story starters, ______ from language to language.</p>",
+      "stemHtml": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "varies"
+        },
+        {
+          "label": "B",
+          "html": "has varied"
+        },
+        {
+          "label": "C",
+          "html": "is varying"
+        },
+        {
+          "label": "D",
+          "html": "vary"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-21",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>As anthropologist Cristina Grasseni explains, many artisanal cheeses in Italy, such as Castelmagno from Piedmont and Quartirolo Lombardo from Lombardy, are highly valued for their regional authenticity; ______ they are prized for being made using local ingredients and methods typical of their respective geographic regions.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical transition?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "still,"
+        },
+        {
+          "label": "B",
+          "html": "rather,"
+        },
+        {
+          "label": "C",
+          "html": "then,"
+        },
+        {
+          "label": "D",
+          "html": "that is,"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-22",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Thousands of years ago, the Olmec civilization’s reign over parts of eastern Mexico ended. ______ the Olmecs’ massive stone statues of human heads remain. Two of these statues, known as Monument 4 and Monument 3, weigh over 5 tons!</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical transition?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Still,"
+        },
+        {
+          "label": "B",
+          "html": "Previously,"
+        },
+        {
+          "label": "C",
+          "html": "Secondly,"
+        },
+        {
+          "label": "D",
+          "html": "Therefore,"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "rw-m2-23",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>Unlike the sprawling, permanent mural installations of Aurora Reyes Flores and other contemporaries of the Muralismo Mexicano movement, the easily reproducible block print posters that Alberto Beltrán and Jean Charlot created as part of the printmaking collective Taller de Gráfica Popular (TGP) were highly portable. ______ the prints were a boon to the TGP’s goal of spreading their artwork throughout Mexico and the world beyond.</p>",
+      "stemHtml": "<p>Which choice completes the text with the most logical transition?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "For instance,"
+        },
+        {
+          "label": "B",
+          "html": "Despite this,"
+        },
+        {
+          "label": "C",
+          "html": "To be exact,"
+        },
+        {
+          "label": "D",
+          "html": "As such,"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-24",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>While researching a topic, a student has taken the following notes:</p><ul><li>The Vistula River is in Europe.</li><li>It is the eighth longest river in Europe.</li><li>It crosses the countries Belarus and Poland.</li><li>It ranks No. 133 among the longest rivers in the world.</li><li>It is 1,213 kilometers long.</li></ul>",
+      "stemHtml": "<p>The student wants to specify how many kilometers long the Vistula River is. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The Vistula River crosses both Belarus and Poland in Europe."
+        },
+        {
+          "label": "B",
+          "html": "The Vistula River in Europe is 1,213 kilometers long."
+        },
+        {
+          "label": "C",
+          "html": "Among the longest rivers in the world, the Vistula River ranks No. 133."
+        },
+        {
+          "label": "D",
+          "html": "The eighth longest river in Europe, the Vistula River crosses both Belarus and Poland."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "rw-m2-25",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>While researching a topic, a student has taken the following notes:</p><ul><li>Chapantongo is a municipality in the state of Hidalgo, Mexico.</li><li>It had a population of 12,967 in 2020.</li><li>Chapulhuacán is a municipality in Hidalgo.</li><li>It had a population of 22,903 in 2020.</li><li>Municipalities are governmental regions responsible for providing many public services to their residents.</li><li>Hidalgo is divided into 84 municipalities.</li></ul>",
+      "stemHtml": "<p>The student wants to emphasize a similarity between Chapantongo and Chapulhuacán. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Chapantongo is one of 84 governmental regions, known as municipalities, in Hidalgo, Mexico."
+        },
+        {
+          "label": "B",
+          "html": "As of 2020, Chapantongo was not as populous as Chapulhuacán."
+        },
+        {
+          "label": "C",
+          "html": "As a municipality of Hidalgo, Chapulhuacán is responsible for providing many public services."
+        },
+        {
+          "label": "D",
+          "html": "Both Chapantongo and Chapulhuacán are municipalities in Hidalgo, Mexico."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "rw-m2-26",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>While researching a topic, a student has taken the following notes:</p><ul><li>Sodium is a chemical element.</li><li>When the electrons of a chemical element change energy states, certain wavelengths of light are released.</li><li>This unique collection of wavelengths is known as the emission spectrum of the element.</li><li>Sodium’s emission spectrum includes the 589.5 nanometer (nm) wavelength of light.</li><li>Wavelengths of 570–590 nm make up the yellow portion of the visible spectrum.</li></ul>",
+      "stemHtml": "<p>The student wants to indicate one of the wavelengths of light in sodium’s emission spectrum. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "Sodium’s emission spectrum consists of a unique collection of wavelengths."
+        },
+        {
+          "label": "B",
+          "html": "When sodium’s electrons change energy states, certain wavelengths of light are released."
+        },
+        {
+          "label": "C",
+          "html": "One of the wavelengths in sodium’s emission spectrum is the 589.5 nm wavelength."
+        },
+        {
+          "label": "D",
+          "html": "If a chemical element releases a wavelength of light between 570–590 nm, that wavelength would be part of the yellow portion of the visible spectrum."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "rw-m2-27",
+      "section": "rw",
+      "module": 2,
+      "type": "mcq",
+      "passageHtml": "<p>While researching a topic, a student has taken the following notes:</p><ul><li>Ukiyo-e woodblock prints were a popular artistic form in Japan from the 1600s through the 1800s.</li><li>Ukiyo-e prints were produced by teams of artisans that included artists, wood-carvers, printers, and publishers.</li><li>Sōsaku-hanga was a popular Japanese printmaking movement that emerged in the early 1900s.</li><li>Sōsaku-hanga prioritized individual artistic expression.</li><li>An artist working in this style typically handled all aspects of print creation, from drawing to wood carving to printing.</li></ul>",
+      "stemHtml": "<p>The student wants to contrast ukiyo-e and sōsaku-hanga production methods. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "In contrast to ukiyo-e prints, sōsaku-hanga prints were produced using methods such as drawing and wood carving."
+        },
+        {
+          "label": "B",
+          "html": "Ukiyo-e prints were popular in Japan from the 1600s through the 1800s, while sōsaku-hanga prints emerged later, in the early 1900s."
+        },
+        {
+          "label": "C",
+          "html": "One notable distinction between ukiyo-e and sōsaku-hanga prints is sōsaku-hanga’s emphasis on individual artistic expression."
+        },
+        {
+          "label": "D",
+          "html": "Teams of artisans produced ukiyo-e prints, whereas individual artists typically handled all aspects of sōsaku-hanga printmaking themselves."
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m1-01",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<p>The function <i>f</i> is defined by <i>f</i>(<i>x</i>) = 8/(11 − <i>x</i>). What is the value of <i>f</i>(<i>x</i>) when <i>x</i> = 9?</p>",
+      "correctAnswer": "4"
+    },
+    {
+      "id": "math-m1-02",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<p>On a certain day in June, the lowest recorded wind speed in a town was 9 miles per hour (mph) and the highest recorded wind speed was 20 mph. Which inequality is true for all values of <i>w</i>, where <i>w</i> represents any wind speed, in mph, recorded in the town on this day?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<i>w</i> ≤ 9"
+        },
+        {
+          "label": "B",
+          "html": "<i>w</i> ≤ 11"
+        },
+        {
+          "label": "C",
+          "html": "<i>w</i> ≥ 20"
+        },
+        {
+          "label": "D",
+          "html": "9 ≤ <i>w</i> ≤ 20"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m1-03",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<p>A triangle has a base length of 80 centimeters and a height of 40 centimeters. What is the area, in square centimeters, of the triangle?</p>",
+      "correctAnswer": "1600"
+    },
+    {
+      "id": "math-m1-04",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<p><i>y</i> = 45<br><i>y</i> = 5<i>x</i><sup>2</sup></p><p>The graphs of the equations in the given system intersect at the point (<i>x</i>, <i>y</i>) in the <i>xy</i>-plane. What is a possible value of <i>x</i>?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "3"
+        },
+        {
+          "label": "B",
+          "html": "5"
+        },
+        {
+          "label": "C",
+          "html": "9"
+        },
+        {
+          "label": "D",
+          "html": "45"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m1-05",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<p>The scatterplot has 6 data points, in an exponential pattern trending up from left to right, with the following approximate coordinates: (0, 32.53), (10, 53.53), (20, 73.47), (30, 138.47), (40, 176.53), (50, 279.53).</p><p>Which of the following equations is the most appropriate exponential model for the data shown in the scatterplot?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<i>y</i> = 34(1.04)<sup>−<i>x</i></sup>"
+        },
+        {
+          "label": "B",
+          "html": "<i>y</i> = 34(1.04)<sup><i>x</i></sup>"
+        },
+        {
+          "label": "C",
+          "html": "[cut off in the source PDF]"
+        },
+        {
+          "label": "D",
+          "html": "[cut off in the source PDF]"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m1-06",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<p>Hector receives a gift card worth $70.00 to pay for movies online. He uses his gift card to buy 2 movies for $6.50 each. He will spend the rest of his gift card on renting movies for $1.50 each. How many movies can Hector rent?</p>",
+      "correctAnswer": "38"
+    },
+    {
+      "id": "math-m1-07",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<p>In △<i>JKL</i>, the measures of both ∠<i>J</i> and ∠<i>K</i> are equal and the measure of ∠<i>L</i> is 138°. What is the measure of ∠<i>J</i>?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "90°"
+        },
+        {
+          "label": "B",
+          "html": "69°"
+        },
+        {
+          "label": "C",
+          "html": "42°"
+        },
+        {
+          "label": "D",
+          "html": "21°"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m1-08",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<p>50<i>x</i> + 49<i>y</i> = <i>c</i><br>49<i>x</i> − 50<i>y</i> = <i>c</i></p><p>In the given system of equations, <i>c</i> is a positive constant. Which of the following could be the point where the graphs of the equations in this system intersect in the <i>xy</i>-plane?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "(10, −10/99)"
+        },
+        {
+          "label": "B",
+          "html": "(10, 990)"
+        },
+        {
+          "label": "C",
+          "html": "(<i>c</i>, <i>c</i>/99)"
+        },
+        {
+          "label": "D",
+          "html": "(<i>c</i>, 0)"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m1-09",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<p>For the linear function <i>f</i>, the graph of <i>y</i> = <i>f</i>(<i>x</i>) in the <i>xy</i>-plane has a slope of 25 and passes through the point (0, 0). Which equation defines <i>f</i>?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<i>f</i>(<i>x</i>) = −(1/25)<i>x</i>"
+        },
+        {
+          "label": "B",
+          "html": "<i>f</i>(<i>x</i>) = −25<i>x</i>"
+        },
+        {
+          "label": "C",
+          "html": "<i>f</i>(<i>x</i>) = (1/25)<i>x</i>"
+        },
+        {
+          "label": "D",
+          "html": "<i>f</i>(<i>x</i>) = 25<i>x</i>"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m1-10",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<p>At a convention center, there are a total of 375 visitors. Each visitor is located in either room A, room B, or room C. If one of these visitors is selected at random, the probability of selecting a visitor who is located in room A is 0.48, and the probability of selecting a visitor who is located in room B is 0.16. How many visitors are located in room C?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "29"
+        },
+        {
+          "label": "B",
+          "html": "36"
+        },
+        {
+          "label": "C",
+          "html": "120"
+        },
+        {
+          "label": "D",
+          "html": "135"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m1-11",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<p>4, 4, 12, 25, 25</p><p>What is the range of the data set shown?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "12"
+        },
+        {
+          "label": "B",
+          "html": "14"
+        },
+        {
+          "label": "C",
+          "html": "21"
+        },
+        {
+          "label": "D",
+          "html": "70"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m1-12",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<table><tr><th><i>x</i></th><th><i>y</i></th></tr><tr><td>1</td><td>16</td></tr><tr><td>2</td><td>28</td></tr><tr><td>3</td><td><i>a</i></td></tr></table><p>The table shows three values of <i>x</i> and their corresponding values of <i>y</i> for the equation <i>y</i> = 6(2)<sup><i>x</i></sup> + 4. In the table, <i>a</i> is a constant. What is the value of <i>a</i>?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "40"
+        },
+        {
+          "label": "B",
+          "html": "48"
+        },
+        {
+          "label": "C",
+          "html": "52"
+        },
+        {
+          "label": "D",
+          "html": "100"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m1-13",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<p>If 7(<i>x</i> − 3)<sup>2</sup> = 252, what is the value of <i>x</i><sup>2</sup> − 6<i>x</i>?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "18"
+        },
+        {
+          "label": "B",
+          "html": "27"
+        },
+        {
+          "label": "C",
+          "html": "36"
+        },
+        {
+          "label": "D",
+          "html": "45"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m1-14",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<p><i>x</i><sup>2</sup> − 5<i>x</i> + 2 = 0</p><p>What is one of the solutions to the given equation?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "(5 + √17)/2"
+        },
+        {
+          "label": "B",
+          "html": "(5 + √33)/2"
+        },
+        {
+          "label": "C",
+          "html": "(−5 + √17)/2"
+        },
+        {
+          "label": "D",
+          "html": "(−5 + √33)/2"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m1-15",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<p>A circle in the <i>xy</i>-plane has its center at (−7, 2), and the point (1, −2) lies on the circle. Which equation represents this circle?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "(<i>x</i> + 7)<sup>2</sup> + (<i>y</i> − 2)<sup>2</sup> = 80"
+        },
+        {
+          "label": "B",
+          "html": "(<i>x</i> + 7)<sup>2</sup> + (<i>y</i> − 2)<sup>2</sup> = 36"
+        },
+        {
+          "label": "C",
+          "html": "(<i>x</i> − 7)<sup>2</sup> + (<i>y</i> + 2)<sup>2</sup> = 80"
+        },
+        {
+          "label": "D",
+          "html": "(<i>x</i> − 7)<sup>2</sup> + (<i>y</i> + 2)<sup>2</sup> = 36"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m1-16",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<p>A dance studio charges an introductory fee for the first 3 lessons and then charges a fixed fee for each additional lesson. One student took 4 lessons and was charged $60. Another student took 16 lessons and was charged $300. Which function <i>f</i> gives the total charge, in dollars, for any student who took <i>x</i> lessons, where <i>x</i> &gt; 2?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<i>f</i>(<i>x</i>) = 15<i>x</i>"
+        },
+        {
+          "label": "B",
+          "html": "<i>f</i>(<i>x</i>) = 15<i>x</i> + 60"
+        },
+        {
+          "label": "C",
+          "html": "<i>f</i>(<i>x</i>) = 20<i>x</i>"
+        },
+        {
+          "label": "D",
+          "html": "<i>f</i>(<i>x</i>) = 20<i>x</i> − 20"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m1-17",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<p>A car dealership has only sedans, SUVs, and minivans for sale. On Monday, 30% of the vehicles for sale were sedans and 50% were SUVs. If there were 57 sedans for sale at the dealership on Monday, how many minivans were for sale?</p>",
+      "correctAnswer": "38"
+    },
+    {
+      "id": "math-m1-18",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<p>On January 1, there were 236 views of a video posted on a social media site. Every 3 days after January 1, the number of views of the video had increased by 60% of the number of views 3 days earlier. The function <i>f</i> gives the predicted number of views <i>x</i> days after January 1. Which equation defines <i>f</i>?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<i>f</i>(<i>x</i>) = 236(0.60)<sup><i>x</i>/3</sup>"
+        },
+        {
+          "label": "B",
+          "html": "<i>f</i>(<i>x</i>) = 236(0.60)<sup>3<i>x</i></sup>"
+        },
+        {
+          "label": "C",
+          "html": "<i>f</i>(<i>x</i>) = 236(1.60)<sup><i>x</i>/3</sup>"
+        },
+        {
+          "label": "D",
+          "html": "<i>f</i>(<i>x</i>) = 236(1.60)<sup>3<i>x</i></sup>"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m1-19",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<p>0.10<i>x</i> + 0.20<i>y</i> = 0.18(<i>x</i> + <i>y</i>)</p><p>The equation gives a volume <i>x</i>, in gallons, of a 10% saltwater solution that could be mixed with a volume <i>y</i>, in gallons, of a 20% saltwater solution to produce an 18% saltwater solution. According to this equation, what volume, in gallons, of the 20% saltwater solution could be mixed with 45.0 gallons of the 10% saltwater solution to produce an 18% saltwater solution? (Assume that the volume of the mixture is the sum of the volumes of the two solutions before they were mixed.)</p>",
+      "correctAnswer": "180"
+    },
+    {
+      "id": "math-m1-20",
+      "section": "math",
+      "module": 1,
+      "type": "spr",
+      "stemHtml": "<p><i>f</i>(<i>x</i>) = <i>x</i> + 3<br><i>g</i>(<i>x</i>) = 7<i>x</i><sup>2</sup> − <i>rx</i> + 63</p><p>The functions <i>f</i> and <i>g</i> are given. In function <i>g</i>, <i>r</i> is a constant. If <i>f</i>(<i>x</i>) · <i>g</i>(<i>x</i>) = 7<i>x</i><sup>3</sup> + 189, what is the value of <i>r</i>?</p>",
+      "correctAnswer": "21"
+    },
+    {
+      "id": "math-m1-21",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<p><i>y</i> &lt; 14<i>x</i> + 12</p><p>For which of the following tables are all the values of <i>x</i> and their corresponding values of <i>y</i> solutions to the given inequality?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<table><tr><th><i>x</i></th><th><i>y</i></th></tr><tr><td>2</td><td>25</td></tr><tr><td>4</td><td>83</td></tr><tr><td>6</td><td>81</td></tr></table>"
+        },
+        {
+          "label": "B",
+          "html": "<table><tr><th><i>x</i></th><th><i>y</i></th></tr><tr><td>2</td><td>25</td></tr><tr><td>4</td><td>53</td></tr><tr><td>6</td><td>81</td></tr></table>"
+        },
+        {
+          "label": "C",
+          "html": "<table><tr><th><i>x</i></th><th><i>y</i></th></tr><tr><td>2</td><td>40</td></tr><tr><td>4</td><td>68</td></tr><tr><td>6</td><td>96</td></tr></table>"
+        },
+        {
+          "label": "D",
+          "html": "[cut off in the source PDF]"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m1-22",
+      "section": "math",
+      "module": 1,
+      "type": "mcq",
+      "stemHtml": "<p>(−22<i>x</i> − 29 + <i>m</i>)/2 = <i>k</i>(<i>x</i> + 5)</p><p>In the given equation, <i>k</i> and <i>m</i> are constants. The equation has infinitely many solutions. What is the value of <i>m</i>?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "39"
+        },
+        {
+          "label": "B",
+          "html": "−11"
+        },
+        {
+          "label": "C",
+          "html": "−26"
+        },
+        {
+          "label": "D",
+          "html": "−81"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-01",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<p>Two participants solved a puzzle cube during timed competitions. The lists give the times, to the nearest second, that participant A and participant B took to solve the cube at various competitions.</p><p>Participant A: 23, 23, 25, 27<br>Participant B: 23, 23, 25, 27, 38</p><p>Which statement correctly compares the mean solve times, to the nearest second, of participant A and participant B at these competitions?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The mean solve time of participant A is greater than the mean solve time of participant B."
+        },
+        {
+          "label": "B",
+          "html": "The mean solve time of participant A is less than the mean solve time of participant B."
+        },
+        {
+          "label": "C",
+          "html": "The mean solve time of participant A is equal to the mean solve time of participant B."
+        },
+        {
+          "label": "D",
+          "html": "There is not enough information to compare the mean solve times of participant A and participant B."
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m2-02",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<p>Line <i>j</i> is defined by <i>y</i> = 4<i>x</i> + 9. Line <i>k</i> is parallel to line <i>j</i> in the <i>xy</i>-plane. What is the slope of line <i>k</i>?</p>",
+      "correctAnswer": "4"
+    },
+    {
+      "id": "math-m2-03",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<table><tr><th><i>x</i></th><th><i>f</i>(<i>x</i>)</th></tr><tr><td>0</td><td>3</td></tr><tr><td>1</td><td>5</td></tr><tr><td>2</td><td>7</td></tr></table><p>For a linear function <i>f</i>, the table shows three values of <i>x</i> and their corresponding values of <i>f</i>(<i>x</i>). Which of the following could define <i>f</i>?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "<i>f</i>(<i>x</i>) = 3<i>x</i> + 2"
+        },
+        {
+          "label": "B",
+          "html": "<i>f</i>(<i>x</i>) = 2<i>x</i> + 3"
+        },
+        {
+          "label": "C",
+          "html": "<i>f</i>(<i>x</i>) = <i>x</i> + 3"
+        },
+        {
+          "label": "D",
+          "html": "<i>f</i>(<i>x</i>) = 2<i>x</i>"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m2-04",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<p>The height of a right circular cylinder is 36 inches, and the circumference of its base is 360 inches. Which expression represents the total surface area, in square inches, of the cylinder?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "(36)(360) + 2π(180/π)<sup>2</sup>"
+        },
+        {
+          "label": "B",
+          "html": "(36)(360) + π(180/π)<sup>2</sup>"
+        },
+        {
+          "label": "C",
+          "html": "π(180/π)<sup>2</sup>(36)"
+        },
+        {
+          "label": "D",
+          "html": "(36)(360)"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m2-05",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<p>A bookstore is giving away free books every day. The equation <i>f</i>(<i>x</i>) = 162 − 9<i>x</i> gives the number of free books, <i>f</i>(<i>x</i>), that remain to be given away after <i>x</i> days. Which of the following is the best interpretation of <i>f</i>(18) = 0 in this context?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "The bookstore has 18 free books to give away."
+        },
+        {
+          "label": "B",
+          "html": "The bookstore will give away 18 free books in 9 days."
+        },
+        {
+          "label": "C",
+          "html": "It will take 18 days to give away all the free books."
+        },
+        {
+          "label": "D",
+          "html": "It will take 162 days to give away 18 free books."
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m2-06",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<p>2<i>x</i> + 5<i>y</i> = 260<br>−2<i>x</i> + 3<i>y</i> = 260</p><p>The solution to the given system of equations is (<i>x</i>, <i>y</i>). What is the value of 8<i>y</i>?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "0"
+        },
+        {
+          "label": "B",
+          "html": "65"
+        },
+        {
+          "label": "C",
+          "html": "260"
+        },
+        {
+          "label": "D",
+          "html": "520"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-07",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<p>If 9<i>x</i>/2 − 11 = 45/2 − 11, what is the value of 9<i>x</i>?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "5"
+        },
+        {
+          "label": "B",
+          "html": "10"
+        },
+        {
+          "label": "C",
+          "html": "45"
+        },
+        {
+          "label": "D",
+          "html": "54"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m2-08",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<p>A right circular cylinder has a volume of 35,152π cubic inches. The height of the cylinder is 2 times its radius. What is the radius, in inches, of the cylinder?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "26"
+        },
+        {
+          "label": "B",
+          "html": "52"
+        },
+        {
+          "label": "C",
+          "html": "676"
+        },
+        {
+          "label": "D",
+          "html": "1,352"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m2-09",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<p>2<i>x</i><sup>2</sup> = <i>k</i></p><p>In the given equation, <i>k</i> is a constant. The equation has no real solution. Which of the following could be the value of <i>k</i>?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "−92"
+        },
+        {
+          "label": "B",
+          "html": "0"
+        },
+        {
+          "label": "C",
+          "html": "46"
+        },
+        {
+          "label": "D",
+          "html": "55"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m2-10",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<p>Which expression is equivalent to [7<i>x</i>(<i>x</i> − 9) − 2(<i>x</i> − 9)] / (3<i>x</i> − 27), where <i>x</i> &gt; 9?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "[unreadable in the source PDF]"
+        },
+        {
+          "label": "B",
+          "html": "(7<i>x</i> − 2)/3"
+        },
+        {
+          "label": "C",
+          "html": "(7<i>x</i><sup>2</sup> − 2<i>x</i> − 18)/(3<i>x</i> − 27)"
+        },
+        {
+          "label": "D",
+          "html": "(7<i>x</i><sup>2</sup> − 2<i>x</i> − 81)/(3<i>x</i> − 27)"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m2-11",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<p>0.1242 is 0.09% of the number <i>b</i>. The number <i>b</i> is 25% of the number <i>c</i>. What is the value of <i>c</i>?</p>",
+      "correctAnswer": "552"
+    },
+    {
+      "id": "math-m2-12",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<p>The function <i>f</i> is defined by the equation <i>f</i>(<i>x</i>) = 20<sup><i>x</i></sup> + <i>b</i>, where <i>b</i> is a constant. In the <i>xy</i>-plane, the graph of <i>y</i> = <i>f</i>(<i>x</i>) contains the points (0, 36) and (2, <i>p</i> + 19), where <i>p</i> is a constant. What is the value of <i>p</i>?</p>",
+      "correctAnswer": "416"
+    },
+    {
+      "id": "math-m2-13",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<p>A figure has an area of 3,744 square inches. What is the area, in square feet, of this figure? (1 foot = 12 inches)</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "26"
+        },
+        {
+          "label": "B",
+          "html": "61.2"
+        },
+        {
+          "label": "C",
+          "html": "312"
+        },
+        {
+          "label": "D",
+          "html": "734.3"
+        }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "math-m2-14",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<p><i>f</i>(<i>x</i>) = (<i>x</i> − <i>a</i>)(<i>x</i> − <i>b</i>)</p><p>The function <i>f</i> is defined by the given equation, where <i>a</i> and <i>b</i> are integer constants. If <i>f</i>(39) &gt; 0, <i>f</i>(42) &lt; 0, and <i>f</i>(45) &gt; 0, which of the following could be the value of <i>a</i> + <i>b</i>?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "42"
+        },
+        {
+          "label": "B",
+          "html": "44"
+        },
+        {
+          "label": "C",
+          "html": "81"
+        },
+        {
+          "label": "D",
+          "html": "83"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-15",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<p>One of the factors of 8<i>x</i><sup>4</sup> + 50<i>x</i><sup>2</sup> + 63 is <i>ax</i><sup>2</sup> + <i>b</i>, where <i>a</i> and <i>b</i> are positive constants. Which of the following is a possible value of <i>ab</i>?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "7"
+        },
+        {
+          "label": "B",
+          "html": "14"
+        },
+        {
+          "label": "C",
+          "html": "18"
+        },
+        {
+          "label": "D",
+          "html": "36"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m2-16",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<p><i>N</i>(<i>t</i>) = 1,000(3/2)<sup>6<i>t</i>/5</sup></p><p>The function <i>N</i> gives the estimated number of bacteria in a growth medium <i>t</i> hours after a study began. According to the function, the number of bacteria is estimated to increase by 50% every <i>k</i> minutes. What is the value of <i>k</i>?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "40"
+        },
+        {
+          "label": "B",
+          "html": "50"
+        },
+        {
+          "label": "C",
+          "html": "72"
+        },
+        {
+          "label": "D",
+          "html": "90"
+        }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "math-m2-17",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<p>The equation 5|<i>x</i> − 6| = <i>k</i>, where <i>k</i> is a constant, has exactly one solution. Which of the following could be the value of <i>k</i>/5?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "−6 or 6"
+        },
+        {
+          "label": "B",
+          "html": "−6 only"
+        },
+        {
+          "label": "C",
+          "html": "0 only"
+        },
+        {
+          "label": "D",
+          "html": "6 only"
+        }
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "math-m2-18",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<p>The quadratic function <i>g</i> models the depth, in meters, below the surface of the water of a Weddell seal <i>t</i> minutes after the seal entered the water during a dive. The function estimates that the seal reached its maximum depth of 396.8 meters 8 minutes after it entered the water and then reached the surface of the water 16 minutes after it entered the water. Based on the function, what was the estimated depth, to the nearest meter, of the seal 11 minutes after it entered the water?</p>",
+      "correctAnswer": "341"
+    },
+    {
+      "id": "math-m2-19",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<p>In triangle <i>XYZ</i>, the measure of angle <i>X</i> is 90°. Point <i>W</i> lies on segment <i>YZ</i>, and segment <i>WX</i> is perpendicular to segment <i>YZ</i>. The length of segment <i>WY</i> is 668, and the length of segment <i>WX</i> is 501. What is the value of tan <i>Z</i>?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "3/5"
+        },
+        {
+          "label": "B",
+          "html": "3/4"
+        },
+        {
+          "label": "C",
+          "html": "4/5"
+        },
+        {
+          "label": "D",
+          "html": "4/3"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-20",
+      "section": "math",
+      "module": 2,
+      "type": "spr",
+      "stemHtml": "<p><i>x</i><sup>2</sup> + <i>y</i><sup>2</sup> − 6<i>x</i> − 10<i>y</i> − 4<i>n</i> = 0</p><p>The given equation represents circle A in the <i>xy</i>-plane, where <i>n</i> is a constant. Point (5, 7) lies on circle B, which has the same center but twice the diameter as circle A. What is the value of <i>n</i>?</p>",
+      "correctAnswer": "-8"
+    },
+    {
+      "id": "math-m2-21",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<p>39(<i>x</i> − <i>n</i>) = 39<i>y</i> + 39<i>n</i></p><p>One of the equations in a system of two linear equations is given, where <i>n</i> is a positive constant. The system has no solution. Which equation could be the second equation in this system?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "4<i>x</i> − 4<i>y</i> = 8<i>n</i>"
+        },
+        {
+          "label": "B",
+          "html": "4<i>x</i> + 4<i>y</i> = 4<i>n</i>"
+        },
+        {
+          "label": "C",
+          "html": "4<i>x</i> + 4<i>y</i> = 8<i>n</i>"
+        },
+        {
+          "label": "D",
+          "html": "4<i>x</i> − 4<i>y</i> = 4<i>n</i>"
+        }
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "math-m2-22",
+      "section": "math",
+      "module": 2,
+      "type": "mcq",
+      "stemHtml": "<p>In triangle <i>ABC</i>, the measure of angle <i>B</i> is 90° and <i>BD</i> is an altitude of the triangle. The length of <i>AB</i> is 13 and the length of <i>AC</i> is 19 greater than the length of <i>AB</i>. What is the value of <i>BC</i>/<i>BD</i>?</p>",
+      "choices": [
+        {
+          "label": "A",
+          "html": "13/32"
+        },
+        {
+          "label": "B",
+          "html": "13/19"
+        },
+        {
+          "label": "C",
+          "html": "19/13"
+        },
+        {
+          "label": "D",
+          "html": "32/13"
+        }
+      ],
+      "correctAnswer": "D"
+    }
+  ]
+}
