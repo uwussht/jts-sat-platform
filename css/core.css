@@ -3112,7 +3112,11 @@ body.unit-focus .page-head { display: none !important; }
   border-radius: var(--r-md); border: 1px solid var(--border-strong);
   background: var(--surface); color: var(--ink); font-weight: 700;
 }
-.btn:hover { background: var(--surface-2); border-color: var(--ink-2); color: var(--ink); }
+/* Plain buttons only. This sits above the variants on purpose: the yellow,
+   the ghost, the danger and the finish button each override it with their
+   own hover. A second copy of this rule at the end of the file beat all four
+   on the cascade, and every yellow button turned grey under the pointer. */
+.btn:hover { background: var(--surface-2); border-color: var(--border-strong); color: var(--ink); }
 .btn-primary, .btn-primary:hover {
   background: var(--brand-600); border-color: var(--brand-600); color: var(--on-brand); font-weight: 800;
 }
@@ -3656,7 +3660,7 @@ table.table tbody tr:hover { background: none; }
 }
 
 /* ----- buttons and badges ------------------------------------------------ */
-.btn:hover { border-color: var(--border-strong); background: var(--surface-2); }
+/* No .btn:hover here: it belongs above the variants, not after them. */
 .btn-sm { min-height: 32px; padding: 5px 12px; }
 .btn-danger { background: var(--danger-bg); border-color: var(--danger); color: var(--danger); }
 .btn-danger:hover { background: var(--danger); color: #fff; }
