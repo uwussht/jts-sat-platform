@@ -1184,5 +1184,17 @@ JTS.dict.en = {
   'today.growth.train': 'Train',
   'today.growth.noneTitle': 'Not enough answers yet',
   'today.growth.noneText': 'Answer a few practice questions and the weakest topic will show here.',
-  'today.growth.toPractice': 'To practice'
+  'today.growth.toPractice': 'To practice',
+  'plan.sub': 'Your road to the exam: lessons three times a week, the tests between them.',
+  'plan.viewRoad': 'Road',
+  'plan.weeksRange': 'Weeks {a}–{b}',
+  'plan.youAreHere': 'you are here',
+  'plan.dayPanel': 'Day',
+  'plan.dayCount': 'Events: {n}',
+  'plan.dayEmpty': 'Nothing on this day.',
+  'plan.prevDay': 'Previous day',
+  'plan.nextDay': 'Next day',
+  'plan.leg.todo': 'Ahead',
+  'plan.leg.test': 'Test',
+  'plan.leg.today': 'Today'
 };

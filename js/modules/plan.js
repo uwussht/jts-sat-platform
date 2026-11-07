@@ -101,6 +101,156 @@
     }, kids);
   }
 
+
+  /* ------------------------------------------------------------- the road */
+
+  /**
+   * The plan as a road, the way the IELTS platform draws it: a fortnight of
+   * days as circles on a line — done, missed, today, still to come — and the
+   * day you press opens in the panel beside them. It is the default view
+   * because it answers "where am I" in one look, which a month grid does not.
+   */
+  /** The four views of the same plan, as chips beside the screen's title. */
+  function viewSwitch(ctx) {
+    var seg = U.el('div.cal-seg', { role: 'group', 'aria-label': t('nav.plan') });
+    [['road', 'plan.viewRoad'], ['month', 'plan.viewMonth'],
+     ['week', 'plan.viewWeek'], ['agenda', 'plan.viewAgenda']]
+      .forEach(function (pair) {
+        seg.appendChild(U.el('a', {
+          href: ctx.href({ view: pair[0] }), text: t(pair[1]),
+          'aria-pressed': String(ctx.view === pair[0])
+        }));
+      });
+    return seg;
+  }
+
+  function roadCard(state, plan, ctx, rerender) {
+    var events = eventsByDay(state, plan);
+    var todayISO = U.iso(U.today());
+
+    /* Two weeks at a time: the week on screen and the one after it. */
+    var weeks = ctx.weeks;
+    var from = ctx.weekIndex;
+    var shown = weeks.slice(from, from + 2);
+    if (!shown.length) shown = [{ monday: U.iso(U.weekStart(U.today())), lessons: 0 }];
+
+    /* The day the panel shows: the one in the hash, else today when it is on
+       screen, else the first day of the fortnight that has anything on it. */
+    var days = [];
+    shown.forEach(function (w) {
+      for (var i = 0; i < 7; i++) days.push(U.iso(U.addDays(U.parseISO(w.monday), i)));
+    });
+    var day = ctx.day && days.indexOf(ctx.day) >= 0 ? ctx.day : null;
+    if (!day && days.indexOf(todayISO) >= 0) day = todayISO;
+    if (!day) day = days.filter(function (d) { return (events[d] || []).length; })[0] || days[0];
+
+    /* --------------------------------------------------------- the lanes */
+    function dot(iso) {
+      var list = events[iso] || [];
+      var date = U.parseISO(iso);
+      var lesson = list.filter(function (e) { return e.lesson; })[0];
+      var test = list.filter(function (e) { return e.test || e.sim; })[0];
+      var exam = list.filter(function (e) { return e.type === 'exam'; })[0];
+
+      var cls = '.road-day';
+      if (iso === todayISO) cls += '.is-today';
+      if (iso === day) cls += '.is-open';
+      if (exam) cls += '.is-exam';
+      else if (test) cls += '.is-flag';
+      else if (lesson) {
+        var st = lesson.lesson.status;
+        cls += st === 'done' ? '.is-done' : st === 'missed' ? '.is-missed' : '.is-todo';
+      } else cls += '.is-empty';
+
+      var mark = exam ? '★' : lesson && lesson.lesson.status === 'done' ? '✓'
+        : lesson && lesson.lesson.status === 'missed' ? '!' : test ? '⚑'
+        : lesson ? String(date.getDate()) : '';
+
+      return U.el('a' + cls, {
+        href: ctx.href({ view: 'road', week: from, day: iso }),
+        'aria-current': iso === day ? 'true' : null,
+        title: U.fmtDate(date, S.settings().uiLang)
+      }, [
+        U.el('span.road-dot', { text: mark, 'aria-hidden': 'true' }),
+        U.el('span.road-lab', { text: U.dayLabel(date.getDay() === 0 ? 7 : date.getDay()) }),
+        iso === todayISO ? U.el('span.road-here', { text: t('plan.youAreHere') }) : null
+      ]);
+    }
+
+    function weekBox(w, n) {
+      var lane = U.el('div.road-lane');
+      for (var i = 0; i < 7; i++) lane.appendChild(dot(U.iso(U.addDays(U.parseISO(w.monday), i))));
+      return U.el('div.road-week', null, [
+        U.el('div.road-week-head', null, [
+          U.el('b', { text: t('plan.week', { n: n + 1 }) }),
+          U.el('span.xsmall.muted', { text: t('plan.lessonsThisWeek', { n: w.lessons }) })
+        ]),
+        lane
+      ]);
+    }
+
+    var lanes = U.el('div.stack');
+    shown.forEach(function (w) { lanes.appendChild(weekBox(w, weeks.indexOf(w))); });
+
+    var head = U.el('div.road-head', null, [
+      U.el('a.icon-btn' + (from === 0 ? '.is-off' : ''), {
+        href: ctx.href({ view: 'road', week: Math.max(0, from - 2) }),
+        text: '‹', 'aria-label': t('plan.prevWeek')
+      }),
+      U.el('div.grow', null, [
+        U.el('div.h3', { text: shown.length > 1
+          ? t('plan.weeksRange', { a: weeks.indexOf(shown[0]) + 1, b: weeks.indexOf(shown[1]) + 1 })
+          : t('plan.week', { n: weeks.indexOf(shown[0]) + 1 }) })
+      ]),
+      U.el('a.icon-btn' + (from + 2 >= weeks.length ? '.is-off' : ''), {
+        href: ctx.href({ view: 'road', week: Math.min(Math.max(0, weeks.length - 1), from + 2) }),
+        text: '›', 'aria-label': t('plan.nextWeek')
+      }),
+      U.el('a.btn.btn-sm', { href: ctx.href({ view: 'road' }), text: t('plan.today') })
+    ]);
+
+    var legend = U.el('div.road-legend', null, [
+      ['is-done', 'lstatus.done'], ['is-todo', 'plan.leg.todo'], ['is-missed', 'lstatus.missed'],
+      ['is-flag', 'plan.leg.test'], ['is-today', 'plan.leg.today']
+    ].map(function (pair) {
+      return U.el('span.road-key', null, [
+        U.el('i.road-dot.' + pair[0], { 'aria-hidden': 'true' }),
+        U.el('span', { text: t(pair[1]) })
+      ]);
+    }));
+
+    /* --------------------------------------------------------- the panel */
+    var list = events[day] || [];
+    var panelRows = list.length
+      ? U.el('div.stack-sm', null, list.map(function (ev) { return eventChip(ev, rerender, { rich: true }); }))
+      : U.el('p.muted.small', { text: t('plan.dayEmpty') });
+
+    var di = days.indexOf(day);
+    var panel = U.el('aside.card.stack', { id: 'plan-day' }, [
+      U.el('div.road-head', null, [
+        U.el('a.icon-btn' + (di <= 0 ? '.is-off' : ''), {
+          href: ctx.href({ view: 'road', week: from, day: days[Math.max(0, di - 1)] }),
+          text: '‹', 'aria-label': t('plan.prevDay')
+        }),
+        U.el('div.grow', null, [
+          U.el('div.eyebrow', { text: day === todayISO ? t('plan.today') : t('plan.dayPanel') }),
+          U.el('div.h3', { text: U.fmtDate(U.parseISO(day), S.settings().uiLang) })
+        ]),
+        U.el('a.icon-btn' + (di >= days.length - 1 ? '.is-off' : ''), {
+          href: ctx.href({ view: 'road', week: from, day: days[Math.min(days.length - 1, di + 1)] }),
+          text: '›', 'aria-label': t('plan.nextDay')
+        })
+      ]),
+      U.el('div.small.muted', { text: t('plan.dayCount', { n: list.length }) }),
+      panelRows
+    ]);
+
+    return U.el('div.dash-split', null, [
+      U.el('div.card.stack', { id: 'plan-road' }, [head, lanes, legend]),
+      panel
+    ]);
+  }
+
   /* ------------------------------------------------------------- calendar */
 
   /**
@@ -177,15 +327,6 @@
       }
       bar.appendChild(nav);
 
-      var seg = U.el('div.cal-seg', { role: 'group', 'aria-label': t('nav.plan') });
-      [['month', 'plan.viewMonth'], ['week', 'plan.viewWeek'], ['agenda', 'plan.viewAgenda']]
-        .forEach(function (pair) {
-          seg.appendChild(U.el('a', {
-            href: ctx.href({ view: pair[0] }), text: t(pair[1]),
-            'aria-pressed': String(ctx.view === pair[0])
-          }));
-        });
-
       var sel = U.el('select.cal-filter', {
         'aria-label': t('plan.filterType'),
         onchange: function () { filter = this.value; paintLegend(); paintBody(); }
@@ -196,7 +337,7 @@
       });
       sel.value = filter;
 
-      bar.appendChild(U.el('div.cal-bar-right', null, [seg, sel]));
+      bar.appendChild(U.el('div.cal-bar-right', null, [sel]));
     }
 
     /* The legend is also the fastest filter: pressing a kind shows only it,
@@ -394,24 +535,36 @@
       var nextMon = plan.next ? U.iso(U.weekStart(U.parseISO(plan.next.date))) : null;
       var idx = Math.max(0, weeks.map(function (w) { return w.monday; }).indexOf(nextMon));
       if (JTS.router.current && JTS.router.current.query.week) {
-        idx = U.clamp(Number(JTS.router.current.query.week), 0, weeks.length - 1);
+        idx = U.clamp(Number(JTS.router.current.query.week), 0, Math.max(0, weeks.length - 1));
       }
 
-      var view = (JTS.router.current && JTS.router.current.query.view) || 'month';
-      if (['month', 'week', 'agenda'].indexOf(view) < 0) view = 'month';
+      var view = (JTS.router.current && JTS.router.current.query.view) || 'road';
+      if (['road', 'month', 'week', 'agenda'].indexOf(view) < 0) view = 'road';
 
-      screen.appendChild(calendarCard(state, plan, {
+      var ctx = {
         view: view,
+        weeks: weeks,
+        day: (JTS.router.current && JTS.router.current.query.day) || null,
         week: weeks[idx] || { monday: U.iso(U.weekStart(U.today())), lessons: 0 },
         weekIndex: idx,
         weekCount: Math.max(1, weeks.length),
         href: function (q) {
           var parts = [];
-          if (q.view && q.view !== 'month') parts.push('view=' + q.view);
+          if (q.view && q.view !== 'road') parts.push('view=' + q.view);
           if (q.week !== undefined && q.week !== null) parts.push('week=' + q.week);
+          if (q.day) parts.push('day=' + q.day);
           return '#/plan' + (parts.length ? '?' + parts.join('&') : '');
         }
-      }, rerender));
+      };
+
+      /* The title says what this screen is for, the way the other site's
+         plan does, and the view switch sits beside it. */
+      JTS.shell.pageSub(t('plan.sub'));
+      JTS.shell.pageActions([viewSwitch(ctx)]);
+
+      screen.appendChild(view === 'road'
+        ? roadCard(state, plan, ctx, rerender)
+        : calendarCard(state, plan, ctx, rerender));
     }
   });
 })();

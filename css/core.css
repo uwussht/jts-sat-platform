@@ -3599,3 +3599,211 @@ a.cal-tag { text-decoration: none; }
   .goal-hero { padding: 18px; }
   .gstat { padding: 10px; } .gstat b { font-size: 22px; } .gstat small { letter-spacing: .1em; } .gstat-hint { font-size: 11px; }
 }
+
+/* ==========================================================================
+   The IELTS platform's design, across every screen.
+
+   The two sites already share their colours, fonts and radii. What was left
+   were older rules from the purple era that the TeenTech block never
+   overrode: tables with a yellow header band, a toast nobody could read on
+   dark, square checkboxes and ticks, a purple scrim. They are corrected here,
+   together with the layout values the other site uses — the content column,
+   the page head, the phone tab bar.
+   ========================================================================== */
+
+/* ----- the content column and the page head ------------------------------ */
+.container { max-width: 1240px; padding-inline: 28px; }
+.container-wide { max-width: 1240px; }
+.screen { padding-block: 24px 96px; }
+
+/* The head holds the title on the left and a screen's own controls on the
+   right, on one line, as the other site does. */
+.page-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.ph-left { min-width: 0; }
+.ph-title { font-size: 40px; }
+.ph-sub { margin-top: 6px; font-size: 14px; color: var(--muted); }
+.ph-right { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.ph-right:empty { display: none; }
+@media (max-width: 1024px) { .ph-title { font-size: 28px; } }
+
+/* ----- tables ------------------------------------------------------------ */
+/* The header is a line of small capitals, not a coloured band: on dark the
+   band read as brown. */
+table.table th {
+  background: none; color: var(--muted); font-weight: 800;
+  letter-spacing: .08em; border-bottom-color: var(--border); padding: 10px 12px;
+}
+table.table td { padding: 12px; }
+table.table tbody tr:hover { background: none; }
+
+/* ----- form fields ------------------------------------------------------- */
+.input, .select, .textarea { min-height: 44px; padding: 10px 14px; border-color: var(--border-strong); }
+.input:focus, .select:focus, .textarea:focus { box-shadow: 0 0 0 1px var(--brand-600); }
+
+/* ----- toast, modal, empty state ---------------------------------------- */
+/* The old toast was white text on light yellow in the dark theme. */
+.toast {
+  background: var(--ink); color: var(--bg); border-left: 0;
+  border-radius: var(--r-md); font-weight: 700;
+}
+.toast-ok { background: var(--ok); color: #06180F; }
+.toast-err { background: var(--danger); color: #230A0B; }
+.modal-backdrop { background: rgba(0, 0, 0, .6); }
+.modal { border-radius: var(--r-xl); }
+.empty-icon {
+  width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--brand-100); color: var(--brand-700); font-size: 22px; margin: 0 auto 10px;
+}
+
+/* ----- buttons and badges ------------------------------------------------ */
+.btn:hover { border-color: var(--border-strong); background: var(--surface-2); }
+.btn-sm { min-height: 32px; padding: 5px 12px; }
+.btn-danger { background: var(--danger-bg); border-color: var(--danger); color: var(--danger); }
+.btn-danger:hover { background: var(--danger); color: #fff; }
+.badge-ok     { border-color: color-mix(in srgb, var(--ok) 35%, transparent); }
+.badge-warn   { border-color: color-mix(in srgb, var(--warn) 35%, transparent); }
+.badge-danger { border-color: color-mix(in srgb, var(--danger) 35%, transparent); }
+.badge-info   { background: var(--info-bg); border-color: color-mix(in srgb, var(--info) 35%, transparent); color: var(--info); }
+.badge-brand  { background: var(--brand-600); border-color: transparent; color: var(--on-brand); }
+.notice-danger { color: var(--danger); }
+
+/* ----- segmented controls: chips, as on the other site ------------------- */
+.cal-seg, .mk-switch {
+  display: inline-flex; gap: 6px; padding: 0; border: 0; background: none; align-self: flex-start;
+}
+.cal-seg a, .mk-switch a {
+  padding: 7px 14px; border: 1px solid var(--border); border-radius: var(--r-pill);
+  background: var(--surface); color: var(--ink-2); font-size: 13px; font-weight: 700; text-decoration: none;
+}
+.cal-seg a:hover, .mk-switch a:hover { background: var(--surface-2); border-color: var(--border-strong); color: var(--ink); text-decoration: none; }
+.cal-seg a[aria-pressed="true"], .mk-switch a[aria-selected="true"] {
+  background: var(--ink); border-color: var(--ink); color: var(--bg);
+}
+.cal-filter { border-radius: var(--r-md); }
+.cal-tag { border-radius: 6px; }
+.cal-num { border-radius: 50%; }
+
+/* ----- practice: the skill rows ----------------------------------------- */
+.sk-row { border-radius: var(--r-lg); }
+.sk-row:hover { border-color: var(--brand-600); background: var(--surface-2); }
+.sk-row.is-on { background: var(--brand-050); }
+.sk-box { border-radius: 6px; }
+.sk-row.is-on .sk-box::after { color: var(--on-brand); }
+.sk-count { border-radius: var(--r-pill); background: var(--surface-2); border-color: transparent; }
+.sk-group.open .acc-head { background: none; }
+
+/* ----- mock tests -------------------------------------------------------- */
+.mk-top { grid-template-columns: minmax(0, 1fr) 360px; }
+@media (max-width: 1180px) { .mk-top { grid-template-columns: minmax(0, 1fr); } }
+.rt-item { border-radius: var(--r-lg); }
+.rt-head:hover { background: var(--surface-2); }
+
+/* ----- progress ---------------------------------------------------------- */
+.stat-value { font-family: var(--display); font-weight: 800; }
+.cal-heat i { border-radius: 3px; }
+/* The official-test card carried a violet shadow from the old palette. */
+.pg-official { box-shadow: none; }
+
+/* ----- the phone shell --------------------------------------------------- */
+/* The drawer scrim was purple; and between 760 and 1024px the window had a
+   drawer but no tab bar, so on a tablet there was no navigation at all. */
+@media (max-width: 1023.98px) {
+  body.sb-open::after { background: rgba(0, 0, 0, .6); }
+  body { padding-bottom: var(--tabbar-h); }
+  .tabbar {
+    display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 45;
+    height: var(--tabbar-h); background: var(--bg); border-top: 1px solid var(--border);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .tabbar a {
+    flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+    font-size: 10.5px; font-weight: 650; color: var(--muted); text-decoration: none;
+  }
+  .tabbar a em { font-style: normal; font-size: 17px; line-height: 1; }
+  .tabbar a em svg { display: block; margin: 0 auto; }
+  .tabbar a[aria-current="page"] { color: var(--brand-700); box-shadow: inset 0 3px 0 var(--brand-600); }
+  .screen { padding-bottom: calc(var(--tabbar-h) + 96px); }
+}
+.tb-menu svg { display: block; }
+
+/* ----- the sidebar, at the other site's density -------------------------- */
+.app-sidebar { padding: 12px 14px; gap: 8px; }
+.sb-brand { padding: 4px 6px 10px; }
+.brand-mark { width: 38px; height: 38px; flex-basis: 38px; }
+.brand-mark svg { width: 24px; height: 24px; }
+.sb-nav { gap: 2px; }
+.sb-nav a { padding: 8px 12px; font-size: 14.5px; }
+.sb-group { padding: 10px 12px 3px; }
+.sb-tools .icon-btn svg { display: block; }
+
+/* ----- sign-in ----------------------------------------------------------- */
+/* A yellow tile with the black cap, as the other site's sign-in has. */
+.auth-head .brand-mark {
+  width: 56px; height: 56px; border-radius: 16px;
+  background: var(--brand-600); color: var(--on-brand) !important; border: 0;
+}
+.auth-head .brand-mark svg { width: 30px; height: 30px; }
+.auth-head .auth-title { font-size: 32px; letter-spacing: .06em; }
+.auth-panel { max-width: 420px; }
+.auth-page .card { border: 1px solid #262626; border-radius: var(--r-xl); padding: 28px; box-shadow: none; }
+
+/* ----- the last of the purple ------------------------------------------- */
+.rm-road-edge { background: rgba(255, 212, 0, .12); }
+.rm-gift { box-shadow: 0 0 0 3px rgba(255, 212, 0, .3); }
+.rm-pin, .rm-name { text-shadow: none; }
+
+/* ----- the plan as a road ------------------------------------------------ */
+/* A fortnight of days as circles on a line, with the day pressed open in the
+   panel beside them — the shape the IELTS platform's plan has. */
+.road-head { display: flex; align-items: center; gap: 10px; }
+.road-head .grow { min-width: 0; }
+.road-head .icon-btn.is-off { opacity: .35; pointer-events: none; }
+.road-week { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 14px; }
+.road-week-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+.road-lane { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; position: relative; }
+/* One line behind the circles, so the week reads as a road and not as seven
+   separate marks. */
+.road-lane::before {
+  content: ""; position: absolute; left: 7%; right: 7%; top: 16px; height: 2px;
+  background: var(--border-strong); border-radius: 2px;
+}
+.road-day {
+  position: relative; display: grid; justify-items: center; gap: 6px;
+  padding-bottom: 14px; text-decoration: none; color: var(--muted);
+}
+.road-day:hover { text-decoration: none; }
+.road-dot {
+  width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--surface); border: 2px solid var(--border-strong); color: var(--ink-2);
+  font-size: 12px; font-weight: 800; line-height: 1;
+}
+.road-lab { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
+.road-here {
+  position: absolute; bottom: 0; white-space: nowrap;
+  font-size: 9.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em;
+  color: var(--on-brand); background: var(--brand-600); border-radius: 999px; padding: 2px 7px;
+}
+.road-day.is-empty .road-dot { width: 14px; height: 14px; margin: 9px 0; border-width: 2px; background: var(--bg); }
+.road-day.is-done .road-dot { background: var(--ok); border-color: var(--ok); color: #06180F; }
+.road-day.is-missed .road-dot { border-color: var(--danger); color: var(--danger); }
+.road-day.is-flag .road-dot { border-radius: var(--r-sm); border-color: var(--brand-600); color: var(--brand-700); }
+.road-day.is-exam .road-dot { background: var(--brand-600); border-color: var(--brand-600); color: var(--on-brand); }
+.road-day.is-today .road-dot { background: var(--brand-600); border-color: var(--brand-600); color: var(--on-brand); }
+.road-day.is-open .road-dot { box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px var(--brand-600); }
+.road-day.is-open .road-lab, .road-day.is-today .road-lab { color: var(--ink); }
+.road-legend { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 12px; color: var(--muted); }
+.road-key { display: inline-flex; align-items: center; gap: 6px; }
+.road-key .road-dot { width: 16px; height: 16px; font-size: 0; }
+#plan-day .cal-ev { width: 100%; }
+@media (max-width: 560px) {
+  .road-lane { gap: 2px; }
+  .road-dot { width: 28px; height: 28px; }
+  .road-lane::before { top: 14px; }
+  .road-here { font-size: 9px; padding: 1px 5px; }
+}
+
+/* The legend's dots are not inside a day, so they carry their own colours. */
+.road-dot.is-done { background: var(--ok); border-color: var(--ok); }
+.road-dot.is-missed { border-color: var(--danger); }
+.road-dot.is-flag { border-radius: 5px; border-color: var(--brand-600); }
+.road-dot.is-today { background: var(--brand-600); border-color: var(--brand-600); }

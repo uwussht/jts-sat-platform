@@ -1184,5 +1184,17 @@ JTS.dict.kk = {
   'today.growth.train': 'Жаттығу',
   'today.growth.noneTitle': 'Жауаптар әлі аз',
   'today.growth.noneText': 'Практикада бірнеше сұрақ шешіңіз — мұнда ең әлсіз тақырып көрінеді.',
-  'today.growth.toPractice': 'Практикаға'
+  'today.growth.toPractice': 'Практикаға',
+  'plan.sub': 'Емтиханға жолыңыз: аптасына үш рет сабақ және олардың арасындағы тесттер.',
+  'plan.viewRoad': 'Жол',
+  'plan.weeksRange': '{a}–{b} апта',
+  'plan.youAreHere': 'сіз осындасыз',
+  'plan.dayPanel': 'Күн',
+  'plan.dayCount': 'Оқиға: {n}',
+  'plan.dayEmpty': 'Бұл күні ештеңе жоқ.',
+  'plan.prevDay': 'Алдыңғы күн',
+  'plan.nextDay': 'Келесі күн',
+  'plan.leg.todo': 'Алда',
+  'plan.leg.test': 'Тест',
+  'plan.leg.today': 'Бүгін'
 };

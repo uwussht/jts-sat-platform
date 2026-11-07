@@ -641,6 +641,7 @@
 
     empty: function (title, text, action) {
       return U.el('div.empty', null, [
+        U.el('div.empty-icon', { 'aria-hidden': 'true', text: '◌' }),
         U.el('div.h2', { text: title }),
         text ? U.el('p.muted', { text: text }) : null,
         action ? U.el('div', { style: 'margin-top:16px' }, [action]) : null
@@ -2581,7 +2582,9 @@
       tools.appendChild(this.langSwitch());
       tools.appendChild(this.themeButton());
       tools.appendChild(U.el('a.icon-btn', {
-        href: '#/settings', 'aria-label': t('nav.settings'), html: '&#9881;'
+        href: '#/settings', 'aria-label': t('nav.settings'),
+        html: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" ' +
+          'stroke-width="1.8"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1A1.6 1.6 0 0 0 9 19.4a1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1A1.6 1.6 0 0 0 4.6 9a1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3H9a1.6 1.6 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V9a1.6 1.6 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg>'
       }));
       bar.appendChild(tools);
 
@@ -2658,7 +2661,9 @@
          the large heading under it, with its group over it. */
       bar.appendChild(U.el('div.tb-left', null, [
         U.el('button.tb-menu', {
-          type: 'button', 'aria-label': t('nav.main'), text: '≡',
+          type: 'button', 'aria-label': t('nav.main'),
+          html: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" ' +
+            'stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',
           onclick: function () { document.body.classList.toggle('sb-open'); }
         }),
         U.el('nav.tb-crumbs', { 'aria-label': t('nav.main') }, [
@@ -2677,11 +2682,35 @@
         var path = (location.hash || '#/today').split('?')[0];
         var group = this.navGroup(path);
         if (key) {
-          head.appendChild(U.el('div.ph-eyebrow', { text: group ? t(group) : JTS.config.brandName }));
-          head.appendChild(U.el('h1.ph-title', { text: t(key) }));
+          head.appendChild(U.el('div.ph-left', null, [
+            U.el('div.ph-eyebrow', { text: group ? t(group) : JTS.config.brandName }),
+            U.el('h1.ph-title', { text: t(key) }),
+            U.el('div.ph-sub', { id: 'page-sub', hidden: true })
+          ]));
+          head.appendChild(U.el('div.ph-right', { id: 'page-actions' }));
         }
         head.hidden = bar.hidden || !key;
       }
+    },
+
+    /**
+     * The line under a screen's title: what this screen is, in a few words.
+     * Called with nothing, it clears it.
+     */
+    pageSub: function (text) {
+      var el = U.$('#page-sub');
+      if (!el) return;
+      el.textContent = text || '';
+      el.hidden = !text;
+    },
+
+    /** A screen's own controls, beside its title (chips, buttons). */
+    pageActions: function (nodes) {
+      var host = U.$('#page-actions');
+      if (!host) return null;
+      U.clear(host);
+      U.append(host, nodes);
+      return host;
     },
 
     /** Screens call this to hang their own controls in the top bar. */

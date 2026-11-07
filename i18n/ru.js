@@ -1184,5 +1184,17 @@ JTS.dict.ru = {
   'today.growth.train': 'Тренировать',
   'today.growth.noneTitle': 'Пока мало ответов',
   'today.growth.noneText': 'Решите несколько вопросов в практике — здесь появится самая слабая тема.',
-  'today.growth.toPractice': 'В практику'
+  'today.growth.toPractice': 'В практику',
+  'plan.sub': 'Ваш путь к экзамену: занятия три раза в неделю и тесты между ними.',
+  'plan.viewRoad': 'Путь',
+  'plan.weeksRange': 'Недели {a}–{b}',
+  'plan.youAreHere': 'вы здесь',
+  'plan.dayPanel': 'День',
+  'plan.dayCount': 'Событий: {n}',
+  'plan.dayEmpty': 'В этот день ничего нет.',
+  'plan.prevDay': 'Предыдущий день',
+  'plan.nextDay': 'Следующий день',
+  'plan.leg.todo': 'Впереди',
+  'plan.leg.test': 'Тест',
+  'plan.leg.today': 'Сегодня'
 };
