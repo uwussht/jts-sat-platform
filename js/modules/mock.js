@@ -591,7 +591,10 @@
       card.appendChild(ui.empty(t('mock.noResults'), t('mock.trajectoryEmpty')));
       return card;
     }
+    /* Taller than the default chart: this one carries the whole 400–1600
+       range, and at the default height the points sat in a thin band. */
     card.appendChild(ui.lineChart(series, {
+      width: 560, height: 340,
       target: goal || undefined, yMin: 400, yMax: 1600, ariaLabel: t('mock.trajectory')
     }));
     card.appendChild(U.el('div.legend', null, series.map(function (x) {

@@ -3811,3 +3811,8 @@ table.table tbody tr:hover { background: none; }
 .road-dot.is-missed { border-color: var(--danger); }
 .road-dot.is-flag { border-radius: 5px; border-color: var(--brand-600); }
 .road-dot.is-today { background: var(--brand-600); border-color: var(--brand-600); }
+
+/* The trajectory needs room: the 400-1600 range reads as a thin band in a
+   narrow column, so the chart keeps a wider share of the row. */
+.mk-top { grid-template-columns: minmax(0, 1.1fr) minmax(380px, 1fr); }
+#mock-trajectory .chart-wrap { margin-top: 4px; }
