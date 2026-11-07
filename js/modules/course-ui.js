@@ -40,14 +40,13 @@
       return t('phase.lessons', { from: p.lessons[0], to: p.lessons[1] }) + ' · ' +
         t('phase.weeks', { from: p.weeks[0], to: p.weeks[1] });
     }
-    if (p.key === 'selfStudy') return t('phase.days', { n: p.days });
     return phaseDates(p);
   }
 
   /**
    * The phases in a row, with the current one called out. The counter counts
-   * phases 1–6 that this student has (5 without the extra package); self-study
-   * and exam day are on the strip but not in the count.
+   * phases 1–6 that this student has (5 without the extra package); exam day
+   * is on the strip but not in the count.
    */
   function phaseStrip(plan, opts) {
     opts = opts || {};

@@ -92,8 +92,15 @@
   /* ------------------------------------------------------------ phases */
   /**
    * The phases, in order. `lessons` names the package whose lessons a phase
-   * holds; `test` names the Bluebook test a point phase is. Phases 7 and 8
-   * are not counted in "phase N of M".
+   * holds; `test` names the Bluebook test a point phase is. Phase 8 is not
+   * counted in "phase N of M".
+   *
+   * There is no phase for the stretch between the last paid lesson and the
+   * exam. It used to be one — "self-study" — but a phase is a piece of the
+   * course, and that stretch is the course being over: the student is left
+   * with the error log, the bank, the Bluebook tests and the past papers,
+   * all of which have their own screens. The last phase stays current to
+   * the end.
    */
   var PHASES = [
     { id: 1, key: 'diagnostic', kind: 'point', test: 'pt6', counted: true },
@@ -102,7 +109,6 @@
     { id: 4, key: 'foundations2', kind: 'span', from: 13, to: 24, counted: true },
     { id: 5, key: 'test10', kind: 'point', test: 'pt10', after: 24, counted: true },
     { id: 6, key: 'challenge', kind: 'span', from: 25, to: 36, pkg: 'extra', counted: true },
-    { id: 7, key: 'selfStudy', kind: 'span', counted: false },
     { id: 8, key: 'examDay', kind: 'point', counted: false }
   ];
   var TESTS = ['pt6', 'pt8', 'pt10'];
@@ -297,15 +303,6 @@
         p.complete = ph.id === 1 ? !!input.diagnosticDone && tt.entered : tt.entered;
         if (ph.id === 1) p.diagnosticDone = !!input.diagnosticDone;
         p.testEntered = tt.entered;
-      } else if (ph.key === 'selfStudy') {
-        var after = hasExtra ? last && last.date : (testBy.pt10 ? testBy.pt10.date : last && last.date);
-        if (!after) return;
-        p.start = addDays(after, 1);
-        p.end = exam ? addDays(exam, -1) : p.start;
-        /* Zero length (no date, or no time left): not on the roadmap. */
-        if (!exam || p.end < p.start) return;
-        p.days = daysBetween(p.start, p.end) + 1;
-        p.complete = false;
       } else if (ph.key === 'examDay') {
         if (!exam) return;
         p.start = p.end = exam;

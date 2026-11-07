@@ -10,9 +10,6 @@
      JTS.todayTasks.teacherLine(plan) the next lesson with the teacher: day,
                                      time, section and teacher, from the
                                      group's schedule
-     JTS.todayTasks.selfStudy(plan)  phase 7: a list of things to do, with
-                                     numbers, and one line about the extra
-                                     package when it would still fit
 
    A block's state is read from what was done today (words learned, questions
    answered on the topic, mistakes reviewed), so it starts again tomorrow by
@@ -198,47 +195,5 @@
     ]);
   }
 
-  /**
-   * Phase 7: no lessons on the timetable, but a concrete list — never "study
-   * on your own". The line about the extra package is information, not a
-   * sale: no price, no button to buy, only when it would still fit.
-   */
-  function selfStudy(plan) {
-    if (!plan || plan.current !== 7) return null;
-    var st = S.state();
-    var open = unresolvedErrors().length;
-    var snap = JTS.course.domainSnapshot();
-    var weak = snap.priorities.map(function (id) { var d = JTS.skills.domain(id); return d ? d.name_en : id; });
-    var seen = (st.seenQuestionIds || []).length;
-    var bank = JTS.bank.all().length;
-    var papers = (JTS.data.papers || []).length;
-    var papersDone = (JTS.mock ? JTS.mock.finished() : []).filter(function (r) { return r.paperId; })
-      .map(function (r) { return r.paperId; }).filter(function (v, i, a) { return a.indexOf(v) === i; }).length;
-    function row(text, href) {
-      return U.el('a.task-row.is-todo', { href: href }, [
-        U.el('span.task-ico', { text: '•', 'aria-hidden': 'true' }),
-        U.el('div.task-body', null, [U.el('b', { text: text })])
-      ]);
-    }
-    var box = U.el('div.card.stack.tasks-card', { id: 'today-selfstudy' }, [
-      U.el('div.eyebrow', { text: t('phase.7.name') }),
-      U.el('p.small.muted', { text: t('self.lead') }),
-      U.el('div.task-list', null, [
-        row(t('self.errors', { n: open }), '#/errors?status=open'),
-        row(weak.length ? t('self.weak', { list: weak.join(', ') }) : t('self.weakNone'), '#/practice'),
-        row(t('self.bank', { n: Math.max(0, bank - seen), of: bank }), '#/practice?mode=all'),
-        row(t('self.bluebook'), '#/tests'),
-        row(t('self.papers', { n: Math.max(0, papers - papersDone), of: papers }), '#/mocks')
-      ])
-    ]);
-    if (plan.packages.indexOf('extra') < 0 && plan.extraFit && plan.extraFit.fits) {
-      box.appendChild(U.el('div.small.muted.extra-line', null, [
-        U.el('span', { text: t('self.extra') + ' ' }),
-        U.el('a', { href: JTS.config.links.whatsapp, target: '_blank', rel: 'noopener', text: t('self.askCurator') })
-      ]));
-    }
-    return box;
-  }
-
-  JTS.todayTasks = { card: card, teacherLine: teacherLine, selfStudy: selfStudy, setSize: setSize };
+  JTS.todayTasks = { card: card, teacherLine: teacherLine, setSize: setSize };
 })();

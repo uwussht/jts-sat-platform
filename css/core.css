@@ -3395,7 +3395,6 @@ a.ps-topic-name:hover { color: var(--brand-600); }
 .task-row.is-done { opacity: .75; }
 .task-row.is-done .task-ico { background: var(--ok); border-color: var(--ok); color: #fff; }
 .task-row.is-done .task-state { background: var(--ok-bg); color: var(--ok); }
-.extra-line { border-top: 1px solid var(--border); padding-top: 10px; }
 .teacher-line b { font-size: 16px; }
 
 .plan-sched .small { line-height: 1.6; }

@@ -61,12 +61,12 @@
 
   /**
    * The stops: the plan's phases, without the exam day, which is the star at
-   * the end of the road. A test phase is a gate; self-study is its own kind.
+   * the end of the road. A test phase is a gate.
    */
   function stops(plan) {
     if (!plan) return [];
     return plan.phases.filter(function (ph) { return ph.key !== 'examDay'; }).map(function (ph, i) {
-      var kind = ph.id === 1 ? 'diagnostic' : ph.test ? 'gate' : ph.key === 'selfStudy' ? 'self' : 'phase';
+      var kind = ph.id === 1 ? 'diagnostic' : ph.test ? 'gate' : 'phase';
       var stop = {
         id: i + 1, phase: ph, kind: kind,
         name: t('phase.' + ph.id + '.name'),

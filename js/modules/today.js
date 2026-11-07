@@ -233,8 +233,7 @@
         screen.appendChild(JTS.courseUI.phaseStrip(plan, { id: 'today-phases', link: '#/plan' }));
         var teacher = JTS.todayTasks.teacherLine(plan);
         if (teacher) main.appendChild(teacher);
-        var self = JTS.todayTasks.selfStudy(plan);
-        main.appendChild(self || JTS.todayTasks.card(plan));
+        main.appendChild(JTS.todayTasks.card(plan));
       }
       screen.appendChild(U.el('div.dash-split', null, [
         main, U.el('aside.stack', null, [growthZone(state)])
