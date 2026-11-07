@@ -737,8 +737,13 @@
     _teardown: null,
     _renderedHash: null,
     register: function (path, def) { this.routes[path] = def; },
-    /* Screens that need the whole question bank before they can draw. */
-    bankRoutes: ['#/practice', '#/mocks', '#/papers', '#/weekly', '#/diagnostic', '#/question', '#/errors', '#/tests'],
+    /* Screens that need the whole question bank before they can draw.
+       #/mocks is not among them on purpose: the only thing on that page that
+       reads the bank is the simulation card, which says for itself that it is
+       still getting ready. The past papers, the trajectory and every past
+       result draw without it, so the page opens at once and fills itself in
+       when the bank lands (see loadBank). */
+    bankRoutes: ['#/practice', '#/papers', '#/weekly', '#/diagnostic', '#/question', '#/errors', '#/tests'],
     needsBank: function (path) {
       return this.bankRoutes.some(function (p) { return path === p || path.indexOf(p + '/') === 0; });
     },
@@ -2793,9 +2798,10 @@
       if (problems.length) console.warn('[JTS] question bank problems:', problems);
       else console.info('[JTS] question bank OK — ' + JTS.bank.all().length + ' items');
       JTS.data._bankResolve();
-      /* The dashboard counts from the bank: draw it again with all of it. */
+      /* These count from the bank but do not wait for it: draw them again
+         with all of it. */
       var path = JTS.router.current && JTS.router.current.path;
-      if (path === '#/today' || path === '#/plan') JTS.router.render();
+      if (path === '#/today' || path === '#/plan' || path === '#/mocks') JTS.router.render();
     });
   }
 

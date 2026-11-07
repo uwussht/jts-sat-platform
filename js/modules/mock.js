@@ -484,6 +484,20 @@
       return card;
     }
 
+    /* The bank arrives after the site has started, and this card is the one
+       thing on the page that is built out of it. Until it is in, say so:
+       counting a half-loaded bank would announce that there are not enough
+       questions for a test the student can in fact sit. The screen is drawn
+       again by itself once the bank lands (see loadBank in core.js). */
+    if (!JTS.data.bankLoaded) {
+      var wait = U.el('div.small.muted', { text: JTS.data.bankProgressText() });
+      JTS.data.onBankProgress(function () { wait.textContent = JTS.data.bankProgressText(); });
+      card.appendChild(U.el('div.notice.stack-sm', { role: 'status', 'aria-live': 'polite' }, [
+        U.el('div', null, [U.el('b', { text: t('boot.bankLoading') })]), wait
+      ]));
+      return card;
+    }
+
     if (!cap.ok) {
       card.appendChild(U.el('div.notice.notice-warn', {
         text: t('mock.notEnoughQuestions', { have: cap.total.have, need: cap.total.need })
