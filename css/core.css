@@ -3558,3 +3558,44 @@ a.cal-tag { text-decoration: none; }
 .access-banner { align-items: center; }
 .staff-access { min-width: 140px; }
 .staff-until { min-width: 140px; padding: 6px 8px; }
+
+/* Dashboard laid out like the IELTS platform: goal hero, split, growth zone. */
+.goal-hero { display: grid; gap: 14px; padding: 24px; }
+.gh-say { margin: 0; color: #A9A9A3; font-size: 14px; }
+.gh-title { margin: 0; color: #F4F4F2; }
+.gh-muted { color: #A9A9A3; }
+.gh-edit { color: #A9A9A3; font-size: 13px; text-decoration: none; }
+.gh-edit:hover { color: #FFD400; }
+.gh-link { color: #FFD400; font-weight: 700; font-size: 14px; text-decoration: none; }
+.gh-link:hover { text-decoration: underline; }
+.gscale { display: grid; gap: 18px; margin-top: 4px; }
+.gscale-stats { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.gstat { display: grid; align-content: start; gap: 4px; padding: 12px 14px; border-radius: var(--r-md);
+  border: 1px solid #262626; background: rgba(244,244,242,.04); min-width: 0; }
+.gstat small { font-size: 10.5px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: #A9A9A3; }
+.gstat b { font-family: var(--display); font-size: 28px; font-weight: 800; line-height: 1; color: #F4F4F2; letter-spacing: -.02em; }
+.gstat-hint { font-size: 12px; font-weight: 650; color: #A9A9A3; }
+.gstat-now { border-color: rgba(244,244,242,.4); background: rgba(244,244,242,.09); }
+.gstat-now .gstat-hint { color: #F4F4F2; }
+.gstat-goal { border-color: rgba(255,212,0,.45); }
+.gstat-goal b, .gstat-goal small { color: #FFD400; }
+.gscale.is-reached .gstat-goal b, .gscale.is-reached .gstat-goal small { color: #4ADE80; }
+.gscale-track { position: relative; padding-bottom: 22px; margin: 0 8px; }
+.gscale-bar { height: 10px; border-radius: 999px; background: rgba(255,255,255,.22); overflow: hidden; position: relative; }
+.gscale-bar > i { position: absolute; inset: 0 auto 0 0; background: #FFFFFF; border-radius: inherit; }
+.gscale.is-empty .gscale-bar > i { width: 0 !important; }
+.gscale-tick { position: absolute; top: 14px; width: 1px; height: 6px; background: rgba(255,255,255,.22); transform: translateX(-50%); }
+.gscale-tick small { position: absolute; top: 7px; left: 50%; transform: translateX(-50%); font-size: 11px; font-weight: 700; color: #A9A9A3; }
+.gscale-knob { position: absolute; top: 5px; width: 20px; height: 20px; border-radius: 50%; background: #FFFFFF;
+  border: 4px solid #FFD400; transform: translate(-50%, -50%); box-shadow: 0 0 0 4px rgba(255,212,0,.25); }
+.dash-split { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 24px; align-items: start; }
+.dash-split > * { min-width: 0; }
+.gz-row { align-items: flex-start; flex-wrap: nowrap; gap: 12px; }
+.gz-plate { display: inline-grid; place-items: center; flex: none; width: 40px; height: 40px; border-radius: var(--r-md);
+  background: var(--brand-100); color: var(--brand-700); border: 1px solid var(--brand-200); font-weight: 800; }
+.gz-title { margin: 0 0 4px; font-size: 20px; }
+@media (max-width: 1099.98px) { .dash-split { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 560px) {
+  .goal-hero { padding: 18px; }
+  .gstat { padding: 10px; } .gstat b { font-size: 22px; } .gstat small { letter-spacing: .1em; } .gstat-hint { font-size: 11px; }
+}

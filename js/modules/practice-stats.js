@@ -277,6 +277,7 @@
     isPractice: isPractice,
     sessions: sessions,
     tally: tally,
+    tallyAttempts: tallyAttempts,
     resultScreen: resultScreen,
     dashboardCard: dashboardCard
   };
