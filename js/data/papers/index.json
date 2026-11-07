@@ -6,6 +6,10 @@
     {"file": "jts-4.json", "assetBase": "assets/sat/paper 4/"},
     {"file": "jts-5.json", "assetBase": "assets/sat/paper 5/"},
     {"file": "jts-6.json", "assetBase": "assets/sat/paper 6/"},
-    {"file": "jts-7.json", "assetBase": "assets/sat/paper 7/"}
+    {"file": "jts-7.json", "assetBase": "assets/sat/paper 7/"},
+    {"file": "jts-8.json", "assetBase": "assets/sat/paper 8/"},
+    {"file": "jts-9.json", "assetBase": "assets/sat/paper 9/"},
+    {"file": "jts-10.json", "assetBase": "assets/sat/paper 10/"},
+    {"file": "jts-11.json", "assetBase": "assets/sat/paper 11/"}
   ]
 }
