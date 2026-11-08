@@ -28,8 +28,7 @@
     { id: 'rwModule',   section: 'rw',   count: 27, minutes: 32 },
     { id: 'mathModule', section: 'math', count: 22, minutes: 35 },
     { id: 'topic',      section: null,   count: null, minutes: 0 },
-    { id: 'weak',       section: null,   count: null, minutes: 0 },
-    { id: 'all',        section: null,   count: null, minutes: 0 }
+    { id: 'weak',       section: null,   count: null, minutes: 0 }
   ];
   var chosenMode = 'topic';
   /* How many questions a set has. FULL (the default) is a real module's
@@ -273,116 +272,6 @@
     return row;
   }
 
-  /* ------------------------------------------------------- all questions */
-
-  /* Which topics are open in "All questions". View state, like the domains. */
-  var openSkills = {};
-
-  /** The last answer to every question, from every source (practice,
-      lessons, tests): one question is one question wherever it was met. */
-  function lastAnswers() {
-    var last = {};
-    ((S.state() || {}).attempts || []).forEach(function (a) { last[a.questionId] = a; });
-    return last;
-  }
-
-  /**
-   * A cell pressed. Not answered yet: solve it, with hints and the
-   * explanation. Answered: your answer, the right one and the explanation,
-   * and "Solve again".
-   */
-  function openBankQuestion(q, last) {
-    var back = '#/practice?mode=all';
-    function solve() {
-      startSet([q.id], { title: JTS.skills.name(q.skillId), back: back, meta: { bank: true } });
-    }
-    if (!last) { solve(); return; }
-    var m = ui.modal({
-      title: JTS.skills.name(q.skillId),
-      content: U.el('div.stack', null, [
-        U.el('div.q-preview', { html: (q.passage || '') + (q.stem || '') }),
-        JTS.studyHelp.explanationBody(q, { selected: last.selected, submitted: true, correct: last.correct })
-      ]),
-      wide: true,
-      actions: [U.el('button.btn.btn-primary', {
-        type: 'button', text: t('practice.solveAgain'), onclick: function () { m.close(); solve(); }
-      })]
-    });
-  }
-
-  function bankBrowser(rerender) {
-    var wrap = U.el('div.stack.bank');
-    var last = lastAnswers();
-    /* The filters hide cells; they do not change what a topic counts. */
-    var shown = {};
-    pool().forEach(function (q) { shown[q.id] = true; });
-
-    var all = JTS.bank.query({ section: filters.section, licenseStatus: 'all' });
-    function tally(list) {
-      var done = 0, right = 0;
-      list.forEach(function (q) { var a = last[q.id]; if (a) { done++; if (a.correct) right++; } });
-      return { done: done, right: right, total: list.length };
-    }
-    var sec = tally(all);
-    wrap.appendChild(U.el('div.row-between.row-wrap.bank-head', null, [
-      U.el('div.stack-sm', null, [
-        U.el('div.eyebrow', { text: t('practice.bankProgress') }),
-        U.el('b', { text: t('practice.bankCount', { done: sec.done, total: sec.total, pct: U.pct(sec.right, sec.done) }) })
-      ]),
-      U.el('div.row.row-wrap.bank-legend', null, [
-        U.el('span.bank-key.is-right', { text: t('common.correct') }),
-        U.el('span.bank-key.is-wrong', { text: t('common.incorrect') }),
-        U.el('span.bank-key', { text: t('common.unanswered') })
-      ])
-    ]));
-
-    JTS.skills.domains(filters.section).forEach(function (domain) {
-      var box = U.el('div.stack-sm.bank-domain', null, [U.el('div.label', { text: JTS.i18n.pickName(domain) })]);
-      JTS.skills.bySection(filters.section).filter(function (sk) { return sk.domain === domain.id; })
-        .forEach(function (skill) {
-          var qs = all.filter(function (q) { return q.skillId === skill.id; });
-          if (!qs.length) return;
-          var tl = tally(qs);
-          var isOpen = !!openSkills[skill.id];
-          var grid = U.el('div.bank-grid', { hidden: !isOpen });
-          function paint() {
-            U.clear(grid);
-            qs.forEach(function (q, i) {
-              if (!shown[q.id]) return;
-              var a = last[q.id];
-              grid.appendChild(U.el('button.bank-cell' + (a ? (a.correct ? '.is-right' : '.is-wrong') : ''), {
-                type: 'button', text: String(i + 1),
-                title: (a ? (a.correct ? t('common.correct') : t('common.incorrect')) : t('common.unanswered')) +
-                  ' · ' + (DIFFICULTY[(q.difficulty || 2) - 1] || {}).label,
-                onclick: function () { openBankQuestion(q, a); }
-              }));
-            });
-            if (!grid.children.length) grid.appendChild(U.el('span.small.muted', { text: t('practice.noMatch') }));
-          }
-          if (isOpen) paint();
-          var head = U.el('button.bank-skill', {
-            type: 'button', 'aria-expanded': String(isOpen),
-            onclick: function () {
-              openSkills[skill.id] = grid.hidden;
-              grid.hidden = !grid.hidden;
-              head.setAttribute('aria-expanded', String(!grid.hidden));
-              if (!grid.hidden) paint();
-            }
-          }, [
-            U.el('span.caret', { text: '❯', 'aria-hidden': 'true' }),
-            U.el('span.bank-skill-name', { text: JTS.i18n.pickName(skill) }),
-            U.el('span.small.muted', { text: t('practice.bankCount', { done: tl.done, total: tl.total, pct: U.pct(tl.right, tl.done) }) })
-          ]);
-          box.appendChild(U.el('div.bank-topic', null, [head, grid]));
-        });
-      wrap.appendChild(box);
-    });
-
-    wrap.appendChild(U.el('h3.h3', { text: t('practice.filters') }));
-    wrap.appendChild(filterBar(rerender));
-    return wrap;
-  }
-
   /* ----------------------------------------------------------- starting up */
 
   function startSet(ids, opts) {
@@ -475,7 +364,6 @@
         chosenCount = Number(q0.size) > 0 ? Number(q0.size) : FULL;
         try { history.replaceState(null, '', '#/practice'); } catch (e) {}
       }
-      if (q0.mode === 'all') chosenMode = 'all';
       var screen = U.el('div.container.screen.stack');
       root.appendChild(screen);
       function rerender() { JTS.router.render(); }
@@ -527,12 +415,6 @@
       ]));
 
       var mode = MODES.filter(function (m) { return m.id === chosenMode; })[0];
-      /* "All questions" is the bank itself, not a set: no length, no start. */
-      if (mode.id === 'all') {
-        card.appendChild(bankBrowser(rerender));
-        screen.appendChild(card);
-        return;
-      }
       /* Length only matters for the modes that do not define their own. */
       if (!mode.count) {
         var lenRow = U.el('div.row.row-wrap');
