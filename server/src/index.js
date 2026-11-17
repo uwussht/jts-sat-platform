@@ -11,6 +11,8 @@
      GET  /api/scores   POST /api/scores     Bluebook results (pending until confirmed)
      DELETE /api/scores/:id                  take back a pending result
      GET  /api/progress PUT /api/progress    the saved progress document
+   The AI tutor (ai.js) — on only when ANTHROPIC_API_KEY is set
+     GET  /api/ai/status  POST /api/ai/ask
    Staff (staff.js) — teachers, curators, managers, admins
      /api/staff/users, /teachers, /groups, /teaching, /scores
    GET /api/health
@@ -30,6 +32,7 @@ if (!process.env.JWT_SECRET || process.env.JWT_SECRET.length < 32) {
 const auth = require('./auth');
 const course = require('./course');
 const staff = require('./staff');
+const ai = require('./ai');
 
 const app = express();
 app.set('trust proxy', 1);
@@ -41,6 +44,7 @@ app.use(express.json({ limit: '64kb' }));
 app.get('/api/health', (req, res) => res.json({ ok: true }));
 app.use('/api', auth.router);
 app.use('/api', course.router);
+app.use('/api', ai.router);
 app.use('/api/staff', staff.router);
 app.use('/api', (req, res) => res.status(404).json({ ok: false, reason: 'not-found' }));
 

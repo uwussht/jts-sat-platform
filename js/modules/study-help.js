@@ -188,6 +188,9 @@
     main.appendChild(side);
 
     body.appendChild(explanationBody(question, a));
+    /* The panel opens only once the answer is checked, so the tutor can
+       talk about the answer freely. Empty when the tutor is off. */
+    body.appendChild(JTS.aiTutor.forQuestion(question, a));
   }
 
   /* ------------------------------------------------- error classification */

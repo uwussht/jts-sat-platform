@@ -37,6 +37,8 @@ services:
       COOKIE_SECURE: "true"
       ADMIN_PHONES: ${ADMIN_PHONES:-}
       DEFAULT_PACKAGES: ${DEFAULT_PACKAGES:-basic}
+      # The AI tutor's key, if any, goes in secrets.env as ANTHROPIC_API_KEY.
+      AI_DAILY_LIMIT: ${AI_DAILY_LIMIT:-30}
     env_file:
       - secrets.env
     depends_on:

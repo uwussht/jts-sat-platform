@@ -139,7 +139,15 @@ const MIGRATIONS = [
    ALTER TABLE users ADD COLUMN IF NOT EXISTS access_until DATE;
    ALTER TABLE users ADD COLUMN IF NOT EXISTS access_set_by INTEGER REFERENCES users (id) ON DELETE SET NULL;
    ALTER TABLE users ADD COLUMN IF NOT EXISTS access_set_at TIMESTAMPTZ;
-   UPDATE users SET access_type = 'full', access_until = NULL;`
+   UPDATE users SET access_type = 'full', access_until = NULL;`,
+
+  /* 5: the AI tutor's answers per student per day, for the daily limit. */
+  `CREATE TABLE ai_usage (
+     user_id INTEGER NOT NULL REFERENCES users (id) ON DELETE CASCADE,
+     day     DATE NOT NULL,
+     n       INTEGER NOT NULL DEFAULT 0,
+     PRIMARY KEY (user_id, day)
+   );`
 ];
 
 async function migrate() {

@@ -34,6 +34,9 @@ services:
       ADMIN_PHONES: ${ADMIN_PHONES:-}
       # Packages a new student starts with until a manager changes them.
       DEFAULT_PACKAGES: ${DEFAULT_PACKAGES:-basic}
+      # The AI tutor: on only when a key is set; answers per student per day.
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      AI_DAILY_LIMIT: ${AI_DAILY_LIMIT:-30}
     depends_on:
       db:
         condition: service_healthy

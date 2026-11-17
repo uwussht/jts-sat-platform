@@ -77,10 +77,11 @@ anywhere else.
 | `POST /api/lessons/:no/complete` | a lesson finished (no group) |
 | `GET/POST /api/scores` `DELETE /api/scores/:id` | Bluebook results (pending → confirmed / rejected) |
 | `GET/PUT /api/progress` | the saved progress document |
+| `GET /api/ai/status` `POST /api/ai/ask` | the AI tutor (on only with `ANTHROPIC_API_KEY`) |
 | `/api/staff/users`, `/teachers`, `/groups`, `/teaching`, `/scores` | the staff area |
 
 Code: `server/src/` — `db.js` (pool and numbered migrations, applied once
-each at start), `auth.js`, `course.js`, `staff.js`.
+each at start), `auth.js`, `course.js`, `staff.js`, `ai.js`.
 
 See the students:
 `docker compose exec db psql -U teentech -d teentech -c "select id, phone, first_name, last_name, grade, role, created_at from users order by id"`
@@ -196,11 +197,40 @@ College Board's dates-and-deadlines page, not from a hand-kept list:
   it. Past dates drop out of the lists on their own, and anticipated dates
   show as "Expected date" until their deadlines are announced.
 
-## No AI
+## The AI tutor
 
-The platform has no AI tutor. Study mode offers each question's own written
-hints and its full explanation — with a reason for every wrong option in
-Reading & Writing — and nothing is sent anywhere.
+Students can ask an AI tutor (Claude) in four places, all after the work is
+done, never during it:
+
+- **A practice question in study mode**, in the explanation panel, once the
+  answer has been checked. Hints before the answer are still the question's
+  own written hints.
+- **A finished internal simulation's review**, question by question. Past
+  papers keep no teaching layer at all, so their review has no tutor either.
+- **A lesson**, about the part on screen.
+- **The diagnostic report**, about what the result means and where to start.
+
+It is never built in exam mode, in a mock in progress, in the diagnostic or in
+the daily check, so there it is absent from the DOM like the hints.
+
+**Switching it on.** It runs only with the server: put `ANTHROPIC_API_KEY` in
+`.env` (production: in `secrets.env`) and restart the API. Without a key, or
+opened from Live Server / `file://`, the boxes do not appear and nothing is
+sent anywhere. The key stays on the server; the browser talks to
+`/api/ai/ask`, which needs a signed-in account with course access.
+
+**The limit.** `AI_DAILY_LIMIT` answers per student per day (30 by default),
+counted in the `ai_usage` table. Only answers that arrive are counted. One
+conversation is at most six questions; "New chat" starts another.
+
+**What is sent.** Only what is on the student's screen: the question, its
+choices, the correct and chosen answers and the written explanation; or the
+lesson part's text; or the diagnostic's percentages. No name, phone or other
+account details. The tutor is told to stay on SAT preparation, answer in the
+student's explanation language, and never give a score estimate. The model is
+`claude-opus-5-5` (`AI_MODEL` changes it), with the API's server-side fallback
+on when it declines a request. Code: `server/src/ai.js` and
+`js/modules/ai-tutor.js`.
 
 ## Mock tests
 

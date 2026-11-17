@@ -1363,6 +1363,9 @@
     }
 
     body.appendChild(JTS.studyHelp.explanationBody(q));
+    /* The review exists only for a finished run, so the tutor never sees a
+       mock in progress. Empty when the tutor is off. */
+    body.appendChild(JTS.aiTutor.forQuestion(q, a));
 
     ui.modal({
       title: JTS.skills.name(q.skillId),

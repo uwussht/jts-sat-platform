@@ -3789,3 +3789,19 @@ table.table tbody tr:hover { background: none; }
    narrow column, so the chart keeps a wider share of the row. */
 .mk-top { grid-template-columns: minmax(0, 1.1fr) minmax(380px, 1fr); }
 #mock-trajectory .chart-wrap { margin-top: 4px; }
+
+/* The AI tutor's chat box (js/modules/ai-tutor.js). Square, like the rest. */
+.ai-box { border: 1px solid var(--border); border-left: 3px solid var(--brand-600); background: var(--surface);
+          padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+.ai-head { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; }
+.ai-log { display: flex; flex-direction: column; gap: 8px; }
+.ai-log:empty { display: none; }
+.ai-msg { padding: 8px 12px; max-width: 92%; line-height: 1.5; }
+.ai-msg p { margin: 0; }
+.ai-msg p + p { margin-top: 8px; }
+.ai-user { align-self: flex-end; background: var(--brand-600); color: var(--on-brand, #fff); }
+.ai-assistant { align-self: flex-start; background: var(--surface-2); }
+.ai-assistant.is-wait { opacity: .7; font-style: italic; }
+.ai-note { align-self: stretch; max-width: none; border: 1px dashed var(--border); font-size: 13px; }
+.ai-chips:empty { display: none; }
+.ai-input { width: 100%; resize: vertical; min-height: 44px; }

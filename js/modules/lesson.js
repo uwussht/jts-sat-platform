@@ -128,7 +128,11 @@
     document.addEventListener('keydown', onKey);
 
     if (parts.length) show(at, false);
-    return { el: el, cleanup: function () { document.removeEventListener('keydown', onKey); } };
+    return {
+      el: el,
+      current: function () { return parts[at] || null; },
+      cleanup: function () { document.removeEventListener('keydown', onKey); }
+    };
   }
 
   /* Line icons for the tool rail, drawn in the button's text colour. */
@@ -337,6 +341,21 @@
            the app; it is trusted markup, not anything a user typed. */
         viewer = partsViewer(teach, code);
         written.appendChild(viewer.el);
+        /* Questions about the part on screen; it follows the student
+           from part to part. Empty when the tutor is off. */
+        written.appendChild(JTS.aiTutor.box({
+          kind: 'lesson',
+          lead: t('ai.lessonLead'),
+          suggestions: [t('ai.s.simpler'), t('ai.s.example')],
+          context: function () {
+            var part = viewer.current();
+            return {
+              lesson: code + ' · ' + (pick(lesson.t) || ''),
+              part: part ? part.title : '',
+              text: part ? JTS.aiTutor.plain(part.html).slice(0, 12000) : JTS.aiTutor.plain(teach.lead)
+            };
+          }
+        }));
       } else if (unit && unit.kind === 'hard') {
         written.appendChild(U.el('p', { text: pick(unit.lead) }));
         written.appendChild(U.el('div.notice', { text: t('lesson.challengeNote') }));

@@ -219,6 +219,33 @@
     });
     screen.appendChild(card);
 
+    /* The tutor reads the same numbers the page shows, and nothing else. */
+    var aiCard = JTS.aiTutor.box({
+      kind: 'diagnostic',
+      lead: t('ai.diagLead'),
+      suggestions: [t('ai.s.diagMeaning'), t('ai.s.diagFirst')],
+      context: function () {
+        var missed = {};
+        summary.questionIds.forEach(function (qid) {
+          var q = JTS.bank.get(qid);
+          if (q && !(summary.answers[qid] && summary.answers[qid].correct)) {
+            var name = JTS.skills.name(q.skillId);
+            if (name) missed[name] = (missed[name] || 0) + 1;
+          }
+        });
+        return {
+          overall: summary.correct + ' of ' + totalQ + ' correct (' + Math.round(overall * 100) + '%)',
+          'Reading and Writing': rw.correct + ' of ' + rw.total + ' correct',
+          Math: math.correct + ' of ' + math.total + ' correct',
+          domains: ranked.map(function (r) {
+            return JTS.i18n.pickName(r.domain, 'en') + ': ' + r.b.correct + ' of ' + r.b.total + ' correct';
+          }).join('\n'),
+          'skills missed': Object.keys(missed).map(function (k) { return k + ' (' + missed[k] + ')'; }).join('\n') || 'none'
+        };
+      }
+    });
+    screen.appendChild(aiCard);
+
     /* The two weakest domains, weighted by how much of the exam they carry,
        are the ones the plan will open with. Naming them here is the whole
        point of having run the diagnostic. */
