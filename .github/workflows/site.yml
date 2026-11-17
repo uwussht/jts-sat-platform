@@ -36,7 +36,7 @@ jobs:
         run: |
           docker build -f server/Dockerfile -t jts-sat-api:ci .
           # The API's code loads and the shared plan engine is in the image.
-          docker run --rm --entrypoint node jts-sat-api:ci -e "require('/app/js/shared/plan-engine.js'); for (const f of ['db','auth','course','staff']) require('child_process').execSync('node --check /app/server/src/' + f + '.js')"
+          docker run --rm --entrypoint node jts-sat-api:ci -e "require('/app/js/shared/plan-engine.js'); for (const f of ['db','auth','course','staff','ai']) require('child_process').execSync('node --check /app/server/src/' + f + '.js')"
       - name: Check site over HTTP
         shell: bash
         run: |
@@ -109,6 +109,9 @@ jobs:
           COMMIT_SHA: ${{ github.sha }}
           # Optional repository variable: phones that become admins (comma-separated).
           ADMIN_PHONES: ${{ vars.SAT_ADMIN_PHONES }}
+          # Optional repository secret: the AI tutor's key. Empty leaves the
+          # server's secrets.env as it is.
+          AI_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         shell: bash
         run: |
           set -euo pipefail
@@ -120,7 +123,9 @@ jobs:
           ssh_options=(-i "$HOME/.ssh/sat_deploy" -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 -o ServerAliveInterval=15 -o ServerAliveCountMax=4)
           ssh "${ssh_options[@]}" "$target" "mkdir -p '$release'"
           scp "${ssh_options[@]}" deploy/release.sh docker-compose.prod.yaml "$target:$release/"
-          printf '%s\n' "$GH_TOKEN" | ssh "${ssh_options[@]}" "$target" "bash '$release/release.sh' '$image' '$GH_USER' '$api_image' '$admins'"
+          # Secrets go over the SSH session's stdin, never on a command line:
+          # the registry token first, then the AI key (possibly empty).
+          printf '%s\n%s\n' "$GH_TOKEN" "${AI_KEY:-}" | ssh "${ssh_options[@]}" "$target" "bash '$release/release.sh' '$image' '$GH_USER' '$api_image' '$admins'"
       - name: Remove runner SSH key
         if: always()
         run: rm -f ~/.ssh/sat_deploy

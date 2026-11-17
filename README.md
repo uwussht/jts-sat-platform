@@ -101,7 +101,8 @@ One-time server setup: create the `sattutor` user, give it Docker access and
 ownership of `/opt/jts-sat`, and install the dedicated CI public SSH key in
 `/home/sattutor/.ssh/authorized_keys`. Add repository Actions secrets
 `SAT_DEPLOY_KEY` (the dedicated private key) and `SAT_KNOWN_HOSTS` (the server's
-verified SSH host-key line, beginning with `169.58.80.127`).
+verified SSH host-key line, beginning with `169.58.80.127`). Optionally add
+`ANTHROPIC_API_KEY` to switch on the AI tutor.
 
 Deployment uses `docker-compose.prod.yaml` with the existing `jts-sat` project
 name and loopback port 8085. It downloads the tested image before replacing the
@@ -213,8 +214,11 @@ done, never during it:
 It is never built in exam mode, in a mock in progress, in the diagnostic or in
 the daily check, so there it is absent from the DOM like the hints.
 
-**Switching it on.** It runs only with the server: put `ANTHROPIC_API_KEY` in
-`.env` (production: in `secrets.env`) and restart the API. Without a key, or
+**Switching it on.** It runs only with the server. Locally: put
+`ANTHROPIC_API_KEY` in `.env` and restart the API. In production: add a
+repository Actions secret `ANTHROPIC_API_KEY`; each deploy writes it into
+`/opt/jts-sat/secrets.env` (an empty secret leaves that file as it is, so a
+key put there by hand also works). Without a key, or
 opened from Live Server / `file://`, the boxes do not appear and nothing is
 sent anywhere. The key stays on the server; the browser talks to
 `/api/ai/ask`, which needs a signed-in account with course access.

@@ -53,6 +53,26 @@ trap 'rm -rf -- "$DOCKER_CONFIG"' EXIT
 printf '%s' "$registry_token" | docker login ghcr.io -u "$registry_user" --password-stdin
 unset registry_token
 
+# Then the AI tutor's key, from the repository secret ANTHROPIC_API_KEY.
+# Sent: it replaces the one in secrets.env. Not sent (empty, or an older
+# workflow): secrets.env keeps whatever it has, so a key put there by hand
+# still works. Only the shape of a key is accepted into the file.
+ai_key=
+IFS= read -r ai_key || true
+if [[ -n "$ai_key" ]]; then
+  if [[ ! "$ai_key" =~ ^sk-ant-[A-Za-z0-9_-]+$ ]]; then
+    echo 'ANTHROPIC_API_KEY does not look like an Anthropic key; secrets.env left as it was.' >&2
+  else
+    umask 077
+    { grep -v '^ANTHROPIC_API_KEY=' "$secrets" || true; printf 'ANTHROPIC_API_KEY=%s\n' "$ai_key"; } > "$secrets.next"
+    mv "$secrets.next" "$secrets"
+    umask 022
+    chmod 600 "$secrets"
+    echo 'AI tutor key set in secrets.env'
+  fi
+fi
+unset ai_key
+
 image_of() {
   local container
   container=$(docker ps -aq --filter label=com.docker.compose.project=jts-sat --filter "label=com.docker.compose.service=$1")
