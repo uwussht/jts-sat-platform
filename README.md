@@ -223,7 +223,7 @@ opened from Live Server / `file://`, the boxes do not appear and nothing is
 sent anywhere. The key stays on the server; the browser talks to
 `/api/ai/ask`, which needs a signed-in account with course access.
 
-**The limit.** `AI_DAILY_LIMIT` answers per student per day (30 by default),
+**The limit.** `AI_DAILY_LIMIT` answers per student per day (15 by default),
 counted in the `ai_usage` table. Only answers that arrive are counted. One
 conversation is at most six questions; "New chat" starts another.
 

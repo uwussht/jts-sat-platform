@@ -183,12 +183,14 @@
         if (!r || !r.ok) {
           turns.pop();              // the question can be sent again
           bubble('note', errorText(r), 'is-note');
-          if (r && r.reason === 'limit') { used = r.limit; showLeft(); }
+          if (r && r.reason === 'limit') { used = r.limit; st.used = used; showLeft(); }
           return;
         }
         turns.push({ role: 'assistant', text: r.text });
         bubble('assistant', r.text + (r.cut ? '\n\n' + t('ai.cut') : ''));
         used = r.used; limit = r.limit;
+        /* Boxes built later on this page start from the new count. */
+        st.used = used; st.limit = limit;
         showLeft();
         restart.hidden = false;
         input.focus();
