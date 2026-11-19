@@ -726,6 +726,9 @@ JTS.dict.kk = {
   'mastery.helpedLine': 'көмекпен: {total} ішінен {correct}',
   'mastery.confirmPending': 'Растауды күтуде — кемінде 3 күннен кейін дұрыс әрекет керек',
 
+  'today.words.eyebrow': 'Күн сөздері', 'today.words.title': 'Бүгінгі жаңа сөздер дайын',
+  'today.words.new': '{n} жаңа', 'today.words.review': '{n} қайталау',
+  'today.words.lead': 'оларды сөздіктегі карточкалармен үйреніңіз.', 'today.words.go': 'Карточкаларға',
   'vocab.title': 'Сөздік',
   'vocab.hub.lead': 'Бір колодамен жұмыс істеудің бес тәсілі. Қайталауға тиіс карточкалардан бастаңыз, сосын уақытыңызға сай жаттығуды таңдаңыз.',
   'vocab.hub.back': 'Барлық жаттығу',

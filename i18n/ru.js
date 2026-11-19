@@ -726,6 +726,9 @@ JTS.dict.ru = {
   'mastery.helpedLine': 'с помощью: {correct} из {total}',
   'mastery.confirmPending': 'Ждёт подтверждения — нужна верная попытка минимум через 3 дня',
 
+  'today.words.eyebrow': 'Слова дня', 'today.words.title': 'Новые слова дня уже ждут вас',
+  'today.words.new': '{n} новых', 'today.words.review': '{n} на повторение',
+  'today.words.lead': 'выучите их на карточках в словаре.', 'today.words.go': 'К карточкам',
   'vocab.title': 'Словарь',
   'vocab.hub.lead': 'Пять способов работать с одной колодой. Начните с карточек к повторению, затем выберите упражнение под то время, которое у вас есть.',
   'vocab.hub.back': 'Все упражнения',

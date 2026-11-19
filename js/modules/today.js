@@ -187,6 +187,35 @@
       [U.el('div.eyebrow', { text: t('today.growth.title') })].concat(body));
   }
 
+  /**
+   * The words of the day: while today's cards are not done, a reminder with
+   * one button straight into the flashcards. Today's cards are the
+   * dictionary's own queue (reviews due, then new words up to the daily
+   * goal); once the goal is met, or nothing is left, the reminder goes.
+   */
+  function wordsReminder() {
+    if (!JTS.vocab || !JTS.data.vocab) return null;
+    var v = JTS.vocab.state();
+    var left = Math.max(0, v.dailyGoal - JTS.vocab.doneToday());
+    var queue = JTS.vocab.queue();
+    var n = Math.min(left, queue.length);
+    if (!n) return null;
+    var fresh = queue.slice(0, n).filter(function (w) { return !JTS.vocab.card(w.id); }).length;
+    var review = n - fresh;
+    var detail = [];
+    if (fresh) detail.push(t('today.words.new', { n: fresh }));
+    if (review) detail.push(t('today.words.review', { n: review }));
+    return U.el('section.card.words-reminder', { id: 'today-words', 'aria-label': t('today.words.title') }, [
+      U.el('div.words-reminder-icon', { 'aria-hidden': 'true', text: 'Aa' }),
+      U.el('div.words-reminder-text', null, [
+        U.el('div.eyebrow', { text: t('today.words.eyebrow') }),
+        U.el('strong', { text: t('today.words.title') }),
+        U.el('div.small.muted', { text: detail.join(' · ') + ' — ' + t('today.words.lead') })
+      ]),
+      U.el('a.btn.btn-primary', { href: '#/vocab/cards', text: t('today.words.go') + ' →' })
+    ]);
+  }
+
   JTS.router.register('#/today', {
     title: 'nav.today',
     render: function (root) {
@@ -219,6 +248,8 @@
          the top, then today's work beside the growth zone, then the week's
          control test across the full width. */
       screen.appendChild(goalHero(state));
+      var words = wordsReminder();
+      if (words) screen.appendChild(words);
       var accessStrip = JTS.courseUI && JTS.courseUI.accessBanner();
       if (accessStrip) screen.appendChild(accessStrip);
 

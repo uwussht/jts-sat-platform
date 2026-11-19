@@ -726,6 +726,9 @@ JTS.dict.en = {
   'mastery.helpedLine': 'with help: {correct} of {total}',
   'mastery.confirmPending': 'Confirmation pending — needs a correct attempt at least 3 days later',
 
+  'today.words.eyebrow': 'Words of the day', 'today.words.title': 'Your new words for today are ready',
+  'today.words.new': '{n} new', 'today.words.review': '{n} to review',
+  'today.words.lead': 'learn them with the dictionary cards.', 'today.words.go': 'Go to cards',
   'vocab.title': 'Vocabulary',
   'vocab.hub.lead': 'Five ways to work the same deck. Start with the cards that are due, then pick the exercise that suits the time you have.',
   'vocab.hub.back': 'All exercises',

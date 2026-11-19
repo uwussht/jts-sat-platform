@@ -3815,3 +3815,14 @@ table.table tbody tr:hover { background: none; }
 .ai-chips:empty { display: none; }
 .ai-chips .chip { border-radius: var(--r-pill); }
 .ai-input { width: 100%; resize: vertical; min-height: 48px; border-radius: var(--r-md); }
+
+/* Words of the day on the dashboard (js/modules/today.js): one line, the
+   button at the end, wrapping under the text on a phone. */
+.words-reminder { display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+                  border-color: var(--brand-300, var(--border)); }
+.words-reminder-icon { width: 44px; height: 44px; flex: none; display: grid; place-items: center;
+                       border-radius: var(--r-md); background: var(--brand-600); color: var(--on-brand, #0B0B0B);
+                       font-family: var(--display, inherit); font-weight: 800; font-size: 16px; }
+.words-reminder-text { flex: 1 1 240px; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.words-reminder-text strong { font-size: 16px; }
+@media (max-width: 560px) { .words-reminder .btn { width: 100%; text-align: center; } }
