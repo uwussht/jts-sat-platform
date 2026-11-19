@@ -1160,15 +1160,30 @@
         var grid = U.el('div.q-grid' + (isStudy ? '.is-study' : ''));
         var m;
         var n = { correct: 0, wrong: 0, open: 0, answered: 0, marked: 0 };
+        /* In practice, a question answered in an earlier session shows how
+           that last answer went, so a long set does not look untouched.
+           This session's own check always wins over the history. */
+        var past = {};
+        if (isStudy) {
+          var st = S.state();
+          ((st && st.attempts) || []).forEach(function (at) {
+            if (typeof at.correct === 'boolean') past[at.questionId] = at;
+          });
+        }
         ses.questionIds.forEach(function (qid, i) {
           var a = ses.answers[qid];
           var answered = a.selected !== null && a.selected !== '';
           var cls = '';
           var label;
+          var before = isStudy && !a.submitted ? past[qid] : null;
           if (isStudy && a.submitted) {
             cls += a.correct ? '.is-correct' : '.is-wrong';
             n[a.correct ? 'correct' : 'wrong']++;
             label = a.correct ? t('common.correct') : t('common.incorrect');
+          } else if (before) {
+            cls += (before.correct ? '.is-correct' : '.is-wrong') + '.is-past';
+            n[before.correct ? 'correct' : 'wrong']++;
+            label = (before.correct ? t('common.correct') : t('common.incorrect')) + ' · ' + t('q.earlier');
           } else if (isStudy) {
             n.open++; label = t('common.unanswered');
           } else {
@@ -1200,6 +1215,7 @@
               ]);
             })),
             grid,
+            isStudy && grid.querySelector('.is-past') ? U.el('p.small.muted', { text: t('q.earlierNote') }) : null,
             isStudy ? null : U.el('p.small.muted', { text: t('q.finishModuleWarn') })
           ]),
           actions: [U.el('button.btn.btn-finish', {

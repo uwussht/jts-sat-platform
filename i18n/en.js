@@ -73,6 +73,7 @@ JTS.dict.en = {
   'common.import': 'Import', 'common.retry': 'Try again', 'common.open': 'Open', 'common.finish': 'Finish',
   'common.week': 'week', 'common.weeks': 'weeks', 'common.day': 'day', 'common.days': 'days',
   'common.total': 'Total', 'common.correct': 'Correct', 'common.incorrect': 'Incorrect',
+  'q.earlier': 'earlier session', 'q.earlierNote': 'Paler squares: your last answer from an earlier session.',
   'common.unanswered': 'Not answered', 'common.accuracy': 'Accuracy', 'common.time': 'Time',
   'common.difficulty': 'Difficulty', 'common.section': 'Section', 'common.skill': 'Skill',
   'common.domain': 'Domain', 'common.status': 'Status', 'common.date': 'Date', 'common.source': 'Source',

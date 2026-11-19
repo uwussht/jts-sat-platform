@@ -73,6 +73,7 @@ JTS.dict.ru = {
   'common.import': 'Импорт', 'common.retry': 'Попробовать снова', 'common.open': 'Открыть', 'common.finish': 'Завершить',
   'common.week': 'неделя', 'common.weeks': 'недель', 'common.day': 'день', 'common.days': 'дней',
   'common.total': 'Итого', 'common.correct': 'Верно', 'common.incorrect': 'Неверно',
+  'q.earlier': 'в прошлой сессии', 'q.earlierNote': 'Бледные клетки — ваш последний ответ в прошлых сессиях.',
   'common.unanswered': 'Без ответа', 'common.accuracy': 'Точность', 'common.time': 'Время',
   'common.difficulty': 'Сложность', 'common.section': 'Секция', 'common.skill': 'Навык',
   'common.domain': 'Домен', 'common.status': 'Статус', 'common.date': 'Дата', 'common.source': 'Источник',

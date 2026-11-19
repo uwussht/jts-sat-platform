@@ -73,6 +73,7 @@ JTS.dict.kk = {
   'common.import': 'Импорт', 'common.retry': 'Қайта көру', 'common.open': 'Ашу', 'common.finish': 'Аяқтау',
   'common.week': 'апта', 'common.weeks': 'апта', 'common.day': 'күн', 'common.days': 'күн',
   'common.total': 'Барлығы', 'common.correct': 'Дұрыс', 'common.incorrect': 'Қате',
+  'q.earlier': 'бұрынғы сессияда', 'q.earlierNote': 'Бозғылт ұяшықтар — бұрынғы сессиялардағы соңғы жауабыңыз.',
   'common.unanswered': 'Жауапсыз', 'common.accuracy': 'Дәлдік', 'common.time': 'Уақыт',
   'common.difficulty': 'Күрделілік', 'common.section': 'Секция', 'common.skill': 'Дағды',
   'common.domain': 'Домен', 'common.status': 'Күй', 'common.date': 'Күні', 'common.source': 'Дереккөз',
