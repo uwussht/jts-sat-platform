@@ -7,7 +7,7 @@
 
    It is on only when ANTHROPIC_API_KEY is set. The key stays here, on the
    server; the browser never sees it. Each student gets AI_DAILY_LIMIT answers
-   a day (15 by default), counted in ai_usage.
+   a day (10 by default), counted in ai_usage.
 
    The browser sends what is on the student's screen as `context` — the
    question, the lesson part, the domain percentages — because the question
@@ -24,7 +24,7 @@ const { requireUser, requireAccess } = require('./auth');
 const router = express.Router();
 
 const MODEL = process.env.AI_MODEL || 'claude-opus-5-5';
-const DAILY_LIMIT = Math.max(1, Number(process.env.AI_DAILY_LIMIT) || 15);
+const DAILY_LIMIT = Math.max(1, Number(process.env.AI_DAILY_LIMIT) || 10);
 const enabled = () => !!process.env.ANTHROPIC_API_KEY;
 
 let client = null;

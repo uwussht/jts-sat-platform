@@ -36,7 +36,7 @@ services:
       DEFAULT_PACKAGES: ${DEFAULT_PACKAGES:-basic}
       # The AI tutor: on only when a key is set; answers per student per day.
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
-      AI_DAILY_LIMIT: ${AI_DAILY_LIMIT:-15}
+      AI_DAILY_LIMIT: ${AI_DAILY_LIMIT:-10}
     depends_on:
       db:
         condition: service_healthy

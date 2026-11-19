@@ -38,7 +38,7 @@ services:
       ADMIN_PHONES: ${ADMIN_PHONES:-}
       DEFAULT_PACKAGES: ${DEFAULT_PACKAGES:-basic}
       # The AI tutor's key, if any, goes in secrets.env as ANTHROPIC_API_KEY.
-      AI_DAILY_LIMIT: ${AI_DAILY_LIMIT:-15}
+      AI_DAILY_LIMIT: ${AI_DAILY_LIMIT:-10}
     env_file:
       - secrets.env
     depends_on:
