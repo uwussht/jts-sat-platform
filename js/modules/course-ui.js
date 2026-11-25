@@ -58,7 +58,9 @@
       strip.appendChild(U.el('li' + cls, { 'aria-current': p.state === 'current' ? 'step' : null }, [
         U.el('span.ph-dot', { 'aria-hidden': 'true',
           text: p.state === 'done' ? '✓' : p.state === 'incomplete' ? '!' : (p.counted ? String(p.id) : p.key === 'examDay' ? '★' : '•') }),
-        U.el('span.ph-name', { text: t('phase.' + p.id + '.short') }),
+        /* Diagnostic taken, Bluebook 6 still to sit: the stop is that test now. */
+        U.el('span.ph-name', { text: t(p.id === 1 && p.diagnosticDone && !p.complete
+          ? 'phase.1.shortBluebook' : 'phase.' + p.id + '.short') }),
         U.el('span.ph-when', { text: phaseDates(p) })
       ]));
     });

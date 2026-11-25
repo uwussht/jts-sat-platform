@@ -921,6 +921,7 @@ JTS.dict.kk = {
   'pstats.toReview': 'талдауға',
   'phase.1.name': 'Диагностика және Bluebook Practice Test 6',
   'phase.1.short': 'Диагностика',
+  'phase.1.shortBluebook': 'Bluebook 6',
   'phase.1.lead': '1-сабаққа дейін: платформадағы диагностика, содан кейін Bluebook Practice Test 6. Оның баллдары — бастапқы нүкте, кейінгі нәтижелердің бәрі осымен салыстырылады.',
   'phase.2.name': 'Негіздер, 1-бөлім',
   'phase.2.short': 'Негіздер 1',

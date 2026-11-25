@@ -260,8 +260,18 @@
       tests.push({ id: id, date: date, phase: phaseId, entered: !!(sc && sc.status !== 'rejected'), score: sc });
     }
     if (first) addTest('pt6', addDays(first.date, -1), 1);
-    if (byNo[12]) addTest('pt8', saturdayAfter(byNo[12].date), 3);
-    if (byNo[24]) addTest('pt10', saturdayAfter(byNo[24].date), 5);
+    /* The Saturday after the block's last lesson, unless the next block has
+       already started by then: then the day before its first lesson. */
+    function testAfter(no) {
+      var d = saturdayAfter(byNo[no].date), next = byNo[no + 1];
+      if (next && d >= next.date) {
+        d = addDays(next.date, -1);
+        if (d <= byNo[no].date) d = next.date;
+      }
+      return d;
+    }
+    if (byNo[12]) addTest('pt8', testAfter(12), 3);
+    if (byNo[24]) addTest('pt10', testAfter(24), 5);
     var testBy = {};
     tests.forEach(function (x) { testBy[x.id] = x; });
 
