@@ -10,6 +10,7 @@
     {"file": "jts-8.json", "assetBase": "assets/sat/paper 8/"},
     {"file": "jts-9.json", "assetBase": "assets/sat/paper 9/"},
     {"file": "jts-10.json", "assetBase": "assets/sat/paper 10/"},
-    {"file": "jts-11.json", "assetBase": "assets/sat/paper 11/"}
+    {"file": "jts-11.json", "assetBase": "assets/sat/paper 11/"},
+    {"file": "cb-6.json", "assetBase": "assets/sat/cb-6/"}
   ]
 }

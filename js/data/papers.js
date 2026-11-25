@@ -147,12 +147,21 @@ JTS.data.addPaper = function (paper) {
   JTS.data.papers.push({
     id: paper.id, title: paper.title, year: paper.year,
     note: paper.note || null, modules: modules,
+    /* The full diagnostic: offered on #/diagnostic, not in the papers list. */
+    diagnostic: !!paper.diagnostic,
+    /* Minutes per module by section, when the paper's own timing differs
+       from the adaptive exam's (a linear form is longer). */
+    minutes: paper.minutes || null,
     count: modules.reduce(function (n, m) { return n + m.questionIds.length; }, 0)
   });
 };
 
 JTS.papers = {
   all: function () { return JTS.data.papers; },
+  /** The papers sat from #/mocks: everything but the full diagnostic. */
+  listed: function () { return JTS.data.papers.filter(function (p) { return !p.diagnostic; }); },
+  /** The paper sat as the full diagnostic, if one is loaded. */
+  diagnostic: function () { return JTS.data.papers.filter(function (p) { return p.diagnostic; })[0] || null; },
   get: function (id) {
     return JTS.data.papers.filter(function (p) { return p.id === id; })[0] || null;
   },
@@ -270,6 +279,7 @@ JTS.data.loadPaperFiles = function () {
         JTS.data.addPaper({
           id: d.id || f.replace(/\.json$/, ''), questionPrefix: d.id || f.replace(/\.json$/, ''),
           title: d.title || f, year: d.year || null, note: d.note || null,
+          diagnostic: !!d.diagnostic, minutes: d.minutes || null,
           modules: modules.map(function (m) {
             return { key: m.key, section: sectionOf(m.section), questions: m.questions.map(function (q) {
               var c = convert(q, d.assetBase);

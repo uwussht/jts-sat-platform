@@ -728,7 +728,7 @@
     if (state.profile.onboardingStepsDone) return true;
     return (state.sessions || []).filter(function (x) {
       return x.kind === 'diagnostic';
-    }).length > 0;
+    }).length > 0 || (state.mocks || []).some(function (r) { return r.diagnostic; });
   }
 
   JTS.router = {
@@ -795,7 +795,10 @@
          diagnostic is now what finishes onboarding — without it the student
          presses Start and is bounced straight back to step 6. */
       if (state && !state.profile.onboardingComplete &&
-          ['#/onboarding', '#/diagnostic', '#/question', '#/settings'].indexOf(route.base) < 0) {
+          ['#/onboarding', '#/diagnostic', '#/question', '#/settings'].indexOf(route.base) < 0 &&
+          /* The full diagnostic is a paper: its break and hand-off run on
+             #/mocks/run. */
+          route.path !== '#/mocks/run') {
         /* Onboarding is not finished until the plan is built, and the plan is
            built on the diagnostic's result screen — so between finishing the
            diagnostic and pressing that button the student is still, formally,

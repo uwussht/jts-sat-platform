@@ -401,9 +401,14 @@
          screen (see JTS.fullWindow). */
       var paperRun = !!(ses.meta && ses.meta.mockId && JTS.mock && JTS.mock.get(ses.meta.mockId));
       if (paperRun) document.body.classList.add('unit-focus');
+      /* The full diagnostic is dressed like a computer-delivered exam room:
+         a candidate bar, a part banner, the numbered strip and arrows. */
+      var examRun = paperRun ? JTS.mock.get(ses.meta.mockId) : null;
+      var ielts = !!(examRun && examRun.diagnostic);
+      var examModule = ielts ? examRun.modules[ses.meta.moduleIndex] : null;
 
       /* ------------------------------------------------------------- shell */
-      var shell = U.el('div.q-shell' + (isStudy ? '.is-practice' : '') +
+      var shell = U.el('div.q-shell' + (isStudy ? '.is-practice' : '') + (ielts ? '.is-ielts' : '') +
         (/^CH/.test(unitCode || '') ? '.is-challenge' : '') +
         (/^CH1[12]$/.test(unitCode || '') ? '.is-full-sim' : ''));
       var topbar = U.el('div.q-topbar');
@@ -477,6 +482,15 @@
       /* ----------------------------------------------------------- top bar */
       function buildTopbar() {
         U.clear(topbar);
+        if (ielts) {
+          var who = S.state().profile && S.state().profile.name;
+          if (typeof who !== 'string') who = '';
+          var paper = JTS.papers.get(examRun.paperId);
+          topbar.appendChild(U.el('div.ie-candidate', null, [
+            U.el('b', { text: paper ? paper.title : '' }),
+            U.el('span', { text: who ? t('ie.candidate', { name: who }) : '' })
+          ]));
+        }
         /* Practice keeps its way out on the left: it leaves the set open to
            continue later. A set is finished from the question list, from
            Next on the last question, or from the Practice page. */
@@ -725,6 +739,14 @@
             onclick: function () { a.marked = !a.marked; saveNow(); renderQuestion(); }
           })
         ]);
+        if (ielts) {
+          content.appendChild(U.el('div.ie-part', null, [
+            U.el('b', { text: t('ie.part', { n: ses.meta.moduleIndex + 1 }) }),
+            U.el('span', { text: t('mock.moduleCard', {
+              section: t('common.' + examModule.section), n: examModule.key.slice(-1)
+            }) + ' · ' + t('ie.answer', { total: ses.questionIds.length }) })
+          ]));
+        }
         content.appendChild(head);
         /* A question with no passage is a column of text and four choices, and
            it reads better narrow than spread across a desktop. */
@@ -1069,6 +1091,7 @@
 
         /* Left: how much of the set is answered, and a way into the grid for
            a long set. Middle: the set itself, numbered. Right: what to press. */
+        if (ielts) footer.appendChild(U.el('span.ie-foot-part', { text: t('ie.part', { n: ses.meta.moduleIndex + 1 }) }));
         footer.appendChild(U.el('button.q-jump', {
           type: 'button',
           text: '▾  ' + answeredCount() + '/' + ses.questionIds.length,
@@ -1114,8 +1137,9 @@
         /* Back and Next stay together on the right, on the rail's line. */
         var nav = U.el('div.q-nav');
         footer.appendChild(nav);
-        nav.appendChild(U.el('button.btn', {
-          type: 'button', text: t('q.back'), disabled: ses.index === 0 || null,
+        nav.appendChild(U.el('button.btn' + (ielts ? '.ie-arrow' : ''), {
+          type: 'button', text: ielts ? '←' : t('q.back'), disabled: ses.index === 0 || null,
+          title: t('q.back'), 'aria-label': t('q.back'),
           onclick: function () { go(-1); }
         }));
 
@@ -1131,8 +1155,9 @@
             onclick: finishModule
           }));
         } else {
-          nav.appendChild(U.el('button.btn.btn-primary', {
-            type: 'button', text: t('q.next'), onclick: function () { go(1); }
+          nav.appendChild(U.el('button.btn.btn-primary' + (ielts ? '.ie-arrow' : ''), {
+            type: 'button', text: ielts ? '→' : t('q.next'),
+            title: t('q.next'), 'aria-label': t('q.next'), onclick: function () { go(1); }
           }));
         }
       }

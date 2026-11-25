@@ -167,6 +167,8 @@
       var run = {
         id: U.uid('mock'),
         paperId: paper ? paper.id : null,
+        /* Sat from #/diagnostic: it starts and ends there. */
+        diagnostic: !!(paper && paper.diagnostic),
         startedAt: Date.now(),
         finishedAt: null,
         status: 'in-progress',
@@ -181,7 +183,7 @@
           return {
             key: m.id, section: m.section,
             count: fixed ? fixed.questionIds.length : m.count,
-            minutes: m.minutes,
+            minutes: (paper && paper.minutes && paper.minutes[m.section]) || m.minutes,
             /* A paper's second module is whatever the paper says it is. */
             adaptive: fixed ? false : m.adaptive,
             route: null, questionIds: null,
@@ -249,7 +251,7 @@
         durationMs: m.minutes * 60000,
         softTimer: !run.timed,
         wallClock: run.timed,
-        returnHash: run.paperId ? '#/mocks?tab=papers' : '#/mocks',
+        returnHash: run.diagnostic ? '#/diagnostic' : run.paperId ? '#/mocks?tab=papers' : '#/mocks',
         finishHash: '#/mocks/run',
         meta: { mockId: run.id, moduleIndex: run.index, moduleKey: m.key }
       });
@@ -726,7 +728,7 @@
    * They are the second tab of #/mocks (#/mocks?tab=papers).
    */
   function paperCard(rerender) {
-    var papers = JTS.papers.all();
+    var papers = JTS.papers.listed();
     var active = JTS.mock.active();
 
     var card = U.el('div.card.stack', { id: 'paper-list' }, [
@@ -1021,7 +1023,10 @@
       var run = route.query.session ? JTS.mock.recordSession(route.query.session) : null;
       if (!run) run = JTS.mock.active();
       if (!run) { JTS.router.go('#/mocks'); return; }
-      if (run.status !== 'in-progress') { JTS.router.go('#/mocks/result?run=' + run.id); return; }
+      if (run.status !== 'in-progress') {
+        JTS.router.go(run.diagnostic ? '#/diagnostic?run=' + run.id : '#/mocks/result?run=' + run.id);
+        return;
+      }
 
       /* A module already in flight belongs on the question screen, not here. */
       var live = JTS.session.current();
@@ -1132,7 +1137,7 @@
             okText: t('common.discard') }).then(function (yes) {
             if (!yes) return;
             JTS.mock.discard(run.id);
-            JTS.router.go(run.paperId ? '#/mocks?tab=papers' : '#/mocks');
+            JTS.router.go(run.diagnostic ? '#/diagnostic?show=intro' : run.paperId ? '#/mocks?tab=papers' : '#/mocks');
           });
         }
       }));
@@ -1294,7 +1299,9 @@
       var mins = Math.round(U.sum(run.modules.map(function (m) { return m.timeMs || 0; })) / 60000);
       screen.appendChild(U.el('div.res-head', null, [
         U.el('div.row.row-wrap.res-meta', null, [
-          run.paperId
+          run.diagnostic
+            ? U.el('a.btn.btn-sm', { href: '#/diagnostic?run=' + run.id, text: '← ' + t('diag.title') })
+            : run.paperId
             ? U.el('a.btn.btn-sm', { href: '#/mocks?tab=papers', text: '← ' + t('paper.title') })
             : U.el('a.btn.btn-sm', { href: '#/mocks', text: '← ' + t('nav.mocks') }),
           paper ? U.el('span.badge', { text: paper.title }) : null,

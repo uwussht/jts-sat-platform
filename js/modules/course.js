@@ -27,7 +27,9 @@
   function diagTaken(st) {
     return !!((st && st.sessions) || []).filter(function (x) {
       return x.kind === 'diagnostic' && x.finishedAt;
-    }).length;
+    }).length || ((st && st.mocks) || []).some(function (r) {
+      return r.diagnostic && r.status === 'finished';
+    });
   }
 
   /* ------------------------------------------------------- domain snapshot */

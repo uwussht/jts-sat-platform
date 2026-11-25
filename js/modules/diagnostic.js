@@ -5,7 +5,12 @@
    difficulty, with at least two student-produced responses in Math. The timer
    is advisory: it is shown but never cuts the student off.
 
-   The result is deliberately NOT a SAT score. It is a mastery map marked
+   Beside it, and recommended first, is the full diagnostic: a whole official
+   practice test sat as a paper (JTS.mock with the paper JTS.papers.diagnostic
+   names), under exam conditions — each module on its own clock that closes
+   it, the ten-minute break, no hints. Its result is a score estimate.
+
+   The short diagnostic's result is deliberately NOT a SAT score. It is a mastery map marked
    'preliminary, few data points', plus a recommended starting phase. The
    profile stays at level 'undetermined' until a real test result is imported.
    ========================================================================== */
@@ -154,11 +159,47 @@
     screen.appendChild(JTS.shell.setupBar());
   }
 
-  function renderResult(root, summary) {
+  /* ------------------------------------------------------ full diagnostic */
+
+  function fullRuns() {
+    return JTS.mock.all().filter(function (r) { return r.diagnostic; });
+  }
+
+  /** The four modules of a finished run, read as one session summary. */
+  function runSummary(run) {
+    var out = { questionIds: [], answers: {}, correct: 0, answered: 0, elapsedMs: 0,
+                finishedAt: run.finishedAt };
+    run.modules.forEach(function (m) {
+      var sum = m.sessionId ? JTS.session.summary(m.sessionId) : null;
+      if (!sum) return;
+      out.questionIds = out.questionIds.concat(sum.questionIds);
+      Object.keys(sum.answers).forEach(function (k) { out.answers[k] = sum.answers[k]; });
+      out.correct += sum.correct || 0;
+      out.answered += sum.answered || 0;
+      out.elapsedMs += sum.elapsedMs || 0;
+    });
+    return out;
+  }
+
+  function startFull() {
+    var paper = JTS.papers.diagnostic();
+    if (!paper) return;
+    JTS.fullWindow.enter();
+    var run = JTS.mock.create({ timed: true, paperId: paper.id });
+    if (!JTS.mock.startModule(run.id)) {
+      JTS.mock.discard(run.id);
+      JTS.fullWindow.leave();
+      ui.toast(t('paper.cantOpen'), 'err', 5000);
+      JTS.router.render();
+    }
+  }
+
+  function renderResult(root, summary, run) {
     var screen = U.el('div.container.screen.stack-lg', { style: 'max-width:1100px' });
     root.appendChild(screen);
     setupHeader(screen);
 
+    var est = run ? JTS.mock.totalEstimate(run) : null;
     var phase = recommendPhase(summary);
     var totalQ = summary.questionIds.length;
     var overall = totalQ ? summary.correct / totalQ : 0;
@@ -170,15 +211,32 @@
       U.el('h1.h1', { text: t('diag.resultTitle') })
     ]));
 
-    /* The first thing on the page is what this result is not. */
-    screen.appendChild(U.el('div.notice.notice-warn', null, [
-      U.el('span', null, [U.el('b', { text: t('diag.noScore') })])
-    ]));
+    /* The first thing on the page is what this result is not — for the
+       short diagnostic. The full one is a whole test, and its estimate is
+       the headline. */
+    if (est) {
+      var rwEst = JTS.mock.estimate(run, 'rw'), mEst = JTS.mock.estimate(run, 'math');
+      screen.appendChild(U.el('div.card.card-hero.stack-sm', null, [
+        U.el('div.eyebrow', { text: t('diag.fullScore') }),
+        U.el('div', { style: 'font-size:46px;font-weight:750;line-height:1;letter-spacing:-.02em',
+                      text: est.low + '–' + est.high }),
+        U.el('div.small.muted', {
+          text: t('common.rw') + ' ' + rwEst.low + '–' + rwEst.high + ' · ' +
+                t('common.math') + ' ' + mEst.low + '–' + mEst.high + ' · ' +
+                U.fmtLongTime(summary.elapsedMs)
+        }),
+        U.el('div.xsmall.muted', { text: t('diag.fullScoreNote') })
+      ]));
+    } else {
+      screen.appendChild(U.el('div.notice.notice-warn', null, [
+        U.el('span', null, [U.el('b', { text: t('diag.noScore') })])
+      ]));
+    }
 
     /* The headline is a percentage, which is the only honest summary of 24
        questions: it says how much of what was asked came back right, and
        nothing about where that lands on a 400-1600 scale. */
-    screen.appendChild(U.el('div.card.card-hero.stack-sm', null, [
+    if (!est) screen.appendChild(U.el('div.card.card-hero.stack-sm', null, [
       U.el('div.eyebrow', { text: t('diag.overall') }),
       U.el('div', { style: 'font-size:46px;font-weight:750;line-height:1;letter-spacing:-.02em',
                     text: Math.round(overall * 100) + '%' }),
@@ -198,9 +256,10 @@
     var card = U.el('div.card.stack');
     card.appendChild(U.el('div.row-between.row-wrap', null, [
       U.el('h2.h2', { text: t('diag.byDomain') }),
-      U.el('span.badge.badge-muted', { text: t('diag.preliminary') })
+      run ? null : U.el('span.badge.badge-muted', { text: t('diag.preliminary') })
     ]));
-    card.appendChild(U.el('p.small.muted', { text: t('diag.adviceLead') }));
+    /* The caution about three questions a domain is the short check's. */
+    if (!run) card.appendChild(U.el('p.small.muted', { text: t('diag.adviceLead') }));
 
     var ranked = [];
     JTS.skills.domains().forEach(function (d) {
@@ -310,21 +369,84 @@
       /* What is left to do with an old result: take it again, or look at the
          plan it belongs to. */
       screen.appendChild(U.el('div.row.row-wrap', null, [
+        run ? U.el('a.btn', { href: '#/mocks/result?run=' + run.id, text: t('diag.reviewAnswers') }) : null,
         U.el('a.btn', { href: '#/diagnostic?show=intro', text: t('diag.retake') }),
         U.el('a.btn', { href: '#/plan', text: t('nav.plan') })
       ]));
     }
   }
 
+  /** The full test: a whole official practice test, as on exam day. */
+  function fullCard() {
+    var paper = JTS.papers.diagnostic();
+    if (!paper) return null;
+    var active = JTS.mock.active();
+    var mine = active && active.diagnostic ? active : null;
+    var mins = paper.modules.map(function (m) {
+      return (paper.minutes && paper.minutes[m.section]) ||
+        JTS.config.examStructure.filter(function (x) { return x.id === m.key; })[0].minutes;
+    });
+    var total = mins.reduce(function (a, b) { return a + b; }, 0);
+    var rows = paper.modules.map(function (m, i) {
+      return U.el('tr', null, [
+        U.el('td', { text: t('mock.moduleCard', { section: t('common.' + m.section), n: m.key.slice(-1) }) }),
+        U.el('td.num', { text: t('mock.moduleSpec', { count: m.questionIds.length, minutes: mins[i] }) })
+      ]);
+    });
+    /* The break sits between the two sections. */
+    rows.splice(2, 0, U.el('tr', null, [
+      U.el('td', { text: t('mock.break') }),
+      U.el('td.num', { text: t('diag.breakMin', { n: JTS.mock.breakMs() / 60000 }) })
+    ]));
+    var card = U.el('div.card.card-accent.stack', null, [
+      U.el('div.row.row-wrap', null, [
+        U.el('span.badge.badge-ok', { text: t('diag.recommended') }),
+        U.el('span.badge.badge-muted', { text: paper.title })
+      ]),
+      U.el('h2.h2', { text: t('diag.fullTitle') }),
+      U.el('p.small', { text: t('diag.fullLead') }),
+      U.el('div.table-wrap', null, [U.el('table.table', null, [U.el('tbody', null, rows)])]),
+      U.el('ul.small', { style: 'margin:0;padding-left:1.2em;line-height:1.6' },
+        ['diag.rule1', 'diag.rule2', 'diag.rule3', 'diag.rule4'].map(function (k) {
+          return U.el('li', { text: t(k) });
+        })),
+      U.el('div.small.muted', { text: t('diag.fullTotal', { h: Math.floor(total / 60), m: total % 60 }) })
+    ]);
+    if (window.innerWidth < JTS.config.mockMinWidth) {
+      card.appendChild(U.el('div.notice', null, [U.el('div.stack-sm', null, [
+        U.el('div', null, [U.el('b', { text: t('mock.desktopOnly') })]),
+        U.el('div.small', { text: t('mock.needDesktop') })
+      ])]));
+    } else if (mine) {
+      card.appendChild(U.el('button.btn.btn-primary.btn-lg.btn-block', {
+        type: 'button', text: t('common.continue'),
+        onclick: function () { JTS.fullWindow.enter(); JTS.router.go('#/mocks/run'); }
+      }));
+    } else {
+      if (active) card.appendChild(U.el('div.notice.small', { text: t('diag.otherRunning') }));
+      card.appendChild(U.el('button.btn.btn-primary.btn-lg.btn-block', {
+        type: 'button', text: t('diag.fullStart'), disabled: !!active, onclick: startFull
+      }));
+    }
+    return card;
+  }
+
   function renderIntro(root) {
     var state = S.state();
     var last = (state.sessions || []).filter(function (x) { return x.kind === 'diagnostic'; }).pop();
 
-    var screen = U.el('div.container.screen', { style: 'max-width:820px' });
+    var screen = U.el('div.container.screen.stack', { style: 'max-width:820px' });
     root.appendChild(screen);
     setupHeader(screen);
+    screen.appendChild(U.el('div.stack-sm', null, [
+      U.el('h1.h1', { text: t('diag.title') }),
+      U.el('p.muted', { text: t('diag.choose') })
+    ]));
+    var full = fullCard();
+    if (full) screen.appendChild(full);
+
     var card = U.el('div.card.stack');
-    card.appendChild(U.el('h1.h1', { text: t('diag.title') }));
+    card.appendChild(U.el('h2.h2', { text: t('diag.quickTitle') }));
     card.appendChild(U.el('p.muted', { text: t('diag.lead') }));
 
     /* Taking it again is a normal thing to do, and the previous result is not
@@ -346,7 +468,7 @@
       U.el('span.badge.badge-muted', { text: t('diag.preliminary') })
     ]));
     card.appendChild(U.el('div.notice', { text: t('diag.noScore') }));
-    card.appendChild(U.el('button.btn.btn-primary.btn-lg.btn-block', {
+    card.appendChild(U.el(full ? 'button.btn.btn-lg.btn-block' : 'button.btn.btn-primary.btn-lg.btn-block', {
       type: 'button', text: last ? t('diag.retake') : t('diag.start'), onclick: startDiagnostic
     }));
     screen.appendChild(card);
@@ -366,10 +488,21 @@
         var summary = JTS.session.summary(route.query.session);
         if (summary) { renderResult(root, summary); return; }
       }
+      if (route.query.run) {
+        var r = JTS.mock.get(route.query.run);
+        if (r && r.diagnostic && r.status === 'finished') { renderResult(root, runSummary(r), r); return; }
+      }
 
-      /* Otherwise show the most recent finished diagnostic, or the intro. */
-      var last = (state.sessions || []).filter(function (x) { return x.kind === 'diagnostic'; }).pop();
-      if (last && route.query.show !== 'intro') { renderResult(root, last); return; }
+      /* Otherwise show the most recent finished diagnostic of either kind,
+         or the intro. */
+      if (route.query.show !== 'intro') {
+        var last = (state.sessions || []).filter(function (x) { return x.kind === 'diagnostic'; }).pop();
+        var lastRun = fullRuns().filter(function (x) { return x.status === 'finished'; }).pop();
+        if (lastRun && (!last || lastRun.finishedAt > last.finishedAt)) {
+          renderResult(root, runSummary(lastRun), lastRun); return;
+        }
+        if (last) { renderResult(root, last); return; }
+      }
       renderIntro(root);
     }
   });
