@@ -66,7 +66,7 @@
 
   /** Where pressing an event goes: the lesson itself, a test, or the mocks. */
   function eventHref(ev) {
-    if (ev.lesson) return '#/materials/lesson?code=' + ev.lesson.code;
+    if (ev.lesson) return JTS.materials.lessonHref(ev.lesson.code);
     if (ev.test) return '#/tests';
     if (ev.sim) return '#/mocks';
     return null;

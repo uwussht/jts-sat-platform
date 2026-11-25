@@ -80,7 +80,7 @@
     /* A Challenge lesson has no single topic: its own set is the practice. */
     var href = skills.length
       ? '#/practice?skills=' + skills.join(',') + '&size=' + size
-      : lesson ? '#/materials/lesson?code=' + lesson.code : '#/practice';
+      : lesson ? JTS.materials.lessonHref(lesson.code) : '#/practice';
     return {
       id: 'practice', icon: '✎', href: href, mins: 40,
       title: t('tasks.practice'),

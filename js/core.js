@@ -807,6 +807,7 @@
         return;
       }
       if (state && state.profile.onboardingComplete && route.base === '#/auth') { this.go('#/today'); return; }
+      if (route.base === '#/materials' && !JTS.materials.allowed()) { this.go('#/today'); return; }
 
       /* Longest registered prefix wins, so #/practice/weak resolves to its own
          screen while #/practice/anything-else still falls back to Practice. */
@@ -2381,7 +2382,30 @@
     };
   })();
 
+  /* The course materials (#/materials and its lesson pages) are for admins
+     only for now: students reach the topics through Practice instead. In
+     local mode, with no accounts, they stay open. */
+  JTS.materials = {
+    allowed: function () {
+      if (JTS.Auth.mode !== 'server') return true;
+      return !!(JTS.Auth.user && JTS.Auth.user.role === 'admin');
+    },
+    /** Where a lesson link goes: the lesson, or its topics in Practice. */
+    lessonHref: function (code) {
+      if (this.allowed()) return '#/materials/lesson?code=' + code;
+      var P = JTS.data.programme;
+      var skills = P && P.unitSkills ? (P.unitSkills[code] || []) : [];
+      return skills.length ? '#/practice?skills=' + skills.join(',') : '#/practice';
+    }
+  };
+
   JTS.shell = {
+    /** The study destinations this account may open. */
+    studyItems: function () {
+      return this.navItems.filter(function (it) {
+        return it.path !== '#/materials' || JTS.materials.allowed();
+      });
+    },
     navItems: [
       { path: '#/today',    key: 'nav.today',    icon: '◉' },
       { path: '#/plan',     key: 'nav.plan',     icon: '☷' },
@@ -2567,7 +2591,7 @@
       if (!onboarding) {
         var nav = U.el('nav.sb-nav', { id: 'main-nav' });
         var self = this;
-        var groups = [['nav.groupStudy', this.navItems], ['nav.groupTools', this.subNavItems]];
+        var groups = [['nav.groupStudy', this.studyItems()], ['nav.groupTools', this.subNavItems]];
         /* Teachers, curators, managers and admins: their own area. */
         if (JTS.Auth.user && (JTS.Auth.user.perms || []).indexOf('staff') >= 0) {
           groups.push(['nav.groupStaff', this.staffNavItems]);
@@ -2646,7 +2670,7 @@
       tabbar.hidden = !st || !st.profile.onboardingComplete;
       if (tabbar.hidden) return;
       var self = this;
-      this.navItems.filter(function (it) { return !it.noTab; }).forEach(function (it) {
+      this.studyItems().filter(function (it) { return !it.noTab; }).forEach(function (it) {
         tabbar.appendChild(U.el('a', { href: it.path, dataset: { path: it.path } }, [
           U.el('em', { html: self.navIcon(it.path), 'aria-hidden': 'true' }),
           U.el('span', { text: t(it.key) })
