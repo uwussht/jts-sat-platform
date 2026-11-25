@@ -204,6 +204,8 @@ JTS.dict.en = {
   'diag.fullLead': 'A complete official SAT practice test under exam conditions. It shows where you stand today on the 400–1600 scale and which topics cost you the most points.',
   'diag.breakMin': '{n} min',
   'diag.rule1': 'Each module has its own timer. When it runs out, the module closes and your answers are submitted.',
+  'diag.adaptive': 'adaptive',
+  'diag.ruleAdaptive': 'Module 2 depends on module 1: about 80% correct in Reading and Writing (70% in Math) or more opens the harder module 2, where up to 800 is possible; below that comes the easier one, which tops out near 550.',
   'diag.rule2': 'Inside a module you can move between questions and mark them for review. A finished module cannot be reopened.',
   'diag.rule3': 'No hints or explanations during the test. The Desmos calculator and the reference sheet are available in Math.',
   'diag.rule4': 'Sit it in one go, in a quiet place, on a computer. If you close the page, the clock keeps running.',

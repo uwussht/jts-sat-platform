@@ -382,15 +382,24 @@
     if (!paper) return null;
     var active = JTS.mock.active();
     var mine = active && active.diagnostic ? active : null;
-    var mins = paper.modules.map(function (m) {
-      return (paper.minutes && paper.minutes[m.section]) ||
-        JTS.config.examStructure.filter(function (x) { return x.id === m.key; })[0].minutes;
+    /* An adaptive paper is sat to the exam's own structure; a linear one
+       to its modules, with its own minutes if it has them. */
+    var mods = JTS.config.examStructure.filter(function (x) { return x.section; }).map(function (x) {
+      var pm = paper.modules.filter(function (m) { return m.key === x.id; })[0];
+      return {
+        key: x.id, section: x.section, adaptive: !!paper.routes && x.adaptive,
+        count: paper.routes ? x.count : (pm ? pm.questionIds.length : x.count),
+        minutes: (!paper.routes && paper.minutes && paper.minutes[x.section]) || x.minutes
+      };
     });
-    var total = mins.reduce(function (a, b) { return a + b; }, 0);
-    var rows = paper.modules.map(function (m, i) {
+    var total = mods.reduce(function (a, m) { return a + m.minutes; }, 0);
+    var rows = mods.map(function (m) {
       return U.el('tr', null, [
-        U.el('td', { text: t('mock.moduleCard', { section: t('common.' + m.section), n: m.key.slice(-1) }) }),
-        U.el('td.num', { text: t('mock.moduleSpec', { count: m.questionIds.length, minutes: mins[i] }) })
+        U.el('td', null, [
+          document.createTextNode(t('mock.moduleCard', { section: t('common.' + m.section), n: m.key.slice(-1) })),
+          m.adaptive ? U.el('span.badge.badge-muted', { text: t('diag.adaptive'), style: 'margin-left:8px' }) : null
+        ]),
+        U.el('td.num', { text: t('mock.moduleSpec', { count: m.count, minutes: m.minutes }) })
       ]);
     });
     /* The break sits between the two sections. */
@@ -407,7 +416,8 @@
       U.el('p.small', { text: t('diag.fullLead') }),
       U.el('div.table-wrap', null, [U.el('table.table', null, [U.el('tbody', null, rows)])]),
       U.el('ul.small', { style: 'margin:0;padding-left:1.2em;line-height:1.6' },
-        ['diag.rule1', 'diag.rule2', 'diag.rule3', 'diag.rule4'].map(function (k) {
+        (paper.routes ? ['diag.rule1', 'diag.ruleAdaptive', 'diag.rule2', 'diag.rule3', 'diag.rule4']
+          : ['diag.rule1', 'diag.rule2', 'diag.rule3', 'diag.rule4']).map(function (k) {
           return U.el('li', { text: t(k) });
         })),
       U.el('div.small.muted', { text: t('diag.fullTotal', { h: Math.floor(total / 60), m: total % 60 }) })

@@ -10,9 +10,18 @@ choices, figures as PNGs. Out come
                                        that JTS.data.loadPaperFiles reads
     assets/sat/<paper-id>/*.png        its figures
 
-The linear test is longer than the adaptive one (33 Reading and Writing and
-27 Math questions a module instead of 27 and 22), and College Board gives it
-proportionally more time: 39 and 43 minutes. Those minutes go into the file.
+The linear test has 33 Reading and Writing and 27 Math questions a module.
+It is sat here the way the digital SAT is: adaptive, 27 + 27 Reading and
+Writing (32 minutes a module) and 22 + 22 Math (35 minutes). Out of its 120
+questions the file names, in "routes":
+
+    rw1, m1                  module 1: a spread drawn from the test's module 1
+    rw2-easier, rw2-harder   module 2, by the module 1 result: the easiest and
+    m2-easier,  m2-harder    the hardest of what is left
+
+The test carries no difficulty labels. College Board orders the questions
+easiest to hardest: in Reading and Writing within each question type, in
+Math across the module. A question's place in that order is its difficulty.
 
 Explanations are left out, as for every paper. The paper is marked as the
 full diagnostic, so it is offered on #/diagnostic and not in the papers list.
@@ -26,7 +35,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 
-MINUTES = {'rw': 39, 'math': 43}
+COUNTS = {'rw': 27, 'math': 22}
+# Module 1 accuracy that routes to the harder module 2.
+THRESHOLDS = {'rw': 0.8, 'math': 0.7}
+RW_DOMAINS = ['rw.cs', 'rw.ii', 'rw.sec', 'rw.ei']
 
 # Math has no labels in the export; these were read off each question.
 MATH_SKILLS = {
@@ -290,6 +302,63 @@ def convert(q):
     return out
 
 
+def rank(items):
+    """Difficulty 0..1 for each converted question, from its place in the
+    test's own easiest-to-hardest order."""
+    r = {}
+    for q in items:
+        if q['section'] == 'math':
+            same = [x for x in items if x['section'] == 'math' and x['module'] == q['module']]
+        else:
+            same = [x for x in items if x['section'] == 'rw' and x['module'] == q['module']
+                    and x['skillId'] == q['skillId']]
+        same.sort(key=lambda x: x['id'])
+        r[q['id']] = (same.index(q) + 0.5) / len(same)
+    return r
+
+
+def spread(group, keep):
+    """`keep` of a group ordered easy to hard, evenly across it."""
+    if keep >= len(group):
+        return list(group)
+    step = len(group) / keep
+    return [group[int(i * step + step / 2)] for i in range(keep)]
+
+
+def routes(items, r):
+    out = {}
+    for section, key in (('rw', 'rw'), ('math', 'm')):
+        n = COUNTS[section]
+        sec = [q for q in items if q['section'] == section]
+        first = [q for q in sec if q['module'] == 1]
+        if section == 'rw':
+            # Every question type keeps its share of module 1.
+            by_skill = {}
+            for q in first:
+                by_skill.setdefault(q['skillId'], []).append(q)
+            quota = {k: len(v) * n / len(first) for k, v in by_skill.items()}
+            take = {k: int(v) for k, v in quota.items()}
+            for k in sorted(quota, key=lambda k: quota[k] - take[k], reverse=True)[:n - sum(take.values())]:
+                take[k] += 1
+            m1 = [q for k, v in by_skill.items() for q in spread(sorted(v, key=lambda x: r[x['id']]), take[k])]
+        else:
+            m1 = spread(sorted(first, key=lambda x: r[x['id']]), n)
+        rest = [q for q in sec if q not in m1]
+        ordered = sorted(rest, key=lambda x: r[x['id']])
+        easier, harder = ordered[:n], ordered[-n:]
+
+        def order(lst):
+            if section == 'math':
+                return [q['id'] for q in sorted(lst, key=lambda x: r[x['id']])]
+            skills = [q['skillId'] for q in items]  # the test's own type order
+            return [q['id'] for q in sorted(lst, key=lambda x: (
+                RW_DOMAINS.index(x['skillId'].rsplit('.', 1)[0]), skills.index(x['skillId']), r[x['id']]))]
+        out[key + '1'] = order(m1)
+        out[key + '2-easier'] = order(easier)
+        out[key + '2-harder'] = order(harder)
+    return out
+
+
 def main():
     src = Path(sys.argv[1])
     paper_id = sys.argv[2]
@@ -301,10 +370,14 @@ def main():
         'title': 'Official SAT Practice Test 6',
         'year': None,
         'diagnostic': True,
-        'minutes': MINUTES,
-        'note': 'College Board practice test %s, linear version.' % data['test'].get('form_code', ''),
+        'note': 'College Board practice test %s, sat adaptively.' % data['test'].get('form_code', ''),
+        'thresholds': THRESHOLDS,
         'questions': [convert(q) for q in questions],
     }
+    r = rank(paper['questions'])
+    for q in paper['questions']:
+        q['difficulty'] = 1 if r[q['id']] < 0.34 else 2 if r[q['id']] < 0.67 else 3
+    paper['routes'] = routes(paper['questions'], r)
     out = ROOT / 'js' / 'data' / 'papers' / (paper_id + '.json')
     with open(out, 'w', encoding='utf-8', newline='\n') as f:
         json.dump(paper, f, ensure_ascii=False, indent=1)

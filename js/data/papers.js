@@ -152,6 +152,11 @@ JTS.data.addPaper = function (paper) {
     /* Minutes per module by section, when the paper's own timing differs
        from the adaptive exam's (a linear form is longer). */
     minutes: paper.minutes || null,
+    /* An adaptive paper: module 1 and an easier and a harder module 2 per
+       section, as question ids ({ rw1, 'rw2-easier', 'rw2-harder', m1, … }),
+       with the module 1 accuracy that routes to the harder one. */
+    routes: paper.routes || null,
+    thresholds: paper.thresholds || null,
     count: modules.reduce(function (n, m) { return n + m.questionIds.length; }, 0)
   });
 };
@@ -280,6 +285,11 @@ JTS.data.loadPaperFiles = function () {
           id: d.id || f.replace(/\.json$/, ''), questionPrefix: d.id || f.replace(/\.json$/, ''),
           title: d.title || f, year: d.year || null, note: d.note || null,
           diagnostic: !!d.diagnostic, minutes: d.minutes || null,
+          thresholds: d.thresholds || null,
+          routes: d.routes ? Object.keys(d.routes).reduce(function (acc, k) {
+            acc[k] = d.routes[k].map(function (id) { return (d.id || f) + '.' + id; });
+            return acc;
+          }, {}) : null,
           modules: modules.map(function (m) {
             return { key: m.key, section: sectionOf(m.section), questions: m.questions.map(function (q) {
               var c = convert(q, d.assetBase);

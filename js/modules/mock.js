@@ -169,6 +169,8 @@
         paperId: paper ? paper.id : null,
         /* Sat from #/diagnostic: it starts and ends there. */
         diagnostic: !!(paper && paper.diagnostic),
+        /* A paper with routes is sat adaptively, like the exam. */
+        routed: !!(paper && paper.routes),
         startedAt: Date.now(),
         finishedAt: null,
         status: 'in-progress',
@@ -177,7 +179,7 @@
         phase: 'module',          /* 'module' | 'handoff' | 'break' | 'done' */
         breakEndsAt: null,
         modules: blueprint().map(function (m) {
-          var fixed = paper ? paper.modules.filter(function (pm) {
+          var fixed = paper && !paper.routes ? paper.modules.filter(function (pm) {
             return pm.key === m.id;
           })[0] : null;
           return {
@@ -209,6 +211,21 @@
     prepare: function (run, index) {
       var m = run.modules[index];
       if (m.questionIds) return m;
+      if (run.routed) {
+        var rp = JTS.papers.get(run.paperId);
+        if (m.adaptive) {
+          var prev = run.modules[index - 1];
+          var got = prev.count ? (prev.correct || 0) / prev.count : 0;
+          var bar = (rp.thresholds && rp.thresholds[m.section]) || JTS.config.adaptiveThreshold;
+          m.route = got >= bar ? 'harder' : 'easier';
+          m.questionIds = (rp.routes[m.key + '-' + m.route] || []).slice();
+        } else {
+          m.questionIds = (rp.routes[m.key] || []).slice();
+        }
+        m.count = m.questionIds.length || m.count;
+        S.save();
+        return m;
+      }
       if (run.paperId) {
         var paper = JTS.papers.get(run.paperId);
         var pm = paper && paper.modules.filter(function (x) { return x.key === m.key; })[0];
@@ -352,10 +369,16 @@
       var mid = Math.round((band + (r.correct / r.total) * 400) / 10) * 10;
       /* A paper does not route: its second module is fixed, so the raw
          share is read across the whole 200-800 scale. */
-      if (run.paperId) mid = Math.round((200 + (r.correct / r.total) * 600) / 10) * 10;
+      if (run.paperId && !run.routed) mid = Math.round((200 + (r.correct / r.total) * 600) / 10) * 10;
+      /* The adaptive diagnostic: the easier module 2 tops out near 550, the
+         harder one opens the scale to 800. */
+      if (run.routed) {
+        var share = r.correct / r.total;
+        mid = Math.round((r.route === 'harder' ? 400 + share * 400 : 200 + share * 350) / 10) * 10;
+      }
       return {
         low: U.clamp(mid - 40, 200, 800),
-        high: U.clamp(mid + 40, 200, 800),
+        high: U.clamp(mid + 40, 200, run.routed && r.route === 'easier' ? 550 : 800),
         route: r.route, raw: r
       };
     },
