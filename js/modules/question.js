@@ -690,6 +690,9 @@
       function renderQuestion() {
         var question = q();
         var a = ans();
+        /* Study mode: fetch the explanation now, while the student works,
+           so it is there the moment the answer is checked. */
+        if (ses.mode === 'study' && JTS.explain) JTS.explain.ensure(question);
         U.clear(content);
         content.classList.remove('has-wide-math');
         hlTargets.length = 0;

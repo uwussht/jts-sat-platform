@@ -1,6 +1,6 @@
 FROM python:3.14-alpine AS build
 WORKDIR /app
-COPY tools/build.py tools/stamp_assets.py ./tools/
+COPY tools/build.py tools/stamp_assets.py tools/split_explanations.py ./tools/
 COPY index.html ./
 COPY css/ ./css/
 COPY js/ ./js/

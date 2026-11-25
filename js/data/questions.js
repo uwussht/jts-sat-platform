@@ -94,6 +94,67 @@ JTS.data.jtsMeta = function (ref, overrides) {
   return m;
 };
 
+/** A plain string, or English only, is shown in every interface language. */
+JTS.data.langText = function (v) {
+  var o = typeof v === 'string' ? { en: v } : (v || {});
+  return { en: o.en || '', ru: o.ru || o.en || '', kk: o.kk || o.en || '' };
+};
+
+/**
+ * Explanations fetched when they are opened.
+ *
+ * On the site, the big banks ship without their explanations, distractors
+ * and methods (tools/split_explanations.js, run by web/Dockerfile): each
+ * such question carries "xp": "xp/<file>-<n>.json" instead, a small file
+ * holding those fields for about 40 questions. Questions loaded straight
+ * from the repository have them inline and no "xp", and nothing here runs.
+ *
+ *   JTS.explain.pending(q)   true while q's explanation is not here yet
+ *   JTS.explain.ensure(q)    a Promise of q with the fields filled in; it
+ *                            never rejects (pending(q) stays true on failure)
+ */
+JTS.explain = (function () {
+  var files = {};
+  function pending(q) { return !!(q && q.xp && !q.xpLoaded); }
+  function fill(q, part) {
+    if (!q || q.xpLoaded) return;
+    /* An admin edit (questionOverrides) already set on the object wins. */
+    if (part.explanation !== undefined && q.explanation === undefined) q.explanation = JTS.data.langText(part.explanation);
+    if (part.distractors !== undefined && q.distractors === undefined) {
+      var d = {};
+      Object.keys(part.distractors).forEach(function (k) { d[k] = JTS.data.langText(part.distractors[k]); });
+      q.distractors = d;
+    }
+    if (part.methods !== undefined && q.methods === undefined) q.methods = part.methods;
+    q.xpLoaded = true;
+  }
+  function ensure(q) {
+    if (!pending(q)) return Promise.resolve(q);
+    var name = q.xp;
+    if (!files[name]) {
+      files[name] = fetch('js/data/questions/' + name).then(function (r) {
+        if (!r.ok) throw new Error(name + ': HTTP ' + r.status);
+        return r.json();
+      }).catch(function (e) {
+        delete files[name];           // the next opening tries again
+        console.warn('[JTS] explanation not loaded — ' + e.message);
+        return null;
+      });
+    }
+    return files[name].then(function (chunk) {
+      var part = chunk && chunk[q.id];
+      if (part) {
+        /* The bank's own object, its merged copy and the one passed in. */
+        var raw = JTS.bank && JTS.bank.raw(q.id);
+        var merged = JTS.bank && JTS.bank.get(q.id);
+        [q, raw, merged].forEach(function (o) { fill(o, part); });
+      }
+      return q;
+    });
+  }
+  return { pending: pending, ensure: ensure };
+})();
+
 /**
  * Questions kept as JSON files.
  *
@@ -133,11 +194,7 @@ JTS.data.loadQuestionFiles = function () {
       return r.json();
     });
   }
-  /* A plain string, or English only, is shown in every interface language. */
-  function lang(v) {
-    var o = typeof v === 'string' ? { en: v } : (v || {});
-    return { en: o.en || '', ru: o.ru || o.en || '', kk: o.kk || o.en || '' };
-  }
+  var lang = JTS.data.langText;
   /* ---- the question-bank export layout -------------------------------
      { id, domain, skill, difficulty: "Easy|Medium|Hard", type: "mcq|spr",
        stemHtml, choices: [{ label, html }], correctAnswer, explanationHtml }

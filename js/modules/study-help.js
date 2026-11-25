@@ -71,6 +71,25 @@
    * `a` (the student's answer) is optional: the mock review passes none.
    */
   function explanationBody(question, a) {
+    /* On the site the explanation is fetched when it is first opened
+       (JTS.explain): a line holds its place until it arrives. */
+    if (JTS.explain && JTS.explain.pending(question)) {
+      var holder = U.el('div.xp-wait.muted', { text: t('xp.loading') });
+      JTS.explain.ensure(question).then(function () {
+        if (!holder.parentNode) return;
+        if (JTS.explain.pending(question)) {
+          U.clear(holder);
+          holder.appendChild(document.createTextNode(t('xp.loadFailed') + ' '));
+          holder.appendChild(U.el('button.btn.btn-sm', {
+            type: 'button', text: t('xp.retry'),
+            onclick: function () { holder.replaceWith(explanationBody(question, a)); }
+          }));
+        } else {
+          holder.replaceWith(explanationBody(question, a));
+        }
+      });
+      return holder;
+    }
     var lang = S.settings().explainLang;
     var wrap = U.el('div.stack.xp');
     var isMcq = question.type === 'mcq' && question.options;

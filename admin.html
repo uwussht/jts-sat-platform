@@ -132,6 +132,12 @@
       var merged = JTS.bank.get(id);
       var source = JTS.bank.raw(id);
       if (!merged) return ui.empty('—');
+      /* Explanations fetched on opening (JTS.explain) are filled in first,
+         so the editor never shows, or saves, an empty one. */
+      if (JTS.explain && JTS.explain.pending(merged)) {
+        JTS.explain.ensure(merged).then(function () { if (!JTS.explain.pending(merged)) rerender(); });
+        return ui.empty(t('xp.loading'));
+      }
 
       var wrap = U.el('div.card.stack');
       wrap.appendChild(U.el('div.row-between.row-wrap', null, [

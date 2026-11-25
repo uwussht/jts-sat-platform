@@ -165,18 +165,21 @@
       text = String(text || '').trim();
       if (!text || busy) return;
       if (turns.length >= 11) { bubble('note', t('ai.tooLong'), 'is-note'); return; }
-      var context = typeof opts.context === 'function' ? opts.context() : opts.context;
       turns.push({ role: 'user', text: text });
       bubble('user', text);
       input.value = '';
       drawChips();
       setBusy(true);
       var wait = bubble('assistant', t('ai.thinking') + '…', 'is-wait');
-      JTS.api('ai/ask', {
-        kind: opts.kind,
-        lang: S.settings().explainLang || JTS.i18n.lang,
-        context: context,
-        messages: turns
+      /* `ready` waits for anything the context needs, such as a question's
+         explanation that is fetched on opening. */
+      Promise.resolve(opts.ready ? opts.ready() : null).then(function () {
+        return JTS.api('ai/ask', {
+          kind: opts.kind,
+          lang: S.settings().explainLang || JTS.i18n.lang,
+          context: typeof opts.context === 'function' ? opts.context() : opts.context,
+          messages: turns
+        });
       }).then(function (r) {
         wait.remove();
         setBusy(false);
@@ -219,6 +222,7 @@
     var right = a && a.correct;
     return box({
       kind: 'question',
+      ready: function () { return JTS.explain ? JTS.explain.ensure(q) : null; },
       context: function () { return questionContext(q, a); },
       lead: t('ai.questionLead'),
       suggestions: right

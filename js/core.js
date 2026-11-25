@@ -1493,10 +1493,13 @@
         if ([1, 2, 3].indexOf(q.difficulty) < 0) bad('difficulty must be 1|2|3');
         if (['mcq', 'spr'].indexOf(q.type) < 0) bad('bad type');
         var isPaper = !!(q.meta && q.meta.kind === 'paper');
+        /* Its explanation is in an xp/ file, fetched when opened: not here
+           to check (tools/split_explanations.py moved it whole). */
+        var lazy = !!(JTS.explain && JTS.explain.pending(q));
         if (q.type === 'mcq') {
           if (!q.options || q.options.length !== 4) bad('mcq needs 4 options');
           if (['A', 'B', 'C', 'D'].indexOf(q.answer) < 0) bad('mcq answer must be A-D');
-          if (q.section === 'rw' && !q.distractors && !isPaper) bad('R&W mcq needs distractor rationales');
+          if (q.section === 'rw' && !q.distractors && !isPaper && !lazy) bad('R&W mcq needs distractor rationales');
         }
         if (q.type === 'spr') {
           if (!Array.isArray(q.answer) || !q.answer.length) bad('spr answer must be a non-empty array');
@@ -1518,7 +1521,7 @@
           if (!JTS.data.programme || !JTS.data.programme.byCode(q.meta.lessonCode)) {
             bad('lesson item names no class of the course: ' + q.meta.lessonCode);
           }
-        } else if (!q.explanation || !q.explanation.en || !q.explanation.ru || !q.explanation.kk) {
+        } else if (!lazy && (!q.explanation || !q.explanation.en || !q.explanation.ru || !q.explanation.kk)) {
           bad('explanation needs en/ru/kk');
         }
         if (q.calculator !== (q.section === 'math')) bad('calculator must be true for math and false for rw');

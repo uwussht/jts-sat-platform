@@ -3,6 +3,7 @@ import json
 import shutil
 from pathlib import Path
 
+from split_explanations import split
 from stamp_assets import REF, stamp
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -39,6 +40,8 @@ def main():
             ROOT / directory, DIST / directory,
             ignore=shutil.ignore_patterns('.DS_Store', '__pycache__', '*.pyc'),
         )
+    # The big banks lose their explanations to files fetched on opening.
+    split(DIST / 'js' / 'data' / 'questions')
     (DIST / 'index.html').write_text(REF.sub(stamp, html), encoding='utf-8')
     files = [path for path in DIST.rglob('*') if path.is_file()]
     size = sum(path.stat().st_size for path in files)
